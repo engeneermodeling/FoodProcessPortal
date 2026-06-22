@@ -1,6 +1,6 @@
 ---
 import { siteConfig } from "../config";
-import  Analytics  from '@vercel/analytics/astro';
+import Analytics from "@vercel/analytics/astro";
 
 interface Props {
   title: string;
@@ -94,6 +94,19 @@ const siteName = siteConfig.title;
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"
     />
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-65T84M0VJ4"
+    ></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-65T84M0VJ4");
+    </script>
+
     <script
       defer
       src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"
@@ -134,5 +147,5 @@ const siteName = siteConfig.title;
   @import "../styles/topics.css";
   @import "../styles/topic.css";
   @import "../styles/section.css";
-  @import '../styles/header.css';
+  @import "../styles/header.css";
 </style>
