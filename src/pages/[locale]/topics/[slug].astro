@@ -104,3 +104,18 @@ let headings = frontmatter?.headings || [];
   </main>
   <Footer />
 </BaseLayout>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "{frontmatter?.title}",
+  "description": "{frontmatter?.description}",
+  "author": {
+    "@type": "Organization",
+    "name": "FoodProcessPortal"
+  },
+  "datePublished": "2026-01-01",
+  "inLanguage": "{locale}"
+}
+</script>
