@@ -4,7 +4,7 @@ const robotsTxt = `
 User-agent: *
 Allow: /
 
-Sitemap: https://foodprocessportal.com/sitemap-index.xml
+Sitemap: https://foodprocessportal.vercel.app/sitemap-index.xml
 `.trim();
 
 export const GET: APIRoute = () => {

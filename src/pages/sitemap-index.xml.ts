@@ -4,7 +4,7 @@ const allTopics = import.meta.glob('/src/content/topics/**/*.md', { eager: true 
 
 const locales = ['uk', 'ru', 'en', 'de'];
 const sections = ['problems', 'practice', 'reference', 'courses', 'videos'];
-const baseUrl = 'https://foodprocessportal.com'; // ← Заміни на свій домен
+const baseUrl = 'https://foodprocessportal.vercel.app'; // ← Заміни на свій домен
 
 export const GET: APIRoute = () => {
   const urls: string[] = [];
