@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="100%" height="100%">
+  <defs>
+    <linearGradient id="textBlueLight" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2ce9ff"/>
+      <stop offset="60%" stop-color="#00a3d1"/>
+      <stop offset="100%" stop-color="#006b94"/>
+    </linearGradient>
+    <linearGradient id="textOrangeLight" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffbe00"/>
+      <stop offset="50%" stop-color="#ff7c00"/>
+      <stop offset="100%" stop-color="#cf4c00"/>
+    </linearGradient>
+
+    <linearGradient id="shieldBorderLight" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#3ef6ff"/>
+      <stop offset="40%" stop-color="#0063be"/>
+      <stop offset="75%" stop-color="#00214c"/>
+      <stop offset="100%" stop-color="#000b1a"/>
+    </linearGradient>
+    <linearGradient id="metalBlue" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#00254c"/>
+      <stop offset="25%" stop-color="#005fa3"/>
+      <stop offset="50%" stop-color="#00c3f7"/>
+      <stop offset="75%" stop-color="#004e9a"/>
+      <stop offset="100%" stop-color="#001d3d"/>
+    </linearGradient>
+    <linearGradient id="vortexBlue" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#3effff"/>
+      <stop offset="40%" stop-color="#00a6e2"/>
+      <stop offset="100%" stop-color="#003b73"/>
+    </linearGradient>
+    <linearGradient id="fireGrad" x1="0" y1="1" x2="0.6" y2="0">
+      <stop offset="0%" stop-color="#b83200"/>
+      <stop offset="40%" stop-color="#ff7400"/>
+      <stop offset="80%" stop-color="#ffc400"/>
+      <stop offset="100%" stop-color="#fffbbf"/>
+    </linearGradient>
+
+    <filter id="glowLight" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="5" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <rect width="100%" height="100%" fill="#ffffff" fill-opacity="1"/>
+
+  <g transform="translate(0, -25)">
+    <polygon points="400,132 572,231 572,429 400,528 228,429 228,231" fill="#001329"/>
+    <polygon points="400,137 567,233 567,427 400,523 233,427 233,233" fill="url(#shieldBorderLight)" filter="url(#glowLight)"/>
+    <polygon points="400,149 552,237 552,413 400,501 248,413 248,237" fill="#ffffff"/>
+
+    <g fill="#00d5ff" opacity="0.4">
+      <circle cx="440" cy="210" r="1.5"/><circle cx="500" cy="265" r="2.5"/><circle cx="525" cy="310" r="1"/>
+      <circle cx="540" cy="365" r="2"/><circle cx="525" cy="420" r="1.5"/><circle cx="475" cy="460" r="2"/>
+      <circle cx="335" cy="330" r="1.5"/><circle cx="342" cy="285" r="2"/>
+    </g>
+
+    <g filter="url(#glowLight)">
+      <path d="M380,480 C305,460 275,375 315,285 C295,335 295,430 380,498 Z" fill="#801a00" opacity="0.9"/>
+      <path d="M382,475 C320,460 290,380 325,295 C340,275 348,285 338,305 C305,360 325,430 382,468 Z" fill="url(#fireGrad)"/>
+      <path d="M382,465 C340,455 320,405 342,335 C332,365 332,415 382,452 Z" fill="#ffe600"/>
+      <path d="M382,415 C425,415 480,380 448,290 C470,335 432,395 382,422 Z" fill="url(#fireGrad)"/>
+      <polygon points="382,422 410,428 382,460" fill="#fff580"/>
+    </g>
+
+    <g>
+      <path d="M391,172 L409,172 L406,198 L394,198 Z" fill="url(#metalBlue)"/>
+      <rect x="389" y="180" width="22" height="5" fill="#3ef6ff"/>
+      <rect x="378" y="200" width="44" height="52" rx="4" fill="url(#metalBlue)" stroke="#000f21" stroke-width="1.5"/>
+      <rect x="378" y="256" width="44" height="54" rx="4" fill="url(#metalBlue)" stroke="#000f21" stroke-width="1.5"/>
+      <rect x="378" y="314" width="44" height="54" rx="4" fill="url(#metalBlue)" stroke="#000f21" stroke-width="1.5"/>
+      <rect x="378" y="372" width="44" height="54" rx="4" fill="url(#metalBlue)" stroke="#000f21" stroke-width="1.5"/>
+      <rect x="378" y="430" width="44" height="52" rx="4" fill="url(#metalBlue)" stroke="#000f21" stroke-width="1.5"/>
+      <rect x="378" y="486" width="44" height="15" rx="2" fill="url(#metalBlue)" stroke="#000f21" stroke-width="1.5"/>
+      <linearGradient id="shaftHighlight" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0%" stop-color="#ffffff" stop-opacity="0"/>
+        <stop offset="50%" stop-color="#ffffff" stop-opacity="0.5"/>
+        <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+      </linearGradient>
+      <rect x="395" y="201" width="8" height="295" fill="url(#shaftHighlight)"/>
+    </g>
+
+    <g filter="url(#glowLight)">
+      <path d="M378,240 C490,170 590,245 540,375 C500,450 420,435 378,435 C445,430 490,395 505,350 C525,285 460,235 378,265" fill="url(#metalBlue)"/>
+      <path d="M378,248 C470,195 565,255 525,365 C495,430 420,420 380,420 C435,415 475,390 490,350 C505,295 450,250 378,275" fill="url(#vortexBlue)"/>
+      <path d="M340,355 C330,275 390,205 465,190 C410,205 362,260 365,330 Z" fill="url(#vortexBlue)" opacity="0.8"/>
+    </g>
+
+    <g filter="url(#glowLight)">
+      <line x1="290" y1="250" x2="328" y2="228" stroke="#00bcf2" stroke-width="5"/>
+      <line x1="328" y1="228" x2="350" y2="262" stroke="#00bcf2" stroke-width="4"/>
+      <line x1="290" y1="250" x2="350" y2="262" stroke="#00bcf2" stroke-width="3"/>
+      <circle cx="290" cy="250" r="15" fill="url(#vortexBlue)" stroke="#002042" stroke-width="1"/>
+      <circle cx="285" cy="245" r="4" fill="#ffffff" opacity="0.5"/>
+      <circle cx="328" cy="228" r="11" fill="url(#vortexBlue)" stroke="#002042" stroke-width="1"/>
+      <circle cx="350" cy="262" r="8" fill="url(#vortexBlue)" stroke="#002042" stroke-width="1"/>
+    </g>
+  </g>
+
+  <text x="400" y="580" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-weight="800" font-size="55" letter-spacing="-1.5">
+    <tspan fill="url(#textBlueLight)">Food</tspan>
+    <tspan fill="url(#textBlueLight)" font-weight="300">Process</tspan>
+    <tspan fill="url(#textOrangeLight)">Portal</tspan>
+  </text>
+</svg>

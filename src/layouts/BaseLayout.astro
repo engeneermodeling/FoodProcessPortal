@@ -1,0 +1,135 @@
+---
+import { siteConfig } from "../config";
+
+interface Props {
+  title: string;
+  description?: string;
+  locale: string;
+  image?: string;
+  type?: string;
+}
+
+const {
+  title,
+  description = "",
+  locale,
+  image,
+  type = "website",
+} = Astro.props;
+const canonicalUrl = new URL(
+  Astro.url.pathname,
+  Astro.site || "http://localhost:4321",
+).href;
+const ogImage = image || "/images/og-default.png";
+const siteName = siteConfig.title;
+---
+
+<!doctype html>
+<html lang={locale}>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=5.0"
+    />
+    <title>{title} | {siteName}</title>
+    <meta name="description" content={description} />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href={canonicalUrl} />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/images/favicon.svg" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content={type} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:title" content={`${title} | ${siteName}`} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:locale" content={locale} />
+    <meta property="og:site_name" content={siteName} />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={canonicalUrl} />
+    <meta name="twitter:title" content={`${title} | ${siteName}`} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <!-- Hreflang для багатомовності -->
+    <link
+      rel="alternate"
+      hreflang="uk"
+      href={canonicalUrl.replace(`/${locale}/`, "/uk/")}
+    />
+    <link
+      rel="alternate"
+      hreflang="ru"
+      href={canonicalUrl.replace(`/${locale}/`, "/ru/")}
+    />
+    <link
+      rel="alternate"
+      hreflang="en"
+      href={canonicalUrl.replace(`/${locale}/`, "/en/")}
+    />
+    <link
+      rel="alternate"
+      hreflang="de"
+      href={canonicalUrl.replace(`/${locale}/`, "/de/")}
+    />
+    <link
+      rel="alternate"
+      hreflang="x-default"
+      href={canonicalUrl.replace(`/${locale}/`, "/uk/")}
+    />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles/theme.css" />
+
+    <!-- KaTeX -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"
+    />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"
+    ></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+    ></script>
+  </head>
+  <body>
+    <slot />
+
+    <!-- KaTeX init -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // @ts-ignore - KaTeX auto-render
+        if (window.renderMathInElement) {
+          // @ts-ignore - KaTeX auto-render
+          renderMathInElement(document.body, {
+            delimiters: [
+              { left: "$$", right: "$$", display: true },
+              { left: "$", right: "$", display: false },
+              { left: "\\(", right: "\\)", display: false },
+              { left: "\\[", right: "\\]", display: true },
+            ],
+            throwOnError: false,
+            strict: false,
+          });
+        }
+      });
+    </script>
+  </body>
+</html>
+
+<style is:global>
+  @import "../styles/home.css";
+  @import "../styles/topics.css";
+  @import "../styles/topic.css";
+  @import "../styles/section.css";
+  @import '../styles/header.css';
+</style>

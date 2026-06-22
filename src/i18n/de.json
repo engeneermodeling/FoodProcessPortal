@@ -1,0 +1,15 @@
+{
+  "site.title": "FoodProcessPortal",
+  "site.description": "Virtuelles Lehrbuch über Prozesse und Apparate der Lebensmittelproduktion",
+  "nav.home": "Startseite",
+  "nav.topics": "Themen",
+  "nav.practice": "Praktikum",
+  "nav.courses": "Kursarbeiten",
+  "nav.videos": "Videos",
+  "lang.choose": "Sprache wählen:",
+  "lang.ua": "UA",
+  "lang.ru": "RU",
+  "lang.en": "EN",
+  "lang.de": "DE",
+  "theme.toggle": "Thema wechseln"
+}
