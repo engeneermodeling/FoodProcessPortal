@@ -1,4 +1,53 @@
 ---
-// Редирект на українську версію
-return Astro.redirect('/uk');
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { siteConfig } from "../config";
+
+
+export function getStaticPaths() {
+  return ['uk', 'ru', 'en', 'de'].map(locale => ({
+    params: { locale },
+  }));
+}
+
+const { locale } = Astro.params;
+const t_uk = siteConfig.translations["uk" as keyof typeof siteConfig.translations];
+const t_ru = siteConfig.translations["ru" as keyof typeof siteConfig.translations];
+const t_en = siteConfig.translations["en" as keyof typeof siteConfig.translations];
+const t_de = siteConfig.translations["de" as keyof typeof siteConfig.translations];
+
+
+const languages = [
+  { code: 'uk', name: 'Українська', flag: '🇺🇦' },
+  { code: 'ru', name: 'Русский', flag: '🇷🇺' },
+  { code: 'en', name: 'English', flag: '🇬🇧' },
+  { code: 'de', name: 'Deutsch', flag: '🇩🇪' },
+];
 ---
+
+<BaseLayout title={siteConfig.name} description={t_uk.subtitle} locale="uk">
+  <main class="landing-page">
+    <div class="container">
+      <div class="welcome-section">
+        <img src="/images/logo-light-hex.svg" alt="FoodProcessPortal" class="landing-logo" />
+        <h1>FoodProcessPortal</h1>
+        <p class="subtitle">{t_uk.subtitle}</p>
+        <p class="subtitle">{t_ru.subtitle}</p>
+        <p class="subtitle">{t_en.subtitle}</p>
+        <p class="subtitle">{t_de.subtitle}</p>
+      </div>
+
+      <div class="language-selector">
+        <h2>Оберіть мову / Выберите язык / Select language / Sprache wählen</h2>
+        <div class="lang-buttons">
+          {languages.map((lang) => (
+            <a href={`/${lang.code}`} class="lang-button">
+              <span class="flag">{lang.flag}</span>
+              <span class="name">{lang.name}</span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
+  </main>
+</BaseLayout>
+
