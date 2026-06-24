@@ -56,6 +56,12 @@ let headings = frontmatter?.headings || [];
   rel="stylesheet"
   href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"
 />
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"
+></script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+></script>
 
 <BaseLayout
   title={frontmatter?.title || "Тема"}
@@ -152,24 +158,24 @@ let headings = frontmatter?.headings || [];
 </script>
 
 <!-- KaTeX init -->
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        // @ts-ignore - KaTeX auto-render
-        if (window.renderMathInElement) {
-          // @ts-ignore - KaTeX auto-render
-          renderMathInElement(document.body, {
-            delimiters: [
-              { left: "$$", right: "$$", display: true },
-              { left: "$", right: "$", display: false },
-              { left: "\\(", right: "\\)", display: false },
-              { left: "\\[", right: "\\]", display: true },
-            ],
-            throwOnError: false,
-            strict: false,
-          });
-        }
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // @ts-ignore - KaTeX auto-render
+    if (window.renderMathInElement) {
+      // @ts-ignore - KaTeX auto-render
+      renderMathInElement(document.body, {
+        delimiters: [
+          { left: "$$", right: "$$", display: true },
+          { left: "$", right: "$", display: false },
+          { left: "\\(", right: "\\)", display: false },
+          { left: "\\[", right: "\\]", display: true },
+        ],
+        throwOnError: false,
+        strict: false,
       });
-    </script>
+    }
+  });
+</script>
 
 <style>
   @import "../../../styles/topic.css";

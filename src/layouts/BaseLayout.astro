@@ -41,11 +41,7 @@ const siteName = siteConfig.title;
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/images/favicon.svg" />
-    <link
-      rel="icon"
-      type="image/png"
-      href="/images/favicon.png"
-    />
+    <link rel="icon" type="image/png" href="/images/favicon.png" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content={type} />
@@ -62,6 +58,17 @@ const siteName = siteConfig.title;
     <meta name="twitter:title" content={`${title} | ${siteName}`} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImage} />
+
+    <!-- Preconnect до власного домену -->
+    <link rel="preconnect" href="https://foodprocessportal.vercel.app" />
+
+    <!-- Preload логотипу (якщо використовуєш) -->
+    <link
+      rel="preload"
+      href="/images/logo-light-hex.svg"
+      as="image"
+      type="image/svg+xml"
+    />
 
     <meta
       name="google-site-verification"
@@ -107,8 +114,15 @@ const siteName = siteConfig.title;
     <link rel="preconnect" href="https://www.googletagmanager.com" />
 
     <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-65T84M0VJ4"
-    ></script>
+    <script>
+      // Завантажуй Google Analytics тільки після завантаження сторінки
+      window.addEventListener("load", () => {
+        const script = document.createElement("script");
+        script.async = true;
+        script.src = "https://www.googletagmanager.com/gtag/js?id=G-65T84M0VJ4";
+        document.head.appendChild(script);
+      });
+    </script>
     <script is:inline>
       window.dataLayer = window.dataLayer || [];
       function gtag() {
@@ -118,14 +132,6 @@ const siteName = siteConfig.title;
       gtag("config", "G-65T84M0VJ4");
     </script>
 
-    <script
-      defer
-      src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"
-    ></script>
-    <script
-      defer
-      src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
-    ></script>
     <Analytics />
   </head>
   <body>

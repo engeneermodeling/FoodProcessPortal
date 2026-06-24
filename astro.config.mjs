@@ -10,6 +10,8 @@ export default defineConfig({
       prefixDefaultLocale: true, // Додавати /uk/ навіть для української
     },
   },
+  output: "static",
+  compressHTML: true,
 
   build: {
     inlineStylesheets: "always", // Inline всі CSS в HTML
