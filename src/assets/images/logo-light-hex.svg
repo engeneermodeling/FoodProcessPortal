@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="228 107 344 421" width="344" height="421">
+  <defs>
+    <linearGradient id="textBlueLight" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2ce9ff"/>
+      <stop offset="60%" stop-color="#00a3d1"/>
+      <stop offset="100%" stop-color="#006b94"/>
+    </linearGradient>
+    <linearGradient id="textOrangeLight" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffbe00"/>
+      <stop offset="50%" stop-color="#ff7c00"/>
+      <stop offset="100%" stop-color="#cf4c00"/>
+    </linearGradient>
+    <linearGradient id="shieldBorderLight" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#26e6ff"/>
+      <stop offset="40%" stop-color="#006cd8"/>
+      <stop offset="100%" stop-color="#001a3d"/>
+    </linearGradient>
+    <linearGradient id="metalBlue" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#002d5c"/>
+      <stop offset="25%" stop-color="#0069bd"/>
+      <stop offset="50%" stop-color="#00d5ff"/>
+      <stop offset="75%" stop-color="#00529c"/>
+      <stop offset="100%" stop-color="#002244"/>
+    </linearGradient>
+    <linearGradient id="vortexBlue" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#46f7ff"/>
+      <stop offset="50%" stop-color="#009ed9"/>
+      <stop offset="100%" stop-color="#00478a"/>
+    </linearGradient>
+    <linearGradient id="fireGrad" x1="0" y1="1" x2="0.6" y2="0">
+      <stop offset="0%" stop-color="#b82a00"/>
+      <stop offset="45%" stop-color="#ff7c00"/>
+      <stop offset="85%" stop-color="#ffcc00"/>
+      <stop offset="100%" stop-color="#fffbbf"/>
+    </linearGradient>
+    <linearGradient id="glare" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#ffffff" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <g transform="translate(0, -25)">
+    <polygon points="400,132 572,231 572,429 400,528 228,429 228,231" fill="#001633"/>
+    <polygon points="400,138 566,234 566,426 400,522 234,426 234,234" fill="url(#shieldBorderLight)"/>
+    <polygon points="400,150 551,237 551,413 400,500 249,413 249,237" fill="#ffffff"/>
+
+    <g fill="#00bdff" opacity="0.6">
+      <circle cx="440" cy="210" r="2.5"/><circle cx="500" cy="265" r="3.5"/><circle cx="540" cy="365" r="3"/>
+      <circle cx="475" cy="460" r="2.5"/><circle cx="335" cy="330" r="2"/>
+    </g>
+
+    <g>
+      <path d="M380,480 C305,460 275,375 315,285 C295,335 295,430 380,498 Z" fill="#801a00"/>
+      <path d="M382,475 C320,460 290,380 325,295 C340,275 348,285 338,305 C305,360 325,430 382,468 Z" fill="url(#fireGrad)"/>
+      <path d="M382,465 C340,455 320,405 342,335 C332,365 332,415 382,452 Z" fill="#ffe600"/>
+      <path d="M382,415 C425,415 480,380 448,290 C470,335 432,395 382,422 Z" fill="url(#fireGrad)"/>
+      <polygon points="382,422 410,428 382,460" fill="#ffffff"/>
+    </g>
+
+    <g>
+      <path d="M390,172 L410,172 L406,201 L394,201 Z" fill="url(#metalBlue)" stroke="#000f21" stroke-width="1.5"/>
+      <rect x="378" y="200" width="44" height="52" rx="4" fill="url(#metalBlue)" stroke="#000f21" stroke-width="2"/>
+      <rect x="378" y="256" width="44" height="54" rx="4" fill="url(#metalBlue)" stroke="#000f21" stroke-width="2"/>
+      <rect x="378" y="314" width="44" height="54" rx="4" fill="url(#metalBlue)" stroke="#000f21" stroke-width="2"/>
+      <rect x="378" y="372" width="44" height="54" rx="4" fill="url(#metalBlue)" stroke="#000f21" stroke-width="2"/>
+      <rect x="378" y="430" width="44" height="52" rx="4" fill="url(#metalBlue)" stroke="#000f21" stroke-width="2"/>
+      <rect x="378" y="486" width="44" height="15" rx="2" fill="url(#metalBlue)" stroke="#000f21" stroke-width="2"/>
+      <rect x="396" y="173" width="6" height="323" fill="url(#glare)"/>
+    </g>
+
+    <g>
+      <path d="M378,240 C490,170 590,245 540,375 C500,450 420,435 378,435 C445,430 490,395 505,350 C525,285 460,235 378,265" fill="#001f42"/>
+      <path d="M378,248 C470,195 565,255 525,365 C495,430 420,420 380,420 C435,415 475,390 490,350 C505,295 450,250 378,275" fill="url(#vortexBlue)"/>
+      <path d="M340,355 C330,275 390,205 465,190 C410,205 362,260 365,330 Z" fill="#16f5ff" opacity="0.8"/>
+    </g>
+
+    <g>
+      <line x1="290" y1="250" x2="328" y2="228" stroke="#00bcf2" stroke-width="5"/>
+      <line x1="328" y1="228" x2="350" y2="262" stroke="#00bcf2" stroke-width="4"/>
+      <line x1="290" y1="250" x2="350" y2="262" stroke="#00bcf2" stroke-width="3"/>
+      <circle cx="290" cy="250" r="15" fill="url(#vortexBlue)" stroke="#002042" stroke-width="2"/>
+      <circle cx="286" cy="246" r="4" fill="#ffffff" opacity="0.6"/>
+      <circle cx="328" cy="228" r="11" fill="url(#vortexBlue)" stroke="#002042" stroke-width="1.5"/>
+      <circle cx="350" cy="262" r="8" fill="url(#vortexBlue)" stroke="#002042" stroke-width="1.5"/>
+    </g>
+  </g>
+</svg>

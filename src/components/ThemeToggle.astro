@@ -120,8 +120,8 @@
   const icon = document.getElementById("theme-icon");
   const options = document.querySelectorAll(".theme-option");
 
-  const logo_dark = "/images/logo-dark-hex.svg";
-  const logo_light = "/images/logo-light-hex.svg";
+  const logo_dark = "../assets/images/logo-dark-hex.svg";
+  const logo_light = "../assets/images/logo-light-hex.svg";
 
   // === Утиліти ===
   const getSystemTheme = () =>
@@ -147,29 +147,29 @@
     });
   }
 
-  function updateFooterLogo() {
-    const footerLogo = document.querySelector(
-      ".footer-logo",
-    ) as HTMLImageElement | null;
-    if (!footerLogo) return;
+  // function updateFooterLogo() {
+  //   const footerLogo = document.querySelector(
+  //     ".footer-logo",
+  //   ) as HTMLImageElement | null;
+  //   if (!footerLogo) return;
 
-    const currentTheme = localStorage.getItem("theme") || "auto";
-    const effectiveTheme = getEffectiveTheme(currentTheme);
+  //   const currentTheme = localStorage.getItem("theme") || "auto";
+  //   const effectiveTheme = getEffectiveTheme(currentTheme);
 
-    footerLogo.src = effectiveTheme === "dark" ? logo_dark : logo_light;
-  }
+  //   footerLogo.src = effectiveTheme === "dark" ? logo_dark : logo_light;
+  // }
 
-  function updateHeaderLogo() {
-    const headerLogo = document.querySelector(
-      ".header-logo",
-    ) as HTMLImageElement | null;
-    if (!headerLogo) return;
+  // function updateHeaderLogo() {
+  //   const headerLogo = document.querySelector(
+  //     ".header-logo",
+  //   ) as HTMLImageElement | null;
+  //   if (!headerLogo) return;
 
-    const currentTheme = localStorage.getItem("theme") || "auto";
-    const effectiveTheme = getEffectiveTheme(currentTheme);
+  //   const currentTheme = localStorage.getItem("theme") || "auto";
+  //   const effectiveTheme = getEffectiveTheme(currentTheme);
 
-    headerLogo.src = effectiveTheme === "dark" ? logo_dark : logo_light;
-  }
+  //   headerLogo.src = effectiveTheme === "dark" ? logo_dark : logo_light;
+  // }
 
   // === Основна функція ===
   function applyTheme(theme: string) {
@@ -178,8 +178,8 @@
       getEffectiveTheme(theme),
     );
     updateThemeIcon(theme);
-    updateFooterLogo();
-    updateHeaderLogo();
+    // updateFooterLogo();
+    // updateHeaderLogo();
   }
 
   // === Слухачі подій ===

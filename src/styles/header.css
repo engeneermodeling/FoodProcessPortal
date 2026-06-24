@@ -41,6 +41,18 @@
   object-fit: contain;
 }
 
+.logo-dark {
+  display: none;
+}
+
+:root[data-theme="dark"] .logo-light {
+  display: none;
+}
+
+:root[data-theme="dark"] .logo-dark {
+  display: block;
+}
+
 .site-name {
   font-size: 1.5rem;
   font-weight: 700;
@@ -69,7 +81,7 @@
 }
 
 .nav-link.active::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -5px;
   left: 0;
@@ -238,7 +250,7 @@
 
 .hamburger::before,
 .hamburger::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 25px;
   height: 3px;

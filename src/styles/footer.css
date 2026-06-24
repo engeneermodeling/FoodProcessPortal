@@ -54,10 +54,28 @@
   align-items: center;
   gap: 0.6rem;
 }
-
+/* 
 .footer-logo {
   height: 36px;
   width: auto;
+} */
+
+.logo {
+  height: 36px;
+  width: auto;
+  object-fit: contain;
+}
+
+.logo-dark {
+  display: none;
+}
+
+:root[data-theme="dark"] .logo-light {
+  display: none;
+}
+
+:root[data-theme="dark"] .logo-dark {
+  display: block;
 }
 
 .footer-brand-text {

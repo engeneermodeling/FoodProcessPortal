@@ -1,7 +1,4 @@
 ---
-import { Image } from "astro:assets";
-import logo_light from "../../public/images/logo-light-hex.svg";
-
 import { siteConfig } from "../config";
 
 const currentPath = Astro.url.pathname;
@@ -41,10 +38,17 @@ const footerLinks = [
     <div class="footer-content">
       <div class="footer-left">
         <div class="footer-logo-wrapper">
-          <Image
-            src={logo_light}
+          <img
+            src="/images/logo-light-hex.svg"
             alt="FoodProcessPortal"
-            class="footer-logo"
+            class="footer-logo logo logo-light"
+            fetchpriority="high"
+            decoding="async"
+          />
+          <img
+            src="/images/logo-dark-hex.svg"
+            alt="FoodProcessPortal"
+            class="footer-logo logo logo-dark"
             fetchpriority="high"
             decoding="async"
           />

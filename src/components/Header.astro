@@ -1,6 +1,7 @@
 ---
-import { Image } from "astro:assets";
-import logo_light from "/images/logo-light-hex.svg";
+// import { Picture } from "astro:assets";
+// import logo_light from "../assets/images/logo-light-hex.svg";
+// import logo_dark from "../assets/images/logo-dark-hex.svg";
 
 const currentPath = Astro.url.pathname;
 
@@ -50,10 +51,18 @@ const t =
 <header class="site-header" id="header">
   <div class="header-container">
     <a href={`/${currentLocale}`} class="logo-link">
-      <Image
-        src={logo_light}
+      <img
+        src="/images/logo-light-hex.svg"
         alt="FoodProcessPortal"
-        class="logo logo-light header-logo"
+        class="logo logo-light"
+        fetchpriority="high"
+        decoding="async"
+      />
+
+      <img
+        src="/images/logo-dark-hex.svg"
+        alt="FoodProcessPortal"
+        class="logo logo-dark"
         fetchpriority="high"
         decoding="async"
       />
