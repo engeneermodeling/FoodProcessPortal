@@ -1,7 +1,6 @@
 ---
-import { Image } from 'astro:assets';
-import logo_light from '../../public/images/logo-light-hex.svg';
-
+import { Image } from "astro:assets";
+import logo_light from "../../public/images/logo-light-hex.svg";
 
 const currentPath = Astro.url.pathname;
 
@@ -40,9 +39,12 @@ const languages: Record<Locale, LanguageInfo> = {
   en: { code: "EN", name: "English" },
   de: { code: "DE", name: "Deutsch" },
 };
-import { siteConfig } from '../config';
+import { siteConfig } from "../config";
 
-const t = siteConfig.translations[currentLocale as keyof typeof siteConfig.translations];
+const t =
+  siteConfig.translations[
+    currentLocale as keyof typeof siteConfig.translations
+  ];
 ---
 
 <header class="site-header" id="header">
@@ -52,12 +54,9 @@ const t = siteConfig.translations[currentLocale as keyof typeof siteConfig.trans
         src={logo_light}
         alt="FoodProcessPortal"
         class="logo logo-light header-logo"
+        fetchpriority="high"
+        decoding="async"
       />
-      <!-- <Image
-        src={logo_dark}
-        alt="FoodProcessPortal"
-        class="logo logo-dark"
-      /> -->
       <span class="site-name">FoodProcessPortal</span>
     </a>
 
@@ -242,5 +241,5 @@ const t = siteConfig.translations[currentLocale as keyof typeof siteConfig.trans
 </script>
 
 <style>
-  @import '../styles/header.css';
+  @import "../styles/header.css";
 </style>

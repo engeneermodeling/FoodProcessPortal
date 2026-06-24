@@ -6,32 +6,37 @@ import Footer from "../../../components/Footer.astro";
 import { siteConfig } from "../../../config";
 
 export function getStaticPaths() {
-  const sections = ['problems', 'practice', 'reference', 'courses', 'videos'];
-  const locales = ['uk', 'ru', 'en', 'de'];
-  
+  const sections = ["problems", "practice", "reference", "courses", "videos"];
+  const locales = ["uk", "ru", "en", "de"];
+
   return locales.flatMap((locale) =>
     sections.map((section) => ({
       params: { locale, section },
-    }))
+    })),
   );
 }
 
 const { locale, section } = Astro.params;
-const t = siteConfig.translations[locale as keyof typeof siteConfig.translations];
+const t =
+  siteConfig.translations[locale as keyof typeof siteConfig.translations];
 const sectionData = t.sections[section as keyof typeof t.sections];
 
 const sectionIcons: Record<string, string> = {
-  problems: '🧮',
-  practice: '🔬',
-  reference: '📖',
-  courses: '',
-  videos: '🎥',
+  problems: "🧮",
+  practice: "🔬",
+  reference: "📖",
+  courses: "",
+  videos: "🎥",
 };
 
-const icon = sectionIcons[section as string] || '📄';
+const icon = sectionIcons[section as string] || "📄";
 ---
 
-<BaseLayout title={sectionData.title} description={sectionData.desc} locale={locale}>
+<BaseLayout
+  title={sectionData.title}
+  description={sectionData.desc}
+  locale={locale}
+>
   <Header>
     <ThemeToggle slot="theme-toggle" />
   </Header>
@@ -72,8 +77,5 @@ const icon = sectionIcons[section as string] || '📄';
 </BaseLayout>
 
 <style>
-  @import "../../styles/home.css";
-  @import "../../styles/topics.css";
-  @import "../../styles/topic.css";
-  @import "../../styles/section.css";
+  @import "../../../styles/section.css";
 </style>

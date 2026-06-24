@@ -1,6 +1,6 @@
 ---
-import { Image } from 'astro:assets';
-import logo_light from '../../public/images/logo-light-hex.svg';
+import { Image } from "astro:assets";
+import logo_light from "../../public/images/logo-light-hex.svg";
 
 import { siteConfig } from "../config";
 
@@ -41,7 +41,13 @@ const footerLinks = [
     <div class="footer-content">
       <div class="footer-left">
         <div class="footer-logo-wrapper">
-          <Image src={logo_light} alt="" class="footer-logo" />
+          <Image
+            src={logo_light}
+            alt="FoodProcessPortal"
+            class="footer-logo"
+            fetchpriority="high"
+            decoding="async"
+          />
           <div class="footer-brand-text">
             <span class="brand-name">{siteConfig.name}</span>
             <span class="brand-tagline">{t.footer.tagline}</span>
@@ -89,5 +95,5 @@ const footerLinks = [
 </footer>
 
 <style>
-  @import '../styles/footer.css';
+  @import "../styles/footer.css";
 </style>

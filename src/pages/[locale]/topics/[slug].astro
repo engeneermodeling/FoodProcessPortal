@@ -10,43 +10,58 @@ import { allTopics, getTopicSlug, getLocaleTopics } from "../../../data/topics";
 function generateSlug(text: string) {
   return text
     .toLowerCase()
-    .replace(/[^\w\s-]/g, '')
-    .replace(/\s+/g, '-')
+    .replace(/[^\w\s-]/g, "")
+    .replace(/\s+/g, "-")
     .trim();
 }
 
 export function getStaticPaths() {
-  const paths = Object.entries(allTopics).map(([path, module]: [string, any]) => {
-    const { locale, slug } = getTopicSlug(path);
-    
-    return {
-      params: { locale, slug },
-      props: {
-        frontmatter: module.frontmatter,
-        Content: module.default,
-      },
-    };
-  });
-  
+  const paths = Object.entries(allTopics).map(
+    ([path, module]: [string, any]) => {
+      const { locale, slug } = getTopicSlug(path);
+
+      return {
+        params: { locale, slug },
+        props: {
+          frontmatter: module.frontmatter,
+          Content: module.default,
+        },
+      };
+    },
+  );
+
   return paths;
 }
 
 const { locale, slug } = Astro.params;
 const { frontmatter, Content } = Astro.props;
-const t = siteConfig.translations[locale as keyof typeof siteConfig.translations];
+const t =
+  siteConfig.translations[locale as keyof typeof siteConfig.translations];
 
 // Отримуємо теми для поточної мови
 const localeTopics = getLocaleTopics(locale as string);
 
 const currentIndex = localeTopics.findIndex((topic) => topic.slug === slug);
 const prevTopic = currentIndex > 0 ? localeTopics[currentIndex - 1] : null;
-const nextTopic = currentIndex < localeTopics.length - 1 ? localeTopics[currentIndex + 1] : null;
+const nextTopic =
+  currentIndex < localeTopics.length - 1
+    ? localeTopics[currentIndex + 1]
+    : null;
 
 // Отримуємо заголовки
 let headings = frontmatter?.headings || [];
 ---
 
-<BaseLayout title={frontmatter?.title || 'Тема'} description={frontmatter?.description || ''} locale={locale}>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"
+/>
+
+<BaseLayout
+  title={frontmatter?.title || "Тема"}
+  description={frontmatter?.description || ""}
+  locale={locale}
+>
   <Header>
     <ThemeToggle slot="theme-toggle" />
   </Header>
@@ -56,48 +71,64 @@ let headings = frontmatter?.headings || [];
       <article class="topic-article">
         <a href={`/${locale}/topics`} class="back-link">← {t.backToTopics}</a>
         <h1 class="article-title">{frontmatter?.title}</h1>
-        
+
         {frontmatter?.icon && <div class="topic-icon">{frontmatter.icon}</div>}
-        
-        {headings.length > 0 && (
-          <nav class="table-of-contents">
-            <h2 class="toc-title">{t.tableOfContents}</h2>
-            <ul class="toc-list">
-              {headings.map((heading: any) => (
-                <li class={`toc-item toc-level-${heading.depth}`}>
-                  <a href={`#${heading.slug || generateSlug(heading.text)}`}>
-                    {heading.text}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </nav>
-        )}
-        
+
+        {
+          headings.length > 0 && (
+            <nav class="table-of-contents">
+              <h2 class="toc-title">{t.tableOfContents}</h2>
+              <ul class="toc-list">
+                {headings.map((heading: any) => (
+                  <li class={`toc-item toc-level-${heading.depth}`}>
+                    <a href={`#${heading.slug || generateSlug(heading.text)}`}>
+                      {heading.text}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          )
+        }
+
         <div class="topic-content">
           <Content />
         </div>
 
         <div class="topic-navigation">
-          {prevTopic ? (
-            <a href={`/${locale}/topics/${prevTopic.slug}`} class="nav-btn nav-prev">
-              <span class="nav-arrow">←</span>
-              <div class="nav-text">
-                <span class="nav-label">{t.prevTopic}</span>
-                <span class="nav-title">{prevTopic.title}</span>
-              </div>
-            </a>
-          ) : <div class="nav-spacer"></div>}
+          {
+            prevTopic ? (
+              <a
+                href={`/${locale}/topics/${prevTopic.slug}`}
+                class="nav-btn nav-prev"
+              >
+                <span class="nav-arrow">←</span>
+                <div class="nav-text">
+                  <span class="nav-label">{t.prevTopic}</span>
+                  <span class="nav-title">{prevTopic.title}</span>
+                </div>
+              </a>
+            ) : (
+              <div class="nav-spacer" />
+            )
+          }
 
-          {nextTopic ? (
-            <a href={`/${locale}/topics/${nextTopic.slug}`} class="nav-btn nav-next">
-              <div class="nav-text">
-                <span class="nav-label">{t.nextTopic}</span>
-                <span class="nav-title">{nextTopic.title}</span>
-              </div>
-              <span class="nav-arrow">→</span>
-            </a>
-          ) : <div class="nav-spacer"></div>}
+          {
+            nextTopic ? (
+              <a
+                href={`/${locale}/topics/${nextTopic.slug}`}
+                class="nav-btn nav-next"
+              >
+                <div class="nav-text">
+                  <span class="nav-label">{t.nextTopic}</span>
+                  <span class="nav-title">{nextTopic.title}</span>
+                </div>
+                <span class="nav-arrow">→</span>
+              </a>
+            ) : (
+              <div class="nav-spacer" />
+            )
+          }
         </div>
       </article>
     </div>
@@ -106,23 +137,40 @@ let headings = frontmatter?.headings || [];
 </BaseLayout>
 
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "{frontmatter?.title}",
-  "description": "{frontmatter?.description}",
-  "author": {
-    "@type": "Organization",
-    "name": "FoodProcessPortal"
-  },
-  "datePublished": "2026-01-01",
-  "inLanguage": "{locale}"
-}
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "{frontmatter?.title}",
+    "description": "{frontmatter?.description}",
+    "author": {
+      "@type": "Organization",
+      "name": "FoodProcessPortal"
+    },
+    "datePublished": "2026-01-01",
+    "inLanguage": "{locale}"
+  }
 </script>
 
+<!-- KaTeX init -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // @ts-ignore - KaTeX auto-render
+        if (window.renderMathInElement) {
+          // @ts-ignore - KaTeX auto-render
+          renderMathInElement(document.body, {
+            delimiters: [
+              { left: "$$", right: "$$", display: true },
+              { left: "$", right: "$", display: false },
+              { left: "\\(", right: "\\)", display: false },
+              { left: "\\[", right: "\\]", display: true },
+            ],
+            throwOnError: false,
+            strict: false,
+          });
+        }
+      });
+    </script>
+
 <style>
-  @import "../../../styles/home.css";
-  @import "../../../styles/topics.css";
   @import "../../../styles/topic.css";
-  @import "../../../styles/section.css";
 </style>

@@ -59,7 +59,10 @@ const siteName = siteConfig.title;
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImage} />
 
-    <meta name="google-site-verification" content="f5nalxq8R9B9N98asYtQaqbeD03S0T-mX9BgLfKKYe4" />
+    <meta
+      name="google-site-verification"
+      content="f5nalxq8R9B9N98asYtQaqbeD03S0T-mX9BgLfKKYe4"
+    />
 
     <!-- Hreflang для багатомовності -->
     <link
@@ -91,10 +94,34 @@ const siteName = siteConfig.title;
     <!-- Styles -->
     <link rel="stylesheet" href="/styles/theme.css" />
 
-    <!-- KaTeX -->
+    <!-- Preload логотипу -->
     <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"
+      rel="preload"
+      href="/images/logo-light-hex.svg"
+      as="image"
+      type="image/svg+xml"
+    />
+    <link
+      rel="preload"
+      href="/images/logo-dark-hex.svg"
+      as="image"
+      type="image/svg+xml"
+    />
+
+    <!-- DNS Prefetch для CDN -->
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+
+    <!-- Preconnect до Google -->
+    <link rel="preconnect" href="https://www.google-analytics.com" />
+    <link rel="preconnect" href="https://www.googletagmanager.com" />
+
+    <link
+      rel="preload"
+      href="/fonts/your-font.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
     />
 
     <!-- Google Analytics -->
@@ -122,30 +149,13 @@ const siteName = siteConfig.title;
   <body>
     <slot />
 
-    <!-- KaTeX init -->
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        // @ts-ignore - KaTeX auto-render
-        if (window.renderMathInElement) {
-          // @ts-ignore - KaTeX auto-render
-          renderMathInElement(document.body, {
-            delimiters: [
-              { left: "$$", right: "$$", display: true },
-              { left: "$", right: "$", display: false },
-              { left: "\\(", right: "\\)", display: false },
-              { left: "\\[", right: "\\]", display: true },
-            ],
-            throwOnError: false,
-            strict: false,
-          });
-        }
-      });
-    </script>
+    
   </body>
 </html>
 
 <style is:global>
-  
-
+  @import "/public/styles/theme.css";
+  /* @import "../styles/footer.css"; */
+  @import "../styles/home.css"
 
 </style>
