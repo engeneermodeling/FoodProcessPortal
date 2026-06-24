@@ -1,4 +1,8 @@
 ---
+import { Image } from 'astro:assets';
+import logo_light from '../../public/images/logo-light-hex.svg';
+
+
 const currentPath = Astro.url.pathname;
 
 type Locale = "uk" | "ru" | "en" | "de";
@@ -44,16 +48,16 @@ const t = siteConfig.translations[currentLocale as keyof typeof siteConfig.trans
 <header class="site-header" id="header">
   <div class="header-container">
     <a href={`/${currentLocale}`} class="logo-link">
-      <img
-        src="/images/logo-light-hex.svg"
+      <Image
+        src={logo_light}
         alt="FoodProcessPortal"
-        class="logo logo-light"
+        class="logo logo-light header-logo"
       />
-      <img
-        src="/images/logo-dark-hex.svg"
+      <!-- <Image
+        src={logo_dark}
         alt="FoodProcessPortal"
         class="logo logo-dark"
-      />
+      /> -->
       <span class="site-name">FoodProcessPortal</span>
     </a>
 
@@ -236,3 +240,7 @@ const t = siteConfig.translations[currentLocale as keyof typeof siteConfig.trans
     });
   });
 </script>
+
+<style>
+  @import '../styles/header.css';
+</style>

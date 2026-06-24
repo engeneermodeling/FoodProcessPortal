@@ -1,6 +1,9 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { siteConfig } from "../config";
+import { Image } from 'astro:assets';
+import logo from '../../public/images/logo-dark-hex.svg';
+
 
 
 export function getStaticPaths() {
@@ -28,7 +31,7 @@ const languages = [
   <main class="landing-page">
     <div class="container">
       <div class="welcome-section">
-        <img src="/images/logo-light-hex.svg" alt="FoodProcessPortal" class="landing-logo" />
+        <Image src={logo} alt="FoodProcessPortal" class="landing-logo" />
         <h1>FoodProcessPortal</h1>
         <p class="subtitle">{t_uk.subtitle}</p>
         <p class="subtitle">{t_ru.subtitle}</p>
@@ -51,3 +54,6 @@ const languages = [
   </main>
 </BaseLayout>
 
+<style>
+  @import '../styles/main.css';
+</style>

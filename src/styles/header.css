@@ -41,22 +41,6 @@
   object-fit: contain;
 }
 
-.logo-light {
-  display: block;
-}
-
-.logo-dark {
-  display: none;
-}
-
-:global(:root[data-theme="dark"]) .logo-light {
-  display: none;
-}
-
-:global(:root[data-theme="dark"]) .logo-dark {
-  display: block;
-}
-
 .site-name {
   font-size: 1.5rem;
   font-weight: 700;

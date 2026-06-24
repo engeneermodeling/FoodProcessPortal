@@ -120,6 +120,9 @@
   const icon = document.getElementById("theme-icon");
   const options = document.querySelectorAll(".theme-option");
 
+  const logo_dark = "../../public/images/logo-dark-hex.svg";
+  const logo_light = "../../public/images/logo-light-hex.svg";
+
   // === Утиліти ===
   const getSystemTheme = () =>
     window.matchMedia("(prefers-color-scheme: dark)").matches
@@ -153,10 +156,19 @@
     const currentTheme = localStorage.getItem("theme") || "auto";
     const effectiveTheme = getEffectiveTheme(currentTheme);
 
-    footerLogo.src =
-      effectiveTheme === "dark"
-        ? "/images/logo-dark.svg"
-        : "/images/logo-light.svg";
+    footerLogo.src = effectiveTheme === "dark" ? logo_dark : logo_light;
+  }
+
+  function updateHeaderLogo() {
+    const headerLogo = document.querySelector(
+      ".header-logo",
+    ) as HTMLImageElement | null;
+    if (!headerLogo) return;
+
+    const currentTheme = localStorage.getItem("theme") || "auto";
+    const effectiveTheme = getEffectiveTheme(currentTheme);
+
+    headerLogo.src = effectiveTheme === "dark" ? logo_dark : logo_light;
   }
 
   // === Основна функція ===
@@ -167,6 +179,7 @@
     );
     updateThemeIcon(theme);
     updateFooterLogo();
+    updateHeaderLogo();
   }
 
   // === Слухачі подій ===

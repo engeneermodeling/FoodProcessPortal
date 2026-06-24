@@ -7,24 +7,25 @@ import { siteConfig } from "../../config";
 import { getCollection } from "astro:content";
 
 export function getStaticPaths() {
-  return ['uk', 'ru', 'en', 'de'].map(locale => ({
+  return ["uk", "ru", "en", "de"].map((locale) => ({
     params: { locale },
   }));
 }
 
 const { locale } = Astro.params;
-const t = siteConfig.translations[locale as keyof typeof siteConfig.translations];
+const t =
+  siteConfig.translations[locale as keyof typeof siteConfig.translations];
 
 const sections = [
-  { href: `/${locale}/topics`, key: 'topics', color: 'blue' },
-  { href: `/${locale}/problems`, key: 'problems', color: 'green' },
-  { href: `/${locale}/practice`, key: 'practice', color: 'blue' },
-  { href: `/${locale}/reference`, key: 'reference', color: 'green' },
-  { href: `/${locale}/courses`, key: 'courses', color: 'blue' },
-  { href: `/${locale}/videos`, key: 'videos', color: 'green' },
+  { href: `/${locale}/topics`, key: "topics", color: "blue" },
+  { href: `/${locale}/problems`, key: "problems", color: "green" },
+  { href: `/${locale}/practice`, key: "practice", color: "blue" },
+  { href: `/${locale}/reference`, key: "reference", color: "green" },
+  { href: `/${locale}/courses`, key: "courses", color: "blue" },
+  { href: `/${locale}/videos`, key: "videos", color: "green" },
 ];
 
-const allTopics = await getCollection('topics');
+const allTopics = await getCollection("topics");
 // console.log('📚 Topics:', allTopics.length);
 ---
 
@@ -42,35 +43,45 @@ const allTopics = await getCollection('topics');
       </div>
 
       <nav class="nav-grid">
-        {sections.map((section, index) => {
-          const sectionData = t.sections[section.key as keyof typeof t.sections];
-          return (
-            <a href={section.href} class={`card card-${section.color}`}>
-              <div class="card-corner card-corner-tl"></div>
-              <div class="card-corner card-corner-tr"></div>
-              <div class="card-corner card-corner-bl"></div>
-              <div class="card-corner card-corner-br"></div>
-              <div class="card-header">
-                <span class="card-number">0{index + 1}</span>
-                <span class="card-icon">
-                  {section.key === 'topics' && '📚'}
-                  {section.key === 'problems' && '🧮'}
-                  {section.key === 'practice' && '🔬'}
-                  {section.key === 'reference' && '📖'}
-                  {section.key === 'courses' && '📝'}
-                  {section.key === 'videos' && '🎥'}
-                </span>
-              </div>
-              <h2 class="card-title">{sectionData.title}</h2>
-              <p class="card-desc">{sectionData.desc}</p>
-              <div class="card-footer">
-                <span class="card-link">{t.goTo} →</span>
-              </div>
-            </a>
-          );
-        })}
+        {
+          sections.map((section, index) => {
+            const sectionData =
+              t.sections[section.key as keyof typeof t.sections];
+            return (
+              <a href={section.href} class={`card card-${section.color}`}>
+                <div class="card-corner card-corner-tl" />
+                <div class="card-corner card-corner-tr" />
+                <div class="card-corner card-corner-bl" />
+                <div class="card-corner card-corner-br" />
+                <div class="card-header">
+                  <span class="card-number">0{index + 1}</span>
+                  <span class="card-icon">
+                    {section.key === "topics" && "📚"}
+                    {section.key === "problems" && "🧮"}
+                    {section.key === "practice" && "🔬"}
+                    {section.key === "reference" && "📖"}
+                    {section.key === "courses" && "📝"}
+                    {section.key === "videos" && "🎥"}
+                  </span>
+                </div>
+                <h2 class="card-title">{sectionData.title}</h2>
+                <p class="card-desc">{sectionData.desc}</p>
+                <div class="card-footer">
+                  <span class="card-link">{t.goTo} →</span>
+                </div>
+              </a>
+            );
+          })
+        }
       </nav>
     </div>
   </main>
   <Footer />
 </BaseLayout>
+
+<style>
+  @import "../../styles/home.css";
+  @import "../../styles/topics.css";
+  @import "../../styles/topic.css";
+  @import "../../styles/section.css";
+</style>
