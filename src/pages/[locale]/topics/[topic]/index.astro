@@ -1,0 +1,178 @@
+---
+import BaseLayout from "../../../../layouts/BaseLayout.astro";
+import Header from "../../../../components/Header.astro";
+import ThemeToggle from "../../../../components/ThemeToggle.astro";
+import Footer from "../../../../components/Footer.astro";
+import { siteConfig } from "../../../../config";
+import { ENABLED_LOCALES } from "../../../../locales.config";
+
+// Статичні glob-и
+const allTopics = import.meta.glob("/src/content/topics/**/*.md", { eager: true });
+const allLectures = import.meta.glob("/src/content/lectures/**/*.md", { eager: true });
+
+export function getStaticPaths() {
+  const topics = import.meta.glob("/src/content/topics/**/*.md", { eager: true });
+  const paths: any[] = [];
+  const locales = [...ENABLED_LOCALES];
+
+  for (const [path, mod] of Object.entries(topics)) {
+    const parts = path.split("/");
+    const localeIdx = parts.indexOf("topics") + 1;
+    const locale = parts[localeIdx];
+    const slug = parts[parts.length - 1]?.replace(".md", "") || "";
+    if (locales.includes(locale) && slug) {
+      paths.push({
+        params: { locale, topic: slug },
+        props: { frontmatter: (mod as any).frontmatter, Content: (mod as any).default },
+      });
+    }
+  }
+  return paths;
+}
+
+const { locale, topic } = Astro.params;
+const { frontmatter, Content } = Astro.props;
+const t = siteConfig.translations[locale as keyof typeof siteConfig.translations];
+
+// Фільтруємо лекції: шукаємо /lectures/{locale}/{topic}/
+const lectures = Object.entries(allLectures)
+  .filter(([path]) => {
+    const parts = path.split("/");
+    const li = parts.indexOf("lectures");
+    return li !== -1 && parts[li + 1] === locale && parts[li + 2] === topic;
+  })
+  .map(([path, mod]: [string, any]) => ({
+    slug: path.split("/").pop()?.replace(".md", "") || "",
+    ...(mod.frontmatter || {}),
+  }))
+  .sort((a, b) => (a.lecture || 0) - (b.lecture || 0));
+
+const lectureWord =
+  locale === "uk" ? "Лекція" :
+  locale === "de" ? "Vorlesung" :
+  locale === "ru" ? "Лекция" : "Lecture";
+
+const backWord =
+  locale === "uk" ? "← Назад до тем" :
+  locale === "de" ? "← Zurück zu Themen" :
+  locale === "ru" ? "← Назад к темам" : "← Back to topics";
+---
+
+<BaseLayout
+  title={frontmatter?.title || "Тема"}
+  description={frontmatter?.description || ""}
+  locale={locale}
+>
+  <Header>
+    <ThemeToggle slot="theme-toggle" />
+  </Header>
+
+  <main class="main-content">
+    <div class="container">
+      <article class="topic-article">
+        <a href={"/" + locale + "/topics"} class="back-link">{backWord}</a>
+
+        <div class="topic-header">
+          {frontmatter?.icon && <span class="topic-icon-large">{frontmatter.icon}</span>}
+          <div>
+            <h1 class="article-title">{frontmatter?.title}</h1>
+            {frontmatter?.description && (
+              <p class="topic-desc">{frontmatter.description}</p>
+            )}
+          </div>
+        </div>
+
+        {lectures.length > 0 ? (
+          <section class="lectures-section">
+            <h2 class="lectures-heading">
+              <span class="lectures-icon">📖</span>
+              {lectureWord === "Лекція" ? "Лекції" :
+               lectureWord === "Лекция" ? "Лекции" :
+               lectureWord === "Vorlesung" ? "Vorlesungen" : "Lectures"}
+            </h2>
+            <div class="lectures-list">
+              {lectures.map((lec: any) => (
+                <a
+                  href={"/" + locale + "/topics/" + topic + "/" + lec.slug}
+                  class="lecture-card"
+                >
+                  <div class="lecture-number">
+                    {lectureWord} {lec.lecture}
+                  </div>
+                  <div class="lecture-info">
+                    <h3 class="lecture-title">{lec.title}</h3>
+                    {lec.description && (
+                      <p class="lecture-desc">{lec.description}</p>
+                    )}
+                    <div class="lecture-meta">
+                      {lec.duration && <span class="meta-badge">⏱ {lec.duration}</span>}
+                      {lec.difficulty && <span class="meta-badge">📊 {lec.difficulty}</span>}
+                    </div>
+                  </div>
+                  <span class="lecture-arrow">→</span>
+                </a>
+              ))}
+            </div>
+          </section>
+        ) : (
+          <div class="topic-content">
+            <Content />
+          </div>
+        )}
+      </article>
+    </div>
+  </main>
+  <Footer />
+</BaseLayout>
+
+<style>
+  @import "../../../../styles/topic.css";
+
+  .topic-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.25rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 2px solid var(--border-color);
+  }
+  .topic-icon-large { font-size: 3rem; line-height: 1; flex-shrink: 0; }
+  .topic-desc { color: var(--text-secondary); font-size: 1.1rem; margin: 0.5rem 0 0; }
+  .lectures-section { margin-top: 2rem; }
+  .lectures-heading {
+    font-size: 1.4rem; font-weight: 700; color: var(--text-primary);
+    margin: 0 0 1.25rem; display: flex; align-items: center; gap: 0.5rem;
+  }
+  .lectures-list { display: flex; flex-direction: column; gap: 1rem; }
+  .lecture-card {
+    display: flex; align-items: center; gap: 1.25rem;
+    padding: 1.25rem 1.5rem;
+    background: var(--bg-secondary); border: 1px solid var(--border-color);
+    border-radius: 0.75rem; text-decoration: none; color: var(--text-primary);
+    transition: all 0.2s ease; border-left: 4px solid var(--accent-blue);
+  }
+  .lecture-card:hover {
+    background: var(--bg-primary); border-color: var(--accent-blue);
+    transform: translateX(4px); box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  }
+  .lecture-number {
+    font-size: 0.8rem; font-weight: 700; color: var(--accent-blue);
+    text-transform: uppercase; letter-spacing: 0.05em;
+    white-space: nowrap; min-width: 90px;
+  }
+  .lecture-info { flex: 1; min-width: 0; }
+  .lecture-title { font-size: 1.05rem; font-weight: 600; margin: 0 0 0.35rem; }
+  .lecture-desc { font-size: 0.9rem; color: var(--text-secondary); margin: 0 0 0.5rem; line-height: 1.5; }
+  .lecture-meta { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+  .meta-badge {
+    font-size: 0.78rem; color: var(--text-secondary);
+    background: var(--bg-primary); border: 1px solid var(--border-color);
+    border-radius: 1rem; padding: 0.15rem 0.6rem;
+  }
+  .lecture-arrow { font-size: 1.25rem; color: var(--accent-blue); flex-shrink: 0; }
+  .lecture-card:hover .lecture-arrow { transform: translateX(4px); }
+  @media (max-width: 640px) {
+    .topic-header { flex-direction: column; }
+    .lecture-card { flex-wrap: wrap; }
+  }
+</style>

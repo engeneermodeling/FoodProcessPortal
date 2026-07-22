@@ -3,7 +3,8 @@ import type { APIRoute } from 'astro';
 const allTopics = import.meta.glob('/src/content/topics/**/*.md', { eager: true });
 
 const locales = ['uk', 'ru', 'en', 'de'];
-const sections = ['problems', 'practice', 'reference', 'courses', 'videos'];
+const sections = ['problems', 'practice', 'courses', 'videos'];
+const referenceTools = ['water'];
 const baseUrl = 'https://foodprocessportal.vercel.app'; // ← Заміни на свій домен
 
 export const GET: APIRoute = () => {
@@ -56,6 +57,27 @@ export const GET: APIRoute = () => {
     <lastmod>${now}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
+  </url>`);
+    });
+  });
+
+  // Довідник
+  locales.forEach((locale) => {
+    urls.push(`
+  <url>
+    <loc>${baseUrl}/${locale}/reference</loc>
+    <lastmod>${now}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>`);
+
+    referenceTools.forEach((tool) => {
+      urls.push(`
+  <url>
+    <loc>${baseUrl}/${locale}/reference/${tool}</loc>
+    <lastmod>${now}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>`);
     });
   });

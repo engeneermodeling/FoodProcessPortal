@@ -4,34 +4,44 @@ import Header from "../../../components/Header.astro";
 import ThemeToggle from "../../../components/ThemeToggle.astro";
 import Footer from "../../../components/Footer.astro";
 import { siteConfig } from "../../../config";
+import { ENABLED_LOCALES } from "../../../locales.config";
 
-const allTopics = import.meta.glob("/src/content/topics/**/*.md", {
-  eager: true,
-});
+// Статичні glob-и без template literals
+const allTopicsUk = import.meta.glob("/src/content/topics/uk/*.md", { eager: true });
+const allTopicsEn = import.meta.glob("/src/content/topics/en/*.md", { eager: true });
+const allTopicsRu = import.meta.glob("/src/content/topics/ru/*.md", { eager: true });
+const allTopicsDe = import.meta.glob("/src/content/topics/de/*.md", { eager: true });
 
 export function getStaticPaths() {
-  return ["uk", "ru", "en", "de"].map((locale) => ({
+  return [...ENABLED_LOCALES].map((locale) => ({
     params: { locale },
   }));
 }
 
 const { locale } = Astro.params;
-const t =
-  siteConfig.translations[locale as keyof typeof siteConfig.translations];
+const t = siteConfig.translations[locale as keyof typeof siteConfig.translations];
 
-// Отримуємо всі теми для поточної мови
-const topics = Object.entries(allTopics)
-  .filter(([path]) => path.includes(`/${locale}/`))
+// Вибираємо правильний набір тем залежно від локалі
+// Тільки активні мови з ENABLED_LOCALES потрапляють у маппінг
+const allLocaleTopicsMap: Record<string, Record<string, any>> = {
+  uk: allTopicsUk,
+  en: allTopicsEn,
+  ru: allTopicsRu,
+  de: allTopicsDe,
+};
+
+const rawTopics = allLocaleTopicsMap[locale] || allTopicsUk;
+
+const topics = Object.entries(rawTopics)
   .map(([path, module]: [string, any]) => ({
     slug: path.split("/").pop()?.replace(".md", "") || "",
-    ...module.frontmatter,
+    ...(module.frontmatter || {}),
   }))
   .sort((a, b) => (a.order || 0) - (b.order || 0));
 
-// Отримуємо унікальні категорії
 const categories = [
   "all",
-  ...new Set(topics.map((t) => t.category).filter(Boolean)),
+  ...new Set(topics.map((t: any) => t.category).filter(Boolean)),
 ];
 ---
 
@@ -88,7 +98,7 @@ const categories = [
       <!-- Список тем -->
       <div class="topics-list" id="topics-list">
         {
-          topics.map((topic) => (
+          topics.map((topic: any) => (
             <a
               href={`/${locale}/topics/${topic.slug}`}
               class="topic-card"
@@ -96,6 +106,7 @@ const categories = [
               data-title={(topic.title || "").toLowerCase()}
               data-description={(topic.description || "").toLowerCase()}
             >
+              {topic.icon && <span class="topic-icon">{topic.icon}</span>}
               <h2 class="topic-title">{topic.title}</h2>
               <p class="topic-excerpt">{topic.description || ""}</p>
               <span class="topic-link">{t.goTo} →</span>
@@ -117,15 +128,9 @@ const categories = [
 
 <script>
   document.addEventListener("DOMContentLoaded", () => {
-    const searchInput = document.getElementById(
-      "topic-search",
-    ) as HTMLInputElement;
-    const searchClear = document.getElementById(
-      "search-clear",
-    ) as HTMLButtonElement;
-    const searchStats = document.getElementById(
-      "search-stats",
-    ) as HTMLDivElement;
+    const searchInput = document.getElementById("topic-search") as HTMLInputElement;
+    const searchClear = document.getElementById("search-clear") as HTMLButtonElement;
+    const searchStats = document.getElementById("search-stats") as HTMLDivElement;
     const filterBtns = document.querySelectorAll(".filter-btn");
     const topicCards = document.querySelectorAll(".topic-card");
     const noResults = document.getElementById("no-results") as HTMLDivElement;
@@ -134,7 +139,6 @@ const categories = [
     let currentCategory = "all";
     let currentSearch = "";
 
-    // Фільтрація тем
     function filterTopics() {
       let visibleCount = 0;
       const searchLower = currentSearch.toLowerCase();
@@ -145,12 +149,8 @@ const categories = [
         const cardDescription = card.getAttribute("data-description") || "";
         const htmlCard = card as HTMLElement;
 
-        const matchesCategory =
-          currentCategory === "all" || cardCategory === currentCategory;
-        const matchesSearch =
-          searchLower === "" ||
-          cardTitle.includes(searchLower) ||
-          cardDescription.includes(searchLower);
+        const matchesCategory = currentCategory === "all" || cardCategory === currentCategory;
+        const matchesSearch = searchLower === "" || cardTitle.includes(searchLower) || cardDescription.includes(searchLower);
 
         if (matchesCategory && matchesSearch) {
           htmlCard.style.display = "block";
@@ -160,11 +160,7 @@ const categories = [
         }
       });
 
-      // Показуємо/приховуємо повідомлення про відсутність результатів
-      if (
-        visibleCount === 0 &&
-        (currentSearch !== "" || currentCategory !== "all")
-      ) {
+      if (visibleCount === 0 && (currentSearch !== "" || currentCategory !== "all")) {
         noResults.style.display = "block";
         topicsList.style.display = "none";
       } else {
@@ -172,21 +168,17 @@ const categories = [
         topicsList.style.display = "grid";
       }
 
-      // Оновлюємо статистику
       if (currentSearch !== "") {
-        const resultsLabel =
-          searchStats.getAttribute("data-label") || "результатів";
-        searchStats.textContent = `${visibleCount} ${resultsLabel}`;
+        const resultsLabel = searchStats.getAttribute("data-label") || "результатів";
+        searchStats.textContent = visibleCount + " " + resultsLabel;
         searchStats.style.display = "block";
       } else {
         searchStats.style.display = "none";
       }
 
-      // Показуємо/приховуємо кнопку очищення
       searchClear.style.display = currentSearch !== "" ? "block" : "none";
     }
 
-    // Обробка пошуку з debounce
     let debounceTimer: any;
     searchInput.addEventListener("input", (e) => {
       currentSearch = (e.target as HTMLInputElement).value;
@@ -194,7 +186,6 @@ const categories = [
       debounceTimer = setTimeout(filterTopics, 200);
     });
 
-    // Очищення пошуку
     searchClear.addEventListener("click", () => {
       searchInput.value = "";
       currentSearch = "";
@@ -202,23 +193,17 @@ const categories = [
       filterTopics();
     });
 
-    // Обробка фільтрів категорій
     filterBtns.forEach((btn) => {
       btn.addEventListener("click", () => {
         currentCategory = btn.getAttribute("data-category") || "all";
-
         filterBtns.forEach((b) => b.classList.remove("active"));
         btn.classList.add("active");
-
         filterTopics();
       });
     });
 
-    // Встановлюємо першу кнопку активною
     const firstBtn = filterBtns[0] as HTMLButtonElement;
-    if (firstBtn) {
-      firstBtn.classList.add("active");
-    }
+    if (firstBtn) firstBtn.classList.add("active");
   });
 </script>
 

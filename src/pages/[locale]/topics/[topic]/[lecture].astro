@@ -1,0 +1,160 @@
+---
+import BaseLayout from "../../../../layouts/BaseLayout.astro";
+import Header from "../../../../components/Header.astro";
+import ThemeToggle from "../../../../components/ThemeToggle.astro";
+import Footer from "../../../../components/Footer.astro";
+import { siteConfig } from "../../../../config";
+import { ENABLED_LOCALES } from "../../../../locales.config";
+
+export function getStaticPaths() {
+  const lectures = import.meta.glob("/src/content/lectures/**/*.md", { eager: true });
+  const paths: any[] = [];
+
+  for (const [path, mod] of Object.entries(lectures)) {
+    const parts = path.split("/");
+    const lecturesIdx = parts.indexOf("lectures");
+    const locale = parts[lecturesIdx + 1];
+    const topic = parts[lecturesIdx + 2];
+    const slug = parts.pop()?.replace(".md", "") || "";
+
+    paths.push({
+      params: { locale, topic, lecture: slug },
+      props: {
+        frontmatter: (mod as any).frontmatter,
+        Content: (mod as any).default,
+      },
+    });
+  }
+  return paths;
+}
+
+const { locale, topic, lecture } = Astro.params;
+const { frontmatter, Content } = Astro.props;
+const t = siteConfig.translations[locale as keyof typeof siteConfig.translations];
+
+// Усі лекції цієї теми для навігації
+const allLectures = import.meta.glob("/src/content/lectures/**/*.md", { eager: true });
+const topicLectures = Object.entries(allLectures)
+  .filter(([p]) => {
+    const parts = p.split("/");
+    const li = parts.indexOf("lectures");
+    return li !== -1 && parts[li + 1] === locale && parts[li + 2] === topic;
+  })
+  .map(([p, m]: [string, any]) => ({
+    slug: p.split("/").pop()?.replace(".md", "") || "",
+    lecture: m.frontmatter.lecture,
+    title: m.frontmatter.title,
+  }))
+  .sort((a, b) => a.lecture - b.lecture);
+
+const currentIdx = topicLectures.findIndex((l) => l.slug === lecture);
+const prevLec = currentIdx > 0 ? topicLectures[currentIdx - 1] : null;
+const nextLec = currentIdx < topicLectures.length - 1 ? topicLectures[currentIdx + 1] : null;
+
+const lectureWord = locale === "uk" ? "Лекція" : locale === "de" ? "Vorlesung" : locale === "ru" ? "Лекция" : "Lecture";
+const backWord = locale === "uk" ? "← Назад до теми" : locale === "de" ? "← Zurück zum Thema" : locale === "ru" ? "← Назад к теме" : "← Back to topic";
+const prevWord = locale === "uk" ? "Попередня лекція" : locale === "de" ? "Vorherige Vorlesung" : locale === "ru" ? "Предыдущая лекция" : "Previous lecture";
+const nextWord = locale === "uk" ? "Наступна лекція" : locale === "de" ? "Nächste Vorlesung" : locale === "ru" ? "Следующая лекция" : "Next lecture";
+---
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" />
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+
+<BaseLayout
+  title={frontmatter?.title || "Лекція"}
+  description={frontmatter?.description || ""}
+  locale={locale}
+>
+  <Header>
+    <ThemeToggle slot="theme-toggle" />
+  </Header>
+
+  <main class="main-content">
+    <div class="container lecture-container">
+
+      <!-- Sidebar: навігація по лекціях -->
+      <aside class="lecture-sidebar">
+        <a href={`/${locale}/topics/${topic}`} class="back-link sidebar-back">{backWord}</a>
+        <nav class="lecture-nav">
+          <div class="lecture-nav-title">{frontmatter?.topic_title || topic}</div>
+          {topicLectures.map((lec) => (
+            <a
+              href={`/${locale}/topics/${topic}/${lec.slug}`}
+              class={`lecture-nav-item ${lec.slug === lecture ? "active" : ""}`}
+            >
+              <span class="nav-num">{lec.lecture}</span>
+              <span class="nav-lec-title">{lec.title}</span>
+            </a>
+          ))}
+        </nav>
+      </aside>
+
+      <!-- Main: вміст лекції -->
+      <article class="lecture-article">
+        <header class="lecture-header">
+          <div class="lecture-badge">{lectureWord} {frontmatter?.lecture}</div>
+          <h1 class="lecture-title">{frontmatter?.title}</h1>
+          <div class="lecture-meta-row">
+            {frontmatter?.duration && <span class="meta-chip">⏱ {frontmatter.duration}</span>}
+            {frontmatter?.difficulty && <span class="meta-chip">📊 {frontmatter.difficulty}</span>}
+            {frontmatter?.updated && <span class="meta-chip">🗓 {frontmatter.updated}</span>}
+          </div>
+        </header>
+
+        <div class="lecture-content">
+          <Content />
+        </div>
+
+        <!-- Навігація між лекціями -->
+        <div class="topic-navigation">
+          {prevLec ? (
+            <a href={`/${locale}/topics/${topic}/${prevLec.slug}`} class="nav-btn nav-prev">
+              <span class="nav-arrow">←</span>
+              <div class="nav-text">
+                <span class="nav-label">{prevWord}</span>
+                <span class="nav-title">{prevLec.title}</span>
+              </div>
+            </a>
+          ) : (
+            <div class="nav-spacer" />
+          )}
+          {nextLec ? (
+            <a href={`/${locale}/topics/${topic}/${nextLec.slug}`} class="nav-btn nav-next">
+              <div class="nav-text">
+                <span class="nav-label">{nextWord}</span>
+                <span class="nav-title">{nextLec.title}</span>
+              </div>
+              <span class="nav-arrow">→</span>
+            </a>
+          ) : (
+            <div class="nav-spacer" />
+          )}
+        </div>
+      </article>
+    </div>
+  </main>
+  <Footer />
+</BaseLayout>
+
+<!-- KaTeX init -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // @ts-ignore
+    if (window.renderMathInElement) {
+      // @ts-ignore
+      renderMathInElement(document.body, {
+        delimiters: [
+          { left: "$$", right: "$$", display: true },
+          { left: "$", right: "$", display: false },
+        ],
+        throwOnError: false,
+      });
+    }
+  });
+</script>
+
+<style>
+  @import "../../../../styles/topic.css";
+  @import "../../../../styles/lecture.css";
+</style>

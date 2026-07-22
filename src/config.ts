@@ -1,7 +1,7 @@
 export const siteConfig = {
   // Основна інформація
-  version: "1.0.0",
-  releaseDate: "2026-06-20",
+  version: "1.2.1",
+  releaseDate: "2026-07-13",
   platform: "Astro 6.4",
   email: "feedback@foodprocessportal.com",
   name: "FoodProcessPortal",
@@ -62,6 +62,7 @@ export const siteConfig = {
       tableOfContents: "Зміст",
       categories: {
         all: "Всі теми",
+        "general": "Загальні відомості",
         "heat-exchange": "Теплообмін",
         "mass-transfer": "Масообмін",
         hydromechanical: "Гідромеханічні процеси",
@@ -72,6 +73,16 @@ export const siteConfig = {
       searchPlaceholder: "Пошук тем...",
       noResults: "Нічого не знайдено",
       searchResults: "Знайдено тем",
+
+      reference: {
+        hubSubtitle: "Інтерактивні калькулятори, формули та довідкові таблиці для розрахунків у харчових технологіях",
+        waterTitle: "Теплофізичні властивості води",
+        waterDesc: "Калькулятор густини, теплоємності, теплопровідності, в'язкості та інших властивостей води, льоду і пари за температурою та тиском.",
+        waterEyebrow: "Термодинамічний калькулятор",
+        backToReference: "← Назад до довідника",
+        externalNote: "Окрема версія калькулятора також доступна на",
+        openStandalone: "Відкрити автономну версію калькулятора:",
+      },
     },
 
     ru: {
@@ -137,6 +148,16 @@ export const siteConfig = {
       searchPlaceholder: "Поиск тем...",
       noResults: "Ничего не найдено",
       searchResults: "Найдено тем",
+
+      reference: {
+        hubSubtitle: "Интерактивные калькуляторы, формулы и справочные таблицы для расчётов в пищевых технологиях",
+        waterTitle: "Теплофизические свойства воды",
+        waterDesc: "Калькулятор плотности, теплоёмкости, теплопроводности, вязкости и других свойств воды, льда и пара по температуре и давлению.",
+        waterEyebrow: "Термодинамический калькулятор",
+        backToReference: "← Назад к справочнику",
+        externalNote: "Отдельная версия калькулятора также доступна на",
+        openStandalone: "Открыть автономную версию калькулятора:",
+      },
     },
 
     en: {
@@ -193,6 +214,7 @@ export const siteConfig = {
 
       categories: {
         all: "All topics",
+        "general": "General principles",
         "heat-exchange": "Heat exchange",
         "mass-transfer": "Mass transfer",
         hydromechanical: "Hydromechanical processes",
@@ -202,6 +224,16 @@ export const siteConfig = {
       searchPlaceholder: "Search topics...",
       noResults: "No results found",
       searchResults: "Topics found",
+
+      reference: {
+        hubSubtitle: "Interactive calculators, formulas, and reference tables for food process engineering",
+        waterTitle: "Thermophysical properties of water",
+        waterDesc: "Calculator for density, heat capacity, thermal conductivity, viscosity, and other properties of water, ice, and steam by temperature and pressure.",
+        waterEyebrow: "Thermodynamic calculator",
+        backToReference: "← Back to reference",
+        externalNote: "A standalone version of the calculator is also available at",
+        openStandalone: "Open the standalone calculator:",
+      },
     },
 
     de: {
@@ -259,6 +291,7 @@ export const siteConfig = {
 
       categories: {
         all: "Alle Themen",
+        "general": "Grundlagen",
         "heat-exchange": "Wärmeübertragung",
         "mass-transfer": "Stoffübertragung",
         hydromechanical: "Hydromechanische Prozesse",
@@ -268,6 +301,16 @@ export const siteConfig = {
       searchPlaceholder: "Themen suchen...",
       noResults: "Keine Ergebnisse gefunden",
       searchResults: "Gefundene Themen",
+
+      reference: {
+        hubSubtitle: "Interaktive Rechner, Formeln und Referenztabellen für Berechnungen in der Lebensmitteltechnologie",
+        waterTitle: "Thermophysikalische Eigenschaften von Wasser",
+        waterDesc: "Rechner für Dichte, Wärmekapazität, Wärmeleitfähigkeit, Viskosität und weitere Eigenschaften von Wasser, Eis und Dampf nach Temperatur und Druck.",
+        waterEyebrow: "Thermodynamischer Rechner",
+        backToReference: "← Zurück zum Nachschlagewerk",
+        externalNote: "Eine eigenständige Version des Rechners ist auch verfügbar unter",
+        openStandalone: "Eigenständigen Rechner öffnen:",
+      },
     },
   },
 

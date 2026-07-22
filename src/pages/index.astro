@@ -1,51 +1,37 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { siteConfig } from "../config";
-import { Image } from 'astro:assets';
-import logo from '../../public/images/logo-dark-hex.svg';
+import { ENABLED_LOCALES, LOCALE_NAMES, DEFAULT_LOCALE } from "../locales.config";
 
+const t = siteConfig.translations[DEFAULT_LOCALE as keyof typeof siteConfig.translations];
 
-
-export function getStaticPaths() {
-  return ['uk', 'ru', 'en', 'de'].map(locale => ({
-    params: { locale },
-  }));
-}
-
-const { locale } = Astro.params;
-const t_uk = siteConfig.translations["uk" as keyof typeof siteConfig.translations];
-const t_ru = siteConfig.translations["ru" as keyof typeof siteConfig.translations];
-const t_en = siteConfig.translations["en" as keyof typeof siteConfig.translations];
-const t_de = siteConfig.translations["de" as keyof typeof siteConfig.translations];
-
-
-const languages = [
-  { code: 'uk', name: 'Українська', flag: '🇺🇦' },
-  { code: 'ru', name: 'Русский', flag: '🇷🇺' },
-  { code: 'en', name: 'English', flag: '🇬🇧' },
-  { code: 'de', name: 'Deutsch', flag: '🇩🇪' },
-];
+// Беремо тільки активні мови з locales.config.ts
+const languages = ENABLED_LOCALES.map(code => ({
+  // code,
+  ...LOCALE_NAMES[code],
+}));
 ---
 
-<BaseLayout title={siteConfig.name} description={t_uk.subtitle} locale="uk">
+<BaseLayout title={siteConfig.name} description={t.subtitle} locale={DEFAULT_LOCALE}>
   <main class="landing-page">
     <div class="container">
       <div class="welcome-section">
-        <Image src={logo} alt="FoodProcessPortal" class="landing-logo" />
+        <div class="landing-icon">⚙️🍎</div>
         <h1>FoodProcessPortal</h1>
-        <p class="subtitle">{t_uk.subtitle}</p>
-        <p class="subtitle">{t_ru.subtitle}</p>
-        <p class="subtitle">{t_en.subtitle}</p>
-        <p class="subtitle">{t_de.subtitle}</p>
+        <p class="subtitle">{t.subtitle}</p>
       </div>
 
       <div class="language-selector">
-        <h2>Оберіть мову / Выберите язык / Select language / Sprache wählen</h2>
+        <h2>
+          {ENABLED_LOCALES.includes("uk" as any) && "Оберіть мову"}
+          {ENABLED_LOCALES.includes("en" as any) && " / Select language"}
+          {ENABLED_LOCALES.includes("de" as any) && " / Sprache wählen"}
+        </h2>
         <div class="lang-buttons">
           {languages.map((lang) => (
-            <a href={`/${lang.code}`} class="lang-button">
+            <a href={`/${lang.path}`} class="lang-button">
               <span class="flag">{lang.flag}</span>
-              <span class="name">{lang.name}</span>
+              <span class="name">{lang.native}</span>
             </a>
           ))}
         </div>
@@ -56,4 +42,64 @@ const languages = [
 
 <style>
   @import '../styles/main.css';
+
+  .landing-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .welcome-section {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  .landing-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+  }
+  .welcome-section h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 800;
+    margin: 0 0 1rem;
+  }
+  .welcome-section .subtitle {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  .language-selector { text-align: center; }
+  .language-selector h2 {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    font-weight: 400;
+  }
+  .lang-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .lang-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1.25rem 2rem;
+    background: var(--bg-secondary);
+    border: 2px solid var(--border-color);
+    border-radius: 1rem;
+    text-decoration: none;
+    color: var(--text-primary);
+    transition: all 0.2s;
+    min-width: 130px;
+  }
+  .lang-button:hover {
+    border-color: var(--accent-blue, #4a90ff);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+  }
+  .flag { font-size: 2.5rem; }
+  .name { font-size: 0.95rem; font-weight: 600; }
 </style>

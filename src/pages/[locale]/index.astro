@@ -4,10 +4,10 @@ import Header from "../../components/Header.astro";
 import ThemeToggle from "../../components/ThemeToggle.astro";
 import Footer from "../../components/Footer.astro";
 import { siteConfig } from "../../config";
-import { getCollection } from "astro:content";
+import { ENABLED_LOCALES } from "../../locales.config";
 
 export function getStaticPaths() {
-  return ["uk", "ru", "en", "de"].map((locale) => ({
+  return [...ENABLED_LOCALES].map((locale) => ({
     params: { locale },
   }));
 }
@@ -25,8 +25,14 @@ const sections = [
   { href: `/${locale}/videos`, key: "videos", color: "green" },
 ];
 
-const allTopics = await getCollection("topics");
-// console.log('📚 Topics:', allTopics.length);
+// Використовуємо glob замість getCollection щоб уникнути проблем з locale-підпапками
+const allTopicsGlob = import.meta.glob("/src/content/topics/**/*.md", { eager: true });
+const allTopics = Object.entries(allTopicsGlob)
+  .filter(([path]) => path.includes(`/topics/${locale}/`))
+  .map(([path, mod]: [string, any]) => ({
+    slug: path.split("/").pop()?.replace(".md", "") || "",
+    ...mod.frontmatter,
+  }));
 ---
 
 <BaseLayout title={siteConfig.name} description={t.subtitle} locale={locale}>

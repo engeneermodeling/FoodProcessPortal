@@ -1,19 +1,22 @@
 import { defineConfig } from "astro/config";
+import react from "@astrojs/react";
 
-// https://astro.build/config
+// Імпортуємо список активних мов з централізованого конфігу
+import { ENABLED_LOCALES, DEFAULT_LOCALE } from "./src/locales.config.ts";
+
 export default defineConfig({
-  site: "https://foodprocessportal.com", // Заміни на свій домен, коли буде
+  integrations: [react()],
+  site: "https://foodprocessportal.com",
   i18n: {
-    defaultLocale: "uk", // Українська за замовчуванням
-    locales: ["uk", "ru", "en", "de"], // 4 мови
+    defaultLocale: DEFAULT_LOCALE,
+    locales: [...ENABLED_LOCALES],
     routing: {
-      prefixDefaultLocale: true, // Додавати /uk/ навіть для української
+      prefixDefaultLocale: true,
     },
   },
   output: "static",
   compressHTML: true,
-
   build: {
-    inlineStylesheets: "always", // Inline всі CSS в HTML
+    inlineStylesheets: "always",
   },
 });

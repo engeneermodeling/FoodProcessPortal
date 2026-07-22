@@ -1,0 +1,390 @@
+/* ═══════════════════════════════════════════════════════════════
+   FluidsCalc — Довідник теплоносіїв харчових виробництв
+   ═══════════════════════════════════════════════════════════════ */
+
+.fc-wrapper {
+  --fc-bg:      var(--bg-primary, #0f1117);
+  --fc-surface: var(--bg-secondary, #181c27);
+  --fc-border:  var(--border-color, #2a3050);
+  --fc-text-1:  var(--text-primary, #ffffff);
+  --fc-text-2:  var(--text-secondary, #c8cdd8);
+  --fc-text-3:  var(--text-muted, #7a8299);
+  --fc-blue:    #4a90ff;
+  --fc-amber:   #fbbf24;
+  --fc-red:     #f87171;
+  --fc-teal:    #34d399;
+  --ff-mono:    var(--font-mono, "DM Mono", monospace);
+  --ff-body:    var(--font-sans, "Outfit", system-ui, sans-serif);
+  --radius:     10px;
+
+  font-family: var(--ff-body);
+  color: var(--fc-text-1);
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 1rem 2rem;
+}
+
+/* ── Шапка ── */
+.fc-hero {
+  text-align: center;
+  padding: 2.5rem 1rem 2rem;
+  border-bottom: 1px solid var(--fc-border);
+  margin-bottom: 1.5rem;
+}
+.fc-eyebrow {
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--fc-blue);
+  margin-bottom: 0.6rem;
+}
+.fc-title {
+  font-size: clamp(1.4rem, 3.5vw, 2.1rem);
+  font-weight: 700;
+  color: var(--fc-text-1);
+  margin: 0 0 0.65rem;
+  letter-spacing: -0.02em;
+}
+.fc-desc {
+  font-size: 0.95rem;
+  color: var(--fc-text-2);
+  max-width: 620px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* ── Сітка теплоносіїв ── */
+.fc-fluid-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 0.65rem;
+  margin-bottom: 1.5rem;
+}
+
+.fluid-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.85rem 0.5rem;
+  background: var(--fc-surface);
+  border: 2px solid var(--fc-border);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: all 0.18s ease;
+  text-align: center;
+}
+.fluid-card:hover {
+  border-color: var(--fluid-color, var(--fc-blue));
+  background: color-mix(in srgb, var(--fluid-color, var(--fc-blue)) 8%, var(--fc-surface));
+  transform: translateY(-2px);
+}
+.fluid-card.selected {
+  border-color: var(--fluid-color, var(--fc-blue));
+  background: color-mix(in srgb, var(--fluid-color, var(--fc-blue)) 14%, var(--fc-surface));
+  box-shadow: 0 0 0 1px var(--fluid-color, var(--fc-blue));
+}
+.fluid-card.warning {
+  border-color: color-mix(in srgb, var(--fc-amber) 50%, var(--fc-border));
+}
+.fluid-card.warning.selected {
+  border-color: var(--fc-amber);
+  box-shadow: 0 0 0 1px var(--fc-amber);
+}
+.fluid-icon {
+  font-size: 1.75rem;
+  line-height: 1;
+}
+.fluid-name {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--fc-text-1);
+  line-height: 1.3;
+}
+.fluid-desc {
+  font-size: 0.68rem;
+  color: var(--fc-text-3);
+  line-height: 1.3;
+}
+
+/* ── Заголовок вибраного теплоносія ── */
+.fc-fluid-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.25rem 1.5rem;
+  background: color-mix(in srgb, var(--fluid-color, var(--fc-blue)) 10%, var(--fc-surface));
+  border: 1px solid color-mix(in srgb, var(--fluid-color, var(--fc-blue)) 40%, var(--fc-border));
+  border-radius: var(--radius);
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+.fc-fluid-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.fc-fluid-icon-lg {
+  font-size: 2.25rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+.fc-fluid-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0 0 0.3rem;
+  color: var(--fluid-color, var(--fc-text-1));
+}
+.fc-fluid-use {
+  font-size: 0.88rem;
+  color: var(--fc-text-2);
+  margin: 0;
+  line-height: 1.5;
+}
+.fc-warning-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--fc-amber);
+  background: color-mix(in srgb, var(--fc-amber) 12%, transparent);
+  border: 1px solid color-mix(in srgb, var(--fc-amber) 40%, transparent);
+  padding: 0.35rem 0.75rem;
+  border-radius: 2rem;
+  white-space: nowrap;
+}
+
+/* ── Панель інтерполяції ── */
+.fc-interp-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.85rem 1rem;
+  background: var(--fc-surface);
+  border: 1px solid var(--fc-border);
+  border-radius: var(--radius);
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+.fc-interp-label {
+  font-size: 0.85rem;
+  color: var(--fc-text-2);
+  white-space: nowrap;
+}
+.fc-interp-input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.fc-interp-input {
+  width: 110px;
+  height: 38px;
+  padding: 0 2.5rem 0 0.75rem;
+  background: var(--fc-bg);
+  border: 1px solid var(--fc-border);
+  border-radius: 6px;
+  color: var(--fc-text-1);
+  font-family: var(--ff-mono);
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.15s;
+}
+.fc-interp-input:focus {
+  border-color: var(--fc-blue);
+}
+.fc-interp-unit {
+  position: absolute;
+  right: 0.6rem;
+  font-family: var(--ff-mono);
+  font-size: 0.82rem;
+  color: var(--fc-text-3);
+  pointer-events: none;
+}
+.fc-interp-btn {
+  height: 38px;
+  padding: 0 1rem;
+  background: var(--fc-blue);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.15s;
+  white-space: nowrap;
+}
+.fc-interp-btn:hover { opacity: 0.88; }
+
+.fc-view-btn {
+  height: 38px;
+  padding: 0 0.9rem;
+  background: transparent;
+  color: var(--fc-text-2);
+  border: 1px solid var(--fc-border);
+  border-radius: 6px;
+  font-size: 0.82rem;
+  cursor: pointer;
+  transition: all 0.15s;
+  white-space: nowrap;
+}
+.fc-view-btn.active, .fc-view-btn:hover {
+  background: var(--fc-surface);
+  color: var(--fc-text-1);
+  border-color: var(--fc-text-3);
+}
+.fc-interp-error {
+  font-size: 0.82rem;
+  color: var(--fc-red);
+}
+
+/* ── Результат інтерполяції ── */
+.fc-interp-result {
+  background: color-mix(in srgb, var(--fc-blue) 7%, var(--fc-surface));
+  border: 1px solid color-mix(in srgb, var(--fc-blue) 35%, var(--fc-border));
+  border-radius: var(--radius);
+  padding: 1rem 1.25rem 1.25rem;
+  margin-bottom: 1rem;
+}
+.fc-interp-result-label {
+  font-size: 0.82rem;
+  color: var(--fc-text-3);
+  margin-bottom: 0.85rem;
+}
+.fc-interp-result-label b { color: var(--fc-blue); }
+
+.interp-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 0.65rem;
+}
+.interp-cell {
+  background: var(--fc-surface);
+  border: 1px solid var(--fc-border);
+  border-radius: 8px;
+  padding: 0.65rem 0.75rem;
+}
+.interp-label {
+  font-size: 0.7rem;
+  color: var(--fc-text-3);
+  margin-bottom: 0.2rem;
+  line-height: 1.3;
+}
+.interp-value {
+  font-family: var(--ff-mono);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--fc-blue);
+}
+.interp-unit {
+  font-size: 0.68rem;
+  color: var(--fc-text-3);
+  margin-top: 0.1rem;
+}
+
+/* ── Таблиця ── */
+.fc-table-wrap {
+  overflow-x: auto;
+  border-radius: var(--radius);
+  border: 1px solid var(--fc-border);
+  margin-bottom: 0.75rem;
+}
+.fc-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--ff-mono);
+  font-size: 0.88rem;
+}
+.fc-table th {
+  background: var(--fc-surface);
+  color: var(--fc-text-3);
+  font-weight: 600;
+  font-size: 0.75rem;
+  text-align: right;
+  padding: 0.6rem 0.9rem;
+  border-bottom: 2px solid var(--fc-border);
+  white-space: nowrap;
+}
+.fc-table th:first-child { text-align: left; }
+.fc-table td {
+  text-align: right;
+  padding: 0.5rem 0.9rem;
+  border-bottom: 1px solid color-mix(in srgb, var(--fc-border) 60%, transparent);
+  color: var(--fc-text-1);
+}
+.fc-table td.col-temp {
+  text-align: left;
+  color: var(--fc-text-2);
+  font-weight: 600;
+}
+.fc-table tr:last-child td { border-bottom: none; }
+.fc-table tbody tr:hover td {
+  background: color-mix(in srgb, var(--fc-blue) 5%, transparent);
+}
+.fc-table tr.highlight-row td {
+  background: color-mix(in srgb, var(--fc-blue) 12%, transparent);
+}
+.fc-table tr.highlight-row td.col-temp {
+  color: var(--fc-blue);
+}
+
+/* ── Джерела ── */
+.fc-sources {
+  font-size: 0.75rem;
+  color: var(--fc-text-3);
+  padding: 0.5rem 0;
+  line-height: 1.5;
+}
+.fc-sources-label {
+  font-weight: 700;
+  margin-right: 0.4rem;
+}
+
+/* ── Підвал ── */
+.fc-footer {
+  text-align: center;
+  padding: 1.5rem 1rem;
+  border-top: 1px solid var(--fc-border);
+  margin-top: 1.5rem;
+  font-size: 0.78rem;
+  color: var(--fc-text-3);
+  line-height: 1.6;
+}
+
+/* ── Анімація ── */
+@keyframes fcFadeUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-in {
+  animation: fcFadeUp 0.3s ease both;
+}
+
+/* ── Адаптив ── */
+@media (max-width: 640px) {
+  .fc-fluid-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .fc-interp-bar {
+    gap: 0.5rem;
+  }
+  .interp-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .fc-fluid-header {
+    flex-direction: column;
+  }
+}
+
+/* ── Світла тема ── */
+:root:not([data-theme="dark"]) .fc-wrapper,
+[data-theme="light"] .fc-wrapper {
+  --fc-bg:      var(--bg-primary, #f5f7fb);
+  --fc-surface: var(--bg-secondary, #ffffff);
+  --fc-border:  var(--border-color, #d8dee8);
+  --fc-text-1:  var(--text-primary, #0f1117);
+  --fc-text-2:  var(--text-secondary, #2d3548);
+  --fc-text-3:  var(--text-muted, #6b7388);
+}

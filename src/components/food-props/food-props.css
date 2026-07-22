@@ -1,0 +1,264 @@
+/* ═══════════════════════════════════════════════════════════════
+   FoodPropsCalc — Теплофізичні властивості харчових продуктів
+   ═══════════════════════════════════════════════════════════════ */
+
+.fp-wrapper {
+  --fp-bg:      var(--bg-primary, #0f1117);
+  --fp-surface: var(--bg-secondary, #181c27);
+  --fp-border:  var(--border-color, #2a3050);
+  --fp-text-1:  var(--text-primary, #ffffff);
+  --fp-text-2:  var(--text-secondary, #c8cdd8);
+  --fp-text-3:  var(--text-muted, #7a8299);
+  --fp-blue:    #4a90ff;
+  --fp-green:   #34d399;
+  --fp-amber:   #fbbf24;
+  --ff-mono:    var(--font-mono, "DM Mono", monospace);
+  --ff-body:    var(--font-sans, "Outfit", system-ui, sans-serif);
+  --radius:     10px;
+
+  font-family: var(--ff-body);
+  color: var(--fp-text-1);
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 1rem 2rem;
+}
+
+/* ── Шапка ── */
+.fp-hero {
+  text-align: center;
+  padding: 2.5rem 1rem 2rem;
+  border-bottom: 1px solid var(--fp-border);
+  margin-bottom: 1.5rem;
+}
+.fp-eyebrow {
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--fp-green);
+  margin-bottom: 0.6rem;
+}
+.fp-title {
+  font-size: clamp(1.4rem, 3.5vw, 2.1rem);
+  font-weight: 700;
+  color: var(--fp-text-1);
+  margin: 0 0 0.65rem;
+  letter-spacing: -0.02em;
+}
+.fp-desc {
+  font-size: 0.95rem;
+  color: var(--fp-text-2);
+  max-width: 660px;
+  margin: 0 auto 1rem;
+  line-height: 1.6;
+}
+.fp-badge {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  font-family: var(--ff-mono);
+  color: var(--fp-amber);
+  background: color-mix(in srgb, var(--fp-amber) 12%, transparent);
+  border: 1px solid color-mix(in srgb, var(--fp-amber) 35%, transparent);
+  padding: 0.2rem 0.85rem;
+  border-radius: 2rem;
+  letter-spacing: 0.05em;
+}
+
+/* ── Групи продуктів ── */
+.fp-groups {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.fp-group-tab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.75rem 0.5rem;
+  background: var(--fp-surface);
+  border: 2px solid var(--fp-border);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: all 0.18s ease;
+  text-align: center;
+}
+.fp-group-tab:hover {
+  border-color: var(--g-color, var(--fp-blue));
+  background: color-mix(in srgb, var(--g-color, var(--fp-blue)) 8%, var(--fp-surface));
+  transform: translateY(-2px);
+}
+.fp-group-tab.active {
+  border-color: var(--g-color, var(--fp-blue));
+  background: color-mix(in srgb, var(--g-color, var(--fp-blue)) 15%, var(--fp-surface));
+  box-shadow: 0 0 0 1px var(--g-color, var(--fp-blue));
+}
+.fp-group-icon { font-size: 1.6rem; line-height: 1; }
+.fp-group-name {
+  font-size: 0.73rem;
+  font-weight: 600;
+  color: var(--fp-text-1);
+  line-height: 1.3;
+}
+
+/* ── Вибір продукту ── */
+.fp-product-selector {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+  padding: 0.85rem 1rem;
+  background: var(--fp-surface);
+  border: 1px solid var(--fp-border);
+  border-radius: var(--radius);
+}
+
+.fp-product-btn {
+  padding: 0.4rem 0.9rem;
+  font-size: 0.82rem;
+  font-weight: 500;
+  background: transparent;
+  color: var(--fp-text-2);
+  border: 1px solid var(--fp-border);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.15s;
+  white-space: nowrap;
+}
+.fp-product-btn:hover {
+  background: color-mix(in srgb, var(--fp-blue) 10%, transparent);
+  border-color: var(--fp-blue);
+  color: var(--fp-text-1);
+}
+.fp-product-btn.active {
+  background: var(--fp-blue);
+  border-color: var(--fp-blue);
+  color: white;
+  font-weight: 600;
+}
+
+/* ── Заголовок таблиці ── */
+.fp-data-section {
+  background: var(--fp-surface);
+  border: 1px solid var(--fp-border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.fp-table-header {
+  padding: 1rem 1.25rem 0.75rem;
+  border-bottom: 1px solid var(--fp-border);
+}
+
+.fp-product-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--fp-text-1);
+  margin: 0 0 0.25rem;
+}
+
+.fp-product-note {
+  font-size: 0.8rem;
+  color: var(--fp-text-3);
+  font-style: italic;
+}
+
+/* ── Таблиця ── */
+.fp-table-wrap {
+  overflow-x: auto;
+}
+
+.fp-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--ff-mono);
+  font-size: 0.85rem;
+  min-width: 400px;
+}
+
+.fp-table th {
+  background: color-mix(in srgb, var(--fp-border) 40%, var(--fp-surface));
+  color: var(--fp-text-3);
+  font-weight: 600;
+  font-size: 0.72rem;
+  text-align: right;
+  padding: 0.55rem 0.9rem;
+  border-bottom: 2px solid var(--fp-border);
+  white-space: nowrap;
+}
+.fp-table th:first-child { text-align: left; }
+
+.fp-table td {
+  text-align: right;
+  padding: 0.48rem 0.9rem;
+  border-bottom: 1px solid color-mix(in srgb, var(--fp-border) 55%, transparent);
+  color: var(--fp-text-1);
+  vertical-align: middle;
+}
+.fp-table td.fp-col-first {
+  text-align: left;
+  color: var(--fp-text-2);
+  font-weight: 600;
+}
+.fp-table tr:last-child td { border-bottom: none; }
+.fp-table tbody tr:hover td {
+  background: color-mix(in srgb, var(--fp-blue) 6%, transparent);
+}
+
+/* ── Джерело ── */
+.fp-source {
+  padding: 0.6rem 1.25rem;
+  font-size: 0.72rem;
+  color: var(--fp-text-3);
+  border-top: 1px solid var(--fp-border);
+  background: color-mix(in srgb, var(--fp-border) 20%, transparent);
+}
+.fp-source-label {
+  font-weight: 700;
+  color: var(--fp-text-3);
+}
+
+/* ── Підвал ── */
+.fp-footer {
+  text-align: center;
+  padding: 1.5rem 1rem;
+  border-top: 1px solid var(--fp-border);
+  margin-top: 1.5rem;
+  font-size: 0.78rem;
+  color: var(--fp-text-3);
+  line-height: 1.6;
+}
+
+/* ── Анімація ── */
+@keyframes fpFadeUp {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-in {
+  animation: fpFadeUp 0.25s ease both;
+}
+
+/* ── Адаптив ── */
+@media (max-width: 640px) {
+  .fp-groups {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .fp-group-name { font-size: 0.65rem; }
+  .fp-table { font-size: 0.78rem; }
+  .fp-table th,
+  .fp-table td { padding: 0.4rem 0.6rem; }
+}
+
+/* ── Світла тема ── */
+:root:not([data-theme="dark"]) .fp-wrapper,
+[data-theme="light"] .fp-wrapper {
+  --fp-bg:      var(--bg-primary, #f5f7fb);
+  --fp-surface: var(--bg-secondary, #ffffff);
+  --fp-border:  var(--border-color, #d8dee8);
+  --fp-text-1:  var(--text-primary, #0f1117);
+  --fp-text-2:  var(--text-secondary, #2d3548);
+  --fp-text-3:  var(--text-muted, #6b7388);
+}

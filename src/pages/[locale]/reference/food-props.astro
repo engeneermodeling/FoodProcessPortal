@@ -1,0 +1,70 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import Header from "../../../components/Header.astro";
+import ThemeToggle from "../../../components/ThemeToggle.astro";
+import Footer from "../../../components/Footer.astro";
+import FoodPropsCalc from "../../../components/food-props/FoodPropsCalc.jsx";
+import { ENABLED_LOCALES, ui } from "../../../locales.config";
+
+export function getStaticPaths() {
+  return [...ENABLED_LOCALES].map(locale => ({ params: { locale } }));
+}
+
+const { locale } = Astro.params;
+
+const titles: Record<string, string> = {
+  uk: "Теплофізичні властивості харчових продуктів — Довідник",
+  en: "Thermophysical Properties of Food Products — Reference",
+  de: "Thermophysikalische Eigenschaften von Lebensmitteln — Referenz",
+  ru: "Теплофизические свойства пищевых продуктов — Справочник",
+};
+
+const descs: Record<string, string> = {
+  uk: "Густину, теплоємність, теплопровідність, в'язкість і число Прандтля молока, соків, цукру, борошна, м'яса, шоколаду та інших харчових продуктів.",
+  en: "Density, heat capacity, thermal conductivity, viscosity and Prandtl number of milk, juices, sugar, flour, meat, chocolate and other food products.",
+  de: "Dichte, Wärmekapazität, Wärmeleitfähigkeit, Viskosität und Prandtl-Zahl von Milch, Säften, Zucker, Mehl, Fleisch, Schokolade und anderen Lebensmitteln.",
+  ru: "Плотность, теплоёмкость, теплопроводность, вязкость и число Прандтля молока, соков, сахара, муки, мяса, шоколада и других пищевых продуктов.",
+};
+
+const breadCurrent: Record<string, string> = {
+  uk: "Харчові продукти",
+  en: "Food products",
+  de: "Lebensmittel",
+  ru: "Пищевые продукты",
+};
+---
+
+<BaseLayout
+  title={titles[locale] || titles.uk}
+  description={descs[locale] || descs.uk}
+  locale={locale}
+>
+  <Header>
+    <ThemeToggle slot="theme-toggle" />
+  </Header>
+  <main class="main-content">
+    <div class="container ref-container">
+      <nav class="ref-breadcrumb">
+        <a href={"/" + locale}>{ui("nav.home", locale)}</a>
+        <span class="bc-sep">›</span>
+        <a href={"/" + locale + "/reference"}>{ui("nav.reference", locale)}</a>
+        <span class="bc-sep">›</span>
+        <span>{breadCurrent[locale] || breadCurrent.uk}</span>
+      </nav>
+      <FoodPropsCalc locale={locale} client:load />
+    </div>
+  </main>
+  <Footer />
+</BaseLayout>
+
+<style>
+  .ref-container { padding-top: 1rem; padding-bottom: 3rem; }
+  .ref-breadcrumb {
+    display: flex; align-items: center; gap: 0.4rem;
+    font-size: 0.85rem; color: var(--text-secondary);
+    margin-bottom: 0.5rem; flex-wrap: wrap;
+  }
+  .ref-breadcrumb a { color: var(--accent-blue); text-decoration: none; }
+  .ref-breadcrumb a:hover { text-decoration: underline; }
+  .bc-sep { color: var(--text-secondary); opacity: 0.5; }
+</style>

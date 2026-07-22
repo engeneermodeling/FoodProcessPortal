@@ -1,0 +1,57 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import Header from "../../../components/Header.astro";
+import ThemeToggle from "../../../components/ThemeToggle.astro";
+import Footer from "../../../components/Footer.astro";
+import WaterCalc from "../../../components/water/WaterCalc.jsx";
+import { siteConfig } from "../../../config";
+import { ENABLED_LOCALES, ui, UI_TRANSLATIONS } from "../../../locales.config";
+
+export function getStaticPaths() {
+  return [...ENABLED_LOCALES].map(locale => ({ params: { locale } }));
+}
+
+const { locale } = Astro.params;
+
+// Заголовок і опис сторінки через ui() з автоматичним fallback
+const pageTitle = ui("page.water.title", locale);
+const pageDesc  = ui("page.water.desc",  locale);
+
+// Хлібні крихти — завжди з fallback
+const breadcrumbs = {
+  home:      ui("nav.home",      locale),
+  reference: ui("nav.reference", locale),
+  current:   ui("ref.water",     locale),
+};
+---
+
+<BaseLayout title={pageTitle} description={pageDesc} locale={locale}>
+  <Header>
+    <ThemeToggle slot="theme-toggle" />
+  </Header>
+  <main class="main-content">
+    <div class="container ref-container">
+      <nav class="ref-breadcrumb">
+        <a href={"/" + locale}>{breadcrumbs.home}</a>
+        <span class="bc-sep">›</span>
+        <a href={"/" + locale + "/reference"}>{breadcrumbs.reference}</a>
+        <span class="bc-sep">›</span>
+        <span>{breadcrumbs.current}</span>
+      </nav>
+      <WaterCalc locale={locale} client:load />
+    </div>
+  </main>
+  <Footer />
+</BaseLayout>
+
+<style>
+  .ref-container { padding-top: 1rem; padding-bottom: 3rem; }
+  .ref-breadcrumb {
+    display: flex; align-items: center; gap: 0.4rem;
+    font-size: 0.85rem; color: var(--text-secondary);
+    margin-bottom: 0.5rem; flex-wrap: wrap;
+  }
+  .ref-breadcrumb a { color: var(--accent-blue); text-decoration: none; }
+  .ref-breadcrumb a:hover { text-decoration: underline; }
+  .bc-sep { color: var(--text-secondary); opacity: 0.5; }
+</style>
