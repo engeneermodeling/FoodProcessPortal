@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 460" role="img" aria-labelledby="title desc">
+  <title id="title">Матриця вибору обладнання</title>
+  <desc id="desc">Схема поривняння вариантив обладнання за техничними, економичними и санитарними критериями.</desc>
+  <rect width="920" height="460" rx="22" fill="#111827"/>
+  <text x="42" y="58" fill="#f8fafc" font-family="Arial, sans-serif" font-size="27" font-weight="700">Вибир обладнання краще робити через прозори критерии</text>
+  <g font-family="Arial, sans-serif" font-size="15">
+    <rect x="72" y="104" width="776" height="292" rx="16" fill="#1e293b" stroke="#475569"/>
+    <rect x="72" y="104" width="776" height="54" rx="16" fill="#312e81"/>
+    <text x="102" y="138" fill="#e0e7ff" font-weight="700">критерий</text>
+    <text x="362" y="138" fill="#e0e7ff" font-weight="700">вариант A</text>
+    <text x="536" y="138" fill="#e0e7ff" font-weight="700">вариант B</text>
+    <text x="710" y="138" fill="#e0e7ff" font-weight="700">вага</text>
+    <g fill="#f8fafc">
+      <text x="102" y="198">якист продукту</text><text x="388" y="198">4</text><text x="562" y="198">5</text><text x="724" y="198">0,25</text>
+      <text x="102" y="238">енергия и вода</text><text x="388" y="238">3</text><text x="562" y="238">5</text><text x="724" y="238">0,20</text>
+      <text x="102" y="278">CIP и гигиена</text><text x="388" y="278">5</text><text x="562" y="278">4</text><text x="724" y="278">0,20</text>
+      <text x="102" y="318">цина и сервис</text><text x="388" y="318">5</text><text x="562" y="318">3</text><text x="724" y="318">0,20</text>
+      <text x="102" y="358">гнучкист</text><text x="388" y="358">3</text><text x="562" y="358">4</text><text x="724" y="358">0,15</text>
+    </g>
+    <g stroke="#334155" stroke-width="2">
+      <path d="M332 104v292M506 104v292M680 104v292"/>
+      <path d="M72 158h776M72 214h776M72 254h776M72 294h776M72 334h776"/>
+    </g>
+  </g>
+</svg>

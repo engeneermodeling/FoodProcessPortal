@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 430" role="img" aria-labelledby="title desc">
+  <title id="title">Вибір млина для харчової сировини</title>
+  <desc id="desc">Таблична карта вибору подрібнювача залежно від матеріалу: зерно, спеції, м'ясо, шоколадна маса, горіхи.</desc>
+  <rect width="920" height="430" rx="22" fill="#111827"/>
+  <text x="42" y="58" fill="#f8fafc" font-family="Arial, sans-serif" font-size="25" font-weight="700">Вибір апарата починається з матеріалу</text>
+  <g font-family="Arial, sans-serif" font-size="15">
+    <rect x="52" y="104" width="816" height="54" rx="10" fill="#1f2937" stroke="#374151"/>
+    <text x="74" y="138" fill="#e5e7eb" font-weight="700">Матеріал</text>
+    <text x="266" y="138" fill="#e5e7eb" font-weight="700">Проблема</text>
+    <text x="520" y="138" fill="#e5e7eb" font-weight="700">Типовий апарат</text>
+    <text x="734" y="138" fill="#e5e7eb" font-weight="700">Контроль</text>
+
+    <g fill="#0f172a" stroke="#334155">
+      <rect x="52" y="158" width="816" height="48"/>
+      <rect x="52" y="206" width="816" height="48" fill="#1e293b"/>
+      <rect x="52" y="254" width="816" height="48"/>
+      <rect x="52" y="302" width="816" height="48" fill="#1e293b"/>
+    </g>
+    <g fill="#f8fafc">
+      <text x="74" y="188">зерно</text><text x="266" y="188">оболонки, клейковина, вологість</text><text x="520" y="188">вальцьовий млин</text><text x="734" y="188">зольність, d50</text>
+      <text x="74" y="236">спеції</text><text x="266" y="236">аромат, нагрів, пил</text><text x="520" y="236">молотковий / штифтовий</text><text x="734" y="236">температура</text>
+      <text x="74" y="284">м'ясо, сир</text><text x="266" y="284">волокна, жир, температура</text><text x="520" y="284">ножовий подрібнювач</text><text x="734" y="284">текстура</text>
+      <text x="74" y="332">шоколад, пасти</text><text x="266" y="332">в'язкість, жир, гладкість</text><text x="520" y="332">кульовий / валковий</text><text x="734" y="332">мікрони</text>
+    </g>
+  </g>
+</svg>

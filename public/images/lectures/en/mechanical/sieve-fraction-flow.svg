@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 430" role="img" aria-labelledby="title desc">
+  <title id="title">Material flow through a sieve</title>
+  <desc id="desc">A particle mixture enters the sieve; fine fraction passes through openings and coarse fraction leaves the surface.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#60a5fa"/>
+    </marker>
+  </defs>
+  <rect width="920" height="430" rx="22" fill="#111827"/>
+  <text x="42" y="58" fill="#f8fafc" font-family="Arial, sans-serif" font-size="26" font-weight="700">Sieving splits the stream into fractions</text>
+  <text x="42" y="90" fill="#cbd5e1" font-family="Arial, sans-serif" font-size="16">The result depends not only on sieve opening, but also on bed depth, moisture, particle shape and contact time</text>
+  <path d="M96 142h210" stroke="#60a5fa" stroke-width="6" marker-end="url(#arrow)"/>
+  <text x="94" y="126" fill="#dbeafe" font-family="Arial, sans-serif" font-size="17" font-weight="700">mixture after mill</text>
+  <g fill="#f8fafc">
+    <circle cx="130" cy="170" r="8"/><circle cx="164" cy="154" r="5"/><circle cx="205" cy="176" r="11"/><circle cx="238" cy="150" r="7"/>
+  </g>
+  <rect x="330" y="170" width="300" height="28" rx="4" fill="#334155"/>
+  <g stroke="#94a3b8" stroke-width="2">
+    <line x1="346" y1="170" x2="346" y2="198"/><line x1="374" y1="170" x2="374" y2="198"/><line x1="402" y1="170" x2="402" y2="198"/>
+    <line x1="430" y1="170" x2="430" y2="198"/><line x1="458" y1="170" x2="458" y2="198"/><line x1="486" y1="170" x2="486" y2="198"/>
+    <line x1="514" y1="170" x2="514" y2="198"/><line x1="542" y1="170" x2="542" y2="198"/><line x1="570" y1="170" x2="570" y2="198"/>
+    <line x1="598" y1="170" x2="598" y2="198"/>
+  </g>
+  <text x="430" y="154" fill="#f8fafc" font-family="Arial, sans-serif" font-size="17" font-weight="700">sieve</text>
+  <path d="M632 184h190" stroke="#f97316" stroke-width="6" marker-end="url(#arrow)"/>
+  <text x="694" y="168" fill="#ffedd5" font-family="Arial, sans-serif" font-size="17" font-weight="700">oversize</text>
+  <text x="676" y="220" fill="#fed7aa" font-family="Arial, sans-serif" font-size="15">coarse fraction</text>
+  <path d="M454 202v126" stroke="#22c55e" stroke-width="6" marker-end="url(#arrow)"/>
+  <text x="486" y="286" fill="#dcfce7" font-family="Arial, sans-serif" font-size="17" font-weight="700">undersize</text>
+  <text x="486" y="312" fill="#bbf7d0" font-family="Arial, sans-serif" font-size="15">fine fraction</text>
+  <g fill="#bbf7d0">
+    <circle cx="410" cy="230" r="4"/><circle cx="436" cy="248" r="5"/><circle cx="466" cy="236" r="4"/><circle cx="448" cy="274" r="5"/><circle cx="426" cy="304" r="4"/>
+  </g>
+  <rect x="64" y="350" width="792" height="42" rx="8" fill="#1f2937" stroke="#374151"/>
+  <text x="86" y="376" fill="#f8fafc" font-family="Arial, sans-serif" font-size="15">Goal: required fraction purity, minimal loss of usable product and stable capacity.</text>
+</svg>

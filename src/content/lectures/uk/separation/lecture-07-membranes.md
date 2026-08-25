@@ -8,7 +8,7 @@ keywords: ["мембранні процеси", "зворотний осмос",
 duration: "60 хв"
 difficulty: "середній"
 author: "FoodProcessPortal"
-updated: "2026-07-09"
+updated: "2026-08-17"
 ---
 
 # Лекція 7. Мембранні процеси розділення
@@ -31,14 +31,14 @@ updated: "2026-07-09"
 Традиційні методи концентрування харчових рідин — **випарювання** — мають один фундаментальний недолік: нагрівання руйнує термолабільні компоненти. Вітаміни, аромати, антиоксиданти, білки — все це деградує при температурі.
 
 Мембранні процеси дозволяють:
-- концентрувати апельсиновий сік з 12% до 65% сухих речовин **без нагрівання** — аромат і вітаміни зберігаються повністю
+- попередньо концентрувати апельсиновий сік **без кипіння** — ароматичні речовини і вітамін C зберігаються краще, ніж при інтенсивному тепловому впливі
 - отримувати з молочної сироватки (відходу сиродільного виробництва) **сироватковий білок 90%** для спортивного харчування
 - виробляти **мікрофільтроване пиво** без пастеризації — "живе" пиво з терміном зберігання 30+ днів
 - опрісняти морську воду для виробничих потреб на островах і в регіонах з дефіцитом прісної води
 
-> 🌟 **Мембранні технології — це холодне "варіння".** Розділення відбувається при кімнатній або злегка підвищеній температурі, без фазових переходів, без хімічних реагентів. Це і є причина їхнього бурхливого розвитку з 1970-х до сьогодні.
+> 🌟 **Мембранні технології — це холодне концентрування і фракціонування.** Розділення відбувається без кипіння і без додавання реагентів, тому такі процеси особливо цінні для молока, сироватки, соків, пива і технологічної води.
 
-📺 **Відео:** [How membrane filtration works in food processing](https://www.youtube.com/results?search_query=membrane+filtration+food+processing+how+it+works)
+🔗 **Поглибити:** [Tetra Pak Dairy Processing Handbook: membrane technology](https://dairyprocessinghandbook.tetrapak.com/chapter/membrane-technology) — зрозумілий промисловий огляд RO, NF, UF і MF для молочної переробки.
 
 ---
 
@@ -56,6 +56,8 @@ updated: "2026-07-09"
 У харчовій промисловості найпоширеніші **баромембранні процеси** — розглянемо їх детально.
 
 ### 2.2 Баромембранні процеси — порівняння
+
+![Спектр баромембранних процесів за розміром частинок і застосуванням](/images/lectures/separation/membrane-spectrum.svg)
 
 ```
 Розмір пор мембрани, мкм:
@@ -84,6 +86,8 @@ updated: "2026-07-09"
 Осмос — мимовільний перехід розчинника крізь напівпроникну мембрану з менш концентрованого розчину у більш концентрований, аж до настання рівноваги.
 
 **Три стани системи:**
+
+![Осмос, рівновага і зворотний осмос](/images/lectures/separation/osmosis-reverse-osmosis.svg)
 
 ```
 а) Осмос               б) Рівновага            в) Зворотний осмос
@@ -198,6 +202,8 @@ $$\varphi = \left(1 - \frac{C_2}{C_1}\right) \cdot 100\%$$
 **1. Турбулізація потоку над мембраною:**
 Висока швидкість течії вздовж мембрани (тангенціальне фільтрування, cross-flow) — найефективніший метод.
 
+![Порівняння тупикового і тангенціального фільтрування](/images/lectures/separation/cross-flow-polarization.svg)
+
 ```
 Тупикове (dead-end):          Тангенціальне (cross-flow):
   Подача → ┌────────┐          Подача →  ═══════════════ → Концентрат
@@ -229,16 +235,16 @@ $$\varphi = \left(1 - \frac{C_2}{C_1}\right) \cdot 100\%$$
 | Полівінілідендифторид | PVDF | MF, UF | до 120°C |
 | Поліпропілен | PP | MF | до 130°C |
 
-> 💡 **PVDF і PP** — відмінний вибір для харчової промисловості: витримують парову стерилізацію (CIP і SIP), стійкі до кислот і лугів мийних розчинів.
+> 💡 **PVDF і PP** — відмінний вибір для харчової промисловості: витримують гаряче миття, стійкі до багатьох кислот і лугів мийних розчинів. Реальні межі температури, pH і дезінфекції завжди перевіряють за паспортом конкретної мембрани.
 
 ### 5.2 Керамічні мембрани
 
 - Матеріали: Al₂O₃, TiO₂, ZrO₂ на пористій підкладці
 - Переваги: термічна стійкість (до 500°C), хімічна стійкість, механічна міцність, тривалий термін служби (10–15 років)
 - Недоліки: дорожчі за полімерні у 5–10 разів
-- Застосування: пастеризація молока MF при 50°C (замість теплової), очищення фруктових соків, пивоварення
+- Застосування: мікрофільтрація молока для зменшення бактеріального навантаження, очищення фруктових соків, пивоварення, продукти з підвищеною вимогою до CIP-стійкості
 
-📺 **Відео:** [Ceramic membrane filtration in dairy processing](https://www.youtube.com/results?search_query=ceramic+membrane+filtration+dairy+milk+processing)
+🔗 **Виробничий контекст:** [GEA Ceramic Membrane / membrane filtration systems](https://www.gea.com/en/products/membrane-filtration/?i=Dairy) — приклади cross-flow фільтрації, зокрема для харчових і молочних потоків.
 
 ---
 
@@ -262,11 +268,13 @@ $$\varphi = \left(1 - \frac{C_2}{C_1}\right) \cdot 100\%$$
 - Недоліки: мала питома поверхня, висока матеріаломісткість
 - Застосування: продукти з частинками (соки з м'якоттю, суспензії)
 
-📺 **Відео:** [Tubular membrane module — food industry application](https://www.youtube.com/results?search_query=tubular+membrane+module+food+industry)
+🔗 **Виробничий контекст:** [GEA membrane filtration systems](https://www.gea.com/en/products/membrane-filtration/?i=Dairy) — cross-flow установки для молока, напоїв, ферментаційних продуктів, крохмалю і підсолоджувачів.
 
 ### 6.3 Рулонні (спіральні) мембранні модулі
 
 **Найпоширеніша конструкція у промисловості.** Дві мембрани + дренажний лист + сітка-сепаратор скручені в рулон навколо перфорованої трубки для відведення пермеату.
+
+![Спірально-рулонний мембранний модуль](/images/lectures/separation/spiral-wound-module.svg)
 
 ```
 Подача розчину →
@@ -324,9 +332,9 @@ $$\varphi = \left(1 - \frac{C_2}{C_1}\right) \cdot 100\%$$
                               WPI 90+ (ізолят, > 90% білка)
 ```
 
-Це перетворює відхід виробництва ($5/тонна) на цінний продукт спортивного харчування ($3000–8000/тонна WPI).
+Це перетворює низьковартісний побічний потік сиродільного виробництва на цінну білкову сировину для харчових інгредієнтів і спортивного харчування.
 
-🔗 **Стаття:** [Whey protein concentration by ultrafiltration — Dairy Foods](https://www.dairyfoods.com)
+🔗 **Виробничий приклад:** [Alfa Laval ALMEM-UF](https://www.alfalaval.us/products/separation/membranes/membrane-filtration-systems/al-mem/) — безперервна UF-система для концентрування і очищення білків, пектину, желатину, ферментів та інших харчових потоків.
 
 ### 7.3 Мікрофільтрація молока (MF) — холодна стерилізація
 
@@ -337,7 +345,7 @@ MF-мембрани (1,4 мкм) затримують **99,9%+** бактері�
 - Назва технології: **ESL (Extended Shelf Life) milk**
 - Ринки: Франція, Бельгія, частина ринків ЄС
 
-📺 **Відео:** [Microfiltration of milk — cold pasteurization technology](https://www.youtube.com/results?search_query=microfiltration+milk+cold+pasteurization+ESL)
+🔗 **Для зв'язку з практикою:** [Tetra Pak membrane technology](https://dairyprocessinghandbook.tetrapak.com/chapter/membrane-technology) — приклади мікрофільтрації, ультрафільтрації та мембранної обробки молочних потоків.
 
 ### 7.4 Нанофільтрація для демінералізації молочної сироватки
 
@@ -448,19 +456,20 @@ $$\varphi = \left(1 - \frac{C_2}{C_1}\right) \cdot 100\%$$
 ## Корисні ресурси
 
 ### Виробники мембранного обладнання
-- 🔗 [Alfa Laval membrane filtration](https://www.alfalaval.com/products/separation/membrane-filtration) — UF/MF для молочної промисловості
-- 🔗 [Koch Separation Solutions](https://www.kochseparation.com) — широкий асортимент для харчових застосувань
-- 🔗 [DowDuPont FILMTEC RO membranes](https://www.dupont.com/water/reverse-osmosis.html) — стандарт для RO мембран
+- 🔗 [Alfa Laval ALMEM-UF](https://www.alfalaval.us/products/separation/membranes/membrane-filtration-systems/al-mem/) — безперервні UF-системи для концентрування білків, пектину, желатину, ферментів
+- 🔗 [Alfa Laval UF spiral membranes](https://www.alfalaval.us/products/separation/membranes/spiral-membranes/uf-spiral/) — спіральні UF-мембрани для dairy, food, beverage і biotech
+- 🔗 [GEA membrane filtration systems](https://www.gea.com/en/products/membrane-filtration/?i=Dairy) — промислові cross-flow системи RO/NF/UF/MF
+- 🔗 [DuPont FilmTec](https://www.dupont.com/brands/filmtec.html) — RO/NF мембрани для води, food & beverage і промислових застосувань
 
 ### Наукові ресурси
 - 🔗 [Journal of Membrane Science](https://www.sciencedirect.com/journal/journal-of-membrane-science) — провідний науковий журнал
 - 🔗 [Comprehensive Membrane Science and Engineering](https://www.elsevier.com) — фундаментальний підручник
 
 ### Галузеві матеріали
-- 🔗 [Dairy Foods — membrane technology articles](https://www.dairyfoods.com/topics/technology/separation-filtration)
-- 🔗 [International Dairy Federation — IDF membrane resources](https://fil-idf.org)
-- 📺 [How whey protein concentrate is made — UF technology](https://www.youtube.com/results?search_query=whey+protein+concentrate+ultrafiltration+production)
-- 📺 [Reverse osmosis explained simply](https://www.youtube.com/results?search_query=reverse+osmosis+explained+simply+animation)
+- 🔗 [Tetra Pak Handbooks](https://www.tetrapak.com/en-us/insights/handbooks) — Dairy Processing Handbook, Orange Book, Coconut Handbook, Soya Handbook
+- 🔗 [LearnChemE: Osmosis and Reverse Osmosis](https://learncheme.com/quiz-yourself/interactive-self-study-modules/osmosis-and-reverse-osmosis/osmosis-and-reverse-osmosis-introduction/) — навчальний модуль з осмосу, RO і концентраційної поляризації
+- 🔗 [LearnChemE: Reverse Osmosis simulation](https://learncheme.com/simulations/separations/reverse-osmosis/) — симуляція впливу тиску, концентрації солі та перемішування на потік води
+- 🔗 [LearnChemE: Reverse Osmosis digital experiment](https://learncheme.github.io/lab-experiments/reverse_osmosis_membrane/) — браузерний експеримент для самостійної роботи студентів
 
 ---
 

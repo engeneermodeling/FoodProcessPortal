@@ -1,0 +1,449 @@
+---
+import BaseLayout from "../../../../layouts/BaseLayout.astro";
+import Header from "../../../../components/Header.astro";
+import ThemeToggle from "../../../../components/ThemeToggle.astro";
+import Footer from "../../../../components/Footer.astro";
+import { siteConfig } from "../../../../config";
+import { ENABLED_LOCALES } from "../../../../locales.config";
+
+interface CourseFrontmatter {
+  title: string;
+  course_title?: string;
+  chapter?: number;
+  description?: string;
+}
+
+interface CourseModule {
+  frontmatter: CourseFrontmatter;
+  default: unknown;
+}
+
+interface CourseChapterNav {
+  slug: string;
+  chapter: number;
+  title: string;
+}
+
+interface CourseChapterPath {
+  params: {
+    locale: string;
+    course: string;
+    chapter: string;
+  };
+  props: {
+    frontmatter: CourseFrontmatter;
+    Content: unknown;
+  };
+}
+
+export function getStaticPaths() {
+  const chapters = import.meta.glob<CourseModule>("/src/content/courses/**/*.md", { eager: true });
+  const paths: CourseChapterPath[] = [];
+  const locales = [...ENABLED_LOCALES];
+
+  for (const [path, mod] of Object.entries(chapters)) {
+    const parts = path.split("/");
+    const idx = parts.indexOf("courses");
+    const locale = parts[idx + 1];
+    const course = parts[idx + 2];
+    const slug = parts.pop()?.replace(".md", "") || "";
+    if (locales.includes(locale) && course && slug) {
+      paths.push({
+        params: { locale, course, chapter: slug },
+        props: { frontmatter: mod.frontmatter, Content: mod.default },
+      });
+    }
+  }
+  return paths;
+}
+
+const { locale, course, chapter } = Astro.params;
+const { frontmatter, Content } = Astro.props;
+const t = siteConfig.translations[locale as keyof typeof siteConfig.translations];
+
+// Усі розділи цього курсу для навігації
+const allChapters = import.meta.glob<CourseModule>("/src/content/courses/**/*.md", { eager: true });
+const courseChapters = Object.entries(allChapters)
+  .filter(([p]) => {
+    const parts = p.split("/");
+    const idx = parts.indexOf("courses");
+    return idx !== -1 && parts[idx + 1] === locale && parts[idx + 2] === course;
+  })
+  .map(([p, m]): CourseChapterNav => ({
+    slug: p.split("/").pop()?.replace(".md", "") || "",
+    chapter: m.frontmatter.chapter || 0,
+    title: m.frontmatter.title,
+  }))
+  .sort((a, b) => a.chapter - b.chapter);
+
+const currentIdx = courseChapters.findIndex((c) => c.slug === chapter);
+const prevCh = currentIdx > 0 ? courseChapters[currentIdx - 1] : null;
+const nextCh = currentIdx < courseChapters.length - 1 ? courseChapters[currentIdx + 1] : null;
+
+const chapterWord = locale === "uk" ? "Розділ" : locale === "de" ? "Kapitel" : locale === "ru" ? "Раздел" : "Chapter";
+const backWord = locale === "uk" ? "← Назад до курсу" : locale === "de" ? "← Zurück zum Kurs" : locale === "ru" ? "← Назад к курсу" : "← Back to course";
+const prevWord = locale === "uk" ? "Попередній розділ" : locale === "de" ? "Vorheriges Kapitel" : locale === "ru" ? "Предыдущий раздел" : "Previous chapter";
+const nextWord = locale === "uk" ? "Наступний розділ" : locale === "de" ? "Nächstes Kapitel" : locale === "ru" ? "Следующий раздел" : "Next chapter";
+const testWord = locale === "uk" ? "тест" : locale === "de" ? "Test" : locale === "ru" ? "тест" : "test";
+---
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" />
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+
+<BaseLayout
+  title={frontmatter?.title || chapterWord}
+  description={frontmatter?.description || ""}
+  locale={locale}
+>
+  <Header>
+    <ThemeToggle slot="theme-toggle" />
+  </Header>
+
+  <main class="main-content">
+    <div class="container lecture-container">
+      <aside class="lecture-sidebar">
+        <a href={`/${locale}/courses/${course}`} class="back-link sidebar-back">{backWord}</a>
+        <nav class="lecture-nav">
+          <div class="lecture-nav-title">{frontmatter?.course_title || course}</div>
+          {courseChapters.map((ch) => (
+            <a
+              href={`/${locale}/courses/${course}/${ch.slug}`}
+              class={`lecture-nav-item ${ch.slug === chapter ? "active" : ""}`}
+              data-course-chapter-nav
+              data-chapter={ch.slug}
+            >
+              <span class="nav-num">{ch.chapter}</span>
+              <span class="nav-lec-title">
+                <span>{ch.title}</span>
+                <span class="nav-test-score" data-nav-test-score data-label={testWord}></span>
+              </span>
+            </a>
+          ))}
+        </nav>
+      </aside>
+
+      <article class="lecture-article">
+        <header class="lecture-header">
+          <div class="lecture-badge">{chapterWord} {frontmatter?.chapter}</div>
+          <h1 class="lecture-title">{frontmatter?.title}</h1>
+        </header>
+
+        <div class="lecture-content">
+          <Content />
+        </div>
+
+        <div class="topic-navigation">
+          {prevCh ? (
+            <a href={`/${locale}/courses/${course}/${prevCh.slug}`} class="nav-btn nav-prev">
+              <span class="nav-arrow">←</span>
+              <div class="nav-text">
+                <span class="nav-label">{prevWord}</span>
+                <span class="nav-title">{prevCh.title}</span>
+              </div>
+            </a>
+          ) : (
+            <div class="nav-spacer" />
+          )}
+          {nextCh ? (
+            <a href={`/${locale}/courses/${course}/${nextCh.slug}`} class="nav-btn nav-next">
+              <div class="nav-text">
+                <span class="nav-label">{nextWord}</span>
+                <span class="nav-title">{nextCh.title}</span>
+              </div>
+              <span class="nav-arrow">→</span>
+            </a>
+          ) : (
+            <div class="nav-spacer" />
+          )}
+        </div>
+      </article>
+    </div>
+  </main>
+  <Footer />
+</BaseLayout>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const renderMath = (window as Window & {
+      renderMathInElement?: (element: HTMLElement, options: unknown) => void;
+    }).renderMathInElement;
+
+    if (renderMath) {
+      renderMath(document.body, {
+        delimiters: [
+          { left: "$$", right: "$$", display: true },
+          { left: "$", right: "$", display: false },
+        ],
+        throwOnError: false,
+      });
+    }
+
+    function shuffleElements(parent: Element) {
+      const items = Array.from(parent.children);
+      for (let i = items.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [items[i], items[j]] = [items[j], items[i]];
+      }
+      items.forEach((item, index) => {
+        const letter = item.querySelector(".course-test-letter");
+        if (letter) letter.textContent = String.fromCharCode(65 + index);
+        parent.appendChild(item);
+      });
+    }
+
+    function getCourseTestKey(root: HTMLElement) {
+      return `foodprocess:course-test:${root.dataset.locale || "uk"}:${root.dataset.course || "course"}:${
+        root.dataset.chapter || "chapter"
+      }`;
+    }
+
+    function readCourseTestBest(root: HTMLElement) {
+      try {
+        const raw = localStorage.getItem(getCourseTestKey(root));
+        return raw ? (JSON.parse(raw) as { score: number; total: number }) : null;
+      } catch {
+        return null;
+      }
+    }
+
+    function writeCourseTestBest(root: HTMLElement, score: number, total: number) {
+      const best = readCourseTestBest(root);
+      if (!best || score / total >= best.score / best.total) {
+        localStorage.setItem(getCourseTestKey(root), JSON.stringify({ score, total }));
+      }
+    }
+
+    function updateCourseTestBest(root: HTMLElement) {
+      const target = root.querySelector("[data-course-test-best]");
+      const bestLabel = root.dataset.bestLabel || "Best score";
+      const best = readCourseTestBest(root);
+      if (target) target.textContent = best ? `${bestLabel}: ${best.score}/${best.total}` : `${bestLabel}: -`;
+    }
+
+    function updateCourseChapterNav() {
+      const activeTest = document.querySelector<HTMLElement>("[data-course-self-test]");
+      const locale = activeTest?.dataset.locale || "uk";
+      const course = activeTest?.dataset.course || "course";
+
+      document.querySelectorAll<HTMLElement>("[data-course-chapter-nav]").forEach((item) => {
+        const chapter = item.dataset.chapter || "";
+        const score = item.querySelector<HTMLElement>("[data-nav-test-score]");
+        if (!score) return;
+
+        try {
+          const raw = localStorage.getItem(`foodprocess:course-test:${locale}:${course}:${chapter}`);
+          const value = raw ? (JSON.parse(raw) as { score?: number; total?: number }) : null;
+          const earned = Number(value?.score);
+          const total = Number(value?.total);
+
+          if (Number.isFinite(earned) && Number.isFinite(total) && total > 0) {
+            const ratio = earned / total;
+            item.classList.toggle("has-passed-test", ratio >= 0.7);
+            score.textContent = `${score.dataset.label || "test"} ${earned}/${total}`;
+            return;
+          }
+        } catch {
+          // Saved progress is optional; invalid values fall back to an empty marker.
+        }
+
+        item.classList.remove("has-passed-test");
+        score.textContent = "";
+      });
+    }
+
+    function resetCourseTest(root: HTMLElement) {
+      root.querySelectorAll<HTMLInputElement>("input[type='radio']").forEach((input) => {
+        input.checked = false;
+      });
+      root.querySelectorAll<HTMLElement>("[data-course-test-item]").forEach((item) => {
+        item.classList.remove("is-correct", "is-incorrect", "is-missing");
+      });
+      root.querySelectorAll("[data-course-test-feedback]").forEach((feedback) => {
+        feedback.textContent = "";
+      });
+      root.classList.remove("is-checked");
+      const result = root.querySelector("[data-course-test-result]");
+      const total = root.querySelectorAll("[data-course-test-item]").length;
+      if (result) result.textContent = `${root.dataset.resultLabel || "Result"}: 0/${total}`;
+    }
+
+    document.querySelectorAll<HTMLElement>("[data-course-self-test]").forEach((root) => {
+      root.querySelectorAll("[data-course-test-options]").forEach(shuffleElements);
+      updateCourseTestBest(root);
+
+      root.querySelector("[data-course-test-reset]")?.addEventListener("click", () => {
+        localStorage.removeItem(getCourseTestKey(root));
+        resetCourseTest(root);
+        updateCourseTestBest(root);
+        updateCourseChapterNav();
+      });
+
+      root.querySelector("[data-course-test-form]")?.addEventListener("submit", (event) => {
+        event.preventDefault();
+        const items = root.querySelectorAll<HTMLElement>("[data-course-test-item]");
+        let score = 0;
+
+        items.forEach((item) => {
+          const selected = item.querySelector<HTMLInputElement>("input[type='radio']:checked");
+          const feedback = item.querySelector("[data-course-test-feedback]");
+          item.classList.remove("is-correct", "is-incorrect", "is-missing");
+
+          if (!selected) {
+            item.classList.add("is-missing");
+            if (feedback) feedback.textContent = root.dataset.chooseLabel || "Choose an answer.";
+            return;
+          }
+
+          const isCorrect = selected.dataset.correct === "1";
+          if (isCorrect) {
+            score += 1;
+            item.classList.add("is-correct");
+          } else {
+            item.classList.add("is-incorrect");
+          }
+          if (feedback) {
+            feedback.textContent = isCorrect
+              ? root.dataset.correctLabel || "Correct."
+              : root.dataset.incorrectLabel || "Review needed.";
+          }
+        });
+
+        const result = root.querySelector("[data-course-test-result]");
+        if (result) result.textContent = `${root.dataset.resultLabel || "Result"}: ${score}/${items.length}`;
+        writeCourseTestBest(root, score, items.length);
+        updateCourseTestBest(root);
+        updateCourseChapterNav();
+        root.classList.add("is-checked");
+      });
+    });
+
+    updateCourseChapterNav();
+  });
+</script>
+
+<style>
+  @import "../../../../styles/topic.css";
+  @import "../../../../styles/lecture.css";
+
+  .course-self-test {
+    margin: 1.5rem 0 2rem;
+    padding: 1.25rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background: color-mix(in srgb, var(--bg-secondary) 92%, var(--accent-blue));
+  }
+
+  .course-test-item {
+    margin: 0 0 1rem;
+    padding: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+  }
+
+  .course-test-item legend {
+    padding: 0 0.35rem;
+    font-weight: 700;
+  }
+
+  .course-test-options {
+    display: grid;
+    gap: 0.55rem;
+    margin-top: 0.85rem;
+  }
+
+  .course-test-option {
+    display: grid;
+    grid-template-columns: auto 1.7rem 1fr;
+    gap: 0.55rem;
+    align-items: start;
+    padding: 0.65rem 0.75rem;
+    border: 1px solid color-mix(in srgb, var(--border-color) 80%, transparent);
+    border-radius: 8px;
+    background: color-mix(in srgb, var(--bg-primary) 82%, transparent);
+    cursor: pointer;
+  }
+
+  .course-test-letter {
+    font-weight: 800;
+    color: var(--accent-blue);
+  }
+
+  .course-test-feedback {
+    margin: 0.7rem 0 0;
+    font-weight: 700;
+  }
+
+  .course-test-item.is-correct {
+    border-color: color-mix(in srgb, #22c55e 72%, var(--border-color));
+  }
+
+  .course-test-item.is-incorrect,
+  .course-test-item.is-missing {
+    border-color: color-mix(in srgb, #ef4444 72%, var(--border-color));
+  }
+
+  .course-test-item.is-correct .course-test-feedback {
+    color: #22c55e;
+  }
+
+  .course-test-item.is-incorrect .course-test-feedback,
+  .course-test-item.is-missing .course-test-feedback {
+    color: #f87171;
+  }
+
+  .course-test-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1rem;
+  }
+
+  .course-test-primary,
+  .course-test-secondary {
+    min-height: 2.5rem;
+    border-radius: 8px;
+    padding: 0.65rem 1rem;
+    font-weight: 800;
+    cursor: pointer;
+  }
+
+  .course-test-primary {
+    border: 0;
+    background: var(--accent-blue);
+    color: white;
+  }
+
+  .course-test-secondary {
+    border: 1px solid var(--border-color);
+    background: transparent;
+    color: var(--text-primary);
+  }
+
+  .course-test-status {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin: 1rem 0 0;
+  }
+
+  .course-test-answers {
+    margin-top: 1rem;
+  }
+
+  .nav-lec-title {
+    display: grid;
+    gap: 0.22rem;
+  }
+
+  .nav-test-score {
+    min-height: 0.9rem;
+    color: var(--text-secondary);
+    font-size: 0.72rem;
+    font-weight: 700;
+  }
+
+  .lecture-nav-item.has-passed-test .nav-test-score {
+    color: #22c55e;
+  }
+</style>

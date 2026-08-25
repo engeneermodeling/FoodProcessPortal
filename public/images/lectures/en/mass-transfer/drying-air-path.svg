@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="500" viewBox="0 0 980 500" role="img" aria-labelledby="title desc">
+  <title id="title">Air path in a dryer on an I-d chart</title>
+  <desc id="desc">The simplified diagram shows air heating at almost constant humidity ratio and humidification during drying.</desc>
+  <defs>
+    <style>
+      .bg{fill:#f8fafc}.axis{stroke:#334155;stroke-width:3}.grid{stroke:#cbd5e1;stroke-width:1}.heat{stroke:#dc2626;stroke-width:6;fill:none;marker-end:url(#h)}.dry{stroke:#2563eb;stroke-width:6;fill:none;marker-end:url(#d)}.pt{fill:#0f766e}.h{fill:#0f172a;font:700 22px Arial}.t{fill:#334155;font:16px Arial}.small{fill:#475569;font:14px Arial}
+    </style>
+    <marker id="h" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto"><path d="M0,0 L11,4 L0,8 Z" fill="#dc2626"/></marker>
+    <marker id="d" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto"><path d="M0,0 L11,4 L0,8 Z" fill="#2563eb"/></marker>
+  </defs>
+  <rect class="bg" width="980" height="500" rx="18"/>
+  <line x1="110" y1="380" x2="900" y2="380" class="axis"/>
+  <line x1="110" y1="380" x2="110" y2="70" class="axis"/>
+  <path class="grid" d="M110 320 H870 M110 260 H870 M110 200 H870 M110 140 H870 M250 80 V380 M390 80 V380 M530 80 V380 M670 80 V380 M810 80 V380"/>
+  <text x="490" y="45" text-anchor="middle" class="h">Typical process: heating -> material contact -> humid exhaust air</text>
+  <text x="500" y="435" text-anchor="middle" class="h">d, kg vapour / kg dry air</text>
+  <text x="45" y="230" class="h" transform="rotate(-90 45 230)">I, kJ / kg dry air</text>
+  <path class="heat" d="M220 330 L220 150"/>
+  <path class="dry" d="M220 150 C350 180 500 235 710 300"/>
+  <circle class="pt" cx="220" cy="330" r="9"/>
+  <circle class="pt" cx="220" cy="150" r="9"/>
+  <circle class="pt" cx="710" cy="300" r="9"/>
+  <text x="155" y="336" class="t">1 outdoor air</text>
+  <text x="235" y="144" class="t">2 after heater</text>
+  <text x="725" y="306" class="t">3 after dryer</text>
+  <text x="285" y="115" class="small" fill="#dc2626">d ≈ const, I increases</text>
+  <text x="470" y="275" class="small" fill="#2563eb">d increases, air removes moisture</text>
+</svg>

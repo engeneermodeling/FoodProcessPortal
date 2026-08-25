@@ -5,8 +5,14 @@
   grid-template-columns: 280px 1fr;
   gap: 2rem;
   align-items: start;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 1200px;
+  min-width: 0;
+  margin-inline: auto;
   padding-top: 2rem;
   padding-bottom: 4rem;
+  text-align: left;
 }
 
 /* ===== SIDEBAR ===== */
@@ -17,6 +23,7 @@
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  min-width: 0;
 }
 
 .sidebar-back {
@@ -43,6 +50,7 @@
   border: 1px solid var(--border-color);
   border-radius: 0.75rem;
   overflow: hidden;
+  min-width: 0;
 }
 
 .lecture-nav-title {
@@ -53,6 +61,8 @@
   color: var(--text-secondary);
   padding: 0.9rem 1rem 0.6rem;
   border-bottom: 1px solid var(--border-color);
+  overflow-wrap: anywhere;
+  hyphens: auto;
 }
 
 .lecture-nav-item {
@@ -107,6 +117,8 @@
 .nav-lec-title {
   flex: 1;
   min-width: 0;
+  overflow-wrap: anywhere;
+  hyphens: auto;
 }
 
 /* ===== LECTURE ARTICLE ===== */
@@ -161,9 +173,12 @@
 /* ===== LECTURE CONTENT TYPOGRAPHY ===== */
 
 .lecture-content {
+  min-width: 0;
   font-size: 1.05rem;
   line-height: 1.75;
   color: var(--text-primary);
+  overflow-wrap: anywhere;
+  hyphens: auto;
 }
 
 .lecture-content h2 {
@@ -173,6 +188,8 @@
   padding-bottom: 0.5rem;
   border-bottom: 2px solid var(--border-color);
   color: var(--text-primary);
+  overflow-wrap: anywhere;
+  hyphens: auto;
 }
 
 .lecture-content h3 {
@@ -180,6 +197,8 @@
   font-weight: 700;
   margin: 2rem 0 0.75rem;
   color: var(--text-primary);
+  overflow-wrap: anywhere;
+  hyphens: auto;
 }
 
 .lecture-content h4 {
@@ -193,6 +212,136 @@
 
 .lecture-content p {
   margin: 0 0 1.25rem;
+}
+
+:global(.lecture-content p:has(> img)) {
+  margin: 1.75rem 0 0.5rem;
+  overflow-x: auto;
+  max-width: 100%;
+}
+
+:global(.lecture-content img) {
+  box-sizing: border-box;
+  display: block;
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  margin: 0 auto;
+  background: #fff;
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+}
+
+:global(.lecture-content p:has(> img) em) {
+  display: block;
+  max-width: 52rem;
+  margin: 0.75rem auto 1.75rem;
+  color: var(--text-secondary);
+  font-size: 0.92rem;
+  line-height: 1.45;
+  text-align: center;
+}
+
+:global(.lecture-content .textbook-pages) {
+  display: grid;
+  gap: 1.5rem;
+  margin: 1.5rem 0 2rem;
+}
+
+:global(.lecture-content .textbook-page) {
+  margin: 0;
+  padding: 0.75rem;
+  background: #f8fafc;
+  border: 1px solid color-mix(in srgb, var(--border-color) 70%, #ffffff);
+  border-radius: 0.5rem;
+}
+
+:global(.lecture-content .textbook-page img) {
+  width: 100%;
+  max-width: 100%;
+  border: 0;
+  border-radius: 0.25rem;
+  background: #ffffff;
+}
+
+:global(.lecture-content .textbook-page figcaption) {
+  margin-top: 0.45rem;
+  color: #475569;
+  font-size: 0.82rem;
+  line-height: 1.35;
+  text-align: center;
+}
+
+:global(.lecture-content .formula-block) {
+  overflow-x: auto;
+  margin: 1rem 0 1.25rem;
+  padding: 0.8rem 1rem;
+  color: var(--text-primary);
+  background: color-mix(in srgb, var(--surface-muted) 78%, #ffffff);
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+}
+
+:global(.lecture-content .formula-block code) {
+  font-family: "Consolas", "Liberation Mono", monospace;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+:global(.lecture-content .equation-block) {
+  display: grid;
+  grid-template-columns: minmax(2.75rem, auto) minmax(0, 1fr) minmax(2.75rem, auto);
+  gap: 0.75rem;
+  align-items: center;
+  overflow-x: auto;
+  margin: 1rem 0 1.25rem;
+  padding: 0.85rem 1rem;
+  color: var(--text-primary);
+  background: color-mix(in srgb, var(--surface-muted) 78%, #ffffff);
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+}
+
+:global(.lecture-content .equation-main) {
+  grid-column: 2;
+  min-width: 0;
+  justify-self: center;
+  font-family: "Cambria Math", "Times New Roman", serif;
+  font-size: 1.05rem;
+  line-height: 1.65;
+  overflow-wrap: anywhere;
+  text-align: center;
+}
+
+:global(.lecture-content .equation-number) {
+  grid-column: 3;
+  justify-self: end;
+  color: var(--text-secondary);
+  font-family: "Consolas", "Liberation Mono", monospace;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+:global(.lecture-content .equation-main sub),
+:global(.lecture-content .equation-main sup) {
+  line-height: 0;
+}
+
+@media (max-width: 640px) {
+  :global(.lecture-content .equation-block) {
+    grid-template-columns: 1fr;
+  }
+
+  :global(.lecture-content .equation-main) {
+    grid-column: 1;
+  }
+
+  :global(.lecture-content .equation-number) {
+    grid-column: 1;
+    justify-self: end;
+  }
 }
 
 .lecture-content blockquote {
@@ -209,37 +358,95 @@
   margin: 0;
 }
 
-.lecture-content table {
+:global(.lecture-content table) {
+  display: block;
   width: 100%;
-  border-collapse: collapse;
-  margin: 1.5rem 0;
-  font-size: 0.95rem;
-  overflow: hidden;
-  border-radius: 0.5rem;
-  border: 1px solid var(--border-color);
-}
-
-.lecture-content th {
+  max-width: 100%;
+  margin: 1.75rem 0;
+  overflow-x: auto;
+  border-collapse: separate;
+  border-spacing: 0;
   background: var(--bg-secondary);
-  color: var(--text-primary);
-  font-weight: 700;
-  padding: 0.75rem 1rem;
-  text-align: left;
-  border-bottom: 2px solid var(--border-color);
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  font-size: 0.88rem;
+  line-height: 1.32;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.16);
 }
 
-.lecture-content td {
-  padding: 0.65rem 1rem;
+:global(.lecture-content thead) {
+  background: color-mix(in srgb, var(--accent-blue) 18%, var(--bg-secondary));
+}
+
+:global(.lecture-content th),
+:global(.lecture-content td) {
+  min-width: 2.55rem;
+  padding: 0.46rem 0.52rem;
+  border-right: 1px solid var(--border-color);
   border-bottom: 1px solid var(--border-color);
   color: var(--text-primary);
+  text-align: left;
+  vertical-align: middle;
 }
 
-.lecture-content tr:last-child td {
+:global(.lecture-content th) {
+  color: #fff;
+  font-weight: 750;
+  text-align: center;
+}
+
+:global(.lecture-content td) {
+  background: color-mix(in srgb, var(--bg-secondary) 92%, #fff);
+}
+
+:global(.lecture-content tbody tr:nth-child(even) td) {
+  background: color-mix(in srgb, var(--bg-secondary) 78%, var(--bg-primary));
+}
+
+:global(.lecture-content tbody tr:hover td) {
+  background: color-mix(in srgb, var(--accent-blue) 16%, var(--bg-secondary));
+}
+
+:global(.lecture-content th:last-child),
+:global(.lecture-content td:last-child) {
+  border-right: none;
+}
+
+:global(.lecture-content tbody tr:last-child td) {
   border-bottom: none;
 }
 
-.lecture-content tr:nth-child(even) td {
-  background: color-mix(in srgb, var(--bg-secondary) 50%, transparent);
+:global(.lecture-content td:first-child),
+:global(.lecture-content th:first-child) {
+  min-width: 5rem;
+  text-align: center;
+}
+
+:global(.lecture-content table:has(th:nth-child(12)) th:nth-child(n + 2):nth-child(-n + 11)),
+:global(.lecture-content table:has(th:nth-child(12)) td:nth-child(n + 2):nth-child(-n + 11)) {
+  width: 2.45rem;
+  min-width: 2.1rem;
+  padding-inline: 0.34rem;
+  text-align: center;
+  white-space: nowrap;
+}
+
+:global(.lecture-content table:has(th:nth-child(12)) th:first-child),
+:global(.lecture-content table:has(th:nth-child(12)) td:first-child) {
+  min-width: 6.5rem;
+  max-width: 9rem;
+}
+
+:global(.lecture-content table:has(th:nth-child(12)) th:nth-child(n + 12)),
+:global(.lecture-content table:has(th:nth-child(12)) td:nth-child(n + 12)) {
+  min-width: 7.5rem;
+  max-width: 11rem;
+}
+
+:global(.lecture-content table code) {
+  white-space: normal;
+  overflow-wrap: normal;
+  word-break: normal;
 }
 
 .lecture-content code {
@@ -392,6 +599,37 @@
 }
 
 @media (max-width: 640px) {
+  .lecture-container {
+    width: calc(100% - 2rem);
+    padding-inline: 0;
+  }
+
+  .lecture-content {
+    font-size: 0.98rem;
+    line-height: 1.7;
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+
+  .lecture-content h2 {
+    font-size: 1.35rem;
+    line-height: 1.25;
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+
+  .lecture-content h3 {
+    font-size: 1.08rem;
+    line-height: 1.35;
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+
+  .lecture-nav-title {
+    letter-spacing: 0.04em;
+    line-height: 1.35;
+  }
+
   .topic-navigation {
     flex-direction: column;
   }
@@ -402,6 +640,31 @@
   }
 
   .lecture-title {
-    font-size: 1.3rem;
+    font-size: 1.25rem;
+  }
+
+  :global(.lecture-content table) {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    font-size: 0.86rem;
+  }
+
+  :global(.lecture-content th),
+  :global(.lecture-content td) {
+    min-width: 4.4rem;
+    padding: 0.58rem 0.65rem;
+  }
+
+  :global(.lecture-content table:has(th:nth-child(12)) th:nth-child(n + 2):nth-child(-n + 11)),
+  :global(.lecture-content table:has(th:nth-child(12)) td:nth-child(n + 2):nth-child(-n + 11)) {
+    min-width: 2.5rem;
+  }
+
+  :global(.lecture-content table:has(th:nth-child(12)) th:first-child),
+  :global(.lecture-content table:has(th:nth-child(12)) td:first-child),
+  :global(.lecture-content table:has(th:nth-child(12)) th:nth-child(n + 12)),
+  :global(.lecture-content table:has(th:nth-child(12)) td:nth-child(n + 12)) {
+    min-width: 6.5rem;
   }
 }

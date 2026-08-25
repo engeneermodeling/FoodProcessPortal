@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 430" role="img" aria-labelledby="title desc">
+  <title id="title">Вид процесу до апаратурнои схеми</title>
+  <desc id="desc">Послидовнист переходу вид операции до апарата, потокив, трубопроводив, арматури и контролю.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#38bdf8"/>
+    </marker>
+  </defs>
+  <rect width="920" height="430" rx="22" fill="#111827"/>
+  <text x="42" y="58" fill="#f8fafc" font-family="Arial, sans-serif" font-size="27" font-weight="700">Процес перетворюется на апаратурне оформлення поетапно</text>
+  <g font-family="Arial, sans-serif" font-size="15" font-weight="700">
+    <g fill="#1e293b" stroke="#38bdf8" stroke-width="2">
+      <rect x="52" y="178" width="122" height="72" rx="13"/>
+      <rect x="218" y="178" width="122" height="72" rx="13"/>
+      <rect x="384" y="178" width="122" height="72" rx="13"/>
+      <rect x="550" y="178" width="122" height="72" rx="13"/>
+      <rect x="716" y="178" width="122" height="72" rx="13"/>
+    </g>
+    <text x="84" y="207" fill="#e0f2fe">Операция</text>
+    <text x="84" y="230" fill="#e0f2fe">процесу</text>
+    <text x="252" y="219" fill="#e0f2fe">Апарат</text>
+    <text x="414" y="207" fill="#e0f2fe">Потоки</text>
+    <text x="407" y="230" fill="#e0f2fe">и зв'язки</text>
+    <text x="579" y="207" fill="#e0f2fe">Арматура</text>
+    <text x="590" y="230" fill="#e0f2fe">и CIP</text>
+    <text x="748" y="207" fill="#e0f2fe">Контрол</text>
+    <text x="759" y="230" fill="#e0f2fe">и безпека</text>
+    <path d="M174 214h36" stroke="#38bdf8" stroke-width="4" marker-end="url(#arrow)"/>
+    <path d="M340 214h36" stroke="#38bdf8" stroke-width="4" marker-end="url(#arrow)"/>
+    <path d="M506 214h36" stroke="#38bdf8" stroke-width="4" marker-end="url(#arrow)"/>
+    <path d="M672 214h36" stroke="#38bdf8" stroke-width="4" marker-end="url(#arrow)"/>
+  </g>
+  <rect x="142" y="314" width="636" height="50" rx="12" fill="#0f172a" stroke="#475569"/>
+  <text x="176" y="345" fill="#cbd5e1" font-family="Arial, sans-serif" font-size="15">Кожний апарат мае входи, виходи, сервисни середовища, обхидни линии, дренажи и точки контролю.</text>
+</svg>

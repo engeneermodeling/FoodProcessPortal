@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 430" role="img" aria-labelledby="title desc">
+  <title id="title">Гігієнічний дизайн обладнання</title>
+  <desc id="desc">Порівняння конструкції з застійними зонами і конструкції, що дренується та доступна для очищення.</desc>
+  <rect width="920" height="430" rx="22" fill="#111827"/>
+  <text x="42" y="58" fill="#f8fafc" font-family="Arial, sans-serif" font-size="27" font-weight="700">Гігієнічний дизайн: поверхня має очищатися і дренуватися</text>
+  <g font-family="Arial, sans-serif">
+    <rect x="70" y="118" width="350" height="238" rx="18" fill="#1e293b" stroke="#475569"/>
+    <text x="104" y="156" fill="#fecaca" font-size="22" font-weight="700">Проблемна конструкція</text>
+    <path d="M120 278h220v-94h42" fill="none" stroke="#94a3b8" stroke-width="28" stroke-linejoin="round"/>
+    <circle cx="340" cy="184" r="36" fill="#7f1d1d" opacity=".9"/>
+    <text x="294" y="190" fill="#fee2e2" font-size="15" font-weight="700">мертва зона</text>
+    <path d="M142 278h110" stroke="#38bdf8" stroke-width="6"/>
+    <text x="110" y="326" fill="#cbd5e1" font-size="15">залишки продукту стоять у кишенях, швах і тупиках</text>
+    <rect x="500" y="118" width="350" height="238" rx="18" fill="#1e293b" stroke="#475569"/>
+    <text x="534" y="156" fill="#bbf7d0" font-size="22" font-weight="700">Гігієнічна конструкція</text>
+    <path d="M548 278h184c44 0 78-34 78-78" fill="none" stroke="#94a3b8" stroke-width="28" stroke-linecap="round"/>
+    <path d="M570 278h190" stroke="#38bdf8" stroke-width="6"/>
+    <path d="M762 274l30-24" stroke="#38bdf8" stroke-width="6"/>
+    <circle cx="780" cy="204" r="30" fill="#14532d" opacity=".9"/>
+    <text x="735" y="210" fill="#dcfce7" font-size="15" font-weight="700">дренаж</text>
+    <text x="536" y="326" fill="#cbd5e1" font-size="15">плавні переходи, нахил, доступ CIP і відсутність застою</text>
+  </g>
+</svg>

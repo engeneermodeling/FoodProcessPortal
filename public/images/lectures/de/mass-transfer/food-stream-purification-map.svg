@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 430" role="img" aria-labelledby="title desc">
+  <title id="title">Anwendungen von Absorption und Adsorption in Lebensmittelprozessen</title>
+  <desc id="desc">Karte typischer Stroeme: geruchsbelastete Luft, Prozesswasser, Sirupe, Getraenke, Kaeltemittelgase und Abluft.</desc>
+  <rect width="920" height="430" rx="22" fill="#0f172a"/>
+  <text x="42" y="58" fill="#f8fafc" font-family="Arial, sans-serif" font-size="25" font-weight="700">Wo das im Lebensmittelbetrieb vorkommt</text>
+  <text x="42" y="90" fill="#cbd5e1" font-family="Arial, sans-serif" font-size="16">Absorption funktioniert durch Loesung in Fluessigkeit, Adsorption ueber die Oberflaeche eines festen Sorbens</text>
+
+  <g font-family="Arial, sans-serif">
+    <rect x="42" y="128" width="250" height="92" rx="12" fill="#1e293b" stroke="#334155"/>
+    <text x="64" y="160" fill="#bfdbfe" font-size="18" font-weight="700">Abluft</text>
+    <text x="64" y="188" fill="#f8fafc" font-size="15">Gerueche, VOC, Fettdaempfe</text>
+    <text x="64" y="210" fill="#94a3b8" font-size="14">Adsorber oder Biofilter</text>
+
+    <rect x="335" y="128" width="250" height="92" rx="12" fill="#1e293b" stroke="#334155"/>
+    <text x="357" y="160" fill="#bbf7d0" font-size="18" font-weight="700">Sirupe und Getraenke</text>
+    <text x="357" y="188" fill="#f8fafc" font-size="15">Farbe, Fehlgeschmack, Verunreinigungen</text>
+    <text x="357" y="210" fill="#94a3b8" font-size="14">Aktivkohle</text>
+
+    <rect x="628" y="128" width="250" height="92" rx="12" fill="#1e293b" stroke="#334155"/>
+    <text x="650" y="160" fill="#fde68a" font-size="18" font-weight="700">Kaeltesysteme</text>
+    <text x="650" y="188" fill="#f8fafc" font-size="15">Notfreisetzungen von NH3</text>
+    <text x="650" y="210" fill="#94a3b8" font-size="14">Wasser- oder Saeurewaescher</text>
+
+    <rect x="42" y="258" width="250" height="92" rx="12" fill="#1e293b" stroke="#334155"/>
+    <text x="64" y="290" fill="#bae6fd" font-size="18" font-weight="700">Prozesswasser</text>
+    <text x="64" y="318" fill="#f8fafc" font-size="15">Organik, Geruch, Chlororganik</text>
+    <text x="64" y="340" fill="#94a3b8" font-size="14">granularer Sorbent</text>
+
+    <rect x="335" y="258" width="250" height="92" rx="12" fill="#1e293b" stroke="#334155"/>
+    <text x="357" y="290" fill="#fecaca" font-size="18" font-weight="700">Gasgemische</text>
+    <text x="357" y="318" fill="#f8fafc" font-size="15">CO2, SO2, H2S, NH3</text>
+    <text x="357" y="340" fill="#94a3b8" font-size="14">Absorptionskolonne</text>
+
+    <rect x="628" y="258" width="250" height="92" rx="12" fill="#1e293b" stroke="#334155"/>
+    <text x="650" y="290" fill="#ddd6fe" font-size="18" font-weight="700">Oele und Extrakte</text>
+    <text x="650" y="318" fill="#f8fafc" font-size="15">Pigmente, Loesungsmittelspuren</text>
+    <text x="650" y="340" fill="#94a3b8" font-size="14">Sorption + Filtration</text>
+  </g>
+</svg>

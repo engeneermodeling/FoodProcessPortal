@@ -1,6 +1,8 @@
 ---
 import { siteConfig } from "../config";
 import Analytics from "@vercel/analytics/astro";
+import { ENABLED_LOCALES } from "../locales.config";
+import { getLocalizedPath } from "../utils/routing";
 
 interface Props {
   title: string;
@@ -21,8 +23,13 @@ const canonicalUrl = new URL(
   Astro.url.pathname,
   Astro.site || "http://localhost:4321",
 ).href;
-const ogImage = image || "/images/og-default.png";
+const ogImage = new URL(image || "/images/og-default.png", Astro.site || siteConfig.url).href;
 const siteName = siteConfig.title;
+const alternates = ENABLED_LOCALES.map((code) => ({
+  locale: code,
+  href: new URL(getLocalizedPath(Astro.url.pathname, code), Astro.site || siteConfig.url).href,
+}));
+const defaultAlternate = alternates.find((entry) => entry.locale === "uk") || alternates[0];
 ---
 
 <!doctype html>
@@ -40,7 +47,6 @@ const siteName = siteConfig.title;
     <link rel="canonical" href={canonicalUrl} />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="/images/favicon.svg" />
     <link rel="icon" type="image/png" href="/images/favicon.png" />
 
     <!-- Open Graph / Facebook -->
@@ -60,7 +66,7 @@ const siteName = siteConfig.title;
     <meta name="twitter:image" content={ogImage} />
 
     <!-- Preconnect до власного домену -->
-    <link rel="preconnect" href="https://foodprocessportal.vercel.app" />
+    <link rel="preconnect" href={siteConfig.url} />
 
     <!-- Preload логотипу (якщо використовуєш) -->
     <link
@@ -76,31 +82,12 @@ const siteName = siteConfig.title;
     />
 
     <!-- Hreflang для багатомовності -->
-    <link
-      rel="alternate"
-      hreflang="uk"
-      href={canonicalUrl.replace(`/${locale}/`, "/uk/")}
-    />
-    <link
-      rel="alternate"
-      hreflang="ru"
-      href={canonicalUrl.replace(`/${locale}/`, "/ru/")}
-    />
-    <link
-      rel="alternate"
-      hreflang="en"
-      href={canonicalUrl.replace(`/${locale}/`, "/en/")}
-    />
-    <link
-      rel="alternate"
-      hreflang="de"
-      href={canonicalUrl.replace(`/${locale}/`, "/de/")}
-    />
-    <link
-      rel="alternate"
-      hreflang="x-default"
-      href={canonicalUrl.replace(`/${locale}/`, "/uk/")}
-    />
+    {alternates.map((alternate) => (
+      <link rel="alternate" hreflang={alternate.locale} href={alternate.href} />
+    ))}
+    {defaultAlternate && (
+      <link rel="alternate" hreflang="x-default" href={defaultAlternate.href} />
+    )}
 
     <!-- Styles -->
     <link rel="stylesheet" href="/styles/theme.css" />
@@ -136,10 +123,25 @@ const siteName = siteConfig.title;
   </head>
   <body>
     <slot />
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const anchors = document.querySelectorAll("a[href^='http://'], a[href^='https://']");
+        const currentHost = window.location.host;
+
+        anchors.forEach((anchor) => {
+          if (!(anchor instanceof HTMLAnchorElement) || anchor.host === currentHost) return;
+
+          anchor.target = "_blank";
+          const rel = new Set(anchor.rel.split(/\s+/).filter(Boolean));
+          rel.add("noopener");
+          rel.add("noreferrer");
+          anchor.rel = [...rel].join(" ");
+        });
+      });
+    </script>
   </body>
 </html>
 
 <style is:global>
-  @import "/public/styles/theme.css";
   @import "../styles/home.css";
 </style>

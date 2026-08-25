@@ -3,16 +3,58 @@ import BaseLayout from "../../../../layouts/BaseLayout.astro";
 import Header from "../../../../components/Header.astro";
 import ThemeToggle from "../../../../components/ThemeToggle.astro";
 import Footer from "../../../../components/Footer.astro";
+import TopicSelfCheck from "../../../../components/TopicSelfCheck.astro";
+import TopicQuiz from "../../../../components/TopicQuiz.astro";
+import TopicNextSteps from "../../../../components/TopicNextSteps.astro";
+import TopicLearningChecklist from "../../../../components/TopicLearningChecklist.astro";
 import { siteConfig } from "../../../../config";
 import { ENABLED_LOCALES } from "../../../../locales.config";
 
+interface TopicFrontmatter {
+  title: string;
+  description?: string;
+  icon?: string;
+}
+
+interface LectureFrontmatter {
+  title: string;
+  lecture: number;
+  description?: string;
+  duration?: string;
+  difficulty?: string;
+}
+
+interface TopicModule {
+  frontmatter: TopicFrontmatter;
+  default: unknown;
+}
+
+interface LectureModule {
+  frontmatter: LectureFrontmatter;
+}
+
+interface TopicPath {
+  params: {
+    locale: string;
+    topic: string;
+  };
+  props: {
+    frontmatter: TopicFrontmatter;
+    Content: unknown;
+  };
+}
+
+interface LectureItem extends LectureFrontmatter {
+  slug: string;
+}
+
 // Статичні glob-и
-const allTopics = import.meta.glob("/src/content/topics/**/*.md", { eager: true });
-const allLectures = import.meta.glob("/src/content/lectures/**/*.md", { eager: true });
+const allTopics = import.meta.glob<TopicModule>("/src/content/topics/**/*.md", { eager: true });
+const allLectures = import.meta.glob<LectureModule>("/src/content/lectures/**/*.md", { eager: true });
 
 export function getStaticPaths() {
-  const topics = import.meta.glob("/src/content/topics/**/*.md", { eager: true });
-  const paths: any[] = [];
+  const topics = import.meta.glob<TopicModule>("/src/content/topics/**/*.md", { eager: true });
+  const paths: TopicPath[] = [];
   const locales = [...ENABLED_LOCALES];
 
   for (const [path, mod] of Object.entries(topics)) {
@@ -23,7 +65,7 @@ export function getStaticPaths() {
     if (locales.includes(locale) && slug) {
       paths.push({
         params: { locale, topic: slug },
-        props: { frontmatter: (mod as any).frontmatter, Content: (mod as any).default },
+        props: { frontmatter: mod.frontmatter, Content: mod.default },
       });
     }
   }
@@ -41,7 +83,7 @@ const lectures = Object.entries(allLectures)
     const li = parts.indexOf("lectures");
     return li !== -1 && parts[li + 1] === locale && parts[li + 2] === topic;
   })
-  .map(([path, mod]: [string, any]) => ({
+  .map(([path, mod]): LectureItem => ({
     slug: path.split("/").pop()?.replace(".md", "") || "",
     ...(mod.frontmatter || {}),
   }))
@@ -56,6 +98,21 @@ const backWord =
   locale === "uk" ? "← Назад до тем" :
   locale === "de" ? "← Zurück zu Themen" :
   locale === "ru" ? "← Назад к темам" : "← Back to topics";
+
+const readLabel =
+  locale === "uk" ? "Прочитано" :
+  locale === "de" ? "Gelesen" :
+  locale === "ru" ? "Прочитано" : "Read";
+
+const unreadLabel =
+  locale === "uk" ? "Не прочитано" :
+  locale === "de" ? "Nicht gelesen" :
+  locale === "ru" ? "Не прочитано" : "Unread";
+
+const lectureProgressTitle =
+  locale === "uk" ? "Прогрес читання лекцій" :
+  locale === "de" ? "Fortschritt beim Lesen" :
+  locale === "ru" ? "Прогресс чтения лекций" : "Lecture Reading Progress";
 ---
 
 <BaseLayout
@@ -82,6 +139,12 @@ const backWord =
           </div>
         </div>
 
+        <TopicLearningChecklist
+          topic={topic}
+          locale={locale}
+          lectureSlugs={lectures.map((lecture) => lecture.slug)}
+        />
+
         {lectures.length > 0 ? (
           <section class="lectures-section">
             <h2 class="lectures-heading">
@@ -90,11 +153,31 @@ const backWord =
                lectureWord === "Лекция" ? "Лекции" :
                lectureWord === "Vorlesung" ? "Vorlesungen" : "Lectures"}
             </h2>
+            <div
+              class="lecture-progress-panel"
+              data-lecture-progress
+              data-locale={locale}
+              data-topic={topic}
+              data-total={lectures.length}
+              data-read-label={readLabel}
+            >
+              <strong>{lectureProgressTitle}</strong>
+              <span data-lecture-progress-value>{readLabel}: 0/{lectures.length}</span>
+              <span class="lecture-progress-bar">
+                <span data-lecture-progress-bar></span>
+              </span>
+            </div>
             <div class="lectures-list">
-              {lectures.map((lec: any) => (
+              {lectures.map((lec: LectureItem) => (
                 <a
                   href={"/" + locale + "/topics/" + topic + "/" + lec.slug}
                   class="lecture-card"
+                  data-lecture-card
+                  data-locale={locale}
+                  data-topic={topic}
+                  data-lecture={lec.slug}
+                  data-read-label={readLabel}
+                  data-unread-label={unreadLabel}
                 >
                   <div class="lecture-number">
                     {lectureWord} {lec.lecture}
@@ -107,6 +190,9 @@ const backWord =
                     <div class="lecture-meta">
                       {lec.duration && <span class="meta-badge">⏱ {lec.duration}</span>}
                       {lec.difficulty && <span class="meta-badge">📊 {lec.difficulty}</span>}
+                      <span class="meta-badge lecture-read-status" data-lecture-status>
+                        {unreadLabel}
+                      </span>
                     </div>
                   </div>
                   <span class="lecture-arrow">→</span>
@@ -119,11 +205,71 @@ const backWord =
             <Content />
           </div>
         )}
+
+        <TopicSelfCheck topic={topic} locale={locale} />
+        <TopicQuiz topic={topic} locale={locale} />
+        <TopicNextSteps topic={topic} locale={locale} />
       </article>
     </div>
   </main>
   <Footer />
 </BaseLayout>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const lectureCards = document.querySelectorAll<HTMLElement>("[data-lecture-card]");
+    const progress = document.querySelector<HTMLElement>("[data-lecture-progress]");
+
+    function lectureReadKey(locale: string, topic: string, lecture: string) {
+      return `foodprocess:lecture-read:${locale}:${topic}:${lecture}`;
+    }
+
+    function updateLectureProgress() {
+      let readCount = 0;
+
+      lectureCards.forEach((card) => {
+        const locale = card.dataset.locale || "uk";
+        const topic = card.dataset.topic || "";
+        const lecture = card.dataset.lecture || "";
+        const readLabel = card.dataset.readLabel || "Read";
+        const unreadLabel = card.dataset.unreadLabel || "Unread";
+        const status = card.querySelector("[data-lecture-status]");
+        const isRead = localStorage.getItem(lectureReadKey(locale, topic, lecture)) === "1";
+
+        card.classList.toggle("is-read", isRead);
+        if (status) status.textContent = isRead ? readLabel : unreadLabel;
+        if (isRead) readCount++;
+      });
+
+      if (progress) {
+        const total = Number(progress.dataset.total || "0");
+        const readLabel = progress.dataset.readLabel || "Read";
+        const value = progress.querySelector("[data-lecture-progress-value]");
+        const bar = progress.querySelector<HTMLElement>("[data-lecture-progress-bar]");
+
+        if (value) value.textContent = `${readLabel}: ${readCount}/${total}`;
+        if (bar && total > 0) {
+          bar.style.width = `${Math.round((readCount / total) * 100)}%`;
+        }
+      }
+    }
+
+    updateLectureProgress();
+
+    window.addEventListener("foodprocess:learning-progress-changed", (event) => {
+      const detail = event.detail || {};
+      if (!progress || detail.topic === progress.dataset.topic || detail.topic === undefined) {
+        updateLectureProgress();
+      }
+    });
+
+    window.addEventListener("storage", (event) => {
+      if (event.key?.startsWith("foodprocess:lecture-read:")) {
+        updateLectureProgress();
+      }
+    });
+  });
+</script>
 
 <style>
   @import "../../../../styles/topic.css";
@@ -143,6 +289,37 @@ const backWord =
     font-size: 1.4rem; font-weight: 700; color: var(--text-primary);
     margin: 0 0 1.25rem; display: flex; align-items: center; gap: 0.5rem;
   }
+  .lecture-progress-panel {
+    display: grid;
+    gap: 0.45rem;
+    margin: 0 0 1.25rem;
+    padding: 1rem;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 0.6rem;
+  }
+  .lecture-progress-panel strong {
+    color: var(--text-primary);
+    font-size: 0.98rem;
+  }
+  .lecture-progress-panel span {
+    color: var(--text-secondary);
+    font-size: 0.86rem;
+  }
+  .lecture-progress-bar {
+    height: 0.4rem;
+    overflow: hidden;
+    background: color-mix(in srgb, var(--border-color) 78%, transparent);
+    border-radius: 999px;
+  }
+  .lecture-progress-bar span {
+    display: block;
+    width: 0;
+    height: 100%;
+    background: var(--accent-blue);
+    border-radius: inherit;
+    transition: width 0.3s ease;
+  }
   .lectures-list { display: flex; flex-direction: column; gap: 1rem; }
   .lecture-card {
     display: flex; align-items: center; gap: 1.25rem;
@@ -154,6 +331,12 @@ const backWord =
   .lecture-card:hover {
     background: var(--bg-primary); border-color: var(--accent-blue);
     transform: translateX(4px); box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  }
+  .lecture-card.is-read {
+    border-left-color: var(--accent-green);
+  }
+  .lecture-card.is-read .lecture-title {
+    color: var(--accent-green);
   }
   .lecture-number {
     font-size: 0.8rem; font-weight: 700; color: var(--accent-blue);
@@ -168,6 +351,10 @@ const backWord =
     font-size: 0.78rem; color: var(--text-secondary);
     background: var(--bg-primary); border: 1px solid var(--border-color);
     border-radius: 1rem; padding: 0.15rem 0.6rem;
+  }
+  .lecture-card.is-read .lecture-read-status {
+    color: var(--accent-green);
+    border-color: color-mix(in srgb, var(--accent-green) 55%, var(--border-color));
   }
   .lecture-arrow { font-size: 1.25rem; color: var(--accent-blue); flex-shrink: 0; }
   .lecture-card:hover .lecture-arrow { transform: translateX(4px); }

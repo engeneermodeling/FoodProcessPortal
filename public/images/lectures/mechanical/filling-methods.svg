@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 430" role="img" aria-labelledby="title desc">
+  <title id="title">Методи дозування та наповнення</title>
+  <desc id="desc">Порівняння об'ємного, вагового, шнекового, поршневого, насосного і мультиголовочного дозування для різних харчових продуктів.</desc>
+  <rect width="920" height="430" rx="22" fill="#0f172a"/>
+  <text x="42" y="58" fill="#f8fafc" font-family="Arial, sans-serif" font-size="26" font-weight="700">Метод наповнення залежить від реології продукту</text>
+  <g font-family="Arial, sans-serif">
+    <rect x="52" y="118" width="250" height="94" rx="12" fill="#1e293b" stroke="#334155"/>
+    <text x="76" y="152" fill="#bfdbfe" font-size="18" font-weight="700">Об'ємне</text>
+    <text x="76" y="180" fill="#f8fafc" font-size="15">стала камера або стакан</text>
+    <text x="76" y="202" fill="#94a3b8" font-size="14">крупи, гранули, стабільна густина</text>
+    <rect x="335" y="118" width="250" height="94" rx="12" fill="#1e293b" stroke="#334155"/>
+    <text x="359" y="152" fill="#bbf7d0" font-size="18" font-weight="700">Вагове</text>
+    <text x="359" y="180" fill="#f8fafc" font-size="15">контроль маси дози</text>
+    <text x="359" y="202" fill="#94a3b8" font-size="14">снеки, печиво, заморожені овочі</text>
+    <rect x="618" y="118" width="250" height="94" rx="12" fill="#1e293b" stroke="#334155"/>
+    <text x="642" y="152" fill="#fed7aa" font-size="18" font-weight="700">Шнекове</text>
+    <text x="642" y="180" fill="#f8fafc" font-size="15">порошки і дрібні сипкі</text>
+    <text x="642" y="202" fill="#94a3b8" font-size="14">борошно, спеції, сухі суміші</text>
+    <rect x="52" y="254" width="250" height="94" rx="12" fill="#1e293b" stroke="#334155"/>
+    <text x="76" y="288" fill="#fecaca" font-size="18" font-weight="700">Поршневе</text>
+    <text x="76" y="316" fill="#f8fafc" font-size="15">в'язкі пасти і соуси</text>
+    <text x="76" y="338" fill="#94a3b8" font-size="14">джеми, креми, кетчуп</text>
+    <rect x="335" y="254" width="250" height="94" rx="12" fill="#1e293b" stroke="#334155"/>
+    <text x="359" y="288" fill="#bae6fd" font-size="18" font-weight="700">Насосне</text>
+    <text x="359" y="316" fill="#f8fafc" font-size="15">рідини, напої, молоко</text>
+    <text x="359" y="338" fill="#94a3b8" font-size="14">витрата, рівень, маса</text>
+    <rect x="618" y="254" width="250" height="94" rx="12" fill="#1e293b" stroke="#334155"/>
+    <text x="642" y="288" fill="#ddd6fe" font-size="18" font-weight="700">Мультиголовочне</text>
+    <text x="642" y="316" fill="#f8fafc" font-size="15">комбінація малих порцій</text>
+    <text x="642" y="338" fill="#94a3b8" font-size="14">чипси, цукерки, заморожені продукти</text>
+  </g>
+</svg>

@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="500" viewBox="0 0 980 500" role="img" aria-labelledby="title desc">
+  <title id="title">Окно качества при охлаждении</title>
+  <desc id="desc">График температуры продукта во времени показывает медленное и быстрое охлаждение и зону риска роста микроорганизмов.</desc>
+  <defs>
+    <style>
+      .bg{fill:#f8fafc}.axis{stroke:#334155;stroke-width:3}.grid{stroke:#cbd5e1;stroke-width:1}.risk{fill:#fee2e2}.ok{fill:#dcfce7}.slow{stroke:#dc2626;stroke-width:6;fill:none}.fast{stroke:#2563eb;stroke-width:6;fill:none}.h{fill:#0f172a;font:700 22px Arial}.t{fill:#334155;font:16px Arial}.small{fill:#475569;font:14px Arial}
+    </style>
+  </defs>
+  <rect class="bg" width="980" height="500" rx="18"/>
+  <rect x="110" y="105" width="760" height="170" class="risk"/>
+  <rect x="110" y="275" width="760" height="105" class="ok"/>
+  <line x1="110" y1="380" x2="890" y2="380" class="axis"/>
+  <line x1="110" y1="380" x2="110" y2="70" class="axis"/>
+  <path class="grid" d="M110 320 H890 M110 260 H890 M110 200 H890 M110 140 H890 M250 70 V380 M390 70 V380 M530 70 V380 M670 70 V380 M810 70 V380"/>
+  <path class="slow" d="M120 95 C230 145 340 205 470 265 C595 320 715 350 865 365"/>
+  <path class="fast" d="M120 95 C185 180 225 255 300 310 C410 360 600 374 865 376"/>
+  <text x="490" y="45" text-anchor="middle" class="h">Охлаждение должно пройти зону риска достаточно быстро</text>
+  <text x="735" y="208" class="h">зона риска</text>
+  <text x="735" y="340" class="h">более безопасное хранение</text>
+  <text x="590" y="290" class="t" fill="#dc2626">медленное охлаждение</text>
+  <text x="320" y="335" class="t" fill="#2563eb">быстрое охлаждение</text>
+  <text x="500" y="440" text-anchor="middle" class="h">время</text>
+  <text x="45" y="235" class="h" transform="rotate(-90 45 235)">температура продукта</text>
+</svg>

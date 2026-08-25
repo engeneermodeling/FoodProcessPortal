@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="540" viewBox="0 0 980 540" role="img" aria-labelledby="title desc">
+  <title id="title">Lebensmittelbeispiele fuer Extraktion</title>
+  <desc id="desc">Beispielkarte: Tee, Kaffee, Oelsaaten, Zuckerrueben, Pflanzenextrakte, Aromastoffe.</desc>
+  <defs>
+    <style>
+      .bg{fill:#f8fafc}.core{fill:#16a34a}.box{fill:#fff;stroke:#cbd5e1;stroke-width:2}.line{stroke:#94a3b8;stroke-width:3;fill:none}.h{fill:#0f172a;font:700 21px Arial}.coreText{fill:#fff;font:700 28px Arial}.t{fill:#334155;font:16px Arial}.small{fill:#475569;font:14px Arial}
+    </style>
+  </defs>
+  <rect class="bg" width="980" height="540" rx="18"/>
+  <rect x="350" y="210" width="280" height="120" rx="18" class="core"/>
+  <text x="490" y="258" text-anchor="middle" class="coreText">Extraktion</text>
+  <text x="490" y="292" text-anchor="middle" fill="#dcfce7" font-family="Arial" font-size="15">Gewinnung des Zielstoffs</text>
+  <path class="line" d="M350 235 C275 200 235 145 185 95"/>
+  <path class="line" d="M350 300 C280 335 230 390 180 445"/>
+  <path class="line" d="M490 210 C490 150 490 120 490 85"/>
+  <path class="line" d="M630 235 C705 200 750 145 805 95"/>
+  <path class="line" d="M630 300 C705 335 750 390 805 445"/>
+  <rect x="55" y="50" width="260" height="105" rx="12" class="box"/>
+  <text x="185" y="84" text-anchor="middle" class="h">Tee und Kaffee</text>
+  <text x="78" y="119" class="t">Aroma, Koffein, Polyphenole</text>
+  <rect x="360" y="35" width="260" height="105" rx="12" class="box"/>
+  <text x="490" y="69" text-anchor="middle" class="h">Oelsaaten</text>
+  <text x="382" y="104" class="t">Oel aus Sonnenblume, Soja, Raps</text>
+  <rect x="665" y="50" width="260" height="105" rx="12" class="box"/>
+  <text x="795" y="84" text-anchor="middle" class="h">Zuckerruebe</text>
+  <text x="690" y="119" class="t">Saccharosediffusion in Wasser</text>
+  <rect x="55" y="385" width="260" height="105" rx="12" class="box"/>
+  <text x="185" y="419" text-anchor="middle" class="h">Gewuerze und Kraeuter</text>
+  <text x="78" y="454" class="t">aromatische und bioaktive Stoffe</text>
+  <rect x="665" y="385" width="260" height="105" rx="12" class="box"/>
+  <text x="795" y="419" text-anchor="middle" class="h">Nebenstroeme</text>
+  <text x="690" y="454" class="t">Pektine, Polyphenole, Proteine</text>
+</svg>

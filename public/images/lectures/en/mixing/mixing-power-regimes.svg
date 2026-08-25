@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="520" viewBox="0 0 980 520" role="img" aria-labelledby="title desc">
+  <title id="title">Mixing regimes and power number</title>
+  <desc id="desc">The chart shows laminar, transitional and turbulent regions of power number versus impeller Reynolds number.</desc>
+  <defs>
+    <style>
+      .bg{fill:#f8fafc}.axis{stroke:#334155;stroke-width:3}.grid{stroke:#cbd5e1;stroke-width:1}.curve{stroke:#7c3aed;stroke-width:6;fill:none}.zone1{fill:#dbeafe}.zone2{fill:#fef3c7}.zone3{fill:#dcfce7}.h{fill:#0f172a;font:700 24px Arial}.t{fill:#334155;font:16px Arial}.formula{fill:#111827;font:700 20px Arial}
+    </style>
+  </defs>
+  <rect class="bg" width="980" height="520" rx="18"/>
+  <rect x="100" y="80" width="230" height="300" class="zone1"/>
+  <rect x="330" y="80" width="250" height="300" class="zone2"/>
+  <rect x="580" y="80" width="300" height="300" class="zone3"/>
+  <line x1="100" y1="380" x2="900" y2="380" class="axis"/>
+  <line x1="100" y1="380" x2="100" y2="70" class="axis"/>
+  <path d="M100 330 H880 M100 280 H880 M100 230 H880 M100 180 H880 M100 130 H880" class="grid"/>
+  <path d="M250 80 V380 M430 80 V380 M580 80 V380 M740 80 V380" class="grid"/>
+  <path class="curve" d="M125 112 C175 155 235 210 300 285 C360 345 455 364 560 350 C660 336 760 334 870 334"/>
+  <text x="210" y="112" text-anchor="middle" class="h">Laminar</text>
+  <text x="210" y="142" text-anchor="middle" class="t">Re_m &lt; 10</text>
+  <text x="455" y="112" text-anchor="middle" class="h">Transitional</text>
+  <text x="455" y="142" text-anchor="middle" class="t">10 ... 10 000</text>
+  <text x="730" y="112" text-anchor="middle" class="h">Turbulent</text>
+  <text x="730" y="142" text-anchor="middle" class="t">Re_m &gt; 10 000</text>
+  <text x="500" y="430" text-anchor="middle" class="formula">Re_m = rho · n · d_m² / mu</text>
+  <text x="500" y="464" text-anchor="middle" class="formula">N_p = N / (rho · n³ · d_m⁵),  N = N_p · rho · n³ · d_m⁵</text>
+  <text x="42" y="235" class="formula" transform="rotate(-90 42 235)">N_p</text>
+  <text x="890" y="410" class="formula">Re_m</text>
+</svg>

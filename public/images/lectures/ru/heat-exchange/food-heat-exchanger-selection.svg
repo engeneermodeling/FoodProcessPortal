@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="540" viewBox="0 0 980 540" role="img" aria-labelledby="title desc">
+  <title id="title">Выбор теплообменника для пищевого продукта</title>
+  <desc id="desc">Схема связывает свойства продукта с пластинчатыми, трубчатыми, скребковыми аппаратами и аппаратами с рубашкой.</desc>
+  <defs>
+    <style>
+      .bg{fill:#f8fafc}.core{fill:#ea580c}.box{fill:#fff;stroke:#cbd5e1;stroke-width:2}.line{stroke:#94a3b8;stroke-width:3;fill:none}.h{fill:#0f172a;font:700 21px Arial}.coreText{fill:#fff;font:700 28px Arial}.t{fill:#334155;font:16px Arial}.small{fill:#475569;font:14px Arial}
+    </style>
+  </defs>
+  <rect class="bg" width="980" height="540" rx="18"/>
+  <rect x="360" y="210" width="260" height="120" rx="18" class="core"/>
+  <text x="490" y="260" text-anchor="middle" class="coreText">Продукт</text>
+  <text x="490" y="295" text-anchor="middle" class="small" fill="#ffedd5">вязкость, частицы, загрязнение, температура</text>
+  <path class="line" d="M360 245 C285 210 235 155 185 105"/>
+  <path class="line" d="M360 305 C280 340 230 390 180 445"/>
+  <path class="line" d="M620 245 C700 210 750 155 805 105"/>
+  <path class="line" d="M620 305 C700 340 750 390 805 445"/>
+  <rect x="55" y="55" width="270" height="120" rx="12" class="box"/>
+  <text x="190" y="91" text-anchor="middle" class="h">Пластинчатый</text>
+  <text x="78" y="123" class="t">молоко, соки без мякоти, пиво</text>
+  <text x="78" y="149" class="small">высокий K, удобно мыть, регенерация</text>
+  <rect x="55" y="365" width="270" height="120" rx="12" class="box"/>
+  <text x="190" y="401" text-anchor="middle" class="h">Трубчатый</text>
+  <text x="78" y="433" class="t">пюре, продукты с частицами</text>
+  <text x="78" y="459" class="small">меньше риск забивания каналов</text>
+  <rect x="655" y="55" width="270" height="120" rx="12" class="box"/>
+  <text x="790" y="91" text-anchor="middle" class="h">Скребковый</text>
+  <text x="678" y="123" class="t">кремы, соусы, джемы, пасты</text>
+  <text x="678" y="149" class="small">для вязких и склонных к пригару</text>
+  <rect x="655" y="365" width="270" height="120" rx="12" class="box"/>
+  <text x="790" y="401" text-anchor="middle" class="h">Аппарат с рубашкой</text>
+  <text x="678" y="433" class="t">варка, темперирование, партии</text>
+  <text x="678" y="459" class="small">простой, но более медленный теплообмен</text>
+</svg>

@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 430" role="img" aria-labelledby="title desc">
+  <title id="title">Fixed-bed adsorber</title>
+  <desc id="desc">Flow passes through activated carbon, the mass-transfer zone moves to the outlet, and after breakthrough the bed is regenerated or replaced.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#2dd4bf"/>
+    </marker>
+  </defs>
+  <rect width="920" height="430" rx="22" fill="#111827"/>
+  <text x="42" y="58" fill="#f8fafc" font-family="Arial, sans-serif" font-size="26" font-weight="700">Adsorption on activated carbon</text>
+  <text x="42" y="92" fill="#cbd5e1" font-family="Arial, sans-serif" font-size="16">Odour, colourant or organic impurity molecules attach to the surface of a porous solid material</text>
+
+  <rect x="180" y="162" width="560" height="118" rx="18" fill="#0f766e" stroke="#5eead4" stroke-width="3"/>
+  <g fill="#ccfbf1" opacity=".88">
+    <circle cx="218" cy="202" r="9"/><circle cx="246" cy="235" r="7"/><circle cx="282" cy="188" r="8"/>
+    <circle cx="330" cy="240" r="10"/><circle cx="372" cy="205" r="7"/><circle cx="414" cy="232" r="9"/>
+    <circle cx="468" cy="190" r="8"/><circle cx="510" cy="226" r="10"/><circle cx="552" cy="244" r="7"/>
+    <circle cx="602" cy="202" r="9"/><circle cx="642" cy="238" r="8"/><circle cx="690" cy="210" r="10"/>
+  </g>
+  <rect x="382" y="162" width="112" height="118" fill="#f59e0b" opacity=".22"/>
+  <text x="376" y="318" fill="#fed7aa" font-family="Arial, sans-serif" font-size="16" font-weight="700">mass-transfer zone</text>
+
+  <path d="M58 220h110" stroke="#2dd4bf" stroke-width="6" marker-end="url(#arrow)"/>
+  <text x="46" y="194" fill="#ccfbf1" font-family="Arial, sans-serif" font-size="16" font-weight="700">inlet</text>
+  <text x="46" y="246" fill="#94a3b8" font-family="Arial, sans-serif" font-size="14">odour, colour, VOC</text>
+
+  <path d="M742 220h126" stroke="#2dd4bf" stroke-width="6" marker-end="url(#arrow)"/>
+  <text x="780" y="194" fill="#ccfbf1" font-family="Arial, sans-serif" font-size="16" font-weight="700">outlet</text>
+  <text x="774" y="246" fill="#94a3b8" font-family="Arial, sans-serif" font-size="14">cleaned stream</text>
+
+  <path d="M612 280c18 36 18 58 0 84" fill="none" stroke="#f97316" stroke-width="4" marker-end="url(#arrow)"/>
+  <text x="634" y="358" fill="#ffedd5" font-family="Arial, sans-serif" font-size="15">regeneration or replacement</text>
+
+  <rect x="58" y="344" width="338" height="42" rx="8" fill="#1f2937" stroke="#374151"/>
+  <text x="76" y="370" fill="#f8fafc" font-family="Arial, sans-serif" font-size="15">control: breakthrough curve and outlet concentration</text>
+</svg>

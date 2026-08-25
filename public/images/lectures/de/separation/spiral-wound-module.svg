@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1060" height="580" viewBox="0 0 1060 580" role="img" aria-labelledby="title desc">
+  <title id="title">Spiralwickel-Membranmodul</title>
+  <desc id="desc">Schema eines Spiralwickelmoduls: Zulauf stroemt entlang der Wicklung, Permeat geht durch Membranen zum Zentralrohr, Retentat tritt am Ende aus.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#174ea6"/>
+    </marker>
+    <style>
+      .bg { fill: #f8fbff; }
+      .shell { fill: #ffffff; stroke: #8597b0; stroke-width: 4; }
+      .roll { fill: none; stroke: #2f75c8; stroke-width: 7; }
+      .spacer { fill: none; stroke: #f59e0b; stroke-width: 4; stroke-dasharray: 10 10; }
+      .tube { fill: #d8ecff; stroke: #1f3f76; stroke-width: 4; }
+      .feed { stroke: #174ea6; stroke-width: 6; fill: none; marker-end: url(#arrow); }
+      .perm { stroke: #28a06b; stroke-width: 5; fill: none; marker-end: url(#arrow); }
+      .txt { font-family: Arial, "Helvetica Neue", sans-serif; fill: #102033; font-size: 23px; }
+      .head { font-size: 30px; font-weight: 700; fill: #0f2a4f; }
+      .label { font-size: 25px; font-weight: 700; }
+      .small { font-size: 19px; fill: #334155; }
+      .note { fill: #fff7e6; stroke: #e6b450; stroke-width: 2; rx: 14; }
+    </style>
+  </defs>
+  <rect class="bg" width="1060" height="580"/>
+  <text class="txt head" x="530" y="48" text-anchor="middle">Spiralwickelmodul: kompakte grosse Membranflaeche</text>
+  <ellipse class="shell" cx="500" cy="280" rx="305" ry="145"/>
+  <path class="roll" d="M500 170 C625 170 705 215 705 280 C705 345 625 390 500 390 C375 390 295 345 295 280 C295 215 375 170 500 170"/>
+  <path class="roll" d="M500 205 C600 205 665 235 665 280 C665 325 600 355 500 355 C400 355 335 325 335 280 C335 235 400 205 500 205"/>
+  <path class="roll" d="M500 240 C575 240 625 258 625 280 C625 302 575 320 500 320 C425 320 375 302 375 280 C375 258 425 240 500 240"/>
+  <path class="spacer" d="M245 210 C355 255 455 270 755 245"/>
+  <path class="spacer" d="M245 350 C355 305 455 290 755 315"/>
+  <rect class="tube" x="476" y="135" width="48" height="290" rx="22"/>
+  <circle cx="500" cy="190" r="5" fill="#1f3f76"/><circle cx="500" cy="235" r="5" fill="#1f3f76"/><circle cx="500" cy="280" r="5" fill="#1f3f76"/><circle cx="500" cy="325" r="5" fill="#1f3f76"/><circle cx="500" cy="370" r="5" fill="#1f3f76"/>
+
+  <path class="feed" d="M70 280 H205"/>
+  <text class="txt label" x="75" y="250">Zulauf</text>
+  <path class="feed" d="M805 280 H980"/>
+  <text class="txt label" x="842" y="250">Retentat</text>
+  <path class="perm" d="M500 138 V85"/>
+  <text class="txt label" x="530" y="95">Permeat</text>
+  <path class="perm" d="M430 305 C455 295 475 285 496 280"/>
+  <path class="perm" d="M570 255 C545 265 525 275 504 280"/>
+
+  <rect class="note" x="120" y="470" width="820" height="70"/>
+  <text class="txt small" x="530" y="500" text-anchor="middle">Gut fuer RO/NF und saubere Stroeme: sehr kompakt, braucht aber gute Vorreinigung,</text>
+  <text class="txt small" x="530" y="528" text-anchor="middle">weil grosse Partikel duenne Kanaele zwischen Membranschichten verstopfen.</text>
+</svg>

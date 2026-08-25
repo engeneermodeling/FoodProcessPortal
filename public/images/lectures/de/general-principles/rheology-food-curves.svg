@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="560" viewBox="0 0 1080 560" role="img" aria-labelledby="title desc">
+  <title id="title">Rheologisches Verhalten von Lebensmitteln</title>
+  <desc id="desc">Das Diagramm zeigt Schubspannung gegen Schergeschwindigkeit fuer newtonsche, pseudoplastische, dilatante und plastische Lebensmittelsysteme.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#102033"/></marker>
+    <style>
+      .bg{fill:#f8fbff}.axis{stroke:#102033;stroke-width:4;marker-end:url(#arrow)}.grid{stroke:#d8e2f0;stroke-width:2}.newton{stroke:#174ea6;stroke-width:7;fill:none}.pseudo{stroke:#2f9e67;stroke-width:7;fill:none}.dilat{stroke:#e07a1f;stroke-width:7;fill:none}.bingham{stroke:#8b5cf6;stroke-width:7;fill:none}.box{fill:#fff;stroke:#8da4c4;stroke-width:3;rx:16}.txt{font-family:Arial,"Helvetica Neue",sans-serif;fill:#102033;font-size:22px}.head{font-size:31px;font-weight:700;fill:#0f2a4f}.label{font-size:24px;font-weight:700}.small{font-size:18px;fill:#334155}.dotN{fill:#174ea6}.dotP{fill:#2f9e67}.dotD{fill:#e07a1f}.dotB{fill:#8b5cf6}
+    </style>
+  </defs>
+  <rect class="bg" width="1080" height="560"/>
+  <text class="txt head" x="540" y="48" text-anchor="middle">Die Viskositaet von Lebensmitteln haengt oft von der Schergeschwindigkeit ab</text>
+
+  <line class="grid" x1="125" y1="405" x2="650" y2="405"/>
+  <line class="grid" x1="125" y1="315" x2="650" y2="315"/>
+  <line class="grid" x1="125" y1="225" x2="650" y2="225"/>
+  <line class="grid" x1="245" y1="105" x2="245" y2="450"/>
+  <line class="grid" x1="365" y1="105" x2="365" y2="450"/>
+  <line class="grid" x1="485" y1="105" x2="485" y2="450"/>
+
+  <line class="axis" x1="125" y1="450" x2="665" y2="450"/>
+  <line class="axis" x1="125" y1="450" x2="125" y2="95"/>
+  <text class="txt label" x="390" y="505" text-anchor="middle">Schergeschwindigkeit γ, s⁻¹</text>
+  <text class="txt label" x="55" y="285" text-anchor="middle" transform="rotate(-90 55 285)">Schubspannung τ, Pa</text>
+
+  <path class="newton" d="M125 450 L610 150"/>
+  <path class="pseudo" d="M125 450 C210 300 365 215 610 175"/>
+  <path class="dilat" d="M125 450 C260 420 440 350 610 115"/>
+  <path class="bingham" d="M125 395 L610 205"/>
+
+  <rect class="box" x="720" y="110" width="305" height="330"/>
+  <circle class="dotN" cx="750" cy="155" r="9"/>
+  <text class="txt label" x="775" y="162">Newtonsch</text>
+  <text class="txt small" x="775" y="190">Wasser, Milch, Saefte</text>
+  <circle class="dotP" cx="750" cy="235" r="9"/>
+  <text class="txt label" x="775" y="242">Pseudoplastisch</text>
+  <text class="txt small" x="775" y="270">Ketchup, Joghurt, Pueree</text>
+  <circle class="dotD" cx="750" cy="315" r="9"/>
+  <text class="txt label" x="775" y="322">Dilatant</text>
+  <text class="txt small" x="775" y="350">Staerkesuspensionen</text>
+  <circle class="dotB" cx="750" cy="395" r="9"/>
+  <text class="txt label" x="775" y="402">Plastisch</text>
+  <text class="txt small" x="775" y="430">Paste, Schokoladenmasse</text>
+</svg>

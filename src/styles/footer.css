@@ -13,8 +13,8 @@
   right: 0;
   bottom: 0;
   background-image:
-    linear-gradient(var(--border-color) 1px, transparent 1px),
-    linear-gradient(90deg, var(--border-color) 1px, transparent 1px);
+    linear-gradient(color-mix(in srgb, var(--border-color) 38%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in srgb, var(--border-color) 38%, transparent) 1px, transparent 1px);
   background-size: 30px 30px;
   opacity: 0.08;
   pointer-events: none;

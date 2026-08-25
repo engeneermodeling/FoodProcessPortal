@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="500" viewBox="0 0 980 500" role="img" aria-labelledby="title desc">
+  <title id="title">Formen der Feuchte in Lebensmittelmaterial</title>
+  <desc id="desc">Das Schema zeigt Oberflaechen-, Kapillar-, osmotisch gebundene und adsorptive Feuchte in poroesem Lebensmittelmaterial.</desc>
+  <defs>
+    <style>
+      .bg{fill:#f8fafc}.particle{fill:#fed7aa;stroke:#c2410c;stroke-width:3}.water{fill:#60a5fa;stroke:#2563eb;stroke-width:2}.bound{fill:#a78bfa;stroke:#6d28d9;stroke-width:2}.cap{fill:#38bdf8;stroke:#0284c7;stroke-width:2}.box{fill:#fff;stroke:#cbd5e1;stroke-width:2}.h{fill:#0f172a;font:700 22px Arial}.t{fill:#334155;font:16px Arial}.line{stroke:#64748b;stroke-width:3;fill:none;marker-end:url(#a)}
+    </style>
+    <marker id="a" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto"><path d="M0,0 L11,4 L0,8 Z" fill="#64748b"/></marker>
+  </defs>
+  <rect class="bg" width="980" height="500" rx="18"/>
+  <text x="490" y="45" text-anchor="middle" class="h">Je staerker Feuchte gebunden ist, desto schwieriger und teurer ist ihre Entfernung</text>
+  <path class="particle" d="M340 130 C430 70 560 80 640 150 C720 220 690 350 585 390 C470 435 330 380 295 270 C275 205 295 160 340 130 Z"/>
+  <circle class="water" cx="380" cy="140" r="22"/><circle class="water" cx="615" cy="180" r="18"/>
+  <ellipse class="cap" cx="470" cy="250" rx="70" ry="22" transform="rotate(-22 470 250)"/>
+  <ellipse class="cap" cx="555" cy="310" rx="58" ry="18" transform="rotate(18 555 310)"/>
+  <circle class="bound" cx="430" cy="330" r="18"/><circle class="bound" cx="560" cy="210" r="15"/><circle class="bound" cx="510" cy="155" r="12"/>
+  <rect class="box" x="55" y="105" width="245" height="92" rx="12"/>
+  <text x="178" y="139" text-anchor="middle" class="h">Oberflaechenfeuchte</text>
+  <text x="78" y="170" class="t">verdampft zuerst</text>
+  <path class="line" d="M300 150 H360"/>
+  <rect class="box" x="680" y="105" width="245" height="92" rx="12"/>
+  <text x="803" y="139" text-anchor="middle" class="h">Kapillarfeuchte</text>
+  <text x="703" y="170" class="t">bewegt sich in Poren</text>
+  <path class="line" d="M680 155 H610"/>
+  <rect class="box" x="55" y="320" width="245" height="92" rx="12"/>
+  <text x="178" y="354" text-anchor="middle" class="h">Osmotisch</text>
+  <text x="78" y="385" class="t">durch Zellstruktur gehalten</text>
+  <path class="line" d="M300 360 H415"/>
+  <rect class="box" x="680" y="320" width="245" height="92" rx="12"/>
+  <text x="803" y="354" text-anchor="middle" class="h">Adsorptiv</text>
+  <text x="703" y="385" class="t">am schwersten zu entfernen</text>
+  <path class="line" d="M680 360 H580"/>
+</svg>

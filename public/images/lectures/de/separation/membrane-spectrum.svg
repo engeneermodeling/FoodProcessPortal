@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="560" viewBox="0 0 1120 560" role="img" aria-labelledby="title desc">
+  <title id="title">Spektrum druckgetriebener Membranprozesse</title>
+  <desc id="desc">Vergleich von Umkehrosmose, Nanofiltration, Ultrafiltration, Mikrofiltration und klassischer Filtration nach Partikelgroesse und Lebensmittelanwendung.</desc>
+  <defs>
+    <style>
+      .bg { fill: #f8fbff; }
+      .axis { stroke: #1f3f76; stroke-width: 5; }
+      .tick { stroke: #1f3f76; stroke-width: 3; }
+      .txt { font-family: Arial, "Helvetica Neue", sans-serif; fill: #102033; font-size: 22px; }
+      .small { font-size: 18px; fill: #334155; }
+      .head { font-size: 30px; font-weight: 700; fill: #0f2a4f; }
+      .bar { rx: 16; opacity: .96; }
+      .ro { fill: #314eaa; }
+      .nf { fill: #2f75c8; }
+      .uf { fill: #1696a7; }
+      .mf { fill: #28a06b; }
+      .cf { fill: #d79a2b; }
+      .label { fill: #ffffff; font-weight: 700; font-size: 23px; }
+    </style>
+  </defs>
+  <rect class="bg" width="1120" height="560"/>
+  <text class="txt head" x="560" y="48" text-anchor="middle">Druckgetriebene Membranprozesse: was passiert und was zurueckbleibt</text>
+
+  <line class="axis" x1="90" y1="405" x2="1030" y2="405"/>
+  <text class="txt small" x="560" y="455" text-anchor="middle">Ungefaehre Partikel-/Porengroesse, Mikrometer</text>
+  <g class="txt small" text-anchor="middle">
+    <line class="tick" x1="130" y1="390" x2="130" y2="420"/><text x="130" y="438">0,0001</text>
+    <line class="tick" x1="270" y1="390" x2="270" y2="420"/><text x="270" y="438">0,001</text>
+    <line class="tick" x1="430" y1="390" x2="430" y2="420"/><text x="430" y="438">0,01</text>
+    <line class="tick" x1="610" y1="390" x2="610" y2="420"/><text x="610" y="438">0,1</text>
+    <line class="tick" x1="790" y1="390" x2="790" y2="420"/><text x="790" y="438">1</text>
+    <line class="tick" x1="970" y1="390" x2="970" y2="420"/><text x="970" y="438">10</text>
+  </g>
+
+  <rect class="bar ro" x="110" y="92" width="190" height="62"/>
+  <text class="label" x="205" y="131" text-anchor="middle">RO</text>
+  <text class="txt small" x="320" y="118">Ionen, Salze, Zucker</text>
+  <text class="txt small" x="320" y="145">Prozesswasser, Saftkonzentrierung</text>
+
+  <rect class="bar nf" x="255" y="170" width="235" height="62"/>
+  <text class="label" x="372" y="209" text-anchor="middle">NF</text>
+  <text class="txt small" x="510" y="196">zweiwertige Ionen, Teil organischer Stoffe</text>
+  <text class="txt small" x="510" y="223">Molke-Demineralisierung, Wasserenthaertung</text>
+
+  <rect class="bar uf" x="410" y="248" width="265" height="62"/>
+  <text class="label" x="542" y="287" text-anchor="middle">UF</text>
+  <text class="txt small" x="695" y="274">Proteine, Polysaccharide, Enzyme</text>
+  <text class="txt small" x="695" y="301">WPC/WPI, Milchkonzentrierung</text>
+
+  <rect class="bar mf" x="590" y="326" width="300" height="62"/>
+  <text class="label" x="740" y="365" text-anchor="middle">MF</text>
+  <text class="txt small" x="910" y="352">Bakterien, Hefen, Kolloide</text>
+  <text class="txt small" x="910" y="379">ESL-Milch, Bier, Saefte</text>
+
+  <rect class="bar cf" x="790" y="92" width="220" height="62"/>
+  <text class="label" x="900" y="131" text-anchor="middle">Filtration</text>
+  <text class="txt small" x="900" y="177" text-anchor="middle">sichtbare Schwebstoffe</text>
+  <text class="txt small" x="900" y="203" text-anchor="middle">Tuch, Sieb, Kieselgur</text>
+</svg>

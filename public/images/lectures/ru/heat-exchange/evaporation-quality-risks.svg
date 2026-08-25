@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="520" viewBox="0 0 980 520" role="img" aria-labelledby="title desc">
+  <title id="title">Риски качества при выпаривании</title>
+  <desc id="desc">Карта рисков для пищевого продукта: температура, время пребывания, вязкость, пена, загрязнение и аромат.</desc>
+  <defs>
+    <style>
+      .bg{fill:#f8fafc}.core{fill:#ea580c}.box{fill:#fff;stroke:#cbd5e1;stroke-width:2}.line{stroke:#94a3b8;stroke-width:3;fill:none}.h{fill:#0f172a;font:700 21px Arial}.coreText{fill:#fff;font:700 28px Arial}.t{fill:#334155;font:16px Arial}
+    </style>
+  </defs>
+  <rect class="bg" width="980" height="520" rx="18"/>
+  <rect x="360" y="205" width="260" height="115" rx="18" class="core"/>
+  <text x="490" y="255" text-anchor="middle" class="coreText">Качество концентрата</text>
+  <text x="490" y="288" text-anchor="middle" fill="#ffedd5" font-family="Arial" font-size="15">не только сухие вещества</text>
+  <path class="line" d="M360 230 C285 195 235 145 185 95"/>
+  <path class="line" d="M360 300 C280 335 230 385 180 435"/>
+  <path class="line" d="M490 205 C490 155 490 120 490 85"/>
+  <path class="line" d="M620 230 C700 195 750 145 805 95"/>
+  <path class="line" d="M620 300 C700 335 750 385 805 435"/>
+  <rect x="55" y="50" width="260" height="105" rx="12" class="box"/>
+  <text x="185" y="86" text-anchor="middle" class="h">Температура</text>
+  <text x="80" y="122" class="t">вареный привкус, потемнение</text>
+  <rect x="360" y="35" width="260" height="105" rx="12" class="box"/>
+  <text x="490" y="71" text-anchor="middle" class="h">Время пребывания</text>
+  <text x="382" y="107" class="t">термоповреждение белков, витаминов</text>
+  <rect x="665" y="50" width="260" height="105" rx="12" class="box"/>
+  <text x="795" y="86" text-anchor="middle" class="h">Вязкость</text>
+  <text x="690" y="122" class="t">хуже теплообмен, больше пригара</text>
+  <rect x="55" y="380" width="260" height="105" rx="12" class="box"/>
+  <text x="185" y="416" text-anchor="middle" class="h">Пена</text>
+  <text x="80" y="452" class="t">унос продукта с паром</text>
+  <rect x="665" y="380" width="260" height="105" rx="12" class="box"/>
+  <text x="795" y="416" text-anchor="middle" class="h">Аромат</text>
+  <text x="690" y="452" class="t">летучие вещества могут теряться</text>
+</svg>

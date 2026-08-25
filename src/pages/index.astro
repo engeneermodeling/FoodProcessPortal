@@ -4,6 +4,10 @@ import { siteConfig } from "../config";
 import { ENABLED_LOCALES, LOCALE_NAMES, DEFAULT_LOCALE } from "../locales.config";
 
 const t = siteConfig.translations[DEFAULT_LOCALE as keyof typeof siteConfig.translations];
+const languagePrompt = ENABLED_LOCALES
+  .map((locale) => siteConfig.translations[locale]?.languagePrompt)
+  .filter(Boolean)
+  .join(" / ");
 
 // Беремо тільки активні мови з locales.config.ts
 const languages = ENABLED_LOCALES.map(code => ({
@@ -22,11 +26,7 @@ const languages = ENABLED_LOCALES.map(code => ({
       </div>
 
       <div class="language-selector">
-        <h2>
-          {ENABLED_LOCALES.includes("uk" as any) && "Оберіть мову"}
-          {ENABLED_LOCALES.includes("en" as any) && " / Select language"}
-          {ENABLED_LOCALES.includes("de" as any) && " / Sprache wählen"}
-        </h2>
+        <h2>{languagePrompt}</h2>
         <div class="lang-buttons">
           {languages.map((lang) => (
             <a href={`/${lang.path}`} class="lang-button">

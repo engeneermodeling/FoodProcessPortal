@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="540" viewBox="0 0 980 540" role="img" aria-labelledby="title desc">
+  <title id="title">Auswahl eines Waermeuebertragers fuer Lebensmittel</title>
+  <desc id="desc">Das Schema verbindet Produkteigenschaften mit Platten-, Rohr-, Kratz- und Mantelapparaten.</desc>
+  <defs>
+    <style>
+      .bg{fill:#f8fafc}.core{fill:#ea580c}.box{fill:#fff;stroke:#cbd5e1;stroke-width:2}.line{stroke:#94a3b8;stroke-width:3;fill:none}.h{fill:#0f172a;font:700 21px Arial}.coreText{fill:#fff;font:700 28px Arial}.t{fill:#334155;font:16px Arial}.small{fill:#475569;font:14px Arial}
+    </style>
+  </defs>
+  <rect class="bg" width="980" height="540" rx="18"/>
+  <rect x="360" y="210" width="260" height="120" rx="18" class="core"/>
+  <text x="490" y="260" text-anchor="middle" class="coreText">Produkt</text>
+  <text x="490" y="295" text-anchor="middle" class="small" fill="#ffedd5">Viskositaet, Partikel, Fouling, Temperatur</text>
+  <path class="line" d="M360 245 C285 210 235 155 185 105"/>
+  <path class="line" d="M360 305 C280 340 230 390 180 445"/>
+  <path class="line" d="M620 245 C700 210 750 155 805 105"/>
+  <path class="line" d="M620 305 C700 340 750 390 805 445"/>
+  <rect x="55" y="55" width="270" height="120" rx="12" class="box"/>
+  <text x="190" y="91" text-anchor="middle" class="h">Plattenapparat</text>
+  <text x="78" y="123" class="t">Milch, Saefte ohne Fruchtfleisch, Bier</text>
+  <text x="78" y="149" class="small">hohes K, leicht zu reinigen, Regeneration</text>
+  <rect x="55" y="365" width="270" height="120" rx="12" class="box"/>
+  <text x="190" y="401" text-anchor="middle" class="h">Rohrapparat</text>
+  <text x="78" y="433" class="t">Pueree, Produkte mit Partikeln</text>
+  <text x="78" y="459" class="small">geringeres Risiko verstopfter Kanaele</text>
+  <rect x="655" y="55" width="270" height="120" rx="12" class="box"/>
+  <text x="790" y="91" text-anchor="middle" class="h">Kratzwaermeuebertrager</text>
+  <text x="678" y="123" class="t">Cremes, Saucen, Konfitueren, Pasten</text>
+  <text x="678" y="149" class="small">fuer viskose und anbrennende Produkte</text>
+  <rect x="655" y="365" width="270" height="120" rx="12" class="box"/>
+  <text x="790" y="401" text-anchor="middle" class="h">Mantelapparat</text>
+  <text x="678" y="433" class="t">Kochen, Temperieren, Chargen</text>
+  <text x="678" y="459" class="small">einfach, aber langsamerer Waermeuebergang</text>
+</svg>

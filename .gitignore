@@ -2,6 +2,8 @@
 dist/
 # generated types
 .astro/
+.codex/
+tmp/
 
 # dependencies
 node_modules/
@@ -25,3 +27,4 @@ pnpm-debug.log*
 .idea/
 
 *.local
+/test.js

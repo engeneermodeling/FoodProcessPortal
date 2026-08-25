@@ -25,14 +25,6 @@ const sections = [
   { href: `/${locale}/videos`, key: "videos", color: "green" },
 ];
 
-// Використовуємо glob замість getCollection щоб уникнути проблем з locale-підпапками
-const allTopicsGlob = import.meta.glob("/src/content/topics/**/*.md", { eager: true });
-const allTopics = Object.entries(allTopicsGlob)
-  .filter(([path]) => path.includes(`/topics/${locale}/`))
-  .map(([path, mod]: [string, any]) => ({
-    slug: path.split("/").pop()?.replace(".md", "") || "",
-    ...mod.frontmatter,
-  }));
 ---
 
 <BaseLayout title={siteConfig.name} description={t.subtitle} locale={locale}>

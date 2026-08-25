@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 460" role="img" aria-labelledby="title desc">
+  <title id="title">Startup readiness</title>
+  <desc id="desc">CHeklist hotovnosti kharchovoi line do pershoho vyrobnychoho zapusku.</desc>
+  <rect width="920" height="460" rx="22" fill="#111827"/>
+  <text x="42" y="58" fill="#f8fafc" font-family="Arial, sans-serif" font-size="27" font-weight="700">Before the first batch the line must be systematically ready</text>
+  <g font-family="Arial, sans-serif" font-size="16">
+    <rect x="82" y="104" width="756" height="300" rx="18" fill="#1e293b" stroke="#475569"/>
+    <g fill="#f8fafc">
+      <text x="124" y="150">□ equipment is installed by scheme and accessible for maintenance</text>
+      <text x="124" y="190">□ sensors are calibrated, valves and pumps checked</text>
+      <text x="124" y="230">□ CIP, drains, emergency modes and interlocks are tested</text>
+      <text x="124" y="270">□ operators have instructions, recipes and parameter limits</text>
+      <text x="124" y="310">□ first batch has a quality control and reject plan</text>
+      <text x="124" y="350">□ deviations, corrections and decisions are recorded</text>
+    </g>
+    <circle cx="102" cy="143" r="7" fill="#38bdf8"/>
+    <circle cx="102" cy="183" r="7" fill="#38bdf8"/>
+    <circle cx="102" cy="223" r="7" fill="#38bdf8"/>
+    <circle cx="102" cy="263" r="7" fill="#38bdf8"/>
+    <circle cx="102" cy="303" r="7" fill="#38bdf8"/>
+    <circle cx="102" cy="343" r="7" fill="#38bdf8"/>
+  </g>
+</svg>

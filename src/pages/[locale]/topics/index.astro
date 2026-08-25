@@ -4,13 +4,46 @@ import Header from "../../../components/Header.astro";
 import ThemeToggle from "../../../components/ThemeToggle.astro";
 import Footer from "../../../components/Footer.astro";
 import { siteConfig } from "../../../config";
+import {
+  getTopicTracks,
+  normalizeLocale,
+  topicTrackHubText,
+} from "../../../data/topicTracks";
+import { getTopicQuestions, topicQuestionUi } from "../../../data/topicQuestions";
 import { ENABLED_LOCALES } from "../../../locales.config";
+
+interface TopicFrontmatter {
+  title: string;
+  description?: string;
+  icon?: string;
+  order?: number;
+  category?: string;
+}
+
+interface TopicModule {
+  frontmatter: TopicFrontmatter;
+}
+
+interface LectureModule {
+  frontmatter: {
+    lecture?: number;
+  };
+}
+
+interface TopicCard extends TopicFrontmatter {
+  slug: string;
+  questionCount: number;
+  quizCount: number;
+  lectureCount: number;
+  lectureSlugs: string[];
+}
 
 // Статичні glob-и без template literals
 const allTopicsUk = import.meta.glob("/src/content/topics/uk/*.md", { eager: true });
 const allTopicsEn = import.meta.glob("/src/content/topics/en/*.md", { eager: true });
 const allTopicsRu = import.meta.glob("/src/content/topics/ru/*.md", { eager: true });
 const allTopicsDe = import.meta.glob("/src/content/topics/de/*.md", { eager: true });
+const allLectures = import.meta.glob("/src/content/lectures/**/*.md", { eager: true });
 
 export function getStaticPaths() {
   return [...ENABLED_LOCALES].map((locale) => ({
@@ -20,10 +53,14 @@ export function getStaticPaths() {
 
 const { locale } = Astro.params;
 const t = siteConfig.translations[locale as keyof typeof siteConfig.translations];
+const normalizedLocale = normalizeLocale(locale);
+const topicTracks = getTopicTracks(locale);
+const trackHubText = topicTrackHubText[normalizedLocale];
+const selfCheckUi = topicQuestionUi[normalizedLocale];
 
 // Вибираємо правильний набір тем залежно від локалі
 // Тільки активні мови з ENABLED_LOCALES потрапляють у маппінг
-const allLocaleTopicsMap: Record<string, Record<string, any>> = {
+const allLocaleTopicsMap = {
   uk: allTopicsUk,
   en: allTopicsEn,
   ru: allTopicsRu,
@@ -32,17 +69,220 @@ const allLocaleTopicsMap: Record<string, Record<string, any>> = {
 
 const rawTopics = allLocaleTopicsMap[locale] || allTopicsUk;
 
+function getLectureSlugs(topicSlug: string, activeLocale: string | undefined) {
+  return Object.keys(allLectures)
+    .filter((path) => {
+      const parts = path.split("/");
+      const lecturesIdx = parts.indexOf("lectures");
+      return (
+        lecturesIdx !== -1 &&
+        parts[lecturesIdx + 1] === activeLocale &&
+        parts[lecturesIdx + 2] === topicSlug
+      );
+    })
+    .sort((a, b) => {
+      const aLecture = (allLectures[a] as LectureModule)?.frontmatter?.lecture || 0;
+      const bLecture = (allLectures[b] as LectureModule)?.frontmatter?.lecture || 0;
+      return aLecture - bLecture;
+    })
+    .map((path) => path.split("/").pop()?.replace(".md", "") || "")
+    .filter(Boolean);
+}
+
 const topics = Object.entries(rawTopics)
-  .map(([path, module]: [string, any]) => ({
-    slug: path.split("/").pop()?.replace(".md", "") || "",
-    ...(module.frontmatter || {}),
-  }))
+  .map(([path, module]): TopicCard => {
+    const slug = path.split("/").pop()?.replace(".md", "") || "";
+    const lectureSlugs = getLectureSlugs(slug, locale);
+    const topicModule = module as TopicModule;
+    return {
+      slug,
+      questionCount: getTopicQuestions(slug, locale).length,
+      quizCount: 10,
+      lectureCount: lectureSlugs.length,
+      lectureSlugs,
+      ...(topicModule.frontmatter || {}),
+    };
+  })
   .sort((a, b) => (a.order || 0) - (b.order || 0));
 
 const categories = [
   "all",
-  ...new Set(topics.map((t: any) => t.category).filter(Boolean)),
+  ...new Set(topics.map((topic) => topic.category).filter(Boolean)),
 ];
+const totalSelfCheckQuestions = topics.reduce(
+  (sum, topic) => sum + topic.questionCount,
+  0
+);
+const totalLectures = topics.reduce((sum, topic) => sum + topic.lectureCount, 0);
+const totalQuizzes = topics.filter((topic) => topic.quizCount > 0).length;
+const lectureProgressUi = {
+  uk: {
+    title: "Прогрес читання лекцій",
+    description:
+      "Показує, скільки лекцій уже позначено як прочитані в межах поточної траєкторії.",
+    read: "Прочитано",
+    started: "Розпочато тем",
+  },
+  en: {
+    title: "Lecture Reading Progress",
+    description:
+      "Shows how many lectures have been marked as read within the current track.",
+    read: "Read",
+    started: "Topics started",
+  },
+  de: {
+    title: "Fortschritt beim Lesen",
+    description:
+      "Zeigt, wie viele Vorlesungen im aktuellen Lernpfad als gelesen markiert wurden.",
+    read: "Gelesen",
+    started: "Begonnene Themen",
+  },
+  ru: {
+    title: "Прогресс чтения лекций",
+    description:
+      "Показывает, сколько лекций уже отмечено как прочитанные в текущей траектории.",
+    read: "Прочитано",
+    started: "Начато тем",
+  },
+}[normalizedLocale];
+const overallProgressUi = {
+  uk: {
+    title: "Загальний прогрес курсу",
+    description:
+      "Об'єднує прочитані лекції, самоперевірку та міні-тести. Це навчальний орієнтир, а не підсумкова оцінка.",
+    complete: "Виконано",
+    details: "Лекції, самоперевірка та тести",
+    continue: "Продовжити навчання",
+    review: "Продовжити самоперевірку",
+    quiz: "Пройти міні-тест",
+    done: "Курс опрацьовано",
+  },
+  en: {
+    title: "Overall Course Progress",
+    description:
+      "Combines read lectures, self-check questions, and mini-tests. This is a learning guide, not a final grade.",
+    complete: "Complete",
+    details: "Lectures, self-check, and tests",
+    continue: "Continue Learning",
+    review: "Continue Self-Check",
+    quiz: "Take Mini-Test",
+    done: "Course completed",
+  },
+  de: {
+    title: "Gesamtfortschritt des Kurses",
+    description:
+      "Kombiniert gelesene Vorlesungen, Selbstkontrollfragen und Mini-Tests. Es ist eine Lernorientierung, keine Endnote.",
+    complete: "Abgeschlossen",
+    details: "Vorlesungen, Selbstkontrolle und Tests",
+    continue: "Weiterlernen",
+    review: "Selbstkontrolle fortsetzen",
+    quiz: "Mini-Test bearbeiten",
+    done: "Kurs bearbeitet",
+  },
+  ru: {
+    title: "Общий прогресс курса",
+    description:
+      "Объединяет прочитанные лекции, вопросы самопроверки и мини-тесты. Это учебный ориентир, а не итоговая оценка.",
+    complete: "Выполнено",
+    details: "Лекции, самопроверка и тесты",
+    continue: "Продолжить обучение",
+    review: "Продолжить самопроверку",
+    quiz: "Пройти мини-тест",
+    done: "Курс проработан",
+  },
+}[normalizedLocale];
+const quizProgressUi = {
+  uk: {
+    title: "Прогрес міні-тестів",
+    description:
+      "Тема зараховується, коли найкращий результат міні-тесту становить не менше 70%.",
+    passed: "Зараховано",
+    score: "Результат",
+    notStarted: "Не пройдено",
+  },
+  en: {
+    title: "Mini-Test Progress",
+    description:
+      "A topic is counted as passed when the best mini-test score is at least 70%.",
+    passed: "Passed",
+    score: "Score",
+    notStarted: "Not taken",
+  },
+  de: {
+    title: "Fortschritt der Mini-Tests",
+    description:
+      "Ein Thema gilt als bestanden, wenn das beste Mini-Test-Ergebnis mindestens 70% beträgt.",
+    passed: "Bestanden",
+    score: "Ergebnis",
+    notStarted: "Nicht bearbeitet",
+  },
+  ru: {
+    title: "Прогресс мини-тестов",
+    description:
+      "Тема засчитывается, если лучший результат мини-теста составляет не менее 70%.",
+    passed: "Зачтено",
+    score: "Результат",
+    notStarted: "Не пройдено",
+  },
+}[normalizedLocale];
+const progressToolsUi = {
+  uk: {
+    title: "Керування навчальним прогресом",
+    description:
+      "Прогрес зберігається у цьому браузері. Його можна експортувати для резервної копії, перенести на інший пристрій або повністю очистити.",
+    exportLabel: "Експорт",
+    importLabel: "Імпорт",
+    resetLabel: "Скинути прогрес",
+    imported: "Прогрес імпортовано. Сторінку оновлено.",
+    resetConfirm: "Скинути прогрес лекцій, самоперевірки і міні-тестів для цієї мови?",
+    resetDone: "Прогрес очищено.",
+    empty: "Немає збереженого прогресу для експорту.",
+    importError: "Не вдалося імпортувати файл прогресу.",
+  },
+  en: {
+    title: "Learning Progress Tools",
+    description:
+      "Progress is stored in this browser. You can export it as a backup, move it to another device, or clear it completely.",
+    exportLabel: "Export",
+    importLabel: "Import",
+    resetLabel: "Reset Progress",
+    imported: "Progress imported. The page has been refreshed.",
+    resetConfirm: "Reset lecture, self-check, and mini-test progress for this language?",
+    resetDone: "Progress cleared.",
+    empty: "No saved progress to export.",
+    importError: "Could not import the progress file.",
+  },
+  de: {
+    title: "Lernfortschritt verwalten",
+    description:
+      "Der Fortschritt wird in diesem Browser gespeichert. Sie können ihn exportieren, auf ein anderes Gerät übertragen oder vollständig löschen.",
+    exportLabel: "Export",
+    importLabel: "Import",
+    resetLabel: "Fortschritt löschen",
+    imported: "Fortschritt importiert. Die Seite wurde aktualisiert.",
+    resetConfirm: "Fortschritt für Vorlesungen, Selbstkontrolle und Mini-Tests dieser Sprache löschen?",
+    resetDone: "Fortschritt gelöscht.",
+    empty: "Kein gespeicherter Fortschritt zum Exportieren.",
+    importError: "Die Fortschrittsdatei konnte nicht importiert werden.",
+  },
+  ru: {
+    title: "Управление учебным прогрессом",
+    description:
+      "Прогресс сохраняется в этом браузере. Его можно экспортировать для резервной копии, перенести на другое устройство или полностью очистить.",
+    exportLabel: "Экспорт",
+    importLabel: "Импорт",
+    resetLabel: "Сбросить прогресс",
+    imported: "Прогресс импортирован. Страница обновлена.",
+    resetConfirm: "Сбросить прогресс лекций, самопроверки и мини-тестов для этого языка?",
+    resetDone: "Прогресс очищен.",
+    empty: "Нет сохранённого прогресса для экспорта.",
+    importError: "Не удалось импортировать файл прогресса.",
+  },
+}[normalizedLocale];
+const firstTopicWithLecture = topics.find((topic) => topic.lectureSlugs.length > 0);
+const firstLearningHref = firstTopicWithLecture
+  ? `/${locale}/topics/${firstTopicWithLecture.slug}/${firstTopicWithLecture.lectureSlugs[0]}`
+  : `/${locale}/topics#topics-list`;
 ---
 
 <BaseLayout
@@ -60,6 +300,191 @@ const categories = [
         <h1 class="title">{t.sections.topics.title}</h1>
         <p class="subtitle">{t.sections.topics.desc}</p>
         <div class="hero-line"></div>
+      </div>
+
+      <section class="track-section" aria-labelledby="track-section-title">
+        <div class="section-heading">
+          <h2 id="track-section-title">{trackHubText.title}</h2>
+          <p>{trackHubText.description}</p>
+        </div>
+
+        <div class="track-grid">
+          {
+            topicTracks.map((track) =>
+              track.status === "active" ? (
+                <a
+                  class="track-card is-active"
+                  href={`/${locale}${track.href || "/topics#topics-list"}`}
+                  aria-label={track.title}
+                >
+                  <div class="track-card-header">
+                    <span class="track-short-title">{track.shortTitle}</span>
+                    <span class="track-badge">{track.badge}</span>
+                  </div>
+                  <h3>{track.title}</h3>
+                  <p>{track.description}</p>
+                  <span class="track-note">{track.sourceNote}</span>
+                  <span class="track-action">{track.action} →</span>
+                </a>
+              ) : (
+                <article
+                  class="track-card is-planned"
+                  id={`track-${track.slug}`}
+                  aria-label={track.title}
+                >
+                  <div class="track-card-header">
+                    <span class="track-short-title">{track.shortTitle}</span>
+                    <span class="track-badge">{track.badge}</span>
+                  </div>
+                  <h3>{track.title}</h3>
+                  <p>{track.description}</p>
+                  <span class="track-note">{track.sourceNote}</span>
+                  <span class="track-action">{track.action}</span>
+                </article>
+              )
+            )
+          }
+        </div>
+      </section>
+
+      <section class="current-track-section" aria-labelledby="current-track-title">
+        <div class="section-heading compact">
+          <h2 id="current-track-title">{trackHubText.currentTitle}</h2>
+          <p>{trackHubText.currentDescription}</p>
+        </div>
+
+      <div
+        class="overall-progress-panel"
+        data-overall-progress
+        data-total-items={totalLectures + totalSelfCheckQuestions + totalQuizzes}
+        data-complete-label={overallProgressUi.complete}
+        data-details-label={overallProgressUi.details}
+        data-continue-label={overallProgressUi.continue}
+        data-review-label={overallProgressUi.review}
+        data-quiz-label={overallProgressUi.quiz}
+        data-done-label={overallProgressUi.done}
+      >
+        <div class="overall-progress-copy">
+          <h3>{overallProgressUi.title}</h3>
+          <p>{overallProgressUi.description}</p>
+        </div>
+        <div class="overall-progress-meter">
+          <strong data-overall-progress-percent>0%</strong>
+          <span data-overall-progress-value>
+            {overallProgressUi.complete}: 0/{totalLectures + totalSelfCheckQuestions + totalQuizzes}
+          </span>
+          <span class="overall-progress-bar">
+            <span data-overall-progress-bar></span>
+          </span>
+          <a class="overall-progress-action" href={firstLearningHref} data-continue-learning>
+            {overallProgressUi.continue}
+          </a>
+        </div>
+      </div>
+
+      <div
+        class="course-progress-panel"
+        data-course-progress
+        data-locale={normalizedLocale}
+        data-total-questions={totalSelfCheckQuestions}
+        data-total-topics={topics.length}
+        data-completed-label={selfCheckUi.completed}
+        data-started-label={selfCheckUi.startedTopics}
+      >
+        <div>
+          <h3>{selfCheckUi.courseProgressTitle}</h3>
+          <p>{selfCheckUi.courseProgressDescription}</p>
+        </div>
+        <div class="course-progress-meter">
+          <strong data-course-progress-value>
+            {selfCheckUi.completed}: 0/{totalSelfCheckQuestions}
+          </strong>
+          <span data-course-progress-topics>
+            {selfCheckUi.startedTopics}: 0/{topics.length}
+          </span>
+          <span class="course-progress-bar">
+            <span data-course-progress-bar></span>
+          </span>
+        </div>
+      </div>
+
+      <div
+        class="course-progress-panel"
+        data-course-lecture-progress
+        data-locale={normalizedLocale}
+        data-total-lectures={totalLectures}
+        data-total-topics={topics.length}
+        data-read-label={lectureProgressUi.read}
+        data-started-label={lectureProgressUi.started}
+      >
+        <div>
+          <h3>{lectureProgressUi.title}</h3>
+          <p>{lectureProgressUi.description}</p>
+        </div>
+        <div class="course-progress-meter">
+          <strong data-course-lecture-progress-value>
+            {lectureProgressUi.read}: 0/{totalLectures}
+          </strong>
+          <span data-course-lecture-progress-topics>
+            {lectureProgressUi.started}: 0/{topics.length}
+          </span>
+          <span class="course-progress-bar">
+            <span data-course-lecture-progress-bar></span>
+          </span>
+        </div>
+      </div>
+
+      <div
+        class="course-progress-panel"
+        data-course-quiz-progress
+        data-locale={normalizedLocale}
+        data-total-quizzes={totalQuizzes}
+        data-total-topics={topics.length}
+        data-passed-label={quizProgressUi.passed}
+        data-started-label={selfCheckUi.startedTopics}
+      >
+        <div>
+          <h3>{quizProgressUi.title}</h3>
+          <p>{quizProgressUi.description}</p>
+        </div>
+        <div class="course-progress-meter">
+          <strong data-course-quiz-progress-value>
+            {quizProgressUi.passed}: 0/{totalQuizzes}
+          </strong>
+          <span data-course-quiz-progress-topics>
+            {selfCheckUi.startedTopics}: 0/{topics.length}
+          </span>
+          <span class="course-progress-bar">
+            <span data-course-quiz-progress-bar></span>
+          </span>
+        </div>
+      </div>
+
+      <div
+        class="progress-tools-panel"
+        data-progress-tools
+        data-locale={normalizedLocale}
+        data-empty-message={progressToolsUi.empty}
+        data-imported-message={progressToolsUi.imported}
+        data-import-error-message={progressToolsUi.importError}
+        data-reset-confirm-message={progressToolsUi.resetConfirm}
+        data-reset-done-message={progressToolsUi.resetDone}
+      >
+        <div>
+          <h3>{progressToolsUi.title}</h3>
+          <p>{progressToolsUi.description}</p>
+        </div>
+        <div class="progress-tools-actions">
+          <button type="button" data-export-progress>{progressToolsUi.exportLabel}</button>
+          <label>
+            <input type="file" accept="application/json,.json" data-import-progress />
+            <span>{progressToolsUi.importLabel}</span>
+          </label>
+          <button type="button" class="danger" data-reset-course-progress>
+            {progressToolsUi.resetLabel}
+          </button>
+        </div>
+        <p class="progress-tools-status" data-progress-tools-status aria-live="polite"></p>
       </div>
 
       <!-- Пошук -->
@@ -98,17 +523,68 @@ const categories = [
       <!-- Список тем -->
       <div class="topics-list" id="topics-list">
         {
-          topics.map((topic: any) => (
+          topics.map((topic: TopicCard) => (
             <a
               href={`/${locale}/topics/${topic.slug}`}
               class="topic-card"
               data-category={topic.category || "all"}
               data-title={(topic.title || "").toLowerCase()}
               data-description={(topic.description || "").toLowerCase()}
+              data-topic-progress-card
+              data-locale={normalizedLocale}
+              data-topic={topic.slug}
+              data-question-count={topic.questionCount}
+              data-quiz-count={topic.quizCount}
+              data-lecture-count={topic.lectureCount}
+              data-lecture-slugs={JSON.stringify(topic.lectureSlugs)}
+              data-completed-label={selfCheckUi.completed}
+              data-read-label={lectureProgressUi.read}
+              data-quiz-score-label={quizProgressUi.score}
+              data-quiz-passed-label={quizProgressUi.passed}
+              data-quiz-not-started-label={quizProgressUi.notStarted}
             >
               {topic.icon && <span class="topic-icon">{topic.icon}</span>}
               <h2 class="topic-title">{topic.title}</h2>
               <p class="topic-excerpt">{topic.description || ""}</p>
+              {
+                topic.questionCount > 0 && (
+                  <span class="topic-self-check" aria-live="polite">
+                    <span class="topic-self-check-label">{selfCheckUi.title}</span>
+                    <span class="topic-self-check-value" data-topic-progress-value>
+                      {selfCheckUi.completed}: 0/{topic.questionCount}
+                    </span>
+                    <span class="topic-self-check-bar">
+                      <span data-topic-progress-bar></span>
+                    </span>
+                  </span>
+                )
+              }
+              {
+                topic.lectureCount > 0 && (
+                  <span class="topic-self-check" aria-live="polite">
+                    <span class="topic-self-check-label">{lectureProgressUi.title}</span>
+                    <span class="topic-self-check-value" data-topic-lecture-progress-value>
+                      {lectureProgressUi.read}: 0/{topic.lectureCount}
+                    </span>
+                    <span class="topic-self-check-bar">
+                      <span data-topic-lecture-progress-bar></span>
+                    </span>
+                  </span>
+                )
+              }
+              {
+                topic.quizCount > 0 && (
+                  <span class="topic-self-check" aria-live="polite">
+                    <span class="topic-self-check-label">{quizProgressUi.title}</span>
+                    <span class="topic-self-check-value" data-topic-quiz-progress-value>
+                      {quizProgressUi.notStarted}
+                    </span>
+                    <span class="topic-self-check-bar">
+                      <span data-topic-quiz-progress-bar></span>
+                    </span>
+                  </span>
+                )
+              }
               <span class="topic-link">{t.goTo} →</span>
             </a>
           ))
@@ -119,8 +595,9 @@ const categories = [
       <div id="no-results" class="no-results" style="display: none;">
         <div class="no-results-icon">🔍</div>
         <h3>{t.noResults}</h3>
-        <p>Спробуйте змінити пошуковий запит або категорію</p>
+        <p>{t.searchHint}</p>
       </div>
+      </section>
     </div>
   </main>
   <Footer />
@@ -128,13 +605,18 @@ const categories = [
 
 <script>
   document.addEventListener("DOMContentLoaded", () => {
-    const searchInput = document.getElementById("topic-search") as HTMLInputElement;
-    const searchClear = document.getElementById("search-clear") as HTMLButtonElement;
-    const searchStats = document.getElementById("search-stats") as HTMLDivElement;
+    const searchInput = document.getElementById("topic-search");
+    const searchClear = document.getElementById("search-clear");
+    const searchStats = document.getElementById("search-stats");
     const filterBtns = document.querySelectorAll(".filter-btn");
     const topicCards = document.querySelectorAll(".topic-card");
-    const noResults = document.getElementById("no-results") as HTMLDivElement;
-    const topicsList = document.getElementById("topics-list") as HTMLDivElement;
+    const noResults = document.getElementById("no-results");
+    const topicsList = document.getElementById("topics-list");
+    const overallProgress = document.querySelector("[data-overall-progress]");
+    const courseProgress = document.querySelector("[data-course-progress]");
+    const courseLectureProgress = document.querySelector("[data-course-lecture-progress]");
+    const courseQuizProgress = document.querySelector("[data-course-quiz-progress]");
+    const progressTools = document.querySelector("[data-progress-tools]");
 
     let currentCategory = "all";
     let currentSearch = "";
@@ -147,16 +629,14 @@ const categories = [
         const cardCategory = card.getAttribute("data-category");
         const cardTitle = card.getAttribute("data-title") || "";
         const cardDescription = card.getAttribute("data-description") || "";
-        const htmlCard = card as HTMLElement;
-
         const matchesCategory = currentCategory === "all" || cardCategory === currentCategory;
         const matchesSearch = searchLower === "" || cardTitle.includes(searchLower) || cardDescription.includes(searchLower);
 
         if (matchesCategory && matchesSearch) {
-          htmlCard.style.display = "block";
+          card.style.display = "block";
           visibleCount++;
         } else {
-          htmlCard.style.display = "none";
+          card.style.display = "none";
         }
       });
 
@@ -179,9 +659,9 @@ const categories = [
       searchClear.style.display = currentSearch !== "" ? "block" : "none";
     }
 
-    let debounceTimer: any;
+    let debounceTimer;
     searchInput.addEventListener("input", (e) => {
-      currentSearch = (e.target as HTMLInputElement).value;
+      currentSearch = searchInput.value;
       clearTimeout(debounceTimer);
       debounceTimer = setTimeout(filterTopics, 200);
     });
@@ -202,8 +682,371 @@ const categories = [
       });
     });
 
-    const firstBtn = filterBtns[0] as HTMLButtonElement;
+    const firstBtn = filterBtns[0];
     if (firstBtn) firstBtn.classList.add("active");
+
+    const progressCards = document.querySelectorAll("[data-topic-progress-card]");
+
+    function readTopicCompleted(locale, topic) {
+      try {
+        const raw = localStorage.getItem(`foodprocess:self-check:${locale}:${topic}`);
+        return raw ? JSON.parse(raw).length : 0;
+      } catch {
+        return 0;
+      }
+    }
+
+    function readTopicLectures(locale, topic, lectureSlugs) {
+      return lectureSlugs.filter((lecture) => {
+        return localStorage.getItem(`foodprocess:lecture-read:${locale}:${topic}:${lecture}`) === "1";
+      }).length;
+    }
+
+    function readTopicQuiz(locale, topic) {
+      try {
+        const raw = localStorage.getItem(`foodprocess:topic-quiz:${locale}:${topic}`);
+        if (!raw) return null;
+        return JSON.parse(raw);
+      } catch {
+        return null;
+      }
+    }
+
+    function isQuizPassed(result) {
+      return Boolean(result && result.total > 0 && result.score / result.total >= 0.7);
+    }
+
+    function parseLectureSlugs(card) {
+      try {
+        return JSON.parse(card.dataset.lectureSlugs || "[]");
+      } catch {
+        return [];
+      }
+    }
+
+    progressCards.forEach((card) => {
+      const topic = card.dataset.topic;
+      const locale = card.dataset.locale || "uk";
+      const total = Number(card.dataset.questionCount || "0");
+      const lectureTotal = Number(card.dataset.lectureCount || "0");
+      const completedLabel = card.dataset.completedLabel || "Completed";
+      const readLabel = card.dataset.readLabel || "Read";
+      const quizScoreLabel = card.dataset.quizScoreLabel || "Score";
+      const quizPassedLabel = card.dataset.quizPassedLabel || "Passed";
+      const quizNotStartedLabel = card.dataset.quizNotStartedLabel || "Not taken";
+      const value = card.querySelector("[data-topic-progress-value]");
+      const bar = card.querySelector("[data-topic-progress-bar]");
+      const lectureValue = card.querySelector("[data-topic-lecture-progress-value]");
+      const lectureBar = card.querySelector("[data-topic-lecture-progress-bar]");
+      const quizValue = card.querySelector("[data-topic-quiz-progress-value]");
+      const quizBar = card.querySelector("[data-topic-quiz-progress-bar]");
+
+      if (!topic) return;
+
+      if (total > 0 && value && bar) {
+        const completed = readTopicCompleted(locale, topic);
+        const safeCompleted = Math.min(completed, total);
+        value.textContent = `${completedLabel}: ${safeCompleted}/${total}`;
+        bar.style.width = `${Math.round((safeCompleted / total) * 100)}%`;
+      }
+
+      if (lectureTotal > 0 && lectureValue && lectureBar) {
+        const lectureSlugs = parseLectureSlugs(card);
+
+        const readLectures = Math.min(readTopicLectures(locale, topic, lectureSlugs), lectureTotal);
+        lectureValue.textContent = `${readLabel}: ${readLectures}/${lectureTotal}`;
+        lectureBar.style.width = `${Math.round((readLectures / lectureTotal) * 100)}%`;
+      }
+
+      if (quizValue && quizBar) {
+        const quizResult = readTopicQuiz(locale, topic);
+        const quizPassed = isQuizPassed(quizResult);
+        card.classList.toggle("has-passed-quiz", quizPassed);
+
+        if (quizResult && quizResult.total > 0) {
+          quizValue.textContent = `${quizScoreLabel}: ${quizResult.score}/${quizResult.total}${
+            quizPassed ? `, ${quizPassedLabel}` : ""
+          }`;
+          quizBar.style.width = `${Math.round((quizResult.score / quizResult.total) * 100)}%`;
+        } else {
+          quizValue.textContent = quizNotStartedLabel;
+          quizBar.style.width = "0%";
+        }
+      }
+    });
+
+    let completedQuestionsTotal = 0;
+    let readLecturesTotal = 0;
+    let passedQuizzesTotal = 0;
+
+    if (courseProgress) {
+      const locale = courseProgress.dataset.locale || "uk";
+      const totalQuestions = Number(courseProgress.dataset.totalQuestions || "0");
+      const totalTopics = Number(courseProgress.dataset.totalTopics || "0");
+      const completedLabel = courseProgress.dataset.completedLabel || "Completed";
+      const startedLabel = courseProgress.dataset.startedLabel || "Topics started";
+      const value = courseProgress.querySelector("[data-course-progress-value]");
+      const topicsValue = courseProgress.querySelector("[data-course-progress-topics]");
+      const bar = courseProgress.querySelector("[data-course-progress-bar]");
+
+      let startedTopics = 0;
+
+      progressCards.forEach((card) => {
+        const topic = card.dataset.topic;
+        const total = Number(card.dataset.questionCount || "0");
+        if (!topic || total <= 0) return;
+
+        const completed = Math.min(readTopicCompleted(locale, topic), total);
+        completedQuestionsTotal += completed;
+        if (completed > 0) startedTopics++;
+      });
+
+      if (value) value.textContent = `${completedLabel}: ${completedQuestionsTotal}/${totalQuestions}`;
+      if (topicsValue) topicsValue.textContent = `${startedLabel}: ${startedTopics}/${totalTopics}`;
+      if (bar && totalQuestions > 0) {
+        bar.style.width = `${Math.round((completedQuestionsTotal / totalQuestions) * 100)}%`;
+      }
+    }
+
+    if (courseLectureProgress) {
+      const locale = courseLectureProgress.dataset.locale || "uk";
+      const totalLectures = Number(courseLectureProgress.dataset.totalLectures || "0");
+      const totalTopics = Number(courseLectureProgress.dataset.totalTopics || "0");
+      const readLabel = courseLectureProgress.dataset.readLabel || "Read";
+      const startedLabel = courseLectureProgress.dataset.startedLabel || "Topics started";
+      const value = courseLectureProgress.querySelector("[data-course-lecture-progress-value]");
+      const topicsValue = courseLectureProgress.querySelector("[data-course-lecture-progress-topics]");
+      const bar = courseLectureProgress.querySelector("[data-course-lecture-progress-bar]");
+
+      let startedTopics = 0;
+
+      progressCards.forEach((card) => {
+        const topic = card.dataset.topic;
+        const lectureTotal = Number(card.dataset.lectureCount || "0");
+        if (!topic || lectureTotal <= 0) return;
+
+        const lectureSlugs = parseLectureSlugs(card);
+
+        const readLectures = Math.min(readTopicLectures(locale, topic, lectureSlugs), lectureTotal);
+        readLecturesTotal += readLectures;
+        if (readLectures > 0) startedTopics++;
+      });
+
+      if (value) value.textContent = `${readLabel}: ${readLecturesTotal}/${totalLectures}`;
+      if (topicsValue) topicsValue.textContent = `${startedLabel}: ${startedTopics}/${totalTopics}`;
+      if (bar && totalLectures > 0) {
+        bar.style.width = `${Math.round((readLecturesTotal / totalLectures) * 100)}%`;
+      }
+    }
+
+    if (courseQuizProgress) {
+      const locale = courseQuizProgress.dataset.locale || "uk";
+      const totalQuizzes = Number(courseQuizProgress.dataset.totalQuizzes || "0");
+      const totalTopics = Number(courseQuizProgress.dataset.totalTopics || "0");
+      const passedLabel = courseQuizProgress.dataset.passedLabel || "Passed";
+      const startedLabel = courseQuizProgress.dataset.startedLabel || "Topics started";
+      const value = courseQuizProgress.querySelector("[data-course-quiz-progress-value]");
+      const topicsValue = courseQuizProgress.querySelector("[data-course-quiz-progress-topics]");
+      const bar = courseQuizProgress.querySelector("[data-course-quiz-progress-bar]");
+
+      let startedTopics = 0;
+
+      progressCards.forEach((card) => {
+        const topic = card.dataset.topic;
+        const quizTotal = Number(card.dataset.quizCount || "0");
+        if (!topic || quizTotal <= 0) return;
+
+        const quizResult = readTopicQuiz(locale, topic);
+        if (quizResult) startedTopics++;
+        if (isQuizPassed(quizResult)) passedQuizzesTotal++;
+      });
+
+      if (value) value.textContent = `${passedLabel}: ${passedQuizzesTotal}/${totalQuizzes}`;
+      if (topicsValue) topicsValue.textContent = `${startedLabel}: ${startedTopics}/${totalTopics}`;
+      if (bar && totalQuizzes > 0) {
+        bar.style.width = `${Math.round((passedQuizzesTotal / totalQuizzes) * 100)}%`;
+      }
+    }
+
+    if (overallProgress) {
+      const totalItems = Number(overallProgress.dataset.totalItems || "0");
+      const completeLabel = overallProgress.dataset.completeLabel || "Complete";
+      const continueLabel = overallProgress.dataset.continueLabel || "Continue Learning";
+      const reviewLabel = overallProgress.dataset.reviewLabel || "Continue Self-Check";
+      const quizLabel = overallProgress.dataset.quizLabel || "Take Mini-Test";
+      const doneLabel = overallProgress.dataset.doneLabel || "Course completed";
+      const percent = overallProgress.querySelector("[data-overall-progress-percent]");
+      const value = overallProgress.querySelector("[data-overall-progress-value]");
+      const bar = overallProgress.querySelector("[data-overall-progress-bar]");
+      const continueLink = overallProgress.querySelector("[data-continue-learning]");
+      const completedItems = completedQuestionsTotal + readLecturesTotal + passedQuizzesTotal;
+      const percentValue = totalItems > 0 ? Math.round((completedItems / totalItems) * 100) : 0;
+
+      if (percent) percent.textContent = `${percentValue}%`;
+      if (value) value.textContent = `${completeLabel}: ${completedItems}/${totalItems}`;
+      if (bar) bar.style.width = `${percentValue}%`;
+
+      if (continueLink) {
+        let nextHref = "";
+        let nextLabel = continueLabel;
+
+        for (const card of progressCards) {
+          const topic = card.dataset.topic;
+          const locale = card.dataset.locale || "uk";
+          if (!topic) continue;
+
+          const unreadLecture = parseLectureSlugs(card).find((lecture) => {
+            return localStorage.getItem(`foodprocess:lecture-read:${locale}:${topic}:${lecture}`) !== "1";
+          });
+
+          if (unreadLecture) {
+            nextHref = `/${locale}/topics/${topic}/${unreadLecture}`;
+            nextLabel = continueLabel;
+            break;
+          }
+        }
+
+        if (!nextHref) {
+          for (const card of progressCards) {
+            const topic = card.dataset.topic;
+            const locale = card.dataset.locale || "uk";
+            const total = Number(card.dataset.questionCount || "0");
+            if (!topic || total <= 0) continue;
+
+            if (readTopicCompleted(locale, topic) < total) {
+              nextHref = `/${locale}/topics/${topic}#self-check`;
+              nextLabel = reviewLabel;
+              break;
+            }
+          }
+        }
+
+        if (!nextHref) {
+          for (const card of progressCards) {
+            const topic = card.dataset.topic;
+            const locale = card.dataset.locale || "uk";
+            const quizTotal = Number(card.dataset.quizCount || "0");
+            if (!topic || quizTotal <= 0) continue;
+
+            if (!isQuizPassed(readTopicQuiz(locale, topic))) {
+              nextHref = `/${locale}/topics/${topic}#topic-quiz`;
+              nextLabel = quizLabel;
+              break;
+            }
+          }
+        }
+
+        if (!nextHref) {
+          nextHref = "#topics-list";
+          nextLabel = doneLabel;
+        }
+
+        continueLink.href = nextHref;
+        continueLink.textContent = nextLabel;
+      }
+    }
+
+    if (progressTools) {
+      const locale = progressTools.dataset.locale || "uk";
+      const status = progressTools.querySelector("[data-progress-tools-status]");
+      const exportButton = progressTools.querySelector("[data-export-progress]");
+      const importInput = progressTools.querySelector("[data-import-progress]");
+      const resetButton = progressTools.querySelector("[data-reset-course-progress]");
+
+      function progressKeyPrefixes(activeLocale) {
+        return [
+          `foodprocess:self-check:${activeLocale}:`,
+          `foodprocess:lecture-read:${activeLocale}:`,
+          `foodprocess:topic-quiz:${activeLocale}:`,
+        ];
+      }
+
+      function isCourseProgressKey(key, activeLocale) {
+        return progressKeyPrefixes(activeLocale).some((prefix) => key.startsWith(prefix));
+      }
+
+      function setToolStatus(message) {
+        if (status) status.textContent = message;
+      }
+
+      exportButton?.addEventListener("click", () => {
+        const progress = {};
+
+        for (let i = 0; i < localStorage.length; i++) {
+          const key = localStorage.key(i);
+          if (key && isCourseProgressKey(key, locale)) {
+            progress[key] = localStorage.getItem(key) || "";
+          }
+        }
+
+        if (Object.keys(progress).length === 0) {
+          setToolStatus(progressTools.dataset.emptyMessage || "No saved progress to export.");
+          return;
+        }
+
+        const payload = {
+          app: "FoodProcessPortal",
+          version: 1,
+          locale,
+          exportedAt: new Date().toISOString(),
+          progress,
+        };
+        const blob = new Blob([JSON.stringify(payload, null, 2)], {
+          type: "application/json",
+        });
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement("a");
+        link.href = url;
+        link.download = `foodprocess-progress-${locale}.json`;
+        document.body.appendChild(link);
+        link.click();
+        link.remove();
+        URL.revokeObjectURL(url);
+      });
+
+      importInput?.addEventListener("change", async () => {
+        const file = importInput.files?.[0];
+        if (!file) return;
+
+        try {
+          const payload = JSON.parse(await file.text());
+
+          if (payload.app !== "FoodProcessPortal" || !payload.progress) {
+            throw new Error("Invalid progress payload");
+          }
+
+          Object.entries(payload.progress).forEach(([key, value]) => {
+            if (isCourseProgressKey(key, locale) && typeof value === "string") {
+              localStorage.setItem(key, value);
+            }
+          });
+
+          setToolStatus(progressTools.dataset.importedMessage || "Progress imported.");
+          window.setTimeout(() => window.location.reload(), 650);
+        } catch {
+          setToolStatus(progressTools.dataset.importErrorMessage || "Could not import progress.");
+        } finally {
+          importInput.value = "";
+        }
+      });
+
+      resetButton?.addEventListener("click", () => {
+        const confirmMessage =
+          progressTools.dataset.resetConfirmMessage || "Reset course progress?";
+        if (!window.confirm(confirmMessage)) return;
+
+        const keysToRemove = [];
+        for (let i = 0; i < localStorage.length; i++) {
+          const key = localStorage.key(i);
+          if (key && isCourseProgressKey(key, locale)) {
+            keysToRemove.push(key);
+          }
+        }
+        keysToRemove.forEach((key) => localStorage.removeItem(key));
+        setToolStatus(progressTools.dataset.resetDoneMessage || "Progress cleared.");
+        window.setTimeout(() => window.location.reload(), 650);
+      });
+    }
   });
 </script>
 

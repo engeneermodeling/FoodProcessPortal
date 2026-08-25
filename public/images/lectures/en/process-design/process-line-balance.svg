@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 430" role="img" aria-labelledby="title desc">
+  <title id="title">Line capacity balance</title>
+  <desc id="desc">Skhema uzhodzhennia productyvnosti okremykh aparativ u kharchovii line.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#38bdf8"/>
+    </marker>
+  </defs>
+  <rect width="920" height="430" rx="22" fill="#111827"/>
+  <text x="42" y="58" fill="#f8fafc" font-family="Arial, sans-serif" font-size="27" font-weight="700">A line runs at the speed of its bottleneck</text>
+  <g font-family="Arial, sans-serif" font-size="16" font-weight="700">
+    <rect x="60" y="176" width="126" height="74" rx="14" fill="#1e3a8a" stroke="#3b82f6"/>
+    <text x="92" y="208" fill="#dbeafe">feed</text>
+    <text x="94" y="232" fill="#bfdbfe" font-size="13">6 t/h</text>
+    <path d="M192 213h50" stroke="#38bdf8" stroke-width="5" marker-end="url(#arrow)"/>
+    <rect x="254" y="176" width="126" height="74" rx="14" fill="#14532d" stroke="#22c55e"/>
+    <text x="286" y="208" fill="#dcfce7">heating</text>
+    <text x="288" y="232" fill="#bbf7d0" font-size="13">5 t/h</text>
+    <path d="M386 213h50" stroke="#38bdf8" stroke-width="5" marker-end="url(#arrow)"/>
+    <rect x="448" y="176" width="126" height="74" rx="14" fill="#7f1d1d" stroke="#ef4444"/>
+    <text x="476" y="208" fill="#fee2e2">holding</text>
+    <text x="484" y="232" fill="#fecaca" font-size="13">4 t/h</text>
+    <path d="M580 213h50" stroke="#38bdf8" stroke-width="5" marker-end="url(#arrow)"/>
+    <rect x="642" y="176" width="126" height="74" rx="14" fill="#854d0e" stroke="#f59e0b"/>
+    <text x="676" y="208" fill="#fef3c7">filling</text>
+    <text x="680" y="232" fill="#fde68a" font-size="13">5 t/h</text>
+    <path d="M774 213h50" stroke="#38bdf8" stroke-width="5" marker-end="url(#arrow)"/>
+    <text x="580" y="122" fill="#fecaca" font-size="18">bottleneck</text>
+    <path d="M546 150l-24 24" stroke="#ef4444" stroke-width="4"/>
+  </g>
+  <rect x="142" y="322" width="636" height="48" rx="10" fill="#1f2937" stroke="#475569"/>
+  <text x="176" y="352" fill="#f8fafc" font-family="Arial, sans-serif" font-size="15">Pidbyraiut ne okremi equipment, a uzhodzhenu systemu z buferamy, servisamy i rezhymamy myttia.</text>
+</svg>

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 430" role="img" aria-labelledby="title desc">
+  <title id="title">Ієрархія використання харчових потоків</title>
+  <desc id="desc">Схема пріоритетів: запобігання втратам, харчове використання, корм, промислова переробка, енергія, утилізація.</desc>
+  <rect width="920" height="430" rx="22" fill="#111827"/>
+  <text x="42" y="58" fill="#f8fafc" font-family="Arial, sans-serif" font-size="27" font-weight="700">Найкращий відхід - той, який не виник</text>
+  <g font-family="Arial, sans-serif" font-size="17" font-weight="700">
+    <rect x="210" y="92" width="500" height="46" rx="10" fill="#14532d"/><text x="350" y="122" fill="#dcfce7">Запобігання втратам</text>
+    <rect x="250" y="150" width="420" height="46" rx="10" fill="#166534"/><text x="344" y="180" fill="#dcfce7">Харчове використання</text>
+    <rect x="290" y="208" width="340" height="46" rx="10" fill="#854d0e"/><text x="387" y="238" fill="#fef3c7">Корм / інгредієнти</text>
+    <rect x="330" y="266" width="260" height="46" rx="10" fill="#7c2d12"/><text x="374" y="296" fill="#ffedd5">Промислова переробка</text>
+    <rect x="370" y="324" width="180" height="46" rx="10" fill="#7f1d1d"/><text x="413" y="354" fill="#fee2e2">Утилізація</text>
+  </g>
+</svg>

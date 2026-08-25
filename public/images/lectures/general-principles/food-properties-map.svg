@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="560" viewBox="0 0 1080 560" role="img" aria-labelledby="title desc">
+  <title id="title">Фізичні властивості у розрахунках харчових процесів</title>
+  <desc id="desc">Схема показує, як густина, в'язкість, теплоємність і теплопровідність впливають на гідравліку, теплообмін і вибір обладнання.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#174ea6"/></marker>
+    <style>
+      .bg{fill:#f8fbff}.center{fill:#fff;stroke:#174ea6;stroke-width:4}.box{fill:#fff;stroke:#8da4c4;stroke-width:3;rx:18}.rho{fill:#eef6ff;stroke:#5b8fd8;stroke-width:3}.mu{fill:#fff7e6;stroke:#e6b450;stroke-width:3}.cp{fill:#ecfdf5;stroke:#2f9e67;stroke-width:3}.lam{fill:#f3f0ff;stroke:#8b5cf6;stroke-width:3}.line{stroke:#174ea6;stroke-width:4;fill:none;marker-end:url(#arrow)}.txt{font-family:Arial,"Helvetica Neue",sans-serif;fill:#102033;font-size:22px}.head{font-size:31px;font-weight:700;fill:#0f2a4f}.label{font-size:25px;font-weight:700}.small{font-size:18px;fill:#334155}.sym{font-size:34px;font-weight:700;fill:#0f2a4f}
+    </style>
+  </defs>
+  <rect class="bg" width="1080" height="560"/>
+  <text class="txt head" x="540" y="48" text-anchor="middle">Властивості продукту визначають розмір апарата і режим роботи</text>
+  <rect class="center" x="410" y="210" width="260" height="135" rx="22"/>
+  <text class="txt label" x="540" y="250" text-anchor="middle">харчовий продукт</text>
+  <text class="txt small" x="540" y="280" text-anchor="middle">молоко, сік, олія, соус,</text>
+  <text class="txt small" x="540" y="306" text-anchor="middle">сироп, пюре, фарш</text>
+
+  <rect class="box rho" x="70" y="105" width="300" height="120"/>
+  <text class="txt sym" x="120" y="155">ρ</text>
+  <text class="txt label" x="220" y="145" text-anchor="middle">густина</text>
+  <text class="txt small" x="220" y="180" text-anchor="middle">витрата, тиск, Re</text>
+
+  <rect class="box mu" x="710" y="105" width="300" height="120"/>
+  <text class="txt sym" x="760" y="155">μ</text>
+  <text class="txt label" x="860" y="145" text-anchor="middle">в'язкість</text>
+  <text class="txt small" x="860" y="180" text-anchor="middle">насос, втрати напору, Re</text>
+
+  <rect class="box cp" x="70" y="360" width="300" height="120"/>
+  <text class="txt sym" x="120" y="410">c<tspan baseline-shift="sub" font-size="20">p</tspan></text>
+  <text class="txt label" x="220" y="400" text-anchor="middle">теплоємність</text>
+  <text class="txt small" x="220" y="435" text-anchor="middle">тепловий баланс, пара</text>
+
+  <rect class="box lam" x="710" y="360" width="300" height="120"/>
+  <text class="txt sym" x="760" y="410">λ</text>
+  <text class="txt label" x="860" y="400" text-anchor="middle">теплопровідність</text>
+  <text class="txt small" x="860" y="435" text-anchor="middle">Nu, Pr, прогрівання</text>
+
+  <path class="line" d="M370 165 C425 195 430 215 410 245"/>
+  <path class="line" d="M710 165 C655 195 650 215 670 245"/>
+  <path class="line" d="M370 420 C425 380 430 350 410 315"/>
+  <path class="line" d="M710 420 C655 380 650 350 670 315"/>
+</svg>

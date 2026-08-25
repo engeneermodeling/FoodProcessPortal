@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 430" role="img" aria-labelledby="title desc">
+  <title id="title">Приклади екструдованих харчових продуктив</title>
+  <desc id="desc">Карта продуктив: макарони, снеки, пластивци, сухи сниданки, панирувальни сухари, текстуровани рослинни продукти.</desc>
+  <rect width="920" height="430" rx="22" fill="#111827"/>
+  <text x="42" y="58" fill="#f8fafc" font-family="Arial, sans-serif" font-size="25" font-weight="700">Екструзия задае форму, пористисть и текстуру</text>
+  <g font-family="Arial, sans-serif">
+    <rect x="52" y="116" width="250" height="92" rx="12" fill="#1e293b" stroke="#334155"/>
+    <text x="76" y="150" fill="#fde68a" font-size="18" font-weight="700">Макарони</text>
+    <text x="76" y="178" fill="#f8fafc" font-size="15">форма через матрицю</text>
+    <text x="76" y="200" fill="#94a3b8" font-size="14">сушиння визначае мицнисть</text>
+    <rect x="335" y="116" width="250" height="92" rx="12" fill="#1e293b" stroke="#334155"/>
+    <text x="359" y="150" fill="#bbf7d0" font-size="18" font-weight="700">Снеки</text>
+    <text x="359" y="178" fill="#f8fafc" font-size="15">розширення писля матрици</text>
+    <text x="359" y="200" fill="#94a3b8" font-size="14">хрумкисть, пористисть</text>
+    <rect x="618" y="116" width="250" height="92" rx="12" fill="#1e293b" stroke="#334155"/>
+    <text x="642" y="150" fill="#bae6fd" font-size="18" font-weight="700">Сухи сниданки</text>
+    <text x="642" y="178" fill="#f8fafc" font-size="15">пластивци, кульки, подушки</text>
+    <text x="642" y="200" fill="#94a3b8" font-size="14">текстура писля сушиння</text>
+    <rect x="52" y="250" width="250" height="92" rx="12" fill="#1e293b" stroke="#334155"/>
+    <text x="76" y="284" fill="#fecaca" font-size="18" font-weight="700">Панирування</text>
+    <text x="76" y="312" fill="#f8fafc" font-size="15">структура крихти</text>
+    <text x="76" y="334" fill="#94a3b8" font-size="14">розмир, колир, поглинання олии</text>
+    <rect x="335" y="250" width="250" height="92" rx="12" fill="#1e293b" stroke="#334155"/>
+    <text x="359" y="284" fill="#ddd6fe" font-size="18" font-weight="700">Рослинни билки</text>
+    <text x="359" y="312" fill="#f8fafc" font-size="15">волокниста структура</text>
+    <text x="359" y="334" fill="#94a3b8" font-size="14">текстура и вологисть</text>
+    <rect x="618" y="250" width="250" height="92" rx="12" fill="#1e293b" stroke="#334155"/>
+    <text x="642" y="284" fill="#fed7aa" font-size="18" font-weight="700">Напивфабрикати</text>
+    <text x="642" y="312" fill="#f8fafc" font-size="15">пелети, заготовки</text>
+    <text x="642" y="334" fill="#94a3b8" font-size="14">потим сушиння або обсмаження</text>
+  </g>
+</svg>

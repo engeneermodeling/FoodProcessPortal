@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 430" role="img" aria-labelledby="title desc">
+  <title id="title">Викно параметрив екструзии</title>
+  <desc id="desc">Диаграма показуе, як вологисть и механична енергия впливають на текстуру: сухий порошок, погане формування, стабильний продукт, перегрив и липкисть.</desc>
+  <rect width="920" height="430" rx="22" fill="#0f172a"/>
+  <text x="42" y="58" fill="#f8fafc" font-family="Arial, sans-serif" font-size="26" font-weight="700">Якисть екструзии живе у технологичному викни</text>
+  <g transform="translate(112 112)">
+    <line x1="0" y1="250" x2="680" y2="250" stroke="#94a3b8" stroke-width="2"/>
+    <line x1="0" y1="250" x2="0" y2="0" stroke="#94a3b8" stroke-width="2"/>
+    <text x="578" y="288" fill="#cbd5e1" font-family="Arial, sans-serif" font-size="15">вологисть маси</text>
+    <text x="-94" y="22" fill="#cbd5e1" font-family="Arial, sans-serif" font-size="15" transform="rotate(-90 -94 22)">механична енергия / температура</text>
+    <rect x="248" y="78" width="210" height="106" rx="18" fill="#22c55e" opacity=".24" stroke="#4ade80" stroke-width="3"/>
+    <text x="282" y="126" fill="#dcfce7" font-family="Arial, sans-serif" font-size="18" font-weight="700">стабильне формування</text>
+    <text x="310" y="152" fill="#bbf7d0" font-family="Arial, sans-serif" font-size="14">форма + текстура</text>
+    <rect x="40" y="64" width="158" height="92" rx="14" fill="#ef4444" opacity=".18" stroke="#fca5a5"/>
+    <text x="66" y="110" fill="#fecaca" font-family="Arial, sans-serif" font-size="16" font-weight="700">сухо, пилить</text>
+    <rect x="500" y="68" width="150" height="90" rx="14" fill="#f59e0b" opacity=".2" stroke="#fbbf24"/>
+    <text x="526" y="110" fill="#fde68a" font-family="Arial, sans-serif" font-size="16" font-weight="700">липкисть</text>
+    <rect x="228" y="8" width="230" height="50" rx="12" fill="#ef4444" opacity=".18" stroke="#fca5a5"/>
+    <text x="270" y="39" fill="#fecaca" font-family="Arial, sans-serif" font-size="16" font-weight="700">перегрив, потемниння</text>
+    <rect x="242" y="200" width="220" height="42" rx="10" fill="#64748b" opacity=".28" stroke="#94a3b8"/>
+    <text x="278" y="227" fill="#e2e8f0" font-family="Arial, sans-serif" font-size="15" font-weight="700">недостатне структурування</text>
+  </g>
+</svg>

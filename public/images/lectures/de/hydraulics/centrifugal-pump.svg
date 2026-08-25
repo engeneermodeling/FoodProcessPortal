@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="580" viewBox="0 0 1040 580" role="img" aria-labelledby="title desc">
+  <title id="title">Funktionsprinzip einer Kreiselpumpe</title>
+  <desc id="desc">Fluessigkeit tritt in die Laufradmitte ein, Schaufeln geben Geschwindigkeit, das Spiralgehaeuse wandelt einen Teil in Druck um.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#174ea6"/></marker>
+    <style>
+      .bg{fill:#f8fbff}.case{fill:#fff;stroke:#8da4c4;stroke-width:4}.imp{fill:#d8ecff;stroke:#1f3f76;stroke-width:4}.blade{fill:none;stroke:#1f3f76;stroke-width:8;stroke-linecap:round}.flow{stroke:#174ea6;stroke-width:6;fill:none;marker-end:url(#arrow)}.txt{font-family:Arial,"Helvetica Neue",sans-serif;fill:#102033;font-size:23px}.head{font-size:31px;font-weight:700;fill:#0f2a4f}.label{font-size:25px;font-weight:700}.small{font-size:19px;fill:#334155}.note{fill:#fff7e6;stroke:#e6b450;stroke-width:2;rx:14}
+    </style>
+  </defs>
+  <rect class="bg" width="1040" height="580"/>
+  <text class="txt head" x="520" y="50" text-anchor="middle">Kreiselpumpe: Energieumwandlung</text>
+  <path class="case" d="M430 155 C585 80 765 165 770 305 C775 440 600 500 450 438 C315 383 300 240 430 155 Z"/>
+  <circle class="imp" cx="510" cy="300" r="118"/>
+  <circle cx="510" cy="300" r="28" fill="#fff" stroke="#1f3f76" stroke-width="4"/>
+  <path class="blade" d="M510 300 C540 248 585 225 625 218"/>
+  <path class="blade" d="M510 300 C568 303 612 335 635 372"/>
+  <path class="blade" d="M510 300 C482 352 438 377 398 384"/>
+  <path class="blade" d="M510 300 C452 296 410 264 386 228"/>
+  <path class="flow" d="M95 300 H375"/>
+  <path class="flow" d="M600 210 C690 190 755 170 900 170"/>
+  <path class="flow" d="M510 300 C570 285 620 255 665 218"/>
+  <text class="txt label" x="108" y="263">Saugseite</text>
+  <text class="txt small" x="108" y="331">Fluessigkeit tritt in die Laufradmitte ein</text>
+  <text class="txt label" x="745" y="136">Druckseite</text>
+  <text class="txt small" x="745" y="205">im Gehaeuse wird Geschwindigkeit teils zu Druck</text>
+  <rect class="note" x="155" y="485" width="730" height="58"/>
+  <text class="txt small" x="520" y="520" text-anchor="middle">Vor dem Start muss das Gehaeuse gefuellt sein: eine normale Kreiselpumpe ist nicht selbstansaugend.</text>
+</svg>

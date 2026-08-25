@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 450" role="img" aria-labelledby="title desc">
+  <title id="title">Вхідні дані для проєктування</title>
+  <desc id="desc">Схема основних вхідних даних для підбору харчового обладнання.</desc>
+  <rect width="920" height="450" rx="22" fill="#111827"/>
+  <text x="42" y="58" fill="#f8fafc" font-family="Arial, sans-serif" font-size="27" font-weight="700">Підбір обладнання починається з вхідних даних</text>
+  <g font-family="Arial, sans-serif" font-size="16" font-weight="700">
+    <rect x="350" y="178" width="220" height="94" rx="18" fill="#1e293b" stroke="#818cf8" stroke-width="3"/>
+    <text x="398" y="218" fill="#f8fafc" font-size="22">рішення</text>
+    <text x="382" y="246" fill="#cbd5e1" font-size="15">апарат, режим, лінія</text>
+    <rect x="70" y="110" width="180" height="62" rx="12" fill="#1e3a8a" stroke="#3b82f6"/>
+    <text x="112" y="148" fill="#dbeafe">продукт</text>
+    <rect x="70" y="250" width="180" height="62" rx="12" fill="#14532d" stroke="#22c55e"/>
+    <text x="100" y="288" fill="#dcfce7">продуктивність</text>
+    <rect x="370" y="330" width="180" height="62" rx="12" fill="#854d0e" stroke="#f59e0b"/>
+    <text x="424" y="368" fill="#fef3c7">режими</text>
+    <rect x="670" y="110" width="180" height="62" rx="12" fill="#7f1d1d" stroke="#ef4444"/>
+    <text x="710" y="148" fill="#fee2e2">обмеження</text>
+    <rect x="670" y="250" width="180" height="62" rx="12" fill="#164e63" stroke="#06b6d4"/>
+    <text x="720" y="288" fill="#cffafe">сервіси</text>
+  </g>
+  <g stroke="#38bdf8" stroke-width="4" opacity=".8">
+    <path d="M252 141h94"/>
+    <path d="M252 281h94"/>
+    <path d="M460 328v-50"/>
+    <path d="M668 141h-94"/>
+    <path d="M668 281h-94"/>
+  </g>
+</svg>

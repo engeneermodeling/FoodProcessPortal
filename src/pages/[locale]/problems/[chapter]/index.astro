@@ -1,0 +1,198 @@
+---
+import BaseLayout from "../../../../layouts/BaseLayout.astro";
+import Header from "../../../../components/Header.astro";
+import ThemeToggle from "../../../../components/ThemeToggle.astro";
+import Footer from "../../../../components/Footer.astro";
+import { siteConfig } from "../../../../config";
+import { ENABLED_LOCALES } from "../../../../locales.config";
+
+interface ProblemFrontmatter {
+  title: string;
+  chapter: number;
+  description?: string;
+  examplesCount?: number;
+  controlCount?: number;
+  source?: string;
+}
+
+interface ProblemModule {
+  frontmatter: ProblemFrontmatter;
+  default: unknown;
+}
+
+interface ProblemChapterNav {
+  slug: string;
+  chapter: number;
+  title: string;
+}
+
+interface ProblemPath {
+  params: {
+    locale: string;
+    chapter: string;
+  };
+  props: {
+    frontmatter: ProblemFrontmatter;
+    Content: unknown;
+  };
+}
+
+export function getStaticPaths() {
+  const problems = import.meta.glob<ProblemModule>("/src/content/problems/**/*.md", { eager: true });
+  const paths: ProblemPath[] = [];
+
+  for (const [path, mod] of Object.entries(problems)) {
+    const parts = path.split("/");
+    const idx = parts.indexOf("problems");
+    const locale = parts[idx + 1];
+    const slug = parts.pop()?.replace(".md", "") || "";
+
+    paths.push({
+      params: { locale, chapter: slug },
+      props: {
+        frontmatter: mod.frontmatter,
+        Content: mod.default,
+      },
+    });
+  }
+  return paths;
+}
+
+const { locale, chapter } = Astro.params;
+const { frontmatter, Content } = Astro.props;
+const t = siteConfig.translations[locale as keyof typeof siteConfig.translations];
+
+// Усі розділи задачника для навігації (тієї ж локалі)
+const allProblems = import.meta.glob<ProblemModule>("/src/content/problems/**/*.md", { eager: true });
+const localeChapters = Object.entries(allProblems)
+  .filter(([p]) => {
+    const parts = p.split("/");
+    const idx = parts.indexOf("problems");
+    return idx !== -1 && parts[idx + 1] === locale;
+  })
+  .map(([p, m]): ProblemChapterNav => ({
+    slug: p.split("/").pop()?.replace(".md", "") || "",
+    chapter: m.frontmatter.chapter,
+    title: m.frontmatter.title,
+  }))
+  .sort((a, b) => a.chapter - b.chapter);
+
+const currentIdx = localeChapters.findIndex((c) => c.slug === chapter);
+const prevCh = currentIdx > 0 ? localeChapters[currentIdx - 1] : null;
+const nextCh = currentIdx < localeChapters.length - 1 ? localeChapters[currentIdx + 1] : null;
+
+const chapterWord =
+  locale === "uk" ? "Розділ" : locale === "de" ? "Kapitel" : locale === "ru" ? "Раздел" : "Chapter";
+const backWord =
+  locale === "uk"
+    ? "← Назад до задачника"
+    : locale === "de"
+      ? "← Zurück zum Aufgabenbuch"
+      : locale === "ru"
+        ? "← Назад к задачнику"
+        : "← Back to problem book";
+const prevWord =
+  locale === "uk" ? "Попередній розділ" : locale === "de" ? "Vorheriges Kapitel" : locale === "ru" ? "Предыдущий раздел" : "Previous chapter";
+const nextWord =
+  locale === "uk" ? "Наступний розділ" : locale === "de" ? "Nächstes Kapitel" : locale === "ru" ? "Следующий раздел" : "Next chapter";
+---
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" />
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+
+<BaseLayout
+  title={frontmatter?.title || t.sections.problems.title}
+  description={frontmatter?.description || t.sections.problems.desc}
+  locale={locale}
+>
+  <Header>
+    <ThemeToggle slot="theme-toggle" />
+  </Header>
+
+  <main class="main-content">
+    <div class="container lecture-container">
+      <aside class="lecture-sidebar">
+        <a href={`/${locale}/problems`} class="back-link sidebar-back">{backWord}</a>
+        <nav class="lecture-nav">
+          <div class="lecture-nav-title">{t.sections.problems.title}</div>
+          {localeChapters.map((c) => (
+            <a
+              href={`/${locale}/problems/${c.slug}`}
+              class={`lecture-nav-item ${c.slug === chapter ? "active" : ""}`}
+            >
+              <span class="nav-num">{c.chapter}</span>
+              <span class="nav-lec-title">{c.title}</span>
+            </a>
+          ))}
+        </nav>
+      </aside>
+
+      <article class="lecture-article">
+        <header class="lecture-header">
+          <div class="lecture-badge">{chapterWord} {frontmatter?.chapter}</div>
+          <h1 class="lecture-title">{frontmatter?.title}</h1>
+          <div class="lecture-meta-row">
+            {frontmatter?.examplesCount && <span class="meta-chip">📘 {frontmatter.examplesCount}</span>}
+            {frontmatter?.controlCount && <span class="meta-chip">✏️ {frontmatter.controlCount}</span>}
+            {frontmatter?.source && <span class="meta-chip">📖 {frontmatter.source}</span>}
+          </div>
+        </header>
+
+        <div class="lecture-content problems-content">
+          <Content />
+        </div>
+
+        <div class="topic-navigation">
+          {prevCh ? (
+            <a href={`/${locale}/problems/${prevCh.slug}`} class="nav-btn nav-prev">
+              <span class="nav-arrow">←</span>
+              <div class="nav-text">
+                <span class="nav-label">{prevWord}</span>
+                <span class="nav-title">{prevCh.title}</span>
+              </div>
+            </a>
+          ) : (
+            <div class="nav-spacer" />
+          )}
+          {nextCh ? (
+            <a href={`/${locale}/problems/${nextCh.slug}`} class="nav-btn nav-next">
+              <div class="nav-text">
+                <span class="nav-label">{nextWord}</span>
+                <span class="nav-title">{nextCh.title}</span>
+              </div>
+              <span class="nav-arrow">→</span>
+            </a>
+          ) : (
+            <div class="nav-spacer" />
+          )}
+        </div>
+      </article>
+    </div>
+  </main>
+  <Footer />
+</BaseLayout>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const renderMath = (window as Window & {
+      renderMathInElement?: (element: HTMLElement, options: unknown) => void;
+    }).renderMathInElement;
+
+    if (renderMath) {
+      renderMath(document.body, {
+        delimiters: [
+          { left: "$$", right: "$$", display: true },
+          { left: "$", right: "$", display: false },
+        ],
+        throwOnError: false,
+      });
+    }
+  });
+</script>
+
+<style>
+  @import "../../../../styles/topic.css";
+  @import "../../../../styles/lecture.css";
+  @import "../../../../styles/problems.css";
+</style>

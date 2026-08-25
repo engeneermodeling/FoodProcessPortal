@@ -8,7 +8,7 @@ keywords: ["відцентровий насос", "роторний насос",
 duration: "60 хв"
 difficulty: "базовий"
 author: "FoodProcessPortal"
-updated: "2026-07-09"
+updated: "2026-08-17"
 ---
 
 # Лекція 5. Насоси і газодувні машини
@@ -29,6 +29,8 @@ updated: "2026-07-09"
 ## 1. Класифікація насосів
 
 Насос — гідравлічна машина, що перетворює механічну енергію двигуна на енергію потоку рідини. Харчова промисловість — один з найбільших споживачів насосного обладнання: кожне виробництво потребує десятки і сотні насосів різних типів.
+
+![Схема вибору насоса для харчового продукту](/images/lectures/hydraulics/pump-selection-map.svg)
 
 ```
 НАСОСИ
@@ -84,15 +86,19 @@ $$\eta = \eta_{об} \cdot \eta_{г} \cdot \eta_{м}$$
 
 **Принцип дії:**
 
+![Принцип роботи відцентрового насоса](/images/lectures/hydraulics/centrifugal-pump.svg)
+
 Перед пуском корпус насоса має бути **залитий рідиною** (самовсмоктування відсутнє!). При обертанні робочого колеса лопаті відкидають рідину відцентровою силою на периферію. У центрі колеса виникає вакуум — і рідина всмоктується зі всмоктувального трубопроводу. На периферії рідина набуває великої швидкості, яка в спіральному корпусі перетворюється на тиск.
 
-📺 **Відео:** [Centrifugal pump working principle — 3D animation](https://www.youtube.com/results?search_query=centrifugal+pump+working+principle+3D+animation)
+🔗 **Виробничий приклад:** [Alfa Laval LKH centrifugal pump](https://www.alfalaval.us/products/fluid-handling/pumps/centrifugal-pumps/lkh/) — гігієнічний відцентровий насос для dairy, food і beverage застосувань.
 
 ### 2.2 Характеристики відцентрового насоса
 
 **Робочі характеристики** — залежності $H(Q)$, $N(Q)$, $\eta(Q)$ при постійній частоті обертання — визначаються заводом-виробником дослідним шляхом і наводяться в паспорті насоса.
 
 Типова форма кривих:
+
+![Характеристика насоса, трубопроводу і робоча точка](/images/lectures/hydraulics/pump-system-curve.svg)
 
 ```
 H ↑          η ↑         N ↑
@@ -215,7 +221,9 @@ $$N_{дв} = 1{,}2 \cdot 0{,}28 = 0{,}34 \text{ кВт}$$
 - Різке падіння напору і витрати
 - Ерозія (раковини) на лопатях робочого колеса
 
-📺 **Відео:** [Cavitation in pumps — what it looks like and how to prevent it](https://www.youtube.com/results?search_query=pump+cavitation+explained+prevention+animation)
+![Кавітація і запас тиску на всмоктуванні](/images/lectures/hydraulics/cavitation-npsh.svg)
+
+🔗 **Що перевірити у паспорті:** виробники гігієнічних насосів наводять NPSHr. Наприклад, у [Alfa Laval LKH](https://www.alfalaval.us/products/fluid-handling/pumps/centrifugal-pumps/lkh/) окремо підкреслено низький NPSHr як спосіб зменшити ризик кавітації.
 
 ### 3.2 Допустима висота всмоктування
 
@@ -324,7 +332,7 @@ $$Q = \frac{V \cdot n}{60} \cdot \eta_{об}$$
 - М'ясний фарш
 - В'язкі маринади, соуси
 
-📺 **Відео:** [Screw pump working principle for food industry](https://www.youtube.com/results?search_query=screw+pump+food+industry+working+principle)
+🔗 **Альтернатива для в'язких продуктів:** [Alfa Laval SRU rotary lobe pump](https://www.alfalaval.us/sru/) — гігієнічний об'ємний насос для делікатного перекачування в'язких і чутливих продуктів.
 
 ### 5.3 Перистальтичні (трубчасті) насоси
 
@@ -343,7 +351,7 @@ $$Q = \frac{V \cdot n}{60} \cdot \eta_{об}$$
 - Кетчуп, гірчиця, варення з цілими ягодами
 - Фармацевтичні продукти
 
-📺 **Відео:** [Peristaltic pump in food processing](https://www.youtube.com/results?search_query=peristaltic+pump+food+processing+gentle)
+🔗 **Виробничий приклад:** [Watson-Marlow food and beverage peristaltic pumps](https://www.wmfts.com/en-us/food-and-beverage/watson-marlow-pumps/) — перистальтичні насоси, де продукт контактує тільки з внутрішньою поверхнею трубки.
 
 ---
 
@@ -417,22 +425,23 @@ $$N_{вал} = \frac{Q \cdot H \cdot \rho \cdot g}{1000 \cdot \eta}, \quad \text
 ## Корисні ресурси
 
 ### Каталоги насосів для харчових виробництв
-- 🔗 [Alfa Laval LKH pumps](https://www.alfalaval.com/products/fluid-handling/pumps) — гігієнічні відцентрові насоси
-- 🔗 [Alfa Laval SRU screw pumps](https://www.alfalaval.com) — гвинтові насоси для в'язких продуктів
-- 🔗 [Watson-Marlow peristaltic pumps](https://www.watson-marlow.com) — перистальтичні насоси для харчової промисловості
-- 🔗 [Grundfos food industry pumps](https://www.grundfos.com/industries/food-and-beverage) — широкий асортимент
+- 🔗 [Alfa Laval LKH centrifugal pump](https://www.alfalaval.us/products/fluid-handling/pumps/centrifugal-pumps/lkh/) — гігієнічний відцентровий насос для молока, напоїв і харчових рідин
+- 🔗 [Alfa Laval SRU rotary lobe pump](https://www.alfalaval.us/sru/) — роторний об'ємний насос для в'язких і чутливих продуктів
+- 🔗 [Alfa Laval OptiLobe](https://www.alfalaval.us/products/fluid-handling/pumps/rotary-lobe-pumps/optilobe/) — лобовий насос для загальних харчових застосувань
+- 🔗 [GEA hygienic pumps](https://www.gea.com/en/products/pumps-valves-flow-components/centrifugal-hygienic-pumps/?i=food) — Hilge/GEA насоси для beverage, food і dairy
+- 🔗 [Watson-Marlow food and beverage pumps](https://www.wmfts.com/en-us/food-and-beverage/watson-marlow-pumps/) — перистальтичні насоси для дозування і делікатних потоків
+- 🔗 [SPX FLOW positive displacement pumps](https://www.spxflow.com/product-types/pumps/positive-displacement-pumps/) — об'ємні насоси для dairy, beverage і food
 
 ### Онлайн-розрахунки
 - 🔗 [Pump power calculator](https://www.omnicalculator.com/physics/pump-power) — розрахунок потужності насоса онлайн
 - 🔗 [NPSH calculator](https://www.engineeringtoolbox.com/npsh-net-positive-suction-head-d_634.html) — розрахунок кавітаційного запасу
 
-### Відео
-- 📺 [How centrifugal pump works — Lesics](https://www.youtube.com/results?search_query=how+centrifugal+pump+works+lesics)
-- 📺 [Pump selection guide for food industry](https://www.youtube.com/results?search_query=pump+selection+food+beverage+industry+guide)
-- 📺 [Variable frequency drive on pumps — energy savings](https://www.youtube.com/results?search_query=VFD+pump+energy+savings+food+plant)
+### Навчальні і довідкові матеріали
+- 🔗 [Engineering ToolBox: Net Positive Suction Head](https://www.engineeringtoolbox.com/npsh-net-positive-suction-head-d_634.html) — короткий довідник для розрахунку NPSH
+- 🔗 [Engineering ToolBox: Pump power calculator](https://www.omnicalculator.com/physics/pump-power) — онлайн-перевірка розрахунку потужності
 
 ### Стандарти
-- 🔗 [EHEDG guidelines for hygienic pump design](https://www.ehedg.org) — Євростандарти гігієнічного проектування насосів
+- 🔗 [EHEDG Guideline Catalogue](https://www.ehedg.org/guidelines-working-groups/guidelines/guidelines/) — зокрема документ 17 про гігієнічне проектування насосів, гомогенізаторів і демпферів
 - 🔗 [3-A Sanitary Standards for pumps](https://www.3-a.org) — американські стандарти для харчових насосів
 
 ---

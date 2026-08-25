@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 430" role="img" aria-labelledby="title desc">
+  <title id="title">Гігієнічний вузол харчової лінії</title>
+  <desc id="desc">Схема вузла з апаратом, насосом, клапанами, датчиками, CIP, дренажем і пробовідбірником.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#38bdf8"/>
+    </marker>
+  </defs>
+  <rect width="920" height="430" rx="22" fill="#111827"/>
+  <text x="42" y="58" fill="#f8fafc" font-family="Arial, sans-serif" font-size="27" font-weight="700">Апаратурний вузол має показувати продукт, CIP, дренаж і контроль</text>
+  <g font-family="Arial, sans-serif" font-size="14" font-weight="700">
+    <rect x="336" y="126" width="220" height="160" rx="24" fill="#1e3a8a" stroke="#60a5fa" stroke-width="3"/>
+    <text x="398" y="204" fill="#dbeafe" font-size="20">Апарат</text>
+    <path d="M92 206h244" stroke="#38bdf8" stroke-width="8" marker-end="url(#arrow)"/>
+    <path d="M556 206h248" stroke="#38bdf8" stroke-width="8" marker-end="url(#arrow)"/>
+    <circle cx="240" cy="206" r="28" fill="#0f172a" stroke="#22c55e" stroke-width="3"/>
+    <text x="225" y="211" fill="#dcfce7">P</text>
+    <path d="M446 126V82" stroke="#f59e0b" stroke-width="6" marker-end="url(#arrow)"/>
+    <text x="468" y="98" fill="#fef3c7">CIP in</text>
+    <path d="M446 286v52" stroke="#ef4444" stroke-width="6" marker-end="url(#arrow)"/>
+    <text x="468" y="324" fill="#fecaca">drain</text>
+    <circle cx="624" cy="206" r="22" fill="#0f172a" stroke="#f59e0b" stroke-width="3"/>
+    <text x="613" y="211" fill="#fef3c7">T</text>
+    <circle cx="704" cy="206" r="22" fill="#0f172a" stroke="#06b6d4" stroke-width="3"/>
+    <text x="693" y="211" fill="#cffafe">F</text>
+    <path d="M336 150h-52v-54" stroke="#c084fc" stroke-width="5"/>
+    <text x="198" y="100" fill="#f3e8ff">проба</text>
+  </g>
+</svg>

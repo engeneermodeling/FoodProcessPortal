@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 430" role="img" aria-labelledby="title desc">
+  <title id="title">Контроль води під час миття сировини</title>
+  <desc id="desc">Схема показує баланс: подача чистої води, забруднення від сировини, фільтрація, знезараження, скид або рециркуляція.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#38bdf8"/>
+    </marker>
+  </defs>
+  <rect width="920" height="430" rx="22" fill="#111827"/>
+  <text x="42" y="58" fill="#f8fafc" font-family="Arial, sans-serif" font-size="26" font-weight="700">Вода може очищати або переносити забруднення</text>
+  <g font-family="Arial, sans-serif">
+    <rect x="320" y="148" width="280" height="120" rx="18" fill="#164e63" stroke="#22d3ee" stroke-width="3"/>
+    <text x="388" y="198" fill="#ecfeff" font-size="20" font-weight="700">мийна ванна</text>
+    <text x="376" y="226" fill="#a5f3fc" font-size="15">сировина + вода + домішки</text>
+    <path d="M82 208h220" stroke="#38bdf8" stroke-width="6" marker-end="url(#arrow)"/>
+    <text x="86" y="188" fill="#dbeafe" font-size="17" font-weight="700">чиста вода</text>
+    <path d="M600 208h220" stroke="#f97316" stroke-width="6" marker-end="url(#arrow)"/>
+    <text x="654" y="188" fill="#ffedd5" font-size="17" font-weight="700">забруднена вода</text>
+    <path d="M460 268v76h-248v-116" fill="none" stroke="#22c55e" stroke-width="5" marker-end="url(#arrow)"/>
+    <text x="240" y="330" fill="#dcfce7" font-size="16" font-weight="700">фільтрація + контроль дезінфектанту</text>
+    <path d="M460 148V96" stroke="#fbbf24" stroke-width="5" marker-end="url(#arrow)"/>
+    <text x="492" y="112" fill="#fde68a" font-size="16" font-weight="700">ґрунт, органіка, мікрофлора</text>
+  </g>
+  <rect x="70" y="366" width="780" height="42" rx="8" fill="#1f2937" stroke="#374151"/>
+  <text x="94" y="392" fill="#f8fafc" font-family="Arial, sans-serif" font-size="15">Контролюють: мутність, органічне навантаження, температуру, pH, залишок дезінфектанту, час контакту.</text>
+</svg>

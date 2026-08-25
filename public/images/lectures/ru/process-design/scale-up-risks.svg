@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 430" role="img" aria-labelledby="title desc">
+  <title id="title">Ризики масштабування</title>
+  <desc id="desc">Поривняння лабораторного, пилотного и промислового масштабу з ризиками масштабування.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#38bdf8"/>
+    </marker>
+  </defs>
+  <rect width="920" height="430" rx="22" fill="#111827"/>
+  <text x="42" y="58" fill="#f8fafc" font-family="Arial, sans-serif" font-size="27" font-weight="700">Масштабування не е простим множенням розмирив</text>
+  <g font-family="Arial, sans-serif" font-weight="700">
+    <rect x="78" y="165" width="170" height="94" rx="16" fill="#1e3a8a" stroke="#3b82f6"/>
+    <text x="118" y="205" fill="#dbeafe" font-size="20">лаборатория</text>
+    <text x="112" y="232" fill="#bfdbfe" font-size="14">100 мл - 10 л</text>
+    <path d="M256 212h92" stroke="#38bdf8" stroke-width="5" marker-end="url(#arrow)"/>
+    <rect x="360" y="165" width="170" height="94" rx="16" fill="#854d0e" stroke="#f59e0b"/>
+    <text x="410" y="205" fill="#fef3c7" font-size="20">пилот</text>
+    <text x="402" y="232" fill="#fde68a" font-size="14">перевирка режиму</text>
+    <path d="M538 212h92" stroke="#38bdf8" stroke-width="5" marker-end="url(#arrow)"/>
+    <rect x="642" y="165" width="200" height="94" rx="16" fill="#14532d" stroke="#22c55e"/>
+    <text x="696" y="205" fill="#dcfce7" font-size="20">виробництво</text>
+    <text x="690" y="232" fill="#bbf7d0" font-size="14">надийнист и якист</text>
+  </g>
+  <g font-family="Arial, sans-serif" font-size="15">
+    <rect x="86" y="318" width="748" height="52" rx="10" fill="#1f2937" stroke="#475569"/>
+    <text x="118" y="350" fill="#f8fafc">Зминюются час змишування, теплопередача, гидравличний опир, втрати продукту, инерция и керованист.</text>
+  </g>
+</svg>

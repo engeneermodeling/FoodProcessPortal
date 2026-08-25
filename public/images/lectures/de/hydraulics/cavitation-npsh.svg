@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="600" viewBox="0 0 1040 600" role="img" aria-labelledby="title desc">
+  <title id="title">Kavitation und NPSH-Reserve an der Saugseite</title>
+  <desc id="desc">Das Schema zeigt: eine Pumpe ueber dem Niveau heisser Fluessigkeit hat geringeren Eintrittsdruck; unter Dampfdruck entstehen Dampfblasen.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#174ea6"/></marker>
+    <style>
+      .bg{fill:#f8fbff}.tank{fill:#d8ecff;stroke:#8da4c4;stroke-width:4}.pipe{stroke:#174ea6;stroke-width:16;fill:none;stroke-linecap:round}.pump{fill:#fff;stroke:#1f3f76;stroke-width:4}.bad{fill:#fee2e2;stroke:#ef4444;stroke-width:3}.good{fill:#dcfce7;stroke:#22c55e;stroke-width:3}.txt{font-family:Arial,"Helvetica Neue",sans-serif;fill:#102033;font-size:23px}.head{font-size:31px;font-weight:700;fill:#0f2a4f}.label{font-size:25px;font-weight:700}.small{font-size:19px;fill:#334155}.bubble{fill:#fff;stroke:#ef4444;stroke-width:3}
+    </style>
+  </defs>
+  <rect class="bg" width="1040" height="600"/>
+  <text class="txt head" x="520" y="50" text-anchor="middle">Kavitation: wenn der Pumpeneintrittsdruck zu klein wird</text>
+  <rect class="tank" x="90" y="205" width="250" height="240" rx="12"/>
+  <path d="M100 245 C150 225 195 260 245 242 C285 228 310 248 332 238" fill="none" stroke="#9cccf0" stroke-width="5"/>
+  <text class="txt label" x="215" y="485" text-anchor="middle">heisses Produkt</text>
+  <path class="pipe" d="M340 330 H500 V170 H660"/>
+  <circle class="pump" cx="720" cy="170" r="58"/>
+  <path class="pump" d="M690 170 C715 138 745 145 758 165 C730 163 710 178 690 170"/>
+  <path class="pipe" d="M775 170 H950"/>
+  <path d="M500 170 V330" stroke="#64748b" stroke-width="3" stroke-dasharray="8 8"/>
+  <text class="txt label" x="526" y="255">z₁</text>
+  <rect class="bad" x="615" y="260" width="330" height="105" rx="14"/>
+  <text class="txt label" x="780" y="297" text-anchor="middle">Kavitationsrisiko</text>
+  <text class="txt small" x="780" y="326" text-anchor="middle">p_ein ↓ durch Hoehe, Verluste, Temperatur</text>
+  <text class="txt small" x="780" y="352" text-anchor="middle">wenn p_ein ≤ p_D, siedet die Fluessigkeit lokal</text>
+  <circle class="bubble" cx="645" cy="155" r="10"/><circle class="bubble" cx="668" cy="185" r="7"/><circle class="bubble" cx="705" cy="210" r="9"/>
+  <rect class="good" x="80" y="82" width="350" height="82" rx="14"/>
+  <text class="txt label" x="255" y="118" text-anchor="middle">bessere Loesung</text>
+  <text class="txt small" x="255" y="146" text-anchor="middle">Pumpe unter Produktniveau + kurze Saugleitung</text>
+  <text class="txt small" x="520" y="548" text-anchor="middle">Bei heisser Milch, Sirupen und Reinigungsloesungen muss NPSH geprueft werden: Dampfdruck steigt schnell mit Temperatur.</text>
+</svg>

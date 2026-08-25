@@ -1,0 +1,61 @@
+/* ===== PROBLEM BOOK (ЗАДАЧНИК) CONTENT ===== */
+
+.problems-content h2 {
+  margin-top: 3rem;
+  padding-top: 1rem;
+  border-top: 2px solid var(--border-color);
+}
+
+.problems-content h2:first-child {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: none;
+}
+
+.problems-content h4 {
+  color: var(--accent-blue);
+  font-size: 1.05rem;
+  margin: 2rem 0 0.75rem;
+}
+
+.problems-content ol {
+  list-style: none;
+  counter-reset: control-counter;
+  padding: 0;
+  margin: 1.5rem 0;
+}
+
+.problems-content ol > li {
+  counter-increment: control-counter;
+  position: relative;
+  padding: 1rem 1.25rem 1rem 3rem;
+  margin-bottom: 0.75rem;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+}
+
+.problems-content ol > li::before {
+  content: counter(control-counter);
+  position: absolute;
+  left: 0.9rem;
+  top: 1rem;
+  font-weight: 700;
+  color: var(--accent-blue);
+}
+
+.problems-content ol > li > p:last-child {
+  margin-bottom: 0;
+}
+
+.problems-content ol > li > p:last-child strong:first-child {
+  color: var(--accent-green, #16a34a);
+}
+
+.problems-content blockquote.solution {
+  border-left: 4px solid var(--accent-blue);
+}
+
+.problems-content .example-block {
+  margin-bottom: 2.5rem;
+}

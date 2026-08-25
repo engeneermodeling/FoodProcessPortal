@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="620" viewBox="0 0 1040 620" role="img" aria-labelledby="title desc">
+  <title id="title">Operating principle of a disc-stack milk separator</title>
+  <desc id="desc">Disc-stack separator: milk enters in the center, cream moves toward the axis, skim milk leaves outward, discs shorten the path of a fat droplet.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#174ea6"/>
+    </marker>
+    <style>
+      .bg { fill: #f8fbff; }
+      .bowl { fill: #ffffff; stroke: #879bb8; stroke-width: 4; }
+      .disc { fill: none; stroke: #6b8ec1; stroke-width: 4; }
+      .cream { stroke: #f59e0b; stroke-width: 6; fill: none; marker-end: url(#arrow); }
+      .skim { stroke: #2563eb; stroke-width: 6; fill: none; marker-end: url(#arrow); }
+      .feed { stroke: #16a34a; stroke-width: 6; fill: none; marker-end: url(#arrow); }
+      .txt { font-family: Arial, "Helvetica Neue", sans-serif; fill: #102033; font-size: 23px; }
+      .label { font-size: 30px; font-weight: 700; }
+      .small { font-size: 20px; fill: #334155; }
+      .note { fill: #fff7e6; stroke: #e6b450; stroke-width: 2; rx: 14; }
+    </style>
+  </defs>
+  <rect class="bg" width="1040" height="620"/>
+  <text class="txt label" x="520" y="48" text-anchor="middle">Disc-stack separator: why milk separates in seconds</text>
+
+  <path class="bowl" d="M325 135 C305 260 320 430 520 520 C720 430 735 260 715 135 Z"/>
+  <line x1="520" y1="95" x2="520" y2="540" stroke="#3b4a60" stroke-width="5"/>
+  <path class="disc" d="M365 195 L520 255 L675 195"/>
+  <path class="disc" d="M355 245 L520 305 L685 245"/>
+  <path class="disc" d="M350 295 L520 355 L690 295"/>
+  <path class="disc" d="M360 345 L520 405 L680 345"/>
+  <path class="disc" d="M385 395 L520 450 L655 395"/>
+
+  <line class="feed" x1="520" y1="92" x2="520" y2="180"/>
+  <text class="txt label" x="548" y="128">milk inlet</text>
+
+  <path class="cream" d="M500 390 C455 310 460 220 510 170"/>
+  <text class="txt label" x="152" y="212" fill="#a16207">cream</text>
+  <line class="cream" x1="455" y1="206" x2="250" y2="206"/>
+
+  <path class="skim" d="M550 390 C640 325 675 245 665 155"/>
+  <text class="txt label" x="760" y="212" fill="#1d4ed8">skim milk</text>
+  <line class="skim" x1="675" y1="206" x2="750" y2="206"/>
+
+  <rect class="note" x="95" y="455" width="850" height="110"/>
+  <text class="txt small" x="520" y="492" text-anchor="middle">Conical discs create many thin channels. A fat droplet travels not centimeters,</text>
+  <text class="txt small" x="520" y="522" text-anchor="middle">but fractions of a millimeter to the disc surface, so effective separation area rises sharply.</text>
+  <text class="txt small" x="520" y="552" text-anchor="middle">It is the same logic as in a settler, but Fr · g works instead of g.</text>
+</svg>

@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 430" role="img" aria-labelledby="title desc">
+  <title id="title">Об'емне и вагове дозування сипких материалив</title>
+  <desc id="desc">Поривняння об'емного дозатора и loss-in-weight дозатора, який контролюе змину маси бункера у часи.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#38bdf8"/>
+    </marker>
+  </defs>
+  <rect width="920" height="430" rx="22" fill="#111827"/>
+  <text x="42" y="58" fill="#f8fafc" font-family="Arial, sans-serif" font-size="26" font-weight="700">Дозування: об'ем не завжди доривнюе маси</text>
+  <g font-family="Arial, sans-serif">
+    <rect x="74" y="122" width="320" height="230" rx="16" fill="#1e293b" stroke="#334155"/>
+    <text x="128" y="160" fill="#fed7aa" font-size="20" font-weight="700">Об'емний дозатор</text>
+    <path d="M184 186h100l-22 70h-56z" fill="#fbbf24" opacity=".75"/>
+    <path d="M206 260h110" stroke="#94a3b8" stroke-width="10" stroke-linecap="round"/>
+    <path d="M224 260c18-28 38-28 56 0" fill="none" stroke="#f8fafc" stroke-width="5"/>
+    <path d="M316 260h50" stroke="#38bdf8" stroke-width="5" marker-end="url(#arrow)"/>
+    <text x="112" y="320" fill="#cbd5e1" font-size="15">точнисть залежить вид насипнои густини</text>
+
+    <rect x="526" y="122" width="320" height="230" rx="16" fill="#1e293b" stroke="#334155"/>
+    <text x="574" y="160" fill="#bbf7d0" font-size="20" font-weight="700">Loss-in-weight</text>
+    <path d="M638 186h100l-22 70h-56z" fill="#fbbf24" opacity=".75"/>
+    <rect x="628" y="274" width="120" height="28" rx="5" fill="#22c55e" opacity=".7"/>
+    <text x="638" y="294" fill="#052e16" font-size="14" font-weight="700">тензодатчики</text>
+    <path d="M716 260h84" stroke="#38bdf8" stroke-width="5" marker-end="url(#arrow)"/>
+    <text x="562" y="320" fill="#cbd5e1" font-size="15">контроль за реальною зминою маси</text>
+  </g>
+</svg>

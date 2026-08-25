@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 430" role="img" aria-labelledby="title desc">
+  <title id="title">Ланцюг простежуваності</title>
+  <desc id="desc">Схема руху даних партії від приймання сировини до виробництва, пакування, складу і відвантаження.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#38bdf8"/>
+    </marker>
+  </defs>
+  <rect width="920" height="430" rx="22" fill="#111827"/>
+  <text x="42" y="58" fill="#f8fafc" font-family="Arial, sans-serif" font-size="27" font-weight="700">Простежуваність зв'язує матеріальний потік із даними партії</text>
+  <g font-family="Arial, sans-serif" font-size="15" font-weight="700">
+    <g fill="#1e293b" stroke="#38bdf8" stroke-width="2">
+      <rect x="48" y="178" width="136" height="76" rx="13"/>
+      <rect x="220" y="178" width="136" height="76" rx="13"/>
+      <rect x="392" y="178" width="136" height="76" rx="13"/>
+      <rect x="564" y="178" width="136" height="76" rx="13"/>
+      <rect x="736" y="178" width="136" height="76" rx="13"/>
+    </g>
+    <text x="75" y="211" fill="#e0f2fe">Приймання</text>
+    <text x="83" y="234" fill="#e0f2fe">сировини</text>
+    <text x="247" y="223" fill="#e0f2fe">Підготовка</text>
+    <text x="425" y="223" fill="#e0f2fe">Процес</text>
+    <text x="588" y="211" fill="#e0f2fe">Пакування</text>
+    <text x="603" y="234" fill="#e0f2fe">і склад</text>
+    <text x="764" y="223" fill="#e0f2fe">Відвантаження</text>
+    <path d="M184 216h28" stroke="#38bdf8" stroke-width="4" marker-end="url(#arrow)"/>
+    <path d="M356 216h28" stroke="#38bdf8" stroke-width="4" marker-end="url(#arrow)"/>
+    <path d="M528 216h28" stroke="#38bdf8" stroke-width="4" marker-end="url(#arrow)"/>
+    <path d="M700 216h28" stroke="#38bdf8" stroke-width="4" marker-end="url(#arrow)"/>
+  </g>
+  <g font-family="Arial, sans-serif" font-size="15" fill="#cbd5e1">
+    <rect x="92" y="306" width="736" height="54" rx="12" fill="#0f172a" stroke="#475569"/>
+    <text x="116" y="339">Для кожної події потрібні: хто, що, де, коли, чому і з якою партією пов'язано.</text>
+  </g>
+</svg>

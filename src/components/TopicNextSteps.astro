@@ -1,0 +1,159 @@
+---
+import { getTopicNextSteps, topicNextStepsUi } from "../data/topicNextSteps";
+import type { Locale } from "../config";
+
+interface Props {
+  topic?: string;
+  locale?: string;
+}
+
+const { topic, locale = "uk" } = Astro.props;
+const normalizedLocale: Locale =
+  locale === "uk" || locale === "en" || locale === "de" || locale === "ru"
+    ? locale
+    : "uk";
+const steps = getTopicNextSteps(topic, normalizedLocale);
+const ui = topicNextStepsUi[normalizedLocale];
+
+const icons = {
+  practice: "🧪",
+  problems: "∑",
+  reference: "⌁",
+  course: "▣",
+  videos: "▶",
+};
+---
+
+{
+  steps.length > 0 && (
+    <section class="topic-next-steps" aria-labelledby="topic-next-steps-title">
+      <div class="topic-next-steps-header">
+        <h2 id="topic-next-steps-title">{ui.title}</h2>
+        <p>{ui.description}</p>
+      </div>
+
+      <div class="topic-next-steps-grid">
+        {steps.map((step) => (
+          <a class={`topic-next-step is-${step.kind}`} href={step.href}>
+            <span class="topic-next-step-icon">{icons[step.kind]}</span>
+            <span>
+              <strong>{step.title}</strong>
+              <small>{step.description}</small>
+            </span>
+            <em>{ui.action} →</em>
+          </a>
+        ))}
+      </div>
+    </section>
+  )
+}
+
+<style>
+  .topic-next-steps {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: color-mix(in srgb, var(--bg-secondary) 90%, var(--bg-primary));
+    border: 1px solid var(--border-color);
+    border-radius: 0.75rem;
+  }
+
+  .topic-next-steps-header {
+    max-width: 760px;
+    margin-bottom: 1rem;
+  }
+
+  .topic-next-steps h2 {
+    margin: 0 0 0.45rem;
+    color: var(--text-primary);
+    font-size: 1.35rem;
+    line-height: 1.25;
+  }
+
+  .topic-next-steps p {
+    margin: 0;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+
+  .topic-next-steps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 0.85rem;
+  }
+
+  .topic-next-step {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.75rem;
+    align-items: start;
+    min-height: 150px;
+    padding: 1rem;
+    background: var(--bg-primary);
+    border: 1px solid color-mix(in srgb, var(--border-color) 88%, transparent);
+    border-radius: 0.55rem;
+    color: var(--text-primary);
+    text-decoration: none;
+    transition:
+      border-color 0.2s ease,
+      transform 0.2s ease,
+      box-shadow 0.2s ease;
+  }
+
+  .topic-next-step:hover {
+    border-color: var(--accent-blue);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(30, 58, 138, 0.16);
+  }
+
+  .topic-next-step-icon {
+    display: inline-grid;
+    place-items: center;
+    width: 2.25rem;
+    height: 2.25rem;
+    background: color-mix(in srgb, var(--accent-blue) 16%, transparent);
+    border: 1px solid color-mix(in srgb, var(--accent-blue) 35%, transparent);
+    border-radius: 0.5rem;
+    color: var(--accent-blue);
+    font-size: 1rem;
+    font-weight: 900;
+  }
+
+  .topic-next-step strong,
+  .topic-next-step small,
+  .topic-next-step em {
+    display: block;
+  }
+
+  .topic-next-step strong {
+    margin-bottom: 0.35rem;
+    color: var(--text-primary);
+    font-size: 1rem;
+    line-height: 1.25;
+  }
+
+  .topic-next-step small {
+    color: var(--text-secondary);
+    font-size: 0.86rem;
+    line-height: 1.45;
+  }
+
+  .topic-next-step em {
+    grid-column: 2;
+    align-self: end;
+    margin-top: 0.75rem;
+    color: var(--accent-blue);
+    font-size: 0.85rem;
+    font-style: normal;
+    font-weight: 800;
+  }
+
+  @media (max-width: 640px) {
+    .topic-next-steps {
+      padding: 1.1rem;
+    }
+
+    .topic-next-steps-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 430" role="img" aria-labelledby="title desc">
+  <title id="title">Controlled crystallization process</title>
+  <desc id="desc">Concentrate is cooled, seed crystals are added, held in a crystallizer, crystals are separated and dried.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#60a5fa"/>
+    </marker>
+  </defs>
+  <rect width="920" height="430" rx="22" fill="#111827"/>
+  <text x="42" y="58" fill="#f8fafc" font-family="Arial, sans-serif" font-size="26" font-weight="700">Controlled crystallization in a process line</text>
+  <g font-family="Arial, sans-serif" font-size="15">
+    <rect x="52" y="160" width="142" height="86" rx="12" fill="#1e3a8a" stroke="#60a5fa"/>
+    <text x="82" y="195" fill="#eff6ff" font-weight="700">concentrate</text>
+    <text x="76" y="220" fill="#bfdbfe">after evaporation</text>
+    <path d="M196 203h74" stroke="#60a5fa" stroke-width="5" marker-end="url(#arrow)"/>
+
+    <rect x="276" y="160" width="142" height="86" rx="12" fill="#164e63" stroke="#22d3ee"/>
+    <text x="314" y="194" fill="#ecfeff" font-weight="700">cooling</text>
+    <text x="304" y="220" fill="#a5f3fc">creating S &gt; 1</text>
+    <path d="M420 203h74" stroke="#60a5fa" stroke-width="5" marker-end="url(#arrow)"/>
+
+    <rect x="500" y="160" width="142" height="86" rx="12" fill="#713f12" stroke="#fbbf24"/>
+    <text x="534" y="194" fill="#fffbeb" font-weight="700">seeding</text>
+    <text x="516" y="220" fill="#fde68a">small crystals</text>
+    <path d="M644 203h74" stroke="#60a5fa" stroke-width="5" marker-end="url(#arrow)"/>
+
+    <rect x="724" y="132" width="142" height="142" rx="18" fill="#064e3b" stroke="#34d399"/>
+    <text x="758" y="172" fill="#ecfdf5" font-weight="700">crystallizer</text>
+    <text x="756" y="198" fill="#bbf7d0">mixing</text>
+    <text x="750" y="222" fill="#bbf7d0">slow</text>
+    <text x="762" y="246" fill="#bbf7d0">cooling</text>
+
+    <path d="M795 276v56H166v-72" fill="none" stroke="#60a5fa" stroke-width="5" marker-end="url(#arrow)"/>
+    <rect x="90" y="80" width="152" height="54" rx="10" fill="#1f2937" stroke="#374151"/>
+    <text x="114" y="113" fill="#f8fafc" font-weight="700">separation and drying</text>
+  </g>
+  <text x="56" y="346" fill="#cbd5e1" font-family="Arial, sans-serif" font-size="16">Key point: not just 'make crystals', but set size, shape, purity and mouthfeel.</text>
+</svg>

@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="500" viewBox="0 0 980 500" role="img" aria-labelledby="title desc">
+  <title id="title">Кривая скорости сушки</title>
+  <desc id="desc">График показывает период прогрева, период постоянной скорости и период падающей скорости сушки.</desc>
+  <defs>
+    <style>
+      .bg{fill:#f8fafc}.axis{stroke:#334155;stroke-width:3}.grid{stroke:#cbd5e1;stroke-width:1}.curve{stroke:#ea580c;stroke-width:6;fill:none}.zone1{fill:#dbeafe}.zone2{fill:#dcfce7}.zone3{fill:#fef3c7}.h{fill:#0f172a;font:700 22px Arial}.t{fill:#334155;font:16px Arial}
+    </style>
+  </defs>
+  <rect class="bg" width="980" height="500" rx="18"/>
+  <rect x="110" y="85" width="180" height="295" class="zone1"/>
+  <rect x="290" y="85" width="250" height="295" class="zone2"/>
+  <rect x="540" y="85" width="330" height="295" class="zone3"/>
+  <line x1="110" y1="380" x2="900" y2="380" class="axis"/>
+  <line x1="110" y1="380" x2="110" y2="70" class="axis"/>
+  <path class="grid" d="M110 320 H870 M110 260 H870 M110 200 H870 M110 140 H870 M250 85 V380 M390 85 V380 M530 85 V380 M670 85 V380 M810 85 V380"/>
+  <path class="curve" d="M120 345 C155 260 205 165 290 150 L540 150 C610 170 680 215 745 275 C800 325 840 355 870 368"/>
+  <text x="200" y="120" text-anchor="middle" class="h">Прогрев</text>
+  <text x="415" y="120" text-anchor="middle" class="h">Постоянная скорость</text>
+  <text x="705" y="120" text-anchor="middle" class="h">Падающая скорость</text>
+  <text x="490" y="45" text-anchor="middle" class="h">Сначала испаряется свободная влага, затем лимитирует внутренняя диффузия</text>
+  <text x="500" y="440" text-anchor="middle" class="h">влагосодержание материала уменьшается -></text>
+  <text x="42" y="245" class="h" transform="rotate(-90 42 245)">скорость сушки</text>
+</svg>

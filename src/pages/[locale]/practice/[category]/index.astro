@@ -1,0 +1,219 @@
+---
+import BaseLayout from "../../../../layouts/BaseLayout.astro";
+import Header from "../../../../components/Header.astro";
+import ThemeToggle from "../../../../components/ThemeToggle.astro";
+import Footer from "../../../../components/Footer.astro";
+import { siteConfig } from "../../../../config";
+import { ENABLED_LOCALES } from "../../../../locales.config";
+
+interface PracticeCategoryFrontmatter {
+  title: string;
+  description?: string;
+  icon?: string;
+}
+
+interface LabFrontmatter {
+  title: string;
+  lab: number;
+  description?: string;
+  duration?: string;
+  difficulty?: string;
+}
+
+interface ContentModule<TFrontmatter> {
+  frontmatter: TFrontmatter;
+  default?: unknown;
+}
+
+interface CategoryPath {
+  params: {
+    locale: string;
+    category: string;
+  };
+  props: {
+    frontmatter: PracticeCategoryFrontmatter;
+  };
+}
+
+interface LabItem extends LabFrontmatter {
+  slug: string;
+}
+
+const allLabs = import.meta.glob<ContentModule<LabFrontmatter>>("/src/content/labs/**/*.md", { eager: true });
+
+export function getStaticPaths() {
+  const categories = import.meta.glob<ContentModule<PracticeCategoryFrontmatter>>("/src/content/practice/*/*.md", { eager: true });
+  const locales = [...ENABLED_LOCALES];
+
+  // Канонічний список категорій (slug -> frontmatter по мовах, з фолбеком на uk)
+  const bySlug: Record<string, Record<string, PracticeCategoryFrontmatter>> = {};
+  for (const [path, mod] of Object.entries(categories)) {
+    const parts = path.split("/");
+    const localeIdx = parts.indexOf("practice") + 1;
+    const loc = parts[localeIdx];
+    const slug = parts[parts.length - 1]?.replace(".md", "") || "";
+    if (!slug) continue;
+    bySlug[slug] = bySlug[slug] || {};
+    bySlug[slug][loc] = mod.frontmatter;
+  }
+
+  const paths: CategoryPath[] = [];
+  for (const slug of Object.keys(bySlug)) {
+    for (const locale of locales) {
+      const frontmatter = bySlug[slug][locale] || bySlug[slug]["uk"];
+      if (!frontmatter) continue;
+      paths.push({
+        params: { locale, category: slug },
+        props: { frontmatter },
+      });
+    }
+  }
+  return paths;
+}
+
+const { locale, category } = Astro.params;
+const { frontmatter } = Astro.props;
+const t = siteConfig.translations[locale as keyof typeof siteConfig.translations];
+
+// Лабораторні роботи цієї категорії. Фолбек на uk, якщо для мови ще немає перекладу.
+function labsFor(loc: string): LabItem[] {
+  return Object.entries(allLabs)
+    .filter(([p]) => {
+      const parts = p.split("/");
+      const li = parts.indexOf("labs");
+      return li !== -1 && parts[li + 1] === loc && parts[li + 2] === category;
+    })
+    .map(([p, m]): LabItem => ({
+      slug: p.split("/").pop()?.replace(".md", "") || "",
+      ...(m.frontmatter || {}),
+    }))
+    .sort((a, b) => (a.lab || 0) - (b.lab || 0));
+}
+
+let labs = labsFor(locale as string);
+if (labs.length === 0 && locale !== "uk") {
+  labs = labsFor("uk");
+}
+
+const backWord = t.practice.backToPractice;
+---
+
+<BaseLayout
+  title={frontmatter?.title || t.sections.practice.title}
+  description={frontmatter?.description || t.sections.practice.desc}
+  locale={locale}
+>
+  <Header>
+    <ThemeToggle slot="theme-toggle" />
+  </Header>
+
+  <main class="main-content">
+    <div class="container">
+      <article class="topic-article">
+        <a href={`/${locale}/practice`} class="back-link">{backWord}</a>
+
+        <div class="topic-header">
+          {frontmatter?.icon && <span class="topic-icon-large">{frontmatter.icon}</span>}
+          <div>
+            <h1 class="article-title">{frontmatter?.title}</h1>
+            {frontmatter?.description && (
+              <p class="topic-desc">{frontmatter.description}</p>
+            )}
+          </div>
+        </div>
+
+        {labs.length > 0 ? (
+          <section class="lectures-section">
+            <h2 class="lectures-heading">
+              <span class="lectures-icon">🔬</span>
+              {t.practice.labsWord}
+            </h2>
+            <div class="lectures-list">
+              {labs.map((lab: LabItem) => (
+                <a
+                  href={`/${locale}/practice/${category}/${lab.slug}`}
+                  class="lecture-card"
+                >
+                  <div class="lecture-number">
+                    №{lab.lab}
+                  </div>
+                  <div class="lecture-info">
+                    <h3 class="lecture-title">{lab.title}</h3>
+                    {lab.description && (
+                      <p class="lecture-desc">{lab.description}</p>
+                    )}
+                    <div class="lecture-meta">
+                      {lab.duration && <span class="meta-badge">⏱ {lab.duration}</span>}
+                      {lab.difficulty && <span class="meta-badge">📊 {lab.difficulty}</span>}
+                    </div>
+                  </div>
+                  <span class="lecture-arrow">→</span>
+                </a>
+              ))}
+            </div>
+          </section>
+        ) : (
+          <div class="no-results">
+            <div class="no-results-icon">🔬</div>
+            <h3>{t.noResults}</h3>
+          </div>
+        )}
+      </article>
+    </div>
+  </main>
+  <Footer />
+</BaseLayout>
+
+<style>
+  @import "../../../../styles/topic.css";
+
+  .topic-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.25rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 2px solid var(--border-color);
+  }
+  .topic-icon-large { font-size: 3rem; line-height: 1; flex-shrink: 0; }
+  .topic-desc { color: var(--text-secondary); font-size: 1.1rem; margin: 0.5rem 0 0; }
+  .lectures-section { margin-top: 2rem; }
+  .lectures-heading {
+    font-size: 1.4rem; font-weight: 700; color: var(--text-primary);
+    margin: 0 0 1.25rem; display: flex; align-items: center; gap: 0.5rem;
+  }
+  .lectures-list { display: flex; flex-direction: column; gap: 1rem; }
+  .lecture-card {
+    display: flex; align-items: center; gap: 1.25rem;
+    padding: 1.25rem 1.5rem;
+    background: var(--bg-secondary); border: 1px solid var(--border-color);
+    border-radius: 0.75rem; text-decoration: none; color: var(--text-primary);
+    transition: all 0.2s ease; border-left: 4px solid var(--accent-blue);
+  }
+  .lecture-card:hover {
+    background: var(--bg-primary); border-color: var(--accent-blue);
+    transform: translateX(4px); box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  }
+  .lecture-number {
+    font-size: 0.9rem; font-weight: 700; color: var(--accent-blue);
+    text-transform: uppercase; letter-spacing: 0.05em;
+    white-space: nowrap; min-width: 50px;
+  }
+  .lecture-info { flex: 1; min-width: 0; }
+  .lecture-title { font-size: 1.05rem; font-weight: 600; margin: 0 0 0.35rem; }
+  .lecture-desc { font-size: 0.9rem; color: var(--text-secondary); margin: 0 0 0.5rem; line-height: 1.5; }
+  .lecture-meta { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+  .meta-badge {
+    font-size: 0.78rem; color: var(--text-secondary);
+    background: var(--bg-primary); border: 1px solid var(--border-color);
+    border-radius: 1rem; padding: 0.15rem 0.6rem;
+  }
+  .lecture-arrow { font-size: 1.25rem; color: var(--accent-blue); flex-shrink: 0; }
+  .lecture-card:hover .lecture-arrow { transform: translateX(4px); }
+  .no-results { text-align: center; padding: 3rem 1rem; color: var(--text-secondary); }
+  .no-results-icon { font-size: 2.5rem; margin-bottom: 0.75rem; }
+  @media (max-width: 640px) {
+    .topic-header { flex-direction: column; }
+    .lecture-card { flex-wrap: wrap; }
+  }
+</style>

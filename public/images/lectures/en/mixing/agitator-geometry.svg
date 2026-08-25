@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="560" viewBox="0 0 980 560" role="img" aria-labelledby="title desc">
+  <title id="title">Main geometric parameters of a stirred vessel</title>
+  <desc id="desc">Diagram of a cylindrical stirred vessel with shaft, baffles, jacket and D, H, d_m, h and b dimensions.</desc>
+  <defs>
+    <style>
+      .bg{fill:#f8fafc}.tank{fill:#fff;stroke:#1e293b;stroke-width:4}.jacket{fill:#dbeafe;stroke:#2563eb;stroke-width:2}.shaft{stroke:#0f172a;stroke-width:8;stroke-linecap:round}.blade{fill:#7c3aed}.baffle{fill:#e2e8f0;stroke:#334155;stroke-width:2}.dim{stroke:#dc2626;stroke-width:3;fill:none;marker-start:url(#arr);marker-end:url(#arr)}.guide{stroke:#94a3b8;stroke-width:2;stroke-dasharray:7 7}.txt{fill:#0f172a;font:700 24px Arial}.small{fill:#334155;font:16px Arial}
+    </style>
+    <marker id="arr" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto"><path d="M0,5 L10,0 L10,10 Z" fill="#dc2626"/></marker>
+  </defs>
+  <rect class="bg" width="980" height="560" rx="18"/>
+  <path class="jacket" d="M250 95 H730 V400 Q490 520 250 400 Z"/>
+  <path class="tank" d="M285 110 H695 V386 Q490 485 285 386 Z"/>
+  <rect class="baffle" x="320" y="155" width="24" height="230" rx="4"/>
+  <rect class="baffle" x="636" y="155" width="24" height="230" rx="4"/>
+  <line class="shaft" x1="490" y1="85" x2="490" y2="358"/>
+  <path class="blade" d="M390 345 L490 306 L590 345 L490 384 Z"/>
+  <line class="guide" x1="285" y1="405" x2="695" y2="405"/>
+  <line class="guide" x1="285" y1="110" x2="285" y2="462"/>
+  <line class="guide" x1="695" y1="110" x2="695" y2="462"/>
+  <line class="dim" x1="285" y1="455" x2="695" y2="455"/>
+  <text x="490" y="492" text-anchor="middle" class="txt">D</text>
+  <line class="dim" x1="760" y1="110" x2="760" y2="405"/>
+  <text x="790" y="265" class="txt">H</text>
+  <line class="dim" x1="390" y1="420" x2="590" y2="420"/>
+  <text x="490" y="448" text-anchor="middle" class="txt">d_m</text>
+  <line class="dim" x1="210" y1="345" x2="210" y2="405"/>
+  <text x="175" y="382" class="txt">h</text>
+  <line class="dim" x1="320" y1="138" x2="344" y2="138"/>
+  <text x="332" y="126" text-anchor="middle" class="txt">b</text>
+  <text x="490" y="40" text-anchor="middle" class="txt">Typical ratios: d_m/D, H/D, h/d_m, b/D</text>
+  <text x="490" y="528" text-anchor="middle" class="small">D - vessel diameter, H - product height, d_m - impeller diameter, h - bottom clearance, b - baffle width</text>
+</svg>

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 430" role="img" aria-labelledby="title desc">
+  <title id="title">Розподіл частинок після подрібнення</title>
+  <desc id="desc">Графік показує, що після подрібнення отримують не один розмір, а розподіл частинок з дрібною і крупною фракцією.</desc>
+  <rect width="920" height="430" rx="22" fill="#0f172a"/>
+  <text x="42" y="58" fill="#f8fafc" font-family="Arial, sans-serif" font-size="26" font-weight="700">Після млина є не “розмір”, а розподіл</text>
+  <g transform="translate(110 110)">
+    <line x1="0" y1="250" x2="690" y2="250" stroke="#94a3b8" stroke-width="2"/>
+    <line x1="0" y1="250" x2="0" y2="0" stroke="#94a3b8" stroke-width="2"/>
+    <text x="600" y="288" fill="#cbd5e1" font-family="Arial, sans-serif" font-size="15">розмір частинки</text>
+    <text x="-82" y="20" fill="#cbd5e1" font-family="Arial, sans-serif" font-size="15" transform="rotate(-90 -82 20)">частка фракції</text>
+    <path d="M28 238 C90 230 120 190 172 136 C232 72 310 52 388 86 C470 122 520 202 650 236" fill="none" stroke="#38bdf8" stroke-width="5"/>
+    <path d="M28 238 C90 230 120 190 172 136 C232 72 310 52 388 86 C470 122 520 202 650 236 L650 250 L28 250 Z" fill="#38bdf8" opacity=".16"/>
+    <line x1="210" y1="250" x2="210" y2="88" stroke="#fbbf24" stroke-width="3" stroke-dasharray="8 6"/>
+    <line x1="430" y1="250" x2="430" y2="104" stroke="#fbbf24" stroke-width="3" stroke-dasharray="8 6"/>
+    <text x="164" y="74" fill="#fde68a" font-family="Arial, sans-serif" font-size="15">d10</text>
+    <text x="420" y="92" fill="#fde68a" font-family="Arial, sans-serif" font-size="15">d90</text>
+    <text x="54" y="224" fill="#bae6fd" font-family="Arial, sans-serif" font-size="15">дрібна фракція</text>
+    <text x="490" y="224" fill="#bae6fd" font-family="Arial, sans-serif" font-size="15">крупна фракція</text>
+  </g>
+  <text x="76" y="386" fill="#cbd5e1" font-family="Arial, sans-serif" font-size="16">Для якості важливі d10, d50, d90, пилова фракція, крупні залишки і стабільність розподілу в часі.</text>
+</svg>

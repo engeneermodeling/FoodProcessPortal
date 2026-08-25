@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="520" viewBox="0 0 980 520" role="img" aria-labelledby="title desc">
+  <title id="title">Принцип екстрагування з твердої харчової сировини</title>
+  <desc id="desc">Схема показує перехід цільової речовини з пористої частинки сировини у розчинник через межу фаз.</desc>
+  <defs>
+    <style>
+      .bg{fill:#f8fafc}.vessel{fill:#dbeafe;stroke:#2563eb;stroke-width:3}.solid{fill:#fed7aa;stroke:#c2410c;stroke-width:3}.solute{fill:#16a34a}.arrow{stroke:#16a34a;stroke-width:5;fill:none;marker-end:url(#a)}.film{stroke:#64748b;stroke-width:3;stroke-dasharray:7 7;fill:none}.h{fill:#0f172a;font:700 24px Arial}.t{fill:#334155;font:16px Arial}.small{fill:#475569;font:14px Arial}
+    </style>
+    <marker id="a" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto"><path d="M0,0 L11,4 L0,8 Z" fill="#16a34a"/></marker>
+  </defs>
+  <rect class="bg" width="980" height="520" rx="18"/>
+  <text x="490" y="45" text-anchor="middle" class="h">Екстрагування: цільова речовина переходить із сировини в розчинник</text>
+  <rect x="110" y="110" width="760" height="300" rx="28" class="vessel"/>
+  <text x="745" y="150" class="h">розчинник</text>
+  <text x="725" y="180" class="small">вода, спирт, олія, CO₂, інший агент</text>
+  <path class="solid" d="M350 170 C450 105 595 150 615 260 C635 370 500 430 390 360 C300 304 275 220 350 170 Z"/>
+  <path class="film" d="M335 162 C455 80 625 135 650 258 C670 390 505 458 370 382 C260 320 242 214 335 162 Z"/>
+  <circle class="solute" cx="410" cy="205" r="10"/><circle class="solute" cx="495" cy="225" r="11"/><circle class="solute" cx="455" cy="305" r="9"/><circle class="solute" cx="545" cy="315" r="8"/>
+  <path class="arrow" d="M495 225 C585 205 645 185 710 165"/>
+  <path class="arrow" d="M545 315 C645 315 710 300 780 270"/>
+  <path class="arrow" d="M410 205 C330 190 270 170 205 145"/>
+  <text x="445" y="275" text-anchor="middle" class="h">частинка сировини</text>
+  <text x="445" y="306" text-anchor="middle" class="small">кава, чай, насіння, шрот, трави</text>
+  <text x="490" y="458" text-anchor="middle" class="h">стадії: внутрішня дифузія → перехід через поверхню → перенесення в об'ємі розчинника</text>
+</svg>

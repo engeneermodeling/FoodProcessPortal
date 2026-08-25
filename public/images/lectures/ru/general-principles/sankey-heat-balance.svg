@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="560" viewBox="0 0 1080 560" role="img" aria-labelledby="title desc">
+  <title id="title">Тепловой баланс и диаграмма Санки</title>
+  <desc id="desc">Схема показывает подвод тепла в пастеризатор и его распределение на нагрев продукта, рекуперацию и потери.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#c2410c"/></marker>
+    <style>
+      .bg{fill:#f8fbff}.hot{stroke:#e07a1f;stroke-linecap:round;fill:none;marker-end:url(#arrow)}.rec{stroke:#22a06b;stroke-linecap:round;fill:none;marker-end:url(#arrow)}.loss{stroke:#ef4444;stroke-linecap:round;fill:none;marker-end:url(#arrow)}.unit{fill:#fff;stroke:#8da4c4;stroke-width:4;rx:18}.txt{font-family:Arial,"Helvetica Neue",sans-serif;fill:#102033;font-size:23px}.head{font-size:31px;font-weight:700;fill:#0f2a4f}.label{font-size:25px;font-weight:700}.small{font-size:19px;fill:#334155}
+    </style>
+  </defs>
+  <rect class="bg" width="1080" height="560"/>
+  <text class="txt head" x="540" y="50" text-anchor="middle">Тепловой баланс: ширина потока показывает количество энергии</text>
+  <rect class="unit" x="430" y="195" width="210" height="150"/>
+  <text class="txt label" x="535" y="255" text-anchor="middle">пастеризатор</text>
+  <text class="txt small" x="535" y="290" text-anchor="middle">молоко 4 -> 72 °C</text>
+  <path class="hot" stroke-width="38" d="M70 255 C200 255 285 255 420 255"/>
+  <text class="txt label" x="88" y="210">пар / горячая вода</text>
+  <text class="txt small" x="90" y="310">внешнее тепло</text>
+  <path class="rec" stroke-width="30" d="M640 238 C760 210 850 170 1000 145"/>
+  <text class="txt label" x="770" y="130" fill="#15803d">рекуперация</text>
+  <text class="txt small" x="770" y="160">тепло возвращается в процессс</text>
+  <path class="hot" stroke-width="18" d="M640 285 C755 295 830 320 1000 320"/>
+  <text class="txt label" x="790" y="358">полезный нагрев</text>
+  <path class="loss" stroke-width="10" d="M535 345 C565 410 620 440 720 470"/>
+  <text class="txt label" x="735" y="478" fill="#b91c1c">потери</text>
+  <text class="txt small" x="540" y="525" text-anchor="middle">Санки помогает быстро увидеть, где наибольшая экономия: изоляция, рекуперация, правильный режим работы.</text>
+</svg>

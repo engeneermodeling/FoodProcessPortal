@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 460" role="img" aria-labelledby="title desc">
+  <title id="title">Чеклист технологичнои схеми</title>
+  <desc id="desc">Схема чеклиста для перевирки технологичнои схеми в курсовому проекти.</desc>
+  <rect width="920" height="460" rx="22" fill="#111827"/>
+  <text x="42" y="58" fill="#f8fafc" font-family="Arial, sans-serif" font-size="27" font-weight="700">Чеклист схеми для курсового проекту</text>
+  <g font-family="Arial, sans-serif" font-size="16">
+    <rect x="82" y="104" width="756" height="300" rx="18" fill="#1e293b" stroke="#475569"/>
+    <g fill="#f8fafc">
+      <text x="124" y="150">□ основни апарати пронумеровани и пидписани</text>
+      <text x="124" y="190">□ показани потоки сировини, продукту, води, пари, холоду и CIP</text>
+      <text x="124" y="230">□ е насоси, клапани, дренажи, байпаси и буферни емности</text>
+      <text x="124" y="270">□ нанесени ключови датчики: T, p, F, L, pH, провиднист, маса</text>
+      <text x="124" y="310">□ зрозумило, що видбувается при митти, пуску, зупинци и аварии</text>
+      <text x="124" y="350">□ схема узгоджена з розрахунками продуктивности и балансами</text>
+    </g>
+    <circle cx="102" cy="143" r="7" fill="#38bdf8"/>
+    <circle cx="102" cy="183" r="7" fill="#38bdf8"/>
+    <circle cx="102" cy="223" r="7" fill="#38bdf8"/>
+    <circle cx="102" cy="263" r="7" fill="#38bdf8"/>
+    <circle cx="102" cy="303" r="7" fill="#38bdf8"/>
+    <circle cx="102" cy="343" r="7" fill="#38bdf8"/>
+  </g>
+</svg>

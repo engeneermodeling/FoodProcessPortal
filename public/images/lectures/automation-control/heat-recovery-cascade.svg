@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 430" role="img" aria-labelledby="title desc">
+  <title id="title">Каскад рекуперації тепла</title>
+  <desc id="desc">Схема використання тепла гарячого продукту для попереднього нагрівання холодного потоку.</desc>
+  <defs>
+    <marker id="arrowHot" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#ef4444"/>
+    </marker>
+    <marker id="arrowCold" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#38bdf8"/>
+    </marker>
+  </defs>
+  <rect width="920" height="430" rx="22" fill="#111827"/>
+  <text x="42" y="58" fill="#f8fafc" font-family="Arial, sans-serif" font-size="27" font-weight="700">Рекуперація: тепло продукту не викидають, а повертають</text>
+  <g font-family="Arial, sans-serif">
+    <rect x="330" y="132" width="260" height="166" rx="18" fill="#1e293b" stroke="#f59e0b" stroke-width="3"/>
+    <text x="392" y="188" fill="#fef3c7" font-size="22" font-weight="700">теплообмінник</text>
+    <text x="366" y="222" fill="#cbd5e1" font-size="15">гарячий потік віддає тепло</text>
+    <text x="374" y="246" fill="#cbd5e1" font-size="15">холодний потік підігрівається</text>
+    <path d="M96 164h218" stroke="#38bdf8" stroke-width="8" marker-end="url(#arrowCold)"/>
+    <path d="M606 164h218" stroke="#38bdf8" stroke-width="8" marker-end="url(#arrowCold)"/>
+    <text x="106" y="138" fill="#dbeafe" font-size="17" font-weight="700">холодний продукт</text>
+    <text x="646" y="138" fill="#dbeafe" font-size="17" font-weight="700">попередньо нагрітий</text>
+    <path d="M824 266H606" stroke="#ef4444" stroke-width="8" marker-end="url(#arrowHot)"/>
+    <path d="M314 266H96" stroke="#ef4444" stroke-width="8" marker-end="url(#arrowHot)"/>
+    <text x="646" y="318" fill="#fecaca" font-size="17" font-weight="700">гарячий продукт</text>
+    <text x="104" y="318" fill="#fecaca" font-size="17" font-weight="700">охолоджений після віддачі тепла</text>
+    <rect x="220" y="360" width="480" height="42" rx="10" fill="#1f2937" stroke="#475569"/>
+    <text x="250" y="386" fill="#f8fafc" font-size="15">Менше пари на нагрівання і менше холоду на охолодження.</text>
+  </g>
+</svg>

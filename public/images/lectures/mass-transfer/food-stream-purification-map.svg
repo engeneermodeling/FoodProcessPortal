@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 430" role="img" aria-labelledby="title desc">
+  <title id="title">Застосування абсорбції та адсорбції в харчових виробництвах</title>
+  <desc id="desc">Карта типових потоків: повітря із запахами, технологічна вода, сиропи, напої, холодильні гази і вентиляція.</desc>
+  <rect width="920" height="430" rx="22" fill="#0f172a"/>
+  <text x="42" y="58" fill="#f8fafc" font-family="Arial, sans-serif" font-size="25" font-weight="700">Де це трапляється на харчовому підприємстві</text>
+  <text x="42" y="90" fill="#cbd5e1" font-family="Arial, sans-serif" font-size="16">Абсорбція працює через розчинення у рідині, адсорбція — через поверхню твердого сорбенту</text>
+
+  <g font-family="Arial, sans-serif">
+    <rect x="42" y="128" width="250" height="92" rx="12" fill="#1e293b" stroke="#334155"/>
+    <text x="64" y="160" fill="#bfdbfe" font-size="18" font-weight="700">Вентиляційне повітря</text>
+    <text x="64" y="188" fill="#f8fafc" font-size="15">запахи, VOC, пари жиру</text>
+    <text x="64" y="210" fill="#94a3b8" font-size="14">адсорбер або біофільтр</text>
+
+    <rect x="335" y="128" width="250" height="92" rx="12" fill="#1e293b" stroke="#334155"/>
+    <text x="357" y="160" fill="#bbf7d0" font-size="18" font-weight="700">Сиропи і напої</text>
+    <text x="357" y="188" fill="#f8fafc" font-size="15">колір, присмаки, домішки</text>
+    <text x="357" y="210" fill="#94a3b8" font-size="14">активоване вугілля</text>
+
+    <rect x="628" y="128" width="250" height="92" rx="12" fill="#1e293b" stroke="#334155"/>
+    <text x="650" y="160" fill="#fde68a" font-size="18" font-weight="700">Холодильні системи</text>
+    <text x="650" y="188" fill="#f8fafc" font-size="15">аварійні викиди NH3</text>
+    <text x="650" y="210" fill="#94a3b8" font-size="14">водний або кислотний скрубер</text>
+
+    <rect x="42" y="258" width="250" height="92" rx="12" fill="#1e293b" stroke="#334155"/>
+    <text x="64" y="290" fill="#bae6fd" font-size="18" font-weight="700">Технологічна вода</text>
+    <text x="64" y="318" fill="#f8fafc" font-size="15">органіка, запах, хлорорганіка</text>
+    <text x="64" y="340" fill="#94a3b8" font-size="14">зернистий сорбент</text>
+
+    <rect x="335" y="258" width="250" height="92" rx="12" fill="#1e293b" stroke="#334155"/>
+    <text x="357" y="290" fill="#fecaca" font-size="18" font-weight="700">Газові суміші</text>
+    <text x="357" y="318" fill="#f8fafc" font-size="15">CO2, SO2, H2S, NH3</text>
+    <text x="357" y="340" fill="#94a3b8" font-size="14">абсорбційна колона</text>
+
+    <rect x="628" y="258" width="250" height="92" rx="12" fill="#1e293b" stroke="#334155"/>
+    <text x="650" y="290" fill="#ddd6fe" font-size="18" font-weight="700">Олії та екстракти</text>
+    <text x="650" y="318" fill="#f8fafc" font-size="15">пігменти, сліди розчинників</text>
+    <text x="650" y="340" fill="#94a3b8" font-size="14">сорбція + фільтрація</text>
+  </g>
+</svg>

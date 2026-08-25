@@ -8,7 +8,7 @@ keywords: ["розділення суспензій", "відстоювання"
 duration: "65 хв"
 difficulty: "середній"
 author: "FoodProcessPortal"
-updated: "2026-07-09"
+updated: "2026-08-17"
 ---
 
 # Лекція 6. Розділення неоднорідних систем
@@ -29,6 +29,8 @@ updated: "2026-07-09"
 ## 1. Неоднорідні системи у харчовій промисловості
 
 Харчове виробництво постійно має справу з неоднорідними системами — сумішами двох або більше фаз. Їх потрібно або розділяти, або навпаки — з'єднувати (але про це пізніше).
+
+![Схема вибору методу розділення для харчових неоднорідних систем](/images/lectures/separation/separation-methods-map.svg)
 
 ### 1.1 Класифікація неоднорідних систем
 
@@ -65,11 +67,23 @@ $$\mu_{сус} = \mu_0 \cdot (1 + 4{,}5 \cdot x_V)$$
 | **Мембранне розділення** | Різниця тисків | Ультратонке — мікрофільтрація, ультрафільтрація |
 | **Флотація** | Поверхневий натяг | Частинки, що важко осідають |
 
+У реальному цеху вибір методу починається не з формули, а з продукту:
+
+| Продукт | Що заважає якості | Типове рішення |
+|---|---|---|
+| Молоко | Спливання жиру, нестійка емульсія | Сепаратор + гомогенізатор |
+| Пиво після бродіння | Дріжджі, колоїдна каламуть | Сепаратор або кізельгуровий/мембранний фільтр |
+| Яблучний або томатний сік | М'якоть, пектинові частинки | Декантер, фільтрпрес, мембранне освітлення |
+| Рослинна олія після пресування | Волога, фосфатиди, механічні домішки | Відстоювання, сепаратор, фільтр |
+| Цукровий сироп | Завислі домішки, вапняний осад | Відстійник + фільтрування |
+
 ---
 
 ## 2. Відстоювання (осідання під дією гравітації)
 
 ### 2.1 Сили, що діють на частинку
+
+![Сили, що діють на частинку при відстоюванні](/images/lectures/separation/settling-forces.svg)
 
 На кулясту частинку у рідині діють три сили:
 
@@ -148,9 +162,9 @@ $$w_0 = \frac{1{,}962 \cdot 10^{-8}}{0{,}036} \approx 5{,}5 \cdot 10^{-7} \text{
 
 **Висновок:** Жирова кулька спливає зі швидкістю лише 0,05 мм/хв — відстій молока в пляшці займає **кілька годин**. Саме тому натуральне (негомогенізоване) молоко розшаровується при стоянні.
 
-> 💡 **Промислова гомогенізація** подрібнює жирові кульки з 4 мкм до 0,1–0,5 мкм. Швидкість спливання зменшується пропорційно $d^2$ — у **64–1600 разів**. Молоко стає стабільним.
+> 💡 **Промислова гомогенізація** подрібнює жирові кульки з 4 мкм до розміру нижче 1 мкм. Швидкість спливання зменшується пропорційно $d^2$, тому молоко стає значно стабільнішим під час зберігання.
 
-📺 **Відео:** [Why does milk separate — and what is homogenization?](https://www.youtube.com/results?search_query=milk+fat+separation+homogenization+explained)
+🔗 **Поглибити:** [Tetra Pak Dairy Processing Handbook: Homogenizers](https://dairyprocessinghandbook.tetrapak.com/chapter/homogenizers) — добре показує, чому зменшення розміру жирових кульок сповільнює відстоювання вершків.
 
 ### 2.6 Продуктивність відстійника
 
@@ -175,6 +189,8 @@ $$V = F \cdot w_0$$
 ## 3. Фільтрування
 
 ### 3.1 Суть процесу і рушійна сила
+
+![Фільтрування з утворенням шару осаду](/images/lectures/separation/filter-cake.svg)
 
 Фільтрування — проходження рідини крізь пористу перегородку, яка затримує тверді частинки. Рушійна сила — **різниця тисків** $\Delta p = p_1 - p_2$ по обидва боки перегородки.
 
@@ -228,7 +244,7 @@ $$w = \frac{dV}{F \cdot d\tau} = \frac{\Delta p}{\mu (r \cdot S + R_0)}$$
 
 Кізельгур — скам'яніла оболонка діатомових водоростей. Розмір пор: 0,1–10 мкм.
 
-📺 **Відео:** [Beer filtration with kieselguhr — how breweries filter beer](https://www.youtube.com/results?search_query=beer+filtration+kieselguhr+diatomaceous+earth+brewery)
+🔗 **Контекст виробництва:** [Pall Food & Beverage filtration](https://www.pall.com/en/food-and-beverage.html) — приклади фільтрації для напоїв, пива, вина і харчових рідин.
 
 ### 3.5 Фільтрувальні матеріали
 
@@ -253,7 +269,7 @@ $$w = \frac{dV}{F \cdot d\tau} = \frac{\Delta p}{\mu (r \cdot S + R_0)}$$
 
 **Барабанний вакуум-фільтр** — безперервна дія. Барабан занурений на 35–40% у корито з суспензією. При обертанні послідовно відбуваються: фільтрування → промивання → сушіння → зняття осаду ножем. Застосування: цукрова промисловість (відфільтрування кристалів цукру), крохмальна, дріжджова.
 
-📺 **Відео:** [Rotary drum vacuum filter working principle](https://www.youtube.com/results?search_query=rotary+drum+vacuum+filter+working+principle+animation)
+🔗 **Для порівняння:** [Tetra Pak Dairy Processing Handbook: Membrane technology](https://dairyprocessinghandbook.tetrapak.com/chapter/membrane-technology) — сучасний варіант розділення для молока, сироватки і технологічної води, де важливо не перегрівати продукт.
 
 ---
 
@@ -297,6 +313,8 @@ $$w_{відц} = w_0 \cdot Fr$$
 
 Найважливіша центрифуга харчової промисловості — **тарілчастий сепаратор** для молока.
 
+![Принцип роботи тарілчастого молочного сепаратора](/images/lectures/separation/disc-stack-separator.svg)
+
 **Будова:**
 - Барабан з конічними тарілками (30–150 штук) з малим зазором (0,3–1,5 мм)
 - Молоко подається через центральну трубу
@@ -316,7 +334,7 @@ $$w_{відц} = w_0 \cdot Fr$$
 | Олія | Олія і вода (після пресування) | 3000–7000 |
 | Яєчний білок | Домішки і чистий білок | 5000–10000 |
 
-📺 **Відео:** [How milk separator works — 3D animation](https://www.youtube.com/results?search_query=milk+cream+separator+how+it+works+animation+3D)
+🔗 **Виробничий приклад:** [Alfa Laval dairy separation solutions](https://www.alfalaval.us/products/separation/centrifugal-separators/separators/dairy/dairy-separation-solutions/) — лінійки сепараторів для знежирення, освітлення сироватки, видалення спор і бактерій.
 
 ### 4.4 Конструкції центрифуг
 
@@ -328,7 +346,7 @@ $$w_{відц} = w_0 \cdot Fr$$
 
 **Циклон** — нерухомий апарат для газових суспензій. Потік подається тангенціально → обертальний рух → відцентрове осадження. Застосування: вловлювання борошняного пилу, сухого молока, пудри у сушарках.
 
-📺 **Відео:** [Decanter centrifuge — how it works](https://www.youtube.com/results?search_query=decanter+centrifuge+how+it+works+food+industry)
+🔗 **Виробничий приклад:** [GEA centrifugal separators](https://www.gea.com/en/products/centrifuges-separation/centrifugal-separator/?i=food&m=starch-protein) — застосування у молочній промисловості, пиві, вині, соках, оліях і крохмале-білкових продуктах.
 
 ---
 
@@ -382,18 +400,21 @@ $$Fr = \frac{\omega^2 r}{g} = \frac{n^2 r}{900} \quad \text{(n в об/хв, r �
 ## Корисні ресурси
 
 ### Технічні ресурси
-- 🔗 [Alfa Laval separators for dairy](https://www.alfalaval.com/products/separation/centrifugal-separators) — молочні і харчові сепаратори
+- 🔗 [Tetra Pak Handbooks](https://www.tetrapak.com/en-us/insights/handbooks) — Dairy Processing Handbook, Orange Book та інші довідники для харчових технологій
+- 🔗 [Tetra Pak: membrane technology](https://dairyprocessinghandbook.tetrapak.com/chapter/membrane-technology) — MF/UF/NF/RO у молочній промисловості
+- 🔗 [Alfa Laval dairy separation solutions](https://www.alfalaval.us/products/separation/centrifugal-separators/separators/dairy/dairy-separation-solutions/) — молочні сепаратори, Bactofuge, сепарація вершків і сироватки
+- 🔗 [GEA centrifugal separators](https://www.gea.com/en/products/centrifuges-separation/centrifugal-separator/?i=food&m=starch-protein) — сепаратори для молока, пива, вина, соків, олій і крохмалю
 - 🔗 [Andritz separation for food](https://www.andritz.com/separation) — центрифуги і фільтрпреси для харчової промисловості
 - 🔗 [Pall filtration for beverage](https://www.pall.com/en/food-and-beverage.html) — фільтраційні рішення для пива, вина, соків
 
 ### Навчальні ресурси
-- 🔗 [McCabe, Smith — Unit Operations](https://www.mheducation.com) — класичний розділ по фільтруванню і центрифугуванню
-- 📺 [Sedimentation and settling — LearnChemE](https://www.youtube.com/results?search_query=sedimentation+settling+velocity+LearnChemE)
-- 📺 [Filtration theory explained](https://www.youtube.com/results?search_query=filtration+theory+cake+filtration+explained)
+- 🔗 [LearnChemE: Separations resources](https://learncheme.com/course-overview/separations-resources/) — короткі пояснення, модулі та симуляції з процесів розділення
+- 🔗 [LearnChemE: Separations simulations](https://learncheme.com/simulations/separations/) — інтерактивні симуляції, які можна давати студентам для самостійної роботи
+- 🔗 [LearnChemE: Blood Cell Separations](https://learncheme.com/simulations/fluid-mechanics/blood-cell-wide/) — візуальна симуляція седиментації частинок; не харчовий приклад, але добре пояснює ідею осідання
 
 ### Цікаво
-- 🔗 [How beer is filtered at a large brewery](https://www.youtube.com/results?search_query=how+beer+is+filtered+at+large+brewery+kieselguhr)
-- 🔗 [Inside a milk processing plant — separation and homogenization](https://www.youtube.com/results?search_query=milk+processing+plant+inside+separation+homogenization)
+- 🔗 [Tetra Pak: Homogenizers](https://dairyprocessinghandbook.tetrapak.com/chapter/homogenizers) — як гомогенізація впливає на стабільність молочної емульсії
+- 🔗 [Tetra Laval news: Dairy Processing Handbook 2025](https://www.tetralaval.com/news/Celebrating-40-years-Tetra-Pak-launches-new-landmark-Dairy-Processing-Handbook-featuring-new-innovations-in-mixing-lactose-reduction-and-sustainability) — приклад актуалізації класичного навчального матеріалу під сучасні теми: змішування, безлактозні продукти, сталість
 
 ---
 

@@ -10,7 +10,7 @@ keywords: ["матеріальний баланс", "тепловий балан
 duration: "45 хв"
 difficulty: "базовий"
 author: "FoodProcessPortal"
-updated: "2026-07-06"
+updated: "2026-08-17"
 ---
 
 # Лекція 1. Основні закони технологічних процесів харчових виробництв
@@ -36,13 +36,15 @@ updated: "2026-07-06"
 
 Ці процеси підпорядковуються загальним фізичним і фізико-хімічним законам. Знаючи їх, ви зможете розрахувати будь-який апарат — від маленького лабораторного реактора до промислової випарної установки.
 
-📺 **Відео для натхнення:** [Як виглядає сучасний харчовий завод зсередини](https://www.youtube.com/results?search_query=modern+food+processing+plant+inside) — подивіться, як ті самі процеси (тепло, фільтрація, змішування) реалізовані у великому масштабі.
+🔗 **Подивитися контекст:** [Tetra Pak Handbooks](https://www.tetrapak.com/en-us/insights/handbooks) — відкриті довідники по молочній, соковій, кокосовій і соєвій переробці; зручно бачити, як типові процеси складаються у виробничі лінії.
 
 ---
 
 ## 2. Закон збереження маси — матеріальний баланс
 
 Перший і найважливіший закон: **маса не зникає і не з'являється з нічого**.
+
+![Матеріальний баланс випарної установки для соку](/images/lectures/general-principles/material-balance-evaporator.svg)
 
 У будь-якому апараті або системі апаратів:
 
@@ -95,7 +97,7 @@ $$Q_{\text{вхід}} + Q_{\text{зовнішнє}} = Q_{\text{вихід}} + Q_
 
 Дуже зручний спосіб зобразити тепловий баланс — **діаграма Санкі** (Sankey diagram). Ширина кожної "стрічки" на ній пропорційна кількості тепла. Ви одразу бачите, куди "витікає" енергія.
 
-📺 **Відео:** [Що таке діаграма Санкі і навіщо вона потрібна](https://www.youtube.com/results?search_query=sankey+diagram+energy+balance+explained)
+![Тепловий баланс пастеризатора у вигляді діаграми Санкі](/images/lectures/general-principles/sankey-heat-balance.svg)
 
 🔗 **Онлайн-інструмент:** [SankeyMATIC](https://sankeymatic.com) — спробуйте намалювати тепловий баланс свого апарата прямо в браузері.
 
@@ -114,6 +116,8 @@ $$Q = m \cdot c_p \cdot \Delta T = 1000 \cdot 3{,}93 \cdot (72 - 4) = 267\,240 \
 ## 4. Закони перенесення — основа всього курсу
 
 Найважливіше узагальнення, яке об'єднує всі процеси в один клас:
+
+![Рушійна сила і опір у процесах перенесення](/images/lectures/general-principles/driving-force-resistance.svg)
 
 $$I = \frac{\Delta X}{R}$$
 
@@ -148,7 +152,7 @@ $$I = \frac{\Delta X}{R}$$
 
 Щоб збільшити продуктивність — або підвищуємо тиск (обмежено характеристиками мембрани), або турбулізуємо потік над мембраною (зменшуємо осад → зменшуємо опір).
 
-📺 **Відео:** [Як працює ультрафільтрація на молочному заводі](https://www.youtube.com/results?search_query=ultrafiltration+dairy+plant+membrane)
+🔗 **Зв'язок з наступними темами:** [Tetra Pak Dairy Processing Handbook: membrane technology](https://dairyprocessinghandbook.tetrapak.com/chapter/membrane-technology) — приклади MF, UF, NF і RO, де рушійна сила та опір видно дуже наочно.
 
 ---
 
@@ -184,7 +188,7 @@ K = 2 (вода + цукроза), f = 2 (рідина + пара): **S = 2 − 
 - Якщо **підвищити тиск** над розчином, що кипить — кипіння зупиниться (рідина стискається), для кипіння потрібна вища температура → основа роботи **вакуум-випарних установок** (знижуємо тиск → знижуємо температуру кипіння → зберігаємо термолабільні вітаміни)
 - Якщо **підвищити концентрацію** цукру в розчині → рівновага зміщується в бік кристалізації → принцип **варіння варення**
 
-📺 **Відео:** [Ле Шательє простою мовою](https://www.youtube.com/results?search_query=le+chatelier+principle+explained+simple)
+🔗 **Для самопідготовки:** [PhET Interactive Simulations](https://phet.colorado.edu/) — симуляції з енергії, тепла, фазових переходів і рівноваг, які можна використати як просту візуальну підтримку.
 
 ---
 
@@ -230,12 +234,14 @@ K = 2 (вода + цукроза), f = 2 (рідина + пара): **S = 2 − 
 
 **Приклад: установка HTST для молока**
 
+![Рекуперація тепла у HTST пастеризаторі](/images/lectures/general-principles/htst-regeneration.svg)
+
 1. Холодне сире молоко (4°C) нагрівається гарячим пастеризованим молоком (72°C) у секції регенерації — **економія 75–90% тепла**
 2. Решту тепла додає пара у секції нагрівання
 3. Пастеризоване молоко охолоджується знову в секції регенерації
 
-📺 **Відео:** [Як працює HTST пастеризатор](https://www.youtube.com/results?search_query=HTST+pasteurizer+how+it+works)
-🔗 **Стаття:** [Heat recovery in food processing — Food Engineering Magazine](https://www.foodengineeringmag.com)
+🔗 **Виробничий приклад:** [Tetra Pak Dairy Processing Handbook: heat exchangers](https://dairyprocessinghandbook.tetrapak.com/chapter/heat-exchangers) — опис HTST, регенерації тепла і типових температурних режимів пастеризації.
+🔗 **Актуальний контекст:** [Tetra Pak Dairy Processing Handbook: sustainability](https://dairyprocessinghandbook.tetrapak.com/chapter/sustainability-dairy-processing) — чому регенерація тепла, води і продукту є частиною сучасної сталості виробництва.
 
 ---
 
@@ -296,9 +302,10 @@ K = 2 (вода + цукроза), f = 2 (рідина + пара): **S = 2 − 
 - 🔗 [PhET Interactive Simulations (теплообмін)](https://phet.colorado.edu/en/simulations/energy-forms-and-changes) — інтерактивна візуалізація передачі тепла
 - 🔗 [SankeyMATIC](https://sankeymatic.com) — побудова діаграм Санкі для теплових балансів
 
-### Відео
-- 📺 [Food Engineering basics — YouTube playlist](https://www.youtube.com/results?search_query=food+engineering+unit+operations+basics)
-- 📺 [Mass and Energy Balance — LearnChemE](https://www.youtube.com/c/LearnChemE) — короткі і зрозумілі відеолекції від Університету Колорадо
+### Практичні виробничі матеріали
+- 🔗 [Tetra Pak: designing a process line](https://dairyprocessinghandbook.tetrapak.com/chapter/designing-process-line) — приклад компонування пастеризаційної лінії і контрольних точок
+- 🔗 [Tetra Pak: heat exchangers](https://dairyprocessinghandbook.tetrapak.com/chapter/heat-exchangers) — теплообмінники, HTST і рекуперація тепла
+- 🔗 [LearnChemE](https://learncheme.com/) — відкриті навчальні матеріали з material and energy balances, transport processes і separations
 
 ### Журнали та стандарти
 - 🔗 [Journal of Food Engineering](https://www.sciencedirect.com/journal/journal-of-food-engineering) — провідний науковий журнал

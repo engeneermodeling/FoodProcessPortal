@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 430" role="img" aria-labelledby="title desc">
+  <title id="title">Wetting of instant powder</title>
+  <desc id="desc">Comparison of fine dusty powder that forms lumps and porous agglomerated powder that wets faster and sinks.</desc>
+  <rect width="920" height="430" rx="22" fill="#0f172a"/>
+  <text x="42" y="58" fill="#f8fafc" font-family="Arial, sans-serif" font-size="26" font-weight="700">Instantizing changes powder behaviour in water</text>
+  <g font-family="Arial, sans-serif">
+    <rect x="74" y="116" width="330" height="230" rx="16" fill="#1e293b" stroke="#334155"/>
+    <text x="118" y="154" fill="#fecaca" font-size="20" font-weight="700">Fine powder</text>
+    <rect x="112" y="242" width="254" height="66" rx="8" fill="#38bdf8" opacity=".35"/>
+    <g fill="#f8fafc">
+      <circle cx="172" cy="204" r="5"/><circle cx="196" cy="214" r="4"/><circle cx="222" cy="198" r="5"/>
+      <circle cx="250" cy="218" r="4"/><circle cx="278" cy="202" r="5"/><circle cx="306" cy="214" r="4"/>
+    </g>
+    <ellipse cx="240" cy="248" rx="72" ry="20" fill="#fca5a5" opacity=".75"/>
+    <text x="128" y="328" fill="#cbd5e1" font-size="15">floats, lumps, wets poorly</text>
+
+    <rect x="516" y="116" width="330" height="230" rx="16" fill="#1e293b" stroke="#334155"/>
+    <text x="558" y="154" fill="#bbf7d0" font-size="20" font-weight="700">Agglomerated powder</text>
+    <rect x="554" y="242" width="254" height="66" rx="8" fill="#38bdf8" opacity=".35"/>
+    <g fill="#f8fafc" stroke="#bae6fd" stroke-width="2">
+      <circle cx="612" cy="232" r="15"/><circle cx="660" cy="260" r="18"/><circle cx="708" cy="236" r="17"/><circle cx="752" cy="274" r="16"/>
+    </g>
+    <path d="M610 208v42M706 202v44M758 220v54" stroke="#22c55e" stroke-width="4"/>
+    <path d="M610 250l-10-16h20zM706 246l-10-16h20zM758 274l-10-16h20z" fill="#22c55e"/>
+    <text x="570" y="328" fill="#cbd5e1" font-size="15">wets faster, sinks and disperses</text>
+  </g>
+</svg>

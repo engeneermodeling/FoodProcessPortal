@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="600" viewBox="0 0 1080 600" role="img" aria-labelledby="title desc">
+  <title id="title">Движущая сила и сопротивление в процесссах переноса</title>
+  <desc id="desc">Три аналогичных процессса: тепло переносится из-за разности температур, компонент из-за разности концентраций, жидкость из-за разности давлений.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#174ea6"/></marker>
+    <style>
+      .bg{fill:#f8fbff}.card{fill:#fff;stroke:#bfd0e7;stroke-width:3;rx:18}.bar{fill:#e8f1ff;stroke:#7aa2df;stroke-width:2}.flow{stroke:#174ea6;stroke-width:6;fill:none;marker-end:url(#arrow)}.res{fill:#fff7e6;stroke:#e6b450;stroke-width:3}.txt{font-family:Arial,"Helvetica Neue",sans-serif;fill:#102033;font-size:23px}.head{font-size:31px;font-weight:700;fill:#0f2a4f}.label{font-size:25px;font-weight:700}.small{font-size:19px;fill:#334155}.formula{font-size:34px;font-weight:700;fill:#163b71}
+    </style>
+  </defs>
+  <rect class="bg" width="1080" height="600"/>
+  <text class="txt head" x="540" y="50" text-anchor="middle">Одна идея для всего курса: скорость = движущая сила / сопротивление</text>
+  <text class="txt formula" x="540" y="105" text-anchor="middle">I = ΔX / R</text>
+  <g transform="translate(55 145)">
+    <rect class="card" x="0" y="0" width="300" height="330"/>
+    <text class="txt label" x="150" y="42" text-anchor="middle">Теплоперенос</text>
+    <rect class="bar" x="40" y="82" width="80" height="135"/><rect class="bar" x="180" y="112" width="80" height="105"/>
+    <text class="txt small" x="80" y="252" text-anchor="middle">горячее</text><text class="txt small" x="220" y="252" text-anchor="middle">холодное</text>
+    <path class="flow" d="M120 150 H175"/>
+    <rect class="res" x="118" y="120" width="62" height="62" rx="12"/>
+    <text class="txt label" x="150" y="315" text-anchor="middle">Δt / Rт</text>
+  </g>
+  <g transform="translate(390 145)">
+    <rect class="card" x="0" y="0" width="300" height="330"/>
+    <text class="txt label" x="150" y="42" text-anchor="middle">Массоперенос</text>
+    <circle cx="88" cy="150" r="58" fill="#d8ecff" stroke="#7aa2df" stroke-width="3"/>
+    <circle cx="212" cy="150" r="58" fill="#fff7e6" stroke="#e6b450" stroke-width="3"/>
+    <text class="txt small" x="88" y="242" text-anchor="middle">c₁</text><text class="txt small" x="212" y="242" text-anchor="middle">c₂</text>
+    <path class="flow" d="M128 150 H173"/>
+    <rect class="res" x="118" y="120" width="62" height="62" rx="12"/>
+    <text class="txt label" x="150" y="315" text-anchor="middle">Δc / Rм</text>
+  </g>
+  <g transform="translate(725 145)">
+    <rect class="card" x="0" y="0" width="300" height="330"/>
+    <text class="txt label" x="150" y="42" text-anchor="middle">Гидродинамика</text>
+    <rect class="bar" x="35" y="125" width="230" height="54" rx="18"/>
+    <path class="flow" d="M55 152 H245"/>
+    <rect class="res" x="118" y="121" width="62" height="62" rx="12"/>
+    <text class="txt small" x="70" y="225" text-anchor="middle">p₁</text><text class="txt small" x="230" y="225" text-anchor="middle">p₂</text>
+    <text class="txt label" x="150" y="315" text-anchor="middle">Δp / Rг</text>
+  </g>
+  <text class="txt small" x="540" y="548" text-anchor="middle">Чтобы ускорить процессс, увеличивают движущую силу или уменьшают сопротивление конструкцией аппарата и режимом потока.</text>
+</svg>

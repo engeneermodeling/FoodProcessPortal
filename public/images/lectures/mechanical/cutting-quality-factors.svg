@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 430" role="img" aria-labelledby="title desc">
+  <title id="title">Чинники якості різання</title>
+  <desc id="desc">Карта факторів: гострота ножа, температура продукту, подача, волокнистість, швидкість, санітарний дизайн.</desc>
+  <rect width="920" height="430" rx="22" fill="#111827"/>
+  <text x="42" y="58" fill="#f8fafc" font-family="Arial, sans-serif" font-size="26" font-weight="700">Якість різання залежить не лише від ножа</text>
+  <g font-family="Arial, sans-serif">
+    <circle cx="460" cy="222" r="76" fill="#1e3a8a" stroke="#60a5fa" stroke-width="3"/>
+    <text x="418" y="214" fill="#eff6ff" font-size="21" font-weight="700">чистий</text>
+    <text x="404" y="242" fill="#bfdbfe" font-size="18">стабільний зріз</text>
+    <g fill="#1e293b" stroke="#334155">
+      <rect x="58" y="124" width="230" height="58" rx="10"/>
+      <rect x="58" y="264" width="230" height="58" rx="10"/>
+      <rect x="632" y="124" width="230" height="58" rx="10"/>
+      <rect x="632" y="264" width="230" height="58" rx="10"/>
+      <rect x="345" y="344" width="230" height="58" rx="10"/>
+    </g>
+    <g fill="#f8fafc" font-size="16" font-weight="700">
+      <text x="86" y="160">гострота і геометрія ножа</text>
+      <text x="88" y="300">температура продукту</text>
+      <text x="662" y="160">рівномірна подача</text>
+      <text x="662" y="300">волокна, жир, волога</text>
+      <text x="388" y="380">санітарність і очищення</text>
+    </g>
+    <g stroke="#38bdf8" stroke-width="3" opacity=".85">
+      <line x1="288" y1="153" x2="388" y2="198"/>
+      <line x1="288" y1="293" x2="388" y2="246"/>
+      <line x1="632" y1="153" x2="532" y2="198"/>
+      <line x1="632" y1="293" x2="532" y2="246"/>
+      <line x1="460" y1="344" x2="460" y2="298"/>
+    </g>
+  </g>
+</svg>

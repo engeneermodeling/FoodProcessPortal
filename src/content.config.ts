@@ -34,7 +34,67 @@ const lecturesCollection = defineCollection({
   }),
 });
 
+const practiceCollection = defineCollection({
+  type: 'content',
+  schema: z.object({
+    title: z.string(),
+    description: z.string().optional(),
+    icon: z.string().optional(),
+    color: z.string().optional(),
+    order: z.number().optional(),
+  }),
+});
+
+const labsCollection = defineCollection({
+  type: 'content',
+  schema: z.object({
+    title: z.string(),
+    category: z.string(),
+    category_title: z.string().optional(),
+    lab: z.number(),
+    goal: z.string().optional(),
+    description: z.string().optional(),
+    duration: z.string().optional(),
+    difficulty: z.string().optional(),
+    author: z.string().optional(),
+    updated: z.string().optional(),
+  }),
+});
+
+const problemsCollection = defineCollection({
+  type: 'content',
+  schema: z.object({
+    title: z.string(),
+    topic: z.string().optional(),
+    topic_title: z.string().optional(),
+    chapter: z.number(),
+    description: z.string().optional(),
+    keywords: z.array(z.string()).optional(),
+    examplesCount: z.number().optional(),
+    controlCount: z.number().optional(),
+    difficulty: z.string().optional(),
+    source: z.string().optional(),
+    updated: z.string().optional(),
+  }),
+});
+
+const coursesCollection = defineCollection({
+  type: 'content',
+  schema: z.object({
+    title: z.string(),
+    course: z.string(),
+    course_title: z.string().optional(),
+    chapter: z.number(),
+    description: z.string().optional(),
+    updated: z.string().optional(),
+  }),
+});
+
 export const collections = {
   'topics': topicsCollection,
   'lectures': lecturesCollection,
+  'practice': practiceCollection,
+  'labs': labsCollection,
+  'problems': problemsCollection,
+  'courses': coursesCollection,
 };

@@ -1,0 +1,337 @@
+---
+import { getTopicQuestions } from "../data/topicQuestions";
+import { getTopicQuiz } from "../data/topicQuizzes";
+import type { Locale } from "../config";
+
+interface Props {
+  topic?: string;
+  locale?: string;
+  lectureSlugs?: string[];
+}
+
+const { topic, locale = "uk", lectureSlugs = [] } = Astro.props;
+const normalizedLocale: Locale =
+  locale === "uk" || locale === "en" || locale === "de" || locale === "ru"
+    ? locale
+    : "uk";
+const questionCount = getTopicQuestions(topic, normalizedLocale).length;
+const quizCount = getTopicQuiz(topic, normalizedLocale).length;
+
+const ui = {
+  uk: {
+    title: "Чеклист засвоєння теми",
+    description: "Короткий стан роботи з темою на цьому пристрої.",
+    lectures: "Лекції",
+    selfCheck: "Самоперевірка",
+    quiz: "Міні-тест",
+    read: "Прочитано",
+    completed: "Опрацьовано",
+    passed: "Зараховано",
+    notStarted: "Не розпочато",
+    inProgress: "У процесі",
+    refresh: "Оновити",
+  },
+  en: {
+    title: "Topic Completion Checklist",
+    description: "A quick local status for this topic on this device.",
+    lectures: "Lectures",
+    selfCheck: "Self-check",
+    quiz: "Mini-test",
+    read: "Read",
+    completed: "Completed",
+    passed: "Passed",
+    notStarted: "Not started",
+    inProgress: "In progress",
+    refresh: "Refresh",
+  },
+  de: {
+    title: "Checkliste Zum Thema",
+    description: "Kurzer lokaler Status dieses Themas auf diesem Gerät.",
+    lectures: "Vorlesungen",
+    selfCheck: "Selbstkontrolle",
+    quiz: "Mini-Test",
+    read: "Gelesen",
+    completed: "Bearbeitet",
+    passed: "Bestanden",
+    notStarted: "Nicht begonnen",
+    inProgress: "In Arbeit",
+    refresh: "Aktualisieren",
+  },
+  ru: {
+    title: "Чеклист освоения темы",
+    description: "Краткий локальный статус работы с темой на этом устройстве.",
+    lectures: "Лекции",
+    selfCheck: "Самопроверка",
+    quiz: "Мини-тест",
+    read: "Прочитано",
+    completed: "Проработано",
+    passed: "Зачтено",
+    notStarted: "Не начато",
+    inProgress: "В процессе",
+    refresh: "Обновить",
+  },
+}[normalizedLocale];
+---
+
+<section
+  class="topic-learning-checklist"
+  data-topic-learning-checklist
+  data-locale={normalizedLocale}
+  data-topic={topic}
+  data-lectures={JSON.stringify(lectureSlugs)}
+  data-question-count={questionCount}
+  data-quiz-count={quizCount}
+  data-read-label={ui.read}
+  data-completed-label={ui.completed}
+  data-passed-label={ui.passed}
+  data-not-started-label={ui.notStarted}
+  data-in-progress-label={ui.inProgress}
+>
+  <div class="topic-learning-checklist-header">
+    <div>
+      <h2>{ui.title}</h2>
+      <p>{ui.description}</p>
+    </div>
+    <button type="button" data-refresh-topic-checklist>{ui.refresh}</button>
+  </div>
+
+  <div class="topic-learning-checklist-grid">
+    <a class="topic-learning-check" href="#lectures" data-check-lectures>
+      <span>{ui.lectures}</span>
+      <strong data-check-lectures-value>{ui.read}: 0/{lectureSlugs.length}</strong>
+      <small class="topic-learning-bar"><i data-check-lectures-bar></i></small>
+    </a>
+    <a class="topic-learning-check" href="#self-check" data-check-self>
+      <span>{ui.selfCheck}</span>
+      <strong data-check-self-value>{ui.completed}: 0/{questionCount}</strong>
+      <small class="topic-learning-bar"><i data-check-self-bar></i></small>
+    </a>
+    <a class="topic-learning-check" href="#topic-quiz" data-check-quiz>
+      <span>{ui.quiz}</span>
+      <strong data-check-quiz-value>{ui.notStarted}</strong>
+      <small class="topic-learning-bar"><i data-check-quiz-bar></i></small>
+    </a>
+  </div>
+</section>
+
+<script>
+  function parseJson(value, fallback) {
+    try {
+      return JSON.parse(value || "");
+    } catch {
+      return fallback;
+    }
+  }
+
+  function updateTopicChecklist(root) {
+    const locale = root.dataset.locale || "uk";
+    const topic = root.dataset.topic || "";
+    const lectures = parseJson(root.dataset.lectures, []);
+    const questionCount = Number(root.dataset.questionCount || "0");
+    const quizCount = Number(root.dataset.quizCount || "0");
+    const readLabel = root.dataset.readLabel || "Read";
+    const completedLabel = root.dataset.completedLabel || "Completed";
+    const passedLabel = root.dataset.passedLabel || "Passed";
+    const notStartedLabel = root.dataset.notStartedLabel || "Not started";
+    const inProgressLabel = root.dataset.inProgressLabel || "In progress";
+
+    const readLectures = lectures.filter((lecture) => {
+      return localStorage.getItem(`foodprocess:lecture-read:${locale}:${topic}:${lecture}`) === "1";
+    }).length;
+
+    const selfCompleted = parseJson(
+      localStorage.getItem(`foodprocess:self-check:${locale}:${topic}`),
+      [],
+    ).length;
+
+    const quizResult = parseJson(
+      localStorage.getItem(`foodprocess:topic-quiz:${locale}:${topic}`),
+      null,
+    );
+    const quizScore =
+      quizResult && quizResult.total > 0 ? Math.round((quizResult.score / quizResult.total) * 100) : 0;
+    const quizPassed = quizResult && quizResult.total > 0 && quizScore >= 70;
+
+    const lectureValue = root.querySelector("[data-check-lectures-value]");
+    const lectureBar = root.querySelector("[data-check-lectures-bar]");
+    const selfValue = root.querySelector("[data-check-self-value]");
+    const selfBar = root.querySelector("[data-check-self-bar]");
+    const quizValue = root.querySelector("[data-check-quiz-value]");
+    const quizBar = root.querySelector("[data-check-quiz-bar]");
+    const lectureCard = root.querySelector("[data-check-lectures]");
+    const selfCard = root.querySelector("[data-check-self]");
+    const quizCard = root.querySelector("[data-check-quiz]");
+
+    const lecturePercent = lectures.length > 0 ? Math.round((readLectures / lectures.length) * 100) : 0;
+    const selfSafe = Math.min(selfCompleted, questionCount);
+    const selfPercent = questionCount > 0 ? Math.round((selfSafe / questionCount) * 100) : 0;
+
+    if (lectureValue) lectureValue.textContent = `${readLabel}: ${readLectures}/${lectures.length}`;
+    if (lectureBar) lectureBar.style.width = `${lecturePercent}%`;
+    if (selfValue) selfValue.textContent = `${completedLabel}: ${selfSafe}/${questionCount}`;
+    if (selfBar) selfBar.style.width = `${selfPercent}%`;
+
+    if (quizValue) {
+      quizValue.textContent = quizResult
+        ? `${quizPassed ? passedLabel : inProgressLabel}: ${quizResult.score}/${quizResult.total}`
+        : notStartedLabel;
+    }
+    if (quizBar) quizBar.style.width = quizCount > 0 ? `${quizScore}%` : "0%";
+
+    lectureCard?.classList.toggle("is-complete", lectures.length > 0 && readLectures === lectures.length);
+    selfCard?.classList.toggle("is-complete", questionCount > 0 && selfSafe === questionCount);
+    quizCard?.classList.toggle("is-complete", Boolean(quizPassed));
+  }
+
+  function shouldUpdateTopicChecklist(root, detail) {
+    if (!detail) return true;
+    const locale = root.dataset.locale || "uk";
+    const topic = root.dataset.topic || "";
+    return (!detail.locale || detail.locale === locale) && (!detail.topic || detail.topic === topic);
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll("[data-topic-learning-checklist]").forEach((root) => {
+      updateTopicChecklist(root);
+      root
+        .querySelector("[data-refresh-topic-checklist]")
+        ?.addEventListener("click", () => updateTopicChecklist(root));
+
+      window.addEventListener("foodprocess:learning-progress-changed", (event) => {
+        if (shouldUpdateTopicChecklist(root, event.detail)) {
+          updateTopicChecklist(root);
+        }
+      });
+
+      window.addEventListener("storage", (event) => {
+        if (event.key?.startsWith("foodprocess:")) {
+          updateTopicChecklist(root);
+        }
+      });
+    });
+  });
+</script>
+
+<style>
+  .topic-learning-checklist {
+    margin: 0 0 2rem;
+    padding: 1.2rem;
+    background: color-mix(in srgb, var(--bg-secondary) 92%, var(--accent-blue));
+    border: 1px solid var(--border-color);
+    border-radius: 0.75rem;
+  }
+
+  .topic-learning-checklist-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .topic-learning-checklist h2 {
+    margin: 0 0 0.35rem;
+    color: var(--text-primary);
+    font-size: 1.15rem;
+    line-height: 1.25;
+  }
+
+  .topic-learning-checklist p {
+    margin: 0;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  .topic-learning-checklist button {
+    flex-shrink: 0;
+    padding: 0.55rem 0.8rem;
+    background: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 0.45rem;
+    color: var(--text-primary);
+    cursor: pointer;
+    font: inherit;
+    font-size: 0.84rem;
+    font-weight: 800;
+  }
+
+  .topic-learning-checklist button:hover {
+    border-color: var(--accent-blue);
+    color: var(--accent-blue);
+  }
+
+  .topic-learning-checklist-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.75rem;
+  }
+
+  .topic-learning-check {
+    display: grid;
+    gap: 0.45rem;
+    padding: 0.85rem;
+    background: var(--bg-primary);
+    border: 1px solid color-mix(in srgb, var(--border-color) 86%, transparent);
+    border-radius: 0.55rem;
+    color: var(--text-primary);
+    text-decoration: none;
+  }
+
+  .topic-learning-check span {
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+  }
+
+  .topic-learning-check strong {
+    color: var(--text-secondary);
+    font-size: 0.92rem;
+    line-height: 1.3;
+  }
+
+  .topic-learning-check.is-complete {
+    border-color: color-mix(in srgb, var(--accent-green) 55%, var(--border-color));
+  }
+
+  .topic-learning-check.is-complete strong {
+    color: var(--accent-green);
+  }
+
+  .topic-learning-bar {
+    display: block;
+    height: 0.38rem;
+    overflow: hidden;
+    background: color-mix(in srgb, var(--border-color) 74%, transparent);
+    border-radius: 999px;
+  }
+
+  .topic-learning-bar i {
+    display: block;
+    width: 0;
+    height: 100%;
+    background: var(--accent-blue);
+    border-radius: inherit;
+    transition: width 0.3s ease;
+  }
+
+  .topic-learning-check.is-complete .topic-learning-bar i {
+    background: var(--accent-green);
+  }
+
+  @media (max-width: 720px) {
+    .topic-learning-checklist-header {
+      display: block;
+    }
+
+    .topic-learning-checklist button {
+      width: 100%;
+      margin-top: 0.85rem;
+    }
+
+    .topic-learning-checklist-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

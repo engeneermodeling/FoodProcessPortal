@@ -3,12 +3,46 @@ import BaseLayout from "../../../../layouts/BaseLayout.astro";
 import Header from "../../../../components/Header.astro";
 import ThemeToggle from "../../../../components/ThemeToggle.astro";
 import Footer from "../../../../components/Footer.astro";
+import LectureCompletion from "../../../../components/LectureCompletion.astro";
 import { siteConfig } from "../../../../config";
 import { ENABLED_LOCALES } from "../../../../locales.config";
 
+interface LectureFrontmatter {
+  title: string;
+  topic_title?: string;
+  lecture: number;
+  description?: string;
+  duration?: string;
+  difficulty?: string;
+  updated?: string;
+}
+
+interface LectureModule {
+  frontmatter: LectureFrontmatter;
+  default: unknown;
+}
+
+interface LectureNavItem {
+  slug: string;
+  lecture: number;
+  title: string;
+}
+
+interface LecturePath {
+  params: {
+    locale: string;
+    topic: string;
+    lecture: string;
+  };
+  props: {
+    frontmatter: LectureFrontmatter;
+    Content: unknown;
+  };
+}
+
 export function getStaticPaths() {
-  const lectures = import.meta.glob("/src/content/lectures/**/*.md", { eager: true });
-  const paths: any[] = [];
+  const lectures = import.meta.glob<LectureModule>("/src/content/lectures/**/*.md", { eager: true });
+  const paths: LecturePath[] = [];
 
   for (const [path, mod] of Object.entries(lectures)) {
     const parts = path.split("/");
@@ -20,8 +54,8 @@ export function getStaticPaths() {
     paths.push({
       params: { locale, topic, lecture: slug },
       props: {
-        frontmatter: (mod as any).frontmatter,
-        Content: (mod as any).default,
+        frontmatter: mod.frontmatter,
+        Content: mod.default,
       },
     });
   }
@@ -33,14 +67,14 @@ const { frontmatter, Content } = Astro.props;
 const t = siteConfig.translations[locale as keyof typeof siteConfig.translations];
 
 // Усі лекції цієї теми для навігації
-const allLectures = import.meta.glob("/src/content/lectures/**/*.md", { eager: true });
+const allLectures = import.meta.glob<LectureModule>("/src/content/lectures/**/*.md", { eager: true });
 const topicLectures = Object.entries(allLectures)
   .filter(([p]) => {
     const parts = p.split("/");
     const li = parts.indexOf("lectures");
     return li !== -1 && parts[li + 1] === locale && parts[li + 2] === topic;
   })
-  .map(([p, m]: [string, any]) => ({
+  .map(([p, m]): LectureNavItem => ({
     slug: p.split("/").pop()?.replace(".md", "") || "",
     lecture: m.frontmatter.lecture,
     title: m.frontmatter.title,
@@ -100,6 +134,7 @@ const nextWord = locale === "uk" ? "Наступна лекція" : locale === 
             {frontmatter?.difficulty && <span class="meta-chip">📊 {frontmatter.difficulty}</span>}
             {frontmatter?.updated && <span class="meta-chip">🗓 {frontmatter.updated}</span>}
           </div>
+          <LectureCompletion locale={locale} topic={topic} lecture={lecture} />
         </header>
 
         <div class="lecture-content">
@@ -140,10 +175,12 @@ const nextWord = locale === "uk" ? "Наступна лекція" : locale === 
 <!-- KaTeX init -->
 <script>
   document.addEventListener("DOMContentLoaded", function () {
-    // @ts-ignore
-    if (window.renderMathInElement) {
-      // @ts-ignore
-      renderMathInElement(document.body, {
+    const renderMath = (window as Window & {
+      renderMathInElement?: (element: HTMLElement, options: unknown) => void;
+    }).renderMathInElement;
+
+    if (renderMath) {
+      renderMath(document.body, {
         delimiters: [
           { left: "$$", right: "$$", display: true },
           { left: "$", right: "$", display: false },

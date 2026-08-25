@@ -1,10 +1,11 @@
 import type { APIRoute } from 'astro';
+import { siteConfig } from '../config';
 
 const robotsTxt = `
 User-agent: *
 Allow: /
 
-Sitemap: https://foodprocessportal.vercel.app/sitemap-index.xml
+Sitemap: ${siteConfig.url}/sitemap-index.xml
 `.trim();
 
 export const GET: APIRoute = () => {

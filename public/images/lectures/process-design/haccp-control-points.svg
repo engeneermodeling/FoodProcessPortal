@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 430" role="img" aria-labelledby="title desc">
+  <title id="title">Контрольні точки HACCP</title>
+  <desc id="desc">Схема відмінності між програмами-передумовами, операційними контролями і критичними контрольними точками.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#38bdf8"/>
+    </marker>
+  </defs>
+  <rect width="920" height="430" rx="22" fill="#111827"/>
+  <text x="42" y="58" fill="#f8fafc" font-family="Arial, sans-serif" font-size="27" font-weight="700">Не кожна контрольна точка є CCP</text>
+  <g font-family="Arial, sans-serif" font-weight="700">
+    <rect x="70" y="176" width="180" height="84" rx="16" fill="#1e3a8a" stroke="#3b82f6"/>
+    <text x="118" y="212" fill="#dbeafe" font-size="20">GHP / PRP</text>
+    <text x="92" y="238" fill="#bfdbfe" font-size="14">гігієна, вода, персонал</text>
+    <path d="M256 218h70" stroke="#38bdf8" stroke-width="5" marker-end="url(#arrow)"/>
+    <rect x="338" y="176" width="180" height="84" rx="16" fill="#854d0e" stroke="#f59e0b"/>
+    <text x="392" y="212" fill="#fef3c7" font-size="20">OPRP</text>
+    <text x="362" y="238" fill="#fde68a" font-size="14">значущий контроль</text>
+    <path d="M524 218h70" stroke="#38bdf8" stroke-width="5" marker-end="url(#arrow)"/>
+    <rect x="606" y="176" width="230" height="84" rx="16" fill="#7f1d1d" stroke="#ef4444"/>
+    <text x="690" y="212" fill="#fee2e2" font-size="20">CCP</text>
+    <text x="636" y="238" fill="#fecaca" font-size="14">критична межа + коригування</text>
+  </g>
+  <rect x="156" y="326" width="608" height="46" rx="10" fill="#1f2937" stroke="#475569"/>
+  <text x="186" y="355" fill="#f8fafc" font-family="Arial, sans-serif" font-size="15">Приклад CCP: пастеризація за часом і температурою; приклад PRP: санітарія приміщення.</text>
+</svg>

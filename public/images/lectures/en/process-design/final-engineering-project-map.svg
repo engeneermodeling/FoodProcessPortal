@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 430" role="img" aria-labelledby="title desc">
+  <title id="title">Engineering project completion map</title>
+  <desc id="desc">Pidsumkova karta skladovykh kursovoho proiektu: protses, equipment, rozrakhunky, truboprovody, CIP, kontrol i vysnovok.</desc>
+  <rect width="920" height="430" rx="22" fill="#111827"/>
+  <text x="42" y="58" fill="#f8fafc" font-family="Arial, sans-serif" font-size="27" font-weight="700">A completed project shows engineering implementation, not a recipe</text>
+  <g font-family="Arial, sans-serif" font-size="16" font-weight="700">
+    <rect x="330" y="156" width="260" height="98" rx="18" fill="#1e3a8a" stroke="#60a5fa" stroke-width="3"/>
+    <text x="390" y="196" fill="#dbeafe" font-size="20">Course /</text>
+    <text x="374" y="225" fill="#dbeafe" font-size="20">line project</text>
+    <g fill="#1e293b" stroke="#38bdf8" stroke-width="2">
+      <rect x="76" y="100" width="190" height="58" rx="12"/>
+      <rect x="365" y="82" width="190" height="58" rx="12"/>
+      <rect x="654" y="100" width="190" height="58" rx="12"/>
+      <rect x="654" y="278" width="190" height="58" rx="12"/>
+      <rect x="365" y="300" width="190" height="58" rx="12"/>
+      <rect x="76" y="278" width="190" height="58" rx="12"/>
+    </g>
+    <text x="119" y="135" fill="#e0f2fe">Process</text>
+    <text x="404" y="117" fill="#e0f2fe">Equipment</text>
+    <text x="694" y="135" fill="#e0f2fe">Calculations</text>
+    <text x="700" y="313" fill="#e0f2fe">Control</text>
+    <text x="414" y="335" fill="#e0f2fe">CIP / TO</text>
+    <text x="108" y="313" fill="#e0f2fe">Piping</text>
+    <g stroke="#38bdf8" stroke-width="3">
+      <path d="M266 129 L350 170"/>
+      <path d="M460 140v16"/>
+      <path d="M654 129 L570 170"/>
+      <path d="M654 307 L570 240"/>
+      <path d="M460 300v-46"/>
+      <path d="M266 307 L350 240"/>
+    </g>
+  </g>
+</svg>

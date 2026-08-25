@@ -1,0 +1,613 @@
+---
+import BaseLayout from "../../../../layouts/BaseLayout.astro";
+import Header from "../../../../components/Header.astro";
+import ThemeToggle from "../../../../components/ThemeToggle.astro";
+import Footer from "../../../../components/Footer.astro";
+import { siteConfig } from "../../../../config";
+import { ENABLED_LOCALES } from "../../../../locales.config";
+import { getCourseChapters } from "../../../../data/courses";
+import type { CourseChapter } from "../../../../data/courses";
+
+interface CoursePath {
+  params: {
+    locale: string;
+    course: string;
+  };
+}
+
+export function getStaticPaths() {
+  const allChapters = import.meta.glob("/src/content/courses/**/*.md", { eager: true });
+  const seen = new Set<string>();
+  const paths: CoursePath[] = [];
+  const locales = [...ENABLED_LOCALES];
+
+  for (const path of Object.keys(allChapters)) {
+    const parts = path.split("/");
+    const idx = parts.indexOf("courses");
+    const locale = parts[idx + 1];
+    const course = parts[idx + 2];
+    const key = `${locale}/${course}`;
+    if (locales.includes(locale) && course && !seen.has(key)) {
+      seen.add(key);
+      paths.push({ params: { locale, course } });
+    }
+  }
+  return paths;
+}
+
+const { locale, course } = Astro.params;
+const t = siteConfig.translations[locale as keyof typeof siteConfig.translations];
+const chapters = getCourseChapters(locale as string, course as string);
+const courseTitle = chapters[0]?.course_title || course;
+const chapterSources = import.meta.glob<string>("/src/content/courses/**/*.md", {
+  eager: true,
+  query: "?raw",
+  import: "default",
+});
+const chaptersWithTests = new Set<string>();
+
+Object.entries(chapterSources).forEach(([path, content]) => {
+  const parts = path.split("/");
+  const idx = parts.indexOf("courses");
+  const sourceLocale = parts[idx + 1];
+  const sourceCourse = parts[idx + 2];
+  const slug = path.split("/").pop()?.replace(".md", "") || "";
+
+  if (sourceLocale === locale && sourceCourse === course && slug && content.includes("data-course-self-test")) {
+    chaptersWithTests.add(slug);
+  }
+});
+
+const hasCourseTests = chaptersWithTests.size > 0;
+
+const chapterWord =
+  locale === "uk" ? "Розділ" :
+  locale === "de" ? "Kapitel" :
+  locale === "ru" ? "Раздел" : "Chapter";
+
+const backWord =
+  locale === "uk" ? "← Назад до курсових" :
+  locale === "de" ? "← Zurück zu Kursarbeiten" :
+  locale === "ru" ? "← Назад к курсовым" : "← Back to courses";
+
+const progressUi = {
+  title:
+    locale === "uk" ? "Прогрес тестів" :
+    locale === "de" ? "Testfortschritt" :
+    locale === "ru" ? "Прогресс тестов" : "Test progress",
+  description:
+    locale === "uk" ? "Підсумок найкращих результатів з тестів у розділах курсу." :
+    locale === "de" ? "Zusammenfassung der besten Testergebnisse in den Kurskapiteln." :
+    locale === "ru" ? "Итог лучших результатов по тестам в разделах курса." :
+    "Summary of the best test results across the course chapters.",
+  passed:
+    locale === "uk" ? "складено" :
+    locale === "de" ? "bestanden" :
+    locale === "ru" ? "сдано" : "passed",
+  started:
+    locale === "uk" ? "почато" :
+    locale === "de" ? "begonnen" :
+    locale === "ru" ? "начато" : "started",
+  average:
+    locale === "uk" ? "середній бал" :
+    locale === "de" ? "Durchschnitt" :
+    locale === "ru" ? "средний балл" : "average score",
+  notStarted:
+    locale === "uk" ? "Тест ще не пройдено" :
+    locale === "de" ? "Test noch nicht bearbeitet" :
+    locale === "ru" ? "Тест еще не пройден" : "Test not started",
+  best:
+    locale === "uk" ? "Найкращий результат" :
+    locale === "de" ? "Bestes Ergebnis" :
+    locale === "ru" ? "Лучший результат" : "Best score",
+  complete:
+    locale === "uk" ? "Зараховано" :
+    locale === "de" ? "Bestanden" :
+    locale === "ru" ? "Зачтено" : "Passed",
+  toolsTitle:
+    locale === "uk" ? "Керування результатами" :
+    locale === "de" ? "Ergebnisse verwalten" :
+    locale === "ru" ? "Управление результатами" : "Manage results",
+  toolsDescription:
+    locale === "uk" ? "Результати тестів зберігаються у цьому браузері. Їх можна експортувати, перенести на інший пристрій або очистити для поточного курсу." :
+    locale === "de" ? "Testergebnisse werden in diesem Browser gespeichert. Sie können sie exportieren, auf ein anderes Gerät übertragen oder für diesen Kurs löschen." :
+    locale === "ru" ? "Результаты тестов сохраняются в этом браузере. Их можно экспортировать, перенести на другое устройство или очистить для текущего курса." :
+    "Test results are stored in this browser. You can export them, move them to another device, or clear them for this course.",
+  exportLabel:
+    locale === "uk" ? "Експорт" :
+    locale === "de" ? "Export" :
+    locale === "ru" ? "Экспорт" : "Export",
+  importLabel:
+    locale === "uk" ? "Імпорт" :
+    locale === "de" ? "Import" :
+    locale === "ru" ? "Импорт" : "Import",
+  resetLabel:
+    locale === "uk" ? "Скинути" :
+    locale === "de" ? "Löschen" :
+    locale === "ru" ? "Сбросить" : "Reset",
+  empty:
+    locale === "uk" ? "Для цього курсу ще немає збережених результатів." :
+    locale === "de" ? "Für diesen Kurs sind noch keine gespeicherten Ergebnisse vorhanden." :
+    locale === "ru" ? "Для этого курса пока нет сохранённых результатов." :
+    "There are no saved results for this course yet.",
+  imported:
+    locale === "uk" ? "Результати імпортовано. Сторінку оновлено." :
+    locale === "de" ? "Ergebnisse importiert. Die Seite wurde aktualisiert." :
+    locale === "ru" ? "Результаты импортированы. Страница обновлена." :
+    "Results imported. The page has been refreshed.",
+  resetConfirm:
+    locale === "uk" ? "Скинути результати тестів для цього курсу?" :
+    locale === "de" ? "Testergebnisse für diesen Kurs löschen?" :
+    locale === "ru" ? "Сбросить результаты тестов для этого курса?" :
+    "Reset test results for this course?",
+  resetDone:
+    locale === "uk" ? "Результати очищено." :
+    locale === "de" ? "Ergebnisse gelöscht." :
+    locale === "ru" ? "Результаты очищены." :
+    "Results cleared.",
+  importError:
+    locale === "uk" ? "Не вдалося імпортувати файл результатів." :
+    locale === "de" ? "Die Ergebnisdatei konnte nicht importiert werden." :
+    locale === "ru" ? "Не удалось импортировать файл результатов." :
+    "Could not import the results file.",
+};
+---
+
+<BaseLayout title={courseTitle} description={t.sections.courses.desc} locale={locale}>
+  <Header>
+    <ThemeToggle slot="theme-toggle" />
+  </Header>
+
+  <main class="main-content">
+    <div class="container">
+      <article class="topic-article">
+        <a href={`/${locale}/courses`} class="back-link">{backWord}</a>
+
+        <div class="topic-header">
+          <div>
+            <h1 class="article-title">{courseTitle}</h1>
+          </div>
+        </div>
+
+        {hasCourseTests && (
+          <>
+            <section
+              class="course-test-progress"
+              data-course-test-progress
+              data-locale={locale}
+              data-course={course}
+              data-total={chaptersWithTests.size}
+              data-passed-label={progressUi.passed}
+              data-started-label={progressUi.started}
+              data-average-label={progressUi.average}
+            >
+              <div>
+                <h2>{progressUi.title}</h2>
+                <p>{progressUi.description}</p>
+              </div>
+              <div class="course-test-progress-meter">
+                <strong data-course-test-progress-percent>0%</strong>
+                <span data-course-test-progress-value>0/{chaptersWithTests.size} {progressUi.passed}</span>
+                <span class="course-test-progress-bar">
+                  <span data-course-test-progress-bar></span>
+                </span>
+                <span data-course-test-progress-meta>0/{chaptersWithTests.size} {progressUi.started}</span>
+              </div>
+            </section>
+
+            <section
+              class="course-result-tools"
+              data-course-result-tools
+              data-locale={locale}
+              data-course={course}
+              data-empty-message={progressUi.empty}
+              data-imported-message={progressUi.imported}
+              data-import-error-message={progressUi.importError}
+              data-reset-confirm-message={progressUi.resetConfirm}
+              data-reset-done-message={progressUi.resetDone}
+            >
+              <div>
+                <h2>{progressUi.toolsTitle}</h2>
+                <p>{progressUi.toolsDescription}</p>
+              </div>
+              <div class="course-result-tool-actions">
+                <button type="button" data-export-course-results>{progressUi.exportLabel}</button>
+                <label>
+                  <input type="file" accept="application/json,.json" data-import-course-results />
+                  <span>{progressUi.importLabel}</span>
+                </label>
+                <button type="button" class="danger" data-reset-course-results>
+                  {progressUi.resetLabel}
+                </button>
+              </div>
+              <p class="course-result-tool-status" data-course-result-tool-status aria-live="polite"></p>
+            </section>
+          </>
+        )}
+
+        <section class="lectures-section">
+          <div class="lectures-list">
+            {chapters.map((ch: CourseChapter) => {
+              const hasTest = chaptersWithTests.has(ch.slug);
+
+              return (
+              <a
+                href={`/${locale}/courses/${course}/${ch.slug}`}
+                class="lecture-card"
+                data-course-chapter-card={hasTest ? "" : undefined}
+                data-chapter={hasTest ? ch.slug : undefined}
+              >
+                <div class="lecture-number">{chapterWord} {ch.chapter}</div>
+                <div class="lecture-info">
+                  <h3 class="lecture-title">{ch.title}</h3>
+                  {ch.description && <p class="lecture-desc">{ch.description}</p>}
+                  {hasTest && (
+                    <span
+                      class="course-chapter-score"
+                      data-course-chapter-score
+                      data-empty-label={progressUi.notStarted}
+                      data-best-label={progressUi.best}
+                      data-complete-label={progressUi.complete}
+                    >
+                      {progressUi.notStarted}
+                    </span>
+                  )}
+                </div>
+                <span class="lecture-arrow">→</span>
+              </a>
+              );
+            })}
+          </div>
+        </section>
+      </article>
+    </div>
+  </main>
+  <Footer />
+</BaseLayout>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const progress = document.querySelector<HTMLElement>("[data-course-test-progress]");
+    if (!progress) return;
+
+    const locale = progress.dataset.locale || "uk";
+    const course = progress.dataset.course || "course";
+    const totalChapters = Number(progress.dataset.total || "0");
+    const passedLabel = progress.dataset.passedLabel || "passed";
+    const startedLabel = progress.dataset.startedLabel || "started";
+    const averageLabel = progress.dataset.averageLabel || "average score";
+    const cards = Array.from(document.querySelectorAll<HTMLElement>("[data-course-chapter-card]"));
+    const tools = document.querySelector<HTMLElement>("[data-course-result-tools]");
+
+    function courseTestPrefix(activeLocale: string, activeCourse: string) {
+      return `foodprocess:course-test:${activeLocale}:${activeCourse}:`;
+    }
+
+    function isCurrentCourseResultKey(key: string) {
+      return key.startsWith(courseTestPrefix(locale, course));
+    }
+
+    function collectCourseResults() {
+      const results: Record<string, string> = {};
+
+      for (let i = 0; i < localStorage.length; i++) {
+        const key = localStorage.key(i);
+        if (key && isCurrentCourseResultKey(key)) {
+          results[key] = localStorage.getItem(key) || "";
+        }
+      }
+
+      return results;
+    }
+
+    function updateCourseProgress() {
+      let started = 0;
+      let passed = 0;
+      let earned = 0;
+      let possible = 0;
+
+      cards.forEach((card) => {
+        const chapter = card.dataset.chapter || "";
+        const scoreNode = card.querySelector<HTMLElement>("[data-course-chapter-score]");
+        const emptyLabel = scoreNode?.dataset.emptyLabel || "Test not started";
+        const bestLabel = scoreNode?.dataset.bestLabel || "Best score";
+        const completeLabel = scoreNode?.dataset.completeLabel || "Passed";
+
+        card.classList.remove("has-passed-course-test");
+
+        try {
+          const raw = localStorage.getItem(`${courseTestPrefix(locale, course)}${chapter}`);
+          const value = raw ? (JSON.parse(raw) as { score?: number; total?: number }) : null;
+          const score = Number(value?.score);
+          const total = Number(value?.total);
+
+          if (Number.isFinite(score) && Number.isFinite(total) && total > 0) {
+            started += 1;
+            earned += score;
+            possible += total;
+            const ratio = score / total;
+
+            if (ratio >= 0.7) {
+              passed += 1;
+              card.classList.add("has-passed-course-test");
+            }
+
+            if (scoreNode) {
+              scoreNode.textContent =
+                ratio >= 0.7
+                  ? `${completeLabel}: ${score}/${total}`
+                  : `${bestLabel}: ${score}/${total}`;
+            }
+            return;
+          }
+        } catch {
+          // Ignore malformed saved progress and show the empty state.
+        }
+
+        if (scoreNode) scoreNode.textContent = emptyLabel;
+      });
+
+      const percentValue = totalChapters > 0 ? Math.round((passed / totalChapters) * 100) : 0;
+      const averageValue = possible > 0 ? Math.round((earned / possible) * 100) : 0;
+      const percent = progress.querySelector("[data-course-test-progress-percent]");
+      const value = progress.querySelector("[data-course-test-progress-value]");
+      const meta = progress.querySelector("[data-course-test-progress-meta]");
+      const bar = progress.querySelector<HTMLElement>("[data-course-test-progress-bar]");
+
+      if (percent) percent.textContent = `${percentValue}%`;
+      if (value) value.textContent = `${passed}/${totalChapters} ${passedLabel}`;
+      if (meta) meta.textContent = `${started}/${totalChapters} ${startedLabel} · ${averageLabel}: ${averageValue}%`;
+      if (bar) bar.style.width = `${percentValue}%`;
+    }
+
+    function setToolStatus(message: string) {
+      const status = tools?.querySelector("[data-course-result-tool-status]");
+      if (status) status.textContent = message;
+    }
+
+    tools?.querySelector("[data-export-course-results]")?.addEventListener("click", () => {
+      const results = collectCourseResults();
+
+      if (Object.keys(results).length === 0) {
+        setToolStatus(tools.dataset.emptyMessage || "No saved results to export.");
+        return;
+      }
+
+      const payload = {
+        app: "FoodProcessPortal",
+        kind: "course-test-results",
+        version: 1,
+        locale,
+        course,
+        exportedAt: new Date().toISOString(),
+        results,
+      };
+      const blob = new Blob([JSON.stringify(payload, null, 2)], { type: "application/json" });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = `foodprocess-course-results-${locale}-${course}.json`;
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      URL.revokeObjectURL(url);
+    });
+
+    const importInput = tools?.querySelector<HTMLInputElement>("[data-import-course-results]");
+    importInput?.addEventListener("change", async () => {
+      const file = importInput.files?.[0];
+      if (!file) return;
+
+      try {
+        const payload = JSON.parse(await file.text());
+        const resultEntries = payload.results || payload.progress;
+
+        if (payload.app !== "FoodProcessPortal" || !resultEntries) {
+          throw new Error("Invalid results payload");
+        }
+
+        Object.entries(resultEntries).forEach(([key, value]) => {
+          if (isCurrentCourseResultKey(key) && typeof value === "string") {
+            localStorage.setItem(key, value);
+          }
+        });
+
+        setToolStatus(tools?.dataset.importedMessage || "Results imported.");
+        updateCourseProgress();
+      } catch {
+        setToolStatus(tools?.dataset.importErrorMessage || "Could not import results.");
+      } finally {
+        importInput.value = "";
+      }
+    });
+
+    tools?.querySelector("[data-reset-course-results]")?.addEventListener("click", () => {
+      const confirmMessage = tools.dataset.resetConfirmMessage || "Reset course results?";
+      if (!window.confirm(confirmMessage)) return;
+
+      const keysToRemove: string[] = [];
+      for (let i = 0; i < localStorage.length; i++) {
+        const key = localStorage.key(i);
+        if (key && isCurrentCourseResultKey(key)) {
+          keysToRemove.push(key);
+        }
+      }
+
+      keysToRemove.forEach((key) => localStorage.removeItem(key));
+      setToolStatus(tools.dataset.resetDoneMessage || "Results cleared.");
+      updateCourseProgress();
+    });
+
+    updateCourseProgress();
+  });
+</script>
+
+<style>
+  @import "../../../../styles/topic.css";
+  @import "../../../../styles/lecture.css";
+
+  .topic-article {
+    max-width: 920px;
+  }
+
+  .course-test-progress {
+    display: grid;
+    grid-template-columns: 1fr minmax(12rem, 16rem);
+    gap: 1.25rem;
+    align-items: center;
+    margin: 0 0 1.5rem;
+    padding: 1.25rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background: color-mix(in srgb, var(--bg-secondary) 92%, var(--accent-blue));
+  }
+
+  .course-test-progress h2 {
+    margin: 0 0 0.4rem;
+    color: var(--text-primary);
+    font-size: 1.15rem;
+  }
+
+  .course-test-progress p {
+    margin: 0;
+    color: var(--text-secondary);
+  }
+
+  .course-test-progress-meter {
+    display: grid;
+    gap: 0.35rem;
+  }
+
+  .course-test-progress-meter strong {
+    font-size: 1.8rem;
+    color: var(--accent-blue);
+    line-height: 1;
+  }
+
+  .course-test-progress-meter span {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+  }
+
+  .course-test-progress-bar {
+    height: 0.55rem;
+    overflow: hidden;
+    border-radius: 999px;
+    background: color-mix(in srgb, var(--border-color) 72%, transparent);
+  }
+
+  .course-test-progress-bar span {
+    display: block;
+    width: 0%;
+    height: 100%;
+    background: var(--accent-blue);
+    transition: width 0.25s ease;
+  }
+
+  .lecture-card {
+    align-items: center;
+  }
+
+  .course-chapter-score {
+    display: inline-flex;
+    width: fit-content;
+    margin-top: 0.45rem;
+    padding: 0.22rem 0.55rem;
+    border: 1px solid var(--border-color);
+    border-radius: 999px;
+    color: var(--text-secondary);
+    font-size: 0.78rem;
+    font-weight: 700;
+  }
+
+  .lecture-card.has-passed-course-test .course-chapter-score {
+    border-color: color-mix(in srgb, #22c55e 55%, var(--border-color));
+    color: #22c55e;
+    background: color-mix(in srgb, #22c55e 10%, transparent);
+  }
+
+  .course-result-tools {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 1rem;
+    align-items: center;
+    margin: 0 0 1.5rem;
+    padding: 1rem 1.25rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background: var(--bg-secondary);
+  }
+
+  .course-result-tools h2 {
+    margin: 0 0 0.35rem;
+    color: var(--text-primary);
+    font-size: 1.05rem;
+  }
+
+  .course-result-tools p {
+    margin: 0;
+    color: var(--text-secondary);
+    font-size: 0.92rem;
+  }
+
+  .course-result-tool-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 0.55rem;
+  }
+
+  .course-result-tool-actions button,
+  .course-result-tool-actions label {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 2.35rem;
+    padding: 0.55rem 0.8rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    font: inherit;
+    font-size: 0.86rem;
+    font-weight: 800;
+    cursor: pointer;
+  }
+
+  .course-result-tool-actions button:hover,
+  .course-result-tool-actions label:hover {
+    border-color: var(--accent-blue);
+    color: var(--accent-blue);
+  }
+
+  .course-result-tool-actions .danger {
+    color: #f87171;
+  }
+
+  .course-result-tool-actions input {
+    position: absolute;
+    inline-size: 1px;
+    block-size: 1px;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .course-result-tool-status {
+    grid-column: 1 / -1;
+    min-height: 1.25rem;
+  }
+
+  @media (max-width: 720px) {
+    .course-test-progress {
+      grid-template-columns: 1fr;
+    }
+
+    .course-result-tools {
+      grid-template-columns: 1fr;
+    }
+
+    .course-result-tool-actions {
+      justify-content: flex-start;
+    }
+  }
+</style>

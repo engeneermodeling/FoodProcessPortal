@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 430" role="img" aria-labelledby="title desc">
+  <title id="title">Дерево ришення при видхиленни</title>
+  <desc id="desc">Схема дий при видхиленни параметра: изолювати продукт, оцинити ризик, випустити, переробити або утилизувати.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#38bdf8"/>
+    </marker>
+  </defs>
+  <rect width="920" height="430" rx="22" fill="#111827"/>
+  <text x="42" y="58" fill="#f8fafc" font-family="Arial, sans-serif" font-size="27" font-weight="700">Видхилення мае вести до ришення щодо продукту</text>
+  <g font-family="Arial, sans-serif" font-size="15" font-weight="700">
+    <rect x="340" y="86" width="240" height="58" rx="12" fill="#7f1d1d" stroke="#ef4444"/>
+    <text x="391" y="121" fill="#fee2e2">Виявлено видхилення</text>
+    <rect x="340" y="178" width="240" height="58" rx="12" fill="#854d0e" stroke="#f59e0b"/>
+    <text x="387" y="213" fill="#fef3c7">Изолювати продукт</text>
+    <rect x="340" y="270" width="240" height="58" rx="12" fill="#1e3a8a" stroke="#60a5fa"/>
+    <text x="389" y="305" fill="#dbeafe">Оцинити ризик</text>
+    <rect x="72" y="330" width="180" height="52" rx="12" fill="#14532d" stroke="#22c55e"/>
+    <text x="126" y="362" fill="#dcfce7">Випуск</text>
+    <rect x="370" y="330" width="180" height="52" rx="12" fill="#164e63" stroke="#06b6d4"/>
+    <text x="414" y="362" fill="#cffafe">Переробка</text>
+    <rect x="668" y="330" width="180" height="52" rx="12" fill="#7f1d1d" stroke="#ef4444"/>
+    <text x="716" y="362" fill="#fee2e2">Утилизация</text>
+    <path d="M460 144v26" stroke="#38bdf8" stroke-width="4" marker-end="url(#arrow)"/>
+    <path d="M460 236v26" stroke="#38bdf8" stroke-width="4" marker-end="url(#arrow)"/>
+    <path d="M340 304 L204 326" stroke="#38bdf8" stroke-width="4" marker-end="url(#arrow)"/>
+    <path d="M460 328v-1" stroke="#38bdf8" stroke-width="4" marker-end="url(#arrow)"/>
+    <path d="M580 304 L716 326" stroke="#38bdf8" stroke-width="4" marker-end="url(#arrow)"/>
+  </g>
+</svg>

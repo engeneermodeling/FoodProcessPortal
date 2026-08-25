@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 430" role="img" aria-labelledby="title desc">
+  <title id="title">PFD и P&ID</title>
+  <desc id="desc">Поривняння технологичнои блок-схеми PFD и детализованои схеми трубопроводив та приладив P&ID.</desc>
+  <rect width="920" height="430" rx="22" fill="#111827"/>
+  <text x="42" y="58" fill="#f8fafc" font-family="Arial, sans-serif" font-size="27" font-weight="700">PFD показуе процес, P&amp;ID показуе як ним керувати</text>
+  <g font-family="Arial, sans-serif">
+    <rect x="54" y="112" width="376" height="250" rx="18" fill="#1e293b" stroke="#3b82f6"/>
+    <text x="86" y="154" fill="#dbeafe" font-size="24" font-weight="700">PFD</text>
+    <text x="86" y="184" fill="#cbd5e1" font-size="15">основни апарати и потоки</text>
+    <rect x="96" y="238" width="86" height="54" rx="10" fill="#1e3a8a"/>
+    <rect x="210" y="238" width="86" height="54" rx="10" fill="#1e3a8a"/>
+    <rect x="324" y="238" width="64" height="54" rx="10" fill="#1e3a8a"/>
+    <path d="M184 265h24M298 265h24" stroke="#38bdf8" stroke-width="5"/>
+    <text x="112" y="270" fill="#f8fafc" font-size="14">танк</text>
+    <text x="224" y="270" fill="#f8fafc" font-size="14">нагрив</text>
+    <text x="334" y="270" fill="#f8fafc" font-size="14">фас.</text>
+    <rect x="490" y="112" width="376" height="250" rx="18" fill="#1e293b" stroke="#818cf8"/>
+    <text x="522" y="154" fill="#e0e7ff" font-size="24" font-weight="700">P&amp;ID</text>
+    <text x="522" y="184" fill="#cbd5e1" font-size="15">труби, клапани, датчики, блокування</text>
+    <rect x="528" y="238" width="76" height="54" rx="10" fill="#312e81"/>
+    <circle cx="642" cy="265" r="18" fill="#854d0e"/>
+    <rect x="694" y="238" width="76" height="54" rx="10" fill="#312e81"/>
+    <circle cx="806" cy="265" r="18" fill="#14532d"/>
+    <path d="M606 265h18M660 265h32M772 265h16" stroke="#38bdf8" stroke-width="5"/>
+    <text x="548" y="270" fill="#f8fafc" font-size="14">T-1</text>
+    <text x="632" y="270" fill="#fef3c7" font-size="12">TT</text>
+    <text x="714" y="270" fill="#f8fafc" font-size="14">P-1</text>
+    <text x="796" y="270" fill="#dcfce7" font-size="12">CV</text>
+  </g>
+</svg>

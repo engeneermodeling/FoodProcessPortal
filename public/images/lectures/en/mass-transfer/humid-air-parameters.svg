@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="520" viewBox="0 0 980 520" role="img" aria-labelledby="title desc">
+  <title id="title">Humid-air parameters for drying</title>
+  <desc id="desc">The diagram shows dry air, water vapour, temperature, relative humidity, humidity ratio and enthalpy.</desc>
+  <defs>
+    <style>
+      .bg{fill:#f8fafc}.core{fill:#0f766e}.box{fill:#fff;stroke:#cbd5e1;stroke-width:2}.line{stroke:#94a3b8;stroke-width:3;fill:none}.h{fill:#0f172a;font:700 21px Arial}.coreText{fill:#fff;font:700 28px Arial}.t{fill:#334155;font:16px Arial}.small{fill:#475569;font:14px Arial}
+    </style>
+  </defs>
+  <rect class="bg" width="980" height="520" rx="18"/>
+  <rect x="350" y="205" width="280" height="115" rx="18" class="core"/>
+  <text x="490" y="252" text-anchor="middle" class="coreText">Humid air</text>
+  <text x="490" y="285" text-anchor="middle" fill="#ccfbf1" font-family="Arial" font-size="15">dry air + water vapour</text>
+  <path class="line" d="M350 230 C275 195 235 145 185 95"/>
+  <path class="line" d="M350 300 C280 335 230 385 180 435"/>
+  <path class="line" d="M490 205 C490 155 490 120 490 85"/>
+  <path class="line" d="M630 230 C705 195 750 145 805 95"/>
+  <path class="line" d="M630 300 C705 335 750 385 805 435"/>
+  <rect x="55" y="50" width="260" height="105" rx="12" class="box"/>
+  <text x="185" y="84" text-anchor="middle" class="h">Temperature t</text>
+  <text x="78" y="119" class="t">thermal state of agent</text>
+  <rect x="360" y="35" width="260" height="105" rx="12" class="box"/>
+  <text x="490" y="69" text-anchor="middle" class="h">Humidity ratio d</text>
+  <text x="382" y="104" class="t">kg vapour / kg dry air</text>
+  <rect x="665" y="50" width="260" height="105" rx="12" class="box"/>
+  <text x="795" y="84" text-anchor="middle" class="h">Relative φ</text>
+  <text x="690" y="119" class="t">how close to saturation</text>
+  <rect x="55" y="380" width="260" height="105" rx="12" class="box"/>
+  <text x="185" y="414" text-anchor="middle" class="h">Enthalpy I</text>
+  <text x="78" y="449" class="t">heat of dry air and vapour</text>
+  <rect x="665" y="380" width="260" height="105" rx="12" class="box"/>
+  <text x="795" y="414" text-anchor="middle" class="h">Dew point</text>
+  <text x="690" y="449" class="t">condensation risk in ducts</text>
+</svg>

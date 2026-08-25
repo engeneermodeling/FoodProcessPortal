@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="520" viewBox="0 0 980 520" role="img" aria-labelledby="title desc">
+  <title id="title">Prinzip der einfachen Destillation</title>
+  <desc id="desc">Schema von Sumpf, Dampf, Kondensator und Destillat zur Trennung fluechtiger Komponenten.</desc>
+  <defs>
+    <style>
+      .bg{fill:#f8fafc}.vessel{fill:#fff;stroke:#1e293b;stroke-width:4}.liq{fill:#fde68a}.heat{stroke:#dc2626;stroke-width:5;fill:none;marker-end:url(#h)}.vap{stroke:#7c3aed;stroke-width:5;fill:none;marker-end:url(#v)}.cool{stroke:#2563eb;stroke-width:5;fill:none;marker-end:url(#c)}.pipe{stroke:#334155;stroke-width:6;fill:none;stroke-linecap:round}.cond{fill:#dbeafe;stroke:#2563eb;stroke-width:3}.h{fill:#0f172a;font:700 24px Arial}.t{fill:#334155;font:16px Arial}.small{fill:#475569;font:14px Arial}
+    </style>
+    <marker id="h" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto"><path d="M0,0 L11,4 L0,8 Z" fill="#dc2626"/></marker>
+    <marker id="v" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto"><path d="M0,0 L11,4 L0,8 Z" fill="#7c3aed"/></marker>
+    <marker id="c" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto"><path d="M0,0 L11,4 L0,8 Z" fill="#2563eb"/></marker>
+  </defs>
+  <rect class="bg" width="980" height="520" rx="18"/>
+  <text x="490" y="45" text-anchor="middle" class="h">Destillation: die fluechtigere Komponente reichert den Dampf an und kondensiert danach</text>
+  <path class="vessel" d="M155 190 H405 V360 Q280 430 155 360 Z"/>
+  <path class="liq" d="M162 285 H398 V355 Q280 410 162 355 Z"/>
+  <text x="280" y="330" text-anchor="middle" class="h">Sumpf</text>
+  <path class="heat" d="M280 470 V415"/>
+  <text x="305" y="455" class="t">Waermezufuhr</text>
+  <path class="pipe" d="M280 190 C280 115 420 120 470 160"/>
+  <path class="vap" d="M300 155 C370 115 430 130 490 170"/>
+  <rect x="500" y="135" width="240" height="90" rx="16" class="cond"/>
+  <text x="620" y="188" text-anchor="middle" class="h">Kondensator</text>
+  <path class="cool" d="M520 245 H720"/>
+  <text x="540" y="275" class="small">Kuehlwasser</text>
+  <path class="pipe" d="M740 180 H850 V305"/>
+  <path class="cool" d="M850 305 H920"/>
+  <text x="785" y="335" class="t">Destillat</text>
+  <text x="160" y="125" class="t">Gemisch: Wasser + fluechtige Komponente</text>
+  <text x="520" y="105" class="t">Dampf ist mit der fluechtigeren Substanz angereichert</text>
+</svg>

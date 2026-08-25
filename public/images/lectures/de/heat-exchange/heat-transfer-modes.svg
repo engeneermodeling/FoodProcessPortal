@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="480" viewBox="0 0 980 480" role="img" aria-labelledby="title desc">
+  <title id="title">Drei Mechanismen der Waermeuebertragung</title>
+  <desc id="desc">Vergleich von Waermeleitung durch eine Wand, Konvektion in der Stroemung und Strahlung von einer heissen Oberflaeche.</desc>
+  <defs>
+    <style>
+      .bg{fill:#f8fafc}.card{fill:#fff;stroke:#cbd5e1;stroke-width:2}.wall{fill:#fed7aa;stroke:#ea580c;stroke-width:2}.fluid{fill:#dbeafe}.hot{fill:#ef4444}.cold{fill:#3b82f6}.arrow{stroke:#dc2626;stroke-width:5;fill:none;marker-end:url(#a)}.wave{stroke:#f59e0b;stroke-width:4;fill:none}.h{fill:#0f172a;font:700 24px Arial}.t{fill:#334155;font:16px Arial}
+    </style>
+    <marker id="a" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto"><path d="M0,0 L11,4 L0,8 Z" fill="#dc2626"/></marker>
+  </defs>
+  <rect class="bg" width="980" height="480" rx="18"/>
+  <g transform="translate(55 78)">
+    <rect class="card" width="270" height="320" rx="14"/>
+    <text x="135" y="42" text-anchor="middle" class="h">Waermeleitung</text>
+    <rect class="hot" x="54" y="95" width="45" height="120" rx="6"/>
+    <rect class="wall" x="100" y="95" width="70" height="120"/>
+    <rect class="cold" x="171" y="95" width="45" height="120" rx="6"/>
+    <path class="arrow" d="M70 250 H205"/>
+    <text x="135" y="285" text-anchor="middle" class="t">durch Wand, Produktschicht,</text>
+    <text x="135" y="309" text-anchor="middle" class="t">Belag oder Fouling</text>
+  </g>
+  <g transform="translate(355 78)">
+    <rect class="card" width="270" height="320" rx="14"/>
+    <text x="135" y="42" text-anchor="middle" class="h">Konvektion</text>
+    <rect class="fluid" x="48" y="95" width="174" height="120" rx="18"/>
+    <path class="arrow" d="M70 155 C105 115 165 115 200 155"/>
+    <path class="arrow" d="M200 170 C165 210 105 210 70 170"/>
+    <text x="135" y="285" text-anchor="middle" class="t">Waerme wird durch Stroemung transportiert:</text>
+    <text x="135" y="309" text-anchor="middle" class="t">Wasser, Milch, Saft, Luft</text>
+  </g>
+  <g transform="translate(655 78)">
+    <rect class="card" width="270" height="320" rx="14"/>
+    <text x="135" y="42" text-anchor="middle" class="h">Strahlung</text>
+    <rect class="hot" x="65" y="135" width="55" height="120" rx="8"/>
+    <path class="wave" d="M145 145 C170 125 190 165 215 145"/>
+    <path class="wave" d="M145 185 C170 165 190 205 215 185"/>
+    <path class="wave" d="M145 225 C170 205 190 245 215 225"/>
+    <text x="135" y="285" text-anchor="middle" class="t">wichtig fuer Oefen, Trockner</text>
+    <text x="135" y="309" text-anchor="middle" class="t">und heisse Oberflaechen</text>
+  </g>
+</svg>

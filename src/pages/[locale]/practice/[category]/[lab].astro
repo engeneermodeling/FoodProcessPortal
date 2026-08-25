@@ -1,0 +1,301 @@
+---
+import BaseLayout from "../../../../layouts/BaseLayout.astro";
+import Header from "../../../../components/Header.astro";
+import ThemeToggle from "../../../../components/ThemeToggle.astro";
+import Footer from "../../../../components/Footer.astro";
+import { siteConfig } from "../../../../config";
+import { ENABLED_LOCALES } from "../../../../locales.config";
+
+interface LabFrontmatter {
+  title: string;
+  category_title?: string;
+  lab: number;
+  goal?: string;
+  description?: string;
+  duration?: string;
+  difficulty?: string;
+  updated?: string;
+}
+
+interface LabModule {
+  frontmatter: LabFrontmatter;
+  default: unknown;
+}
+
+interface LabNavItem {
+  slug: string;
+  lab: number;
+  title: string;
+}
+
+interface LabPath {
+  params: {
+    locale: string;
+    category: string;
+    lab: string;
+  };
+  props: {
+    frontmatter: LabFrontmatter;
+    Content: unknown;
+  };
+}
+
+export function getStaticPaths() {
+  const labs = import.meta.glob<LabModule>("/src/content/labs/**/*.md", { eager: true });
+  const locales = [...ENABLED_LOCALES];
+
+  // Канонічний список робіт: category/slug -> дані по мовах, з фолбеком на uk
+  const byKey: Record<string, { category: string; slug: string; byLocale: Record<string, LabModule> }> = {};
+  for (const [path, mod] of Object.entries(labs)) {
+    const parts = path.split("/");
+    const labsIdx = parts.indexOf("labs");
+    const loc = parts[labsIdx + 1];
+    const category = parts[labsIdx + 2];
+    const slug = parts[parts.length - 1]?.replace(".md", "") || "";
+    if (!slug) continue;
+    const key = `${category}/${slug}`;
+    byKey[key] = byKey[key] || { category, slug, byLocale: {} };
+    byKey[key].byLocale[loc] = mod;
+  }
+
+  const paths: LabPath[] = [];
+  for (const { category, slug, byLocale } of Object.values(byKey)) {
+    for (const locale of locales) {
+      const mod = byLocale[locale] || byLocale["uk"];
+      if (!mod) continue;
+      paths.push({
+        params: { locale, category, lab: slug },
+        props: {
+          frontmatter: mod.frontmatter,
+          Content: mod.default,
+        },
+      });
+    }
+  }
+  return paths;
+}
+
+const { locale, category, lab } = Astro.params;
+const { frontmatter, Content } = Astro.props;
+const t = siteConfig.translations[locale as keyof typeof siteConfig.translations];
+
+// Усі роботи цієї категорії (цією ж мовою, з фолбеком на uk) для навігації вперед/назад
+const allLabs = import.meta.glob<LabModule>("/src/content/labs/**/*.md", { eager: true });
+function labsForNav(loc: string): LabNavItem[] {
+  return Object.entries(allLabs)
+    .filter(([p]) => {
+      const parts = p.split("/");
+      const li = parts.indexOf("labs");
+      return li !== -1 && parts[li + 1] === loc && parts[li + 2] === category;
+    })
+    .map(([p, m]): LabNavItem => ({
+      slug: p.split("/").pop()?.replace(".md", "") || "",
+      lab: m.frontmatter.lab,
+      title: m.frontmatter.title,
+    }))
+    .sort((a, b) => a.lab - b.lab);
+}
+let categoryLabs = labsForNav(locale as string);
+if (categoryLabs.length === 0 && locale !== "uk") {
+  categoryLabs = labsForNav("uk");
+}
+
+const currentIdx = categoryLabs.findIndex((l) => l.slug === lab);
+const prevLab = currentIdx > 0 ? categoryLabs[currentIdx - 1] : null;
+const nextLab = currentIdx < categoryLabs.length - 1 ? categoryLabs[currentIdx + 1] : null;
+---
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" />
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+
+<BaseLayout
+  title={frontmatter?.title || t.practice.labWord}
+  description={frontmatter?.description || frontmatter?.goal || ""}
+  locale={locale}
+>
+  <Header>
+    <ThemeToggle slot="theme-toggle" />
+  </Header>
+
+  <main class="main-content">
+    <div class="container lecture-container">
+
+      <aside class="lecture-sidebar">
+        <a href={`/${locale}/practice/${category}`} class="back-link sidebar-back">
+          {t.practice.backToCategory}
+        </a>
+        <nav class="lecture-nav">
+          <div class="lecture-nav-title">{frontmatter?.category_title || category}</div>
+          {categoryLabs.map((l) => (
+            <a
+              href={`/${locale}/practice/${category}/${l.slug}`}
+              class={`lecture-nav-item ${l.slug === lab ? "active" : ""}`}
+            >
+              <span class="nav-num">№{l.lab}</span>
+              <span class="nav-lec-title">{l.title}</span>
+            </a>
+          ))}
+        </nav>
+      </aside>
+
+      <article class="lecture-article">
+        <header class="lecture-header">
+          <div class="lecture-badge">{t.practice.labWord} №{frontmatter?.lab}</div>
+          <h1 class="lecture-title">{frontmatter?.title}</h1>
+          <div class="lecture-meta-row">
+            {frontmatter?.duration && <span class="meta-chip">⏱ {frontmatter.duration}</span>}
+            {frontmatter?.difficulty && <span class="meta-chip">📊 {frontmatter.difficulty}</span>}
+            {frontmatter?.updated && <span class="meta-chip">🗓 {frontmatter.updated}</span>}
+          </div>
+          {frontmatter?.goal && (
+            <div class="lab-goal-box">
+              <span class="lab-goal-label">🎯 {t.practice.goal}</span>
+              <p class="lab-goal-text">{frontmatter.goal}</p>
+            </div>
+          )}
+        </header>
+
+        <div class="lecture-content lab-content">
+          <Content />
+        </div>
+
+        <div class="topic-navigation">
+          {prevLab ? (
+            <a href={`/${locale}/practice/${category}/${prevLab.slug}`} class="nav-btn nav-prev">
+              <span class="nav-arrow">←</span>
+              <div class="nav-text">
+                <span class="nav-label">{t.practice.prevLab}</span>
+                <span class="nav-title">{prevLab.title}</span>
+              </div>
+            </a>
+          ) : (
+            <div class="nav-spacer" />
+          )}
+          {nextLab ? (
+            <a href={`/${locale}/practice/${category}/${nextLab.slug}`} class="nav-btn nav-next">
+              <div class="nav-text">
+                <span class="nav-label">{t.practice.nextLab}</span>
+                <span class="nav-title">{nextLab.title}</span>
+              </div>
+              <span class="nav-arrow">→</span>
+            </a>
+          ) : (
+            <div class="nav-spacer" />
+          )}
+        </div>
+      </article>
+    </div>
+  </main>
+  <Footer />
+</BaseLayout>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const renderMath = (window as Window & {
+      renderMathInElement?: (element: HTMLElement, options: unknown) => void;
+    }).renderMathInElement;
+
+    if (renderMath) {
+      renderMath(document.body, {
+        delimiters: [
+          { left: "$$", right: "$$", display: true },
+          { left: "$", right: "$", display: false },
+        ],
+        throwOnError: false,
+      });
+    }
+  });
+</script>
+
+<style>
+  @import "../../../../styles/topic.css";
+  @import "../../../../styles/lecture.css";
+
+  .lab-goal-box {
+    margin-top: 1.25rem;
+    padding: 1rem 1.25rem;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-left: 4px solid var(--accent-blue);
+    border-radius: 0.6rem;
+  }
+  .lab-goal-label {
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--accent-blue);
+  }
+  .lab-goal-text {
+    margin: 0.4rem 0 0;
+    color: var(--text-primary);
+    line-height: 1.6;
+  }
+
+  .lab-content :global(.lab-figure) {
+    display: flex;
+    justify-content: center;
+    margin: 1.75rem 0;
+  }
+  .lab-content :global(.lab-figure img) {
+    max-width: 100%;
+    max-height: 480px;
+    width: auto;
+    background: #fff;
+    border-radius: 0.5rem;
+    border: 1px solid var(--border-color);
+    padding: 0.75rem;
+  }
+  .lab-content :global(.lab-figure-narrow img) {
+    max-height: 360px;
+  }
+  .lab-content :global(.lab-figure-caption) {
+    text-align: center;
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    margin: -1.25rem 0 1.5rem;
+    font-style: italic;
+  }
+  .lab-content :global(.lab-formula) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 1.25rem 0;
+    padding: 0.75rem 1rem;
+    background: var(--bg-secondary);
+    border-radius: 0.5rem;
+    text-align: center;
+    color: var(--text-secondary);
+    font-style: italic;
+  }
+  .lab-content :global(.lab-formula-img) {
+    max-width: 100%;
+    max-height: 90px;
+    width: auto;
+    vertical-align: middle;
+    filter: var(--formula-img-filter, none);
+  }
+  .lab-content :global(table) {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+    font-size: 0.92rem;
+  }
+  .lab-content :global(th),
+  .lab-content :global(td) {
+    border: 1px solid var(--border-color);
+    padding: 0.5rem 0.7rem;
+    text-align: center;
+  }
+  .lab-content :global(th) {
+    background: var(--bg-secondary);
+    font-weight: 700;
+  }
+
+  :global(:root[data-theme="dark"] .lab-content .lab-formula-img) {
+    filter: invert(1) hue-rotate(180deg);
+  }
+</style>

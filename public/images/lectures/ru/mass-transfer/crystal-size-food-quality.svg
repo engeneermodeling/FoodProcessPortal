@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 430" role="img" aria-labelledby="title desc">
+  <title id="title">Влияние размера кристаллов на качество пищевых продуктов</title>
+  <desc id="desc">Сравнение мелких и крупных кристаллов для сгущенного молока, мороженого, шоколада, соли и сахара.</desc>
+  <rect width="920" height="430" rx="22" fill="#0f172a"/>
+  <text x="42" y="58" fill="#f8fafc" font-family="Arial, sans-serif" font-size="26" font-weight="700">Размер кристаллов = текстура продукта</text>
+  <g font-family="Arial, sans-serif">
+    <rect x="56" y="112" width="380" height="238" rx="16" fill="#1e293b" stroke="#334155"/>
+    <text x="86" y="152" fill="#bbf7d0" font-size="21" font-weight="700">Много мелких кристаллов</text>
+    <g fill="#e0f2fe">
+      <circle cx="116" cy="206" r="8"/><circle cx="158" cy="226" r="6"/><circle cx="204" cy="194" r="7"/>
+      <circle cx="260" cy="238" r="6"/><circle cx="318" cy="206" r="8"/><circle cx="374" cy="232" r="7"/>
+      <circle cx="130" cy="278" r="7"/><circle cx="192" cy="292" r="6"/><circle cx="254" cy="270" r="8"/>
+      <circle cx="336" cy="288" r="6"/>
+    </g>
+    <text x="86" y="330" fill="#f8fafc" font-size="16">гладкая структура, стабильность, контролируемая сладость</text>
+
+    <rect x="484" y="112" width="380" height="238" rx="16" fill="#1e293b" stroke="#334155"/>
+    <text x="514" y="152" fill="#fecaca" font-size="21" font-weight="700">Мало крупных кристаллов</text>
+    <g fill="#fed7aa">
+      <polygon points="570,218 598,190 628,220 600,250"/>
+      <polygon points="700,198 738,226 706,266 664,236"/>
+      <polygon points="770,282 812,250 840,294 798,322"/>
+    </g>
+    <text x="514" y="330" fill="#f8fafc" font-size="16">песчанистость, хруст, расслоение или неровное качество</text>
+  </g>
+  <text x="58" y="386" fill="#cbd5e1" font-family="Arial, sans-serif" font-size="16">Примеры: лактоза в сгущенном молоке, лед в мороженом, жир в шоколаде, соль и сахар в гранулах.</text>
+</svg>

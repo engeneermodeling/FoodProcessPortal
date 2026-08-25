@@ -8,7 +8,7 @@ keywords: ["критерії подібності", "число Рейнольд
 duration: "50 хв"
 difficulty: "базовий"
 author: "FoodProcessPortal"
-updated: "2026-07-07"
+updated: "2026-08-17"
 ---
 
 # Лекція 2. Метод подібності та критерії подібності
@@ -49,7 +49,9 @@ updated: "2026-07-07"
   критеріїв              підбір параметрів                 оптимізація
 ```
 
-📺 **Відео:** [Scale-up in food processing — від лабораторії до заводу](https://www.youtube.com/results?search_query=food+processing+scale+up+pilot+plant)
+![Схема масштабного переходу: лабораторія, пілот, виробництво](/images/lectures/general-principles/scale-up-similarity.svg)
+
+🔗 **Кейс для обговорення:** [GEA Application and Technology Center](https://www.gea.com/en/products/bioreactor-fermentation-systems/new-food-application-technology-center-excellence/) — приклад пілотної інфраструктури, де харчові й біотехнологічні процеси перевіряють перед промисловим масштабуванням.
 
 ---
 
@@ -78,6 +80,8 @@ $$\frac{V}{v} = \alpha_V = \text{const}$$
 $$\frac{K}{k} = \alpha_K = \text{const}$$
 
 Динамічна подібність — **найважливіша** для інженерних розрахунків. Саме вона описується **критеріями подібності**.
+
+> **Інженерна підказка:** геометричну подібність намалювати легко, але для харчових продуктів найчастіше "ламається" саме динамічна подібність. В'язкість соусу, пюре або шоколадної маси може настільки змінити $Re$, що великий апарат поводиться не як збільшена лабораторна банка, а як зовсім інша система.
 
 ---
 
@@ -131,6 +135,8 @@ $$i = n - k$$
 
 ## 4. Основні критерії подібності
 
+![Карта критеріїв подібності за фізичним змістом](/images/lectures/general-principles/dimensionless-groups-map.svg)
+
 ### 4.1 Критерій Рейнольдса — режим руху рідини
 
 $$Re = \frac{l \cdot v \cdot \rho}{\mu} = \frac{l \cdot v}{\nu}$$
@@ -170,7 +176,7 @@ $$Re = \frac{0{,}08 \cdot 0{,}3 \cdot 1080}{0{,}5} \approx 52$$
 
 > 💡 **Практичний наслідок:** В'язкі харчові продукти (соуси, пюре, шоколадна маса) дуже складно перевести у турбулентний режим. Тому для них використовують спеціальні скребкові теплообмінники, де лопаті механічно знімають прошарок з поверхні — замінюючи турбулентне перемішування.
 
-📺 **Відео:** [Скребковий теплообмінник для в'язких продуктів](https://www.youtube.com/results?search_query=scraped+surface+heat+exchanger+food+processing)
+🔗 **Практичний матеріал:** [Tetra Pak: viscous products and heat transfer](https://www.tetrapak.com/en-us/insights/cases-articles/viscous-products-and-heat-transfer) — чому для кетчупу, йогурту, дитячого харчування або хумусу недостатньо знати "одну" в'язкість.
 
 ---
 
@@ -328,7 +334,7 @@ $$\alpha = \frac{Nu \cdot \lambda}{l} = \frac{58{,}6 \cdot 0{,}55}{0{,}004} \app
 
 🔗 **Інструмент:** [OpenFOAM](https://www.openfoam.com) — безкоштовний CFD-пакет для моделювання течій. Використовується для проектування харчового обладнання.
 
-📺 **Відео:** [CFD simulation of food mixing process](https://www.youtube.com/results?search_query=CFD+simulation+food+mixing+tank)
+🔗 **Приклад застосування CFD:** [Tetra Pak: optimize mixing process and food quality using CFD](https://www.tetrapak.com/en-in/insights/cases-articles/optimize-mixing-process-food-quality-cfd) — як моделювання допомагає підібрати мішалку для в'язких продуктів на кшталт томатної пасти, крем-сиру або хумусу.
 
 ---
 
@@ -352,7 +358,7 @@ $$\alpha = \frac{Nu \cdot \lambda}{l} = \frac{58{,}6 \cdot 0{,}55}{0{,}004} \app
 | Фільтрування | Різниця тисків $\Delta p$ і товщина осаду |
 | Ректифікація | Число теоретичних тарілок, $Re$ у колоні |
 
-🔗 **Стаття:** [Scale-up of food processes — Journal of Food Engineering](https://www.sciencedirect.com/journal/journal-of-food-engineering)
+🔗 **Приклад сучасної інфраструктури:** [Alfa Laval Food Innovation Center](https://www.alfalaval.us/media/news/2026/a-groundbreaking-facility/) — приклад центру, де виробники, стартапи й університети можуть тестувати харчові процеси до запуску у великий масштаб.
 
 ---
 
@@ -395,17 +401,16 @@ $$Nu = C \cdot Re^m \cdot Pr^n$$
 ## Корисні ресурси
 
 ### Онлайн-калькулятори
-- 🔗 [Reynolds Number Calculator](https://www.engineeringtoolbox.com/reynolds-number-d_237.html) — розрахунок Re онлайн
+- 🔗 [Reynolds Number Calculator](https://www.engineeringtoolbox.com/reynolds-number-d_237.html) — пояснення режимів течії та розрахунок Re онлайн
 - 🔗 [Heat Transfer Correlations](https://www.thermexcel.com/english/tables/vap_eau.htm) — таблиці критеріальних рівнянь
 
 ### Підручники
 - 🔗 [McCabe, Smith, Harriott — Unit Operations of Chemical Engineering](https://www.mheducation.com) — класичний підручник з критеріями подібності
 - 🔗 [Geankoplis — Transport Processes](https://www.pearson.com) — детально про всі критерії
 
-### Відео
-- 📺 [Dimensionless Numbers in Fluid Mechanics — MIT OpenCourseWare](https://www.youtube.com/results?search_query=dimensionless+numbers+fluid+mechanics+MIT)
-- 📺 [Buckingham Pi Theorem explained](https://www.youtube.com/results?search_query=buckingham+pi+theorem+explained+simply)
-- 📺 [Reynolds number visualization — laminar vs turbulent](https://www.youtube.com/results?search_query=reynolds+number+laminar+turbulent+visualization)
+### Практичні матеріали
+- 🔗 [Tetra Pak: CFD for food mixing](https://www.tetrapak.com/en-in/insights/cases-articles/optimize-mixing-process-food-quality-cfd) — приклад, як CFD використовують для харчових мішалок
+- 🔗 [GEA New Food Application & Technology Center](https://www.gea.com/en/unitedstates/protein-food-beverage-pilot-testing-development-wi/) — приклад пілотного центру для масштабування харчових процесів
 
 ### Наукові статті
 - 🔗 [Journal of Food Engineering](https://www.sciencedirect.com/journal/journal-of-food-engineering)

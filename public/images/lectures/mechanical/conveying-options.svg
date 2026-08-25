@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 430" role="img" aria-labelledby="title desc">
+  <title id="title">Варіанти транспортування сипких харчових матеріалів</title>
+  <desc id="desc">Карта механічного і пневматичного транспорту: стрічка, шнек, ковшовий елеватор, розріджена і щільна фаза.</desc>
+  <rect width="920" height="430" rx="22" fill="#0f172a"/>
+  <text x="42" y="58" fill="#f8fafc" font-family="Arial, sans-serif" font-size="25" font-weight="700">Транспортер вибирають за матеріалом, не за звичкою</text>
+  <g font-family="Arial, sans-serif">
+    <rect x="52" y="116" width="250" height="92" rx="12" fill="#1e293b" stroke="#334155"/>
+    <text x="76" y="150" fill="#bfdbfe" font-size="18" font-weight="700">Стрічковий</text>
+    <text x="76" y="178" fill="#f8fafc" font-size="15">м'який, відкритий або закритий</text>
+    <text x="76" y="200" fill="#94a3b8" font-size="14">зерно, овочі, паковані продукти</text>
+
+    <rect x="335" y="116" width="250" height="92" rx="12" fill="#1e293b" stroke="#334155"/>
+    <text x="359" y="150" fill="#fed7aa" font-size="18" font-weight="700">Шнековий</text>
+    <text x="359" y="178" fill="#f8fafc" font-size="15">компактний, дозувальний</text>
+    <text x="359" y="200" fill="#94a3b8" font-size="14">борошно, крупи, вологі маси</text>
+
+    <rect x="618" y="116" width="250" height="92" rx="12" fill="#1e293b" stroke="#334155"/>
+    <text x="642" y="150" fill="#bbf7d0" font-size="18" font-weight="700">Ковшовий елеватор</text>
+    <text x="642" y="178" fill="#f8fafc" font-size="15">вертикальне піднімання</text>
+    <text x="642" y="200" fill="#94a3b8" font-size="14">зерно, насіння, гранули</text>
+
+    <rect x="52" y="250" width="250" height="92" rx="12" fill="#1e293b" stroke="#334155"/>
+    <text x="76" y="284" fill="#bae6fd" font-size="18" font-weight="700">Пневмо: розріджена фаза</text>
+    <text x="76" y="312" fill="#f8fafc" font-size="15">частинки летять у потоці</text>
+    <text x="76" y="334" fill="#94a3b8" font-size="14">просто, але більше зношування</text>
+
+    <rect x="335" y="250" width="250" height="92" rx="12" fill="#1e293b" stroke="#334155"/>
+    <text x="359" y="284" fill="#ddd6fe" font-size="18" font-weight="700">Пневмо: щільна фаза</text>
+    <text x="359" y="312" fill="#f8fafc" font-size="15">повільніше і м'якше</text>
+    <text x="359" y="334" fill="#94a3b8" font-size="14">крихкі гранули, агломерати</text>
+
+    <rect x="618" y="250" width="250" height="92" rx="12" fill="#1e293b" stroke="#334155"/>
+    <text x="642" y="284" fill="#fecaca" font-size="18" font-weight="700">Вібраційний</text>
+    <text x="642" y="312" fill="#f8fafc" font-size="15">мала відстань, дозування</text>
+    <text x="642" y="334" fill="#94a3b8" font-size="14">тендітні або липкі фракції</text>
+  </g>
+</svg>

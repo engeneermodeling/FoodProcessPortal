@@ -1,0 +1,144 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import Header from "../../../components/Header.astro";
+import ThemeToggle from "../../../components/ThemeToggle.astro";
+import Footer from "../../../components/Footer.astro";
+import { siteConfig } from "../../../config";
+import { ENABLED_LOCALES } from "../../../locales.config";
+
+interface PracticeCategoryFrontmatter {
+  title: string;
+  description?: string;
+  icon?: string;
+  order?: number;
+}
+
+interface LabFrontmatter {
+  lab: number;
+}
+
+interface ContentModule<TFrontmatter> {
+  frontmatter: TFrontmatter;
+}
+
+interface PracticeCategory extends PracticeCategoryFrontmatter {
+  slug: string;
+  count: number;
+}
+
+type CategoryModuleMap = Record<string, ContentModule<PracticeCategoryFrontmatter>>;
+type LabModuleMap = Record<string, ContentModule<LabFrontmatter>>;
+
+// Статичні glob-и без template literals
+const allCategoriesUk = import.meta.glob<ContentModule<PracticeCategoryFrontmatter>>("/src/content/practice/uk/*.md", { eager: true });
+const allCategoriesEn = import.meta.glob<ContentModule<PracticeCategoryFrontmatter>>("/src/content/practice/en/*.md", { eager: true });
+const allCategoriesRu = import.meta.glob<ContentModule<PracticeCategoryFrontmatter>>("/src/content/practice/ru/*.md", { eager: true });
+const allCategoriesDe = import.meta.glob<ContentModule<PracticeCategoryFrontmatter>>("/src/content/practice/de/*.md", { eager: true });
+
+// Кількість лабораторних робіт по категоріях (для бейджа), окремо на кожну мову з fallback на uk
+const allLabsUk = import.meta.glob<ContentModule<LabFrontmatter>>("/src/content/labs/uk/**/*.md", { eager: true });
+const allLabsEn = import.meta.glob<ContentModule<LabFrontmatter>>("/src/content/labs/en/**/*.md", { eager: true });
+const allLabsRu = import.meta.glob<ContentModule<LabFrontmatter>>("/src/content/labs/ru/**/*.md", { eager: true });
+const allLabsDe = import.meta.glob<ContentModule<LabFrontmatter>>("/src/content/labs/de/**/*.md", { eager: true });
+
+export function getStaticPaths() {
+  return [...ENABLED_LOCALES].map((locale) => ({
+    params: { locale },
+  }));
+}
+
+const { locale } = Astro.params;
+const t = siteConfig.translations[locale as keyof typeof siteConfig.translations];
+
+const categoriesMap: Record<string, CategoryModuleMap> = {
+  uk: allCategoriesUk,
+  en: allCategoriesEn,
+  ru: allCategoriesRu,
+  de: allCategoriesDe,
+};
+const labsMap: Record<string, LabModuleMap> = {
+  uk: allLabsUk,
+  en: allLabsEn,
+  ru: allLabsRu,
+  de: allLabsDe,
+};
+
+// Фолбек на uk, якщо для мови ще немає перекладу контенту
+const rawCategories = Object.keys(categoriesMap[locale] || {}).length
+  ? categoriesMap[locale]
+  : allCategoriesUk;
+const rawLabs = Object.keys(labsMap[locale] || {}).length
+  ? labsMap[locale]
+  : allLabsUk;
+
+const categories = Object.entries(rawCategories)
+  .map(([path, module]): PracticeCategory => {
+    const slug = path.split("/").pop()?.replace(".md", "") || "";
+    const count = Object.keys(rawLabs).filter((p) => p.includes(`/${slug}/`)).length;
+    return { slug, count, ...(module.frontmatter || {}) };
+  })
+  .sort((a, b) => (a.order || 0) - (b.order || 0));
+
+// Узгодження числівника з іменником для uk/ru; en/de не потребують форм
+function pluralWorks(n: number, loc: string): string {
+  const forms: Record<string, [string, string, string]> = {
+    uk: ["лабораторна робота", "лабораторні роботи", "лабораторних робіт"],
+    ru: ["лабораторная работа", "лабораторные работы", "лабораторных работ"],
+  };
+  if (!forms[loc]) return t.practice.labsWord.toLowerCase();
+  const [one, few, many] = forms[loc];
+  const mod10 = n % 10;
+  const mod100 = n % 100;
+  if (mod10 === 1 && mod100 !== 11) return one;
+  if ([2, 3, 4].includes(mod10) && ![12, 13, 14].includes(mod100)) return few;
+  return many;
+}
+---
+
+<BaseLayout
+  title={t.sections.practice.title}
+  description={t.sections.practice.desc}
+  locale={locale}
+>
+  <Header>
+    <ThemeToggle slot="theme-toggle" />
+  </Header>
+
+  <main class="main-content">
+    <div class="container">
+      <div class="hero">
+        <div class="section-icon">🔬</div>
+        <h1 class="title">{t.sections.practice.title}</h1>
+        <p class="subtitle">{t.practice.hubSubtitle}</p>
+        <div class="hero-line"></div>
+      </div>
+
+      <div class="topics-list">
+        {
+          categories.map((category: PracticeCategory) => (
+            <a href={`/${locale}/practice/${category.slug}`} class="topic-card">
+              {category.icon && <span class="topic-icon">{category.icon}</span>}
+              <h2 class="topic-title">{category.title}</h2>
+              <p class="topic-excerpt">{category.description || ""}</p>
+              <span class="topic-link">
+                {category.count} {pluralWorks(category.count, locale as string)} · {t.goTo} →
+              </span>
+            </a>
+          ))
+        }
+      </div>
+
+      {categories.length === 0 && (
+        <div class="no-results">
+          <div class="no-results-icon">🔬</div>
+          <h3>{t.noResults}</h3>
+        </div>
+      )}
+    </div>
+  </main>
+  <Footer />
+</BaseLayout>
+
+<style>
+  @import "../../../styles/topics.css";
+</style>

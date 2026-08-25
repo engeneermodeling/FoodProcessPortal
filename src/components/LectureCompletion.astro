@@ -1,0 +1,144 @@
+---
+interface Props {
+  locale?: string;
+  topic?: string;
+  lecture?: string;
+}
+
+const { locale = "uk", topic = "", lecture = "" } = Astro.props;
+
+const labels = {
+  uk: {
+    unread: "Позначити як прочитану",
+    read: "Лекцію прочитано",
+    hint: "Статус збережеться у цьому браузері.",
+  },
+  en: {
+    unread: "Mark as read",
+    read: "Lecture read",
+    hint: "The status is saved in this browser.",
+  },
+  de: {
+    unread: "Als gelesen markieren",
+    read: "Vorlesung gelesen",
+    hint: "Der Status wird in diesem Browser gespeichert.",
+  },
+  ru: {
+    unread: "Отметить как прочитанную",
+    read: "Лекция прочитана",
+    hint: "Статус сохранится в этом браузере.",
+  },
+};
+
+const normalizedLocale =
+  locale === "uk" || locale === "en" || locale === "de" || locale === "ru"
+    ? locale
+    : "uk";
+const ui = labels[normalizedLocale];
+---
+
+<div
+  class="lecture-completion"
+  data-lecture-completion
+  data-locale={normalizedLocale}
+  data-topic={topic}
+  data-lecture={lecture}
+  data-unread-label={ui.unread}
+  data-read-label={ui.read}
+>
+  <button class="lecture-completion-btn" type="button" data-lecture-completion-btn>
+    {ui.unread}
+  </button>
+  <span>{ui.hint}</span>
+</div>
+
+<script>
+  function lectureStorageKey(root: HTMLElement) {
+    const locale = root.dataset.locale || "uk";
+    const topic = root.dataset.topic || "topic";
+    const lecture = root.dataset.lecture || "lecture";
+    return `foodprocess:lecture-read:${locale}:${topic}:${lecture}`;
+  }
+
+  function renderLectureCompletion(root: HTMLElement) {
+    const button = root.querySelector<HTMLButtonElement>("[data-lecture-completion-btn]");
+    if (!button) return;
+
+    const isRead = localStorage.getItem(lectureStorageKey(root)) === "1";
+    const unreadLabel = root.dataset.unreadLabel || "Mark as read";
+    const readLabel = root.dataset.readLabel || "Lecture read";
+
+    root.classList.toggle("is-read", isRead);
+    button.textContent = isRead ? readLabel : unreadLabel;
+    button.setAttribute("aria-pressed", String(isRead));
+  }
+
+  function notifyLearningProgressChanged(root: HTMLElement) {
+    window.dispatchEvent(
+      new CustomEvent("foodprocess:learning-progress-changed", {
+        detail: {
+          locale: root.dataset.locale || "uk",
+          topic: root.dataset.topic || "",
+          lecture: root.dataset.lecture || "",
+        },
+      }),
+    );
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll<HTMLElement>("[data-lecture-completion]").forEach((root) => {
+      renderLectureCompletion(root);
+      root.querySelector("[data-lecture-completion-btn]")?.addEventListener("click", () => {
+        const key = lectureStorageKey(root);
+        const isRead = localStorage.getItem(key) === "1";
+        if (isRead) {
+          localStorage.removeItem(key);
+        } else {
+          localStorage.setItem(key, "1");
+        }
+        renderLectureCompletion(root);
+        notifyLearningProgressChanged(root);
+      });
+    });
+  });
+</script>
+
+<style>
+  .lecture-completion {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .lecture-completion-btn {
+    padding: 0.65rem 0.95rem;
+    background: var(--accent-blue);
+    border: 1px solid var(--accent-blue);
+    border-radius: 0.5rem;
+    color: white;
+    cursor: pointer;
+    font: inherit;
+    font-size: 0.9rem;
+    font-weight: 700;
+    transition:
+      background-color 0.2s ease,
+      border-color 0.2s ease,
+      transform 0.2s ease;
+  }
+
+  .lecture-completion-btn:hover {
+    transform: translateY(-1px);
+  }
+
+  .lecture-completion.is-read .lecture-completion-btn {
+    background: var(--accent-green);
+    border-color: var(--accent-green);
+  }
+
+  .lecture-completion span {
+    color: var(--text-muted);
+    font-size: 0.86rem;
+  }
+</style>

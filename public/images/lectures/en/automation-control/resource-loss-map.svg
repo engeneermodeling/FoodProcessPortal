@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 460" role="img" aria-labelledby="title desc">
+  <title id="title">Resource loss map of a food line</title>
+  <desc id="desc">Diagram of typical losses of energy, water, steam, cooling, compressed air and product.</desc>
+  <rect width="920" height="460" rx="22" fill="#111827"/>
+  <text x="42" y="58" fill="#f8fafc" font-family="Arial, sans-serif" font-size="27" font-weight="700">Resource efficiency starts with a loss map</text>
+  <g font-family="Arial, sans-serif">
+    <rect x="88" y="190" width="744" height="92" rx="18" fill="#1e293b" stroke="#38bdf8" stroke-width="3"/>
+    <text x="342" y="232" fill="#f8fafc" font-size="24" font-weight="700">food processing line</text>
+    <text x="284" y="260" fill="#cbd5e1" font-size="16">heating, cooling, washing, conveying, filling</text>
+    <g font-size="16" font-weight="700">
+      <rect x="70" y="100" width="150" height="60" rx="12" fill="#7f1d1d" stroke="#ef4444"/>
+      <text x="104" y="136" fill="#fee2e2">steam and heat</text>
+      <rect x="260" y="100" width="150" height="60" rx="12" fill="#1e3a8a" stroke="#3b82f6"/>
+      <text x="300" y="136" fill="#dbeafe">cooling</text>
+      <rect x="450" y="100" width="150" height="60" rx="12" fill="#164e63" stroke="#06b6d4"/>
+      <text x="493" y="136" fill="#cffafe">water</text>
+      <rect x="640" y="100" width="150" height="60" rx="12" fill="#312e81" stroke="#6366f1"/>
+      <text x="668" y="136" fill="#e0e7ff">air</text>
+      <rect x="170" y="322" width="170" height="60" rx="12" fill="#854d0e" stroke="#f59e0b"/>
+      <text x="202" y="358" fill="#fef3c7">electricity</text>
+      <rect x="392" y="322" width="170" height="60" rx="12" fill="#14532d" stroke="#22c55e"/>
+      <text x="438" y="358" fill="#dcfce7">product</text>
+      <rect x="614" y="322" width="170" height="60" rx="12" fill="#4c1d95" stroke="#8b5cf6"/>
+      <text x="656" y="358" fill="#ede9fe">CIP chemicals</text>
+    </g>
+    <g stroke="#38bdf8" stroke-width="4" opacity=".75">
+      <path d="M145 162v26"/>
+      <path d="M335 162v26"/>
+      <path d="M525 162v26"/>
+      <path d="M715 162v26"/>
+      <path d="M255 320v-36"/>
+      <path d="M477 320v-36"/>
+      <path d="M699 320v-36"/>
+    </g>
+  </g>
+</svg>

@@ -652,7 +652,7 @@ export default function WaterCalc({ locale = 'uk' }) {
         {/* Підвал */}
         <footer className="wc-footer">
           <p>{t('footer.note')}</p>
-          <a href="https://github.com/TarasMysiuraTutor/calc_water" target="_blank" rel="noopener" className="wc-source-link">
+          <a href="https://github.com/TarasMysiuraTutor/calc_water" target="_blank" rel="noopener noreferrer" className="wc-source-link">
             calc_water on GitHub ↗
           </a>
         </footer>

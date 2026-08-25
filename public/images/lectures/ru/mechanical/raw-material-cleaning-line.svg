@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 430" role="img" aria-labelledby="title desc">
+  <title id="title">Линия миття та инспекции харчовои сировини</title>
+  <desc id="desc">Послидовнисть операций: приймання, сухе очищення, миття, ополискування, видалення води, инспекция и калибрування.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#38bdf8"/>
+    </marker>
+  </defs>
+  <rect width="920" height="430" rx="22" fill="#111827"/>
+  <text x="42" y="58" fill="#f8fafc" font-family="Arial, sans-serif" font-size="25" font-weight="700">Очищення сировини - це ланцюг бар'ерив</text>
+  <g font-family="Arial, sans-serif" font-size="14">
+    <rect x="32" y="160" width="118" height="72" rx="10" fill="#1e293b" stroke="#334155"/>
+    <text x="62" y="190" fill="#f8fafc" font-weight="700">приймання</text>
+    <text x="54" y="214" fill="#94a3b8">проби, партия</text>
+    <path d="M152 196h34" stroke="#38bdf8" stroke-width="5" marker-end="url(#arrow)"/>
+    <rect x="192" y="160" width="118" height="72" rx="10" fill="#713f12" stroke="#fbbf24"/>
+    <text x="216" y="190" fill="#fffbeb" font-weight="700">сухе</text>
+    <text x="212" y="214" fill="#fde68a">земля, листя</text>
+    <path d="M312 196h34" stroke="#38bdf8" stroke-width="5" marker-end="url(#arrow)"/>
+    <rect x="352" y="160" width="118" height="72" rx="10" fill="#164e63" stroke="#22d3ee"/>
+    <text x="386" y="190" fill="#ecfeff" font-weight="700">миття</text>
+    <text x="376" y="214" fill="#a5f3fc">вода, щитки</text>
+    <path d="M472 196h34" stroke="#38bdf8" stroke-width="5" marker-end="url(#arrow)"/>
+    <rect x="512" y="160" width="118" height="72" rx="10" fill="#1e3a8a" stroke="#60a5fa"/>
+    <text x="540" y="190" fill="#eff6ff" font-weight="700">ополиск.</text>
+    <text x="534" y="214" fill="#bfdbfe">чиста вода</text>
+    <path d="M632 196h34" stroke="#38bdf8" stroke-width="5" marker-end="url(#arrow)"/>
+    <rect x="672" y="160" width="118" height="72" rx="10" fill="#064e3b" stroke="#34d399"/>
+    <text x="698" y="190" fill="#ecfdf5" font-weight="700">осушення</text>
+    <text x="692" y="214" fill="#bbf7d0">повитря, сито</text>
+    <path d="M792 196h34" stroke="#38bdf8" stroke-width="5" marker-end="url(#arrow)"/>
+    <rect x="832" y="160" width="70" height="72" rx="10" fill="#581c87" stroke="#c084fc"/>
+    <text x="846" y="190" fill="#f3e8ff" font-weight="700">инсп.</text>
+    <text x="846" y="214" fill="#ddd6fe">якисть</text>
+  </g>
+  <rect x="78" y="304" width="764" height="54" rx="12" fill="#1f2937" stroke="#374151"/>
+  <text x="104" y="338" fill="#f8fafc" font-family="Arial, sans-serif" font-size="16">Кожна стадия зменшуе певний ризик, але жодна сама по соби не гарантуе безпечний продукт.</text>
+</svg>

@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 430" role="img" aria-labelledby="title desc">
+  <title id="title">Map of size-reduction methods for food materials</title>
+  <desc id="desc">Comparison of compression, impact, attrition and cutting for different food materials.</desc>
+  <rect width="920" height="430" rx="22" fill="#111827"/>
+  <text x="42" y="58" fill="#f8fafc" font-family="Arial, sans-serif" font-size="26" font-weight="700">How food material breaks down</text>
+  <text x="42" y="90" fill="#cbd5e1" font-family="Arial, sans-serif" font-size="16">The size-reduction mechanism is chosen by brittleness, moisture, fat content, fibrousness and desired texture</text>
+  <g font-family="Arial, sans-serif">
+    <rect x="52" y="136" width="180" height="184" rx="14" fill="#1e293b" stroke="#475569"/>
+    <text x="92" y="172" fill="#bfdbfe" font-size="20" font-weight="700">Compression</text>
+    <rect x="96" y="216" width="92" height="28" fill="#94a3b8"/>
+    <rect x="108" y="194" width="68" height="20" fill="#60a5fa"/>
+    <text x="84" y="286" fill="#f8fafc" font-size="15">roller mills</text>
+
+    <rect x="270" y="136" width="180" height="184" rx="14" fill="#1e293b" stroke="#475569"/>
+    <text x="328" y="172" fill="#fecaca" font-size="20" font-weight="700">Impact</text>
+    <circle cx="360" cy="224" r="38" fill="#ef4444" opacity=".75"/>
+    <path d="M318 186l84 76M402 186l-84 76" stroke="#fee2e2" stroke-width="5"/>
+    <text x="306" y="286" fill="#f8fafc" font-size="15">hammer mills</text>
+
+    <rect x="488" y="136" width="180" height="184" rx="14" fill="#1e293b" stroke="#475569"/>
+    <text x="542" y="172" fill="#fed7aa" font-size="20" font-weight="700">Attrition</text>
+    <circle cx="558" cy="224" r="44" fill="#f97316" opacity=".8"/>
+    <circle cx="598" cy="224" r="44" fill="#fb923c" opacity=".55"/>
+    <text x="528" y="286" fill="#f8fafc" font-size="15">disc, ball mills</text>
+
+    <rect x="706" y="136" width="180" height="184" rx="14" fill="#1e293b" stroke="#475569"/>
+    <text x="762" y="172" fill="#bbf7d0" font-size="20" font-weight="700">Cutting</text>
+    <path d="M766 252l78-80 12 12-78 80z" fill="#34d399"/>
+    <path d="M774 180l80 80" stroke="#d1fae5" stroke-width="5"/>
+    <text x="752" y="286" fill="#f8fafc" font-size="15">knife cutters, grinders</text>
+  </g>
+</svg>

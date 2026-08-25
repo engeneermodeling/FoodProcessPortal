@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="580" viewBox="0 0 1080 580" role="img" aria-labelledby="title desc">
+  <title id="title">Druckhoehenverluste in einer Lebensmittelrohrleitung</title>
+  <desc id="desc">Das Schema zeigt Rohrreibungsverluste und Einzelverluste an Boegen, Ventilen, Filtern und Verengungen.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#174ea6"/></marker>
+    <style>
+      .bg{fill:#f8fbff}.pipe{stroke:#8da4c4;stroke-width:34;fill:none;stroke-linecap:round;stroke-linejoin:round}.core{stroke:#d8ecff;stroke-width:22;fill:none;stroke-linecap:round;stroke-linejoin:round}.flow{stroke:#174ea6;stroke-width:5;fill:none;marker-end:url(#arrow)}.loss{fill:#fff7e6;stroke:#e6b450;stroke-width:3}.txt{font-family:Arial,"Helvetica Neue",sans-serif;fill:#102033;font-size:23px}.head{font-size:31px;font-weight:700;fill:#0f2a4f}.label{font-size:25px;font-weight:700}.small{font-size:19px;fill:#334155}.drop{stroke:#ef4444;stroke-width:4;stroke-dasharray:9 7}
+    </style>
+  </defs>
+  <rect class="bg" width="1080" height="580"/>
+  <text class="txt head" x="540" y="50" text-anchor="middle">Druckhoehenverluste: Rohr + Einzelwiderstaende</text>
+  <path class="pipe" d="M90 315 H360 Q430 315 430 245 H620 Q690 245 690 315 H960"/>
+  <path class="core" d="M90 315 H360 Q430 315 430 245 H620 Q690 245 690 315 H960"/>
+  <path class="flow" d="M120 315 H325"/>
+  <path class="flow" d="M465 245 H600"/>
+  <path class="flow" d="M720 315 H930"/>
+  <circle class="loss" cx="430" cy="245" r="42"/>
+  <text class="txt label" x="430" y="254" text-anchor="middle">ξ</text>
+  <circle class="loss" cx="690" cy="315" r="42"/>
+  <text class="txt label" x="690" y="324" text-anchor="middle">ξ</text>
+  <rect class="loss" x="770" y="278" width="70" height="74" rx="10"/>
+  <text class="txt label" x="805" y="324" text-anchor="middle">Ventil</text>
+  <line class="drop" x1="120" y1="135" x2="930" y2="215"/>
+  <text class="txt small" x="180" y="123">Energielinie faellt entlang der Stroemung</text>
+  <text class="txt label" x="185" y="390">h_R = λ · l/d · w²/(2g)</text>
+  <text class="txt label" x="620" y="390">h_E = Σξ · w²/(2g)</text>
+  <text class="txt small" x="190" y="430">Reibung entlang der Laenge</text>
+  <text class="txt small" x="620" y="430">Boegen, T-Stuecke, Ventile, Filter</text>
+  <text class="txt small" x="540" y="532" text-anchor="middle">In Lebensmittellinien kommen grosse Verluste oft von falschen Ventilen, engen Boegen und verschmutzten Filtern.</text>
+</svg>

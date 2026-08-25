@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="500" viewBox="0 0 980 500" role="img" aria-labelledby="title desc">
+  <title id="title">Temperature profiles for parallel and counter flow</title>
+  <desc id="desc">Two graphs show that in counterflow the temperature driving force is distributed more evenly than in parallel flow.</desc>
+  <defs>
+    <style>
+      .bg{fill:#f8fafc}.panel{fill:#fff;stroke:#cbd5e1;stroke-width:2}.axis{stroke:#334155;stroke-width:3}.hot{stroke:#dc2626;stroke-width:5;fill:none}.cold{stroke:#2563eb;stroke-width:5;fill:none}.dash{stroke:#94a3b8;stroke-width:2;stroke-dasharray:7 7}.h{fill:#0f172a;font:700 24px Arial}.t{fill:#334155;font:16px Arial}
+    </style>
+  </defs>
+  <rect class="bg" width="980" height="500" rx="18"/>
+  <g transform="translate(65 70)">
+    <rect class="panel" width="390" height="330" rx="14"/>
+    <text x="195" y="38" text-anchor="middle" class="h">Parallel flow</text>
+    <line class="axis" x1="70" y1="270" x2="330" y2="270"/>
+    <line class="axis" x1="70" y1="270" x2="70" y2="75"/>
+    <path class="hot" d="M85 90 C150 130 220 165 315 195"/>
+    <path class="cold" d="M85 240 C150 215 225 198 315 185"/>
+    <line class="dash" x1="92" y1="95" x2="92" y2="240"/>
+    <line class="dash" x1="312" y1="195" x2="312" y2="185"/>
+    <text x="195" y="305" text-anchor="middle" class="t">large driving force at inlet, small at outlet</text>
+  </g>
+  <g transform="translate(525 70)">
+    <rect class="panel" width="390" height="330" rx="14"/>
+    <text x="195" y="38" text-anchor="middle" class="h">Counterflow</text>
+    <line class="axis" x1="70" y1="270" x2="330" y2="270"/>
+    <line class="axis" x1="70" y1="270" x2="70" y2="75"/>
+    <path class="hot" d="M85 95 C150 125 225 155 315 190"/>
+    <path class="cold" d="M85 220 C150 195 225 165 315 130"/>
+    <line class="dash" x1="92" y1="95" x2="92" y2="220"/>
+    <line class="dash" x1="312" y1="190" x2="312" y2="130"/>
+    <text x="195" y="305" text-anchor="middle" class="t">more even driving force, smaller area</text>
+  </g>
+  <text x="490" y="455" text-anchor="middle" class="h">Δt_lm = (Δt_big - Δt_small) / ln(Δt_big / Δt_small)</text>
+</svg>

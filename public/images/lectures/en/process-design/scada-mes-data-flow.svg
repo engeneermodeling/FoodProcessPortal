@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 430" role="img" aria-labelledby="title desc">
+  <title id="title">PLC SCADA MES ERP data flow</title>
+  <desc id="desc">Rivni tsyfrovykh system kharchovoi line vid datchykiv i PLC do SCADA, MES, ERP ta iakosti.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#38bdf8"/>
+    </marker>
+  </defs>
+  <rect width="920" height="430" rx="22" fill="#111827"/>
+  <text x="42" y="58" fill="#f8fafc" font-family="Arial, sans-serif" font-size="27" font-weight="700">Line data moves from sensor to production decision</text>
+  <g font-family="Arial, sans-serif" font-size="16" font-weight="700">
+    <g fill="#1e293b" stroke="#475569" stroke-width="2">
+      <rect x="96" y="300" width="728" height="56" rx="12"/>
+      <rect x="144" y="226" width="632" height="56" rx="12"/>
+      <rect x="192" y="152" width="536" height="56" rx="12"/>
+      <rect x="240" y="78" width="440" height="56" rx="12"/>
+    </g>
+    <text x="396" y="333" fill="#e0f2fe">Sensors, drives, scales, metal detector</text>
+    <text x="405" y="259" fill="#dbeafe">PLC / local control</text>
+    <text x="363" y="185" fill="#dcfce7">SCADA / HMI / process logs</text>
+    <text x="356" y="111" fill="#fef3c7">MES / ERP / quality / warehouse</text>
+    <path d="M460 300v-18" stroke="#38bdf8" stroke-width="4" marker-end="url(#arrow)"/>
+    <path d="M460 226v-18" stroke="#38bdf8" stroke-width="4" marker-end="url(#arrow)"/>
+    <path d="M460 152v-18" stroke="#38bdf8" stroke-width="4" marker-end="url(#arrow)"/>
+  </g>
+</svg>

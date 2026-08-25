@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 430" role="img" aria-labelledby="title desc">
+  <title id="title">Absorptionswaescher</title>
+  <desc id="desc">Gas stroemt nach oben durch die Packung, Fluessigkeit wird von oben zugefuehrt, der Schadstoff geht aus der Gasphase in die Fluessigkeit ueber.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#38bdf8"/>
+    </marker>
+    <linearGradient id="tower" x1="0" x2="1">
+      <stop offset="0" stop-color="#e0f2fe"/>
+      <stop offset="1" stop-color="#bae6fd"/>
+    </linearGradient>
+  </defs>
+  <rect width="920" height="430" rx="22" fill="#0f172a"/>
+  <text x="42" y="58" fill="#f8fafc" font-family="Arial, sans-serif" font-size="26" font-weight="700">Absorption in einer Waschkolonne</text>
+  <text x="42" y="92" fill="#cbd5e1" font-family="Arial, sans-serif" font-size="16">Kontakt von Gas und Fluessigkeit: Kuehlung, Aufnahme von NH3, H2S, Geruechen oder sauren Gasen</text>
+
+  <rect x="345" y="82" width="210" height="286" rx="30" fill="url(#tower)" stroke="#38bdf8" stroke-width="3"/>
+  <rect x="370" y="150" width="160" height="142" rx="12" fill="#475569" opacity=".55"/>
+  <g fill="none" stroke="#f8fafc" stroke-width="3" opacity=".8">
+    <path d="M386 170l32 24-32 24 32 24-32 24"/>
+    <path d="M444 170l32 24-32 24 32 24-32 24"/>
+    <path d="M502 170l20 24-20 24 20 24-20 24"/>
+  </g>
+  <text x="398" y="138" fill="#0f172a" font-family="Arial, sans-serif" font-size="17" font-weight="700">Packung / Boeden</text>
+
+  <path d="M140 310h190" stroke="#38bdf8" stroke-width="5" marker-end="url(#arrow)"/>
+  <text x="48" y="304" fill="#e0f2fe" font-family="Arial, sans-serif" font-size="17" font-weight="700">belastetes Gas</text>
+  <text x="48" y="328" fill="#94a3b8" font-family="Arial, sans-serif" font-size="14">Dampf, Gerueche, Staub, NH3</text>
+
+  <path d="M450 370V116" stroke="#0284c7" stroke-width="5" marker-end="url(#arrow)"/>
+  <text x="470" y="252" fill="#0f172a" font-family="Arial, sans-serif" font-size="18" font-weight="700">Gas nach oben</text>
+
+  <path d="M450 62v60" stroke="#22c55e" stroke-width="5" marker-end="url(#arrow)"/>
+  <text x="576" y="74" fill="#dcfce7" font-family="Arial, sans-serif" font-size="17" font-weight="700">Waschfluessigkeit</text>
+  <path d="M642 88H456" stroke="#22c55e" stroke-width="5" marker-end="url(#arrow)"/>
+
+  <path d="M555 126h215" stroke="#38bdf8" stroke-width="5" marker-end="url(#arrow)"/>
+  <text x="652" y="116" fill="#e0f2fe" font-family="Arial, sans-serif" font-size="17" font-weight="700">gereinigtes Gas</text>
+
+  <path d="M450 368v38" stroke="#22c55e" stroke-width="5" marker-end="url(#arrow)"/>
+  <text x="504" y="398" fill="#dcfce7" font-family="Arial, sans-serif" font-size="17" font-weight="700">verbrauchte Loesung</text>
+
+  <rect x="42" y="352" width="250" height="42" rx="8" fill="#1e293b" stroke="#334155"/>
+  <text x="60" y="378" fill="#f8fafc" font-family="Arial, sans-serif" font-size="15">Triebkraft: Konzentrationsdifferenz</text>
+</svg>

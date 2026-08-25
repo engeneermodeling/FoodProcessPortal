@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 430" role="img" aria-labelledby="title desc">
+  <title id="title">Типи витикання сипких материалив з бункера</title>
+  <desc id="desc">Поривняння масового витикання, канального витикання, зависання склепинням и утворення воронки.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#38bdf8"/>
+    </marker>
+  </defs>
+  <rect width="920" height="430" rx="22" fill="#111827"/>
+  <text x="42" y="58" fill="#f8fafc" font-family="Arial, sans-serif" font-size="26" font-weight="700">Бункер мае давати кероване витикання</text>
+  <g font-family="Arial, sans-serif">
+    <rect x="74" y="118" width="210" height="220" rx="14" fill="#1e293b" stroke="#334155"/>
+    <path d="M118 152h122l-26 120h-70z" fill="#fbbf24" opacity=".75"/>
+    <path d="M150 164v112M178 164v112M206 164v112" stroke="#fff7ed" stroke-width="4" marker-end="url(#arrow)"/>
+    <text x="118" y="314" fill="#dcfce7" font-size="17" font-weight="700">масове витикання</text>
+
+    <rect x="354" y="118" width="210" height="220" rx="14" fill="#1e293b" stroke="#334155"/>
+    <path d="M398 152h122l-26 120h-70z" fill="#fbbf24" opacity=".38"/>
+    <path d="M459 164v112" stroke="#38bdf8" stroke-width="10" marker-end="url(#arrow)"/>
+    <text x="398" y="314" fill="#fed7aa" font-size="17" font-weight="700">канальне витикання</text>
+
+    <rect x="634" y="118" width="210" height="220" rx="14" fill="#1e293b" stroke="#334155"/>
+    <path d="M678 152h122l-26 120h-70z" fill="#fbbf24" opacity=".58"/>
+    <path d="M702 240c26-34 52-34 78 0" fill="none" stroke="#ef4444" stroke-width="8"/>
+    <text x="692" y="314" fill="#fecaca" font-size="17" font-weight="700">зависання</text>
+  </g>
+  <text x="78" y="386" fill="#cbd5e1" font-family="Arial, sans-serif" font-size="16">Причини: вологисть, дрибна фракция, жир, електростатика, форма бункера, шорсткисть стинок, час зберигання.</text>
+</svg>

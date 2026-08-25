@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 430" role="img" aria-labelledby="title desc">
+  <title id="title">Self-draining pipe</title>
+  <desc id="desc">Porivniannia samodrenovanoi truby z ukhylom i truby z kysheneiu, de nakopychuietsia product abo myinyi rozchyn.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#38bdf8"/>
+    </marker>
+  </defs>
+  <rect width="920" height="430" rx="22" fill="#111827"/>
+  <text x="42" y="58" fill="#f8fafc" font-family="Arial, sans-serif" font-size="27" font-weight="700">A pipe must drain without pockets</text>
+  <g font-family="Arial, sans-serif" font-size="16" font-weight="700">
+    <text x="112" y="118" fill="#dcfce7">Good: slight slope to drain</text>
+    <line x1="102" y1="178" x2="408" y2="216" stroke="#38bdf8" stroke-width="16" stroke-linecap="round"/>
+    <path d="M408 216v62" stroke="#ef4444" stroke-width="8" marker-end="url(#arrow)"/>
+    <text x="386" y="308" fill="#fecaca">drain</text>
+    <text x="562" y="118" fill="#fecaca">Bad: pocket</text>
+    <path d="M552 178h118q26 0 26 26v38q0 26 26 26h118" fill="none" stroke="#38bdf8" stroke-width="16" stroke-linecap="round"/>
+    <ellipse cx="696" cy="248" rx="34" ry="16" fill="#f97316" opacity="0.75"/>
+    <text x="636" y="308" fill="#fed7aa">product/CIP residue</text>
+  </g>
+  <rect x="116" y="348" width="688" height="42" rx="10" fill="#0f172a" stroke="#475569"/>
+  <text x="142" y="375" fill="#cbd5e1" font-family="Arial, sans-serif" font-size="15">Dlia kharchovykh linii vazhlyvi ukhyl, pravylni opory, kompensatsiia rozshyrennia i dostup dlia ohliadu.</text>
+</svg>

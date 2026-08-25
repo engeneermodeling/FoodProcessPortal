@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="500" viewBox="0 0 980 500" role="img" aria-labelledby="title desc">
+  <title id="title">Регенерація тепла у пластинчастій пастеризаційній установці</title>
+  <desc id="desc">Холодний продукт підігрівається гарячим пастеризованим продуктом, потім догрівається, витримується і охолоджується.</desc>
+  <defs>
+    <style>
+      .bg{fill:#f8fafc}.box{fill:#fff;stroke:#cbd5e1;stroke-width:2}.regen{fill:#ffedd5;stroke:#ea580c;stroke-width:3}.heat{fill:#fee2e2;stroke:#dc2626;stroke-width:3}.hold{fill:#fef3c7;stroke:#ca8a04;stroke-width:3}.cool{fill:#dbeafe;stroke:#2563eb;stroke-width:3}.arr{stroke:#334155;stroke-width:4;fill:none;marker-end:url(#a)}.hot{stroke:#dc2626;stroke-width:5;fill:none;marker-end:url(#h)}.cold{stroke:#2563eb;stroke-width:5;fill:none;marker-end:url(#c)}.h{fill:#0f172a;font:700 22px Arial}.t{fill:#334155;font:15px Arial}
+    </style>
+    <marker id="a" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto"><path d="M0,0 L11,4 L0,8 Z" fill="#334155"/></marker>
+    <marker id="h" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto"><path d="M0,0 L11,4 L0,8 Z" fill="#dc2626"/></marker>
+    <marker id="c" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto"><path d="M0,0 L11,4 L0,8 Z" fill="#2563eb"/></marker>
+  </defs>
+  <rect class="bg" width="980" height="500" rx="18"/>
+  <text x="490" y="45" text-anchor="middle" class="h">Регенерація: гарячий продукт підігріває холодний вхідний продукт</text>
+  <rect x="70" y="145" width="180" height="130" rx="12" class="regen"/>
+  <rect x="300" y="145" width="160" height="130" rx="12" class="heat"/>
+  <rect x="510" y="145" width="160" height="130" rx="12" class="hold"/>
+  <rect x="720" y="145" width="180" height="130" rx="12" class="cool"/>
+  <text x="160" y="198" text-anchor="middle" class="h">Регенерація</text>
+  <text x="160" y="228" text-anchor="middle" class="t">економія пари</text>
+  <text x="380" y="198" text-anchor="middle" class="h">Догрів</text>
+  <text x="380" y="228" text-anchor="middle" class="t">пара / гаряча вода</text>
+  <text x="590" y="198" text-anchor="middle" class="h">Витримка</text>
+  <text x="590" y="228" text-anchor="middle" class="t">час + температура</text>
+  <text x="810" y="198" text-anchor="middle" class="h">Охолодження</text>
+  <text x="810" y="228" text-anchor="middle" class="t">лід-вода / розсіл</text>
+  <path class="arr" d="M30 210 H70"/>
+  <path class="arr" d="M250 210 H300"/>
+  <path class="arr" d="M460 210 H510"/>
+  <path class="arr" d="M670 210 H720"/>
+  <path class="arr" d="M900 210 H950"/>
+  <path class="hot" d="M740 325 C620 395 250 395 160 275"/>
+  <path class="cold" d="M160 145 C250 75 625 75 785 145"/>
+  <text x="110" y="122" class="t">холодний вхід</text>
+  <text x="700" y="118" class="t">гарячий після витримки</text>
+  <text x="370" y="430" text-anchor="middle" class="t">частина теплоти повертається у процес, а не йде в каналізацію</text>
+</svg>

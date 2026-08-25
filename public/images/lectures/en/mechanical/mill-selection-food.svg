@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 430" role="img" aria-labelledby="title desc">
+  <title id="title">Mill selection for food raw materials</title>
+  <desc id="desc">Tabular map for selecting a grinder by material: grain, spices, meat, chocolate mass, nuts.</desc>
+  <rect width="920" height="430" rx="22" fill="#111827"/>
+  <text x="42" y="58" fill="#f8fafc" font-family="Arial, sans-serif" font-size="25" font-weight="700">Equipment selection starts with the material</text>
+  <g font-family="Arial, sans-serif" font-size="15">
+    <rect x="52" y="104" width="816" height="54" rx="10" fill="#1f2937" stroke="#374151"/>
+    <text x="74" y="138" fill="#e5e7eb" font-weight="700">Material</text>
+    <text x="266" y="138" fill="#e5e7eb" font-weight="700">Problem</text>
+    <text x="520" y="138" fill="#e5e7eb" font-weight="700">Typical machine</text>
+    <text x="734" y="138" fill="#e5e7eb" font-weight="700">Control</text>
+
+    <g fill="#0f172a" stroke="#334155">
+      <rect x="52" y="158" width="816" height="48"/>
+      <rect x="52" y="206" width="816" height="48" fill="#1e293b"/>
+      <rect x="52" y="254" width="816" height="48"/>
+      <rect x="52" y="302" width="816" height="48" fill="#1e293b"/>
+    </g>
+    <g fill="#f8fafc">
+      <text x="74" y="188">grain</text><text x="266" y="188">hulls, gluten, moisture</text><text x="520" y="188">roller mill</text><text x="734" y="188">ash content, d50</text>
+      <text x="74" y="236">spices</text><text x="266" y="236">aroma, heating, dust</text><text x="520" y="236">hammer / pin</text><text x="734" y="236">temperature</text>
+      <text x="74" y="284">meat, cheese</text><text x="266" y="284">fibres, fat, temperature</text><text x="520" y="284">knife cutter</text><text x="734" y="284">texture</text>
+      <text x="74" y="332">chocolate, pastes</text><text x="266" y="332">viscosity, fat, smoothness</text><text x="520" y="332">ball / roller</text><text x="734" y="332">microns</text>
+    </g>
+  </g>
+</svg>

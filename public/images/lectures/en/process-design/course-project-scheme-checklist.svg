@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 460" role="img" aria-labelledby="title desc">
+  <title id="title">Process scheme checklist</title>
+  <desc id="desc">Skhema cheklista dlia perevirky tekhnolohichnoi skhemy v kursovomu proiekti.</desc>
+  <rect width="920" height="460" rx="22" fill="#111827"/>
+  <text x="42" y="58" fill="#f8fafc" font-family="Arial, sans-serif" font-size="27" font-weight="700">Scheme checklist for course project</text>
+  <g font-family="Arial, sans-serif" font-size="16">
+    <rect x="82" y="104" width="756" height="300" rx="18" fill="#1e293b" stroke="#475569"/>
+    <g fill="#f8fafc">
+      <text x="124" y="150">□ main equipment is numbered and labelled</text>
+      <text x="124" y="190">□ raw material, product, water, steam, cooling and CIP flows are shown</text>
+      <text x="124" y="230">□ pumps, valves, drains, bypasses and buffer tanks are present</text>
+      <text x="124" y="270">□ key sensors are shown: T, p, F, L, pH, conductivity, mass</text>
+      <text x="124" y="310">□ cleaning, startup, shutdown and emergency behaviour is clear</text>
+      <text x="124" y="350">□ scheme matches capacity calculations and balances</text>
+    </g>
+    <circle cx="102" cy="143" r="7" fill="#38bdf8"/>
+    <circle cx="102" cy="183" r="7" fill="#38bdf8"/>
+    <circle cx="102" cy="223" r="7" fill="#38bdf8"/>
+    <circle cx="102" cy="263" r="7" fill="#38bdf8"/>
+    <circle cx="102" cy="303" r="7" fill="#38bdf8"/>
+    <circle cx="102" cy="343" r="7" fill="#38bdf8"/>
+  </g>
+</svg>

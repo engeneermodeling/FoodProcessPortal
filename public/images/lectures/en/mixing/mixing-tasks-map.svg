@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="560" viewBox="0 0 980 560" role="img" aria-labelledby="title desc">
+  <title id="title">Map of mixing tasks in food manufacturing</title>
+  <desc id="desc">The central mixing block is connected with dissolution, suspension, emulsification, heat transfer, gas-liquid dispersion and homogenization.</desc>
+  <defs>
+    <style>
+      .bg{fill:#f8fafc}.line{stroke:#64748b;stroke-width:3;fill:none}.box{fill:#fff;stroke:#cbd5e1;stroke-width:2}.core{fill:#6d28d9}.coreText{fill:#fff;font:700 30px Arial}.h{fill:#0f172a;font:700 20px Arial}.t{fill:#334155;font:16px Arial}.small{fill:#475569;font:14px Arial}
+    </style>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L9,3 L0,6 Z" fill="#64748b"/></marker>
+  </defs>
+  <rect class="bg" width="980" height="560" rx="18"/>
+  <rect x="365" y="220" width="250" height="120" rx="18" class="core"/>
+  <text x="490" y="270" text-anchor="middle" class="coreText">Mixing</text>
+  <text x="490" y="304" text-anchor="middle" class="small" fill="#ede9fe">the goal determines the impeller type</text>
+  <path class="line" marker-end="url(#arrow)" d="M365 250 C265 210 230 160 185 112"/>
+  <path class="line" marker-end="url(#arrow)" d="M365 300 C260 330 214 382 178 445"/>
+  <path class="line" marker-end="url(#arrow)" d="M490 220 C490 160 490 125 490 82"/>
+  <path class="line" marker-end="url(#arrow)" d="M615 250 C710 205 750 155 808 110"/>
+  <path class="line" marker-end="url(#arrow)" d="M615 300 C725 330 780 380 828 448"/>
+  <path class="line" marker-end="url(#arrow)" d="M490 340 C490 395 490 430 490 485"/>
+  <rect x="54" y="54" width="250" height="116" rx="12" class="box"/>
+  <text x="179" y="91" text-anchor="middle" class="h">Dissolution</text>
+  <text x="76" y="122" class="t">sugar, salt, dry blends</text>
+  <text x="76" y="148" class="small">time and temperature matter</text>
+  <rect x="54" y="390" width="250" height="116" rx="12" class="box"/>
+  <text x="179" y="427" text-anchor="middle" class="h">Suspension</text>
+  <text x="76" y="458" class="t">pulp, cocoa, spices</text>
+  <text x="76" y="484" class="small">keep particles from settling</text>
+  <rect x="365" y="34" width="250" height="116" rx="12" class="box"/>
+  <text x="490" y="71" text-anchor="middle" class="h">Emulsification</text>
+  <text x="387" y="102" class="t">sauces, mayonnaise, milk</text>
+  <text x="387" y="128" class="small">shear and stabilizer are needed</text>
+  <rect x="676" y="54" width="250" height="116" rx="12" class="box"/>
+  <text x="801" y="91" text-anchor="middle" class="h">Heat transfer</text>
+  <text x="698" y="122" class="t">cooking, cooling, pastes</text>
+  <text x="698" y="148" class="small">less fouling and dead zones</text>
+  <rect x="676" y="390" width="250" height="116" rx="12" class="box"/>
+  <text x="801" y="427" text-anchor="middle" class="h">Gas-liquid</text>
+  <text x="698" y="458" class="t">aeration, carbonation</text>
+  <text x="698" y="484" class="small">foam and bubble control</text>
+  <rect x="365" y="410" width="250" height="116" rx="12" class="box"/>
+  <text x="490" y="447" text-anchor="middle" class="h">Homogenization</text>
+  <text x="387" y="478" class="t">uniform composition and texture</text>
+  <text x="387" y="504" class="small">quality is measured by stability</text>
+</svg>

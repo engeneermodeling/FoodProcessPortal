@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="520" viewBox="0 0 980 520" role="img" aria-labelledby="title desc">
+  <title id="title">Kuehlmedien in Lebensmittelprozessen</title>
+  <desc id="desc">Die Karte vergleicht Wasser, Eiswasser, Glykol, Sole, Luft und Kaeltemittel fuer typische Kuehlaufgaben.</desc>
+  <defs>
+    <style>
+      .bg{fill:#f8fafc}.core{fill:#2563eb}.box{fill:#fff;stroke:#cbd5e1;stroke-width:2}.line{stroke:#94a3b8;stroke-width:3;fill:none}.h{fill:#0f172a;font:700 21px Arial}.coreText{fill:#fff;font:700 28px Arial}.t{fill:#334155;font:16px Arial}.small{fill:#475569;font:14px Arial}
+    </style>
+  </defs>
+  <rect class="bg" width="980" height="520" rx="18"/>
+  <rect x="360" y="205" width="260" height="115" rx="18" class="core"/>
+  <text x="490" y="252" text-anchor="middle" class="coreText">Kuehlung</text>
+  <text x="490" y="285" text-anchor="middle" fill="#dbeafe" font-family="Arial" font-size="15">Temperatur, Sicherheit, Qualitaet</text>
+  <path class="line" d="M360 230 C285 195 235 145 185 95"/>
+  <path class="line" d="M360 300 C280 335 230 385 180 435"/>
+  <path class="line" d="M490 205 C490 155 490 120 490 85"/>
+  <path class="line" d="M620 230 C700 195 750 145 805 95"/>
+  <path class="line" d="M620 300 C700 335 750 385 805 435"/>
+  <rect x="55" y="50" width="260" height="105" rx="12" class="box"/>
+  <text x="185" y="84" text-anchor="middle" class="h">Wasser</text>
+  <text x="80" y="120" class="t">Vorkuehlung</text>
+  <rect x="360" y="35" width="260" height="105" rx="12" class="box"/>
+  <text x="490" y="69" text-anchor="middle" class="h">Eiswasser</text>
+  <text x="382" y="105" class="t">Milch, Getraenke, Pasteurisation</text>
+  <rect x="665" y="50" width="260" height="105" rx="12" class="box"/>
+  <text x="795" y="84" text-anchor="middle" class="h">Glykol / Sole</text>
+  <text x="690" y="120" class="t">unter 0 °C, indirekter Kontakt</text>
+  <rect x="55" y="380" width="260" height="105" rx="12" class="box"/>
+  <text x="185" y="414" text-anchor="middle" class="h">Luft</text>
+  <text x="80" y="450" class="t">Raeume, Tunnel, Gefrieren</text>
+  <rect x="665" y="380" width="260" height="105" rx="12" class="box"/>
+  <text x="795" y="414" text-anchor="middle" class="h">Kaeltemittel</text>
+  <text x="690" y="450" class="t">Verdampfer der Kaeltemaschine</text>
+</svg>

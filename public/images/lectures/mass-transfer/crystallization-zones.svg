@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 430" role="img" aria-labelledby="title desc">
+  <title id="title">Зони насичення і кристалізації</title>
+  <desc id="desc">Діаграма показує ненасичену, метастабільну і лабільну зони, де кристали розчиняються, ростуть або самовільно зароджуються.</desc>
+  <rect width="920" height="430" rx="22" fill="#0f172a"/>
+  <text x="42" y="58" fill="#f8fafc" font-family="Arial, sans-serif" font-size="26" font-weight="700">Пересичення керує кристалізацією</text>
+  <text x="42" y="90" fill="#cbd5e1" font-family="Arial, sans-serif" font-size="16">Потрібно тримати розчин у зоні росту кристалів, а не хаотичного зародження</text>
+  <g transform="translate(110 120)">
+    <line x1="0" y1="250" x2="680" y2="250" stroke="#94a3b8" stroke-width="2"/>
+    <line x1="0" y1="250" x2="0" y2="0" stroke="#94a3b8" stroke-width="2"/>
+    <text x="620" y="286" fill="#cbd5e1" font-family="Arial, sans-serif" font-size="15">температура</text>
+    <text x="-86" y="18" fill="#cbd5e1" font-family="Arial, sans-serif" font-size="15" transform="rotate(-90 -86 18)">концентрація</text>
+    <path d="M18 214 C170 185 300 142 652 70" fill="none" stroke="#38bdf8" stroke-width="4"/>
+    <path d="M18 168 C180 142 338 92 652 36" fill="none" stroke="#f59e0b" stroke-width="4" stroke-dasharray="10 8"/>
+    <path d="M18 214 L652 70 L652 250 L18 250 Z" fill="#38bdf8" opacity=".13"/>
+    <path d="M18 168 C180 142 338 92 652 36 L652 70 C300 142 170 185 18 214 Z" fill="#f59e0b" opacity=".18"/>
+    <path d="M18 18 L652 18 L652 36 C338 92 180 142 18 168 Z" fill="#ef4444" opacity=".16"/>
+    <text x="382" y="218" fill="#bae6fd" font-family="Arial, sans-serif" font-size="18" font-weight="700">ненасичена зона</text>
+    <text x="332" y="128" fill="#fed7aa" font-family="Arial, sans-serif" font-size="18" font-weight="700">метастабільна зона</text>
+    <text x="380" y="54" fill="#fecaca" font-family="Arial, sans-serif" font-size="18" font-weight="700">лабільна зона</text>
+    <text x="36" y="238" fill="#67e8f9" font-family="Arial, sans-serif" font-size="14">лінія насичення</text>
+    <text x="42" y="158" fill="#fdba74" font-family="Arial, sans-serif" font-size="14">межа самозародження</text>
+  </g>
+</svg>

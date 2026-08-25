@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="560" viewBox="0 0 1080 560" role="img" aria-labelledby="title desc">
+  <title id="title">Scale-up in der Lebensmittelproduktion</title>
+  <desc id="desc">Das Schema zeigt den Uebergang von Laborprobe zu Pilotanlage und Industrieapparat mit Kontrolle geometrischer, kinematischer und dynamischer Aehnlichkeit.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#174ea6"/></marker>
+    <style>
+      .bg{fill:#f8fbff}.card{fill:#fff;stroke:#8da4c4;stroke-width:3;rx:18}.tank{fill:#eef6ff;stroke:#174ea6;stroke-width:4}.liq{fill:#cfe8ff;stroke:#5b8fd8;stroke-width:2}.mix{stroke:#174ea6;stroke-width:5;fill:none}.flow{stroke:#174ea6;stroke-width:6;fill:none;marker-end:url(#arrow)}.warn{fill:#fff7e6;stroke:#e6b450;stroke-width:3;rx:16}.txt{font-family:Arial,"Helvetica Neue",sans-serif;fill:#102033;font-size:22px}.head{font-size:31px;font-weight:700;fill:#0f2a4f}.label{font-size:25px;font-weight:700}.small{font-size:18px;fill:#334155}.num{font-size:38px;font-weight:700;fill:#174ea6}
+    </style>
+  </defs>
+  <rect class="bg" width="1080" height="560"/>
+  <text class="txt head" x="540" y="48" text-anchor="middle">Scale-up: groesser machen heisst nicht, den Prozess zu bewahren</text>
+
+  <rect class="card" x="45" y="105" width="260" height="295"/>
+  <rect class="card" x="410" y="88" width="260" height="312"/>
+  <rect class="card" x="775" y="72" width="260" height="328"/>
+
+  <path class="tank" d="M125 190 h100 v135 c-15 28-85 28-100 0z"/>
+  <ellipse class="liq" cx="175" cy="324" rx="50" ry="13"/>
+  <path class="mix" d="M175 160 v118"/>
+  <path class="mix" d="M145 265 h60"/>
+  <text class="txt label" x="175" y="135" text-anchor="middle">Labor</text>
+  <text class="txt num" x="175" y="370" text-anchor="middle">2 L</text>
+  <text class="txt small" x="175" y="430" text-anchor="middle">Geschmack, Rezeptur,</text>
+  <text class="txt small" x="175" y="454" text-anchor="middle">erste Eigenschaften</text>
+
+  <path class="tank" d="M475 155 h130 v180 c-18 35-112 35-130 0z"/>
+  <ellipse class="liq" cx="540" cy="333" rx="65" ry="17"/>
+  <path class="mix" d="M540 125 v160"/>
+  <path class="mix" d="M498 270 h84"/>
+  <text class="txt label" x="540" y="135" text-anchor="middle">Pilot</text>
+  <text class="txt num" x="540" y="370" text-anchor="middle">200 L</text>
+  <text class="txt small" x="540" y="430" text-anchor="middle">Pruefung von Re, Nu,</text>
+  <text class="txt small" x="540" y="454" text-anchor="middle">Mischzeit</text>
+
+  <path class="tank" d="M835 125 h140 v220 c-22 42-118 42-140 0z"/>
+  <ellipse class="liq" cx="905" cy="343" rx="70" ry="19"/>
+  <path class="mix" d="M905 92 v195"/>
+  <path class="mix" d="M858 270 h94"/>
+  <text class="txt label" x="905" y="120" text-anchor="middle">Produktion</text>
+  <text class="txt num" x="905" y="382" text-anchor="middle">2000 L</text>
+  <text class="txt small" x="905" y="430" text-anchor="middle">Chargenqualitaet,</text>
+  <text class="txt small" x="905" y="454" text-anchor="middle">Energie, Stabilitaet</text>
+
+  <path class="flow" d="M315 250 H388"/>
+  <path class="flow" d="M680 250 H753"/>
+  <text class="txt small" x="350" y="225" text-anchor="middle">nicht kopieren</text>
+  <text class="txt small" x="715" y="225" text-anchor="middle">sondern pruefen</text>
+
+  <rect class="warn" x="135" y="485" width="810" height="50"/>
+  <text class="txt label" x="540" y="517" text-anchor="middle">Aehnlichkeit = Geometrie + Geschwindigkeiten + Kraefteverhaeltnisse</text>
+</svg>

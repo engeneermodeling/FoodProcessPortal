@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 430" role="img" aria-labelledby="title desc">
+  <title id="title">PFD and P&ID detail levels</title>
+  <desc id="desc">Porivniannia tekhnolohichnoi blok-skhemy, PFD i P&ID dlia kharchovoi line.</desc>
+  <rect width="920" height="430" rx="22" fill="#111827"/>
+  <text x="42" y="58" fill="#f8fafc" font-family="Arial, sans-serif" font-size="27" font-weight="700">PFD and P&amp;ID show different depth of the same line</text>
+  <g font-family="Arial, sans-serif">
+    <rect x="62" y="106" width="240" height="230" rx="16" fill="#0f172a" stroke="#475569"/>
+    <rect x="340" y="106" width="240" height="230" rx="16" fill="#0f172a" stroke="#475569"/>
+    <rect x="618" y="106" width="240" height="230" rx="16" fill="#0f172a" stroke="#475569"/>
+    <text x="102" y="146" fill="#dbeafe" font-size="21" font-weight="700">Block diagram</text>
+    <text x="429" y="146" fill="#dcfce7" font-size="21" font-weight="700">PFD</text>
+    <text x="704" y="146" fill="#fef3c7" font-size="21" font-weight="700">P&amp;ID</text>
+    <g font-size="15" fill="#cbd5e1">
+      <text x="92" y="190">operations</text><text x="92" y="220">main flows</text><text x="92" y="250">process logic</text>
+      <text x="370" y="190">equipment</text><text x="370" y="220">flows and modes</text><text x="370" y="250">product flows</text>
+      <text x="648" y="190">valves</text><text x="648" y="220">instruments</text><text x="648" y="250">drains, CIP</text><text x="648" y="280">interlocks</text>
+    </g>
+    <g stroke="#38bdf8" stroke-width="3" fill="none">
+      <path d="M110 300h142"/>
+      <path d="M388 300h142"/>
+      <path d="M666 300h142"/>
+      <circle cx="156" cy="300" r="18"/>
+      <rect x="438" y="282" width="42" height="36" rx="7"/>
+      <path d="M700 282v36M700 300h56M756 282v36"/>
+      <circle cx="780" cy="300" r="16"/>
+    </g>
+  </g>
+</svg>

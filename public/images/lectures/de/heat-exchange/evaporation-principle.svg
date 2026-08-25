@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="520" viewBox="0 0 980 520" role="img" aria-labelledby="title desc">
+  <title id="title">Prinzip des Eindampfens einer Lebensmittelfluessigkeit</title>
+  <desc id="desc">Das Schema zeigt Produktzufuhr, Dampferwaermung, Bildung von Brudendampf sowie Abzug von Kondensat und Konzentrat.</desc>
+  <defs>
+    <style>
+      .bg{fill:#f8fafc}.body{fill:#fff;stroke:#1e293b;stroke-width:4}.jacket{fill:#fee2e2;stroke:#dc2626;stroke-width:3}.liq{fill:#bfdbfe}.pipe{stroke:#334155;stroke-width:6;fill:none;stroke-linecap:round}.steam{stroke:#dc2626;stroke-width:5;fill:none;marker-end:url(#hot)}.vap{stroke:#7c3aed;stroke-width:5;fill:none;marker-end:url(#vap)}.prod{stroke:#2563eb;stroke-width:5;fill:none;marker-end:url(#prod)}.conc{stroke:#0f766e;stroke-width:5;fill:none;marker-end:url(#conc)}.h{fill:#0f172a;font:700 24px Arial}.t{fill:#334155;font:16px Arial}
+    </style>
+    <marker id="hot" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto"><path d="M0,0 L11,4 L0,8 Z" fill="#dc2626"/></marker>
+    <marker id="vap" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto"><path d="M0,0 L11,4 L0,8 Z" fill="#7c3aed"/></marker>
+    <marker id="prod" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto"><path d="M0,0 L11,4 L0,8 Z" fill="#2563eb"/></marker>
+    <marker id="conc" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto"><path d="M0,0 L11,4 L0,8 Z" fill="#0f766e"/></marker>
+  </defs>
+  <rect class="bg" width="980" height="520" rx="18"/>
+  <text x="490" y="45" text-anchor="middle" class="h">Eindampfen: Wasser wird entfernt, Trockensubstanz bleibt im Konzentrat</text>
+  <path class="jacket" d="M330 115 H650 V355 Q490 450 330 355 Z"/>
+  <path class="body" d="M365 135 H615 V340 Q490 410 365 340 Z"/>
+  <path class="liq" d="M370 245 H610 V338 Q490 392 370 338 Z"/>
+  <path class="prod" d="M110 240 H365"/>
+  <text x="125" y="222" class="t">verduenntes Produkt</text>
+  <path class="steam" d="M675 170 H625"/>
+  <text x="692" y="176" class="t">Heizdampf</text>
+  <path class="pipe" d="M650 335 H760"/>
+  <path class="steam" d="M760 335 H840"/>
+  <text x="730" y="370" class="t">Kondensat</text>
+  <path class="vap" d="M490 134 C490 80 570 82 650 82 H805"/>
+  <text x="690" y="66" class="t">Brudendampf</text>
+  <path class="conc" d="M490 405 V462 H725"/>
+  <text x="560" y="488" class="t">Konzentrat</text>
+  <text x="490" y="268" text-anchor="middle" class="h">Sieden</text>
+  <text x="490" y="302" text-anchor="middle" class="t">oft unter Vakuum</text>
+</svg>

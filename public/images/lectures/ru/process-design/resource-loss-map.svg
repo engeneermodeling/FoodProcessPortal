@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 430" role="img" aria-labelledby="title desc">
+  <title id="title">Карта ресурсних втрат</title>
+  <desc id="desc">Карта типових ресурсних втрат харчовои линии: продукт, вода, тепло, холод, химия, пакування.</desc>
+  <rect width="920" height="430" rx="22" fill="#111827"/>
+  <text x="42" y="58" fill="#f8fafc" font-family="Arial, sans-serif" font-size="27" font-weight="700">Кожна втрата мае мисце, причину и власника</text>
+  <g font-family="Arial, sans-serif" font-size="16" font-weight="700">
+    <g fill="#1e293b" stroke="#475569" stroke-width="2">
+      <rect x="84" y="116" width="220" height="88" rx="14"/>
+      <rect x="350" y="116" width="220" height="88" rx="14"/>
+      <rect x="616" y="116" width="220" height="88" rx="14"/>
+      <rect x="84" y="244" width="220" height="88" rx="14"/>
+      <rect x="350" y="244" width="220" height="88" rx="14"/>
+      <rect x="616" y="244" width="220" height="88" rx="14"/>
+    </g>
+    <text x="134" y="153" fill="#fee2e2">Продукт</text>
+    <text x="116" y="180" fill="#cbd5e1" font-size="14">пуск, зупинка, брак</text>
+    <text x="414" y="153" fill="#dbeafe">Вода</text>
+    <text x="383" y="180" fill="#cbd5e1" font-size="14">CIP, ополискування</text>
+    <text x="682" y="153" fill="#fef3c7">Тепло</text>
+    <text x="653" y="180" fill="#cbd5e1" font-size="14">пара, конденсат</text>
+    <text x="150" y="281" fill="#cffafe">Холод</text>
+    <text x="116" y="308" fill="#cbd5e1" font-size="14">охолодження, втрати</text>
+    <text x="407" y="281" fill="#e0e7ff">Химия</text>
+    <text x="380" y="308" fill="#cbd5e1" font-size="14">мийни засоби</text>
+    <text x="670" y="281" fill="#dcfce7">Пакування</text>
+    <text x="650" y="308" fill="#cbd5e1" font-size="14">пливка, тара, етикетка</text>
+  </g>
+</svg>

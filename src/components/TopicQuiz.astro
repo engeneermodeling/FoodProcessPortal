@@ -1,0 +1,448 @@
+---
+import { getTopicQuiz, topicQuizUi } from "../data/topicQuizzes";
+import type { Locale } from "../config";
+
+interface Props {
+  topic?: string;
+  locale?: string;
+}
+
+const { topic, locale = "uk" } = Astro.props;
+const normalizedLocale: Locale =
+  locale === "uk" || locale === "en" || locale === "de" || locale === "ru"
+    ? locale
+    : "uk";
+const questions = getTopicQuiz(topic, normalizedLocale);
+const ui = topicQuizUi[normalizedLocale];
+---
+
+{
+  questions.length > 0 && (
+    <section
+      id="topic-quiz"
+      class="topic-quiz"
+      data-topic-quiz
+      data-questions={JSON.stringify(questions)}
+      data-locale={normalizedLocale}
+      data-topic={topic}
+      data-result-label={ui.result}
+      data-best-label={ui.best}
+      data-correct-label={ui.correct}
+      data-incorrect-label={ui.incorrect}
+      data-choose-label={ui.chooseAnswer}
+      data-explanation-label={ui.explanation}
+    >
+      <div class="topic-quiz-header">
+        <div>
+          <h2>{ui.title}</h2>
+          <p>{ui.description}</p>
+        </div>
+        <button class="topic-quiz-secondary" type="button" data-quiz-shuffle>
+          {ui.shuffle}
+        </button>
+      </div>
+
+      <div class="topic-quiz-status" aria-live="polite">
+        <strong data-quiz-result>{ui.result}: 0/{questions.length}</strong>
+        <span data-quiz-best>{ui.best}: -</span>
+      </div>
+
+      <form class="topic-quiz-form" data-quiz-form>
+        <div class="topic-quiz-list" data-quiz-list></div>
+        <div class="topic-quiz-actions">
+          <button class="topic-quiz-primary" type="submit">{ui.check}</button>
+          <button class="topic-quiz-reset" type="button" data-quiz-reset>
+            {ui.reset}
+          </button>
+        </div>
+      </form>
+    </section>
+  )
+}
+
+<script>
+  interface QuizQuestion {
+    id: string;
+    prompt: string;
+    options: string[];
+    answer: number;
+    explanation: string;
+  }
+
+  interface RenderedOption {
+    text: string;
+    correct: boolean;
+  }
+
+  interface RenderedQuestion {
+    id: string;
+    prompt: string;
+    options: RenderedOption[];
+    explanation: string;
+  }
+
+  function shuffleItems<T>(items: T[]) {
+    const shuffled = [...items];
+    for (let i = shuffled.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+    return shuffled;
+  }
+
+  function getQuizKey(root: HTMLElement) {
+    const locale = root.dataset.locale || "uk";
+    const topic = root.dataset.topic || "topic";
+    return `foodprocess:topic-quiz:${locale}:${topic}`;
+  }
+
+  function loadBest(root: HTMLElement) {
+    try {
+      const raw = localStorage.getItem(getQuizKey(root));
+      if (!raw) return null;
+      return JSON.parse(raw) as { score: number; total: number };
+    } catch {
+      return null;
+    }
+  }
+
+  function saveBest(root: HTMLElement, score: number, total: number) {
+    const best = loadBest(root);
+    if (!best || score / total >= best.score / best.total) {
+      localStorage.setItem(getQuizKey(root), JSON.stringify({ score, total }));
+    }
+  }
+
+  function notifyLearningProgressChanged(root: HTMLElement) {
+    window.dispatchEvent(
+      new CustomEvent("foodprocess:learning-progress-changed", {
+        detail: {
+          locale: root.dataset.locale || "uk",
+          topic: root.dataset.topic || "",
+        },
+      }),
+    );
+  }
+
+  function updateBest(root: HTMLElement) {
+    const best = loadBest(root);
+    const bestLabel = root.dataset.bestLabel || "Best score";
+    const target = root.querySelector("[data-quiz-best]");
+    if (!target) return;
+    target.textContent = best ? `${bestLabel}: ${best.score}/${best.total}` : `${bestLabel}: -`;
+  }
+
+  function makeRenderedQuestions(questions: QuizQuestion[]): RenderedQuestion[] {
+    return shuffleItems(questions)
+      .slice(0, 10)
+      .map((question) => ({
+        id: question.id,
+        prompt: question.prompt,
+        explanation: question.explanation,
+        options: shuffleItems(
+          question.options.map((text, index) => ({
+            text,
+            correct: index === question.answer,
+          })),
+        ),
+      }));
+  }
+
+  function renderQuiz(root: HTMLElement, questions: QuizQuestion[]) {
+    const list = root.querySelector("[data-quiz-list]");
+    const result = root.querySelector("[data-quiz-result]");
+    const resultLabel = root.dataset.resultLabel || "Result";
+    if (!list) return;
+
+    const rendered = makeRenderedQuestions(questions);
+    root.dataset.renderedQuestions = JSON.stringify(rendered);
+    list.innerHTML = "";
+
+    rendered.forEach((question, questionIndex) => {
+      const item = document.createElement("fieldset");
+      item.className = "topic-quiz-item";
+      item.dataset.questionId = question.id;
+
+      const legend = document.createElement("legend");
+      legend.textContent = `${questionIndex + 1}. ${question.prompt}`;
+      item.appendChild(legend);
+
+      const options = document.createElement("div");
+      options.className = "topic-quiz-options";
+
+      question.options.forEach((option, optionIndex) => {
+        const label = document.createElement("label");
+        const input = document.createElement("input");
+        const text = document.createElement("span");
+
+        input.type = "radio";
+        input.name = `topic-quiz-${question.id}`;
+        input.value = String(optionIndex);
+        input.dataset.correct = option.correct ? "1" : "0";
+        text.textContent = option.text;
+        label.append(input, text);
+        options.appendChild(label);
+      });
+
+      const feedback = document.createElement("p");
+      feedback.className = "topic-quiz-feedback";
+      feedback.dataset.quizFeedback = "";
+      item.append(options, feedback);
+      list.appendChild(item);
+    });
+
+    if (result) result.textContent = `${resultLabel}: 0/${rendered.length}`;
+    root.classList.remove("is-checked");
+    updateBest(root);
+  }
+
+  function checkQuiz(root: HTMLElement) {
+    const items = root.querySelectorAll<HTMLElement>("[data-question-id]");
+    const result = root.querySelector("[data-quiz-result]");
+    const resultLabel = root.dataset.resultLabel || "Result";
+    const correctLabel = root.dataset.correctLabel || "Correct";
+    const incorrectLabel = root.dataset.incorrectLabel || "Review needed";
+    const chooseLabel = root.dataset.chooseLabel || "Choose an answer";
+    const explanationLabel = root.dataset.explanationLabel || "Explanation";
+    const rendered = JSON.parse(root.dataset.renderedQuestions || "[]") as RenderedQuestion[];
+    let score = 0;
+
+    items.forEach((item) => {
+      const selected = item.querySelector<HTMLInputElement>("input[type='radio']:checked");
+      const feedback = item.querySelector("[data-quiz-feedback]");
+      const question = rendered.find((entry) => entry.id === item.dataset.questionId);
+
+      item.classList.remove("is-correct", "is-incorrect", "is-missing");
+
+      if (!selected) {
+        item.classList.add("is-missing");
+        if (feedback) feedback.textContent = chooseLabel;
+        return;
+      }
+
+      const isCorrect = selected.dataset.correct === "1";
+      if (isCorrect) {
+        score++;
+        item.classList.add("is-correct");
+      } else {
+        item.classList.add("is-incorrect");
+      }
+
+      if (feedback) {
+        feedback.textContent = `${isCorrect ? correctLabel : incorrectLabel}. ${explanationLabel}: ${
+          question?.explanation || ""
+        }`;
+      }
+    });
+
+    if (result) result.textContent = `${resultLabel}: ${score}/${items.length}`;
+    saveBest(root, score, items.length);
+    updateBest(root);
+    root.classList.add("is-checked");
+    notifyLearningProgressChanged(root);
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll<HTMLElement>("[data-topic-quiz]").forEach((root) => {
+      const rawQuestions = root.dataset.questions;
+      if (!rawQuestions) return;
+
+      const questions = JSON.parse(rawQuestions) as QuizQuestion[];
+      const form = root.querySelector<HTMLFormElement>("[data-quiz-form]");
+      renderQuiz(root, questions);
+
+      root
+        .querySelector("[data-quiz-shuffle]")
+        ?.addEventListener("click", () => renderQuiz(root, questions));
+
+      root.querySelector("[data-quiz-reset]")?.addEventListener("click", () => {
+        localStorage.removeItem(getQuizKey(root));
+        renderQuiz(root, questions);
+        notifyLearningProgressChanged(root);
+      });
+
+      form?.addEventListener("submit", (event) => {
+        event.preventDefault();
+        checkQuiz(root);
+      });
+    });
+  });
+</script>
+
+<style>
+  .topic-quiz {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: color-mix(in srgb, var(--bg-secondary) 92%, var(--accent-blue));
+    border: 1px solid var(--border-color);
+    border-radius: 0.75rem;
+  }
+
+  .topic-quiz-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .topic-quiz h2 {
+    margin: 0 0 0.45rem;
+    color: var(--text-primary);
+    font-size: 1.35rem;
+    line-height: 1.25;
+  }
+
+  .topic-quiz p {
+    margin: 0;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+
+  .topic-quiz-status {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+    color: var(--text-secondary);
+  }
+
+  .topic-quiz-status strong {
+    color: var(--text-primary);
+  }
+
+  .topic-quiz-list {
+    display: grid;
+    gap: 1rem;
+  }
+
+  .topic-quiz-item {
+    margin: 0;
+    padding: 1rem;
+    background: color-mix(in srgb, var(--bg-primary) 88%, var(--bg-secondary));
+    border: 1px solid var(--border-color);
+    border-radius: 0.65rem;
+  }
+
+  .topic-quiz-item legend {
+    padding: 0;
+    color: var(--text-primary);
+    font-weight: 800;
+    line-height: 1.45;
+  }
+
+  .topic-quiz-options {
+    display: grid;
+    gap: 0.65rem;
+    margin-top: 0.9rem;
+  }
+
+  .topic-quiz-options label {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.6rem;
+    align-items: start;
+    padding: 0.7rem 0.8rem;
+    background: color-mix(in srgb, var(--bg-secondary) 82%, transparent);
+    border: 1px solid color-mix(in srgb, var(--border-color) 85%, transparent);
+    border-radius: 0.5rem;
+    color: var(--text-primary);
+    cursor: pointer;
+    line-height: 1.45;
+  }
+
+  .topic-quiz-options input {
+    margin-top: 0.2rem;
+    accent-color: var(--accent-blue);
+  }
+
+  .topic-quiz-feedback {
+    display: none;
+    margin-top: 0.8rem !important;
+    font-weight: 700;
+  }
+
+  .topic-quiz.is-checked .topic-quiz-feedback {
+    display: block;
+  }
+
+  .topic-quiz-item.is-correct {
+    border-color: color-mix(in srgb, #22c55e 75%, var(--border-color));
+  }
+
+  .topic-quiz-item.is-incorrect,
+  .topic-quiz-item.is-missing {
+    border-color: color-mix(in srgb, #f59e0b 75%, var(--border-color));
+  }
+
+  .topic-quiz-item.is-correct .topic-quiz-feedback {
+    color: #86efac;
+  }
+
+  .topic-quiz-item.is-incorrect .topic-quiz-feedback,
+  .topic-quiz-item.is-missing .topic-quiz-feedback {
+    color: #fbbf24;
+  }
+
+  .topic-quiz-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1.25rem;
+  }
+
+  .topic-quiz-primary,
+  .topic-quiz-secondary,
+  .topic-quiz-reset {
+    padding: 0.65rem 0.9rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font: inherit;
+    font-size: 0.9rem;
+    font-weight: 800;
+    transition:
+      transform 0.2s ease,
+      filter 0.2s ease;
+  }
+
+  .topic-quiz-primary,
+  .topic-quiz-secondary {
+    background: var(--accent-blue);
+    border: 1px solid var(--accent-blue);
+    color: white;
+  }
+
+  .topic-quiz-reset {
+    background: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+  }
+
+  .topic-quiz-primary:hover,
+  .topic-quiz-secondary:hover,
+  .topic-quiz-reset:hover {
+    filter: brightness(1.08);
+    transform: translateY(-1px);
+  }
+
+  @media (max-width: 640px) {
+    .topic-quiz {
+      padding: 1.1rem;
+    }
+
+    .topic-quiz-header {
+      display: block;
+    }
+
+    .topic-quiz-secondary {
+      width: 100%;
+      margin-top: 1rem;
+    }
+
+    .topic-quiz-actions {
+      display: grid;
+    }
+  }
+</style>

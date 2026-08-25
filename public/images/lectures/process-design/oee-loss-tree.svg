@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 430" role="img" aria-labelledby="title desc">
+  <title id="title">Втрати OEE харчової лінії</title>
+  <desc id="desc">Дерево втрат OEE: доступність, продуктивність і якість із прикладами для харчової лінії.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#38bdf8"/>
+    </marker>
+  </defs>
+  <rect width="920" height="430" rx="22" fill="#111827"/>
+  <text x="42" y="58" fill="#f8fafc" font-family="Arial, sans-serif" font-size="27" font-weight="700">OEE показує, де лінія втрачає корисний час і продукт</text>
+  <g font-family="Arial, sans-serif">
+    <rect x="348" y="92" width="224" height="58" rx="14" fill="#1e3a8a" stroke="#3b82f6"/>
+    <text x="421" y="128" fill="#dbeafe" font-size="20" font-weight="700">OEE лінії</text>
+    <path d="M460 154v40" stroke="#38bdf8" stroke-width="4" marker-end="url(#arrow)"/>
+    <path d="M194 198h532" stroke="#38bdf8" stroke-width="4"/>
+    <path d="M194 198v32" stroke="#38bdf8" stroke-width="4" marker-end="url(#arrow)"/>
+    <path d="M460 198v32" stroke="#38bdf8" stroke-width="4" marker-end="url(#arrow)"/>
+    <path d="M726 198v32" stroke="#38bdf8" stroke-width="4" marker-end="url(#arrow)"/>
+    <g font-size="17" font-weight="700">
+      <rect x="94" y="238" width="200" height="54" rx="12" fill="#7f1d1d" stroke="#ef4444"/>
+      <text x="148" y="272" fill="#fee2e2">Доступність</text>
+      <rect x="360" y="238" width="200" height="54" rx="12" fill="#854d0e" stroke="#f59e0b"/>
+      <text x="405" y="272" fill="#fef3c7">Швидкість</text>
+      <rect x="626" y="238" width="200" height="54" rx="12" fill="#14532d" stroke="#22c55e"/>
+      <text x="680" y="272" fill="#dcfce7">Якість</text>
+    </g>
+    <g font-size="14" fill="#e5e7eb">
+      <text x="108" y="324">аварії, переналадки,</text>
+      <text x="108" y="346">очікування CIP, сервісів</text>
+      <text x="374" y="324">мала подача, зупинки,</text>
+      <text x="374" y="346">нестабільне дозування</text>
+      <text x="640" y="324">брак, повернення,</text>
+      <text x="640" y="346">втрати першого продукту</text>
+    </g>
+  </g>
+</svg>

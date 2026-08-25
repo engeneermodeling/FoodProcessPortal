@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="520" viewBox="0 0 980 520" role="img" aria-labelledby="title desc">
+  <title id="title">Mehrphasiges Mischen in Lebensmittelsystemen</title>
+  <desc id="desc">Drei Hauptgruppen: Feststoff-Fluessig, Fluessig-Fluessig und Gas-Fluessig mit typischen Lebensmittelbeispielen.</desc>
+  <defs>
+    <style>
+      .bg{fill:#f8fafc}.card{fill:#fff;stroke:#cbd5e1;stroke-width:2}.h{fill:#0f172a;font:700 24px Arial}.t{fill:#334155;font:16px Arial}.drop{fill:#60a5fa}.solid{fill:#a16207}.gas{fill:#c084fc}.liquid{fill:#dbeafe}
+    </style>
+  </defs>
+  <rect class="bg" width="980" height="520" rx="18"/>
+  <text x="490" y="50" text-anchor="middle" class="h">Mehrphasige Systeme: Aufgabe des Ruehrers ist die Steuerung von Phasengroesse und Bewegung</text>
+  <g transform="translate(60 105)">
+    <rect class="card" width="260" height="335" rx="14"/>
+    <text x="130" y="42" text-anchor="middle" class="h">Feststoff + Fluessig</text>
+    <rect class="liquid" x="45" y="82" width="170" height="150" rx="16"/>
+    <circle class="solid" cx="85" cy="198" r="10"/><circle class="solid" cx="124" cy="174" r="8"/><circle class="solid" cx="170" cy="203" r="12"/><circle class="solid" cx="150" cy="140" r="7"/>
+    <text x="130" y="270" text-anchor="middle" class="t">Kakaosuspensionen, Gewuerze,</text>
+    <text x="130" y="294" text-anchor="middle" class="t">Fruchtmark, Zuckerkristalle</text>
+  </g>
+  <g transform="translate(360 105)">
+    <rect class="card" width="260" height="335" rx="14"/>
+    <text x="130" y="42" text-anchor="middle" class="h">Fluessig + Fluessig</text>
+    <rect class="liquid" x="45" y="82" width="170" height="150" rx="16"/>
+    <circle class="drop" cx="90" cy="130" r="18"/><circle class="drop" cx="155" cy="150" r="13"/><circle class="drop" cx="130" cy="198" r="22"/>
+    <text x="130" y="270" text-anchor="middle" class="t">Mayonnaise, Saucen,</text>
+    <text x="130" y="294" text-anchor="middle" class="t">Milch-Fett-Emulsionen</text>
+  </g>
+  <g transform="translate(660 105)">
+    <rect class="card" width="260" height="335" rx="14"/>
+    <text x="130" y="42" text-anchor="middle" class="h">Gas + Fluessig</text>
+    <rect class="liquid" x="45" y="82" width="170" height="150" rx="16"/>
+    <circle class="gas" cx="92" cy="195" r="12"/><circle class="gas" cx="138" cy="165" r="9"/><circle class="gas" cx="165" cy="120" r="15"/><circle class="gas" cx="112" cy="110" r="7"/>
+    <text x="130" y="270" text-anchor="middle" class="t">Dessertbelueftung,</text>
+    <text x="130" y="294" text-anchor="middle" class="t">Karbonisierung, Schaum</text>
+  </g>
+</svg>

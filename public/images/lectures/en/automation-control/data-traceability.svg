@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 430" role="img" aria-labelledby="title desc">
+  <title id="title">Data and traceability</title>
+  <desc id="desc">Diagram of data flow from sensors to PLC, HMI, batch record, alarms and efficiency analysis.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#38bdf8"/>
+    </marker>
+  </defs>
+  <rect width="920" height="430" rx="22" fill="#111827"/>
+  <text x="42" y="58" fill="#f8fafc" font-family="Arial, sans-serif" font-size="27" font-weight="700">Automation provides not only control, but also data</text>
+  <g font-family="Arial, sans-serif" font-size="16" font-weight="700">
+    <rect x="60" y="174" width="140" height="80" rx="14" fill="#1e3a8a" stroke="#3b82f6"/>
+    <text x="100" y="210" fill="#dbeafe">sensors</text>
+    <text x="82" y="234" fill="#bfdbfe" font-size="13">T, p, F, pH, m</text>
+    <path d="M206 214h72" stroke="#38bdf8" stroke-width="5" marker-end="url(#arrow)"/>
+    <rect x="290" y="174" width="140" height="80" rx="14" fill="#312e81" stroke="#6366f1"/>
+    <text x="332" y="210" fill="#e0e7ff">PLC</text>
+    <text x="316" y="234" fill="#c7d2fe" font-size="13">logic, interlocks</text>
+    <path d="M436 214h72" stroke="#38bdf8" stroke-width="5" marker-end="url(#arrow)"/>
+    <rect x="520" y="174" width="140" height="80" rx="14" fill="#14532d" stroke="#22c55e"/>
+    <text x="562" y="210" fill="#dcfce7">HMI</text>
+    <text x="540" y="234" fill="#bbf7d0" font-size="13">operator, recipes</text>
+    <path d="M666 214h72" stroke="#38bdf8" stroke-width="5" marker-end="url(#arrow)"/>
+    <rect x="750" y="174" width="120" height="80" rx="14" fill="#854d0e" stroke="#f59e0b"/>
+    <text x="780" y="210" fill="#fef3c7">archive</text>
+    <text x="770" y="234" fill="#fde68a" font-size="13">batch, trends</text>
+  </g>
+  <g font-family="Arial, sans-serif" font-size="15">
+    <rect x="176" y="322" width="176" height="52" rx="10" fill="#1f2937" stroke="#475569"/>
+    <text x="204" y="354" fill="#f8fafc">alarms and interlocks</text>
+    <rect x="376" y="322" width="176" height="52" rx="10" fill="#1f2937" stroke="#475569"/>
+    <text x="410" y="354" fill="#f8fafc">traceability</text>
+    <rect x="576" y="322" width="176" height="52" rx="10" fill="#1f2937" stroke="#475569"/>
+    <text x="612" y="354" fill="#f8fafc">OEE and resources</text>
+  </g>
+</svg>

@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 430" role="img" aria-labelledby="title desc">
+  <title id="title">Цикл ТО і калібрування</title>
+  <desc id="desc">Замкнений цикл обслуговування: план, робота, санітарне повернення, перевірка, запис і аналіз.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#38bdf8"/>
+    </marker>
+  </defs>
+  <rect width="920" height="430" rx="22" fill="#111827"/>
+  <text x="42" y="58" fill="#f8fafc" font-family="Arial, sans-serif" font-size="27" font-weight="700">Після ремонту лінія має повернутися в санітарно безпечний стан</text>
+  <g font-family="Arial, sans-serif" font-size="15" font-weight="700">
+    <circle cx="460" cy="226" r="98" fill="#0f172a" stroke="#475569" stroke-width="2"/>
+    <text x="411" y="219" fill="#f8fafc">ТО +</text>
+    <text x="384" y="244" fill="#f8fafc">калібрування</text>
+    <g fill="#1e293b" stroke="#38bdf8" stroke-width="2">
+      <rect x="74" y="186" width="146" height="64" rx="13"/>
+      <rect x="266" y="86" width="146" height="64" rx="13"/>
+      <rect x="508" y="86" width="146" height="64" rx="13"/>
+      <rect x="700" y="186" width="146" height="64" rx="13"/>
+      <rect x="508" y="302" width="146" height="64" rx="13"/>
+      <rect x="266" y="302" width="146" height="64" rx="13"/>
+    </g>
+    <text x="112" y="224" fill="#e0f2fe">План</text>
+    <text x="298" y="123" fill="#e0f2fe">Робота</text>
+    <text x="533" y="113" fill="#e0f2fe">Прибирання</text>
+    <text x="542" y="134" fill="#e0f2fe">і збір</text>
+    <text x="730" y="224" fill="#e0f2fe">Перевірка</text>
+    <text x="548" y="340" fill="#e0f2fe">Запис</text>
+    <text x="302" y="340" fill="#e0f2fe">Аналіз</text>
+    <path d="M220 196 L276 141" stroke="#38bdf8" stroke-width="4" marker-end="url(#arrow)"/>
+    <path d="M412 118 H500" stroke="#38bdf8" stroke-width="4" marker-end="url(#arrow)"/>
+    <path d="M654 141 L704 196" stroke="#38bdf8" stroke-width="4" marker-end="url(#arrow)"/>
+    <path d="M728 250 L642 302" stroke="#38bdf8" stroke-width="4" marker-end="url(#arrow)"/>
+    <path d="M508 334 H420" stroke="#38bdf8" stroke-width="4" marker-end="url(#arrow)"/>
+    <path d="M286 302 L202 250" stroke="#38bdf8" stroke-width="4" marker-end="url(#arrow)"/>
+  </g>
+</svg>

@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="540" viewBox="0 0 980 540" role="img" aria-labelledby="title desc">
+  <title id="title">Heat exchanger selection for a food product</title>
+  <desc id="desc">The diagram links product properties with plate, tubular, scraped-surface and jacketed equipment.</desc>
+  <defs>
+    <style>
+      .bg{fill:#f8fafc}.core{fill:#ea580c}.box{fill:#fff;stroke:#cbd5e1;stroke-width:2}.line{stroke:#94a3b8;stroke-width:3;fill:none}.h{fill:#0f172a;font:700 21px Arial}.coreText{fill:#fff;font:700 28px Arial}.t{fill:#334155;font:16px Arial}.small{fill:#475569;font:14px Arial}
+    </style>
+  </defs>
+  <rect class="bg" width="980" height="540" rx="18"/>
+  <rect x="360" y="210" width="260" height="120" rx="18" class="core"/>
+  <text x="490" y="260" text-anchor="middle" class="coreText">Product</text>
+  <text x="490" y="295" text-anchor="middle" class="small" fill="#ffedd5">viscosity, particles, fouling, temperature</text>
+  <path class="line" d="M360 245 C285 210 235 155 185 105"/>
+  <path class="line" d="M360 305 C280 340 230 390 180 445"/>
+  <path class="line" d="M620 245 C700 210 750 155 805 105"/>
+  <path class="line" d="M620 305 C700 340 750 390 805 445"/>
+  <rect x="55" y="55" width="270" height="120" rx="12" class="box"/>
+  <text x="190" y="91" text-anchor="middle" class="h">Plate</text>
+  <text x="78" y="123" class="t">milk, pulp-free juices, beer</text>
+  <text x="78" y="149" class="small">high K, easy cleaning, regeneration</text>
+  <rect x="55" y="365" width="270" height="120" rx="12" class="box"/>
+  <text x="190" y="401" text-anchor="middle" class="h">Tubular</text>
+  <text x="78" y="433" class="t">purees, products with particles</text>
+  <text x="78" y="459" class="small">lower channel-blocking risk</text>
+  <rect x="655" y="55" width="270" height="120" rx="12" class="box"/>
+  <text x="790" y="91" text-anchor="middle" class="h">Scraped-surface</text>
+  <text x="678" y="123" class="t">creams, sauces, jams, pastes</text>
+  <text x="678" y="149" class="small">for viscous and burn-on prone products</text>
+  <rect x="655" y="365" width="270" height="120" rx="12" class="box"/>
+  <text x="790" y="401" text-anchor="middle" class="h">Jacketed vessel</text>
+  <text x="678" y="433" class="t">cooking, tempering, batches</text>
+  <text x="678" y="459" class="small">simple, but slower heat transfer</text>
+</svg>

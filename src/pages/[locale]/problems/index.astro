@@ -1,0 +1,152 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import Header from "../../../components/Header.astro";
+import ThemeToggle from "../../../components/ThemeToggle.astro";
+import Footer from "../../../components/Footer.astro";
+import { siteConfig } from "../../../config";
+import { ENABLED_LOCALES } from "../../../locales.config";
+
+interface ProblemFrontmatter {
+  title: string;
+  chapter: number;
+  description?: string;
+  examplesCount?: number;
+  controlCount?: number;
+}
+
+interface ProblemModule {
+  frontmatter: ProblemFrontmatter;
+}
+
+interface ProblemChapter extends ProblemFrontmatter {
+  slug: string;
+  topic: string;
+}
+
+type ProblemModuleMap = Record<string, ProblemModule>;
+
+const allProblemsUk = import.meta.glob<ProblemModule>("/src/content/problems/uk/**/*.md", { eager: true });
+const allProblemsEn = import.meta.glob<ProblemModule>("/src/content/problems/en/**/*.md", { eager: true });
+const allProblemsRu = import.meta.glob<ProblemModule>("/src/content/problems/ru/**/*.md", { eager: true });
+const allProblemsDe = import.meta.glob<ProblemModule>("/src/content/problems/de/**/*.md", { eager: true });
+
+export function getStaticPaths() {
+  return [...ENABLED_LOCALES].map((locale) => ({
+    params: { locale },
+  }));
+}
+
+const { locale } = Astro.params;
+const t = siteConfig.translations[locale as keyof typeof siteConfig.translations];
+
+const allLocaleProblemsMap: Record<string, ProblemModuleMap> = {
+  uk: allProblemsUk,
+  en: allProblemsEn,
+  ru: allProblemsRu,
+  de: allProblemsDe,
+};
+
+const rawProblems = allLocaleProblemsMap[locale] || {};
+
+const chapters = Object.entries(rawProblems)
+  .map(([path, module]): ProblemChapter => {
+    const parts = path.split("/");
+    const topic = parts[parts.indexOf("problems") + 2];
+    return {
+      slug: path.split("/").pop()?.replace(".md", "") || "",
+      topic,
+      ...(module.frontmatter || {}),
+    };
+  })
+  .sort((a, b) => (a.chapter || 0) - (b.chapter || 0));
+
+const hasContent = chapters.length > 0;
+
+const chapterWord =
+  locale === "uk" ? "Розділ" : locale === "de" ? "Kapitel" : locale === "ru" ? "Раздел" : "Chapter";
+const examplesWord =
+  locale === "uk" ? "прикладів" : locale === "de" ? "Beispiele" : locale === "ru" ? "примеров" : "examples";
+const controlWord =
+  locale === "uk"
+    ? "контрольних задач"
+    : locale === "de"
+      ? "Kontrollaufgaben"
+      : locale === "ru"
+        ? "контрольных задач"
+        : "practice problems";
+---
+
+<BaseLayout
+  title={t.sections.problems.title}
+  description={t.sections.problems.desc}
+  locale={locale}
+>
+  <Header>
+    <ThemeToggle slot="theme-toggle" />
+  </Header>
+
+  <main class="main-content">
+    <div class="container">
+      <div class="hero">
+        <div class="section-icon">🧮</div>
+        <h1 class="title">{t.sections.problems.title}</h1>
+        <p class="subtitle">{t.sections.problems.desc}</p>
+        <div class="hero-line"></div>
+      </div>
+
+      {hasContent ? (
+        <div class="topics-list">
+          {chapters.map((ch: ProblemChapter) => (
+            <a href={`/${locale}/problems/${ch.slug}`} class="topic-card">
+              <span class="topic-icon">🧮</span>
+              <h2 class="topic-title">{chapterWord} {ch.chapter}. {ch.title}</h2>
+              <p class="topic-excerpt">{ch.description || ""}</p>
+              {(ch.examplesCount || ch.controlCount) && (
+                <p class="problems-counts">
+                  {ch.examplesCount ? `${ch.examplesCount} ${examplesWord}` : ""}
+                  {ch.examplesCount && ch.controlCount ? " · " : ""}
+                  {ch.controlCount ? `${ch.controlCount} ${controlWord}` : ""}
+                </p>
+              )}
+              <span class="topic-link">{t.goTo} →</span>
+            </a>
+          ))}
+        </div>
+      ) : (
+        <div class="placeholder-content">
+          <div class="placeholder-card">
+            <h2>{t.underConstructionTitle}</h2>
+            <p>{t.underConstructionText}</p>
+            <div class="placeholder-features">
+              <div class="feature">
+                <span class="feature-icon">⏳</span>
+                <span>{t.feature1}</span>
+              </div>
+              <div class="feature">
+                <span class="feature-icon">📚</span>
+                <span>{t.feature2}</span>
+              </div>
+              <div class="feature">
+                <span class="feature-icon">✨</span>
+                <span>{t.feature3}</span>
+              </div>
+            </div>
+            <a href={`/${locale}`} class="back-home">{t.backHome}</a>
+          </div>
+        </div>
+      )}
+    </div>
+  </main>
+  <Footer />
+</BaseLayout>
+
+<style>
+  @import "../../../styles/topics.css";
+  @import "../../../styles/section.css";
+
+  .problems-counts {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin: 0.25rem 0 0.75rem;
+  }
+</style>

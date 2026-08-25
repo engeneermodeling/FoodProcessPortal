@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 430" role="img" aria-labelledby="title desc">
+  <title id="title">Maintenance strategy</title>
+  <desc id="desc">Piramida vid reaktyvnoho remontu do profilaktychnoho i prohnoznoho obsluhovuvannia kharchovoi line.</desc>
+  <rect width="920" height="430" rx="22" fill="#111827"/>
+  <text x="42" y="58" fill="#f8fafc" font-family="Arial, sans-serif" font-size="27" font-weight="700">Maintenance should move from failures to risk management</text>
+  <g font-family="Arial, sans-serif" font-size="17" font-weight="700">
+    <path d="M460 96 L760 342 H160 Z" fill="#0f172a" stroke="#475569" stroke-width="2"/>
+    <path d="M275 248 H645 L760 342 H160 Z" fill="#7f1d1d"/>
+    <path d="M344 190 H576 L645 248 H275 Z" fill="#854d0e"/>
+    <path d="M405 139 H515 L576 190 H344 Z" fill="#14532d"/>
+    <path d="M460 96 L515 139 H405 Z" fill="#164e63"/>
+    <text x="330" y="304" fill="#fee2e2">Reactive repair</text>
+    <text x="355" y="225" fill="#fef3c7">Scheduled maintenance</text>
+    <text x="380" y="171" fill="#dcfce7">Prevention</text>
+    <text x="419" y="128" fill="#cffafe">Prediction</text>
+  </g>
+  <g font-family="Arial, sans-serif" font-size="15" fill="#cbd5e1">
+    <text x="88" y="382">Meta: menshe avarii, menshe vtrat productu, stabilnisha iakist i bezpechnist.</text>
+  </g>
+</svg>

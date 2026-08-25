@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="500" viewBox="0 0 980 500" role="img" aria-labelledby="title desc">
+  <title id="title">Оценка времени перемешивания по трассеру</title>
+  <desc id="desc">Кривая концентрации трассера приближается к установившемуся значению, а зона плюс-минус пять процентов задает время перемешивания.</desc>
+  <defs>
+    <style>
+      .bg{fill:#f8fafc}.axis{stroke:#334155;stroke-width:3}.grid{stroke:#cbd5e1;stroke-width:1}.band{fill:#dcfce7}.curve{stroke:#2563eb;stroke-width:6;fill:none}.txt{fill:#0f172a;font:700 22px Arial}.small{fill:#334155;font:16px Arial}.dash{stroke:#16a34a;stroke-width:3;stroke-dasharray:8 8}.mark{stroke:#dc2626;stroke-width:4}
+    </style>
+  </defs>
+  <rect class="bg" width="980" height="500" rx="18"/>
+  <rect x="110" y="140" width="760" height="52" class="band"/>
+  <line x1="110" y1="390" x2="890" y2="390" class="axis"/>
+  <line x1="110" y1="390" x2="110" y2="70" class="axis"/>
+  <path d="M110 330 H890 M110 270 H890 M110 210 H890 M110 150 H890 M250 70 V390 M390 70 V390 M530 70 V390 M670 70 V390 M810 70 V390" class="grid"/>
+  <path class="curve" d="M112 360 C150 300 175 205 215 125 C255 65 305 120 340 180 C380 250 430 195 470 160 C540 100 610 155 675 168 C745 183 800 165 870 165"/>
+  <line class="dash" x1="110" y1="166" x2="890" y2="166"/>
+  <line class="dash" x1="110" y1="140" x2="890" y2="140"/>
+  <line class="dash" x1="110" y1="192" x2="890" y2="192"/>
+  <line class="mark" x1="688" y1="390" x2="688" y2="70"/>
+  <text x="700" y="92" class="txt">t_m</text>
+  <text x="500" y="45" text-anchor="middle" class="txt">Время перемешивания: сигнал вошел в зону +/-5%</text>
+  <text x="500" y="450" text-anchor="middle" class="txt">время, с</text>
+  <text x="45" y="230" class="txt" transform="rotate(-90 45 230)">концентрация трассера</text>
+  <text x="745" y="220" class="small">после t_m продукт считают достаточно однородным</text>
+</svg>

@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 430" role="img" aria-labelledby="title desc">
+  <title id="title">CAPEX, OPEX i TCO</title>
+  <desc id="desc">Skhema riznytsi mizh kapitalnymy vytratamy, operatsiinymy vytratamy i povnoiu vartistiu volodinnia.</desc>
+  <rect width="920" height="430" rx="22" fill="#111827"/>
+  <text x="42" y="58" fill="#f8fafc" font-family="Arial, sans-serif" font-size="27" font-weight="700">Cheap equipment is not always cheap to operate</text>
+  <g font-family="Arial, sans-serif">
+    <rect x="76" y="128" width="230" height="190" rx="18" fill="#1e3a8a" stroke="#3b82f6"/>
+    <text x="136" y="172" fill="#dbeafe" font-size="25" font-weight="700">CAPEX</text>
+    <text x="108" y="210" fill="#bfdbfe" font-size="15">purchase, installation,</text>
+    <text x="108" y="234" fill="#bfdbfe" font-size="15">commissioning</text>
+    <rect x="345" y="128" width="230" height="190" rx="18" fill="#854d0e" stroke="#f59e0b"/>
+    <text x="406" y="172" fill="#fef3c7" font-size="25" font-weight="700">OPEX</text>
+    <text x="376" y="210" fill="#fde68a" font-size="15">energy, water, staff,</text>
+    <text x="376" y="234" fill="#fde68a" font-size="15">CIP, service, downtime</text>
+    <rect x="614" y="128" width="230" height="190" rx="18" fill="#14532d" stroke="#22c55e"/>
+    <text x="686" y="172" fill="#dcfce7" font-size="25" font-weight="700">TCO</text>
+    <text x="646" y="210" fill="#bbf7d0" font-size="15">total cost</text>
+    <text x="646" y="234" fill="#bbf7d0" font-size="15">over the whole service life</text>
+    <path d="M308 222h34M577 222h34" stroke="#38bdf8" stroke-width="6"/>
+  </g>
+  <rect x="164" y="356" width="592" height="42" rx="10" fill="#1f2937" stroke="#475569"/>
+  <text x="196" y="382" fill="#f8fafc" font-family="Arial, sans-serif" font-size="15">Otsiniuiut ne tsinu aparata, a vytraty i ryzyky protiahom zhyttievoho tsyklu.</text>
+</svg>

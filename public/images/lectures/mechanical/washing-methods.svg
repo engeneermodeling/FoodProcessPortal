@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 430" role="img" aria-labelledby="title desc">
+  <title id="title">Методи миття харчової сировини</title>
+  <desc id="desc">Порівняння барабанного, флотаційного, щіткового та душового миття для різної сировини.</desc>
+  <rect width="920" height="430" rx="22" fill="#0f172a"/>
+  <text x="42" y="58" fill="#f8fafc" font-family="Arial, sans-serif" font-size="26" font-weight="700">Метод миття залежить від форми і міцності сировини</text>
+  <g font-family="Arial, sans-serif">
+    <rect x="52" y="118" width="250" height="94" rx="12" fill="#1e293b" stroke="#334155"/>
+    <text x="76" y="152" fill="#bfdbfe" font-size="18" font-weight="700">Барабанне миття</text>
+    <text x="76" y="180" fill="#f8fafc" font-size="15">тертя + обертання</text>
+    <text x="76" y="202" fill="#94a3b8" font-size="14">картопля, коренеплоди</text>
+    <rect x="335" y="118" width="250" height="94" rx="12" fill="#1e293b" stroke="#334155"/>
+    <text x="359" y="152" fill="#bae6fd" font-size="18" font-weight="700">Флотаційне</text>
+    <text x="359" y="180" fill="#f8fafc" font-size="15">вода + різниця густини</text>
+    <text x="359" y="202" fill="#94a3b8" font-size="14">листя, камінці, легкі домішки</text>
+    <rect x="618" y="118" width="250" height="94" rx="12" fill="#1e293b" stroke="#334155"/>
+    <text x="642" y="152" fill="#bbf7d0" font-size="18" font-weight="700">Щіткове</text>
+    <text x="642" y="180" fill="#f8fafc" font-size="15">механічне зняття ґрунту</text>
+    <text x="642" y="202" fill="#94a3b8" font-size="14">овочі, тверді плоди</text>
+    <rect x="52" y="254" width="250" height="94" rx="12" fill="#1e293b" stroke="#334155"/>
+    <text x="76" y="288" fill="#fed7aa" font-size="18" font-weight="700">Душове</text>
+    <text x="76" y="316" fill="#f8fafc" font-size="15">струмені води</text>
+    <text x="76" y="338" fill="#94a3b8" font-size="14">делікатна сировина</text>
+    <rect x="335" y="254" width="250" height="94" rx="12" fill="#1e293b" stroke="#334155"/>
+    <text x="359" y="288" fill="#fecaca" font-size="18" font-weight="700">Повітряне очищення</text>
+    <text x="359" y="316" fill="#f8fafc" font-size="15">аспірація, пил, лушпиння</text>
+    <text x="359" y="338" fill="#94a3b8" font-size="14">зерно, насіння, спеції</text>
+    <rect x="618" y="254" width="250" height="94" rx="12" fill="#1e293b" stroke="#334155"/>
+    <text x="642" y="288" fill="#ddd6fe" font-size="18" font-weight="700">Комбіноване</text>
+    <text x="642" y="316" fill="#f8fafc" font-size="15">сухе + мокре + інспекція</text>
+    <text x="642" y="338" fill="#94a3b8" font-size="14">післязбиральні лінії</text>
+  </g>
+</svg>

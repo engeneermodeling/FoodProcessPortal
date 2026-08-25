@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="520" viewBox="0 0 980 520" role="img" aria-labelledby="title desc">
+  <title id="title">Stoff- und Waermebilanz eines Trockners</title>
+  <desc id="desc">Schema eines Trockners mit Eintritt von feuchtem Material, Austritt trockeneren Produkts, Luft vor und nach der Trocknung sowie Waermeverlusten.</desc>
+  <defs>
+    <style>
+      .bg{fill:#f8fafc}.dryer{fill:#fff;stroke:#1e293b;stroke-width:4}.air{stroke:#2563eb;stroke-width:5;fill:none;marker-end:url(#a)}.mat{stroke:#0f766e;stroke-width:5;fill:none;marker-end:url(#m)}.heat{stroke:#dc2626;stroke-width:5;fill:none;marker-end:url(#h)}.loss{stroke:#f59e0b;stroke-width:4;fill:none;stroke-dasharray:8 8;marker-end:url(#l)}.h{fill:#0f172a;font:700 22px Arial}.t{fill:#334155;font:16px Arial}.small{fill:#475569;font:14px Arial}
+    </style>
+    <marker id="a" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto"><path d="M0,0 L11,4 L0,8 Z" fill="#2563eb"/></marker>
+    <marker id="m" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto"><path d="M0,0 L11,4 L0,8 Z" fill="#0f766e"/></marker>
+    <marker id="h" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto"><path d="M0,0 L11,4 L0,8 Z" fill="#dc2626"/></marker>
+    <marker id="l" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto"><path d="M0,0 L11,4 L0,8 Z" fill="#f59e0b"/></marker>
+  </defs>
+  <rect class="bg" width="980" height="520" rx="18"/>
+  <text x="490" y="45" text-anchor="middle" class="h">Im Trockner bilanziert man gleichzeitig Feuchte, Trockensubstanz, Luft und Waerme</text>
+  <rect x="330" y="165" width="320" height="190" rx="18" class="dryer"/>
+  <text x="490" y="255" text-anchor="middle" class="h">Trockner</text>
+  <text x="490" y="287" text-anchor="middle" class="small">Kontakt von Material und Trocknungsmedium</text>
+  <path class="mat" d="M70 210 H330"/>
+  <text x="88" y="190" class="t">G₁, w₁</text>
+  <text x="88" y="230" class="small">feuchtes Material</text>
+  <path class="mat" d="M650 210 H910"/>
+  <text x="785" y="190" class="t">G₂, w₂</text>
+  <text x="785" y="230" class="small">trockeneres Produkt</text>
+  <path class="air" d="M150 390 C230 330 270 315 330 305"/>
+  <text x="88" y="405" class="t">L, d₁, I₁</text>
+  <path class="air" d="M650 305 C725 315 780 335 855 390"/>
+  <text x="775" y="405" class="t">L, d₂, I₂</text>
+  <path class="heat" d="M490 105 V165"/>
+  <text x="510" y="126" class="t">Q Lufterhitzer</text>
+  <path class="loss" d="M650 255 C735 255 780 245 850 220"/>
+  <text x="760" y="208" class="t">Q Verluste</text>
+  <text x="490" y="462" text-anchor="middle" class="h">W = G₁ - G₂ = L · (d₂ - d₁)</text>
+</svg>

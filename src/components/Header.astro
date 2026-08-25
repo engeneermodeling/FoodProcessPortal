@@ -1,6 +1,7 @@
 ---
 import { siteConfig } from "../config";
 import { ENABLED_LOCALES, LOCALE_NAMES } from "../locales.config";
+import { getLocalizedPath } from "../utils/routing";
 
 const currentPath = Astro.url.pathname;
 
@@ -8,19 +9,6 @@ const currentPath = Astro.url.pathname;
 const currentLocale = (ENABLED_LOCALES.find((l) =>
   currentPath.startsWith(`/${l}`)
 ) || ENABLED_LOCALES[0]) as string;
-
-// Функція для переключення мови — зберігає поточну сторінку
-const getLocalizedPath = (newLocale: string) => {
-  if (currentPath === "/") return `/${newLocale}`;
-  const parts = currentPath.split("/").filter(Boolean);
-  // Перший сегмент — локаль, замінюємо її
-  const allLocales = ["uk", "ru", "en", "de"];
-  if (allLocales.includes(parts[0])) {
-    parts[0] = newLocale;
-    return "/" + parts.join("/");
-  }
-  return `/${newLocale}${currentPath}`;
-};
 
 const isActive = (locale: string) => currentPath.startsWith(`/${locale}`);
 
@@ -31,7 +19,7 @@ const activeLanguages = ENABLED_LOCALES.map((code) => ({
   code,
   displayCode: LOCALE_NAMES[code]?.code || code.toUpperCase(),
   name: LOCALE_NAMES[code]?.native || code,
-  href: getLocalizedPath(code),
+  href: getLocalizedPath(currentPath, code),
   active: isActive(code),
 }));
 

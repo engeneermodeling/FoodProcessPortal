@@ -7,7 +7,7 @@ import { siteConfig } from "../../../config";
 import { ENABLED_LOCALES } from "../../../locales.config";
 
 export function getStaticPaths() {
-  const sections = ["problems", "practice", "courses", "videos"]; // reference has its own index.astro
+  const sections = ["videos"];
   const locales = [...ENABLED_LOCALES];
 
   return locales.flatMap((locale) =>
@@ -23,10 +23,6 @@ const t =
 const sectionData = t.sections[section as keyof typeof t.sections];
 
 const sectionIcons: Record<string, string> = {
-  problems: "🧮",
-  practice: "🔬",
-  reference: "📖",
-  courses: "",
   videos: "🎥",
 };
 

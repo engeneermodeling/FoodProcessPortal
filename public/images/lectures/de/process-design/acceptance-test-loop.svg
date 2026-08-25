@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 450" role="img" aria-labelledby="title desc">
+  <title id="title">Acceptance test loop</title>
+  <desc id="desc">Skhema provedennia pryimalnoho testu: criterion, test, result, deviation, correction i povtorna perevirka.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#38bdf8"/>
+    </marker>
+  </defs>
+  <rect width="920" height="450" rx="22" fill="#111827"/>
+  <text x="42" y="58" fill="#f8fafc" font-family="Arial, sans-serif" font-size="27" font-weight="700">Acceptance is a test with criteria, not 'seems to work'</text>
+  <g font-family="Arial, sans-serif" font-size="17" font-weight="700">
+    <rect x="94" y="128" width="170" height="74" rx="14" fill="#1e3a8a" stroke="#3b82f6"/>
+    <text x="130" y="172" fill="#dbeafe">criterion</text>
+    <path d="M270 165h84" stroke="#38bdf8" stroke-width="5" marker-end="url(#arrow)"/>
+    <rect x="366" y="128" width="170" height="74" rx="14" fill="#312e81" stroke="#6366f1"/>
+    <text x="424" y="172" fill="#e0e7ff">test</text>
+    <path d="M542 165h84" stroke="#38bdf8" stroke-width="5" marker-end="url(#arrow)"/>
+    <rect x="638" y="128" width="188" height="74" rx="14" fill="#14532d" stroke="#22c55e"/>
+    <text x="684" y="172" fill="#dcfce7">result</text>
+    <path d="M732 210v58" stroke="#38bdf8" stroke-width="5" marker-end="url(#arrow)"/>
+    <rect x="638" y="280" width="188" height="74" rx="14" fill="#7f1d1d" stroke="#ef4444"/>
+    <text x="682" y="324" fill="#fee2e2">deviation</text>
+    <path d="M632 317H536" stroke="#38bdf8" stroke-width="5" marker-end="url(#arrow)"/>
+    <rect x="366" y="280" width="170" height="74" rx="14" fill="#854d0e" stroke="#f59e0b"/>
+    <text x="416" y="324" fill="#fef3c7">correction</text>
+    <path d="M451 274v-66" stroke="#38bdf8" stroke-width="5" marker-end="url(#arrow)"/>
+  </g>
+</svg>

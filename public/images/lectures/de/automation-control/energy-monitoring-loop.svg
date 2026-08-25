@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 430" role="img" aria-labelledby="title desc">
+  <title id="title">Energiemonitoring-Zyklus</title>
+  <desc id="desc">Schema des Zyklus aus Ressourcenmessung, Analyse, Massnahme und Ergebnispruefung.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#38bdf8"/>
+    </marker>
+  </defs>
+  <rect width="920" height="430" rx="22" fill="#111827"/>
+  <text x="42" y="58" fill="#f8fafc" font-family="Arial, sans-serif" font-size="27" font-weight="700">Ressourcen werden durch einen Zyklus gesenkt, nicht durch eine Einzelaktion</text>
+  <g font-family="Arial, sans-serif" font-size="17" font-weight="700">
+    <rect x="84" y="176" width="150" height="82" rx="14" fill="#1e3a8a" stroke="#3b82f6"/>
+    <text x="118" y="212" fill="#dbeafe">messen</text>
+    <text x="112" y="236" fill="#bfdbfe" font-size="14">Zaehler, Trends</text>
+    <path d="M240 217h80" stroke="#38bdf8" stroke-width="5" marker-end="url(#arrow)"/>
+    <rect x="332" y="176" width="150" height="82" rx="14" fill="#312e81" stroke="#6366f1"/>
+    <text x="374" y="212" fill="#e0e7ff">vergleichen</text>
+    <text x="358" y="236" fill="#c7d2fe" font-size="14">kWh/t, Wasser/t</text>
+    <path d="M488 217h80" stroke="#38bdf8" stroke-width="5" marker-end="url(#arrow)"/>
+    <rect x="580" y="176" width="150" height="82" rx="14" fill="#854d0e" stroke="#f59e0b"/>
+    <text x="628" y="212" fill="#fef3c7">handeln</text>
+    <text x="604" y="236" fill="#fde68a" font-size="14">Einstellung, Reparatur</text>
+    <path d="M655 266v62H160v-62" fill="none" stroke="#38bdf8" stroke-width="5" marker-end="url(#arrow)"/>
+    <rect x="310" y="318" width="300" height="56" rx="12" fill="#14532d" stroke="#22c55e"/>
+    <text x="390" y="352" fill="#dcfce7">Einsparung pruefen</text>
+  </g>
+  <text x="214" y="112" fill="#cbd5e1" font-family="Arial, sans-serif" font-size="16">Ohne Messung gibt es keine gesteuerte Energieeinsparung.</text>
+</svg>

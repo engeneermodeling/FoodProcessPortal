@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 430" role="img" aria-labelledby="title desc">
+  <title id="title">SPC-карта процесу</title>
+  <desc id="desc">Контрольна карта з центральною лінією і межами керування для параметра харчового процесу.</desc>
+  <rect width="920" height="430" rx="22" fill="#111827"/>
+  <text x="42" y="58" fill="#f8fafc" font-family="Arial, sans-serif" font-size="27" font-weight="700">SPC відрізняє природну мінливість від сигналу проблеми</text>
+  <g font-family="Arial, sans-serif">
+    <rect x="78" y="92" width="770" height="268" rx="14" fill="#0f172a" stroke="#475569"/>
+    <line x1="120" y1="145" x2="808" y2="145" stroke="#ef4444" stroke-width="3" stroke-dasharray="9 8"/>
+    <line x1="120" y1="226" x2="808" y2="226" stroke="#22c55e" stroke-width="3"/>
+    <line x1="120" y1="307" x2="808" y2="307" stroke="#ef4444" stroke-width="3" stroke-dasharray="9 8"/>
+    <text x="814" y="150" fill="#fecaca" font-size="14">UCL</text>
+    <text x="814" y="231" fill="#dcfce7" font-size="14">CL</text>
+    <text x="814" y="312" fill="#fecaca" font-size="14">LCL</text>
+    <polyline points="128,235 172,221 216,218 260,229 304,212 348,205 392,219 436,226 480,214 524,198 568,190 612,183 656,151 700,139 744,176 788,169"
+      fill="none" stroke="#38bdf8" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <g fill="#f8fafc">
+      <circle cx="128" cy="235" r="5"/><circle cx="172" cy="221" r="5"/><circle cx="216" cy="218" r="5"/><circle cx="260" cy="229" r="5"/>
+      <circle cx="304" cy="212" r="5"/><circle cx="348" cy="205" r="5"/><circle cx="392" cy="219" r="5"/><circle cx="436" cy="226" r="5"/>
+      <circle cx="480" cy="214" r="5"/><circle cx="524" cy="198" r="5"/><circle cx="568" cy="190" r="5"/><circle cx="612" cy="183" r="5"/>
+      <circle cx="656" cy="151" r="5"/><circle cx="700" cy="139" r="7" fill="#f97316"/><circle cx="744" cy="176" r="5"/><circle cx="788" cy="169" r="5"/>
+    </g>
+    <text x="114" y="388" fill="#cbd5e1" font-size="15">Приклад: маса нетто, температура, вологість, pH, Brix, час утримання.</text>
+  </g>
+</svg>

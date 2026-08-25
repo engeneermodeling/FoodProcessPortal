@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 430" role="img" aria-labelledby="title desc">
+  <title id="title">Етапи запуску лінії</title>
+  <desc id="desc">Схема етапів від вимог користувача до FAT, SAT, IQ, OQ, PQ і запуску виробництва.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#38bdf8"/>
+    </marker>
+  </defs>
+  <rect width="920" height="430" rx="22" fill="#111827"/>
+  <text x="42" y="58" fill="#f8fafc" font-family="Arial, sans-serif" font-size="27" font-weight="700">Запуск лінії проходить через послідовні перевірки</text>
+  <g font-family="Arial, sans-serif" font-size="16" font-weight="700">
+    <rect x="54" y="178" width="106" height="70" rx="13" fill="#1e3a8a" stroke="#3b82f6"/>
+    <text x="86" y="219" fill="#dbeafe">URS</text>
+    <path d="M166 213h38" stroke="#38bdf8" stroke-width="5" marker-end="url(#arrow)"/>
+    <rect x="212" y="178" width="106" height="70" rx="13" fill="#312e81" stroke="#6366f1"/>
+    <text x="250" y="219" fill="#e0e7ff">FAT</text>
+    <path d="M324 213h38" stroke="#38bdf8" stroke-width="5" marker-end="url(#arrow)"/>
+    <rect x="370" y="178" width="106" height="70" rx="13" fill="#164e63" stroke="#06b6d4"/>
+    <text x="408" y="219" fill="#cffafe">SAT</text>
+    <path d="M482 213h38" stroke="#38bdf8" stroke-width="5" marker-end="url(#arrow)"/>
+    <rect x="528" y="178" width="106" height="70" rx="13" fill="#854d0e" stroke="#f59e0b"/>
+    <text x="570" y="219" fill="#fef3c7">IQ</text>
+    <path d="M640 213h38" stroke="#38bdf8" stroke-width="5" marker-end="url(#arrow)"/>
+    <rect x="686" y="178" width="80" height="70" rx="13" fill="#14532d" stroke="#22c55e"/>
+    <text x="714" y="219" fill="#dcfce7">OQ</text>
+    <path d="M772 213h28" stroke="#38bdf8" stroke-width="5" marker-end="url(#arrow)"/>
+    <rect x="808" y="178" width="70" height="70" rx="13" fill="#7f1d1d" stroke="#ef4444"/>
+    <text x="832" y="219" fill="#fee2e2">PQ</text>
+  </g>
+  <rect x="166" y="318" width="588" height="46" rx="10" fill="#1f2937" stroke="#475569"/>
+  <text x="192" y="347" fill="#f8fafc" font-family="Arial, sans-serif" font-size="15">Кожен етап має протокол, критерії приймання, відхилення і підписаний звіт.</text>
+</svg>

@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="520" viewBox="0 0 980 520" role="img" aria-labelledby="title desc">
+  <title id="title">Waermeuebergang im Ruehrbehaelter</title>
+  <desc id="desc">Schema eines Behaelters mit Mantel, Waermetraegerstrom, Ruehrer und Waermestrom durch die Wand.</desc>
+  <defs>
+    <style>
+      .bg{fill:#f8fafc}.j{fill:#dbeafe;stroke:#2563eb;stroke-width:3}.tank{fill:#fff;stroke:#1e293b;stroke-width:4}.shaft{stroke:#111827;stroke-width:8;stroke-linecap:round}.imp{fill:#7c3aed}.arrowHot{stroke:#dc2626;stroke-width:5;fill:none;marker-end:url(#hot)}.arrowCold{stroke:#2563eb;stroke-width:5;fill:none;marker-end:url(#cold)}.q{stroke:#ea580c;stroke-width:5;fill:none;marker-end:url(#heat)}.txt{fill:#0f172a;font:700 22px Arial}.small{fill:#334155;font:16px Arial}
+    </style>
+    <marker id="hot" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto"><path d="M0,0 L11,4 L0,8 Z" fill="#dc2626"/></marker>
+    <marker id="cold" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto"><path d="M0,0 L11,4 L0,8 Z" fill="#2563eb"/></marker>
+    <marker id="heat" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto"><path d="M0,0 L11,4 L0,8 Z" fill="#ea580c"/></marker>
+  </defs>
+  <rect class="bg" width="980" height="520" rx="18"/>
+  <path class="j" d="M285 100 H695 V370 Q490 485 285 370 Z"/>
+  <path class="tank" d="M325 120 H655 V355 Q490 430 325 355 Z"/>
+  <line class="shaft" x1="490" y1="82" x2="490" y2="325"/>
+  <path class="imp" d="M390 315 L490 278 L590 315 L490 352 Z"/>
+  <path class="arrowHot" d="M162 390 C210 390 235 385 285 360"/>
+  <text x="112" y="397" class="txt">Dampf / Wasser</text>
+  <path class="arrowCold" d="M695 130 C750 105 795 100 850 100"/>
+  <text x="782" y="84" class="txt">Austritt</text>
+  <path class="q" d="M300 230 C345 220 370 220 415 230"/>
+  <path class="q" d="M680 250 C635 240 610 240 565 250"/>
+  <text x="490" y="42" text-anchor="middle" class="txt">Mischen verringert den thermischen Widerstand an der Wand</text>
+  <text x="490" y="466" text-anchor="middle" class="txt">Q = K · F · ΔT_m</text>
+  <text x="490" y="492" text-anchor="middle" class="small">mehr Umlauf - hoeherer Waermeuebergangskoeffizient, aber hoeherer Energiebedarf</text>
+</svg>

@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 460" role="img" aria-labelledby="title desc">
+  <title id="title">Типовий цикл CIP-миття</title>
+  <desc id="desc">Схема послидовности очищення обладнання без розбирання: видалення залишкив, ополискування, луг, вода, кислота, вода, дезинфекция и контроль.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#38bdf8"/>
+    </marker>
+  </defs>
+  <rect width="920" height="460" rx="22" fill="#111827"/>
+  <text x="42" y="58" fill="#f8fafc" font-family="Arial, sans-serif" font-size="27" font-weight="700">CIP: повторюване миття без розбирання обладнання</text>
+  <g font-family="Arial, sans-serif" font-size="15">
+    <rect x="54" y="132" width="118" height="82" rx="14" fill="#1e293b" stroke="#334155"/>
+    <text x="76" y="166" fill="#f8fafc" font-weight="700">залишки</text>
+    <text x="72" y="190" fill="#cbd5e1">дренаж</text>
+    <path d="M178 173h46" stroke="#38bdf8" stroke-width="5" marker-end="url(#arrow)"/>
+    <rect x="230" y="132" width="118" height="82" rx="14" fill="#1e3a8a" stroke="#3b82f6"/>
+    <text x="264" y="166" fill="#dbeafe" font-weight="700">вода</text>
+    <text x="252" y="190" fill="#bfdbfe">передзмив</text>
+    <path d="M354 173h46" stroke="#38bdf8" stroke-width="5" marker-end="url(#arrow)"/>
+    <rect x="406" y="132" width="118" height="82" rx="14" fill="#854d0e" stroke="#f59e0b"/>
+    <text x="442" y="166" fill="#fef3c7" font-weight="700">луг</text>
+    <text x="430" y="190" fill="#fde68a">жири билки</text>
+    <path d="M530 173h46" stroke="#38bdf8" stroke-width="5" marker-end="url(#arrow)"/>
+    <rect x="582" y="132" width="118" height="82" rx="14" fill="#1e3a8a" stroke="#3b82f6"/>
+    <text x="616" y="166" fill="#dbeafe" font-weight="700">вода</text>
+    <text x="610" y="190" fill="#bfdbfe">змив лугу</text>
+    <path d="M706 173h46" stroke="#38bdf8" stroke-width="5" marker-end="url(#arrow)"/>
+    <rect x="758" y="132" width="118" height="82" rx="14" fill="#7f1d1d" stroke="#ef4444"/>
+    <text x="792" y="166" fill="#fee2e2" font-weight="700">кислота</text>
+    <text x="785" y="190" fill="#fecaca">минерали</text>
+    <path d="M817 222v52h-704v36" fill="none" stroke="#38bdf8" stroke-width="5" marker-end="url(#arrow)"/>
+    <rect x="54" y="318" width="154" height="82" rx="14" fill="#1e3a8a" stroke="#3b82f6"/>
+    <text x="100" y="352" fill="#dbeafe" font-weight="700">вода</text>
+    <text x="82" y="376" fill="#bfdbfe">финальний змив</text>
+    <path d="M214 359h62" stroke="#38bdf8" stroke-width="5" marker-end="url(#arrow)"/>
+    <rect x="284" y="318" width="154" height="82" rx="14" fill="#14532d" stroke="#22c55e"/>
+    <text x="320" y="352" fill="#dcfce7" font-weight="700">дезинфекция</text>
+    <text x="318" y="376" fill="#bbf7d0">гаряча вода / засиб</text>
+    <path d="M444 359h62" stroke="#38bdf8" stroke-width="5" marker-end="url(#arrow)"/>
+    <rect x="514" y="318" width="154" height="82" rx="14" fill="#312e81" stroke="#6366f1"/>
+    <text x="552" y="352" fill="#e0e7ff" font-weight="700">контроль</text>
+    <text x="542" y="376" fill="#c7d2fe">провиднисть, pH</text>
+    <path d="M674 359h62" stroke="#38bdf8" stroke-width="5" marker-end="url(#arrow)"/>
+    <rect x="744" y="318" width="132" height="82" rx="14" fill="#1f2937" stroke="#475569"/>
+    <text x="780" y="352" fill="#f8fafc" font-weight="700">старт</text>
+    <text x="764" y="376" fill="#cbd5e1">виробництва</text>
+  </g>
+</svg>

@@ -1,13 +1,17 @@
 {
   "name": "zany-zenith",
   "type": "module",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "engines": {
     "node": ">=22.12.0"
   },
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
+    "audit:lecture-images": "node scripts/audit-lecture-image-localization.mjs",
+    "route-audit": "node scripts/route-audit.mjs",
+    "smoke": "node scripts/smoke-check.mjs",
+    "test": "node scripts/test.mjs",
     "preview": "astro preview",
     "astro": "astro"
   },

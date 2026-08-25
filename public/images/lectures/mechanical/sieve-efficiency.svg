@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 430" role="img" aria-labelledby="title desc">
+  <title id="title">Ефективність просіювання</title>
+  <desc id="desc">Схема показує чинники, які впливають на ефективність просіювання сипких харчових матеріалів.</desc>
+  <rect width="920" height="430" rx="22" fill="#0f172a"/>
+  <text x="42" y="58" fill="#f8fafc" font-family="Arial, sans-serif" font-size="26" font-weight="700">Чому сито “не просто отвір”</text>
+  <text x="42" y="90" fill="#cbd5e1" font-family="Arial, sans-serif" font-size="16">Однакове сито дає різний результат для сухого борошна, вологої крупки, спецій або жирного порошку</text>
+  <g font-family="Arial, sans-serif">
+    <circle cx="460" cy="222" r="74" fill="#1e3a8a" stroke="#60a5fa" stroke-width="3"/>
+    <text x="414" y="214" fill="#eff6ff" font-size="20" font-weight="700">ефективність</text>
+    <text x="428" y="240" fill="#bfdbfe" font-size="17">просіювання</text>
+    <g fill="#1e293b" stroke="#334155">
+      <rect x="64" y="128" width="210" height="58" rx="10"/>
+      <rect x="64" y="258" width="210" height="58" rx="10"/>
+      <rect x="646" y="128" width="210" height="58" rx="10"/>
+      <rect x="646" y="258" width="210" height="58" rx="10"/>
+      <rect x="356" y="342" width="210" height="58" rx="10"/>
+    </g>
+    <g fill="#f8fafc" font-size="16" font-weight="700">
+      <text x="92" y="164">товщина шару</text>
+      <text x="96" y="294">вологість і злипання</text>
+      <text x="682" y="164">форма частинок</text>
+      <text x="684" y="294">амплітуда і частота</text>
+      <text x="398" y="378">засмічення отворів</text>
+    </g>
+    <g stroke="#38bdf8" stroke-width="3" opacity=".85">
+      <line x1="274" y1="157" x2="386" y2="198"/>
+      <line x1="274" y1="287" x2="386" y2="246"/>
+      <line x1="646" y1="157" x2="534" y2="198"/>
+      <line x1="646" y1="287" x2="534" y2="246"/>
+      <line x1="460" y1="342" x2="460" y2="296"/>
+    </g>
+  </g>
+</svg>

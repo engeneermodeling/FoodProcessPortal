@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 460" role="img" aria-labelledby="title desc">
+  <title id="title">Карта вимірювань харчового процесу</title>
+  <desc id="desc">Схема основних параметрів, які вимірюють у харчовій технологічній лінії.</desc>
+  <rect width="920" height="460" rx="22" fill="#111827"/>
+  <text x="42" y="58" fill="#f8fafc" font-family="Arial, sans-serif" font-size="27" font-weight="700">Що вимірюють у харчовій лінії</text>
+  <g font-family="Arial, sans-serif">
+    <rect x="330" y="178" width="260" height="104" rx="18" fill="#1e293b" stroke="#38bdf8" stroke-width="3"/>
+    <text x="392" y="220" fill="#f8fafc" font-size="24" font-weight="700">процес</text>
+    <text x="364" y="250" fill="#cbd5e1" font-size="16">апарат, трубопровід, лінія</text>
+    <g font-size="16" font-weight="700">
+      <rect x="64" y="112" width="176" height="66" rx="12" fill="#7f1d1d" stroke="#ef4444"/>
+      <text x="106" y="152" fill="#fee2e2">температура</text>
+      <rect x="64" y="236" width="176" height="66" rx="12" fill="#1e3a8a" stroke="#3b82f6"/>
+      <text x="124" y="276" fill="#dbeafe">витрата</text>
+      <rect x="64" y="360" width="176" height="66" rx="12" fill="#854d0e" stroke="#f59e0b"/>
+      <text x="132" y="400" fill="#fef3c7">тиск</text>
+      <rect x="680" y="112" width="176" height="66" rx="12" fill="#14532d" stroke="#22c55e"/>
+      <text x="734" y="152" fill="#dcfce7">рівень</text>
+      <rect x="680" y="236" width="176" height="66" rx="12" fill="#312e81" stroke="#6366f1"/>
+      <text x="746" y="276" fill="#e0e7ff">pH</text>
+      <rect x="680" y="360" width="176" height="66" rx="12" fill="#164e63" stroke="#06b6d4"/>
+      <text x="716" y="400" fill="#cffafe">провідність</text>
+    </g>
+    <g stroke="#38bdf8" stroke-width="4" opacity=".85">
+      <path d="M242 145h82"/>
+      <path d="M242 269h82"/>
+      <path d="M242 393h184v-104"/>
+      <path d="M596 202h78v-57"/>
+      <path d="M596 230h78v39"/>
+      <path d="M596 258h78v135"/>
+    </g>
+  </g>
+</svg>

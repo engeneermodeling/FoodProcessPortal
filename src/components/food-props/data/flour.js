@@ -44,3 +44,35 @@ export const flour = {
     },
   ],
 };
+
+flour.products.push(
+  {
+    id: "starch_milk_visc",
+    name: { uk: "В'язкість крохмального молока vs T і густина", en: "Starch milk viscosity vs T and density", de: "Stärkemilch Viskosität vs T" },
+    type: "static",
+    source: "Чубик і Маслов, 1970, Табл. 36–37",
+    cols: ["Крохмаль", "Густина, °Бр", "T, °C", "μ×10², Па·с"],
+    digits: [null, 1, 0, 4],
+    data: [
+      ["Кукурудзяний",  8.0, 20, 0.1025],
+      ["Кукурудзяний",  8.0, 30, 0.1008],
+      ["Кукурудзяний", 11.0, 20, 0.1060],
+      ["Картопляний",   8.9, 20, 0.1007],
+      ["Картопляний",  30.0, 20, 0.1263],
+      ["Картопляний",  37.1, 20, 0.2120],
+    ],
+  },
+  {
+    id: "nuts_density",
+    name: { uk: "Густина горіхів сирих і смажених, кг/м³", en: "Density of raw and roasted nuts, kg/m³", de: "Dichte roher und gerösteter Nüsse, kg/m³" },
+    type: "static",
+    source: "Чубик і Маслов, 1970, Табл. 44",
+    cols: ["Горіх", "Сирий, кг/м³", "Смажений, кг/м³"],
+    digits: [null, 1, 1],
+    data: [
+      ["Арахіс",  915.4, 914.6],
+      ["Мигдаль", 916.5, 916.2],
+      ["Кеш'ю",   917.2, 912.7],
+    ],
+  }
+);

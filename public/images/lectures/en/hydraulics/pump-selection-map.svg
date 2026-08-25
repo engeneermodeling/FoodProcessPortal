@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="610" viewBox="0 0 1120 610" role="img" aria-labelledby="title desc">
+  <title id="title">Pump selection for a food product</title>
+  <desc id="desc">Pump type selection by viscosity, particles, shear sensitivity and required pressure.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#2454a6"/>
+    </marker>
+    <style>
+      .bg{fill:#f8fbff}.card{fill:#fff;stroke:#bfd0e7;stroke-width:2;rx:18}.accent{fill:#e8f1ff;stroke:#7aa2df}.food{fill:#fff7e6;stroke:#e4b653}.txt{font-family:Arial,"Helvetica Neue",sans-serif;fill:#102033;font-size:23px}.head{font-size:31px;font-weight:700;fill:#0f2a4f}.label{font-size:23px;font-weight:700;fill:#163b71}.small{font-size:18px;fill:#334155}.arrow{stroke:#2454a6;stroke-width:3;fill:none;marker-end:url(#arrow)}
+    </style>
+  </defs>
+  <rect class="bg" width="1120" height="610"/>
+  <text class="txt head" x="560" y="50" text-anchor="middle">How to choose a pump for a food stream</text>
+  <rect class="card accent" x="370" y="85" width="380" height="82"/>
+  <text class="label" x="560" y="120" text-anchor="middle">What product is pumped?</text>
+  <text class="small" x="560" y="148" text-anchor="middle">water, milk, syrup, puree, yogurt, CIP</text>
+
+  <path class="arrow" d="M560 167 V210"/>
+  <rect class="card" x="370" y="210" width="380" height="78"/>
+  <text class="label" x="560" y="244" text-anchor="middle">Low viscosity and no particles?</text>
+  <text class="small" x="560" y="270" text-anchor="middle">water, milk, beer, pulp-free juices</text>
+  <path class="arrow" d="M370 249 H230"/>
+  <rect class="card food" x="55" y="200" width="175" height="98"/>
+  <text class="label" x="142" y="235" text-anchor="middle">Centrifugal</text>
+  <text class="small" x="142" y="263" text-anchor="middle">high flow rate,</text>
+  <text class="small" x="142" y="287" text-anchor="middle">simple CIP</text>
+
+  <path class="arrow" d="M560 288 V335"/>
+  <rect class="card" x="370" y="335" width="380" height="78"/>
+  <text class="label" x="560" y="369" text-anchor="middle">Viscous or delicate product?</text>
+  <text class="small" x="560" y="395" text-anchor="middle">yogurt, paste, sauce, chocolate, puree</text>
+  <path class="arrow" d="M750 374 H890"/>
+  <rect class="card food" x="890" y="325" width="180" height="102"/>
+  <text class="label" x="980" y="360" text-anchor="middle">Rotary</text>
+  <text class="small" x="980" y="388" text-anchor="middle">screw,</text>
+  <text class="small" x="980" y="412" text-anchor="middle">lobe, gear</text>
+
+  <path class="arrow" d="M560 413 V462"/>
+  <rect class="card" x="370" y="462" width="380" height="78"/>
+  <text class="label" x="560" y="496" text-anchor="middle">Need high pressure or accurate dosing?</text>
+  <text class="small" x="560" y="522" text-anchor="middle">homogenization, dosing, spray balls</text>
+  <path class="arrow" d="M370 501 H230"/>
+  <rect class="card food" x="55" y="452" width="175" height="102"/>
+  <text class="label" x="142" y="488" text-anchor="middle">Piston</text>
+  <text class="small" x="142" y="516" text-anchor="middle">pressure, dosing,</text>
+  <text class="small" x="142" y="540" text-anchor="middle">homogenizer</text>
+
+  <rect class="card food" x="890" y="82" width="180" height="112"/>
+  <text class="label" x="980" y="118" text-anchor="middle">Peristaltic</text>
+  <text class="small" x="980" y="147" text-anchor="middle">berries, cultures,</text>
+  <text class="small" x="980" y="171" text-anchor="middle">sterile tube</text>
+  <path class="arrow" d="M750 126 H890"/>
+
+  <text class="small" x="560" y="585" text-anchor="middle">For food lines, after hydraulics also check hygiene: CIP, drainability, seals, materials and certification.</text>
+</svg>

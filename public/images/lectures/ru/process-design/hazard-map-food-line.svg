@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 450" role="img" aria-labelledby="title desc">
+  <title id="title">Карта небезпек харчовои линии</title>
+  <desc id="desc">Схема основних груп небезпек у харчовий технологичний линии.</desc>
+  <rect width="920" height="450" rx="22" fill="#111827"/>
+  <text x="42" y="58" fill="#f8fafc" font-family="Arial, sans-serif" font-size="27" font-weight="700">Небезпеки треба шукати по всий линии, а не лише в готовому продукти</text>
+  <g font-family="Arial, sans-serif" font-weight="700">
+    <rect x="340" y="178" width="240" height="92" rx="18" fill="#1e293b" stroke="#38bdf8" stroke-width="3"/>
+    <text x="396" y="218" fill="#f8fafc" font-size="22">харчова линия</text>
+    <text x="372" y="246" fill="#cbd5e1" font-size="15">сировина - процес - пакування</text>
+    <rect x="80" y="112" width="200" height="70" rx="14" fill="#7f1d1d" stroke="#ef4444"/>
+    <text x="126" y="154" fill="#fee2e2" font-size="18">биологични</text>
+    <rect x="80" y="272" width="200" height="70" rx="14" fill="#854d0e" stroke="#f59e0b"/>
+    <text x="126" y="314" fill="#fef3c7" font-size="18">химични</text>
+    <rect x="640" y="112" width="200" height="70" rx="14" fill="#1e3a8a" stroke="#3b82f6"/>
+    <text x="694" y="154" fill="#dbeafe" font-size="18">физични</text>
+    <rect x="640" y="272" width="200" height="70" rx="14" fill="#4c1d95" stroke="#8b5cf6"/>
+    <text x="688" y="314" fill="#ede9fe" font-size="18">алергени</text>
+  </g>
+  <g stroke="#38bdf8" stroke-width="4" opacity=".75">
+    <path d="M282 147h54"/>
+    <path d="M282 307h54"/>
+    <path d="M638 147h-54"/>
+    <path d="M638 307h-54"/>
+  </g>
+</svg>

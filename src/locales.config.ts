@@ -10,7 +10,7 @@
 export const ENABLED_LOCALES = [
   "uk",   // 🇺🇦 Українська     — основна мова
   "en",   // 🇬🇧 English         — англійська
-  // "ru",   // 🇷🇺 Русский         — вимкнено
+  "ru",   // 🇷🇺 Русский
   "de",   // 🇩🇪 Deutsch         — німецька
 ] as const;
 
@@ -31,7 +31,7 @@ export const LOCALE_NAMES: Record<string, { name: string; flag: string; native: 
 export const UI_TRANSLATIONS: Record<string, Record<string, string>> = {
   // Навігація / breadcrumbs
   "nav.home":      { uk: "Головна",    en: "Home",       de: "Startseite",  ru: "Главная"     },
-  "nav.topics":    { uk: "Теми",       en: "Topics",     de: "Themen",      ru: "Темы"        },
+  "nav.topics":    { uk: "Лекційні матеріали", en: "Lecture Materials", de: "Vorlesungsmaterialien", ru: "Лекционные материалы" },
   "nav.reference": { uk: "Довідник",   en: "Reference",  de: "Referenz",    ru: "Справочник"  },
   "nav.problems":  { uk: "Задачник",   en: "Problems",   de: "Aufgaben",    ru: "Задачник"    },
   "nav.practice":  { uk: "Практикум",  en: "Practice",   de: "Praktikum",   ru: "Практикум"   },

@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="600" viewBox="0 0 1080 600" role="img" aria-labelledby="title desc">
+  <title id="title">Режими руху рідини за числом Рейнольдса</title>
+  <desc id="desc">Порівняння ламінарного, перехідного і турбулентного руху у трубі, а також профілів швидкості.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#174ea6"/></marker>
+    <style>
+      .bg{fill:#f8fbff}.tube{fill:#fff;stroke:#8da4c4;stroke-width:4;rx:20}.stream{stroke:#174ea6;stroke-width:4;fill:none;marker-end:url(#arrow)}.mix{stroke:#ef4444;stroke-width:3;fill:none}.txt{font-family:Arial,"Helvetica Neue",sans-serif;fill:#102033;font-size:23px}.head{font-size:31px;font-weight:700;fill:#0f2a4f}.label{font-size:25px;font-weight:700}.small{font-size:19px;fill:#334155}.profile{fill:#d8ecff;stroke:#1f3f76;stroke-width:4}
+    </style>
+  </defs>
+  <rect class="bg" width="1080" height="600"/>
+  <text class="txt head" x="540" y="50" text-anchor="middle">Режими течії: не тільки формула Re, а й якість процесу</text>
+  <g transform="translate(65 105)">
+    <text class="txt label" x="145" y="0" text-anchor="middle">Ламінарний</text>
+    <text class="txt small" x="145" y="30" text-anchor="middle">Re &lt; 2300</text>
+    <rect class="tube" x="0" y="60" width="290" height="130"/>
+    <path class="stream" d="M25 100 H260"/><path class="stream" d="M25 125 H260"/><path class="stream" d="M25 150 H260"/>
+    <path class="profile" d="M75 265 C145 205 215 265 75 265"/>
+    <text class="txt small" x="145" y="315" text-anchor="middle">параболічний профіль</text>
+    <text class="txt small" x="145" y="342" text-anchor="middle">слабке перемішування</text>
+  </g>
+  <g transform="translate(395 105)">
+    <text class="txt label" x="145" y="0" text-anchor="middle">Перехідний</text>
+    <text class="txt small" x="145" y="30" text-anchor="middle">2300...10000</text>
+    <rect class="tube" x="0" y="60" width="290" height="130"/>
+    <path class="stream" d="M25 102 C85 88 115 118 170 102 S230 100 260 92"/>
+    <path class="stream" d="M25 150 C90 160 145 130 205 150 S242 158 260 148"/>
+    <path class="mix" d="M85 130 C120 95 155 165 195 120"/>
+    <path class="profile" d="M75 265 C125 220 175 220 215 265 Z"/>
+    <text class="txt small" x="145" y="315" text-anchor="middle">нестійка зона</text>
+    <text class="txt small" x="145" y="342" text-anchor="middle">для розрахунків небажана</text>
+  </g>
+  <g transform="translate(725 105)">
+    <text class="txt label" x="145" y="0" text-anchor="middle">Турбулентний</text>
+    <text class="txt small" x="145" y="30" text-anchor="middle">Re &gt; 10000</text>
+    <rect class="tube" x="0" y="60" width="290" height="130"/>
+    <path class="stream" d="M25 98 C65 75 95 125 135 100 S205 82 260 108"/>
+    <path class="stream" d="M25 145 C65 170 110 120 155 150 S220 170 260 140"/>
+    <path class="mix" d="M70 128 C115 88 160 175 225 110"/>
+    <path class="mix" d="M75 165 C120 130 168 132 215 164"/>
+    <path class="profile" d="M75 265 C105 230 185 230 215 265 Z"/>
+    <text class="txt small" x="145" y="315" text-anchor="middle">краще перемішування</text>
+    <text class="txt small" x="145" y="342" text-anchor="middle">важливо для пастеризації і CIP</text>
+  </g>
+  <text class="txt small" x="540" y="548" text-anchor="middle">Для пастеризації та миття важлива не лише витрата, а й режим: турбулентність вирівнює час перебування і посилює тепло- та масообмін.</text>
+</svg>

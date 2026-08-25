@@ -8,7 +8,7 @@ keywords: ["гідростатика", "гідродинаміка", "рівня
 duration: "55 хв"
 difficulty: "базовий"
 author: "FoodProcessPortal"
-updated: "2026-07-09"
+updated: "2026-08-17"
 ---
 
 # Лекція 4. Основи гідравліки: гідростатика і гідродинаміка
@@ -36,13 +36,15 @@ updated: "2026-07-09"
 
 Відповіді дає **гідравліка** — наука про рух рідин і сили, що при цьому виникають.
 
-📺 **Відео:** [Fluid mechanics in food processing](https://www.youtube.com/results?search_query=fluid+mechanics+food+processing+plant)
+🔗 **Поглибити:** [MIT OpenCourseWare: Fluid Dynamics](https://ocw.mit.edu/courses/2-06-fluid-dynamics-spring-2013/) — базовий університетський курс з тиску, гідростатики, масових балансів і течії у трубах.
 
 ---
 
 ## 2. Гідростатика
 
 ### 2.1 Основний закон гідростатики
+
+![Гідростатичний тиск у резервуарі](/images/lectures/hydraulics/hydrostatic-pressure.svg)
 
 Тиск у будь-якій точці нерухомої рідини на глибині $h$ від поверхні:
 
@@ -87,7 +89,7 @@ $$\frac{F_2}{F_1} = \frac{A_2}{A_1}$$
 
 **Гомогенізатор молока:** молоко продавлюється через вузьку щілину під тиском 10–25 МПа. Жирові кульки дробляться → молоко стає однорідним, жир не спливає.
 
-📺 **Відео:** [How does a homogenizer work](https://www.youtube.com/results?search_query=homogenizer+milk+how+it+works+animation)
+🔗 **Зв'язок з виробництвом:** [Tetra Pak Dairy Processing Handbook: Homogenizers](https://dairyprocessinghandbook.tetrapak.com/chapter/homogenizers) — промисловий приклад використання високого тиску у молочній технології.
 
 ### 2.4 Вимірювання тиску — прилади
 
@@ -126,6 +128,8 @@ $$w_2 = w_1 \cdot \frac{d_1^2}{d_2^2} = 0{,}5 \cdot \frac{50^2}{25^2} = 0{,}5 \c
 ### 3.2 Рівняння Бернуллі
 
 Рівняння Бернуллі — закон збереження енергії для потоку рідини:
+
+![Рівняння Бернуллі як баланс напорів](/images/lectures/hydraulics/bernoulli-energy.svg)
 
 $$z_1 + \frac{p_1}{\rho g} + \frac{w_1^2}{2g} = z_2 + \frac{p_2}{\rho g} + \frac{w_2^2}{2g} + h_{втр}$$
 
@@ -181,7 +185,7 @@ $$H_{нас} = 8 + \frac{200\,000}{1030 \cdot 9{,}81} + \frac{0{,}69^2}{2 \cdot 
 
 $$H_{нас} = 8 + 19{,}8 + 0{,}024 + h_{втр} \approx 27{,}8 + h_{втр}$$
 
-Vtrati naporu $h_{втр}$ розрахуємо у розділі 5.
+Втрати напору $h_{втр}$ розрахуємо у розділі 5.
 
 ---
 
@@ -194,7 +198,9 @@ Vtrati naporu $h_{втр}$ розрахуємо у розділі 5.
 - При **малій швидкості** — цівка фарби тягнеться рівною ниткою, не змішуючись з водою → **ламінарний режим**
 - При **великій швидкості** — цівка розмивається і перемішується з водою → **турбулентний режим**
 
-📺 **Відео:** [Reynolds experiment — laminar vs turbulent flow visualization](https://www.youtube.com/results?search_query=reynolds+experiment+laminar+turbulent+dye+visualization)
+![Режими руху рідини за числом Рейнольдса](/images/lectures/hydraulics/reynolds-flow-regimes.svg)
+
+🔗 **Для самостійного повторення:** [LearnChemE](https://learncheme.com/) — розділ Fluid Mechanics містить короткі навчальні матеріали і симуляції для тем Re, втрат і течії.
 
 ### 4.2 Критерій Рейнольдса і границі режимів
 
@@ -234,6 +240,8 @@ $$Q = \frac{\pi \Delta p \cdot d^4}{128 \mu l}$$
 ## 5. Гідравлічні опори і втрати напору
 
 ### 5.1 Загальна формула
+
+![Втрати напору у харчовому трубопроводі](/images/lectures/hydraulics/head-loss-pipeline.svg)
 
 Повна втрата напору складається з двох частин:
 
@@ -406,15 +414,15 @@ $$h_{втр} = \left(\lambda \cdot \frac{l}{d} + \sum \xi\right) \cdot \frac{w^2
 ### Онлайн-калькулятори
 - 🔗 [Pipe Flow Calculator](https://www.pipeflowcalculations.com) — розрахунок Re, λ, втрат напору онлайн
 - 🔗 [Engineering ToolBox — Hydraulic calculations](https://www.engineeringtoolbox.com/hydraulics-t_18.html) — довідники і формули
+- 🔗 [Engineering ToolBox — Darcy-Weisbach equation](https://www.engineeringtoolbox.com/amp/darcy-weisbach-equation-d_646.html) — формула втрат тиску по довжині трубопроводу
+- 🔗 [Engineering ToolBox — major head loss calculator](https://www.engineeringtoolbox.com/major-pressure-loss-d_616.html) — калькулятор втрат по довжині
 
 ### Підручники
-- 🔗 [Streeter & Wylie — Fluid Mechanics](https://www.mheducation.com) — класичний підручник
-- 🔗 [Munson, Young, Okiishi — Fundamentals of Fluid Mechanics](https://www.wiley.com) — сучасний стандартний підручник
+- 🔗 [MIT OpenCourseWare: Fluid Dynamics](https://ocw.mit.edu/courses/2-06-fluid-dynamics-spring-2013/) — відкритий курс з гідростатики, рівнянь збереження, в'язких течій і трубопроводів
+- 🔗 [Khan Academy: Understanding Bernoulli's equation](https://www.khanacademy.org/science/in-in-class11th-physics/in-in-class11th-physics-fluids/in-in-fluid-dynamics/e/understanding-bernoulli-s-equation) — тренувальні задачі з Бернуллі
 
-### Відео
-- 📺 [MIT OCW — Fluid Mechanics lectures](https://www.youtube.com/results?search_query=MIT+opencourseware+fluid+mechanics+lectures)
-- 📺 [Bernoulli equation examples — Khan Academy](https://www.youtube.com/results?search_query=bernoulli+equation+examples+khan+academy)
-- 📺 [Pipe flow friction losses explained](https://www.youtube.com/results?search_query=pipe+flow+friction+darcy+weisbach+explained)
+### Навчальні ресурси
+- 🔗 [LearnChemE](https://learncheme.com/) — відкриті модулі, screencasts і симуляції з Fluid Mechanics
 
 ---
 

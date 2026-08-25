@@ -1,0 +1,317 @@
+---
+import { getTopicQuestions, topicQuestionUi } from "../data/topicQuestions";
+import type { Locale } from "../config";
+
+interface Props {
+  topic?: string;
+  locale?: string;
+}
+
+const { topic, locale = "uk" } = Astro.props;
+const normalizedLocale: Locale =
+  locale === "uk" || locale === "en" || locale === "de" || locale === "ru"
+    ? locale
+    : "uk";
+const questions = getTopicQuestions(topic, normalizedLocale);
+const ui = topicQuestionUi[normalizedLocale];
+---
+
+{
+  questions.length > 0 && (
+    <section
+      id="self-check"
+      class="self-check"
+      data-self-check
+      data-questions={JSON.stringify(questions)}
+      data-locale={normalizedLocale}
+      data-topic={topic}
+      data-completed-label={ui.completed}
+      data-progress-label={ui.progress}
+    >
+      <div class="self-check-header">
+        <div>
+          <h2>{ui.title}</h2>
+          <p>{ui.description}</p>
+        </div>
+        <button class="self-check-shuffle" type="button" data-shuffle-questions>
+          {ui.shuffle}
+        </button>
+      </div>
+
+      <div class="self-check-status">
+        <p class="self-check-progress" data-question-progress>
+          {ui.progress} {questions.length}
+        </p>
+        <button class="self-check-reset" type="button" data-reset-progress>
+          {ui.reset}
+        </button>
+      </div>
+      <ol class="self-check-list" data-question-list>
+        {questions.slice(0, 10).map((question) => (
+          <li>
+            <label>
+              <input type="checkbox" value={question} />
+              <span>{question}</span>
+            </label>
+          </li>
+        ))}
+      </ol>
+    </section>
+  )
+}
+
+<script>
+  function shuffleQuestions(items: string[]) {
+    const shuffled = [...items];
+    for (let i = shuffled.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+    return shuffled;
+  }
+
+  function getStorageKey(root: HTMLElement) {
+    const locale = root.dataset.locale || "uk";
+    const topic = root.dataset.topic || "topic";
+    return `foodprocess:self-check:${locale}:${topic}`;
+  }
+
+  function loadCompleted(root: HTMLElement) {
+    try {
+      const raw = localStorage.getItem(getStorageKey(root));
+      return raw ? new Set(JSON.parse(raw) as string[]) : new Set<string>();
+    } catch {
+      return new Set<string>();
+    }
+  }
+
+  function saveCompleted(root: HTMLElement, completed: Set<string>) {
+    localStorage.setItem(getStorageKey(root), JSON.stringify([...completed]));
+  }
+
+  function notifyLearningProgressChanged(root: HTMLElement) {
+    window.dispatchEvent(
+      new CustomEvent("foodprocess:learning-progress-changed", {
+        detail: {
+          locale: root.dataset.locale || "uk",
+          topic: root.dataset.topic || "",
+        },
+      }),
+    );
+  }
+
+  function updateProgress(root: HTMLElement, questions: string[], selected: string[]) {
+    const progress = root.querySelector("[data-question-progress]");
+    const completed = loadCompleted(root);
+    const selectedCompleted = selected.filter((question) => completed.has(question)).length;
+    const completedLabel = root.dataset.completedLabel || "Completed";
+    const progressLabel = root.dataset.progressLabel || "Showing 10 questions out of";
+
+    if (progress) {
+      progress.textContent = `${progressLabel} ${questions.length}. ${completedLabel}: ${selectedCompleted}/${selected.length}.`;
+    }
+  }
+
+  function renderQuestions(root: HTMLElement, questions: string[]) {
+    const list = root.querySelector("[data-question-list]");
+    if (!list) return;
+
+    const selected = shuffleQuestions(questions).slice(0, 10);
+    const completed = loadCompleted(root);
+    list.innerHTML = "";
+
+    selected.forEach((question) => {
+      const item = document.createElement("li");
+
+      const label = document.createElement("label");
+      const checkbox = document.createElement("input");
+      const text = document.createElement("span");
+
+      checkbox.type = "checkbox";
+      checkbox.value = question;
+      checkbox.checked = completed.has(question);
+      checkbox.addEventListener("change", () => {
+        const latestCompleted = loadCompleted(root);
+        if (checkbox.checked) {
+          latestCompleted.add(question);
+        } else {
+          latestCompleted.delete(question);
+        }
+        saveCompleted(root, latestCompleted);
+        updateProgress(root, questions, selected);
+        notifyLearningProgressChanged(root);
+      });
+
+      text.textContent = question;
+      label.append(checkbox, text);
+      item.append(label);
+      list.appendChild(item);
+    });
+
+    updateProgress(root, questions, selected);
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll<HTMLElement>("[data-self-check]").forEach((root) => {
+      const rawQuestions = root.dataset.questions;
+      if (!rawQuestions) return;
+
+      const questions = JSON.parse(rawQuestions) as string[];
+      renderQuestions(root, questions);
+
+      root
+        .querySelector("[data-shuffle-questions]")
+        ?.addEventListener("click", () => renderQuestions(root, questions));
+
+      root.querySelector("[data-reset-progress]")?.addEventListener("click", () => {
+        localStorage.removeItem(getStorageKey(root));
+        renderQuestions(root, questions);
+        notifyLearningProgressChanged(root);
+      });
+    });
+  });
+</script>
+
+<style>
+  .self-check {
+    margin-top: 2.5rem;
+    padding: 1.5rem;
+    background: color-mix(in srgb, var(--bg-secondary) 94%, var(--accent-blue));
+    border: 1px solid var(--border-color);
+    border-radius: 0.75rem;
+  }
+
+  .self-check-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .self-check h2 {
+    margin: 0 0 0.45rem;
+    color: var(--text-primary);
+    font-size: 1.35rem;
+    line-height: 1.25;
+  }
+
+  .self-check p {
+    margin: 0;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+
+  .self-check-shuffle {
+    flex-shrink: 0;
+    padding: 0.65rem 0.9rem;
+    background: var(--accent-blue);
+    border: 1px solid var(--accent-blue);
+    border-radius: 0.5rem;
+    color: white;
+    cursor: pointer;
+    font: inherit;
+    font-size: 0.9rem;
+    font-weight: 700;
+    transition:
+      transform 0.2s ease,
+      filter 0.2s ease;
+  }
+
+  .self-check-shuffle:hover {
+    filter: brightness(1.08);
+    transform: translateY(-1px);
+  }
+
+  .self-check-status {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .self-check-progress {
+    margin: 0;
+    color: var(--text-muted);
+    font-size: 0.88rem;
+  }
+
+  .self-check-reset {
+    padding: 0.35rem 0.65rem;
+    background: transparent;
+    border: 1px solid var(--border-color);
+    border-radius: 0.45rem;
+    color: var(--text-secondary);
+    cursor: pointer;
+    font: inherit;
+    font-size: 0.82rem;
+    transition:
+      border-color 0.2s ease,
+      color 0.2s ease;
+  }
+
+  .self-check-reset:hover {
+    border-color: var(--accent-blue);
+    color: var(--accent-blue);
+  }
+
+  .self-check-list {
+    display: grid;
+    gap: 0.75rem;
+    margin: 0;
+    padding-left: 0;
+    list-style-position: inside;
+  }
+
+  .self-check-list li {
+    color: var(--text-primary);
+    line-height: 1.55;
+  }
+
+  .self-check-list label {
+    display: inline-grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.7rem;
+    align-items: start;
+    width: 100%;
+    cursor: pointer;
+  }
+
+  .self-check-list input {
+    width: 1.05rem;
+    height: 1.05rem;
+    margin-top: 0.2rem;
+    accent-color: var(--accent-blue);
+  }
+
+  .self-check-list input:checked + span {
+    color: var(--text-secondary);
+    text-decoration: line-through;
+    text-decoration-thickness: 1px;
+  }
+
+  @media (max-width: 700px) {
+    .self-check {
+      padding: 1.2rem;
+    }
+
+    .self-check-header {
+      flex-direction: column;
+    }
+
+    .self-check-shuffle {
+      width: 100%;
+    }
+
+    .self-check-status {
+      align-items: stretch;
+      flex-direction: column;
+      gap: 0.7rem;
+    }
+
+    .self-check-reset {
+      width: 100%;
+    }
+  }
+</style>

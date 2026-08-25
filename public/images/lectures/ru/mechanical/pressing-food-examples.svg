@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 430" role="img" aria-labelledby="title desc">
+  <title id="title">Приклади пресування у харчових виробництвах</title>
+  <desc id="desc">Карта прикладив: олийне насиння, яблучний сик, сирна маса, жом, оливкова паста, вологи порошки.</desc>
+  <rect width="920" height="430" rx="22" fill="#111827"/>
+  <text x="42" y="58" fill="#f8fafc" font-family="Arial, sans-serif" font-size="25" font-weight="700">Де використовуеться механичне виджимання</text>
+  <g font-family="Arial, sans-serif">
+    <rect x="52" y="116" width="250" height="92" rx="12" fill="#1e293b" stroke="#334155"/>
+    <text x="76" y="150" fill="#fde68a" font-size="18" font-weight="700">Олийне насиння</text>
+    <text x="76" y="178" fill="#f8fafc" font-size="15">соняшник, рипак, соя</text>
+    <text x="76" y="200" fill="#94a3b8" font-size="14">плющення, кондициювання, прес</text>
+
+    <rect x="335" y="116" width="250" height="92" rx="12" fill="#1e293b" stroke="#334155"/>
+    <text x="359" y="150" fill="#bbf7d0" font-size="18" font-weight="700">Соки и пюре</text>
+    <text x="359" y="178" fill="#f8fafc" font-size="15">яблука, ягоди, овочи</text>
+    <text x="359" y="200" fill="#94a3b8" font-size="14">подрибнення, прес, фильтрация</text>
+
+    <rect x="618" y="116" width="250" height="92" rx="12" fill="#1e293b" stroke="#334155"/>
+    <text x="642" y="150" fill="#bae6fd" font-size="18" font-weight="700">Сирна маса</text>
+    <text x="642" y="178" fill="#f8fafc" font-size="15">видалення сироватки</text>
+    <text x="642" y="200" fill="#94a3b8" font-size="14">м'який тиск и час</text>
+
+    <rect x="52" y="250" width="250" height="92" rx="12" fill="#1e293b" stroke="#334155"/>
+    <text x="76" y="284" fill="#fecaca" font-size="18" font-weight="700">Жом и вичавки</text>
+    <text x="76" y="312" fill="#f8fafc" font-size="15">цукровий буряк, фрукти</text>
+    <text x="76" y="334" fill="#94a3b8" font-size="14">зменшення вологи перед сушинням</text>
+
+    <rect x="335" y="250" width="250" height="92" rx="12" fill="#1e293b" stroke="#334155"/>
+    <text x="359" y="284" fill="#ddd6fe" font-size="18" font-weight="700">Оливкова паста</text>
+    <text x="359" y="312" fill="#f8fafc" font-size="15">олия, вода, тверда фаза</text>
+    <text x="359" y="334" fill="#94a3b8" font-size="14">декантер писля пидготовки пасти</text>
+
+    <rect x="618" y="250" width="250" height="92" rx="12" fill="#1e293b" stroke="#334155"/>
+    <text x="642" y="284" fill="#fed7aa" font-size="18" font-weight="700">Вологи порошки</text>
+    <text x="642" y="312" fill="#f8fafc" font-size="15">осади, концентрати</text>
+    <text x="642" y="334" fill="#94a3b8" font-size="14">перед сушинням або утилизациею</text>
+  </g>
+</svg>

@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 430" role="img" aria-labelledby="title desc">
+  <title id="title">Types of cutting food products</title>
+  <desc id="desc">The scheme compares slices, cubes, sticks, shredding, mincing and pureeing.</desc>
+  <rect width="920" height="430" rx="22" fill="#111827"/>
+  <text x="42" y="58" fill="#f8fafc" font-family="Arial, sans-serif" font-size="26" font-weight="700">Cutting sets product shape, size and surface</text>
+  <g font-family="Arial, sans-serif">
+    <rect x="52" y="120" width="250" height="90" rx="12" fill="#1e293b" stroke="#334155"/>
+    <text x="76" y="152" fill="#bfdbfe" font-size="18" font-weight="700">Slices</text>
+    <g fill="#fde68a"><rect x="190" y="142" width="70" height="8"/><rect x="190" y="162" width="70" height="8"/><rect x="190" y="182" width="70" height="8"/></g>
+    <text x="76" y="190" fill="#cbd5e1" font-size="14">thickness, uniformity, edge</text>
+
+    <rect x="335" y="120" width="250" height="90" rx="12" fill="#1e293b" stroke="#334155"/>
+    <text x="359" y="152" fill="#bbf7d0" font-size="18" font-weight="700">Cubes</text>
+    <g fill="#86efac"><rect x="480" y="142" width="24" height="24"/><rect x="514" y="142" width="24" height="24"/><rect x="480" y="176" width="24" height="24"/><rect x="514" y="176" width="24" height="24"/></g>
+    <text x="359" y="190" fill="#cbd5e1" font-size="14">3D cutting, size distribution</text>
+
+    <rect x="618" y="120" width="250" height="90" rx="12" fill="#1e293b" stroke="#334155"/>
+    <text x="642" y="152" fill="#fed7aa" font-size="18" font-weight="700">Sticks</text>
+    <g fill="#fdba74"><rect x="768" y="142" width="12" height="54"/><rect x="790" y="142" width="12" height="54"/><rect x="812" y="142" width="12" height="54"/></g>
+    <text x="642" y="190" fill="#cbd5e1" font-size="14">length, cross-section, breakage</text>
+
+    <rect x="52" y="254" width="250" height="90" rx="12" fill="#1e293b" stroke="#334155"/>
+    <text x="76" y="286" fill="#fecaca" font-size="18" font-weight="700">Shredding</text>
+    <g stroke="#fecaca" stroke-width="5"><line x1="190" y1="276" x2="256" y2="318"/><line x1="206" y1="270" x2="272" y2="312"/><line x1="176" y1="292" x2="242" y2="334"/></g>
+    <text x="76" y="324" fill="#cbd5e1" font-size="14">cabbage, cheese, vegetables</text>
+
+    <rect x="335" y="254" width="250" height="90" rx="12" fill="#1e293b" stroke="#334155"/>
+    <text x="359" y="286" fill="#ddd6fe" font-size="18" font-weight="700">Mincing</text>
+    <g fill="#c4b5fd"><circle cx="490" cy="284" r="8"/><circle cx="518" cy="302" r="6"/><circle cx="470" cy="318" r="7"/><circle cx="540" cy="322" r="5"/></g>
+    <text x="359" y="324" fill="#cbd5e1" font-size="14">mince, filling, crumbs</text>
+
+    <rect x="618" y="254" width="250" height="90" rx="12" fill="#1e293b" stroke="#334155"/>
+    <text x="642" y="286" fill="#bae6fd" font-size="18" font-weight="700">Puree / emulsion</text>
+    <ellipse cx="794" cy="304" rx="52" ry="22" fill="#7dd3fc" opacity=".8"/>
+    <text x="642" y="324" fill="#cbd5e1" font-size="14">structure, air, temperature</text>
+  </g>
+</svg>

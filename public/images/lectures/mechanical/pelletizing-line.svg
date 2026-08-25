@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 430" role="img" aria-labelledby="title desc">
+  <title id="title">Схема гранулювання та пелетування</title>
+  <desc id="desc">Сухі компоненти дозують, змішують, кондиціонують парою або рідиною, пресують через матрицю, охолоджують, просіюють і пакують.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#38bdf8"/>
+    </marker>
+  </defs>
+  <rect width="920" height="430" rx="22" fill="#111827"/>
+  <text x="42" y="58" fill="#f8fafc" font-family="Arial, sans-serif" font-size="25" font-weight="700">Лінія гранулювання: від порошку до стабільної гранули</text>
+  <g font-family="Arial, sans-serif" font-size="14">
+    <rect x="38" y="160" width="120" height="70" rx="10" fill="#1e293b" stroke="#334155"/>
+    <text x="68" y="190" fill="#f8fafc" font-weight="700">дозування</text>
+    <text x="58" y="214" fill="#94a3b8">компоненти</text>
+    <path d="M160 195h42" stroke="#38bdf8" stroke-width="5" marker-end="url(#arrow)"/>
+    <rect x="208" y="160" width="120" height="70" rx="10" fill="#164e63" stroke="#22d3ee"/>
+    <text x="238" y="190" fill="#ecfeff" font-weight="700">змішування</text>
+    <text x="236" y="214" fill="#a5f3fc">однорідність</text>
+    <path d="M330 195h42" stroke="#38bdf8" stroke-width="5" marker-end="url(#arrow)"/>
+    <rect x="378" y="160" width="120" height="70" rx="10" fill="#713f12" stroke="#fbbf24"/>
+    <text x="404" y="190" fill="#fffbeb" font-weight="700">зволоження</text>
+    <text x="410" y="214" fill="#fde68a">пара, вода</text>
+    <path d="M500 195h42" stroke="#38bdf8" stroke-width="5" marker-end="url(#arrow)"/>
+    <rect x="548" y="160" width="120" height="70" rx="10" fill="#1e3a8a" stroke="#60a5fa"/>
+    <text x="576" y="190" fill="#eff6ff" font-weight="700">матриця</text>
+    <text x="568" y="214" fill="#bfdbfe">ущільнення</text>
+    <path d="M670 195h42" stroke="#38bdf8" stroke-width="5" marker-end="url(#arrow)"/>
+    <rect x="718" y="160" width="150" height="70" rx="10" fill="#064e3b" stroke="#34d399"/>
+    <text x="752" y="190" fill="#ecfdf5" font-weight="700">охолодження</text>
+    <text x="744" y="214" fill="#bbf7d0">просіювання, пакування</text>
+  </g>
+  <rect x="74" y="292" width="772" height="54" rx="12" fill="#1f2937" stroke="#374151"/>
+  <text x="104" y="325" fill="#f8fafc" font-family="Arial, sans-serif" font-size="16">Критичні змінні: вологість, температура кондиціонування, зв'язувач, тиск, отвір матриці, охолодження.</text>
+</svg>

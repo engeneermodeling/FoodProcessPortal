@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="500" viewBox="0 0 980 500" role="img" aria-labelledby="title desc">
+  <title id="title">Загрязнение поверхности и CIP-цикл</title>
+  <desc id="desc">Кривая показывает, что коэффициент теплопередачи со временем падает из-за загрязнения и восстанавливается после мойки.</desc>
+  <defs>
+    <style>
+      .bg{fill:#f8fafc}.axis{stroke:#334155;stroke-width:3}.grid{stroke:#cbd5e1;stroke-width:1}.curve{stroke:#dc2626;stroke-width:6;fill:none}.clean{fill:#dcfce7}.cip{fill:#dbeafe}.h{fill:#0f172a;font:700 22px Arial}.t{fill:#334155;font:16px Arial}.dash{stroke:#2563eb;stroke-width:3;stroke-dasharray:7 7}
+    </style>
+  </defs>
+  <rect class="bg" width="980" height="500" rx="18"/>
+  <rect x="110" y="85" width="620" height="300" class="clean"/>
+  <rect x="730" y="85" width="140" height="300" class="cip"/>
+  <line x1="110" y1="385" x2="900" y2="385" class="axis"/>
+  <line x1="110" y1="385" x2="110" y2="70" class="axis"/>
+  <path class="grid" d="M110 325 H900 M110 265 H900 M110 205 H900 M110 145 H900 M250 85 V385 M390 85 V385 M530 85 V385 M670 85 V385 M810 85 V385"/>
+  <path class="curve" d="M120 115 C240 145 360 185 500 245 C610 295 680 325 728 345"/>
+  <path class="dash" d="M730 345 C760 190 805 130 870 112"/>
+  <text x="490" y="45" text-anchor="middle" class="h">Со временем K падает: поверхность загрязняется, затем CIP восстанавливает теплопередачу</text>
+  <text x="420" y="415" text-anchor="middle" class="t">производственная работа</text>
+  <text x="800" y="415" text-anchor="middle" class="t">CIP-мойка</text>
+  <text x="48" y="245" class="h" transform="rotate(-90 48 245)">K</text>
+  <text x="905" y="420" class="h">время</text>
+</svg>

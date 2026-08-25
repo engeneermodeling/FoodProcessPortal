@@ -1,0 +1,223 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import Header from "../../../components/Header.astro";
+import ThemeToggle from "../../../components/ThemeToggle.astro";
+import Footer from "../../../components/Footer.astro";
+import { siteConfig } from "../../../config";
+import { ENABLED_LOCALES } from "../../../locales.config";
+import { getLocaleCourses } from "../../../data/courses";
+import type { LocaleCourse } from "../../../data/courses";
+
+export function getStaticPaths() {
+  return [...ENABLED_LOCALES].map((locale) => ({
+    params: { locale },
+  }));
+}
+
+const { locale } = Astro.params;
+const t = siteConfig.translations[locale as keyof typeof siteConfig.translations];
+const courses = getLocaleCourses(locale as string);
+const courseSources = import.meta.glob<string>("/src/content/courses/**/*.md", {
+  eager: true,
+  query: "?raw",
+  import: "default",
+});
+const coursesWithTests = new Set<string>();
+
+Object.entries(courseSources).forEach(([path, content]) => {
+  const parts = path.split("/");
+  const idx = parts.indexOf("courses");
+  const sourceLocale = parts[idx + 1];
+  const sourceCourse = parts[idx + 2];
+
+  if (sourceLocale === locale && sourceCourse && content.includes("data-course-self-test")) {
+    coursesWithTests.add(sourceCourse);
+  }
+});
+
+const chapterWord =
+  locale === "uk" ? "розділів" :
+  locale === "de" ? "Kapitel" :
+  locale === "ru" ? "разделов" : "chapters";
+
+const courseProgressUi = {
+  passed:
+    locale === "uk" ? "складено" :
+    locale === "de" ? "bestanden" :
+    locale === "ru" ? "сдано" : "passed",
+  started:
+    locale === "uk" ? "почато" :
+    locale === "de" ? "begonnen" :
+    locale === "ru" ? "начато" : "started",
+  notStarted:
+    locale === "uk" ? "Тести ще не проходили" :
+    locale === "de" ? "Tests noch nicht begonnen" :
+    locale === "ru" ? "Тесты еще не начаты" :
+    "Tests not started",
+};
+---
+
+<BaseLayout
+  title={t.sections.courses.title}
+  description={t.sections.courses.desc}
+  locale={locale}
+>
+  <Header>
+    <ThemeToggle slot="theme-toggle" />
+  </Header>
+
+  <main class="main-content">
+    <div class="container">
+      <div class="hero">
+        <h1 class="title">{t.sections.courses.title}</h1>
+        <p class="subtitle">{t.sections.courses.desc}</p>
+        <div class="hero-line"></div>
+      </div>
+
+      {courses.length > 0 ? (
+        <div class="topics-list">
+          {courses.map((course: LocaleCourse) => {
+            const hasTests = coursesWithTests.has(course.slug);
+
+            return (
+              <a
+                href={`/${locale}/courses/${course.slug}`}
+                class={`topic-card ${hasTests ? "course-overview-card" : ""}`}
+                data-course-overview-card={hasTests ? "" : undefined}
+                data-course={hasTests ? course.slug : undefined}
+                data-total={hasTests ? course.chapters.length : undefined}
+              >
+                <h2 class="topic-title">{course.title}</h2>
+                <p class="topic-excerpt">
+                  {course.chapters.length} {chapterWord}
+                </p>
+                {hasTests && (
+                  <span
+                    class="course-overview-progress"
+                    data-course-overview-progress
+                    data-passed-label={courseProgressUi.passed}
+                    data-started-label={courseProgressUi.started}
+                    data-empty-label={courseProgressUi.notStarted}
+                  >
+                    <span data-course-overview-progress-value>{courseProgressUi.notStarted}</span>
+                    <span class="course-overview-progress-bar">
+                      <span data-course-overview-progress-bar></span>
+                    </span>
+                  </span>
+                )}
+                <span class="topic-link">{t.goTo} →</span>
+              </a>
+            );
+          })}
+        </div>
+      ) : (
+        <div class="placeholder-content">
+          <div class="placeholder-card">
+            <h2>{t.underConstructionTitle}</h2>
+            <p>{t.underConstructionText}</p>
+          </div>
+        </div>
+      )}
+    </div>
+  </main>
+  <Footer />
+</BaseLayout>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const locale = document.documentElement.lang || "uk";
+
+    document.querySelectorAll<HTMLElement>("[data-course-overview-card]").forEach((card) => {
+      const course = card.dataset.course || "";
+      const totalChapters = Number(card.dataset.total || "0");
+      const progress = card.querySelector<HTMLElement>("[data-course-overview-progress]");
+      const value = card.querySelector("[data-course-overview-progress-value]");
+      const bar = card.querySelector<HTMLElement>("[data-course-overview-progress-bar]");
+      const passedLabel = progress?.dataset.passedLabel || "passed";
+      const startedLabel = progress?.dataset.startedLabel || "started";
+      const emptyLabel = progress?.dataset.emptyLabel || "Tests not started";
+      const prefix = `foodprocess:course-test:${locale}:${course}:`;
+
+      let started = 0;
+      let passed = 0;
+
+      for (let i = 0; i < localStorage.length; i++) {
+        const key = localStorage.key(i);
+        if (!key?.startsWith(prefix)) continue;
+
+        try {
+          const raw = localStorage.getItem(key);
+          const result = raw ? (JSON.parse(raw) as { score?: number; total?: number }) : null;
+          const score = Number(result?.score);
+          const total = Number(result?.total);
+
+          if (Number.isFinite(score) && Number.isFinite(total) && total > 0) {
+            started += 1;
+            if (score / total >= 0.7) passed += 1;
+          }
+        } catch {
+          // Ignore malformed saved course progress.
+        }
+      }
+
+      const percent = totalChapters > 0 ? Math.round((passed / totalChapters) * 100) : 0;
+      if (started > 0) {
+        card.classList.add("has-course-progress");
+        if (value) value.textContent = `${passed}/${totalChapters} ${passedLabel} · ${started} ${startedLabel}`;
+      } else if (value) {
+        value.textContent = emptyLabel;
+      }
+      if (bar) bar.style.width = `${percent}%`;
+    });
+  });
+</script>
+
+<style>
+  @import "../../../styles/topics.css";
+  @import "../../../styles/section.css";
+
+  .course-overview-card {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .course-overview-progress {
+    display: grid;
+    gap: 0.4rem;
+    margin: 0 0 1rem;
+    padding: 0.65rem 0.75rem;
+    background: color-mix(in srgb, var(--bg-primary) 78%, transparent);
+    border: 1px solid color-mix(in srgb, var(--border-color) 86%, transparent);
+    border-radius: 8px;
+  }
+
+  .course-overview-progress > span:first-child {
+    color: var(--text-secondary);
+    font-size: 0.84rem;
+    font-weight: 700;
+  }
+
+  .course-overview-progress-bar {
+    height: 0.38rem;
+    overflow: hidden;
+    background: color-mix(in srgb, var(--border-color) 70%, transparent);
+    border-radius: 999px;
+  }
+
+  .course-overview-progress-bar span {
+    display: block;
+    width: 0;
+    height: 100%;
+    background: var(--accent-blue);
+    border-radius: inherit;
+    transition: width 0.3s ease;
+  }
+
+  .course-overview-card.has-course-progress .course-overview-progress {
+    border-color: color-mix(in srgb, var(--accent-blue) 45%, var(--border-color));
+  }
+
+  .course-overview-card.has-course-progress .topic-link {
+    margin-top: auto;
+  }
+</style>
