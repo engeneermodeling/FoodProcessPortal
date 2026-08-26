@@ -23,6 +23,7 @@ const courseSources = import.meta.glob<string>("/src/content/courses/**/*.md", {
   import: "default",
 });
 const coursesWithTests = new Set<string>();
+const courseStats = new Map<string, { tests: number; figures: number }>();
 
 Object.entries(courseSources).forEach(([path, content]) => {
   const parts = path.split("/");
@@ -30,8 +31,16 @@ Object.entries(courseSources).forEach(([path, content]) => {
   const sourceLocale = parts[idx + 1];
   const sourceCourse = parts[idx + 2];
 
-  if (sourceLocale === locale && sourceCourse && content.includes("data-course-self-test")) {
-    coursesWithTests.add(sourceCourse);
+  if (sourceLocale === locale && sourceCourse) {
+    const stats = courseStats.get(sourceCourse) || { tests: 0, figures: 0 };
+    stats.figures += content.match(/!\[[^\]]*\]\(/g)?.length || 0;
+
+    if (content.includes("data-course-self-test")) {
+      coursesWithTests.add(sourceCourse);
+      stats.tests += 1;
+    }
+
+    courseStats.set(sourceCourse, stats);
   }
 });
 
@@ -41,6 +50,11 @@ const chapterWord =
   locale === "ru" ? "разделов" : "chapters";
 
 const courseProgressUi = {
+  typeLabel:
+    locale === "uk" ? "Курс" :
+    locale === "de" ? "Kurs" :
+    locale === "ru" ? "Курс" :
+    "Course",
   passed:
     locale === "uk" ? "складено" :
     locale === "de" ? "bestanden" :
@@ -54,6 +68,16 @@ const courseProgressUi = {
     locale === "de" ? "Tests noch nicht begonnen" :
     locale === "ru" ? "Тесты еще не начаты" :
     "Tests not started",
+  figures:
+    locale === "uk" ? "рисунків" :
+    locale === "de" ? "Abbildungen" :
+    locale === "ru" ? "рисунков" :
+    "figures",
+  tests:
+    locale === "uk" ? "тестів" :
+    locale === "de" ? "Tests" :
+    locale === "ru" ? "тестов" :
+    "tests",
 };
 ---
 
@@ -78,6 +102,7 @@ const courseProgressUi = {
         <div class="topics-list">
           {courses.map((course: LocaleCourse) => {
             const hasTests = coursesWithTests.has(course.slug);
+            const stats = courseStats.get(course.slug) || { tests: 0, figures: 0 };
 
             return (
               <a
@@ -87,10 +112,13 @@ const courseProgressUi = {
                 data-course={hasTests ? course.slug : undefined}
                 data-total={hasTests ? course.chapters.length : undefined}
               >
+                <span class="course-type-badge">{course.slug === "bioprocess-engineering" ? "LMS" : courseProgressUi.typeLabel}</span>
                 <h2 class="topic-title">{course.title}</h2>
-                <p class="topic-excerpt">
-                  {course.chapters.length} {chapterWord}
-                </p>
+                <div class="course-overview-stats" aria-label={course.title}>
+                  <span>{course.chapters.length} {chapterWord}</span>
+                  {stats.tests > 0 && <span>{stats.tests} {courseProgressUi.tests}</span>}
+                  {stats.figures > 0 && <span>{stats.figures} {courseProgressUi.figures}</span>}
+                </div>
                 {hasTests && (
                   <span
                     class="course-overview-progress"
@@ -179,6 +207,41 @@ const courseProgressUi = {
   .course-overview-card {
     display: flex;
     flex-direction: column;
+    min-height: 15rem;
+  }
+
+  .course-type-badge {
+    width: fit-content;
+    margin-bottom: 0.9rem;
+    padding: 0.22rem 0.55rem;
+    border: 1px solid color-mix(in srgb, var(--accent-blue) 50%, var(--border-color));
+    border-radius: 999px;
+    color: var(--accent-blue);
+    background: color-mix(in srgb, var(--accent-blue) 10%, transparent);
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .course-overview-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    margin: 0 0 1rem;
+  }
+
+  .course-overview-stats span {
+    display: inline-flex;
+    align-items: center;
+    min-height: 1.75rem;
+    padding: 0.25rem 0.6rem;
+    border: 1px solid var(--border-color);
+    border-radius: 999px;
+    color: var(--text-secondary);
+    background: color-mix(in srgb, var(--bg-primary) 78%, transparent);
+    font-size: 0.8rem;
+    font-weight: 700;
   }
 
   .course-overview-progress {

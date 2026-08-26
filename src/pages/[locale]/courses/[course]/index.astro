@@ -46,6 +46,8 @@ const chapterSources = import.meta.glob<string>("/src/content/courses/**/*.md", 
 });
 const chaptersWithTests = new Set<string>();
 const publishedChapters = new Set(chapters.map((ch) => ch.slug));
+const chapterFigureCounts = new Map<string, number>();
+let totalFigures = 0;
 
 Object.entries(chapterSources).forEach(([path, content]) => {
   const parts = path.split("/");
@@ -58,14 +60,22 @@ Object.entries(chapterSources).forEach(([path, content]) => {
     sourceLocale === locale &&
     sourceCourse === course &&
     slug &&
-    publishedChapters.has(slug) &&
-    content.includes("data-course-self-test")
+    publishedChapters.has(slug)
   ) {
-    chaptersWithTests.add(slug);
+    const figures = content.match(/!\[[^\]]*\]\(/g)?.length || 0;
+    chapterFigureCounts.set(slug, figures);
+    totalFigures += figures;
+
+    if (content.includes("data-course-self-test")) {
+      chaptersWithTests.add(slug);
+    }
   }
 });
 
 const hasCourseTests = chaptersWithTests.size > 0;
+const firstChapterHref = chapters[0]
+  ? `/${locale}/courses/${course}/${chapters[0].slug}`
+  : `/${locale}/courses`;
 
 const chapterWord =
   locale === "uk" ? "Розділ" :
@@ -78,6 +88,39 @@ const backWord =
   locale === "ru" ? "← Назад к курсовым" : "← Back to courses";
 
 const progressUi = {
+  courseLabel:
+    locale === "uk" ? "Навчальний курс" :
+    locale === "de" ? "Lernkurs" :
+    locale === "ru" ? "Учебный курс" : "Learning course",
+  start:
+    locale === "uk" ? "Почати курс" :
+    locale === "de" ? "Kurs beginnen" :
+    locale === "ru" ? "Начать курс" : "Start course",
+  chapters:
+    locale === "uk" ? "Розділи" :
+    locale === "de" ? "Kapitel" :
+    locale === "ru" ? "Разделы" : "Chapters",
+  figures:
+    locale === "uk" ? "Рисунки" :
+    locale === "de" ? "Abbildungen" :
+    locale === "ru" ? "Рисунки" : "Figures",
+  tests:
+    locale === "uk" ? "Тести" :
+    locale === "de" ? "Tests" :
+    locale === "ru" ? "Тесты" : "Tests",
+  readingTitle:
+    locale === "uk" ? "Прогрес читання" :
+    locale === "de" ? "Lesefortschritt" :
+    locale === "ru" ? "Прогресс чтения" : "Reading progress",
+  readingDescription:
+    locale === "uk" ? "Позначені як прочитані розділи зберігаються в цьому браузері." :
+    locale === "de" ? "Als gelesen markierte Kapitel werden in diesem Browser gespeichert." :
+    locale === "ru" ? "Отмеченные как прочитанные разделы сохраняются в этом браузере." :
+    "Chapters marked as read are stored in this browser.",
+  read:
+    locale === "uk" ? "прочитано" :
+    locale === "de" ? "gelesen" :
+    locale === "ru" ? "прочитано" : "read",
   title:
     locale === "uk" ? "Прогрес тестів" :
     locale === "de" ? "Testfortschritt" :
@@ -170,14 +213,43 @@ const progressUi = {
       <article class="topic-article">
         <a href={`/${locale}/courses`} class="back-link">{backWord}</a>
 
-        <div class="topic-header">
-          <div>
+        <header class="course-hero-panel">
+          <div class="course-hero-copy">
+            <span class="course-kicker">{progressUi.courseLabel}</span>
             <h1 class="article-title">{courseTitle}</h1>
+            {chapters[0]?.description && <p class="course-hero-description">{chapters[0].description}</p>}
+            <a class="course-start-link" href={firstChapterHref}>{progressUi.start} →</a>
           </div>
-        </div>
+          <div class="course-hero-stats" aria-label={courseTitle}>
+            <span><strong>{chapters.length}</strong>{progressUi.chapters}</span>
+            <span><strong>{chaptersWithTests.size}</strong>{progressUi.tests}</span>
+            <span><strong>{totalFigures}</strong>{progressUi.figures}</span>
+          </div>
+        </header>
 
-        {hasCourseTests && (
-          <>
+        <div class="course-dashboard">
+          <section
+            class="course-test-progress"
+            data-course-reading-progress
+            data-locale={locale}
+            data-course={course}
+            data-total={chapters.length}
+            data-read-label={progressUi.read}
+          >
+            <div>
+              <h2>{progressUi.readingTitle}</h2>
+              <p>{progressUi.readingDescription}</p>
+            </div>
+            <div class="course-test-progress-meter">
+              <strong data-course-reading-progress-percent>0%</strong>
+              <span data-course-reading-progress-value>0/{chapters.length} {progressUi.read}</span>
+              <span class="course-test-progress-bar">
+                <span data-course-reading-progress-bar></span>
+              </span>
+            </div>
+          </section>
+
+          {hasCourseTests && (
             <section
               class="course-test-progress"
               data-course-test-progress
@@ -201,7 +273,10 @@ const progressUi = {
                 <span data-course-test-progress-meta>0/{chaptersWithTests.size} {progressUi.started}</span>
               </div>
             </section>
+          )}
+        </div>
 
+        {hasCourseTests && (
             <section
               class="course-result-tools"
               data-course-result-tools
@@ -229,13 +304,14 @@ const progressUi = {
               </div>
               <p class="course-result-tool-status" data-course-result-tool-status aria-live="polite"></p>
             </section>
-          </>
         )}
 
         <section class="lectures-section">
+          <h2 class="lectures-heading">{progressUi.chapters}</h2>
           <div class="lectures-list">
             {chapters.map((ch: CourseChapter) => {
               const hasTest = chaptersWithTests.has(ch.slug);
+              const figureCount = chapterFigureCounts.get(ch.slug) || 0;
 
               return (
               <a
@@ -243,11 +319,20 @@ const progressUi = {
                 class="lecture-card"
                 data-course-chapter-card={hasTest ? "" : undefined}
                 data-chapter={hasTest ? ch.slug : undefined}
+                data-course-reading-card
+                data-reading-chapter={ch.slug}
               >
                 <div class="lecture-number">{chapterWord} {ch.chapter}</div>
                 <div class="lecture-info">
                   <h3 class="lecture-title">{ch.title}</h3>
                   {ch.description && <p class="lecture-desc">{ch.description}</p>}
+                  <div class="lecture-meta">
+                    {figureCount > 0 && <span class="meta-badge">{figureCount} {progressUi.figures}</span>}
+                    {hasTest && <span class="meta-badge">{progressUi.tests}</span>}
+                    <span class="meta-badge lecture-read-status" data-course-reading-status>
+                      0
+                    </span>
+                  </div>
                   {hasTest && (
                     <span
                       class="course-chapter-score"
@@ -275,15 +360,17 @@ const progressUi = {
 <script>
   document.addEventListener("DOMContentLoaded", () => {
     const progress = document.querySelector<HTMLElement>("[data-course-test-progress]");
-    if (!progress) return;
-
-    const locale = progress.dataset.locale || "uk";
-    const course = progress.dataset.course || "course";
-    const totalChapters = Number(progress.dataset.total || "0");
-    const passedLabel = progress.dataset.passedLabel || "passed";
-    const startedLabel = progress.dataset.startedLabel || "started";
-    const averageLabel = progress.dataset.averageLabel || "average score";
+    const readingProgress = document.querySelector<HTMLElement>("[data-course-reading-progress]");
+    const locale = readingProgress?.dataset.locale || progress?.dataset.locale || "uk";
+    const course = readingProgress?.dataset.course || progress?.dataset.course || "course";
+    const totalReadingChapters = Number(readingProgress?.dataset.total || "0");
+    const readLabel = readingProgress?.dataset.readLabel || "read";
+    const totalChapters = Number(progress?.dataset.total || "0");
+    const passedLabel = progress?.dataset.passedLabel || "passed";
+    const startedLabel = progress?.dataset.startedLabel || "started";
+    const averageLabel = progress?.dataset.averageLabel || "average score";
     const cards = Array.from(document.querySelectorAll<HTMLElement>("[data-course-chapter-card]"));
+    const readingCards = Array.from(document.querySelectorAll<HTMLElement>("[data-course-reading-card]"));
     const tools = document.querySelector<HTMLElement>("[data-course-result-tools]");
 
     function courseTestPrefix(activeLocale: string, activeCourse: string) {
@@ -292,6 +379,10 @@ const progressUi = {
 
     function isCurrentCourseResultKey(key: string) {
       return key.startsWith(courseTestPrefix(locale, course));
+    }
+
+    function courseReadingKey(activeLocale: string, activeCourse: string, activeChapter: string) {
+      return `foodprocess:lecture-read:${activeLocale}:${activeCourse}:${activeChapter}`;
     }
 
     function collectCourseResults() {
@@ -308,6 +399,7 @@ const progressUi = {
     }
 
     function updateCourseProgress() {
+      if (!progress) return;
       let started = 0;
       let passed = 0;
       let earned = 0;
@@ -364,6 +456,31 @@ const progressUi = {
       if (percent) percent.textContent = `${percentValue}%`;
       if (value) value.textContent = `${passed}/${totalChapters} ${passedLabel}`;
       if (meta) meta.textContent = `${started}/${totalChapters} ${startedLabel} · ${averageLabel}: ${averageValue}%`;
+      if (bar) bar.style.width = `${percentValue}%`;
+    }
+
+    function updateReadingProgress() {
+      if (!readingProgress) return;
+
+      let read = 0;
+
+      readingCards.forEach((card) => {
+        const chapter = card.dataset.readingChapter || "";
+        const status = card.querySelector("[data-course-reading-status]");
+        const isRead = localStorage.getItem(courseReadingKey(locale, course, chapter)) === "1";
+
+        card.classList.toggle("is-read", isRead);
+        if (isRead) read += 1;
+        if (status) status.textContent = isRead ? readLabel : "";
+      });
+
+      const percentValue = totalReadingChapters > 0 ? Math.round((read / totalReadingChapters) * 100) : 0;
+      const percent = readingProgress.querySelector("[data-course-reading-progress-percent]");
+      const value = readingProgress.querySelector("[data-course-reading-progress-value]");
+      const bar = readingProgress.querySelector<HTMLElement>("[data-course-reading-progress-bar]");
+
+      if (percent) percent.textContent = `${percentValue}%`;
+      if (value) value.textContent = `${read}/${totalReadingChapters} ${readLabel}`;
       if (bar) bar.style.width = `${percentValue}%`;
     }
 
@@ -446,6 +563,13 @@ const progressUi = {
     });
 
     updateCourseProgress();
+    updateReadingProgress();
+
+    window.addEventListener("storage", (event) => {
+      if (event.key?.startsWith(`foodprocess:lecture-read:${locale}:${course}:`)) {
+        updateReadingProgress();
+      }
+    });
   });
 </script>
 
@@ -454,7 +578,95 @@ const progressUi = {
   @import "../../../../styles/lecture.css";
 
   .topic-article {
-    max-width: 920px;
+    max-width: 1100px;
+  }
+
+  .course-hero-panel {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(14rem, 20rem);
+    gap: 1.5rem;
+    align-items: stretch;
+    margin-bottom: 1.5rem;
+    padding: 1.5rem;
+    border: 1px solid color-mix(in srgb, var(--accent-blue) 35%, var(--border-color));
+    border-radius: 8px;
+    background:
+      linear-gradient(135deg, color-mix(in srgb, var(--accent-blue) 16%, transparent), transparent 62%),
+      var(--bg-secondary);
+  }
+
+  .course-kicker {
+    display: inline-flex;
+    width: fit-content;
+    margin-bottom: 0.7rem;
+    padding: 0.25rem 0.65rem;
+    border: 1px solid color-mix(in srgb, var(--accent-blue) 45%, var(--border-color));
+    border-radius: 999px;
+    color: var(--accent-blue);
+    background: color-mix(in srgb, var(--accent-blue) 10%, transparent);
+    font-size: 0.75rem;
+    font-weight: 850;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .course-hero-panel .article-title {
+    margin: 0;
+    color: var(--text-primary);
+  }
+
+  .course-hero-description {
+    max-width: 46rem;
+    margin: 0.75rem 0 0;
+    color: var(--text-secondary);
+    font-size: 1.02rem;
+  }
+
+  .course-start-link {
+    display: inline-flex;
+    align-items: center;
+    width: fit-content;
+    margin-top: 1.2rem;
+    padding: 0.65rem 0.95rem;
+    border-radius: 8px;
+    background: var(--accent-blue);
+    color: #fff;
+    font-weight: 800;
+    text-decoration: none;
+  }
+
+  .course-hero-stats {
+    display: grid;
+    gap: 0.7rem;
+  }
+
+  .course-hero-stats span {
+    display: grid;
+    gap: 0.15rem;
+    padding: 0.85rem 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background: color-mix(in srgb, var(--bg-primary) 72%, transparent);
+    color: var(--text-secondary);
+    font-size: 0.82rem;
+    font-weight: 700;
+  }
+
+  .course-hero-stats strong {
+    color: var(--accent-blue);
+    font-size: 1.65rem;
+    line-height: 1;
+  }
+
+  .course-dashboard {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .course-dashboard:has(> :only-child) {
+    grid-template-columns: 1fr;
   }
 
   .course-test-progress {
@@ -462,7 +674,7 @@ const progressUi = {
     grid-template-columns: 1fr minmax(12rem, 16rem);
     gap: 1.25rem;
     align-items: center;
-    margin: 0 0 1.5rem;
+    margin: 0;
     padding: 1.25rem;
     border: 1px solid var(--border-color);
     border-radius: 8px;
@@ -513,6 +725,14 @@ const progressUi = {
 
   .lecture-card {
     align-items: center;
+  }
+
+  .lecture-card.is-read {
+    border-left-color: var(--accent-green);
+  }
+
+  .lecture-card.is-read .lecture-title {
+    color: var(--accent-green);
   }
 
   .course-chapter-score {
@@ -604,7 +824,117 @@ const progressUi = {
     min-height: 1.25rem;
   }
 
+  .lectures-section {
+    margin-top: 2rem;
+  }
+
+  .lectures-heading {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0 0 1.25rem;
+    color: var(--text-primary);
+    font-size: 1.35rem;
+    font-weight: 800;
+  }
+
+  .lectures-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .lecture-card {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    padding: 1.25rem 1.5rem;
+    border: 1px solid var(--border-color);
+    border-left: 4px solid var(--accent-blue);
+    border-radius: 8px;
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    text-decoration: none;
+    transition:
+      background-color 0.2s ease,
+      border-color 0.2s ease,
+      box-shadow 0.2s ease,
+      transform 0.2s ease;
+  }
+
+  .lecture-card:hover {
+    border-color: var(--accent-blue);
+    background: var(--bg-primary);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    transform: translateX(4px);
+  }
+
+  .lecture-number {
+    min-width: 6.2rem;
+    color: var(--accent-blue);
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .lecture-info {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .lecture-title {
+    margin: 0 0 0.35rem;
+    color: var(--text-primary);
+    font-size: 1.05rem;
+    font-weight: 750;
+    line-height: 1.35;
+  }
+
+  .lecture-desc {
+    margin: 0 0 0.55rem;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  .lecture-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .meta-badge {
+    display: inline-flex;
+    align-items: center;
+    min-height: 1.55rem;
+    padding: 0.15rem 0.6rem;
+    border: 1px solid var(--border-color);
+    border-radius: 999px;
+    background: var(--bg-primary);
+    color: var(--text-secondary);
+    font-size: 0.78rem;
+    font-weight: 700;
+  }
+
+  .lecture-arrow {
+    flex-shrink: 0;
+    color: var(--accent-blue);
+    font-size: 1.25rem;
+    transition: transform 0.2s ease;
+  }
+
+  .lecture-card:hover .lecture-arrow {
+    transform: translateX(4px);
+  }
+
   @media (max-width: 720px) {
+    .course-hero-panel,
+    .course-dashboard {
+      grid-template-columns: 1fr;
+    }
+
     .course-test-progress {
       grid-template-columns: 1fr;
     }
@@ -615,6 +945,16 @@ const progressUi = {
 
     .course-result-tool-actions {
       justify-content: flex-start;
+    }
+
+    .lecture-card {
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      padding: 1rem;
+    }
+
+    .lecture-number {
+      min-width: auto;
     }
   }
 </style>

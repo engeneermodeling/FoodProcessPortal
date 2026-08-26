@@ -3,6 +3,7 @@ import BaseLayout from "../../../../layouts/BaseLayout.astro";
 import Header from "../../../../components/Header.astro";
 import ThemeToggle from "../../../../components/ThemeToggle.astro";
 import Footer from "../../../../components/Footer.astro";
+import LectureCompletion from "../../../../components/LectureCompletion.astro";
 import { siteConfig } from "../../../../config";
 import { ENABLED_LOCALES } from "../../../../locales.config";
 
@@ -12,6 +13,7 @@ interface CourseFrontmatter {
   chapter?: number;
   description?: string;
   draft?: boolean;
+  updated?: string;
 }
 
 interface CourseModule {
@@ -86,6 +88,7 @@ const backWord = locale === "uk" ? "← Назад до курсу" : locale ===
 const prevWord = locale === "uk" ? "Попередній розділ" : locale === "de" ? "Vorheriges Kapitel" : locale === "ru" ? "Предыдущий раздел" : "Previous chapter";
 const nextWord = locale === "uk" ? "Наступний розділ" : locale === "de" ? "Nächstes Kapitel" : locale === "ru" ? "Следующий раздел" : "Next chapter";
 const testWord = locale === "uk" ? "тест" : locale === "de" ? "Test" : locale === "ru" ? "тест" : "test";
+const readWord = locale === "uk" ? "прочитано" : locale === "de" ? "gelesen" : locale === "ru" ? "прочитано" : "read";
 ---
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" />
@@ -113,10 +116,12 @@ const testWord = locale === "uk" ? "тест" : locale === "de" ? "Test" : local
               class={`lecture-nav-item ${ch.slug === chapter ? "active" : ""}`}
               data-course-chapter-nav
               data-chapter={ch.slug}
+              data-read-label={readWord}
             >
               <span class="nav-num">{ch.chapter}</span>
               <span class="nav-lec-title">
                 <span>{ch.title}</span>
+                <span class="nav-read-score" data-nav-read-score></span>
                 <span class="nav-test-score" data-nav-test-score data-label={testWord}></span>
               </span>
             </a>
@@ -128,6 +133,11 @@ const testWord = locale === "uk" ? "тест" : locale === "de" ? "Test" : local
         <header class="lecture-header">
           <div class="lecture-badge">{chapterWord} {frontmatter?.chapter}</div>
           <h1 class="lecture-title">{frontmatter?.title}</h1>
+          <div class="lecture-meta-row">
+            {frontmatter?.updated && <span class="meta-chip">{frontmatter.updated}</span>}
+          </div>
+          {frontmatter?.description && <p class="course-chapter-lead">{frontmatter.description}</p>}
+          <LectureCompletion locale={locale} topic={course} lecture={chapter} />
         </header>
 
         <div class="lecture-content">
@@ -224,12 +234,19 @@ const testWord = locale === "uk" ? "тест" : locale === "de" ? "Test" : local
 
     function updateCourseChapterNav() {
       const activeTest = document.querySelector<HTMLElement>("[data-course-self-test]");
-      const locale = activeTest?.dataset.locale || "uk";
-      const course = activeTest?.dataset.course || "course";
+      const completion = document.querySelector<HTMLElement>("[data-lecture-completion]");
+      const locale = activeTest?.dataset.locale || completion?.dataset.locale || "uk";
+      const course = activeTest?.dataset.course || completion?.dataset.topic || "course";
 
       document.querySelectorAll<HTMLElement>("[data-course-chapter-nav]").forEach((item) => {
         const chapter = item.dataset.chapter || "";
         const score = item.querySelector<HTMLElement>("[data-nav-test-score]");
+        const readScore = item.querySelector<HTMLElement>("[data-nav-read-score]");
+        const isRead = localStorage.getItem(`foodprocess:lecture-read:${locale}:${course}:${chapter}`) === "1";
+
+        item.classList.toggle("has-read-chapter", isRead);
+        if (readScore) readScore.textContent = isRead ? item.dataset.readLabel || "read" : "";
+
         if (!score) return;
 
         try {
@@ -320,6 +337,8 @@ const testWord = locale === "uk" ? "тест" : locale === "de" ? "Test" : local
     });
 
     updateCourseChapterNav();
+
+    window.addEventListener("foodprocess:learning-progress-changed", updateCourseChapterNav);
   });
 </script>
 
@@ -444,7 +463,26 @@ const testWord = locale === "uk" ? "тест" : locale === "de" ? "Test" : local
     font-weight: 700;
   }
 
+  .nav-read-score {
+    min-height: 0.9rem;
+    color: var(--accent-green);
+    font-size: 0.72rem;
+    font-weight: 700;
+  }
+
   .lecture-nav-item.has-passed-test .nav-test-score {
     color: #22c55e;
+  }
+
+  .lecture-nav-item.has-read-chapter .nav-num {
+    background: var(--accent-green);
+    color: #fff;
+  }
+
+  .course-chapter-lead {
+    max-width: 52rem;
+    margin: 0.25rem 0 0;
+    color: var(--text-secondary);
+    line-height: 1.6;
   }
 </style>
