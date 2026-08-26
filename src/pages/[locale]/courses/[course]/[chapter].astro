@@ -11,6 +11,7 @@ interface CourseFrontmatter {
   course_title?: string;
   chapter?: number;
   description?: string;
+  draft?: boolean;
 }
 
 interface CourseModule {
@@ -47,7 +48,7 @@ export function getStaticPaths() {
     const locale = parts[idx + 1];
     const course = parts[idx + 2];
     const slug = parts.pop()?.replace(".md", "") || "";
-    if (locales.includes(locale) && course && slug) {
+    if (locales.includes(locale) && course && slug && !mod.frontmatter.draft) {
       paths.push({
         params: { locale, course, chapter: slug },
         props: { frontmatter: mod.frontmatter, Content: mod.default },
@@ -64,10 +65,10 @@ const t = siteConfig.translations[locale as keyof typeof siteConfig.translations
 // Усі розділи цього курсу для навігації
 const allChapters = import.meta.glob<CourseModule>("/src/content/courses/**/*.md", { eager: true });
 const courseChapters = Object.entries(allChapters)
-  .filter(([p]) => {
+  .filter(([p, m]) => {
     const parts = p.split("/");
     const idx = parts.indexOf("courses");
-    return idx !== -1 && parts[idx + 1] === locale && parts[idx + 2] === course;
+    return idx !== -1 && parts[idx + 1] === locale && parts[idx + 2] === course && !m.frontmatter.draft;
   })
   .map(([p, m]): CourseChapterNav => ({
     slug: p.split("/").pop()?.replace(".md", "") || "",

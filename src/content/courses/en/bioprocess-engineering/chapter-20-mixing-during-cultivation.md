@@ -5,6 +5,7 @@ course_title: "Bioprocess Engineering: Processes and Equipment of Biotechnologic
 chapter: 20
 description: "Aerating mixing devices and scale-up of cultivation processes."
 updated: "2026-08-23"
+draft: true
 ---
 
 ## Source and Scope

@@ -5,6 +5,7 @@ course_title: "Bioverfahrenstechnik: Prozesse und Apparate biotechnologischer Pr
 chapter: 20
 description: "Belueftende Ruehrvorrichtungen und Massstabsuebertragung von Kultivierungsprozessen."
 updated: "2026-08-23"
+draft: true
 ---
 
 ## Quelle und Umfang

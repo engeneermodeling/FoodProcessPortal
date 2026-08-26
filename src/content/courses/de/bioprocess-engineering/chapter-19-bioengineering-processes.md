@@ -5,6 +5,7 @@ course_title: "Bioverfahrenstechnik: Prozesse und Apparate biotechnologischer Pr
 chapter: 19
 description: "Batch- und kontinuierliche Kultivierung, Wachstumskinetik von Mikroorganismen, exponentielle und logistische Kurven."
 updated: "2026-08-23"
+draft: true
 ---
 
 ## Quelle und Umfang

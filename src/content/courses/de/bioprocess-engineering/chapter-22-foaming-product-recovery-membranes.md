@@ -5,6 +5,7 @@ course_title: "Bioverfahrenstechnik: Prozesse und Apparate biotechnologischer Pr
 chapter: 22
 description: "Schaumbildung von Kulturfluessigkeiten, Schaumdaempfung, Konzentrierung und Gewinnung von Zielprodukten."
 updated: "2026-08-23"
+draft: true
 ---
 
 ## Quelle und Umfang

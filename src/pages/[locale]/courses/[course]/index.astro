@@ -45,6 +45,7 @@ const chapterSources = import.meta.glob<string>("/src/content/courses/**/*.md", 
   import: "default",
 });
 const chaptersWithTests = new Set<string>();
+const publishedChapters = new Set(chapters.map((ch) => ch.slug));
 
 Object.entries(chapterSources).forEach(([path, content]) => {
   const parts = path.split("/");
@@ -53,7 +54,13 @@ Object.entries(chapterSources).forEach(([path, content]) => {
   const sourceCourse = parts[idx + 2];
   const slug = path.split("/").pop()?.replace(".md", "") || "";
 
-  if (sourceLocale === locale && sourceCourse === course && slug && content.includes("data-course-self-test")) {
+  if (
+    sourceLocale === locale &&
+    sourceCourse === course &&
+    slug &&
+    publishedChapters.has(slug) &&
+    content.includes("data-course-self-test")
+  ) {
     chaptersWithTests.add(slug);
   }
 });

@@ -5,6 +5,7 @@ course_title: "Bioverfahrenstechnik: Prozesse und Apparate biotechnologischer Pr
 chapter: 21
 description: "Sauerstoff-Stoffuebertragung, Waermebilanz des Kultivators, aseptische Bedingungen und Luftsterilisation."
 updated: "2026-08-23"
+draft: true
 ---
 
 ## Quelle und Umfang

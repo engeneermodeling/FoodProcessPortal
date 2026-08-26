@@ -7,7 +7,13 @@ const allLectures = import.meta.glob('/src/content/lectures/**/*.md', { eager: t
 const allProblems = import.meta.glob('/src/content/problems/**/*.md', { eager: true });
 const allPracticeCategories = import.meta.glob('/src/content/practice/*/*.md', { eager: true });
 const allLabs = import.meta.glob('/src/content/labs/**/*.md', { eager: true });
-const allCourses = import.meta.glob('/src/content/courses/**/*.md', { eager: true });
+interface ContentModule {
+  frontmatter?: {
+    draft?: boolean;
+  };
+}
+
+const allCourses = import.meta.glob<ContentModule>('/src/content/courses/**/*.md', { eager: true });
 
 const sections = ['problems', 'practice', 'courses', 'videos'];
 const referenceTools = ['water', 'fluids', 'food-props'];
@@ -112,7 +118,9 @@ export const GET: APIRoute = () => {
 
   // Курсові
   const courseKeys = new Set<string>();
-  Object.keys(allCourses).forEach((path) => {
+  Object.entries(allCourses).forEach(([path, module]) => {
+    if (module.frontmatter?.draft) return;
+
     const { parts, idx } = pathParts(path, 'courses');
     const locale = parts[idx + 1];
     const course = parts[idx + 2];

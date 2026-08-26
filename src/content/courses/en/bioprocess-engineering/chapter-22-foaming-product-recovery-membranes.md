@@ -5,6 +5,7 @@ course_title: "Bioprocess Engineering: Processes and Equipment of Biotechnologic
 chapter: 22
 description: "Foaming of culture liquids, antifoaming, concentration and recovery of target products."
 updated: "2026-08-23"
+draft: true
 ---
 
 ## Source and Scope

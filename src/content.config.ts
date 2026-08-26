@@ -87,6 +87,7 @@ const coursesCollection = defineCollection({
     chapter: z.number(),
     description: z.string().optional(),
     updated: z.string().optional(),
+    draft: z.boolean().optional(),
   }),
 });
 

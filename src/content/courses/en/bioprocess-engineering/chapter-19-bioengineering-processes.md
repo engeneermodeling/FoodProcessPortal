@@ -5,6 +5,7 @@ course_title: "Bioprocess Engineering: Processes and Equipment of Biotechnologic
 chapter: 19
 description: "Batch and continuous cultivation, microbial growth kinetics, exponential and logistic curves."
 updated: "2026-08-23"
+draft: true
 ---
 
 ## Source and Scope

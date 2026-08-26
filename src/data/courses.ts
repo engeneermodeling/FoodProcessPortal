@@ -4,6 +4,7 @@ interface CourseFrontmatter {
   course_title?: string;
   chapter?: number;
   description?: string;
+  draft?: boolean;
 }
 
 interface ContentModule<TFrontmatter> {
@@ -44,6 +45,8 @@ export function getLocaleCourses(locale: string): LocaleCourse[] {
   const coursesMap = new Map<string, LocaleCourse>();
 
   Object.entries(rawCourses).forEach(([path, module]) => {
+    if (module.frontmatter.draft) return;
+
     const parts = path.split("/");
     const courseIndex = parts.indexOf("courses");
     if (courseIndex === -1) return;
@@ -85,6 +88,7 @@ export function getCourseChapters(locale: string, course: string): CourseChapter
       const idx = parts.indexOf("courses");
       return idx !== -1 && parts[idx + 2] === course;
     })
+    .filter(([, module]) => !module.frontmatter?.draft)
     .map(([path, module]) => ({
       slug: path.split("/").pop()?.replace(".md", "") || "",
       title: module.frontmatter?.title || "",
