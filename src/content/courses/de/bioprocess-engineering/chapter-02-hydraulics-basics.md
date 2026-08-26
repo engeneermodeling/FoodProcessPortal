@@ -11,8 +11,6 @@ updated: "2026-08-23"
 
 Materialgrundlage: das Lehrbuch "Bioverfahrenstechnik. Modul 1. Prozesse und Apparate biotechnologischer Produktionen", herausgegeben von V.L. Zavialov, NUFT, 2024.
 
-Die Seite folgt der Logik des entsprechenden Lehrbuchkapitels; die Testfragen wurden als Lernwerkzeug zur Selbstkontrolle ergänzt.
-
 ## Struktur nach dem Lehrbuch
 
 - 2.1. Hydrostatik
@@ -729,7 +727,3 @@ Die Rohrleitungskennlinie zeigt, wie die erforderliche Foerderhoehe mit dem Volu
 </ol>
 </details>
 </section>
-
-## Weitere Ausarbeitung
-
-Im nächsten Durchgang sollten Formeln und Bildunterschriften mit dem gedruckten Lehrbuchlayout abgeglichen werden; ausserdem kann ein Rechenbeispiel fuer eine Pumpenanlage ergaenzt werden.

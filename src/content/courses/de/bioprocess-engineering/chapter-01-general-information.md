@@ -11,8 +11,6 @@ updated: "2026-08-23"
 
 Materialgrundlage: das Lehrbuch "Bioverfahrenstechnik. Modul 1. Prozesse und Apparate biotechnologischer Produktionen", herausgegeben von V.L. Zavialov, NUFT, 2024.
 
-Die Seite folgt der Logik des entsprechenden Lehrbuchkapitels; die Testfragen wurden als Lernwerkzeug zur Selbstkontrolle ergänzt.
-
 ## Struktur nach dem Lehrbuch
 
 - 1.1. Grundgesetze technologischer Prozesse
@@ -747,7 +745,3 @@ Die physikalisch-chemische Siedepunktserhöhung wird berechnet als:
 </ol>
 </details>
 </section>
-
-## Weitere Ausarbeitung
-
-Dieses Kapitel ist nun als Übersetzungsvorlage nutzbar: Text, Abbildungen, Gleichungen und Tabelle sind getrennt und bearbeitbar.

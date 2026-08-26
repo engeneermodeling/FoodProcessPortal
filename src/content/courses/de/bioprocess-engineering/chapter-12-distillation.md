@@ -11,8 +11,6 @@ updated: "2026-08-23"
 
 Materialgrundlage: das Lehrbuch "Bioverfahrenstechnik. Modul 1. Prozesse und Apparate biotechnologischer Produktionen", herausgegeben von V.L. Zavialov, NUFT, 2024.
 
-Die Seite folgt der Logik des entsprechenden Lehrbuchkapitels; die Testfragen wurden als Lernwerkzeug zur Selbstkontrolle ergänzt.
-
 ## Struktur nach dem Lehrbuch
 
 - 12.1. Phasengleichgewicht
@@ -658,7 +656,3 @@ Bei azeotroper Rektifikation wird eine dritte Komponente eingesetzt, die ein neu
 </ol>
 </details>
 </section>
-
-## Weitere Ausarbeitung
-
-Im nächsten Durchgang kann dieses Kapitel mit Formeln, Rechenbeispielen, Apparatebildern und Links zu aktuellen biotechnologischen Produktionen ergänzt werden.

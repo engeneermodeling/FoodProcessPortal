@@ -11,8 +11,6 @@ updated: "2026-08-23"
 
 Material basis: the textbook "Bioprocess Engineering. Module 1. Processes and Equipment of Biotechnological Production", edited by V.L. Zavialov, NUFT, 2024.
 
-The page follows the logic of the corresponding textbook chapter; the test items are added as a learning tool for checking comprehension.
-
 ## Textbook-Based Structure
 
 - 3.1. Classification and characteristics of heterogeneous systems
@@ -789,7 +787,3 @@ Individual power components:
 </ol>
 </details>
 </section>
-
-## Further Development
-In the next pass, filtration formulas and centrifuge power equations should be checked against the printed textbook layout, and a worked settling-tank or filter-press example can be added.
-In the next pass, this chapter can be expanded with formulas, calculation examples, equipment figures and links to current biotechnological production cases.

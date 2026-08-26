@@ -5,14 +5,11 @@ course_title: "Bioprocess Engineering: Processes and Equipment of Biotechnologic
 chapter: 20
 description: "Aerating mixing devices and scale-up of cultivation processes."
 updated: "2026-08-23"
-draft: true
 ---
 
 ## Source and Scope
 
 Material basis: the textbook "Bioprocess Engineering. Module 1. Processes and Equipment of Biotechnological Production", edited by V.L. Zavialov, NUFT, 2024.
-
-The page follows the logic of the corresponding textbook chapter; the test items are added as a learning tool for checking comprehension.
 
 ## Textbook-Based Structure
 
@@ -449,7 +446,3 @@ This lecture note treats the chapter as engineering logic rather than a list of 
 </ol>
 </details>
 </section>
-
-## Further Development
-
-In the next pass, this chapter can be expanded with formulas, calculation examples, equipment figures and links to current biotechnological production cases.

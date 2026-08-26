@@ -5,14 +5,11 @@ course_title: "Bioverfahrenstechnik: Prozesse und Apparate biotechnologischer Pr
 chapter: 20
 description: "Belueftende Ruehrvorrichtungen und Massstabsuebertragung von Kultivierungsprozessen."
 updated: "2026-08-23"
-draft: true
 ---
 
 ## Quelle und Umfang
 
 Materialgrundlage: das Lehrbuch "Bioverfahrenstechnik. Modul 1. Prozesse und Apparate biotechnologischer Produktionen", herausgegeben von V.L. Zavialov, NUFT, 2024.
-
-Die Seite folgt der Logik des entsprechenden Lehrbuchkapitels; die Testfragen wurden als Lernwerkzeug zur Selbstkontrolle ergänzt.
 
 ## Struktur nach dem Lehrbuch
 
@@ -449,7 +446,3 @@ Diese Vorlesungsnotiz behandelt das Kapitel als ingenieurtechnische Logik und ni
 </ol>
 </details>
 </section>
-
-## Weitere Ausarbeitung
-
-Im nächsten Durchgang kann dieses Kapitel mit Formeln, Rechenbeispielen, Apparatebildern und Links zu aktuellen biotechnologischen Produktionen ergänzt werden.

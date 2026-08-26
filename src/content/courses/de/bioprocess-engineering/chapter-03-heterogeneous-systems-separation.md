@@ -11,8 +11,6 @@ updated: "2026-08-23"
 
 Materialgrundlage: das Lehrbuch "Bioverfahrenstechnik. Modul 1. Prozesse und Apparate biotechnologischer Produktionen", herausgegeben von V.L. Zavialov, NUFT, 2024.
 
-Die Seite folgt der Logik des entsprechenden Lehrbuchkapitels; die Testfragen wurden als Lernwerkzeug zur Selbstkontrolle ergänzt.
-
 ## Struktur nach dem Lehrbuch
 
 - 3.1. Klassifikation und Charakteristik heterogener Systeme
@@ -789,7 +787,3 @@ Einzelne Leistungsanteile:
 </ol>
 </details>
 </section>
-
-## Weitere Ausarbeitung
-Im nächsten Durchgang sollten Filtrationsformeln und Leistungsformeln fuer Zentrifugen mit dem gedruckten Lehrbuchlayout abgeglichen werden; ausserdem kann ein Rechenbeispiel fuer Absetzbehaelter oder Filterpresse ergaenzt werden.
-Im nächsten Durchgang kann dieses Kapitel mit Formeln, Rechenbeispielen, Apparatebildern und Links zu aktuellen biotechnologischen Produktionen ergänzt werden.

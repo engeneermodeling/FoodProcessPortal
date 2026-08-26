@@ -11,8 +11,6 @@ updated: "2026-08-23"
 
 Material basis: the textbook "Bioprocess Engineering. Module 1. Processes and Equipment of Biotechnological Production", edited by V.L. Zavialov, NUFT, 2024.
 
-The page follows the logic of the corresponding textbook chapter; the test items are added as a learning tool for checking comprehension.
-
 ## Textbook-Based Structure
 
 - 4.1. General provisions
@@ -479,7 +477,3 @@ Continuous schemes use one or several stages with circulation loops to maintain 
 </ol>
 </details>
 </section>
-
-## Further Development
-In the next pass, a short membrane-flux calculation example and a RO/NF/UF/MF comparison table for biotechnology tasks can be added.
-In the next pass, this chapter can be expanded with formulas, calculation examples, equipment figures and links to current biotechnological production cases.
