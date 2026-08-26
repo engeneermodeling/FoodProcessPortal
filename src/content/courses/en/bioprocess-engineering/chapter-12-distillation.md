@@ -25,158 +25,266 @@ The page follows the logic of the corresponding textbook chapter; the test items
 
 ## Lecture Notes
 
-This lecture note treats the chapter as engineering logic rather than a list of terms: from the physical meaning of the process to the parameters used to select, calculate, and check equipment in biotechnological production.
+Chapter 12 is presented as a continuous lecture: phase equilibrium, simple distillation, rectification, equipment choices and special separation methods.
 
-### 12.1. Phase equilibrium
+### 12.1. Phase Equilibrium
 
-**Place of the topic in the chapter.** 12.1. Phase equilibrium gives the language for describing the process within "Chapter 12. Distillation". The important task is not to memorize a separate definition, but to understand which quantity or phenomenon it helps to evaluate.
+Distillation separates boiling liquid mixtures because components have different volatility. The more volatile component is enriched in the vapour phase. Ideal mixtures are described with Raoult's and Dalton's laws; real systems require equilibrium data.
 
-**Engineering meaning.** In calculations, the material connects "phase equilibrium", "reflux ratio", and "tray": first the driving force or regime is identified, then the relation between parameters is established, and only after that the "rectification column" is selected or checked. This part highlights "phase equilibrium" and its relation to "reflux ratio", because such links become formulas, diagrams, similarity criteria, and design decisions.
+<div class="equation-block">
+  <span class="equation-main">p<sub>A</sub> = P<sub>A</sub>x<sub>A</sub></span>
+  <span class="equation-number">(12.1)</span>
+</div>
 
-**Biotechnological emphasis.** For biotechnological production, gentle handling of the medium is essential: culture liquids, suspensions, fermentation media, and intermediates are often sensitive to temperature, shear, contamination, and loss of sterility.
-
-**What to watch:**
-
-- which quantities must be measured or specified before calculation;
-- how the operating regime affects the product, equipment, and energy demand;
-- where "rectification column" appears in the equipment scheme and what limits it imposes.
-
-### 12.2. Simple distillation
-
-**Place of the topic in the chapter.** 12.2. Simple distillation gives the language for describing the process within "Chapter 12. Distillation". The important task is not to memorize a separate definition, but to understand which quantity or phenomenon it helps to evaluate.
-
-**Engineering meaning.** In calculations, the material connects "phase equilibrium", "reflux ratio", and "tray": first the driving force or regime is identified, then the relation between parameters is established, and only after that the "rectification column" is selected or checked. This part highlights "reflux ratio" and its relation to "tray", because such links become formulas, diagrams, similarity criteria, and design decisions.
-
-**Biotechnological emphasis.** For biotechnological production, gentle handling of the medium is essential: culture liquids, suspensions, fermentation media, and intermediates are often sensitive to temperature, shear, contamination, and loss of sterility.
-
-**What to watch:**
-
-- which quantities must be measured or specified before calculation;
-- how the operating regime affects the product, equipment, and energy demand;
-- where "rectification column" appears in the equipment scheme and what limits it imposes.
-
-### 12.3. Rectification of binary mixtures
-
-**Place of the topic in the chapter.** 12.3. Rectification of binary mixtures gives the language for describing the process within "Chapter 12. Distillation". The important task is not to memorize a separate definition, but to understand which quantity or phenomenon it helps to evaluate.
-
-**Engineering meaning.** In calculations, the material connects "phase equilibrium", "reflux ratio", and "tray": first the driving force or regime is identified, then the relation between parameters is established, and only after that the "rectification column" is selected or checked. This part highlights "tray" and its relation to "rectification column", because such links become formulas, diagrams, similarity criteria, and design decisions.
-
-**Biotechnological emphasis.** For biotechnological production, gentle handling of the medium is essential: culture liquids, suspensions, fermentation media, and intermediates are often sensitive to temperature, shear, contamination, and loss of sterility.
-
-**What to watch:**
-
-- which quantities must be measured or specified before calculation;
-- how the operating regime affects the product, equipment, and energy demand;
-- where "rectification column" appears in the equipment scheme and what limits it imposes.
-
-### 12.4. Designs of rectification equipment
-
-**Place of the topic in the chapter.** 12.4. Designs of rectification equipment gives the language for describing the process within "Chapter 12. Distillation". The important task is not to memorize a separate definition, but to understand which quantity or phenomenon it helps to evaluate.
-
-**Engineering meaning.** In calculations, the material connects "phase equilibrium", "reflux ratio", and "tray": first the driving force or regime is identified, then the relation between parameters is established, and only after that the "rectification column" is selected or checked. This part highlights "rectification column" and its relation to "phase equilibrium", because such links become formulas, diagrams, similarity criteria, and design decisions.
-
-**Biotechnological emphasis.** For biotechnological production, gentle handling of the medium is essential: culture liquids, suspensions, fermentation media, and intermediates are often sensitive to temperature, shear, contamination, and loss of sterility.
-
-**What to watch:**
-
-- which quantities must be measured or specified before calculation;
-- how the operating regime affects the product, equipment, and energy demand;
-- where "rectification column" appears in the equipment scheme and what limits it imposes.
-
-### 12.5. Rectification of multicomponent mixtures
-
-**Place of the topic in the chapter.** 12.5. Rectification of multicomponent mixtures gives the language for describing the process within "Chapter 12. Distillation". The important task is not to memorize a separate definition, but to understand which quantity or phenomenon it helps to evaluate.
-
-**Engineering meaning.** In calculations, the material connects "phase equilibrium", "reflux ratio", and "tray": first the driving force or regime is identified, then the relation between parameters is established, and only after that the "rectification column" is selected or checked. This part highlights "phase equilibrium" and its relation to "reflux ratio", because such links become formulas, diagrams, similarity criteria, and design decisions.
-
-**Biotechnological emphasis.** For biotechnological production, gentle handling of the medium is essential: culture liquids, suspensions, fermentation media, and intermediates are often sensitive to temperature, shear, contamination, and loss of sterility.
-
-**What to watch:**
-
-- which quantities must be measured or specified before calculation;
-- how the operating regime affects the product, equipment, and energy demand;
-- where "rectification column" appears in the equipment scheme and what limits it imposes.
-
-### 12.6. Extractive rectification
-
-**Place of the topic in the chapter.** 12.6. Extractive rectification gives the language for describing the process within "Chapter 12. Distillation". The important task is not to memorize a separate definition, but to understand which quantity or phenomenon it helps to evaluate.
-
-**Engineering meaning.** In calculations, the material connects "phase equilibrium", "reflux ratio", and "tray": first the driving force or regime is identified, then the relation between parameters is established, and only after that the "rectification column" is selected or checked. This part highlights "reflux ratio" and its relation to "tray", because such links become formulas, diagrams, similarity criteria, and design decisions.
-
-**Biotechnological emphasis.** For biotechnological production, gentle handling of the medium is essential: culture liquids, suspensions, fermentation media, and intermediates are often sensitive to temperature, shear, contamination, and loss of sterility.
-
-**What to watch:**
-
-- which quantities must be measured or specified before calculation;
-- how the operating regime affects the product, equipment, and energy demand;
-- where "rectification column" appears in the equipment scheme and what limits it imposes.
-
-### 12.7. Azeotropic rectification
-
-**Place of the topic in the chapter.** 12.7. Azeotropic rectification gives the language for describing the process within "Chapter 12. Distillation". The important task is not to memorize a separate definition, but to understand which quantity or phenomenon it helps to evaluate.
-
-**Engineering meaning.** In calculations, the material connects "phase equilibrium", "reflux ratio", and "tray": first the driving force or regime is identified, then the relation between parameters is established, and only after that the "rectification column" is selected or checked. This part highlights "tray" and its relation to "rectification column", because such links become formulas, diagrams, similarity criteria, and design decisions.
-
-**Biotechnological emphasis.** For biotechnological production, gentle handling of the medium is essential: culture liquids, suspensions, fermentation media, and intermediates are often sensitive to temperature, shear, contamination, and loss of sterility.
-
-**What to watch:**
-
-- which quantities must be measured or specified before calculation;
-- how the operating regime affects the product, equipment, and energy demand;
-- where "rectification column" appears in the equipment scheme and what limits it imposes.
-
-## Visual Materials
+<div class="equation-block">
+  <span class="equation-main">p = p<sub>A</sub> + p<sub>B</sub></span>
+  <span class="equation-number">(12.2)</span>
+</div>
 
 ![Phase-equilibrium curves](/images/courses/bioprocess-engineering/chapter-12/fig-12-1.webp)
-*Fig. 12.1. Phase-equilibrium curves for binary mixtures*
+*Fig. 12.1. Phase-equilibrium curves*
 
-![Single simple distillation](/images/courses/bioprocess-engineering/chapter-12/fig-12-2.webp)
-*Fig. 12.2. Single simple distillation: unit scheme and process representation on a y-x diagram*
+### 12.2. Simple Distillation
 
-![Simple distillation with dephlegmation](/images/courses/bioprocess-engineering/chapter-12/fig-12-3.webp)
-*Fig. 12.3. Simple distillation with dephlegmation*
+Simple distillation is a batch process of partial evaporation followed by condensation. It is suitable for rough separation or mixtures with strongly different volatility. Reflux improves vapour enrichment.
+
+<div class="equation-block">
+  <span class="equation-main">Wx = (W - dW)(x - dx) + dWy</span>
+  <span class="equation-number">(12.3)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">dW/W = dx/(y - x)</span>
+  <span class="equation-number">(12.4)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">ln(W<sub>p</sub>/W<sub>k</sub>) = ∫<sub>xk</sub><sup>xp</sup> dx/(y - x)</span>
+  <span class="equation-number">(12.5)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">p = p<sub>A</sub> + p<sub>B</sub></span>
+  <span class="equation-number">(12.6)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">m<sub>A</sub>/m<sub>B</sub> = p<sub>A</sub>M<sub>A</sub>/(p<sub>B</sub>M<sub>B</sub>)</span>
+  <span class="equation-number">(12.7)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">m<sub>v</sub> = m<sub>w</sub>p<sub>v</sub>M<sub>v</sub>/(p<sub>w</sub>M<sub>w</sub>)</span>
+  <span class="equation-number">(12.8)</span>
+</div>
+
+![Single-stage simple distillation](/images/courses/bioprocess-engineering/chapter-12/fig-12-2.webp)
+*Fig. 12.2. Single-stage simple distillation*
+
+![Simple distillation with reflux](/images/courses/bioprocess-engineering/chapter-12/fig-12-3.webp)
+*Fig. 12.3. Simple distillation with reflux*
+
+### 12.3. Rectification of Binary Mixtures
+
+Rectification repeatedly contacts non-equilibrium vapour and liquid streams inside a column. Operating lines, reflux ratio and theoretical plate count define separation quality and energy demand.
+
+<div class="equation-block">
+  <span class="equation-main">M = D + R</span>
+  <span class="equation-number">(12.9)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">Mx<sub>M</sub> = Dx<sub>D</sub> + Rx<sub>R</sub></span>
+  <span class="equation-number">(12.10)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">D = M(x<sub>M</sub> - x<sub>R</sub>)/(x<sub>D</sub> - x<sub>R</sub>)</span>
+  <span class="equation-number">(12.11)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">R = M(x<sub>D</sub> - x<sub>M</sub>)/(x<sub>D</sub> - x<sub>R</sub>)</span>
+  <span class="equation-number">(12.12)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">Gy = fx + Dx<sub>D</sub></span>
+  <span class="equation-number">(12.13)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">y = (f/G)x + (D/G)x<sub>D</sub></span>
+  <span class="equation-number">(12.14)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">y = [ν/(ν + 1)]x + x<sub>D</sub>/(ν + 1)</span>
+  <span class="equation-number">(12.15)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">Lx = Gy + Rx<sub>R</sub></span>
+  <span class="equation-number">(12.16)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">y = (L/G)x - (R/G)x<sub>R</sub></span>
+  <span class="equation-number">(12.17)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">y = [L/(L - R)]x - [R/(L - R)]x<sub>R</sub></span>
+  <span class="equation-number">(12.18)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">y = (L/G)(x - x<sub>R</sub>)</span>
+  <span class="equation-number">(12.19)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">y = f(x)</span>
+  <span class="equation-number">(12.20)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">y = (ν/(ν + 1))x + x<sub>D</sub>/(ν + 1)</span>
+  <span class="equation-number">(12.21)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">x = [(ν + 1)y - x<sub>D</sub>]/ν</span>
+  <span class="equation-number">(12.22)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">y = Ax + B</span>
+  <span class="equation-number">(12.23)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">B<sub>max</sub> = x<sub>D</sub>/(ν<sub>min</sub> + 1)</span>
+  <span class="equation-number">(12.24)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">ν = x<sub>D</sub>/B - 1</span>
+  <span class="equation-number">(12.25)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">ν<sub>min</sub> = (x<sub>D</sub> - y<sub>M</sub>)/(y<sub>M</sub> - x<sub>M</sub>)</span>
+  <span class="equation-number">(12.26)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">y = A<sub>1</sub>x - B<sub>1</sub></span>
+  <span class="equation-number">(12.27)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">D<sub>col</sub> = √(4V/(πw))</span>
+  <span class="equation-number">(12.28)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">Mi<sub>M</sub> + Pi<sub>P</sub> + fi<sub>f</sub> = Gi<sub>G</sub> + Ri<sub>R</sub> + Q</span>
+  <span class="equation-number">(12.29)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">P = [M(i<sub>R</sub> - i<sub>M</sub>) + D(ν + 1)i<sub>G</sub> - D(νi<sub>f</sub> + i<sub>D</sub>) + Q]/(i<sub>P</sub> - i<sub>R</sub>)</span>
+  <span class="equation-number">(12.30)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">Mi<sub>M</sub> + Pi<sub>P</sub> + fi<sub>f</sub> = Gi<sub>G</sub> + Ri<sub>R</sub> + Pi<sub>P</sub> + Q</span>
+  <span class="equation-number">(12.31)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">P = [M(i<sub>R</sub> - i<sub>M</sub>) + D(ν + 1)i<sub>G</sub> - D(νi<sub>f</sub> + i<sub>D</sub>) + Q<sub>loss</sub>]/(i<sub>P</sub> - i<sub>R</sub>)</span>
+  <span class="equation-number">(12.32)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">Mi<sub>M</sub> + Pi<sub>P</sub> = Di<sub>D</sub> + Ri<sub>R</sub> + Q</span>
+  <span class="equation-number">(12.33)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">P = [M(i<sub>R</sub> - i<sub>M</sub>) + D(i<sub>D</sub> - i<sub>R</sub>) + Q<sub>loss</sub>]/(i<sub>P</sub> - i<sub>R</sub>)</span>
+  <span class="equation-number">(12.34)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">Q<sub>def</sub> = G(i<sub>G</sub> - i<sub>D</sub>) = D(ν + 1)(i<sub>G</sub> - i<sub>D</sub>)</span>
+  <span class="equation-number">(12.35)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">Q<sub>cond</sub> = (G - D)(i<sub>G</sub> - i<sub>D</sub>) = Dν(i<sub>G</sub> - i<sub>D</sub>)</span>
+  <span class="equation-number">(12.36)</span>
+</div>
 
 ![Batch rectification unit](/images/courses/bioprocess-engineering/chapter-12/fig-12-4.webp)
-*Fig. 12.4. Scheme of a batch rectification unit*
+*Fig. 12.4. Batch rectification unit*
 
-![Continuous rectification units](/images/courses/bioprocess-engineering/chapter-12/fig-12-5.webp)
-*Fig. 12.5. Continuous rectification units with complete, enriching and stripping columns*
+![Continuous rectification arrangements](/images/courses/bioprocess-engineering/chapter-12/fig-12-5.webp)
+*Fig. 12.5. Continuous rectification arrangements*
 
-![Material flows in a complete column](/images/courses/bioprocess-engineering/chapter-12/fig-12-6.webp)
-*Fig. 12.6. Material-flow scheme for a complete rectification column*
+![Material flows in a complete rectification column](/images/courses/bioprocess-engineering/chapter-12/fig-12-6.webp)
+*Fig. 12.6. Material flows in a complete rectification column*
 
-![Determining the number of theoretical trays](/images/courses/bioprocess-engineering/chapter-12/fig-12-7.webp)
-*Fig. 12.7. Determining the number of theoretical trays in a rectification column*
+![Determining the number of theoretical plates](/images/courses/bioprocess-engineering/chapter-12/fig-12-7.webp)
+*Fig. 12.7. Determining the number of theoretical plates*
 
-![Influence of reflux ratio on tray count](/images/courses/bioprocess-engineering/chapter-12/fig-12-8-9.webp)
-*Fig. 12.8-12.9. Influence of reflux ratio on the number of trays in a column*
+![Effect of reflux ratio on plate number](/images/courses/bioprocess-engineering/chapter-12/fig-12-8-9.webp)
+*Fig. 12.8-9. Effect of reflux ratio on plate number*
 
-![Column heat flows](/images/courses/bioprocess-engineering/chapter-12/fig-12-10.webp)
-*Fig. 12.10. Heat-flow schemes for rectification columns*
+![Heat-flow schemes of columns](/images/courses/bioprocess-engineering/chapter-12/fig-12-10.webp)
+*Fig. 12.10. Heat-flow schemes of columns*
+
+### 12.4. Rectification Equipment
+
+Rectification columns may be tray, packed or film columns. Selection depends on capacity, pressure drop, fouling tendency, operating range and required separation quality.
 
 ![Tray designs](/images/courses/bioprocess-engineering/chapter-12/fig-12-11.webp)
-*Fig. 12.11. Tray designs for rectification columns*
+*Fig. 12.11. Tray designs*
 
-![Packed column](/images/courses/bioprocess-engineering/chapter-12/fig-12-12.webp)
-*Fig. 12.12. Scheme of a packed column*
+![Packed column scheme](/images/courses/bioprocess-engineering/chapter-12/fig-12-12.webp)
+*Fig. 12.12. Packed column scheme*
 
-![Film column](/images/courses/bioprocess-engineering/chapter-12/fig-12-13.webp)
-*Fig. 12.13. Scheme of a film column*
+![Film column scheme](/images/courses/bioprocess-engineering/chapter-12/fig-12-13.webp)
+*Fig. 12.13. Film column scheme*
 
-![Tray efficiency versus vapor velocity](/images/courses/bioprocess-engineering/chapter-12/fig-12-14.webp)
-*Fig. 12.14. Tray efficiency as a function of vapor velocity*
+![Tray efficiency versus vapour velocity](/images/courses/bioprocess-engineering/chapter-12/fig-12-14.webp)
+*Fig. 12.14. Tray efficiency versus vapour velocity*
 
-![Separation of multicomponent mixtures](/images/courses/bioprocess-engineering/chapter-12/fig-12-15.webp)
-*Fig. 12.15. Schemes for separating multicomponent mixtures*
+### 12.5. Rectification of Multicomponent Mixtures
 
-![Units for raw-spirit rectification and a beer column](/images/courses/bioprocess-engineering/chapter-12/fig-12-16.webp)
-*Fig. 12.16. Schemes of units for raw-spirit rectification and a beer column*
+For multicomponent mixtures, one column usually produces two products or fractions. Complete separation of n components requires a column system.
 
-![Extractive and salt rectification](/images/courses/bioprocess-engineering/chapter-12/fig-12-17.webp)
-*Fig. 12.17. Unit schemes for extractive and salt rectification*
+![Separation schemes for multicomponent mixtures](/images/courses/bioprocess-engineering/chapter-12/fig-12-15.webp)
+*Fig. 12.15. Separation schemes for multicomponent mixtures*
 
-![Azeotropic rectification](/images/courses/bioprocess-engineering/chapter-12/fig-12-18.webp)
-*Fig. 12.18. Unit scheme for azeotropic rectification*
+![Rectification units for alcohol mixtures](/images/courses/bioprocess-engineering/chapter-12/fig-12-16.webp)
+*Fig. 12.16. Rectification units for alcohol mixtures*
+
+### 12.6. Extractive Rectification
+
+Extractive rectification uses a high-boiling separating agent to change relative volatility and separate close-boiling or azeotropic mixtures.
+
+![Extractive and salt rectification schemes](/images/courses/bioprocess-engineering/chapter-12/fig-12-17.webp)
+*Fig. 12.17. Extractive and salt rectification schemes*
+
+### 12.7. Azeotropic Rectification
+
+Azeotropic rectification introduces a third component that forms a new azeotrope and enables component withdrawal after condensation and phase separation.
+
+![Azeotropic rectification unit](/images/courses/bioprocess-engineering/chapter-12/fig-12-18.webp)
+*Fig. 12.18. Azeotropic rectification unit*
 
 ## After studying this chapter, students should be able to
 

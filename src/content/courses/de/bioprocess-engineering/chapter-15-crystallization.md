@@ -26,138 +26,231 @@ Die Seite folgt der Logik des entsprechenden Lehrbuchkapitels; die Testfragen wu
 
 ## Vorlesungsskript
 
-Diese Vorlesungsnotiz behandelt das Kapitel als ingenieurtechnische Logik und nicht nur als Begriffsliste: vom physikalischen Sinn des Prozesses bis zu den Parametern fuer Auswahl, Berechnung und Pruefung des Apparats in der biotechnologischen Produktion.
+Kristallisation ist ein Stoffuebertragungsprozess, bei dem sich aus Loesungen, Schmelzen, Gasen oder Daempfen eine feste Phase in Form von Kristallen bildet. In Lebensmittel- und Bioprozessen dient sie zur Gewinnung und Reinigung von Saccharose, Glucose, Lactose, Fructose, Zitronensaeure, Salzen und anderen kristallinen Produkten.
 
 ### 15.1. Allgemeines
 
-**Stellung des Themas im Kapitel.** 15.1. Allgemeines liefert die Sprache zur Beschreibung des Prozesses im Thema "Kapitel 15. Kristallisation". Wichtig ist nicht das isolierte Auswendiglernen, sondern das Verstehen, welche Groesse oder welches Phaenomen damit bewertet wird.
-
-**Ingenieurtechnische Bedeutung.** In Berechnungen verbindet dieses Material "Uebersaettigung", "Keimbildung" und "Kristallwachstum": zuerst werden Triebkraft oder Betriebsregime bestimmt, danach die Beziehung zwischen den Parametern, und anschliessend die Auswahl oder Kontrolle von "Kristallisator". Dieser Teil hebt "Uebersaettigung" und den Zusammenhang mit "Keimbildung" hervor, weil solche Beziehungen in Formeln, Diagramme, Aehnlichkeitskriterien und konstruktive Entscheidungen uebergehen.
-
-**Biotechnologischer Schwerpunkt.** In biotechnologischen Produktionen ist eine schonende Behandlung des Mediums entscheidend: Kulturfluessigkeiten, Suspensionen, Fermentationsmedien und Zwischenprodukte reagieren oft empfindlich auf Temperatur, Scherung, Verunreinigung und Verlust der Sterilitaet.
-
-**Worauf zu achten ist:**
-
-- welche Groessen vor der Berechnung gemessen oder festgelegt werden muessen;
-- wie das Betriebsregime Produkt, Apparat und Energiebedarf beeinflusst;
-- wo "Kristallisator" im Apparateschema erscheint und welche Grenzen dadurch entstehen.
-
-### 15.2. Physikalische Grundlagen der Kristallisation aus Loesungen
-
-**Stellung des Themas im Kapitel.** 15.2. Physikalische Grundlagen der Kristallisation aus Loesungen liefert die Sprache zur Beschreibung des Prozesses im Thema "Kapitel 15. Kristallisation". Wichtig ist nicht das isolierte Auswendiglernen, sondern das Verstehen, welche Groesse oder welches Phaenomen damit bewertet wird.
-
-**Ingenieurtechnische Bedeutung.** In Berechnungen verbindet dieses Material "Uebersaettigung", "Keimbildung" und "Kristallwachstum": zuerst werden Triebkraft oder Betriebsregime bestimmt, danach die Beziehung zwischen den Parametern, und anschliessend die Auswahl oder Kontrolle von "Kristallisator". Dieser Teil hebt "Keimbildung" und den Zusammenhang mit "Kristallwachstum" hervor, weil solche Beziehungen in Formeln, Diagramme, Aehnlichkeitskriterien und konstruktive Entscheidungen uebergehen.
-
-**Biotechnologischer Schwerpunkt.** In biotechnologischen Produktionen ist eine schonende Behandlung des Mediums entscheidend: Kulturfluessigkeiten, Suspensionen, Fermentationsmedien und Zwischenprodukte reagieren oft empfindlich auf Temperatur, Scherung, Verunreinigung und Verlust der Sterilitaet.
-
-**Worauf zu achten ist:**
-
-- welche Groessen vor der Berechnung gemessen oder festgelegt werden muessen;
-- wie das Betriebsregime Produkt, Apparat und Energiebedarf beeinflusst;
-- wo "Kristallisator" im Apparateschema erscheint und welche Grenzen dadurch entstehen.
-
-### 15.3. Kinetik des Kristallisationsprozesses
-
-**Stellung des Themas im Kapitel.** 15.3. Kinetik des Kristallisationsprozesses liefert die Sprache zur Beschreibung des Prozesses im Thema "Kapitel 15. Kristallisation". Wichtig ist nicht das isolierte Auswendiglernen, sondern das Verstehen, welche Groesse oder welches Phaenomen damit bewertet wird.
-
-**Ingenieurtechnische Bedeutung.** In Berechnungen verbindet dieses Material "Uebersaettigung", "Keimbildung" und "Kristallwachstum": zuerst werden Triebkraft oder Betriebsregime bestimmt, danach die Beziehung zwischen den Parametern, und anschliessend die Auswahl oder Kontrolle von "Kristallisator". Dieser Teil hebt "Kristallwachstum" und den Zusammenhang mit "Kristallisator" hervor, weil solche Beziehungen in Formeln, Diagramme, Aehnlichkeitskriterien und konstruktive Entscheidungen uebergehen.
-
-**Biotechnologischer Schwerpunkt.** In biotechnologischen Produktionen ist eine schonende Behandlung des Mediums entscheidend: Kulturfluessigkeiten, Suspensionen, Fermentationsmedien und Zwischenprodukte reagieren oft empfindlich auf Temperatur, Scherung, Verunreinigung und Verlust der Sterilitaet.
-
-**Worauf zu achten ist:**
-
-- welche Groessen vor der Berechnung gemessen oder festgelegt werden muessen;
-- wie das Betriebsregime Produkt, Apparat und Energiebedarf beeinflusst;
-- wo "Kristallisator" im Apparateschema erscheint und welche Grenzen dadurch entstehen.
-
-### 15.4. Kristallbildung
-
-**Stellung des Themas im Kapitel.** 15.4. Kristallbildung liefert die Sprache zur Beschreibung des Prozesses im Thema "Kapitel 15. Kristallisation". Wichtig ist nicht das isolierte Auswendiglernen, sondern das Verstehen, welche Groesse oder welches Phaenomen damit bewertet wird.
-
-**Ingenieurtechnische Bedeutung.** In Berechnungen verbindet dieses Material "Uebersaettigung", "Keimbildung" und "Kristallwachstum": zuerst werden Triebkraft oder Betriebsregime bestimmt, danach die Beziehung zwischen den Parametern, und anschliessend die Auswahl oder Kontrolle von "Kristallisator". Dieser Teil hebt "Kristallisator" und den Zusammenhang mit "Uebersaettigung" hervor, weil solche Beziehungen in Formeln, Diagramme, Aehnlichkeitskriterien und konstruktive Entscheidungen uebergehen.
-
-**Biotechnologischer Schwerpunkt.** In biotechnologischen Produktionen ist eine schonende Behandlung des Mediums entscheidend: Kulturfluessigkeiten, Suspensionen, Fermentationsmedien und Zwischenprodukte reagieren oft empfindlich auf Temperatur, Scherung, Verunreinigung und Verlust der Sterilitaet.
-
-**Worauf zu achten ist:**
-
-- welche Groessen vor der Berechnung gemessen oder festgelegt werden muessen;
-- wie das Betriebsregime Produkt, Apparat und Energiebedarf beeinflusst;
-- wo "Kristallisator" im Apparateschema erscheint und welche Grenzen dadurch entstehen.
-
-### 15.5. Kristallwachstum
-
-**Stellung des Themas im Kapitel.** 15.5. Kristallwachstum liefert die Sprache zur Beschreibung des Prozesses im Thema "Kapitel 15. Kristallisation". Wichtig ist nicht das isolierte Auswendiglernen, sondern das Verstehen, welche Groesse oder welches Phaenomen damit bewertet wird.
-
-**Ingenieurtechnische Bedeutung.** In Berechnungen verbindet dieses Material "Uebersaettigung", "Keimbildung" und "Kristallwachstum": zuerst werden Triebkraft oder Betriebsregime bestimmt, danach die Beziehung zwischen den Parametern, und anschliessend die Auswahl oder Kontrolle von "Kristallisator". Dieser Teil hebt "Uebersaettigung" und den Zusammenhang mit "Keimbildung" hervor, weil solche Beziehungen in Formeln, Diagramme, Aehnlichkeitskriterien und konstruktive Entscheidungen uebergehen.
-
-**Biotechnologischer Schwerpunkt.** In biotechnologischen Produktionen ist eine schonende Behandlung des Mediums entscheidend: Kulturfluessigkeiten, Suspensionen, Fermentationsmedien und Zwischenprodukte reagieren oft empfindlich auf Temperatur, Scherung, Verunreinigung und Verlust der Sterilitaet.
-
-**Worauf zu achten ist:**
-
-- welche Groessen vor der Berechnung gemessen oder festgelegt werden muessen;
-- wie das Betriebsregime Produkt, Apparat und Energiebedarf beeinflusst;
-- wo "Kristallisator" im Apparateschema erscheint und welche Grenzen dadurch entstehen.
-
-### 15.10. Einflussfaktoren
-
-**Stellung des Themas im Kapitel.** 15.10. Einflussfaktoren liefert die Sprache zur Beschreibung des Prozesses im Thema "Kapitel 15. Kristallisation". Wichtig ist nicht das isolierte Auswendiglernen, sondern das Verstehen, welche Groesse oder welches Phaenomen damit bewertet wird.
-
-**Ingenieurtechnische Bedeutung.** In Berechnungen verbindet dieses Material "Uebersaettigung", "Keimbildung" und "Kristallwachstum": zuerst werden Triebkraft oder Betriebsregime bestimmt, danach die Beziehung zwischen den Parametern, und anschliessend die Auswahl oder Kontrolle von "Kristallisator". Dieser Teil hebt "Keimbildung" und den Zusammenhang mit "Kristallwachstum" hervor, weil solche Beziehungen in Formeln, Diagramme, Aehnlichkeitskriterien und konstruktive Entscheidungen uebergehen.
-
-**Biotechnologischer Schwerpunkt.** In biotechnologischen Produktionen ist eine schonende Behandlung des Mediums entscheidend: Kulturfluessigkeiten, Suspensionen, Fermentationsmedien und Zwischenprodukte reagieren oft empfindlich auf Temperatur, Scherung, Verunreinigung und Verlust der Sterilitaet.
-
-**Worauf zu achten ist:**
-
-- welche Groessen vor der Berechnung gemessen oder festgelegt werden muessen;
-- wie das Betriebsregime Produkt, Apparat und Energiebedarf beeinflusst;
-- wo "Kristallisator" im Apparateschema erscheint und welche Grenzen dadurch entstehen.
-
-### 15.11. Kristallisationsapparate
-
-**Stellung des Themas im Kapitel.** 15.11. Kristallisationsapparate liefert die Sprache zur Beschreibung des Prozesses im Thema "Kapitel 15. Kristallisation". Wichtig ist nicht das isolierte Auswendiglernen, sondern das Verstehen, welche Groesse oder welches Phaenomen damit bewertet wird.
-
-**Ingenieurtechnische Bedeutung.** In Berechnungen verbindet dieses Material "Uebersaettigung", "Keimbildung" und "Kristallwachstum": zuerst werden Triebkraft oder Betriebsregime bestimmt, danach die Beziehung zwischen den Parametern, und anschliessend die Auswahl oder Kontrolle von "Kristallisator". Dieser Teil hebt "Kristallwachstum" und den Zusammenhang mit "Kristallisator" hervor, weil solche Beziehungen in Formeln, Diagramme, Aehnlichkeitskriterien und konstruktive Entscheidungen uebergehen.
-
-**Biotechnologischer Schwerpunkt.** In biotechnologischen Produktionen ist eine schonende Behandlung des Mediums entscheidend: Kulturfluessigkeiten, Suspensionen, Fermentationsmedien und Zwischenprodukte reagieren oft empfindlich auf Temperatur, Scherung, Verunreinigung und Verlust der Sterilitaet.
-
-**Worauf zu achten ist:**
-
-- welche Groessen vor der Berechnung gemessen oder festgelegt werden muessen;
-- wie das Betriebsregime Produkt, Apparat und Energiebedarf beeinflusst;
-- wo "Kristallisator" im Apparateschema erscheint und welche Grenzen dadurch entstehen.
-
-### 15.12. Grundprinzipien der Berechnung
-
-**Stellung des Themas im Kapitel.** 15.12. Grundprinzipien der Berechnung liefert die Sprache zur Beschreibung des Prozesses im Thema "Kapitel 15. Kristallisation". Wichtig ist nicht das isolierte Auswendiglernen, sondern das Verstehen, welche Groesse oder welches Phaenomen damit bewertet wird.
-
-**Ingenieurtechnische Bedeutung.** In Berechnungen verbindet dieses Material "Uebersaettigung", "Keimbildung" und "Kristallwachstum": zuerst werden Triebkraft oder Betriebsregime bestimmt, danach die Beziehung zwischen den Parametern, und anschliessend die Auswahl oder Kontrolle von "Kristallisator". Dieser Teil hebt "Kristallisator" und den Zusammenhang mit "Uebersaettigung" hervor, weil solche Beziehungen in Formeln, Diagramme, Aehnlichkeitskriterien und konstruktive Entscheidungen uebergehen.
-
-**Biotechnologischer Schwerpunkt.** In biotechnologischen Produktionen ist eine schonende Behandlung des Mediums entscheidend: Kulturfluessigkeiten, Suspensionen, Fermentationsmedien und Zwischenprodukte reagieren oft empfindlich auf Temperatur, Scherung, Verunreinigung und Verlust der Sterilitaet.
-
-**Worauf zu achten ist:**
-
-- welche Groessen vor der Berechnung gemessen oder festgelegt werden muessen;
-- wie das Betriebsregime Produkt, Apparat und Energiebedarf beeinflusst;
-- wo "Kristallisator" im Apparateschema erscheint und welche Grenzen dadurch entstehen.
-
-## Anschauliche Materialien
+Ein Kristall besitzt ein geordnetes Gitter; seine Form wird durch Symmetrie, Oberflaechenenergie der Flaechen und Wachstumsbedingungen bestimmt. Industrielle Kristallisation erfolgt meist aus uebersaettigten Loesungen. Sie kann durch Kuehlung, Loesungsmittelverdampfung, Ausfrieren, Aussalzen, chemische Reaktion oder kombinierte Einwirkungen ablaufen.
 
 ![Saccharosekristall](/images/courses/bioprocess-engineering/chapter-15/fig-15-1.webp)
 *Abb. 15.1. Saccharosekristall*
 
-![Loeslichkeitsdiagramm des Systems Saccharose-Wasser](/images/courses/bioprocess-engineering/chapter-15/fig-15-2.webp)
+### 15.2. Physikalische Grundlagen der Kristallisation aus Loesungen
+
+Die Statik beschreibt das Gleichgewicht zwischen Kristallen und Mutterloesung; die Kinetik die Geschwindigkeit des Uebergangs von der fluessigen in die feste Phase; die Dynamik die zeitliche Aenderung der Parameter. Triebkraft ist die Uebersaettigung, also der Konzentrationsueberschuss gegenueber der Gleichgewichtsloeslichkeit.
+
+<div class="equation-block">
+  <span class="equation-main">Π = c - c<sub>s</sub></span>
+  <span class="equation-number">(15.1)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">α = c/c<sub>s</sub></span>
+  <span class="equation-number">(15.2)</span>
+</div>
+
+![Loeslichkeitsdiagramm des binaeren Systems Saccharose-Wasser](/images/courses/bioprocess-engineering/chapter-15/fig-15-2.webp)
 *Abb. 15.2. Loeslichkeitsdiagramm des binaeren Systems Saccharose-Wasser*
+
+### 15.3. Kinetik des Kristallisationsprozesses
+
+Die Kinetik umfasst zwei Hauptstufen: Bildung von Kristallisationszentren und Kristallwachstum. Kristallisationskurven zeigen Aufbau der Uebersaettigung, latente Keimbildungszeit und Wachstumsperiode. Frischloesung und Verdampfung koennen die erforderliche Uebersaettigung aufrechterhalten.
+
+<div class="equation-block">
+  <span class="equation-main">τ<sub>l</sub> = τ<sub>2</sub> - τ<sub>1</sub></span>
+  <span class="equation-number">(15.3)</span>
+</div>
 
 ![Kinematische Kristallisationskurven](/images/courses/bioprocess-engineering/chapter-15/fig-15-3.webp)
 *Abb. 15.3. Kinematische Kristallisationskurven*
 
+### 15.4. Kristallbildung
+
+Kristallisationszentren entstehen durch homogene oder heterogene Keimbildung. In realen industriellen Loesungen, besonders Zuckerloesungen, ueberwiegt der heterogene Mechanismus: Verunreinigungen, Ruehren, Viskositaet, Ultraschall, elektrische und magnetische Felder, Temperaturschwankungen und Impfkristalle beeinflussen den Prozess.
+
+<div class="equation-block">
+  <span class="equation-main">δF = -[(μ<sub>1</sub> - μ<sub>2</sub>)/V] + σS</span>
+  <span class="equation-number">(15.4)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">δF = 4πr<sup>2</sup>σ - (4/3)πr<sup>3</sup>(μ<sub>1</sub> - μ<sub>2</sub>)/V</span>
+  <span class="equation-number">(15.5)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">r<sub>k</sub> = 2σV/(μ<sub>1</sub> - μ<sub>2</sub>)</span>
+  <span class="equation-number">(15.6)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">ΔF<sub>max</sub> = (δF)<sub>max</sub> = σS<sub>k</sub>/3 = 16πσ<sup>3</sup>V<sup>2</sup>/[3(μ<sub>1</sub> - μ<sub>2</sub>)<sup>2</sup>]</span>
+  <span class="equation-number">(15.7)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">I = K exp(-ΔF<sub>max</sub>/RT)</span>
+  <span class="equation-number">(15.8)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">I = K exp{-16πσ<sup>3</sup>V<sup>2</sup>/[3RT(μ<sub>1</sub> - μ<sub>2</sub>)<sup>2</sup>]}</span>
+  <span class="equation-number">(15.9)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">μ<sub>1</sub> = RT ln c + j</span>
+  <span class="equation-number">(15.10)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">μ<sub>2</sub> = RT ln c<sub>s</sub> + j</span>
+  <span class="equation-number">(15.11)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">μ<sub>1</sub> - μ<sub>2</sub> = RT ln(c/c<sub>s</sub>) = RT ln[(Δc + c<sub>s</sub>)/c<sub>s</sub>]</span>
+  <span class="equation-number">(15.12)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">I = K exp{-16πσ<sup>3</sup>V<sup>2</sup>/[3R<sup>3</sup>T<sup>3</sup>ln<sup>2</sup>(c/c<sub>s</sub>)]}</span>
+  <span class="equation-number">(15.13)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">I = K exp{-4εσ<sup>3</sup>V<sup>2</sup>/[R<sup>3</sup>T<sup>3</sup>ln<sup>2</sup>(c/c<sub>s</sub>)]}</span>
+  <span class="equation-number">(15.14)</span>
+</div>
+
+### 15.5. Kristallwachstum
+
+Nach Bildung eines stabilen Keims waechst der Kristall durch Diffusion zur Oberflaeche, Adsorption, Oberflaechenmigration und Einbau in das Gitter. Die Wachstumsrate kann durch Diffusion, diffusionskinetische oder kinetische Stufen bestimmt werden; bei Massenkristallisation sind Polydispersitaet, Rekristallisation und Hydrodynamik wichtig.
+
+<div class="equation-block">
+  <span class="equation-main">dG/(Fdτ) = kΔc</span>
+  <span class="equation-number">(15.15)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">Δc = Δc<sub>1</sub> + Δc<sub>2</sub></span>
+  <span class="equation-number">(15.16)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">M<sub>1</sub> = k<sub>1</sub>(c - c<sub>1</sub>) = k<sub>1</sub>Δc<sub>1</sub></span>
+  <span class="equation-number">(15.17)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">M<sub>2</sub> = k<sub>2</sub>Δc<sub>2</sub><sup>2</sup> = k<sub>2</sub>(c<sub>1</sub> - c<sub>s</sub>)<sup>2</sup></span>
+  <span class="equation-number">(15.18)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">M = M<sub>1</sub> = M<sub>2</sub> = kΔc = k<sub>1</sub>Δc<sub>1</sub> = k<sub>2</sub>Δc<sub>2</sub><sup>2</sup></span>
+  <span class="equation-number">(15.19)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">M = M<sub>1</sub> = D(c - c<sub>1</sub>)/δ</span>
+  <span class="equation-number">(15.20)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">M = D(c - c<sub>1</sub>)/δ = k<sub>2</sub>(c<sub>1</sub> - c<sub>s</sub>)<sup>2</sup></span>
+  <span class="equation-number">(15.21)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">M = [D/(2δ)](√(1 + 4k<sub>2</sub>δΔc/D) - 1)</span>
+  <span class="equation-number">(15.22)</span>
+</div>
+
+### 15.6-15.9. Sekundaere Keimbildung, Rekristallisation und Waerme-Stoff-Uebertragung
+
+Sekundaere Keimbildung haengt mit vorhandenen Kristallen, Stoessen, Abrieb und lokalen Uebersaettigungsaenderungen zusammen. Rekristallisation vermindert die freie Oberflaechenenergie: kleine Teilchen loesen sich, groessere wachsen. In industriellen Kristallisatoren sind Waerme- und Stoffuebergang, Zirkulation, Sieden, Wasserverdampfung und Apparatekonstruktion eng verknuepft.
+
+<div class="equation-block">
+  <span class="equation-main">J<sub>1</sub> = L<sub>11</sub>X<sub>1</sub> + L<sub>12</sub>X<sub>2</sub>; J<sub>2</sub> = L<sub>21</sub>X<sub>1</sub> + L<sub>22</sub>X<sub>2</sub></span>
+  <span class="equation-number">(15.23)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">L<sub>12</sub> = L<sub>21</sub></span>
+  <span class="equation-number">(15.24)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">dW<sub>p</sub> = dW<sub>v</sub>; dM<sub>kr</sub> = dM<sub>p,cz</sub>; dM<sub>kr</sub> = (Cz<sub>p</sub>/W<sub>p</sub>)dW<sub>v</sub></span>
+  <span class="equation-number">(15.25)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">M<sub>kr</sub> = qFCz<sub>p</sub>/(arW<sub>p</sub>)</span>
+  <span class="equation-number">(15.26)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">dM<sub>kr</sub>/dτ = [Cz<sub>p</sub>/W<sub>p</sub>][FΔt k<sub>0</sub>/(ar)] exp(-τ/θ)</span>
+  <span class="equation-number">(15.27)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">φ = ε<sub>r</sub>/ε<sub>t</sub> = [V<sub>r</sub>(s)/V<sub>t</sub>(s)]/[V<sub>r</sub>(y)/V<sub>t</sub>(y)]</span>
+  <span class="equation-number">(15.28)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">ε = m<sub>(s)i</sub>/m<sub>(y)i</sub></span>
+  <span class="equation-number">(15.29)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">Fo′ = f(Pr′, Ar, Π, Π<sub>ρ</sub>, Π<sub>V</sub>)</span>
+  <span class="equation-number">(15.30)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">Fo′ = Dτ/l<sup>2</sup>; Pr′ = ν/D; Ar = gl<sup>3</sup>Δρ/(ν<sup>2</sup>ρ); Π = c<sub>s</sub>/Δc; Π<sub>ρ</sub> = ΔG/(ρ<sub>kr</sub>l<sup>3</sup>); Π<sub>V</sub> = ρ<sub>p</sub>/ρ<sub>kr</sub></span>
+  <span class="equation-number">(15.31)</span>
+</div>
+
+### 15.10. Einflussfaktoren
+
+Keimbildung und Wachstum haengen von Uebersaettigung, Temperatur, Reinheit, Viskositaet, Verunreinigungen, Oberflaechenenergie, Ruehren, Zirkulation und Dampfphase beim Sieden ab. Bei Zuckerloesungen verlaengert geringere Reinheit die latente Zeit; hoehere Temperatur und geringere Viskositaet beschleunigen das Wachstum.
+
+<div class="equation-block">
+  <span class="equation-main">τ<sub>l</sub> = A<sub>l</sub> exp(-B<sub>l</sub>P)</span>
+  <span class="equation-number">(15.32)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">M = b(Π - 1)<sup>n</sup></span>
+  <span class="equation-number">(15.33)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">M = d<sub>0</sub> exp[-E/(RT)]</span>
+  <span class="equation-number">(15.34)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">M = lP<sup>m</sup></span>
+  <span class="equation-number">(15.35)</span>
+</div>
+
+### 15.11. Kristallisationsapparate
+
+Kristallisatoren arbeiten diskontinuierlich oder kontinuierlich. Sie werden nach Anordnung, Gehaeuseform, Sektionszahl, Suspensionszirkulation und Waermeuebertragungsflaeche klassifiziert. In der Zuckerproduktion nutzt man diskontinuierliche und kontinuierliche Vakuumapparate sowie horizontale und vertikale Ruehrkristallisatoren.
+
 ![Vakuumapparat Typ A2-PVR](/images/courses/bioprocess-engineering/chapter-15/fig-15-5.webp)
 *Abb. 15.5. Vakuumapparat Typ A2-PVR*
 
-![Stroeme beim kontinuierlichen Einkochen und Kristallisieren](/images/courses/bioprocess-engineering/chapter-15/fig-15-6.webp)
+![Flussschema des kontinuierlichen Einkochens und Kristallisierens von Zuckermassecuite](/images/courses/bioprocess-engineering/chapter-15/fig-15-6.webp)
 *Abb. 15.6. Flussschema des kontinuierlichen Einkochens und Kristallisierens von Zuckermassecuite*
 
-![Kontinuierlicher Vakuumapparat des KTIHP-Systems](/images/courses/bioprocess-engineering/chapter-15/fig-15-7.webp)
+![Kontinuierlicher Vakuumapparat des KTIHP-Systems: a - Strukturschema; b - Konstruktion](/images/courses/bioprocess-engineering/chapter-15/fig-15-7.webp)
 *Abb. 15.7. Kontinuierlicher Vakuumapparat des KTIHP-Systems: a - Strukturschema; b - Konstruktion*
 
 ![Horizontaler Ruehrkristallisator](/images/courses/bioprocess-engineering/chapter-15/fig-15-8.webp)
@@ -166,10 +259,24 @@ Diese Vorlesungsnotiz behandelt das Kapitel als ingenieurtechnische Logik und ni
 ![Vertikaler Ruehrkristallisator](/images/courses/bioprocess-engineering/chapter-15/fig-15-9.webp)
 *Abb. 15.9. Vertikaler Ruehrkristallisator*
 
-![Statische Stoffbilanz der mehrstufigen Kristallisation](/images/courses/bioprocess-engineering/chapter-15/fig-15-10.webp)
+### 15.12. Grundprinzipien der Berechnung
+
+Die Berechnung erfolgt als verfahrenstechnische, waermetechnische, hydrodynamische, konstruktive, mechanische und wirtschaftliche Berechnung. Grundlage sind Stoff- und Waermebilanzen, Massendiagramme der Kristallisation, Waermeuebergang, Zirkulation, Verweilzeit und Festigkeit der Apparateelemente.
+
+<div class="equation-block">
+  <span class="equation-main">ΣG = G<sub>1</sub> + G<sub>2</sub>; G<sub>1</sub> = G<sub>n.sr</sub> + W<sub>1</sub> = G<sub>n.cz</sub> + G<sub>n.nz</sub> + W<sub>1</sub>; G<sub>2</sub> = G<sub>p.sr</sub> + W<sub>p</sub></span>
+  <span class="equation-number">(15.36)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">ΔQ + i<sub>p</sub>ΔG<sub>p</sub> + r<sub>kr</sub>ΔG<sub>kr</sub> = i<sub>v</sub>ΔW<sub>v</sub> + Δ(i<sub>y</sub>G<sub>y</sub>) + Q<sub>loss</sub></span>
+  <span class="equation-number">(15.37)</span>
+</div>
+
+![Schema der statischen Stoffbilanz der mehrstufigen Kristallisation](/images/courses/bioprocess-engineering/chapter-15/fig-15-10.webp)
 *Abb. 15.10. Schema der statischen Stoffbilanz der mehrstufigen Kristallisation*
 
-![Massendiagramm des Kochens und Kristallisierens von Zuckermassecuite](/images/courses/bioprocess-engineering/chapter-15/fig-15-11.webp)
+![Massendiagramm des Kochens und Kristallisierens von Zuckermassecuite im Vakuumapparat und Ruehrkristallisator](/images/courses/bioprocess-engineering/chapter-15/fig-15-11.webp)
 *Abb. 15.11. Massendiagramm des Kochens und Kristallisierens von Zuckermassecuite im Vakuumapparat und Ruehrkristallisator*
 
 ## Nach dem Durcharbeiten dieses Kapitels sollen Studierende

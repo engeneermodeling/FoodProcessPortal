@@ -21,72 +21,76 @@ The page follows the logic of the corresponding textbook chapter; the test items
 
 ## Lecture Notes
 
-This lecture note treats the chapter as engineering logic rather than a list of terms: from the physical meaning of the process to the parameters used to select, calculate, and check equipment in biotechnological production.
+### Chapter 17. Sorting of bulk materials
 
-### 17.1. Sieving
+During processing, bulk materials often have to be divided into uniform fractions or cleaned of impurities. Separation by particle size is called classification, separation by properties and grade is sorting, and separation of individual items by size is calibration.
 
-**Place of the topic in the chapter.** 17.1. Sieving gives the language for describing the process within "Chapter 17. Sorting of Bulk Materials". The important task is not to memorize a separate definition, but to understand which quantity or phenomenon it helps to evaluate.
+### 17.1. Screening
 
-**Engineering meaning.** In calculations, the material connects "sieve", "fraction", and "settling velocity": first the driving force or regime is identified, then the relation between parameters is established, and only after that the "magnetic separator" is selected or checked. This part highlights "sieve" and its relation to "fraction", because such links become formulas, diagrams, similarity criteria, and design decisions.
+Screening separates bulk material by passing it through one or more sieves. Fine particles passing through the openings form the undersize fraction; larger particles retained on the sieve form the oversize fraction. The sieve is the main working element.
 
-**Biotechnological emphasis.** For biotechnological production, gentle handling of the medium is essential: culture liquids, suspensions, fermentation media, and intermediates are often sensitive to temperature, shear, contamination, and loss of sterility.
+![Fig. 17.1. Sieve opening shapes](/images/courses/bioprocess-engineering/chapter-17/fig-17-1.webp)
+*Fig. 17.1. Sieve opening shapes: a - round; b - elongated; c - round funnel-shaped; d - round with a bent edge; e, f - woven metal screens*
 
-**What to watch:**
+Screening performance is related to the open area φ, the ratio of opening area F<sub>o</sub> to total sieve area F expressed as a percentage:
 
-- which quantities must be measured or specified before calculation;
-- how the operating regime affects the product, equipment, and energy demand;
-- where "magnetic separator" appears in the equipment scheme and what limits it imposes.
+<div class="equation-block">
+  <span class="equation-main">φ = (F<sub>o</sub>/F)·100</span>
+  <span class="equation-number"></span>
+</div>
 
-### 17.3. Separation by density and particle settling velocity
+In sieve analysis, material is passed through a set of sieves with progressively smaller openings. The masses of the resulting fractions give the particle-size distribution and allow distribution curves to be plotted.
 
-**Place of the topic in the chapter.** 17.3. Separation by density and particle settling velocity gives the language for describing the process within "Chapter 17. Sorting of Bulk Materials". The important task is not to memorize a separate definition, but to understand which quantity or phenomenon it helps to evaluate.
+![Fig. 17.2. Flat reciprocating screen diagram](/images/courses/bioprocess-engineering/chapter-17/fig-17-2.webp)
+*Fig. 17.2. Flat reciprocating screen diagram: A - undersize; B - oversize*
 
-**Engineering meaning.** In calculations, the material connects "sieve", "fraction", and "settling velocity": first the driving force or regime is identified, then the relation between parameters is established, and only after that the "magnetic separator" is selected or checked. This part highlights "fraction" and its relation to "settling velocity", because such links become formulas, diagrams, similarity criteria, and design decisions.
+For moving sieves, the oscillation frequency must be selected correctly. The limiting crank speed at which a particle does not leave the sieve is:
 
-**Biotechnological emphasis.** For biotechnological production, gentle handling of the medium is essential: culture liquids, suspensions, fermentation media, and intermediates are often sensitive to temperature, shear, contamination, and loss of sterility.
+<div class="equation-block">
+  <span class="equation-main">n = 30√[1/(r tgα)]</span>
+  <span class="equation-number">(17.1)</span>
+</div>
 
-**What to watch:**
+The minimum speed at which a particle moves downward relative to the sieve is:
 
-- which quantities must be measured or specified before calculation;
-- how the operating regime affects the product, equipment, and energy demand;
-- where "magnetic separator" appears in the equipment scheme and what limits it imposes.
+<div class="equation-block">
+  <span class="equation-main">n<sub>min</sub> = 30√[tg(φ - α)/r]</span>
+  <span class="equation-number">(17.2)</span>
+</div>
+
+where r is crank radius, m; α is sieve inclination angle; φ is particle friction angle.
+
+![Fig. 17.3. Reciprocating screen arrangements](/images/courses/bioprocess-engineering/chapter-17/fig-17-3.webp)
+*Fig. 17.3. Reciprocating screen arrangements*
+
+![Fig. 17.4. Drum screen diagram](/images/courses/bioprocess-engineering/chapter-17/fig-17-4.webp)
+*Fig. 17.4. Drum screen diagram: A - undersize; B - oversize*
+
+![Fig. 17.5. Vibrating screen diagram](/images/courses/bioprocess-engineering/chapter-17/fig-17-5.webp)
+*Fig. 17.5. Vibrating screen diagram: A - undersize; B - oversize*
+
+Flat reciprocating screens are productive and convenient but produce high dynamic loads. Drum screens separate fractions through openings that increase along the material path. Vibrating screens are efficient and better suited to moist materials.
+
+### 17.2. Separation by particle shape
+
+Impurities that differ from grain in length cannot always be separated on sieves. Indented separators are used for this purpose; their drum or disk contains cells. Shorter particles stay in the cells longer and are discharged separately.
+
+![Fig. 17.6. Cylindrical indented separator diagram](/images/courses/bioprocess-engineering/chapter-17/fig-17-6.webp)
+*Fig. 17.6. Cylindrical indented separator diagram*
+
+### 17.3. Separation by density and settling velocity
+
+Separation by settling velocity in a liquid or gas follows the general laws of particle settling. In an air stream, gravity G and drag P act on a particle. If G > P, the particle moves downward; if G < P, it rises; if G = P, it remains suspended.
+
+![Fig. 17.7. Air-and-screen separator diagram](/images/courses/bioprocess-engineering/chapter-17/fig-17-7.webp)
+*Fig. 17.7. Air-and-screen separator diagram*
+
+The air velocity at which a particle remains suspended is called the terminal or suspension velocity. This principle is used in air-and-screen separators for removing light impurities from grain. Hydraulic classification is used to remove stones, sand, and other impurities in liquid streams and to sort peas and corn kernels.
 
 ### 17.4. Magnetic separation
 
-**Place of the topic in the chapter.** 17.4. Magnetic separation gives the language for describing the process within "Chapter 17. Sorting of Bulk Materials". The important task is not to memorize a separate definition, but to understand which quantity or phenomenon it helps to evaluate.
-
-**Engineering meaning.** In calculations, the material connects "sieve", "fraction", and "settling velocity": first the driving force or regime is identified, then the relation between parameters is established, and only after that the "magnetic separator" is selected or checked. This part highlights "settling velocity" and its relation to "magnetic separator", because such links become formulas, diagrams, similarity criteria, and design decisions.
-
-**Biotechnological emphasis.** For biotechnological production, gentle handling of the medium is essential: culture liquids, suspensions, fermentation media, and intermediates are often sensitive to temperature, shear, contamination, and loss of sterility.
-
-**What to watch:**
-
-- which quantities must be measured or specified before calculation;
-- how the operating regime affects the product, equipment, and energy demand;
-- where "magnetic separator" appears in the equipment scheme and what limits it imposes.
-
-## Visual Materials
-
-![Shapes of sieve openings](/images/courses/bioprocess-engineering/chapter-17/fig-17-1.webp)
-*Fig. 17.1. Shapes of sieve openings*
-
-![Flat oscillating screen](/images/courses/bioprocess-engineering/chapter-17/fig-17-2.webp)
-*Fig. 17.2. Scheme of a flat oscillating screen: A - undersize; B - oversize*
-
-![Oscillating screen schemes](/images/courses/bioprocess-engineering/chapter-17/fig-17-3.webp)
-*Fig. 17.3. Oscillating screen schemes*
-
-![Drum screen](/images/courses/bioprocess-engineering/chapter-17/fig-17-4.webp)
-*Fig. 17.4. Drum-screen scheme: A - undersize; B - oversize*
-
-![Vibrating screen](/images/courses/bioprocess-engineering/chapter-17/fig-17-5.webp)
-*Fig. 17.5. Vibrating-screen scheme: A - undersize; B - oversize*
-
-![Cylindrical trieur](/images/courses/bioprocess-engineering/chapter-17/fig-17-6.webp)
-*Fig. 17.6. Scheme of a cylindrical trieur*
-
-![Air-and-sieve separator](/images/courses/bioprocess-engineering/chapter-17/fig-17-7.webp)
-*Fig. 17.7. Scheme of an air-and-sieve separator*
+![Fig. 17.8. Electromagnetic separator diagram](/images/courses/bioprocess-engineering/chapter-17/fig-17-8.webp)
+*Fig. 17.8. Electromagnetic separator diagram*
 
 ## After studying this chapter, students should be able to
 

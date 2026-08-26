@@ -22,116 +22,169 @@ The page follows the logic of the corresponding textbook chapter; the test items
 
 ## Lecture Notes
 
-This lecture note treats the chapter as engineering logic rather than a list of terms: from the physical meaning of the process to the parameters used to select, calculate, and check equipment in biotechnological production.
+Sorption processes remove components from gases, vapours or solutions using liquid or solid sorbents. In biotechnology they support gas cleaning, medium saturation, product recovery and fine purification.
 
 ### 13.1. Absorption
 
-**Place of the topic in the chapter.** 13.1. Absorption gives the language for describing the process within "Chapter 13. Sorption Processes". The important task is not to memorize a separate definition, but to understand which quantity or phenomenon it helps to evaluate.
+Absorption is the uptake of a gas or vapour component by a liquid absorbent. The driving force is the difference between operating and equilibrium concentrations. Rate depends on pressure, temperature, interfacial area and phase mixing.
 
-**Engineering meaning.** In calculations, the material connects "absorption", "adsorption", and "sorbent": first the driving force or regime is identified, then the relation between parameters is established, and only after that the "packed apparatus" is selected or checked. This part highlights "absorption" and its relation to "adsorption", because such links become formulas, diagrams, similarity criteria, and design decisions.
+<div class="equation-block">
+  <span class="equation-main">x = pψ</span>
+  <span class="equation-number">(13.1)</span>
+</div>
 
-**Biotechnological emphasis.** For biotechnological production, gentle handling of the medium is essential: culture liquids, suspensions, fermentation media, and intermediates are often sensitive to temperature, shear, contamination, and loss of sterility.
+<div class="equation-block">
+  <span class="equation-main">p = yP</span>
+  <span class="equation-number">(13.2)</span>
+</div>
 
-**What to watch:**
+<div class="equation-block">
+  <span class="equation-main">y = mx</span>
+  <span class="equation-number">(13.3)</span>
+</div>
 
-- which quantities must be measured or specified before calculation;
-- how the operating regime affects the product, equipment, and energy demand;
-- where "packed apparatus" appears in the equipment scheme and what limits it imposes.
+<div class="equation-block">
+  <span class="equation-main">G(y<sub>p</sub> - y<sub>k</sub>) = L(x<sub>k</sub> - x<sub>p</sub>)</span>
+  <span class="equation-number">(13.4)</span>
+</div>
 
-### 13.1.1. Absorber designs
+<div class="equation-block">
+  <span class="equation-main">L/G = (y<sub>p</sub> - y<sub>k</sub>)/(x<sub>k</sub> - x<sub>p</sub>) = q</span>
+  <span class="equation-number">(13.5)</span>
+</div>
 
-**Place of the topic in the chapter.** 13.1.1. Absorber designs gives the language for describing the process within "Chapter 13. Sorption Processes". The important task is not to memorize a separate definition, but to understand which quantity or phenomenon it helps to evaluate.
+<div class="equation-block">
+  <span class="equation-main">y = (L/G)x + (Gy<sub>p</sub> - Lx<sub>k</sub>)/G</span>
+  <span class="equation-number">(13.6)</span>
+</div>
 
-**Engineering meaning.** In calculations, the material connects "absorption", "adsorption", and "sorbent": first the driving force or regime is identified, then the relation between parameters is established, and only after that the "packed apparatus" is selected or checked. This part highlights "adsorption" and its relation to "sorbent", because such links become formulas, diagrams, similarity criteria, and design decisions.
+<div class="equation-block">
+  <span class="equation-main">M = kFΔCτ</span>
+  <span class="equation-number">(13.7)</span>
+</div>
 
-**Biotechnological emphasis.** For biotechnological production, gentle handling of the medium is essential: culture liquids, suspensions, fermentation media, and intermediates are often sensitive to temperature, shear, contamination, and loss of sterility.
+<div class="equation-block">
+  <span class="equation-main">K<sub>y</sub> = 1/(1/β<sub>g</sub> + m/β<sub>l</sub>)</span>
+  <span class="equation-number">(13.8)</span>
+</div>
 
-**What to watch:**
+<div class="equation-block">
+  <span class="equation-main">K<sub>x</sub> = 1/(1/(mβ<sub>g</sub>) + 1/β<sub>l</sub>)</span>
+  <span class="equation-number">(13.9)</span>
+</div>
 
-- which quantities must be measured or specified before calculation;
-- how the operating regime affects the product, equipment, and energy demand;
-- where "packed apparatus" appears in the equipment scheme and what limits it imposes.
+<div class="equation-block">
+  <span class="equation-main">H = Gm/(kS)</span>
+  <span class="equation-number">(13.10)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">m = ∫ dy/(y - y*)</span>
+  <span class="equation-number">(13.11)</span>
+</div>
+
+![Absorption equilibrium curve](/images/courses/bioprocess-engineering/chapter-13/fig-13-1.webp)
+*Fig. 13.1. Absorption equilibrium curve*
+
+![Counter-current absorber scheme](/images/courses/bioprocess-engineering/chapter-13/fig-13-2.webp)
+*Fig. 13.2. Counter-current absorber scheme*
+
+### 13.1.1. Absorber Designs
+
+Absorbers must provide a developed gas-liquid contact surface and sufficient residence time. Packed, surface, bubble, spray, tubular, cascade and mechanical apparatuses are used.
+
+![Cascade absorbers](/images/courses/bioprocess-engineering/chapter-13/fig-13-3.webp)
+*Fig. 13.3. Cascade absorbers*
+
+![Tubular absorber](/images/courses/bioprocess-engineering/chapter-13/fig-13-4.webp)
+*Fig. 13.4. Tubular absorber*
+
+![Packed absorber](/images/courses/bioprocess-engineering/chapter-13/fig-13-5.webp)
+*Fig. 13.5. Packed absorber*
+
+![Packing types](/images/courses/bioprocess-engineering/chapter-13/fig-13-6.webp)
+*Fig. 13.6. Packing types*
+
+![Surface absorber](/images/courses/bioprocess-engineering/chapter-13/fig-13-7.webp)
+*Fig. 13.7. Surface absorber*
+
+![Bubble-tray absorber](/images/courses/bioprocess-engineering/chapter-13/fig-13-8.webp)
+*Fig. 13.8. Bubble-tray absorber*
+
+![Spray absorber](/images/courses/bioprocess-engineering/chapter-13/fig-13-9.webp)
+*Fig. 13.9. Spray absorber*
+
+![Mechanical absorber](/images/courses/bioprocess-engineering/chapter-13/fig-13-10.webp)
+*Fig. 13.10. Mechanical absorber*
 
 ### 13.2. Adsorption
 
-**Place of the topic in the chapter.** 13.2. Adsorption gives the language for describing the process within "Chapter 13. Sorption Processes". The important task is not to memorize a separate definition, but to understand which quantity or phenomenon it helps to evaluate.
+Adsorption is selective uptake of components by the surface of a solid adsorbent. It is described by equilibrium isotherms, mass-transfer kinetics in the particle and bed, and protective-bed action time.
 
-**Engineering meaning.** In calculations, the material connects "absorption", "adsorption", and "sorbent": first the driving force or regime is identified, then the relation between parameters is established, and only after that the "packed apparatus" is selected or checked. This part highlights "sorbent" and its relation to "packed apparatus", because such links become formulas, diagrams, similarity criteria, and design decisions.
+<div class="equation-block">
+  <span class="equation-main">x* = f(y)</span>
+  <span class="equation-number">(13.12)</span>
+</div>
 
-**Biotechnological emphasis.** For biotechnological production, gentle handling of the medium is essential: culture liquids, suspensions, fermentation media, and intermediates are often sensitive to temperature, shear, contamination, and loss of sterility.
+<div class="equation-block">
+  <span class="equation-main">x* = Ky<sup>1/n</sup></span>
+  <span class="equation-number">(13.13)</span>
+</div>
 
-**What to watch:**
+<div class="equation-block">
+  <span class="equation-main">(x* - x)/(x* - x<sub>0</sub>) = f(Bi, Fo, q)</span>
+  <span class="equation-number">(13.14)</span>
+</div>
 
-- which quantities must be measured or specified before calculation;
-- how the operating regime affects the product, equipment, and energy demand;
-- where "packed apparatus" appears in the equipment scheme and what limits it imposes.
+<div class="equation-block">
+  <span class="equation-main">Nu′ = 46.25 · 10<sup>-6</sup>Re<sup>1.67</sup></span>
+  <span class="equation-number">(13.15)</span>
+</div>
 
-### 13.2.1. Adsorber designs
+<div class="equation-block">
+  <span class="equation-main">τ = kH - τ<sub>0</sub></span>
+  <span class="equation-number">(13.16)</span>
+</div>
 
-**Place of the topic in the chapter.** 13.2.1. Adsorber designs gives the language for describing the process within "Chapter 13. Sorption Processes". The important task is not to memorize a separate definition, but to understand which quantity or phenomenon it helps to evaluate.
+<div class="equation-block">
+  <span class="equation-main">H = ∫ dy/[Sk(y - y*)] = hm</span>
+  <span class="equation-number">(13.17)</span>
+</div>
 
-**Engineering meaning.** In calculations, the material connects "absorption", "adsorption", and "sorbent": first the driving force or regime is identified, then the relation between parameters is established, and only after that the "packed apparatus" is selected or checked. This part highlights "packed apparatus" and its relation to "absorption", because such links become formulas, diagrams, similarity criteria, and design decisions.
+<div class="equation-block">
+  <span class="equation-main">m = Σm<sub>i</sub></span>
+  <span class="equation-number">(13.18)</span>
+</div>
 
-**Biotechnological emphasis.** For biotechnological production, gentle handling of the medium is essential: culture liquids, suspensions, fermentation media, and intermediates are often sensitive to temperature, shear, contamination, and loss of sterility.
+<div class="equation-block">
+  <span class="equation-main">m<sub>i</sub> = 2(y<sub>i</sub> - y<sub>i-1</sub>)/[(y<sub>i</sub> - y*<sub>i</sub>) + (y<sub>i-1</sub> - y*<sub>i-1</sub>)]</span>
+  <span class="equation-number">(13.19)</span>
+</div>
 
-**What to watch:**
+![Three adsorption zones in a continuous adsorber](/images/courses/bioprocess-engineering/chapter-13/fig-13-11.webp)
+*Fig. 13.11. Three adsorption zones in a continuous adsorber*
 
-- which quantities must be measured or specified before calculation;
-- how the operating regime affects the product, equipment, and energy demand;
-- where "packed apparatus" appears in the equipment scheme and what limits it imposes.
+![Graphical determination of concentration stages](/images/courses/bioprocess-engineering/chapter-13/fig-13-12.webp)
+*Fig. 13.12. Graphical determination of concentration stages*
 
-## Visual Materials
+### 13.2.1. Adsorber Designs
 
-![Absorption-equilibrium curve](/images/courses/bioprocess-engineering/chapter-13/fig-13-1.webp)
-*Fig. 13.1. Absorption-equilibrium curve*
-
-![Countercurrent absorption apparatus](/images/courses/bioprocess-engineering/chapter-13/fig-13-2.webp)
-*Fig. 13.2. Scheme of a countercurrent absorption apparatus*
-
-![Cascade absorbers](/images/courses/bioprocess-engineering/chapter-13/fig-13-3.webp)
-*Fig. 13.3. Scheme of cascade absorbers*
-
-![Tubular absorber](/images/courses/bioprocess-engineering/chapter-13/fig-13-4.webp)
-*Fig. 13.4. Scheme of a tubular absorber*
-
-![Packed absorber](/images/courses/bioprocess-engineering/chapter-13/fig-13-5.webp)
-*Fig. 13.5. Scheme of a packed absorber*
-
-![Packing types](/images/courses/bioprocess-engineering/chapter-13/fig-13-6.webp)
-*Fig. 13.6. Packing types for mass-transfer equipment*
-
-![Surface absorber](/images/courses/bioprocess-engineering/chapter-13/fig-13-7.webp)
-*Fig. 13.7. Scheme of a surface absorber*
-
-![Bubbling absorber](/images/courses/bioprocess-engineering/chapter-13/fig-13-8.webp)
-*Fig. 13.8. Scheme of a bubbling absorber*
-
-![Spray absorber](/images/courses/bioprocess-engineering/chapter-13/fig-13-9.webp)
-*Fig. 13.9. Scheme of a spray absorber*
-
-![Mechanical absorber](/images/courses/bioprocess-engineering/chapter-13/fig-13-10.webp)
-*Fig. 13.10. Scheme of a mechanical absorber*
-
-![Adsorption-process zones](/images/courses/bioprocess-engineering/chapter-13/fig-13-11.webp)
-*Fig. 13.11. Three adsorption-process zones in a continuous adsorber*
-
-![Graph for concentration-stage count](/images/courses/bioprocess-engineering/chapter-13/fig-13-12.webp)
-*Fig. 13.12. Graph for determining the number of concentration stages*
+Adsorbers may be batch or continuous, with fixed, moving or fluidized beds. Selection depends on productivity, adsorbent regeneration, pressure drop and purification requirements.
 
 ![Batch adsorber](/images/courses/bioprocess-engineering/chapter-13/fig-13-13.webp)
-*Fig. 13.13. Scheme of a batch adsorber*
+*Fig. 13.13. Batch adsorber*
 
 ![Annular adsorber](/images/courses/bioprocess-engineering/chapter-13/fig-13-14.webp)
 *Fig. 13.14. Annular adsorber*
 
-![Continuous adsorber with moving bed](/images/courses/bioprocess-engineering/chapter-13/fig-13-15.webp)
-*Fig. 13.15. Continuous column adsorber with a moving bed*
+![Moving-bed continuous adsorber](/images/courses/bioprocess-engineering/chapter-13/fig-13-15.webp)
+*Fig. 13.15. Moving-bed continuous adsorber*
 
-![Fluidized-bed adsorber](/images/courses/bioprocess-engineering/chapter-13/fig-13-16.webp)
-*Fig. 13.16. Scheme of a batch fluidized-bed adsorber*
+![Batch fluidized-bed adsorber](/images/courses/bioprocess-engineering/chapter-13/fig-13-16.webp)
+*Fig. 13.16. Batch fluidized-bed adsorber*
 
-![Tray adsorber with fluidized sorbent bed](/images/courses/bioprocess-engineering/chapter-13/fig-13-17.webp)
-*Fig. 13.17. Continuous tray adsorber with a fluidized sorbent bed*
+![Tray continuous adsorber with a fluidized bed](/images/courses/bioprocess-engineering/chapter-13/fig-13-17.webp)
+*Fig. 13.17. Tray continuous adsorber with a fluidized bed*
 
 ## After studying this chapter, students should be able to
 

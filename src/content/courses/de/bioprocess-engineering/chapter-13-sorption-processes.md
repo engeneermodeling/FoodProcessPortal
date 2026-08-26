@@ -22,116 +22,169 @@ Die Seite folgt der Logik des entsprechenden Lehrbuchkapitels; die Testfragen wu
 
 ## Vorlesungsskript
 
-Diese Vorlesungsnotiz behandelt das Kapitel als ingenieurtechnische Logik und nicht nur als Begriffsliste: vom physikalischen Sinn des Prozesses bis zu den Parametern fuer Auswahl, Berechnung und Pruefung des Apparats in der biotechnologischen Produktion.
+Sorption entfernt Komponenten aus Gasen, Daempfen oder Loesungen mit fluessigen oder festen Sorbentien. In biotechnologischen Prozessen dient sie der Gasreinigung, Medienbeladung, Stoffgewinnung und Feinreinigung.
 
 ### 13.1. Absorption
 
-**Stellung des Themas im Kapitel.** 13.1. Absorption liefert die Sprache zur Beschreibung des Prozesses im Thema "Kapitel 13. Sorptionsprozesse". Wichtig ist nicht das isolierte Auswendiglernen, sondern das Verstehen, welche Groesse oder welches Phaenomen damit bewertet wird.
+Absorption ist die Aufnahme eines Gas- oder Dampfbestandteils durch ein fluessiges Absorptionsmittel. Die Triebkraft ist die Differenz zwischen Arbeits- und Gleichgewichtskonzentration.
 
-**Ingenieurtechnische Bedeutung.** In Berechnungen verbindet dieses Material "Absorption", "Adsorption" und "Sorbens": zuerst werden Triebkraft oder Betriebsregime bestimmt, danach die Beziehung zwischen den Parametern, und anschliessend die Auswahl oder Kontrolle von "Packungsapparat". Dieser Teil hebt "Absorption" und den Zusammenhang mit "Adsorption" hervor, weil solche Beziehungen in Formeln, Diagramme, Aehnlichkeitskriterien und konstruktive Entscheidungen uebergehen.
+<div class="equation-block">
+  <span class="equation-main">x = pψ</span>
+  <span class="equation-number">(13.1)</span>
+</div>
 
-**Biotechnologischer Schwerpunkt.** In biotechnologischen Produktionen ist eine schonende Behandlung des Mediums entscheidend: Kulturfluessigkeiten, Suspensionen, Fermentationsmedien und Zwischenprodukte reagieren oft empfindlich auf Temperatur, Scherung, Verunreinigung und Verlust der Sterilitaet.
+<div class="equation-block">
+  <span class="equation-main">p = yP</span>
+  <span class="equation-number">(13.2)</span>
+</div>
 
-**Worauf zu achten ist:**
+<div class="equation-block">
+  <span class="equation-main">y = mx</span>
+  <span class="equation-number">(13.3)</span>
+</div>
 
-- welche Groessen vor der Berechnung gemessen oder festgelegt werden muessen;
-- wie das Betriebsregime Produkt, Apparat und Energiebedarf beeinflusst;
-- wo "Packungsapparat" im Apparateschema erscheint und welche Grenzen dadurch entstehen.
+<div class="equation-block">
+  <span class="equation-main">G(y<sub>p</sub> - y<sub>k</sub>) = L(x<sub>k</sub> - x<sub>p</sub>)</span>
+  <span class="equation-number">(13.4)</span>
+</div>
 
-### 13.1.1. Bauarten von Absorbern
+<div class="equation-block">
+  <span class="equation-main">L/G = (y<sub>p</sub> - y<sub>k</sub>)/(x<sub>k</sub> - x<sub>p</sub>) = q</span>
+  <span class="equation-number">(13.5)</span>
+</div>
 
-**Stellung des Themas im Kapitel.** 13.1.1. Bauarten von Absorbern liefert die Sprache zur Beschreibung des Prozesses im Thema "Kapitel 13. Sorptionsprozesse". Wichtig ist nicht das isolierte Auswendiglernen, sondern das Verstehen, welche Groesse oder welches Phaenomen damit bewertet wird.
+<div class="equation-block">
+  <span class="equation-main">y = (L/G)x + (Gy<sub>p</sub> - Lx<sub>k</sub>)/G</span>
+  <span class="equation-number">(13.6)</span>
+</div>
 
-**Ingenieurtechnische Bedeutung.** In Berechnungen verbindet dieses Material "Absorption", "Adsorption" und "Sorbens": zuerst werden Triebkraft oder Betriebsregime bestimmt, danach die Beziehung zwischen den Parametern, und anschliessend die Auswahl oder Kontrolle von "Packungsapparat". Dieser Teil hebt "Adsorption" und den Zusammenhang mit "Sorbens" hervor, weil solche Beziehungen in Formeln, Diagramme, Aehnlichkeitskriterien und konstruktive Entscheidungen uebergehen.
+<div class="equation-block">
+  <span class="equation-main">M = kFΔCτ</span>
+  <span class="equation-number">(13.7)</span>
+</div>
 
-**Biotechnologischer Schwerpunkt.** In biotechnologischen Produktionen ist eine schonende Behandlung des Mediums entscheidend: Kulturfluessigkeiten, Suspensionen, Fermentationsmedien und Zwischenprodukte reagieren oft empfindlich auf Temperatur, Scherung, Verunreinigung und Verlust der Sterilitaet.
+<div class="equation-block">
+  <span class="equation-main">K<sub>y</sub> = 1/(1/β<sub>g</sub> + m/β<sub>l</sub>)</span>
+  <span class="equation-number">(13.8)</span>
+</div>
 
-**Worauf zu achten ist:**
+<div class="equation-block">
+  <span class="equation-main">K<sub>x</sub> = 1/(1/(mβ<sub>g</sub>) + 1/β<sub>l</sub>)</span>
+  <span class="equation-number">(13.9)</span>
+</div>
 
-- welche Groessen vor der Berechnung gemessen oder festgelegt werden muessen;
-- wie das Betriebsregime Produkt, Apparat und Energiebedarf beeinflusst;
-- wo "Packungsapparat" im Apparateschema erscheint und welche Grenzen dadurch entstehen.
+<div class="equation-block">
+  <span class="equation-main">H = Gm/(kS)</span>
+  <span class="equation-number">(13.10)</span>
+</div>
 
-### 13.2. Adsorption
-
-**Stellung des Themas im Kapitel.** 13.2. Adsorption liefert die Sprache zur Beschreibung des Prozesses im Thema "Kapitel 13. Sorptionsprozesse". Wichtig ist nicht das isolierte Auswendiglernen, sondern das Verstehen, welche Groesse oder welches Phaenomen damit bewertet wird.
-
-**Ingenieurtechnische Bedeutung.** In Berechnungen verbindet dieses Material "Absorption", "Adsorption" und "Sorbens": zuerst werden Triebkraft oder Betriebsregime bestimmt, danach die Beziehung zwischen den Parametern, und anschliessend die Auswahl oder Kontrolle von "Packungsapparat". Dieser Teil hebt "Sorbens" und den Zusammenhang mit "Packungsapparat" hervor, weil solche Beziehungen in Formeln, Diagramme, Aehnlichkeitskriterien und konstruktive Entscheidungen uebergehen.
-
-**Biotechnologischer Schwerpunkt.** In biotechnologischen Produktionen ist eine schonende Behandlung des Mediums entscheidend: Kulturfluessigkeiten, Suspensionen, Fermentationsmedien und Zwischenprodukte reagieren oft empfindlich auf Temperatur, Scherung, Verunreinigung und Verlust der Sterilitaet.
-
-**Worauf zu achten ist:**
-
-- welche Groessen vor der Berechnung gemessen oder festgelegt werden muessen;
-- wie das Betriebsregime Produkt, Apparat und Energiebedarf beeinflusst;
-- wo "Packungsapparat" im Apparateschema erscheint und welche Grenzen dadurch entstehen.
-
-### 13.2.1. Bauarten von Adsorbern
-
-**Stellung des Themas im Kapitel.** 13.2.1. Bauarten von Adsorbern liefert die Sprache zur Beschreibung des Prozesses im Thema "Kapitel 13. Sorptionsprozesse". Wichtig ist nicht das isolierte Auswendiglernen, sondern das Verstehen, welche Groesse oder welches Phaenomen damit bewertet wird.
-
-**Ingenieurtechnische Bedeutung.** In Berechnungen verbindet dieses Material "Absorption", "Adsorption" und "Sorbens": zuerst werden Triebkraft oder Betriebsregime bestimmt, danach die Beziehung zwischen den Parametern, und anschliessend die Auswahl oder Kontrolle von "Packungsapparat". Dieser Teil hebt "Packungsapparat" und den Zusammenhang mit "Absorption" hervor, weil solche Beziehungen in Formeln, Diagramme, Aehnlichkeitskriterien und konstruktive Entscheidungen uebergehen.
-
-**Biotechnologischer Schwerpunkt.** In biotechnologischen Produktionen ist eine schonende Behandlung des Mediums entscheidend: Kulturfluessigkeiten, Suspensionen, Fermentationsmedien und Zwischenprodukte reagieren oft empfindlich auf Temperatur, Scherung, Verunreinigung und Verlust der Sterilitaet.
-
-**Worauf zu achten ist:**
-
-- welche Groessen vor der Berechnung gemessen oder festgelegt werden muessen;
-- wie das Betriebsregime Produkt, Apparat und Energiebedarf beeinflusst;
-- wo "Packungsapparat" im Apparateschema erscheint und welche Grenzen dadurch entstehen.
-
-## Anschauliche Materialien
+<div class="equation-block">
+  <span class="equation-main">m = ∫ dy/(y - y*)</span>
+  <span class="equation-number">(13.11)</span>
+</div>
 
 ![Absorptionsgleichgewichtskurve](/images/courses/bioprocess-engineering/chapter-13/fig-13-1.webp)
 *Abb. 13.1. Absorptionsgleichgewichtskurve*
 
-![Gegenstrom-Absorptionsapparat](/images/courses/bioprocess-engineering/chapter-13/fig-13-2.webp)
-*Abb. 13.2. Schema eines Gegenstrom-Absorptionsapparats*
+![Gegenstromabsorber](/images/courses/bioprocess-engineering/chapter-13/fig-13-2.webp)
+*Abb. 13.2. Gegenstromabsorber*
+
+### 13.1.1. Absorberbauarten
+
+Absorber muessen eine grosse Kontaktflaeche und ausreichende Verweilzeit bereitstellen. Eingesetzt werden Packungs-, Oberflaechen-, Blasen-, Sprueh-, Rohr-, Kaskaden- und mechanische Apparate.
 
 ![Kaskadenabsorber](/images/courses/bioprocess-engineering/chapter-13/fig-13-3.webp)
-*Abb. 13.3. Schema von Kaskadenabsorbern*
+*Abb. 13.3. Kaskadenabsorber*
 
 ![Rohrabsorber](/images/courses/bioprocess-engineering/chapter-13/fig-13-4.webp)
-*Abb. 13.4. Schema eines Rohrabsorbers*
+*Abb. 13.4. Rohrabsorber*
 
 ![Packungsabsorber](/images/courses/bioprocess-engineering/chapter-13/fig-13-5.webp)
-*Abb. 13.5. Schema eines Packungsabsorbers*
+*Abb. 13.5. Packungsabsorber*
 
-![Packungstypen](/images/courses/bioprocess-engineering/chapter-13/fig-13-6.webp)
-*Abb. 13.6. Packungstypen fuer Stoffuebertragungsapparate*
+![Packungsarten](/images/courses/bioprocess-engineering/chapter-13/fig-13-6.webp)
+*Abb. 13.6. Packungsarten*
 
 ![Oberflaechenabsorber](/images/courses/bioprocess-engineering/chapter-13/fig-13-7.webp)
-*Abb. 13.7. Schema eines Oberflaechenabsorbers*
+*Abb. 13.7. Oberflaechenabsorber*
 
-![Blasenabsorber](/images/courses/bioprocess-engineering/chapter-13/fig-13-8.webp)
-*Abb. 13.8. Schema eines Blasenabsorbers*
+![Blasenbodenabsorber](/images/courses/bioprocess-engineering/chapter-13/fig-13-8.webp)
+*Abb. 13.8. Blasenbodenabsorber*
 
 ![Spruehabsorber](/images/courses/bioprocess-engineering/chapter-13/fig-13-9.webp)
-*Abb. 13.9. Schema eines Spruehabsorbers*
+*Abb. 13.9. Spruehabsorber*
 
 ![Mechanischer Absorber](/images/courses/bioprocess-engineering/chapter-13/fig-13-10.webp)
-*Abb. 13.10. Schema eines mechanischen Absorbers*
+*Abb. 13.10. Mechanischer Absorber*
 
-![Zonen des Adsorptionsprozesses](/images/courses/bioprocess-engineering/chapter-13/fig-13-11.webp)
-*Abb. 13.11. Drei Zonen des Adsorptionsprozesses in einem kontinuierlichen Adsorber*
+### 13.2. Adsorption
 
-![Diagramm zur Zahl der Konzentrationsstufen](/images/courses/bioprocess-engineering/chapter-13/fig-13-12.webp)
-*Abb. 13.12. Diagramm zur Bestimmung der Zahl der Konzentrationsstufen*
+Adsorption ist die selektive Aufnahme von Komponenten an der Oberflaeche eines festen Adsorbens. Sie wird durch Isothermen, Stofftransportkinetik und Schutzzeit des Bettes beschrieben.
+
+<div class="equation-block">
+  <span class="equation-main">x* = f(y)</span>
+  <span class="equation-number">(13.12)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">x* = Ky<sup>1/n</sup></span>
+  <span class="equation-number">(13.13)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">(x* - x)/(x* - x<sub>0</sub>) = f(Bi, Fo, q)</span>
+  <span class="equation-number">(13.14)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">Nu′ = 46.25 · 10<sup>-6</sup>Re<sup>1.67</sup></span>
+  <span class="equation-number">(13.15)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">τ = kH - τ<sub>0</sub></span>
+  <span class="equation-number">(13.16)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">H = ∫ dy/[Sk(y - y*)] = hm</span>
+  <span class="equation-number">(13.17)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">m = Σm<sub>i</sub></span>
+  <span class="equation-number">(13.18)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">m<sub>i</sub> = 2(y<sub>i</sub> - y<sub>i-1</sub>)/[(y<sub>i</sub> - y*<sub>i</sub>) + (y<sub>i-1</sub> - y*<sub>i-1</sub>)]</span>
+  <span class="equation-number">(13.19)</span>
+</div>
+
+![Drei Adsorptionszonen in einem kontinuierlichen Adsorber](/images/courses/bioprocess-engineering/chapter-13/fig-13-11.webp)
+*Abb. 13.11. Drei Adsorptionszonen in einem kontinuierlichen Adsorber*
+
+![Grafische Bestimmung der Konzentrationsstufen](/images/courses/bioprocess-engineering/chapter-13/fig-13-12.webp)
+*Abb. 13.12. Grafische Bestimmung der Konzentrationsstufen*
+
+### 13.2.1. Adsorberbauarten
+
+Adsorber arbeiten diskontinuierlich oder kontinuierlich, mit festem, bewegtem oder wirbelndem Bett. Die Auswahl haengt von Leistung, Regeneration, Druckverlust und Reinigungsziel ab.
 
 ![Diskontinuierlicher Adsorber](/images/courses/bioprocess-engineering/chapter-13/fig-13-13.webp)
-*Abb. 13.13. Schema eines diskontinuierlichen Adsorbers*
+*Abb. 13.13. Diskontinuierlicher Adsorber*
 
 ![Ringadsorber](/images/courses/bioprocess-engineering/chapter-13/fig-13-14.webp)
 *Abb. 13.14. Ringadsorber*
 
-![Kontinuierlicher Adsorber mit bewegter Schicht](/images/courses/bioprocess-engineering/chapter-13/fig-13-15.webp)
-*Abb. 13.15. Kontinuierlicher Kolonnenadsorber mit bewegter Schicht*
+![Kontinuierlicher Wanderbettadsorber](/images/courses/bioprocess-engineering/chapter-13/fig-13-15.webp)
+*Abb. 13.15. Kontinuierlicher Wanderbettadsorber*
 
-![Wirbelschichtadsorber](/images/courses/bioprocess-engineering/chapter-13/fig-13-16.webp)
-*Abb. 13.16. Schema eines diskontinuierlichen Wirbelschichtadsorbers*
+![Diskontinuierlicher Wirbelschichtadsorber](/images/courses/bioprocess-engineering/chapter-13/fig-13-16.webp)
+*Abb. 13.16. Diskontinuierlicher Wirbelschichtadsorber*
 
-![Bodenadsorber mit fluidisierter Sorbensschicht](/images/courses/bioprocess-engineering/chapter-13/fig-13-17.webp)
-*Abb. 13.17. Kontinuierlicher Bodenadsorber mit fluidisierter Sorbensschicht*
+![Bodenadsorber mit Wirbelschicht](/images/courses/bioprocess-engineering/chapter-13/fig-13-17.webp)
+*Abb. 13.17. Bodenadsorber mit Wirbelschicht*
 
 ## Nach dem Durcharbeiten dieses Kapitels sollen Studierende
 

@@ -23,103 +23,131 @@ The page follows the logic of the corresponding textbook chapter; the test items
 
 ## Lecture Notes
 
-This lecture note treats the chapter as engineering logic rather than a list of terms: from the physical meaning of the process to the parameters used to select, calculate, and check equipment in biotechnological production.
-
 ### 16.1. General information
 
-**Place of the topic in the chapter.** 16.1. General information gives the language for describing the process within "Chapter 16. Size Reduction". The important task is not to memorize a separate definition, but to understand which quantity or phenomenon it helps to evaluate.
+Size reduction is the division of a solid body into particles by external forces. In biotechnological, pharmaceutical, and food-processing production it accelerates heat-transfer, diffusion, and chemical operations involving a solid phase.
 
-**Engineering meaning.** In calculations, the material connects "size reduction", "reduction ratio", and "mill": first the driving force or regime is identified, then the relation between parameters is established, and only after that the "energy consumption" is selected or checked. This part highlights "size reduction" and its relation to "reduction ratio", because such links become formulas, diagrams, similarity criteria, and design decisions.
+The process is characterized by the reduction ratio, that is, the ratio of the average particle size before reduction D to the average size after reduction d:
 
-**Biotechnological emphasis.** For biotechnological production, gentle handling of the medium is essential: culture liquids, suspensions, fermentation media, and intermediates are often sensitive to temperature, shear, contamination, and loss of sterility.
+<div class="equation-block">
+  <span class="equation-main">i = D/d</span>
+  <span class="equation-number">(16.1)</span>
+</div>
 
-**What to watch:**
+**Table 16.1. Size-reduction classes**
 
-- which quantities must be measured or specified before calculation;
-- how the operating regime affects the product, equipment, and energy demand;
-- where "energy consumption" appears in the equipment scheme and what limits it imposes.
+| Size-reduction class | Particle size before reduction D, mm | Particle size after reduction d, mm |
+|---|---:|---:|
+| Coarse crushing | 1000 | 250 |
+| Medium crushing | 250 | 20 |
+| Fine crushing | 20 | 1...5 |
+| Coarse grinding | 1...5 | 0.1...0.04 |
+| Medium grinding | 0.1...0.04 | 0.005...0.015 |
+| Fine grinding | 0.1...0.04 | 0.001...0.005 |
+| Colloidal grinding | <= 0.1 | <= 0.001 |
 
 ### 16.2. Size-reduction methods
 
-**Place of the topic in the chapter.** 16.2. Size-reduction methods gives the language for describing the process within "Chapter 16. Size Reduction". The important task is not to memorize a separate definition, but to understand which quantity or phenomenon it helps to evaluate.
+Solids may be broken by compression, splitting, bending fracture, cutting, sawing, abrasion, impact, and tearing. In practice these methods are often combined: abrasion is accompanied by compression or impact, while bending fracture is accompanied by splitting or compression.
 
-**Engineering meaning.** In calculations, the material connects "size reduction", "reduction ratio", and "mill": first the driving force or regime is identified, then the relation between parameters is established, and only after that the "energy consumption" is selected or checked. This part highlights "reduction ratio" and its relation to "mill", because such links become formulas, diagrams, similarity criteria, and design decisions.
-
-**Biotechnological emphasis.** For biotechnological production, gentle handling of the medium is essential: culture liquids, suspensions, fermentation media, and intermediates are often sensitive to temperature, shear, contamination, and loss of sterility.
-
-**What to watch:**
-
-- which quantities must be measured or specified before calculation;
-- how the operating regime affects the product, equipment, and energy demand;
-- where "energy consumption" appears in the equipment scheme and what limits it imposes.
+![Fig. 16.1. Methods of size reduction](/images/courses/bioprocess-engineering/chapter-16/fig-16-1.webp)
+*Fig. 16.1. Methods of size reduction*
 
 ### 16.3. Energy consumption for size reduction
 
-**Place of the topic in the chapter.** 16.3. Energy consumption for size reduction gives the language for describing the process within "Chapter 16. Size Reduction". The important task is not to memorize a separate definition, but to understand which quantity or phenomenon it helps to evaluate.
+Energy consumption in size reduction is a difficult problem because the work depends on material properties, the fracture mechanism, and machine operating conditions. For a cubic body with edge D reduced to cubes with edge d, the following relationships are used:
 
-**Engineering meaning.** In calculations, the material connects "size reduction", "reduction ratio", and "mill": first the driving force or regime is identified, then the relation between parameters is established, and only after that the "energy consumption" is selected or checked. This part highlights "mill" and its relation to "energy consumption", because such links become formulas, diagrams, similarity criteria, and design decisions.
+<div class="equation-block">
+  <span class="equation-main">z = D<sup>3</sup>/d<sup>3</sup> = i<sup>3</sup></span>
+  <span class="equation-number"></span>
+</div>
 
-**Biotechnological emphasis.** For biotechnological production, gentle handling of the medium is essential: culture liquids, suspensions, fermentation media, and intermediates are often sensitive to temperature, shear, contamination, and loss of sterility.
+<div class="equation-block">
+  <span class="equation-main">F<sub>p</sub> = 6D<sup>2</sup></span>
+  <span class="equation-number"></span>
+</div>
 
-**What to watch:**
+<div class="equation-block">
+  <span class="equation-main">F<sub>k</sub> = 6d<sup>2</sup>i<sup>3</sup> = 6(D/i)<sup>2</sup>i<sup>3</sup> = 6D<sup>2</sup>i</span>
+  <span class="equation-number"></span>
+</div>
 
-- which quantities must be measured or specified before calculation;
-- how the operating regime affects the product, equipment, and energy demand;
-- where "energy consumption" appears in the equipment scheme and what limits it imposes.
+<div class="equation-block">
+  <span class="equation-main">ΔF = F<sub>k</sub> - F<sub>p</sub> = 6D<sup>2</sup>(i - 1)</span>
+  <span class="equation-number"></span>
+</div>
 
-### 16.4. Classification of grinders
+<div class="equation-block">
+  <span class="equation-main">A = A<sub>p</sub>ΔF = 6A<sub>p</sub>D<sup>2</sup>(i - 1)</span>
+  <span class="equation-number">(16.2)</span>
+</div>
 
-**Place of the topic in the chapter.** 16.4. Classification of grinders gives the language for describing the process within "Chapter 16. Size Reduction". The important task is not to memorize a separate definition, but to understand which quantity or phenomenon it helps to evaluate.
+<div class="equation-block">
+  <span class="equation-main">A = σ<sub>p</sub><sup>2</sup>ΔV/(2E)</span>
+  <span class="equation-number">(16.3)</span>
+</div>
 
-**Engineering meaning.** In calculations, the material connects "size reduction", "reduction ratio", and "mill": first the driving force or regime is identified, then the relation between parameters is established, and only after that the "energy consumption" is selected or checked. This part highlights "energy consumption" and its relation to "size reduction", because such links become formulas, diagrams, similarity criteria, and design decisions.
+<div class="equation-block">
+  <span class="equation-main">A<sub>1</sub>/A<sub>2</sub> = V<sub>1</sub>/V<sub>2</sub></span>
+  <span class="equation-number">(16.4)</span>
+</div>
 
-**Biotechnological emphasis.** For biotechnological production, gentle handling of the medium is essential: culture liquids, suspensions, fermentation media, and intermediates are often sensitive to temperature, shear, contamination, and loss of sterility.
+<div class="equation-block">
+  <span class="equation-main">A = kV + A<sub>p</sub>ΔF</span>
+  <span class="equation-number">(16.5)</span>
+</div>
 
-**What to watch:**
+According to Rittinger, the work is proportional to the newly formed surface. According to Kirpichev-Kick, it is related to the deformation of volume before fracture. Rebinder proposed treating the total work as the sum of deformation work and surface-formation work.
 
-- which quantities must be measured or specified before calculation;
-- how the operating regime affects the product, equipment, and energy demand;
-- where "energy consumption" appears in the equipment scheme and what limits it imposes.
+### 16.4. Classification of size-reduction machines
 
-### 16.5. Design and operation of grinding machines
+Comminution machines are classified by the dominant fracture mechanism: splitting and bending-fracture machines, compression machines, abrasion-compression machines, impact machines, cutting machines, and colloid mills.
 
-**Place of the topic in the chapter.** 16.5. Design and operation of grinding machines gives the language for describing the process within "Chapter 16. Size Reduction". The important task is not to memorize a separate definition, but to understand which quantity or phenomenon it helps to evaluate.
+### 16.5. Design and operation of size-reduction machines
 
-**Engineering meaning.** In calculations, the material connects "size reduction", "reduction ratio", and "mill": first the driving force or regime is identified, then the relation between parameters is established, and only after that the "energy consumption" is selected or checked. This part highlights "size reduction" and its relation to "reduction ratio", because such links become formulas, diagrams, similarity criteria, and design decisions.
+Jaw crushers are effective for coarse and medium crushing. Material enters from above between a fixed and a moving jaw; when the jaws approach each other the pieces are fractured, and when they separate the product leaves through the lower gap. Cone crushers operate continuously: material is compressed between a fixed outer cone and a moving inner cone.
 
-**Biotechnological emphasis.** For biotechnological production, gentle handling of the medium is essential: culture liquids, suspensions, fermentation media, and intermediates are often sensitive to temperature, shear, contamination, and loss of sterility.
+![Fig. 16.2. Jaw crusher diagram](/images/courses/bioprocess-engineering/chapter-16/fig-16-2.webp)
+*Fig. 16.2. Jaw crusher diagram*
 
-**What to watch:**
+![Fig. 16.3. Cone crusher diagram](/images/courses/bioprocess-engineering/chapter-16/fig-16-3.webp)
+*Fig. 16.3. Cone crusher diagram*
 
-- which quantities must be measured or specified before calculation;
-- how the operating regime affects the product, equipment, and energy demand;
-- where "energy consumption" appears in the equipment scheme and what limits it imposes.
+In roll crushers, material is compressed between rolls. Product size is governed by the roll gap; corrugated rolls additionally split the material. The capacity G, kg/h, of a roll crusher is estimated as:
 
-## Visual Materials
+![Fig. 16.4. Roll crusher diagram](/images/courses/bioprocess-engineering/chapter-16/fig-16-4.webp)
+*Fig. 16.4. Roll crusher diagram*
 
-![Jaw crusher scheme](/images/courses/bioprocess-engineering/chapter-16/fig-16-2.webp)
-*Fig. 16.2. Jaw crusher scheme*
+<div class="equation-block">
+  <span class="equation-main">G = 60blπDnρφ</span>
+  <span class="equation-number">(16.6)</span>
+</div>
 
-![Cone crusher scheme](/images/courses/bioprocess-engineering/chapter-16/fig-16-3.webp)
-*Fig. 16.3. Cone crusher scheme*
+where b is the roll gap width, m; l is the roll length, m; D is roll diameter, m; n is rotational speed, rpm; ρ is material density, kg/m3; φ accounts for nonuniform feeding.
 
-![Roll crusher scheme](/images/courses/bioprocess-engineering/chapter-16/fig-16-4.webp)
-*Fig. 16.4. Roll crusher scheme*
+![Fig. 16.5. Edge runner mill diagram](/images/courses/bioprocess-engineering/chapter-16/fig-16-5.webp)
+*Fig. 16.5. Edge runner mill diagram*
 
-![Edge-runner mill scheme](/images/courses/bioprocess-engineering/chapter-16/fig-16-5.webp)
-*Fig. 16.5. Edge-runner mill scheme*
+Abrasion-compression machines include millstones, edge runner mills, and disk mills. Impact size reduction is implemented in hammer crushers, single-drum crushers, and disintegrators. For a hammer crusher, the approximate shaft power N, kW, is estimated empirically:
 
-![Hammer crusher scheme](/images/courses/bioprocess-engineering/chapter-16/fig-16-6.webp)
-*Fig. 16.6. Hammer crusher scheme*
+![Fig. 16.6. Hammer crusher diagram](/images/courses/bioprocess-engineering/chapter-16/fig-16-6.webp)
+*Fig. 16.6. Hammer crusher diagram*
 
-![Single-drum crusher scheme](/images/courses/bioprocess-engineering/chapter-16/fig-16-7.webp)
-*Fig. 16.7. Single-drum crusher scheme*
+<div class="equation-block">
+  <span class="equation-main">N = (0.1...0.15)iG</span>
+  <span class="equation-number">(16.7)</span>
+</div>
 
-![Disintegrator scheme](/images/courses/bioprocess-engineering/chapter-16/fig-16-8.webp)
-*Fig. 16.8. Disintegrator scheme*
+![Fig. 16.7. Single-drum crusher diagram](/images/courses/bioprocess-engineering/chapter-16/fig-16-7.webp)
+*Fig. 16.7. Single-drum crusher diagram*
 
-![Drum mill scheme](/images/courses/bioprocess-engineering/chapter-16/fig-16-9.webp)
-*Fig. 16.9. Drum mill scheme*
+![Fig. 16.8. Disintegrator diagram](/images/courses/bioprocess-engineering/chapter-16/fig-16-8.webp)
+*Fig. 16.8. Disintegrator diagram*
+
+Drum mills are used for fine grinding: grinding media fall or roll inside the drum and break material by impact, compression, and abrasion. Cutting machines are used mainly for plant raw materials; their working element is a knife.
+
+![Fig. 16.9. Drum mill diagram](/images/courses/bioprocess-engineering/chapter-16/fig-16-9.webp)
+*Fig. 16.9. Drum mill diagram*
 
 ## After studying this chapter, students should be able to
 

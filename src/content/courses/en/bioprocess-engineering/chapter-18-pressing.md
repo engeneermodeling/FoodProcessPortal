@@ -21,66 +21,152 @@ The page follows the logic of the corresponding textbook chapter; the test items
 
 ## Lecture Notes
 
-This lecture note treats the chapter as engineering logic rather than a list of terms: from the physical meaning of the process to the parameters used to select, calculate, and check equipment in biotechnological production.
+### Chapter 18. Pressing
+
+Pressing is the treatment of materials by pressure under external forces. The material is subjected to one-sided or volumetric compression in presses. Pressing is used for liquid expression from solids, forming plastic materials, compaction, briquetting, and granulation.
 
 ### 18.1. Liquid expression from solid materials
 
-**Place of the topic in the chapter.** 18.1. Liquid expression from solid materials gives the language for describing the process within "Chapter 18. Pressing". The important task is not to memorize a separate definition, but to understand which quantity or phenomenon it helps to evaluate.
+Expression, like filtration, separates liquid and solid phases. It is used when liquid must be removed more completely from a cake or when moisture is removed before drying. As pressure increases, the material is compacted and then liquid begins to separate; the rate gradually decreases.
 
-**Engineering meaning.** In calculations, the material connects "pressure", "expression", and "forming": first the driving force or regime is identified, then the relation between parameters is established, and only after that the "granulation" is selected or checked. This part highlights "pressure" and its relation to "expression", because such links become formulas, diagrams, similarity criteria, and design decisions.
+During pressing, liquid moves between particles of a porous layer through capillaries of variable section. The liquid flow through a capillary is described by Poiseuille's law:
 
-**Biotechnological emphasis.** For biotechnological production, gentle handling of the medium is essential: culture liquids, suspensions, fermentation media, and intermediates are often sensitive to temperature, shear, contamination, and loss of sterility.
+<div class="equation-block">
+  <span class="equation-main">Q = Δp α d<sub>k</sub><sup>4</sup>/(32 μ l<sub>k</sub>)</span>
+  <span class="equation-number">(18.1)</span>
+</div>
 
-**What to watch:**
+where Δp is pressure drop, Pa; α is the capillary cross-section shape factor; d<sub>k</sub> is capillary diameter, m; μ is dynamic viscosity, Pa·s; l<sub>k</sub> is capillary length, m.
 
-- which quantities must be measured or specified before calculation;
-- how the operating regime affects the product, equipment, and energy demand;
-- where "granulation" appears in the equipment scheme and what limits it imposes.
+Compression characteristics describe the ability of the mass to deform under pressure:
+
+<div class="equation-block">
+  <span class="equation-main">dp = a dε</span>
+  <span class="equation-number"></span>
+</div>
+
+Porosity ε depends on pressure p; therefore compression curves are built from experimental data:
+
+<div class="equation-block">
+  <span class="equation-main">ε = f(p)</span>
+  <span class="equation-number"></span>
+</div>
+
+The kinetics of unsteady expression at constant pressure are approximately described by:
+
+<div class="equation-block">
+  <span class="equation-main">(ε<sub>p</sub> - ε)/(ε<sub>p</sub> - ε<sub>k</sub>) = 1 - (8/π<sup>2</sup>) exp[-π<sup>2</sup>cτ/(4h<sup>2</sup>)]</span>
+  <span class="equation-number">(18.2)</span>
+</div>
+
+Presses for expression may be batch or continuous; by pressure generation they are hydraulic, pneumatic, or mechanical. In a vertical hydraulic press, material is loaded into a cage cylinder and the liquid fraction passes through gaps into a tray.
+
+![Fig. 18.1. Hydraulic press diagram](/images/courses/bioprocess-engineering/chapter-18/fig-18-1.webp)
+*Fig. 18.1. Hydraulic press diagram*
+
+If losses are neglected, the pressing force in the working cylinder equals the force in the hydraulic cylinder:
+
+<div class="equation-block">
+  <span class="equation-main">F = p<sub>p</sub>πD<sub>p</sub><sup>2</sup>/4 = p<sub>c</sub>πD<sub>c</sub><sup>2</sup>/4</span>
+  <span class="equation-number">(18.3)</span>
+</div>
+
+The pressure required in the power cylinder is:
+
+<div class="equation-block">
+  <span class="equation-main">p<sub>c</sub> = p<sub>p</sub>(D<sub>p</sub>/D<sub>c</sub>)<sup>2</sup></span>
+  <span class="equation-number">(18.4)</span>
+</div>
+
+Screw presses are common in biotechnological and food production for extracting oil, must, fat, tomato juice, and other liquid fractions. For cylindrical screws, the compression ratio is defined by pitch ratio:
+
+![Fig. 18.2. Screw press diagram](/images/courses/bioprocess-engineering/chapter-18/fig-18-2.webp)
+*Fig. 18.2. Screw press diagram*
+
+<div class="equation-block">
+  <span class="equation-main">K = h<sub>1</sub>/h<sub>2</sub></span>
+  <span class="equation-number"></span>
+</div>
+
+Pressure in the screw working space changes exponentially:
+
+<div class="equation-block">
+  <span class="equation-main">p<sub>k</sub> = p<sub>0</sub>e<sup>lβ</sup></span>
+  <span class="equation-number">(18.5)</span>
+</div>
+
+The capacity G, kg/s, of a screw press is:
+
+<div class="equation-block">
+  <span class="equation-main">G = fw<sub>o</sub>ρφ</span>
+  <span class="equation-number">(18.6)</span>
+</div>
+
+For the cross-section of the screw-press working zone:
+
+<div class="equation-block">
+  <span class="equation-main">f = π(D<sup>2</sup> - d<sup>2</sup>)/4</span>
+  <span class="equation-number"></span>
+</div>
+
+The axial velocity of material motion is:
+
+<div class="equation-block">
+  <span class="equation-main">w<sub>o</sub> = hn</span>
+  <span class="equation-number">(18.7)</span>
+</div>
 
 ### 18.2. Forming of plastic materials
 
-**Place of the topic in the chapter.** 18.2. Forming of plastic materials gives the language for describing the process within "Chapter 18. Pressing". The important task is not to memorize a separate definition, but to understand which quantity or phenomenon it helps to evaluate.
+Forming gives a product a specified shape without significant change in density. Plastic materials are formed by rolling, rounding, drawing, stamping, and extrusion through forming openings. Rheological properties determine the contact time of working elements and machine productivity.
 
-**Engineering meaning.** In calculations, the material connects "pressure", "expression", and "forming": first the driving force or regime is identified, then the relation between parameters is established, and only after that the "granulation" is selected or checked. This part highlights "expression" and its relation to "forming", because such links become formulas, diagrams, similarity criteria, and design decisions.
+![Fig. 18.3. Single-screw extruder diagram](/images/courses/bioprocess-engineering/chapter-18/fig-18-3.webp)
+*Fig. 18.3. Single-screw extruder diagram*
 
-**Biotechnological emphasis.** For biotechnological production, gentle handling of the medium is essential: culture liquids, suspensions, fermentation media, and intermediates are often sensitive to temperature, shear, contamination, and loss of sterility.
+<div class="equation-block">
+  <span class="equation-main">tgφ = h/(πD)</span>
+  <span class="equation-number">(18.8)</span>
+</div>
 
-**What to watch:**
+Extruders form plastic materials by forcing them through die openings. In a screw extruder, material is fed to a hopper, transported by the screw through the barrel to the die chamber, and forced through die openings by pressure. The helix angle is related to screw geometry:
 
-- which quantities must be measured or specified before calculation;
-- how the operating regime affects the product, equipment, and energy demand;
-- where "granulation" appears in the equipment scheme and what limits it imposes.
+<div class="equation-block">
+  <span class="equation-main">Q = Δpk/μ</span>
+  <span class="equation-number">(18.9)</span>
+</div>
 
-### 18.3. Briquetting and granulation of solid materials
+For practical calculations of volumetric capacity of forming equipment, the following relation is used:
 
-**Place of the topic in the chapter.** 18.3. Briquetting and granulation of solid materials gives the language for describing the process within "Chapter 18. Pressing". The important task is not to memorize a separate definition, but to understand which quantity or phenomenon it helps to evaluate.
+### 18.3. Briquetting and granulation of solids
 
-**Engineering meaning.** In calculations, the material connects "pressure", "expression", and "forming": first the driving force or regime is identified, then the relation between parameters is established, and only after that the "granulation" is selected or checked. This part highlights "forming" and its relation to "granulation", because such links become formulas, diagrams, similarity criteria, and design decisions.
+<div class="equation-block">
+  <span class="equation-main">β = V/V<sub>c</sub></span>
+  <span class="equation-number">(18.10)</span>
+</div>
 
-**Biotechnological emphasis.** For biotechnological production, gentle handling of the medium is essential: culture liquids, suspensions, fermentation media, and intermediates are often sensitive to temperature, shear, contamination, and loss of sterility.
+Briquetting is compaction of a solid body in a closed space to form geometrically regular briquettes. Compaction is accompanied by size reduction and relative displacement of particles. Volume reduction is characterized by the compaction coefficient:
 
-**What to watch:**
+<div class="equation-block">
+  <span class="equation-main">ψ ln(p<sub>k</sub>/p<sub>p</sub>) = β<sub>p</sub> - β<sub>k</sub></span>
+  <span class="equation-number">(18.11)</span>
+</div>
 
-- which quantities must be measured or specified before calculation;
-- how the operating regime affects the product, equipment, and energy demand;
-- where "granulation" appears in the equipment scheme and what limits it imposes.
+When pressure losses due to friction are neglected, the compaction process is described by:
 
-## Visual Materials
+With one-sided pressing, briquette density is greatest near the punch, so two-sided compression is advantageous. Briquette strength depends on material state, moisture, preliminary heat treatment, process duration, and holding under pressure.
 
-![Hydraulic press scheme](/images/courses/bioprocess-engineering/chapter-18/fig-18-1.webp)
-*Fig. 18.1. Hydraulic press scheme*
+![Fig. 18.4. Pressing sequence in a rotary press](/images/courses/bioprocess-engineering/chapter-18/fig-18-4.webp)
+*Fig. 18.4. Pressing sequence in a rotary press*
 
-![Screw press scheme](/images/courses/bioprocess-engineering/chapter-18/fig-18-2.webp)
-*Fig. 18.2. Screw press scheme*
+<div class="equation-block">
+  <span class="equation-main">A = ∫<sub>h<sub>k</sub></sub><sup>h<sub>p</sub></sup> Fp dh</span>
+  <span class="equation-number">(18.12)</span>
+</div>
 
-![Single-screw extruder scheme](/images/courses/bioprocess-engineering/chapter-18/fig-18-3.webp)
-*Fig. 18.3. Single-screw extruder scheme*
+A rotary press has a horizontal disk with dies and punches. During one revolution, the disk performs filling, forming, ejection, and punch-cleaning operations. The pressing work for one punch stroke is:
 
-![Pressing on a carousel press](/images/courses/bioprocess-engineering/chapter-18/fig-18-4.webp)
-*Fig. 18.4. Pressing-process scheme on a carousel press*
-
-![Dry pulp granulation](/images/courses/bioprocess-engineering/chapter-18/fig-18-5.webp)
-*Fig. 18.5. Dry pulp granulation scheme*
+![Fig. 18.5. Dry pulp granulation diagram](/images/courses/bioprocess-engineering/chapter-18/fig-18-5.webp)
+*Fig. 18.5. Dry pulp granulation diagram*
 
 ## After studying this chapter, students should be able to
 

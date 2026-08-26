@@ -21,66 +21,152 @@ Die Seite folgt der Logik des entsprechenden Lehrbuchkapitels; die Testfragen wu
 
 ## Vorlesungsskript
 
-Diese Vorlesungsnotiz behandelt das Kapitel als ingenieurtechnische Logik und nicht nur als Begriffsliste: vom physikalischen Sinn des Prozesses bis zu den Parametern fuer Auswahl, Berechnung und Pruefung des Apparats in der biotechnologischen Produktion.
+### Kapitel 18. Pressen
 
-### 18.1. Abpressen von Fluessigkeit aus Feststoffen
+Pressen ist die Behandlung von Stoffen mit Druck unter Einwirkung aeusserer Kraefte. Der Stoff wird in Pressen einseitig oder raeumlich verdichtet. Pressen dient zum Auspressen von Fluessigkeit aus Feststoffen, zum Formen plastischer Stoffe, zum Verdichten, Brikettieren und Granulieren.
 
-**Stellung des Themas im Kapitel.** 18.1. Abpressen von Fluessigkeit aus Feststoffen liefert die Sprache zur Beschreibung des Prozesses im Thema "Kapitel 18. Pressen". Wichtig ist nicht das isolierte Auswendiglernen, sondern das Verstehen, welche Groesse oder welches Phaenomen damit bewertet wird.
+### 18.1. Auspressen von Fluessigkeit aus festen Stoffen
 
-**Ingenieurtechnische Bedeutung.** In Berechnungen verbindet dieses Material "Druck", "Abpressen" und "Formen": zuerst werden Triebkraft oder Betriebsregime bestimmt, danach die Beziehung zwischen den Parametern, und anschliessend die Auswahl oder Kontrolle von "Granulieren". Dieser Teil hebt "Druck" und den Zusammenhang mit "Abpressen" hervor, weil solche Beziehungen in Formeln, Diagramme, Aehnlichkeitskriterien und konstruktive Entscheidungen uebergehen.
+Das Auspressen trennt wie die Filtration fluessige und feste Phasen. Es wird eingesetzt, wenn Fluessigkeit aus einem Filterkuchen vollstaendiger entfernt oder Feuchte vor dem Trocknen mechanisch abgetrennt werden soll. Mit steigendem Druck verdichtet sich der Stoff, danach trennt sich die fluessige Phase ab; die Geschwindigkeit nimmt allmaehlich ab.
 
-**Biotechnologischer Schwerpunkt.** In biotechnologischen Produktionen ist eine schonende Behandlung des Mediums entscheidend: Kulturfluessigkeiten, Suspensionen, Fermentationsmedien und Zwischenprodukte reagieren oft empfindlich auf Temperatur, Scherung, Verunreinigung und Verlust der Sterilitaet.
+Beim Pressen bewegt sich die Fluessigkeit zwischen den Partikeln einer poroesen Schicht durch Kapillaren veraenderlichen Querschnitts. Der Durchfluss durch eine Kapillare wird mit dem Poiseuille-Gesetz beschrieben:
 
-**Worauf zu achten ist:**
+<div class="equation-block">
+  <span class="equation-main">Q = Δp α d<sub>k</sub><sup>4</sup>/(32 μ l<sub>k</sub>)</span>
+  <span class="equation-number">(18.1)</span>
+</div>
 
-- welche Groessen vor der Berechnung gemessen oder festgelegt werden muessen;
-- wie das Betriebsregime Produkt, Apparat und Energiebedarf beeinflusst;
-- wo "Granulieren" im Apparateschema erscheint und welche Grenzen dadurch entstehen.
+Dabei ist Δp der Druckabfall, Pa; α der Formfaktor des Kapillarquerschnitts; d<sub>k</sub> der Kapillardurchmesser, m; μ die dynamische Viskositaet, Pa·s; l<sub>k</sub> die Kapillarlaenge, m.
+
+Kompressionskennlinien beschreiben die Verformbarkeit der Masse unter Druck:
+
+<div class="equation-block">
+  <span class="equation-main">dp = a dε</span>
+  <span class="equation-number"></span>
+</div>
+
+Die Porositaet ε haengt vom Druck p ab; daher werden aus Versuchsdaten Kompressionskurven erstellt:
+
+<div class="equation-block">
+  <span class="equation-main">ε = f(p)</span>
+  <span class="equation-number"></span>
+</div>
+
+Die Kinetik des instationaeren Auspressens bei konstantem Druck wird naeherungsweise beschrieben durch:
+
+<div class="equation-block">
+  <span class="equation-main">(ε<sub>p</sub> - ε)/(ε<sub>p</sub> - ε<sub>k</sub>) = 1 - (8/π<sup>2</sup>) exp[-π<sup>2</sup>cτ/(4h<sup>2</sup>)]</span>
+  <span class="equation-number">(18.2)</span>
+</div>
+
+Pressen zum Auspressen koennen periodisch oder kontinuierlich arbeiten; nach der Druckerzeugung unterscheidet man hydraulische, pneumatische und mechanische Pressen. In einer vertikalen hydraulischen Presse wird der Stoff in einen Seiherzylinder geladen, und die fluessige Fraktion tritt durch Spalte in eine Auffangwanne aus.
+
+![Abb. 18.1. Schema einer hydraulischen Presse](/images/courses/bioprocess-engineering/chapter-18/fig-18-1.webp)
+*Abb. 18.1. Schema einer hydraulischen Presse*
+
+Ohne Verluste ist die Presskraft im Arbeitszylinder gleich der Kraft im Hydraulikzylinder:
+
+<div class="equation-block">
+  <span class="equation-main">F = p<sub>p</sub>πD<sub>p</sub><sup>2</sup>/4 = p<sub>c</sub>πD<sub>c</sub><sup>2</sup>/4</span>
+  <span class="equation-number">(18.3)</span>
+</div>
+
+Der notwendige Druck im Kraftzylinder ist:
+
+<div class="equation-block">
+  <span class="equation-main">p<sub>c</sub> = p<sub>p</sub>(D<sub>p</sub>/D<sub>c</sub>)<sup>2</sup></span>
+  <span class="equation-number">(18.4)</span>
+</div>
+
+Schneckenpressen sind in bio- und lebensmitteltechnischen Produktionen verbreitet, etwa zur Gewinnung von Oel, Most, Fett, Tomatensaft und anderen fluessigen Fraktionen. Bei zylindrischen Schnecken wird der Kompressionsgrad durch das Verhaeltnis der Steigungen bestimmt:
+
+![Abb. 18.2. Schema einer Schneckenpresse](/images/courses/bioprocess-engineering/chapter-18/fig-18-2.webp)
+*Abb. 18.2. Schema einer Schneckenpresse*
+
+<div class="equation-block">
+  <span class="equation-main">K = h<sub>1</sub>/h<sub>2</sub></span>
+  <span class="equation-number"></span>
+</div>
+
+Der Druck im Arbeitsraum der Schnecke aendert sich exponentiell:
+
+<div class="equation-block">
+  <span class="equation-main">p<sub>k</sub> = p<sub>0</sub>e<sup>lβ</sup></span>
+  <span class="equation-number">(18.5)</span>
+</div>
+
+Die Leistung G, kg/s, einer Schneckenpresse ist:
+
+<div class="equation-block">
+  <span class="equation-main">G = fw<sub>o</sub>ρφ</span>
+  <span class="equation-number">(18.6)</span>
+</div>
+
+Fuer den Querschnitt der Arbeitszone der Schneckenpresse gilt:
+
+<div class="equation-block">
+  <span class="equation-main">f = π(D<sup>2</sup> - d<sup>2</sup>)/4</span>
+  <span class="equation-number"></span>
+</div>
+
+Die axiale Stoffgeschwindigkeit ist:
+
+<div class="equation-block">
+  <span class="equation-main">w<sub>o</sub> = hn</span>
+  <span class="equation-number">(18.7)</span>
+</div>
 
 ### 18.2. Formen plastischer Stoffe
 
-**Stellung des Themas im Kapitel.** 18.2. Formen plastischer Stoffe liefert die Sprache zur Beschreibung des Prozesses im Thema "Kapitel 18. Pressen". Wichtig ist nicht das isolierte Auswendiglernen, sondern das Verstehen, welche Groesse oder welches Phaenomen damit bewertet wird.
+Das Formen verleiht einem Produkt eine bestimmte Gestalt ohne wesentliche Aenderung seiner Dichte. Plastische Stoffe werden durch Walzen, Runden, Ziehen, Stanzen und Extrusion durch Formoeffnungen geformt. Rheologische Eigenschaften bestimmen die Einwirkzeit der Arbeitsorgane und die Maschinenleistung.
 
-**Ingenieurtechnische Bedeutung.** In Berechnungen verbindet dieses Material "Druck", "Abpressen" und "Formen": zuerst werden Triebkraft oder Betriebsregime bestimmt, danach die Beziehung zwischen den Parametern, und anschliessend die Auswahl oder Kontrolle von "Granulieren". Dieser Teil hebt "Abpressen" und den Zusammenhang mit "Formen" hervor, weil solche Beziehungen in Formeln, Diagramme, Aehnlichkeitskriterien und konstruktive Entscheidungen uebergehen.
+![Abb. 18.3. Schema eines Einschneckenextruders](/images/courses/bioprocess-engineering/chapter-18/fig-18-3.webp)
+*Abb. 18.3. Schema eines Einschneckenextruders*
 
-**Biotechnologischer Schwerpunkt.** In biotechnologischen Produktionen ist eine schonende Behandlung des Mediums entscheidend: Kulturfluessigkeiten, Suspensionen, Fermentationsmedien und Zwischenprodukte reagieren oft empfindlich auf Temperatur, Scherung, Verunreinigung und Verlust der Sterilitaet.
+<div class="equation-block">
+  <span class="equation-main">tgφ = h/(πD)</span>
+  <span class="equation-number">(18.8)</span>
+</div>
 
-**Worauf zu achten ist:**
+Extruder formen plastische Stoffe durch Durchdruecken durch Duesenoeffnungen. In einem Schneckenextruder gelangt der Stoff in den Trichter, wird von der Schnecke durch den Zylinder zur Kammer vor der Matrize transportiert und durch Druck durch die Oeffnungen gepresst. Der Steigungswinkel haengt mit der Schneckengeometrie zusammen:
 
-- welche Groessen vor der Berechnung gemessen oder festgelegt werden muessen;
-- wie das Betriebsregime Produkt, Apparat und Energiebedarf beeinflusst;
-- wo "Granulieren" im Apparateschema erscheint und welche Grenzen dadurch entstehen.
+<div class="equation-block">
+  <span class="equation-main">Q = Δpk/μ</span>
+  <span class="equation-number">(18.9)</span>
+</div>
+
+Fuer praktische Berechnungen der volumetrischen Leistung von Formanlagen wird verwendet:
 
 ### 18.3. Brikettieren und Granulieren fester Stoffe
 
-**Stellung des Themas im Kapitel.** 18.3. Brikettieren und Granulieren fester Stoffe liefert die Sprache zur Beschreibung des Prozesses im Thema "Kapitel 18. Pressen". Wichtig ist nicht das isolierte Auswendiglernen, sondern das Verstehen, welche Groesse oder welches Phaenomen damit bewertet wird.
+<div class="equation-block">
+  <span class="equation-main">β = V/V<sub>c</sub></span>
+  <span class="equation-number">(18.10)</span>
+</div>
 
-**Ingenieurtechnische Bedeutung.** In Berechnungen verbindet dieses Material "Druck", "Abpressen" und "Formen": zuerst werden Triebkraft oder Betriebsregime bestimmt, danach die Beziehung zwischen den Parametern, und anschliessend die Auswahl oder Kontrolle von "Granulieren". Dieser Teil hebt "Formen" und den Zusammenhang mit "Granulieren" hervor, weil solche Beziehungen in Formeln, Diagramme, Aehnlichkeitskriterien und konstruktive Entscheidungen uebergehen.
+Brikettieren ist das Verdichten eines festen Koerpers in geschlossenem Raum zur Bildung geometrisch regelmaessiger Briketts. Die Verdichtung geht mit Zerkleinerung und relativer Verschiebung der Partikel einher. Die Volumenabnahme wird durch den Verdichtungskoeffizienten beschrieben:
 
-**Biotechnologischer Schwerpunkt.** In biotechnologischen Produktionen ist eine schonende Behandlung des Mediums entscheidend: Kulturfluessigkeiten, Suspensionen, Fermentationsmedien und Zwischenprodukte reagieren oft empfindlich auf Temperatur, Scherung, Verunreinigung und Verlust der Sterilitaet.
+<div class="equation-block">
+  <span class="equation-main">ψ ln(p<sub>k</sub>/p<sub>p</sub>) = β<sub>p</sub> - β<sub>k</sub></span>
+  <span class="equation-number">(18.11)</span>
+</div>
 
-**Worauf zu achten ist:**
+Ohne Druckverluste durch Reibung wird der Verdichtungsprozess beschrieben durch:
 
-- welche Groessen vor der Berechnung gemessen oder festgelegt werden muessen;
-- wie das Betriebsregime Produkt, Apparat und Energiebedarf beeinflusst;
-- wo "Granulieren" im Apparateschema erscheint und welche Grenzen dadurch entstehen.
+Bei einseitigem Pressen ist die Brikettdichte in der Naehe des Stempels am groessten, deshalb ist zweiseitiges Pressen zweckmaessig. Die Festigkeit haengt von Stoffzustand, Feuchte, Waermevorbehandlung, Prozessdauer und Halten unter Druck ab.
 
-## Anschauliche Materialien
+![Abb. 18.4. Pressfolge in einer Rundlaeuferpresse](/images/courses/bioprocess-engineering/chapter-18/fig-18-4.webp)
+*Abb. 18.4. Pressfolge in einer Rundlaeuferpresse*
 
-![Schema einer hydraulischen Presse](/images/courses/bioprocess-engineering/chapter-18/fig-18-1.webp)
-*Abb. 18.1. Schema einer hydraulischen Presse*
+<div class="equation-block">
+  <span class="equation-main">A = ∫<sub>h<sub>k</sub></sub><sup>h<sub>p</sub></sup> Fp dh</span>
+  <span class="equation-number">(18.12)</span>
+</div>
 
-![Schema einer Schneckenpresse](/images/courses/bioprocess-engineering/chapter-18/fig-18-2.webp)
-*Abb. 18.2. Schema einer Schneckenpresse*
+Eine Rundlaeuferpresse besitzt eine horizontale Scheibe mit Matrizen und Stempeln. Waehrend einer Umdrehung laufen Fuellen, Formen, Ausstossen und Reinigen des Stempels ab. Die Pressarbeit fuer einen Stempelhub ist:
 
-![Schema eines Einschneckenextruders](/images/courses/bioprocess-engineering/chapter-18/fig-18-3.webp)
-*Abb. 18.3. Schema eines Einschneckenextruders*
-
-![Pressen auf einer Karussellpresse](/images/courses/bioprocess-engineering/chapter-18/fig-18-4.webp)
-*Abb. 18.4. Schema des Pressvorgangs auf einer Karussellpresse*
-
-![Granulierung von Trockenschnitzeln](/images/courses/bioprocess-engineering/chapter-18/fig-18-5.webp)
-*Abb. 18.5. Schema der Granulierung von Trockenschnitzeln*
+![Abb. 18.5. Schema der Granulierung trockener Ruebenpressschnitzel](/images/courses/bioprocess-engineering/chapter-18/fig-18-5.webp)
+*Abb. 18.5. Schema der Granulierung trockener Ruebenpressschnitzel*
 
 ## Nach dem Durcharbeiten dieses Kapitels sollen Studierende
 

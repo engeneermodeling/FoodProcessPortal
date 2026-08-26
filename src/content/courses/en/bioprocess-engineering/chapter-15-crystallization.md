@@ -26,138 +26,231 @@ The page follows the logic of the corresponding textbook chapter; the test items
 
 ## Lecture Notes
 
-This lecture note treats the chapter as engineering logic rather than a list of terms: from the physical meaning of the process to the parameters used to select, calculate, and check equipment in biotechnological production.
+Crystallization is a mass-transfer process in which a solid phase forms as crystals from solutions, melts, gases or vapours. In food and biotechnology it is used to obtain and purify sucrose, glucose, lactose, fructose, citric acid, salts and other crystalline products.
 
-### 15.1. General information
+### 15.1. General Information
 
-**Place of the topic in the chapter.** 15.1. General information gives the language for describing the process within "Chapter 15. Crystallization". The important task is not to memorize a separate definition, but to understand which quantity or phenomenon it helps to evaluate.
-
-**Engineering meaning.** In calculations, the material connects "supersaturation", "nucleation", and "crystal growth": first the driving force or regime is identified, then the relation between parameters is established, and only after that the "crystallizer" is selected or checked. This part highlights "supersaturation" and its relation to "nucleation", because such links become formulas, diagrams, similarity criteria, and design decisions.
-
-**Biotechnological emphasis.** For biotechnological production, gentle handling of the medium is essential: culture liquids, suspensions, fermentation media, and intermediates are often sensitive to temperature, shear, contamination, and loss of sterility.
-
-**What to watch:**
-
-- which quantities must be measured or specified before calculation;
-- how the operating regime affects the product, equipment, and energy demand;
-- where "crystallizer" appears in the equipment scheme and what limits it imposes.
-
-### 15.2. Physical basis of crystallization from solutions
-
-**Place of the topic in the chapter.** 15.2. Physical basis of crystallization from solutions gives the language for describing the process within "Chapter 15. Crystallization". The important task is not to memorize a separate definition, but to understand which quantity or phenomenon it helps to evaluate.
-
-**Engineering meaning.** In calculations, the material connects "supersaturation", "nucleation", and "crystal growth": first the driving force or regime is identified, then the relation between parameters is established, and only after that the "crystallizer" is selected or checked. This part highlights "nucleation" and its relation to "crystal growth", because such links become formulas, diagrams, similarity criteria, and design decisions.
-
-**Biotechnological emphasis.** For biotechnological production, gentle handling of the medium is essential: culture liquids, suspensions, fermentation media, and intermediates are often sensitive to temperature, shear, contamination, and loss of sterility.
-
-**What to watch:**
-
-- which quantities must be measured or specified before calculation;
-- how the operating regime affects the product, equipment, and energy demand;
-- where "crystallizer" appears in the equipment scheme and what limits it imposes.
-
-### 15.3. Crystallization kinetics
-
-**Place of the topic in the chapter.** 15.3. Crystallization kinetics gives the language for describing the process within "Chapter 15. Crystallization". The important task is not to memorize a separate definition, but to understand which quantity or phenomenon it helps to evaluate.
-
-**Engineering meaning.** In calculations, the material connects "supersaturation", "nucleation", and "crystal growth": first the driving force or regime is identified, then the relation between parameters is established, and only after that the "crystallizer" is selected or checked. This part highlights "crystal growth" and its relation to "crystallizer", because such links become formulas, diagrams, similarity criteria, and design decisions.
-
-**Biotechnological emphasis.** For biotechnological production, gentle handling of the medium is essential: culture liquids, suspensions, fermentation media, and intermediates are often sensitive to temperature, shear, contamination, and loss of sterility.
-
-**What to watch:**
-
-- which quantities must be measured or specified before calculation;
-- how the operating regime affects the product, equipment, and energy demand;
-- where "crystallizer" appears in the equipment scheme and what limits it imposes.
-
-### 15.4. Crystal nucleation
-
-**Place of the topic in the chapter.** 15.4. Crystal nucleation gives the language for describing the process within "Chapter 15. Crystallization". The important task is not to memorize a separate definition, but to understand which quantity or phenomenon it helps to evaluate.
-
-**Engineering meaning.** In calculations, the material connects "supersaturation", "nucleation", and "crystal growth": first the driving force or regime is identified, then the relation between parameters is established, and only after that the "crystallizer" is selected or checked. This part highlights "crystallizer" and its relation to "supersaturation", because such links become formulas, diagrams, similarity criteria, and design decisions.
-
-**Biotechnological emphasis.** For biotechnological production, gentle handling of the medium is essential: culture liquids, suspensions, fermentation media, and intermediates are often sensitive to temperature, shear, contamination, and loss of sterility.
-
-**What to watch:**
-
-- which quantities must be measured or specified before calculation;
-- how the operating regime affects the product, equipment, and energy demand;
-- where "crystallizer" appears in the equipment scheme and what limits it imposes.
-
-### 15.5. Crystal growth
-
-**Place of the topic in the chapter.** 15.5. Crystal growth gives the language for describing the process within "Chapter 15. Crystallization". The important task is not to memorize a separate definition, but to understand which quantity or phenomenon it helps to evaluate.
-
-**Engineering meaning.** In calculations, the material connects "supersaturation", "nucleation", and "crystal growth": first the driving force or regime is identified, then the relation between parameters is established, and only after that the "crystallizer" is selected or checked. This part highlights "supersaturation" and its relation to "nucleation", because such links become formulas, diagrams, similarity criteria, and design decisions.
-
-**Biotechnological emphasis.** For biotechnological production, gentle handling of the medium is essential: culture liquids, suspensions, fermentation media, and intermediates are often sensitive to temperature, shear, contamination, and loss of sterility.
-
-**What to watch:**
-
-- which quantities must be measured or specified before calculation;
-- how the operating regime affects the product, equipment, and energy demand;
-- where "crystallizer" appears in the equipment scheme and what limits it imposes.
-
-### 15.10. Influence factors
-
-**Place of the topic in the chapter.** 15.10. Influence factors gives the language for describing the process within "Chapter 15. Crystallization". The important task is not to memorize a separate definition, but to understand which quantity or phenomenon it helps to evaluate.
-
-**Engineering meaning.** In calculations, the material connects "supersaturation", "nucleation", and "crystal growth": first the driving force or regime is identified, then the relation between parameters is established, and only after that the "crystallizer" is selected or checked. This part highlights "nucleation" and its relation to "crystal growth", because such links become formulas, diagrams, similarity criteria, and design decisions.
-
-**Biotechnological emphasis.** For biotechnological production, gentle handling of the medium is essential: culture liquids, suspensions, fermentation media, and intermediates are often sensitive to temperature, shear, contamination, and loss of sterility.
-
-**What to watch:**
-
-- which quantities must be measured or specified before calculation;
-- how the operating regime affects the product, equipment, and energy demand;
-- where "crystallizer" appears in the equipment scheme and what limits it imposes.
-
-### 15.11. Crystallization equipment
-
-**Place of the topic in the chapter.** 15.11. Crystallization equipment gives the language for describing the process within "Chapter 15. Crystallization". The important task is not to memorize a separate definition, but to understand which quantity or phenomenon it helps to evaluate.
-
-**Engineering meaning.** In calculations, the material connects "supersaturation", "nucleation", and "crystal growth": first the driving force or regime is identified, then the relation between parameters is established, and only after that the "crystallizer" is selected or checked. This part highlights "crystal growth" and its relation to "crystallizer", because such links become formulas, diagrams, similarity criteria, and design decisions.
-
-**Biotechnological emphasis.** For biotechnological production, gentle handling of the medium is essential: culture liquids, suspensions, fermentation media, and intermediates are often sensitive to temperature, shear, contamination, and loss of sterility.
-
-**What to watch:**
-
-- which quantities must be measured or specified before calculation;
-- how the operating regime affects the product, equipment, and energy demand;
-- where "crystallizer" appears in the equipment scheme and what limits it imposes.
-
-### 15.12. Basic calculation principles
-
-**Place of the topic in the chapter.** 15.12. Basic calculation principles gives the language for describing the process within "Chapter 15. Crystallization". The important task is not to memorize a separate definition, but to understand which quantity or phenomenon it helps to evaluate.
-
-**Engineering meaning.** In calculations, the material connects "supersaturation", "nucleation", and "crystal growth": first the driving force or regime is identified, then the relation between parameters is established, and only after that the "crystallizer" is selected or checked. This part highlights "crystallizer" and its relation to "supersaturation", because such links become formulas, diagrams, similarity criteria, and design decisions.
-
-**Biotechnological emphasis.** For biotechnological production, gentle handling of the medium is essential: culture liquids, suspensions, fermentation media, and intermediates are often sensitive to temperature, shear, contamination, and loss of sterility.
-
-**What to watch:**
-
-- which quantities must be measured or specified before calculation;
-- how the operating regime affects the product, equipment, and energy demand;
-- where "crystallizer" appears in the equipment scheme and what limits it imposes.
-
-## Visual Materials
+A crystal has an ordered lattice, and its shape is governed by symmetry, surface energy of faces and growth conditions. Industrial crystallization usually proceeds from supersaturated solutions. It can be performed by cooling, solvent evaporation, freezing-out, salting-out, chemical reaction or a combined action of several factors.
 
 ![Sucrose crystal](/images/courses/bioprocess-engineering/chapter-15/fig-15-1.webp)
 *Fig. 15.1. Sucrose crystal*
 
-![Solubility graph for the sucrose-water system](/images/courses/bioprocess-engineering/chapter-15/fig-15-2.webp)
+### 15.2. Physical Basis of Crystallization from Solutions
+
+Crystallization statics defines equilibrium between crystals and mother liquor; kinetics describes the transfer rate from liquid to solid phase; dynamics shows how parameters change with time. The driving force is supersaturation, the excess of solute concentration over equilibrium solubility.
+
+<div class="equation-block">
+  <span class="equation-main">Π = c - c<sub>s</sub></span>
+  <span class="equation-number">(15.1)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">α = c/c<sub>s</sub></span>
+  <span class="equation-number">(15.2)</span>
+</div>
+
+![Solubility graph for the binary sucrose-water system](/images/courses/bioprocess-engineering/chapter-15/fig-15-2.webp)
 *Fig. 15.2. Solubility graph for the binary sucrose-water system*
+
+### 15.3. Crystallization Kinetics
+
+Kinetics consists of two main stages: formation of crystallization centres and crystal growth. Crystallization curves identify supersaturation build-up, the latent nucleation period and the growth period. Feeding fresh solution and evaporating solvent can maintain the required supersaturation.
+
+<div class="equation-block">
+  <span class="equation-main">τ<sub>l</sub> = τ<sub>2</sub> - τ<sub>1</sub></span>
+  <span class="equation-number">(15.3)</span>
+</div>
 
 ![Kinematic crystallization curves](/images/courses/bioprocess-engineering/chapter-15/fig-15-3.webp)
 *Fig. 15.3. Kinematic crystallization curves*
 
+### 15.4. Crystal Nucleation
+
+Crystallization centres arise through homogeneous or heterogeneous nucleation. In real industrial solutions, especially sugar solutions, the mechanism is mostly heterogeneous: impurities, mixing, viscosity, ultrasound, electric and magnetic fields, temperature oscillations and seed crystals affect nucleation.
+
+<div class="equation-block">
+  <span class="equation-main">δF = -[(μ<sub>1</sub> - μ<sub>2</sub>)/V] + σS</span>
+  <span class="equation-number">(15.4)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">δF = 4πr<sup>2</sup>σ - (4/3)πr<sup>3</sup>(μ<sub>1</sub> - μ<sub>2</sub>)/V</span>
+  <span class="equation-number">(15.5)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">r<sub>k</sub> = 2σV/(μ<sub>1</sub> - μ<sub>2</sub>)</span>
+  <span class="equation-number">(15.6)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">ΔF<sub>max</sub> = (δF)<sub>max</sub> = σS<sub>k</sub>/3 = 16πσ<sup>3</sup>V<sup>2</sup>/[3(μ<sub>1</sub> - μ<sub>2</sub>)<sup>2</sup>]</span>
+  <span class="equation-number">(15.7)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">I = K exp(-ΔF<sub>max</sub>/RT)</span>
+  <span class="equation-number">(15.8)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">I = K exp{-16πσ<sup>3</sup>V<sup>2</sup>/[3RT(μ<sub>1</sub> - μ<sub>2</sub>)<sup>2</sup>]}</span>
+  <span class="equation-number">(15.9)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">μ<sub>1</sub> = RT ln c + j</span>
+  <span class="equation-number">(15.10)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">μ<sub>2</sub> = RT ln c<sub>s</sub> + j</span>
+  <span class="equation-number">(15.11)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">μ<sub>1</sub> - μ<sub>2</sub> = RT ln(c/c<sub>s</sub>) = RT ln[(Δc + c<sub>s</sub>)/c<sub>s</sub>]</span>
+  <span class="equation-number">(15.12)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">I = K exp{-16πσ<sup>3</sup>V<sup>2</sup>/[3R<sup>3</sup>T<sup>3</sup>ln<sup>2</sup>(c/c<sub>s</sub>)]}</span>
+  <span class="equation-number">(15.13)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">I = K exp{-4εσ<sup>3</sup>V<sup>2</sup>/[R<sup>3</sup>T<sup>3</sup>ln<sup>2</sup>(c/c<sub>s</sub>)]}</span>
+  <span class="equation-number">(15.14)</span>
+</div>
+
+### 15.5. Crystal Growth
+
+After a stable nucleus forms, the crystal grows through diffusion to the surface, adsorption, surface migration and incorporation into the lattice. Growth rate may be controlled by diffusion, diffusion-kinetic or kinetic stages; in mass crystallization, polydispersity, recrystallization and suspension hydrodynamics are important.
+
+<div class="equation-block">
+  <span class="equation-main">dG/(Fdτ) = kΔc</span>
+  <span class="equation-number">(15.15)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">Δc = Δc<sub>1</sub> + Δc<sub>2</sub></span>
+  <span class="equation-number">(15.16)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">M<sub>1</sub> = k<sub>1</sub>(c - c<sub>1</sub>) = k<sub>1</sub>Δc<sub>1</sub></span>
+  <span class="equation-number">(15.17)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">M<sub>2</sub> = k<sub>2</sub>Δc<sub>2</sub><sup>2</sup> = k<sub>2</sub>(c<sub>1</sub> - c<sub>s</sub>)<sup>2</sup></span>
+  <span class="equation-number">(15.18)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">M = M<sub>1</sub> = M<sub>2</sub> = kΔc = k<sub>1</sub>Δc<sub>1</sub> = k<sub>2</sub>Δc<sub>2</sub><sup>2</sup></span>
+  <span class="equation-number">(15.19)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">M = M<sub>1</sub> = D(c - c<sub>1</sub>)/δ</span>
+  <span class="equation-number">(15.20)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">M = D(c - c<sub>1</sub>)/δ = k<sub>2</sub>(c<sub>1</sub> - c<sub>s</sub>)<sup>2</sup></span>
+  <span class="equation-number">(15.21)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">M = [D/(2δ)](√(1 + 4k<sub>2</sub>δΔc/D) - 1)</span>
+  <span class="equation-number">(15.22)</span>
+</div>
+
+### 15.6-15.9. Secondary Nucleation, Recrystallization and Heat-Mass Transfer
+
+Secondary nucleation is related to existing crystals, collisions, abrasion and local supersaturation changes. Recrystallization reduces total surface free energy: small particles dissolve while larger crystals grow. In industrial crystallizers, heat and mass transfer, circulation, boiling, water evaporation and apparatus design are tightly coupled.
+
+<div class="equation-block">
+  <span class="equation-main">J<sub>1</sub> = L<sub>11</sub>X<sub>1</sub> + L<sub>12</sub>X<sub>2</sub>; J<sub>2</sub> = L<sub>21</sub>X<sub>1</sub> + L<sub>22</sub>X<sub>2</sub></span>
+  <span class="equation-number">(15.23)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">L<sub>12</sub> = L<sub>21</sub></span>
+  <span class="equation-number">(15.24)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">dW<sub>p</sub> = dW<sub>v</sub>; dM<sub>kr</sub> = dM<sub>p,cz</sub>; dM<sub>kr</sub> = (Cz<sub>p</sub>/W<sub>p</sub>)dW<sub>v</sub></span>
+  <span class="equation-number">(15.25)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">M<sub>kr</sub> = qFCz<sub>p</sub>/(arW<sub>p</sub>)</span>
+  <span class="equation-number">(15.26)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">dM<sub>kr</sub>/dτ = [Cz<sub>p</sub>/W<sub>p</sub>][FΔt k<sub>0</sub>/(ar)] exp(-τ/θ)</span>
+  <span class="equation-number">(15.27)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">φ = ε<sub>r</sub>/ε<sub>t</sub> = [V<sub>r</sub>(s)/V<sub>t</sub>(s)]/[V<sub>r</sub>(y)/V<sub>t</sub>(y)]</span>
+  <span class="equation-number">(15.28)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">ε = m<sub>(s)i</sub>/m<sub>(y)i</sub></span>
+  <span class="equation-number">(15.29)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">Fo′ = f(Pr′, Ar, Π, Π<sub>ρ</sub>, Π<sub>V</sub>)</span>
+  <span class="equation-number">(15.30)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">Fo′ = Dτ/l<sup>2</sup>; Pr′ = ν/D; Ar = gl<sup>3</sup>Δρ/(ν<sup>2</sup>ρ); Π = c<sub>s</sub>/Δc; Π<sub>ρ</sub> = ΔG/(ρ<sub>kr</sub>l<sup>3</sup>); Π<sub>V</sub> = ρ<sub>p</sub>/ρ<sub>kr</sub></span>
+  <span class="equation-number">(15.31)</span>
+</div>
+
+### 15.10. Influence Factors
+
+Nucleation and growth depend on supersaturation, temperature, solution purity, viscosity, impurities, surface energy, mixing, circulation and vapour phase during boiling. For sugar solutions, lower purity increases the latent period, while higher temperature and lower viscosity accelerate growth.
+
+<div class="equation-block">
+  <span class="equation-main">τ<sub>l</sub> = A<sub>l</sub> exp(-B<sub>l</sub>P)</span>
+  <span class="equation-number">(15.32)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">M = b(Π - 1)<sup>n</sup></span>
+  <span class="equation-number">(15.33)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">M = d<sub>0</sub> exp[-E/(RT)]</span>
+  <span class="equation-number">(15.34)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">M = lP<sup>m</sup></span>
+  <span class="equation-number">(15.35)</span>
+</div>
+
+### 15.11. Crystallization Equipment
+
+Crystallizers operate in batch or continuous mode. They are classified by spatial arrangement, shell shape, number of sections, suspension circulation and heat-transfer surface. Sugar production uses batch vacuum pans, continuous vacuum pans, and horizontal or vertical mixer-crystallizers.
+
 ![A2-PVR vacuum pan](/images/courses/bioprocess-engineering/chapter-15/fig-15-5.webp)
 *Fig. 15.5. A2-PVR vacuum pan*
 
-![Flows of continuous boiling and crystallization](/images/courses/bioprocess-engineering/chapter-15/fig-15-6.webp)
+![Flow scheme for continuous boiling and crystallization of sugar massecuite](/images/courses/bioprocess-engineering/chapter-15/fig-15-6.webp)
 *Fig. 15.6. Flow scheme for continuous boiling and crystallization of sugar massecuite*
 
-![Continuous KTIHP vacuum pan](/images/courses/bioprocess-engineering/chapter-15/fig-15-7.webp)
+![Continuous KTIHP vacuum pan: a - block scheme; b - design](/images/courses/bioprocess-engineering/chapter-15/fig-15-7.webp)
 *Fig. 15.7. Continuous KTIHP vacuum pan: a - block scheme; b - design*
 
 ![Horizontal mixer-crystallizer](/images/courses/bioprocess-engineering/chapter-15/fig-15-8.webp)
@@ -166,10 +259,24 @@ This lecture note treats the chapter as engineering logic rather than a list of 
 ![Vertical mixer-crystallizer](/images/courses/bioprocess-engineering/chapter-15/fig-15-9.webp)
 *Fig. 15.9. Vertical mixer-crystallizer*
 
-![Static material balance for multistage crystallization](/images/courses/bioprocess-engineering/chapter-15/fig-15-10.webp)
+### 15.12. Basic Calculation Principles
+
+Crystallizer calculation proceeds through process, thermal, hydrodynamic, structural, mechanical and techno-economic calculations. It is based on material and heat balances, crystallization mass graphs, heat-transfer estimates, circulation, residence time and strength of apparatus elements.
+
+<div class="equation-block">
+  <span class="equation-main">ΣG = G<sub>1</sub> + G<sub>2</sub>; G<sub>1</sub> = G<sub>n.sr</sub> + W<sub>1</sub> = G<sub>n.cz</sub> + G<sub>n.nz</sub> + W<sub>1</sub>; G<sub>2</sub> = G<sub>p.sr</sub> + W<sub>p</sub></span>
+  <span class="equation-number">(15.36)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">ΔQ + i<sub>p</sub>ΔG<sub>p</sub> + r<sub>kr</sub>ΔG<sub>kr</sub> = i<sub>v</sub>ΔW<sub>v</sub> + Δ(i<sub>y</sub>G<sub>y</sub>) + Q<sub>loss</sub></span>
+  <span class="equation-number">(15.37)</span>
+</div>
+
+![Static material-balance scheme for multistage crystallization](/images/courses/bioprocess-engineering/chapter-15/fig-15-10.webp)
 *Fig. 15.10. Static material-balance scheme for multistage crystallization*
 
-![Mass graph of boiling and crystallization of sugar massecuite](/images/courses/bioprocess-engineering/chapter-15/fig-15-11.webp)
+![Mass graph of boiling and crystallization of sugar massecuite in a vacuum pan and mixer-crystallizer](/images/courses/bioprocess-engineering/chapter-15/fig-15-11.webp)
 *Fig. 15.11. Mass graph of boiling and crystallization of sugar massecuite in a vacuum pan and mixer-crystallizer*
 
 ## After studying this chapter, students should be able to

@@ -25,158 +25,266 @@ Die Seite folgt der Logik des entsprechenden Lehrbuchkapitels; die Testfragen wu
 
 ## Vorlesungsskript
 
-Diese Vorlesungsnotiz behandelt das Kapitel als ingenieurtechnische Logik und nicht nur als Begriffsliste: vom physikalischen Sinn des Prozesses bis zu den Parametern fuer Auswahl, Berechnung und Pruefung des Apparats in der biotechnologischen Produktion.
+Kapitel 12 ist als zusammenhaengende Vorlesung aufgebaut: Phasengleichgewicht, einfache Destillation, Rektifikation, Apparatewahl und spezielle Trennverfahren.
 
 ### 12.1. Phasengleichgewicht
 
-**Stellung des Themas im Kapitel.** 12.1. Phasengleichgewicht liefert die Sprache zur Beschreibung des Prozesses im Thema "Kapitel 12. Destillation". Wichtig ist nicht das isolierte Auswendiglernen, sondern das Verstehen, welche Groesse oder welches Phaenomen damit bewertet wird.
+Destillation trennt siedende Fluessigkeitsgemische wegen unterschiedlicher Fluechtigkeit. Die leichter fluechtige Komponente reichert sich in der Dampfphase an. Ideale Gemische folgen Raoult und Dalton, reale Systeme brauchen Gleichgewichtsdaten.
 
-**Ingenieurtechnische Bedeutung.** In Berechnungen verbindet dieses Material "Phasengleichgewicht", "Ruecklaufverhaeltnis" und "Boden": zuerst werden Triebkraft oder Betriebsregime bestimmt, danach die Beziehung zwischen den Parametern, und anschliessend die Auswahl oder Kontrolle von "Rektifikationskolonne". Dieser Teil hebt "Phasengleichgewicht" und den Zusammenhang mit "Ruecklaufverhaeltnis" hervor, weil solche Beziehungen in Formeln, Diagramme, Aehnlichkeitskriterien und konstruktive Entscheidungen uebergehen.
+<div class="equation-block">
+  <span class="equation-main">p<sub>A</sub> = P<sub>A</sub>x<sub>A</sub></span>
+  <span class="equation-number">(12.1)</span>
+</div>
 
-**Biotechnologischer Schwerpunkt.** In biotechnologischen Produktionen ist eine schonende Behandlung des Mediums entscheidend: Kulturfluessigkeiten, Suspensionen, Fermentationsmedien und Zwischenprodukte reagieren oft empfindlich auf Temperatur, Scherung, Verunreinigung und Verlust der Sterilitaet.
+<div class="equation-block">
+  <span class="equation-main">p = p<sub>A</sub> + p<sub>B</sub></span>
+  <span class="equation-number">(12.2)</span>
+</div>
 
-**Worauf zu achten ist:**
-
-- welche Groessen vor der Berechnung gemessen oder festgelegt werden muessen;
-- wie das Betriebsregime Produkt, Apparat und Energiebedarf beeinflusst;
-- wo "Rektifikationskolonne" im Apparateschema erscheint und welche Grenzen dadurch entstehen.
+![Phasengleichgewichtskurven](/images/courses/bioprocess-engineering/chapter-12/fig-12-1.webp)
+*Abb. 12.1. Phasengleichgewichtskurven*
 
 ### 12.2. Einfache Destillation
 
-**Stellung des Themas im Kapitel.** 12.2. Einfache Destillation liefert die Sprache zur Beschreibung des Prozesses im Thema "Kapitel 12. Destillation". Wichtig ist nicht das isolierte Auswendiglernen, sondern das Verstehen, welche Groesse oder welches Phaenomen damit bewertet wird.
+Einfache Destillation ist ein diskontinuierlicher Prozess aus teilweiser Verdampfung und Kondensation. Ruecklauf verbessert die Anreicherung des Dampfes.
 
-**Ingenieurtechnische Bedeutung.** In Berechnungen verbindet dieses Material "Phasengleichgewicht", "Ruecklaufverhaeltnis" und "Boden": zuerst werden Triebkraft oder Betriebsregime bestimmt, danach die Beziehung zwischen den Parametern, und anschliessend die Auswahl oder Kontrolle von "Rektifikationskolonne". Dieser Teil hebt "Ruecklaufverhaeltnis" und den Zusammenhang mit "Boden" hervor, weil solche Beziehungen in Formeln, Diagramme, Aehnlichkeitskriterien und konstruktive Entscheidungen uebergehen.
+<div class="equation-block">
+  <span class="equation-main">Wx = (W - dW)(x - dx) + dWy</span>
+  <span class="equation-number">(12.3)</span>
+</div>
 
-**Biotechnologischer Schwerpunkt.** In biotechnologischen Produktionen ist eine schonende Behandlung des Mediums entscheidend: Kulturfluessigkeiten, Suspensionen, Fermentationsmedien und Zwischenprodukte reagieren oft empfindlich auf Temperatur, Scherung, Verunreinigung und Verlust der Sterilitaet.
+<div class="equation-block">
+  <span class="equation-main">dW/W = dx/(y - x)</span>
+  <span class="equation-number">(12.4)</span>
+</div>
 
-**Worauf zu achten ist:**
+<div class="equation-block">
+  <span class="equation-main">ln(W<sub>p</sub>/W<sub>k</sub>) = ∫<sub>xk</sub><sup>xp</sup> dx/(y - x)</span>
+  <span class="equation-number">(12.5)</span>
+</div>
 
-- welche Groessen vor der Berechnung gemessen oder festgelegt werden muessen;
-- wie das Betriebsregime Produkt, Apparat und Energiebedarf beeinflusst;
-- wo "Rektifikationskolonne" im Apparateschema erscheint und welche Grenzen dadurch entstehen.
+<div class="equation-block">
+  <span class="equation-main">p = p<sub>A</sub> + p<sub>B</sub></span>
+  <span class="equation-number">(12.6)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">m<sub>A</sub>/m<sub>B</sub> = p<sub>A</sub>M<sub>A</sub>/(p<sub>B</sub>M<sub>B</sub>)</span>
+  <span class="equation-number">(12.7)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">m<sub>v</sub> = m<sub>w</sub>p<sub>v</sub>M<sub>v</sub>/(p<sub>w</sub>M<sub>w</sub>)</span>
+  <span class="equation-number">(12.8)</span>
+</div>
+
+![Einfache einstufige Destillation](/images/courses/bioprocess-engineering/chapter-12/fig-12-2.webp)
+*Abb. 12.2. Einfache einstufige Destillation*
+
+![Einfache Destillation mit Ruecklauf](/images/courses/bioprocess-engineering/chapter-12/fig-12-3.webp)
+*Abb. 12.3. Einfache Destillation mit Ruecklauf*
 
 ### 12.3. Rektifikation binaerer Gemische
 
-**Stellung des Themas im Kapitel.** 12.3. Rektifikation binaerer Gemische liefert die Sprache zur Beschreibung des Prozesses im Thema "Kapitel 12. Destillation". Wichtig ist nicht das isolierte Auswendiglernen, sondern das Verstehen, welche Groesse oder welches Phaenomen damit bewertet wird.
+Rektifikation wiederholt den Kontakt von nicht im Gleichgewicht befindlichen Dampf- und Fluessigkeitsstroemen in einer Kolonne. Arbeitslinien, Ruecklaufverhaeltnis und theoretische Bodenzahl bestimmen die Trennung.
 
-**Ingenieurtechnische Bedeutung.** In Berechnungen verbindet dieses Material "Phasengleichgewicht", "Ruecklaufverhaeltnis" und "Boden": zuerst werden Triebkraft oder Betriebsregime bestimmt, danach die Beziehung zwischen den Parametern, und anschliessend die Auswahl oder Kontrolle von "Rektifikationskolonne". Dieser Teil hebt "Boden" und den Zusammenhang mit "Rektifikationskolonne" hervor, weil solche Beziehungen in Formeln, Diagramme, Aehnlichkeitskriterien und konstruktive Entscheidungen uebergehen.
+<div class="equation-block">
+  <span class="equation-main">M = D + R</span>
+  <span class="equation-number">(12.9)</span>
+</div>
 
-**Biotechnologischer Schwerpunkt.** In biotechnologischen Produktionen ist eine schonende Behandlung des Mediums entscheidend: Kulturfluessigkeiten, Suspensionen, Fermentationsmedien und Zwischenprodukte reagieren oft empfindlich auf Temperatur, Scherung, Verunreinigung und Verlust der Sterilitaet.
+<div class="equation-block">
+  <span class="equation-main">Mx<sub>M</sub> = Dx<sub>D</sub> + Rx<sub>R</sub></span>
+  <span class="equation-number">(12.10)</span>
+</div>
 
-**Worauf zu achten ist:**
+<div class="equation-block">
+  <span class="equation-main">D = M(x<sub>M</sub> - x<sub>R</sub>)/(x<sub>D</sub> - x<sub>R</sub>)</span>
+  <span class="equation-number">(12.11)</span>
+</div>
 
-- welche Groessen vor der Berechnung gemessen oder festgelegt werden muessen;
-- wie das Betriebsregime Produkt, Apparat und Energiebedarf beeinflusst;
-- wo "Rektifikationskolonne" im Apparateschema erscheint und welche Grenzen dadurch entstehen.
+<div class="equation-block">
+  <span class="equation-main">R = M(x<sub>D</sub> - x<sub>M</sub>)/(x<sub>D</sub> - x<sub>R</sub>)</span>
+  <span class="equation-number">(12.12)</span>
+</div>
 
-### 12.4. Bauarten von Rektifikationsapparaten
+<div class="equation-block">
+  <span class="equation-main">Gy = fx + Dx<sub>D</sub></span>
+  <span class="equation-number">(12.13)</span>
+</div>
 
-**Stellung des Themas im Kapitel.** 12.4. Bauarten von Rektifikationsapparaten liefert die Sprache zur Beschreibung des Prozesses im Thema "Kapitel 12. Destillation". Wichtig ist nicht das isolierte Auswendiglernen, sondern das Verstehen, welche Groesse oder welches Phaenomen damit bewertet wird.
+<div class="equation-block">
+  <span class="equation-main">y = (f/G)x + (D/G)x<sub>D</sub></span>
+  <span class="equation-number">(12.14)</span>
+</div>
 
-**Ingenieurtechnische Bedeutung.** In Berechnungen verbindet dieses Material "Phasengleichgewicht", "Ruecklaufverhaeltnis" und "Boden": zuerst werden Triebkraft oder Betriebsregime bestimmt, danach die Beziehung zwischen den Parametern, und anschliessend die Auswahl oder Kontrolle von "Rektifikationskolonne". Dieser Teil hebt "Rektifikationskolonne" und den Zusammenhang mit "Phasengleichgewicht" hervor, weil solche Beziehungen in Formeln, Diagramme, Aehnlichkeitskriterien und konstruktive Entscheidungen uebergehen.
+<div class="equation-block">
+  <span class="equation-main">y = [ν/(ν + 1)]x + x<sub>D</sub>/(ν + 1)</span>
+  <span class="equation-number">(12.15)</span>
+</div>
 
-**Biotechnologischer Schwerpunkt.** In biotechnologischen Produktionen ist eine schonende Behandlung des Mediums entscheidend: Kulturfluessigkeiten, Suspensionen, Fermentationsmedien und Zwischenprodukte reagieren oft empfindlich auf Temperatur, Scherung, Verunreinigung und Verlust der Sterilitaet.
+<div class="equation-block">
+  <span class="equation-main">Lx = Gy + Rx<sub>R</sub></span>
+  <span class="equation-number">(12.16)</span>
+</div>
 
-**Worauf zu achten ist:**
+<div class="equation-block">
+  <span class="equation-main">y = (L/G)x - (R/G)x<sub>R</sub></span>
+  <span class="equation-number">(12.17)</span>
+</div>
 
-- welche Groessen vor der Berechnung gemessen oder festgelegt werden muessen;
-- wie das Betriebsregime Produkt, Apparat und Energiebedarf beeinflusst;
-- wo "Rektifikationskolonne" im Apparateschema erscheint und welche Grenzen dadurch entstehen.
+<div class="equation-block">
+  <span class="equation-main">y = [L/(L - R)]x - [R/(L - R)]x<sub>R</sub></span>
+  <span class="equation-number">(12.18)</span>
+</div>
 
-### 12.5. Rektifikation mehrkomponentiger Gemische
+<div class="equation-block">
+  <span class="equation-main">y = (L/G)(x - x<sub>R</sub>)</span>
+  <span class="equation-number">(12.19)</span>
+</div>
 
-**Stellung des Themas im Kapitel.** 12.5. Rektifikation mehrkomponentiger Gemische liefert die Sprache zur Beschreibung des Prozesses im Thema "Kapitel 12. Destillation". Wichtig ist nicht das isolierte Auswendiglernen, sondern das Verstehen, welche Groesse oder welches Phaenomen damit bewertet wird.
+<div class="equation-block">
+  <span class="equation-main">y = f(x)</span>
+  <span class="equation-number">(12.20)</span>
+</div>
 
-**Ingenieurtechnische Bedeutung.** In Berechnungen verbindet dieses Material "Phasengleichgewicht", "Ruecklaufverhaeltnis" und "Boden": zuerst werden Triebkraft oder Betriebsregime bestimmt, danach die Beziehung zwischen den Parametern, und anschliessend die Auswahl oder Kontrolle von "Rektifikationskolonne". Dieser Teil hebt "Phasengleichgewicht" und den Zusammenhang mit "Ruecklaufverhaeltnis" hervor, weil solche Beziehungen in Formeln, Diagramme, Aehnlichkeitskriterien und konstruktive Entscheidungen uebergehen.
+<div class="equation-block">
+  <span class="equation-main">y = (ν/(ν + 1))x + x<sub>D</sub>/(ν + 1)</span>
+  <span class="equation-number">(12.21)</span>
+</div>
 
-**Biotechnologischer Schwerpunkt.** In biotechnologischen Produktionen ist eine schonende Behandlung des Mediums entscheidend: Kulturfluessigkeiten, Suspensionen, Fermentationsmedien und Zwischenprodukte reagieren oft empfindlich auf Temperatur, Scherung, Verunreinigung und Verlust der Sterilitaet.
+<div class="equation-block">
+  <span class="equation-main">x = [(ν + 1)y - x<sub>D</sub>]/ν</span>
+  <span class="equation-number">(12.22)</span>
+</div>
 
-**Worauf zu achten ist:**
+<div class="equation-block">
+  <span class="equation-main">y = Ax + B</span>
+  <span class="equation-number">(12.23)</span>
+</div>
 
-- welche Groessen vor der Berechnung gemessen oder festgelegt werden muessen;
-- wie das Betriebsregime Produkt, Apparat und Energiebedarf beeinflusst;
-- wo "Rektifikationskolonne" im Apparateschema erscheint und welche Grenzen dadurch entstehen.
+<div class="equation-block">
+  <span class="equation-main">B<sub>max</sub> = x<sub>D</sub>/(ν<sub>min</sub> + 1)</span>
+  <span class="equation-number">(12.24)</span>
+</div>
 
-### 12.6. Extraktive Rektifikation
+<div class="equation-block">
+  <span class="equation-main">ν = x<sub>D</sub>/B - 1</span>
+  <span class="equation-number">(12.25)</span>
+</div>
 
-**Stellung des Themas im Kapitel.** 12.6. Extraktive Rektifikation liefert die Sprache zur Beschreibung des Prozesses im Thema "Kapitel 12. Destillation". Wichtig ist nicht das isolierte Auswendiglernen, sondern das Verstehen, welche Groesse oder welches Phaenomen damit bewertet wird.
+<div class="equation-block">
+  <span class="equation-main">ν<sub>min</sub> = (x<sub>D</sub> - y<sub>M</sub>)/(y<sub>M</sub> - x<sub>M</sub>)</span>
+  <span class="equation-number">(12.26)</span>
+</div>
 
-**Ingenieurtechnische Bedeutung.** In Berechnungen verbindet dieses Material "Phasengleichgewicht", "Ruecklaufverhaeltnis" und "Boden": zuerst werden Triebkraft oder Betriebsregime bestimmt, danach die Beziehung zwischen den Parametern, und anschliessend die Auswahl oder Kontrolle von "Rektifikationskolonne". Dieser Teil hebt "Ruecklaufverhaeltnis" und den Zusammenhang mit "Boden" hervor, weil solche Beziehungen in Formeln, Diagramme, Aehnlichkeitskriterien und konstruktive Entscheidungen uebergehen.
+<div class="equation-block">
+  <span class="equation-main">y = A<sub>1</sub>x - B<sub>1</sub></span>
+  <span class="equation-number">(12.27)</span>
+</div>
 
-**Biotechnologischer Schwerpunkt.** In biotechnologischen Produktionen ist eine schonende Behandlung des Mediums entscheidend: Kulturfluessigkeiten, Suspensionen, Fermentationsmedien und Zwischenprodukte reagieren oft empfindlich auf Temperatur, Scherung, Verunreinigung und Verlust der Sterilitaet.
+<div class="equation-block">
+  <span class="equation-main">D<sub>col</sub> = √(4V/(πw))</span>
+  <span class="equation-number">(12.28)</span>
+</div>
 
-**Worauf zu achten ist:**
+<div class="equation-block">
+  <span class="equation-main">Mi<sub>M</sub> + Pi<sub>P</sub> + fi<sub>f</sub> = Gi<sub>G</sub> + Ri<sub>R</sub> + Q</span>
+  <span class="equation-number">(12.29)</span>
+</div>
 
-- welche Groessen vor der Berechnung gemessen oder festgelegt werden muessen;
-- wie das Betriebsregime Produkt, Apparat und Energiebedarf beeinflusst;
-- wo "Rektifikationskolonne" im Apparateschema erscheint und welche Grenzen dadurch entstehen.
+<div class="equation-block">
+  <span class="equation-main">P = [M(i<sub>R</sub> - i<sub>M</sub>) + D(ν + 1)i<sub>G</sub> - D(νi<sub>f</sub> + i<sub>D</sub>) + Q]/(i<sub>P</sub> - i<sub>R</sub>)</span>
+  <span class="equation-number">(12.30)</span>
+</div>
 
-### 12.7. Azeotrope Rektifikation
+<div class="equation-block">
+  <span class="equation-main">Mi<sub>M</sub> + Pi<sub>P</sub> + fi<sub>f</sub> = Gi<sub>G</sub> + Ri<sub>R</sub> + Pi<sub>P</sub> + Q</span>
+  <span class="equation-number">(12.31)</span>
+</div>
 
-**Stellung des Themas im Kapitel.** 12.7. Azeotrope Rektifikation liefert die Sprache zur Beschreibung des Prozesses im Thema "Kapitel 12. Destillation". Wichtig ist nicht das isolierte Auswendiglernen, sondern das Verstehen, welche Groesse oder welches Phaenomen damit bewertet wird.
+<div class="equation-block">
+  <span class="equation-main">P = [M(i<sub>R</sub> - i<sub>M</sub>) + D(ν + 1)i<sub>G</sub> - D(νi<sub>f</sub> + i<sub>D</sub>) + Q<sub>loss</sub>]/(i<sub>P</sub> - i<sub>R</sub>)</span>
+  <span class="equation-number">(12.32)</span>
+</div>
 
-**Ingenieurtechnische Bedeutung.** In Berechnungen verbindet dieses Material "Phasengleichgewicht", "Ruecklaufverhaeltnis" und "Boden": zuerst werden Triebkraft oder Betriebsregime bestimmt, danach die Beziehung zwischen den Parametern, und anschliessend die Auswahl oder Kontrolle von "Rektifikationskolonne". Dieser Teil hebt "Boden" und den Zusammenhang mit "Rektifikationskolonne" hervor, weil solche Beziehungen in Formeln, Diagramme, Aehnlichkeitskriterien und konstruktive Entscheidungen uebergehen.
+<div class="equation-block">
+  <span class="equation-main">Mi<sub>M</sub> + Pi<sub>P</sub> = Di<sub>D</sub> + Ri<sub>R</sub> + Q</span>
+  <span class="equation-number">(12.33)</span>
+</div>
 
-**Biotechnologischer Schwerpunkt.** In biotechnologischen Produktionen ist eine schonende Behandlung des Mediums entscheidend: Kulturfluessigkeiten, Suspensionen, Fermentationsmedien und Zwischenprodukte reagieren oft empfindlich auf Temperatur, Scherung, Verunreinigung und Verlust der Sterilitaet.
+<div class="equation-block">
+  <span class="equation-main">P = [M(i<sub>R</sub> - i<sub>M</sub>) + D(i<sub>D</sub> - i<sub>R</sub>) + Q<sub>loss</sub>]/(i<sub>P</sub> - i<sub>R</sub>)</span>
+  <span class="equation-number">(12.34)</span>
+</div>
 
-**Worauf zu achten ist:**
+<div class="equation-block">
+  <span class="equation-main">Q<sub>def</sub> = G(i<sub>G</sub> - i<sub>D</sub>) = D(ν + 1)(i<sub>G</sub> - i<sub>D</sub>)</span>
+  <span class="equation-number">(12.35)</span>
+</div>
 
-- welche Groessen vor der Berechnung gemessen oder festgelegt werden muessen;
-- wie das Betriebsregime Produkt, Apparat und Energiebedarf beeinflusst;
-- wo "Rektifikationskolonne" im Apparateschema erscheint und welche Grenzen dadurch entstehen.
-
-## Anschauliche Materialien
-
-![Phasengleichgewichtskurven](/images/courses/bioprocess-engineering/chapter-12/fig-12-1.webp)
-*Abb. 12.1. Phasengleichgewichtskurven fuer binaere Gemische*
-
-![Einmalige einfache Destillation](/images/courses/bioprocess-engineering/chapter-12/fig-12-2.webp)
-*Abb. 12.2. Einmalige einfache Destillation: Anlagenschema und Prozessdarstellung im y-x-Diagramm*
-
-![Einfache Destillation mit Dephlegmation](/images/courses/bioprocess-engineering/chapter-12/fig-12-3.webp)
-*Abb. 12.3. Einfache Destillation mit Dephlegmation*
+<div class="equation-block">
+  <span class="equation-main">Q<sub>cond</sub> = (G - D)(i<sub>G</sub> - i<sub>D</sub>) = Dν(i<sub>G</sub> - i<sub>D</sub>)</span>
+  <span class="equation-number">(12.36)</span>
+</div>
 
 ![Diskontinuierliche Rektifikationsanlage](/images/courses/bioprocess-engineering/chapter-12/fig-12-4.webp)
-*Abb. 12.4. Schema einer diskontinuierlichen Rektifikationsanlage*
+*Abb. 12.4. Diskontinuierliche Rektifikationsanlage*
 
-![Kontinuierliche Rektifikationsanlagen](/images/courses/bioprocess-engineering/chapter-12/fig-12-5.webp)
-*Abb. 12.5. Kontinuierliche Rektifikationsanlagen mit vollstaendiger, Verstaerkungs- und Abtriebskolonne*
+![Kontinuierliche Rektifikationsschemata](/images/courses/bioprocess-engineering/chapter-12/fig-12-5.webp)
+*Abb. 12.5. Kontinuierliche Rektifikationsschemata*
 
 ![Stoffstroeme einer vollstaendigen Kolonne](/images/courses/bioprocess-engineering/chapter-12/fig-12-6.webp)
-*Abb. 12.6. Stoffstromschema einer vollstaendigen Rektifikationskolonne*
+*Abb. 12.6. Stoffstroeme einer vollstaendigen Kolonne*
 
-![Bestimmung der Zahl theoretischer Boeden](/images/courses/bioprocess-engineering/chapter-12/fig-12-7.webp)
-*Abb. 12.7. Bestimmung der Zahl theoretischer Boeden in einer Rektifikationskolonne*
+![Bestimmung der theoretischen Bodenzahl](/images/courses/bioprocess-engineering/chapter-12/fig-12-7.webp)
+*Abb. 12.7. Bestimmung der theoretischen Bodenzahl*
 
-![Einfluss des Ruecklaufverhaeltnisses auf die Bodenzahl](/images/courses/bioprocess-engineering/chapter-12/fig-12-8-9.webp)
-*Abb. 12.8-12.9. Einfluss des Ruecklaufverhaeltnisses auf die Bodenzahl einer Kolonne*
+![Einfluss des Ruecklaufverhaeltnisses](/images/courses/bioprocess-engineering/chapter-12/fig-12-8-9.webp)
+*Abb. 12.8-9. Einfluss des Ruecklaufverhaeltnisses*
 
-![Waermestroeme von Kolonnen](/images/courses/bioprocess-engineering/chapter-12/fig-12-10.webp)
-*Abb. 12.10. Waermestromschemata von Rektifikationskolonnen*
+![Waermestroeme in Kolonnen](/images/courses/bioprocess-engineering/chapter-12/fig-12-10.webp)
+*Abb. 12.10. Waermestroeme in Kolonnen*
+
+### 12.4. Rektifikationsapparate
+
+Kolonnen koennen als Boden-, Packungs- oder Filmkolonnen ausgefuehrt sein. Die Auswahl richtet sich nach Leistung, Druckverlust, Verschmutzungsneigung und Trennaufgabe.
 
 ![Bodenkonstruktionen](/images/courses/bioprocess-engineering/chapter-12/fig-12-11.webp)
-*Abb. 12.11. Bodenkonstruktionen fuer Rektifikationskolonnen*
+*Abb. 12.11. Bodenkonstruktionen*
 
 ![Packungskolonne](/images/courses/bioprocess-engineering/chapter-12/fig-12-12.webp)
-*Abb. 12.12. Schema einer Packungskolonne*
+*Abb. 12.12. Packungskolonne*
 
 ![Filmkolonne](/images/courses/bioprocess-engineering/chapter-12/fig-12-13.webp)
-*Abb. 12.13. Schema einer Filmkolonne*
+*Abb. 12.13. Filmkolonne*
 
 ![Bodenwirkungsgrad in Abhaengigkeit von der Dampfgeschwindigkeit](/images/courses/bioprocess-engineering/chapter-12/fig-12-14.webp)
 *Abb. 12.14. Bodenwirkungsgrad in Abhaengigkeit von der Dampfgeschwindigkeit*
 
-![Trennung mehrkomponentiger Gemische](/images/courses/bioprocess-engineering/chapter-12/fig-12-15.webp)
-*Abb. 12.15. Schemata zur Trennung mehrkomponentiger Gemische*
+### 12.5. Rektifikation von Mehrkomponentengemischen
 
-![Anlagen fuer Rohspiritusrektifikation und Maischekolonne](/images/courses/bioprocess-engineering/chapter-12/fig-12-16.webp)
-*Abb. 12.16. Anlagenschemata fuer Rohspiritusrektifikation und Maischekolonne*
+Eine Kolonne liefert bei Mehrkomponentengemischen meist zwei Produkte oder Fraktionen. Vollstaendige Trennung erfordert ein Kolonnensystem.
+
+![Trennschemata fuer Mehrkomponentengemische](/images/courses/bioprocess-engineering/chapter-12/fig-12-15.webp)
+*Abb. 12.15. Trennschemata fuer Mehrkomponentengemische*
+
+![Rektifikationsanlagen fuer Alkoholgemische](/images/courses/bioprocess-engineering/chapter-12/fig-12-16.webp)
+*Abb. 12.16. Rektifikationsanlagen fuer Alkoholgemische*
+
+### 12.6. Extraktive Rektifikation
+
+Extraktive Rektifikation nutzt einen hochsiedenden Trennstoff, der die relative Fluechtigkeit aendert und nahe siedende oder azeotrope Gemische trennbar macht.
 
 ![Extraktive und Salzrektifikation](/images/courses/bioprocess-engineering/chapter-12/fig-12-17.webp)
-*Abb. 12.17. Anlagenschemata fuer extraktive und Salzrektifikation*
+*Abb. 12.17. Extraktive und Salzrektifikation*
+
+### 12.7. Azeotrope Rektifikation
+
+Bei azeotroper Rektifikation wird eine dritte Komponente eingesetzt, die ein neues Azeotrop bildet und nach Kondensation sowie Phasentrennung die Abtrennung erlaubt.
 
 ![Azeotrope Rektifikation](/images/courses/bioprocess-engineering/chapter-12/fig-12-18.webp)
-*Abb. 12.18. Anlagenschema fuer azeotrope Rektifikation*
+*Abb. 12.18. Azeotrope Rektifikation*
 
 ## Nach dem Durcharbeiten dieses Kapitels sollen Studierende
 

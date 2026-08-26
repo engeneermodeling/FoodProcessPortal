@@ -21,72 +21,76 @@ Die Seite folgt der Logik des entsprechenden Lehrbuchkapitels; die Testfragen wu
 
 ## Vorlesungsskript
 
-Diese Vorlesungsnotiz behandelt das Kapitel als ingenieurtechnische Logik und nicht nur als Begriffsliste: vom physikalischen Sinn des Prozesses bis zu den Parametern fuer Auswahl, Berechnung und Pruefung des Apparats in der biotechnologischen Produktion.
+### Kapitel 17. Sortieren von Schuettguetern
+
+Bei der Verarbeitung muessen Schuettgueter haeufig in gleichartige Fraktionen getrennt oder von Verunreinigungen gereinigt werden. Die Trennung nach Partikelgroesse heisst Klassierung, die Trennung nach Eigenschaften und Sorten Sortierung, und die Groessentrennung einzelner Stuecke Kalibrierung.
 
 ### 17.1. Sieben
 
-**Stellung des Themas im Kapitel.** 17.1. Sieben liefert die Sprache zur Beschreibung des Prozesses im Thema "Kapitel 17. Sortieren von Schuettguetern". Wichtig ist nicht das isolierte Auswendiglernen, sondern das Verstehen, welche Groesse oder welches Phaenomen damit bewertet wird.
+Beim Sieben wird Schuettgut durch ein oder mehrere Siebe getrennt. Feine Partikel, die durch die Oeffnungen gehen, bilden den Durchgang; groessere auf dem Sieb verbleibende Partikel bilden den Rueckstand. Das Sieb ist das wichtigste Arbeitsorgan.
 
-**Ingenieurtechnische Bedeutung.** In Berechnungen verbindet dieses Material "Sieb", "Fraktion" und "Sinkgeschwindigkeit": zuerst werden Triebkraft oder Betriebsregime bestimmt, danach die Beziehung zwischen den Parametern, und anschliessend die Auswahl oder Kontrolle von "Magnetabscheider". Dieser Teil hebt "Sieb" und den Zusammenhang mit "Fraktion" hervor, weil solche Beziehungen in Formeln, Diagramme, Aehnlichkeitskriterien und konstruktive Entscheidungen uebergehen.
+![Abb. 17.1. Formen von Sieboeffnungen](/images/courses/bioprocess-engineering/chapter-17/fig-17-1.webp)
+*Abb. 17.1. Formen von Sieboeffnungen: a - rund; b - laenglich; c - rund trichterfoermig; d - rund mit gebogener Kante; e, f - gewebte Metallsiebe*
 
-**Biotechnologischer Schwerpunkt.** In biotechnologischen Produktionen ist eine schonende Behandlung des Mediums entscheidend: Kulturfluessigkeiten, Suspensionen, Fermentationsmedien und Zwischenprodukte reagieren oft empfindlich auf Temperatur, Scherung, Verunreinigung und Verlust der Sterilitaet.
+Die Wirksamkeit des Siebens haengt mit der freien Siebflaeche φ zusammen, also mit dem Verhaeltnis der Oeffnungsflaeche F<sub>o</sub> zur gesamten Siebflaeche F in Prozent:
 
-**Worauf zu achten ist:**
+<div class="equation-block">
+  <span class="equation-main">φ = (F<sub>o</sub>/F)·100</span>
+  <span class="equation-number"></span>
+</div>
 
-- welche Groessen vor der Berechnung gemessen oder festgelegt werden muessen;
-- wie das Betriebsregime Produkt, Apparat und Energiebedarf beeinflusst;
-- wo "Magnetabscheider" im Apparateschema erscheint und welche Grenzen dadurch entstehen.
+Bei der Siebanalyse wird das Material nacheinander durch Siebe mit abnehmender Oeffnungsweite geleitet. Aus den Massen der Fraktionen wird die Korngroessenverteilung bestimmt.
 
-### 17.3. Trennung nach Dichte und Sinkgeschwindigkeit der Partikel
+![Abb. 17.2. Schema eines Flachsieb-Schwingsiebs](/images/courses/bioprocess-engineering/chapter-17/fig-17-2.webp)
+*Abb. 17.2. Schema eines Flachsieb-Schwingsiebs: A - Durchgang; B - Rueckstand*
 
-**Stellung des Themas im Kapitel.** 17.3. Trennung nach Dichte und Sinkgeschwindigkeit der Partikel liefert die Sprache zur Beschreibung des Prozesses im Thema "Kapitel 17. Sortieren von Schuettguetern". Wichtig ist nicht das isolierte Auswendiglernen, sondern das Verstehen, welche Groesse oder welches Phaenomen damit bewertet wird.
+Bei bewegten Sieben ist die Schwingungsfrequenz richtig zu waehlen. Die Grenzdrehzahl der Kurbel, bei der ein Partikel das Sieb nicht verlaesst, lautet:
 
-**Ingenieurtechnische Bedeutung.** In Berechnungen verbindet dieses Material "Sieb", "Fraktion" und "Sinkgeschwindigkeit": zuerst werden Triebkraft oder Betriebsregime bestimmt, danach die Beziehung zwischen den Parametern, und anschliessend die Auswahl oder Kontrolle von "Magnetabscheider". Dieser Teil hebt "Fraktion" und den Zusammenhang mit "Sinkgeschwindigkeit" hervor, weil solche Beziehungen in Formeln, Diagramme, Aehnlichkeitskriterien und konstruktive Entscheidungen uebergehen.
+<div class="equation-block">
+  <span class="equation-main">n = 30√[1/(r tgα)]</span>
+  <span class="equation-number">(17.1)</span>
+</div>
 
-**Biotechnologischer Schwerpunkt.** In biotechnologischen Produktionen ist eine schonende Behandlung des Mediums entscheidend: Kulturfluessigkeiten, Suspensionen, Fermentationsmedien und Zwischenprodukte reagieren oft empfindlich auf Temperatur, Scherung, Verunreinigung und Verlust der Sterilitaet.
+Die Mindestdrehzahl, bei der sich ein Partikel relativ zum Sieb nach unten bewegt, lautet:
 
-**Worauf zu achten ist:**
+<div class="equation-block">
+  <span class="equation-main">n<sub>min</sub> = 30√[tg(φ - α)/r]</span>
+  <span class="equation-number">(17.2)</span>
+</div>
 
-- welche Groessen vor der Berechnung gemessen oder festgelegt werden muessen;
-- wie das Betriebsregime Produkt, Apparat und Energiebedarf beeinflusst;
-- wo "Magnetabscheider" im Apparateschema erscheint und welche Grenzen dadurch entstehen.
+Dabei ist r der Kurbelradius, m; α der Neigungswinkel des Siebs; φ der Reibungswinkel der Partikel.
 
-### 17.4. Magnetscheidung
+![Abb. 17.3. Anordnungen von Schwingsieben](/images/courses/bioprocess-engineering/chapter-17/fig-17-3.webp)
+*Abb. 17.3. Anordnungen von Schwingsieben*
 
-**Stellung des Themas im Kapitel.** 17.4. Magnetscheidung liefert die Sprache zur Beschreibung des Prozesses im Thema "Kapitel 17. Sortieren von Schuettguetern". Wichtig ist nicht das isolierte Auswendiglernen, sondern das Verstehen, welche Groesse oder welches Phaenomen damit bewertet wird.
+![Abb. 17.4. Schema eines Trommelsiebs](/images/courses/bioprocess-engineering/chapter-17/fig-17-4.webp)
+*Abb. 17.4. Schema eines Trommelsiebs: A - Durchgang; B - Rueckstand*
 
-**Ingenieurtechnische Bedeutung.** In Berechnungen verbindet dieses Material "Sieb", "Fraktion" und "Sinkgeschwindigkeit": zuerst werden Triebkraft oder Betriebsregime bestimmt, danach die Beziehung zwischen den Parametern, und anschliessend die Auswahl oder Kontrolle von "Magnetabscheider". Dieser Teil hebt "Sinkgeschwindigkeit" und den Zusammenhang mit "Magnetabscheider" hervor, weil solche Beziehungen in Formeln, Diagramme, Aehnlichkeitskriterien und konstruktive Entscheidungen uebergehen.
+![Abb. 17.5. Schema eines Vibrationssiebs](/images/courses/bioprocess-engineering/chapter-17/fig-17-5.webp)
+*Abb. 17.5. Schema eines Vibrationssiebs: A - Durchgang; B - Rueckstand*
 
-**Biotechnologischer Schwerpunkt.** In biotechnologischen Produktionen ist eine schonende Behandlung des Mediums entscheidend: Kulturfluessigkeiten, Suspensionen, Fermentationsmedien und Zwischenprodukte reagieren oft empfindlich auf Temperatur, Scherung, Verunreinigung und Verlust der Sterilitaet.
+Flache Schwingsiebe sind leistungsfaehig und gut zu bedienen, erzeugen aber hohe dynamische Belastungen. Trommelsiebe trennen Fraktionen durch Oeffnungen, die entlang der Stoffbewegung groesser werden. Vibrationssiebe sind wirksam und eignen sich besser fuer feuchte Stoffe.
 
-**Worauf zu achten ist:**
+### 17.2. Trennung nach Partikelform
 
-- welche Groessen vor der Berechnung gemessen oder festgelegt werden muessen;
-- wie das Betriebsregime Produkt, Apparat und Energiebedarf beeinflusst;
-- wo "Magnetabscheider" im Apparateschema erscheint und welche Grenzen dadurch entstehen.
+Verunreinigungen, die sich von Getreide in der Laenge unterscheiden, lassen sich nicht immer mit Sieben entfernen. Dafuer werden Trieurmaschinen mit Trommel oder Scheibe und Zellen eingesetzt. Kuerzere Partikel bleiben laenger in den Zellen und werden getrennt ausgetragen.
 
-## Anschauliche Materialien
-
-![Formen von Sieboeffnungen](/images/courses/bioprocess-engineering/chapter-17/fig-17-1.webp)
-*Abb. 17.1. Formen von Sieboeffnungen*
-
-![Flaches Schwingsieb](/images/courses/bioprocess-engineering/chapter-17/fig-17-2.webp)
-*Abb. 17.2. Schema eines flachen Schwingsiebs: A - Durchgang; B - Ueberlauf*
-
-![Schemata von Schwingsieben](/images/courses/bioprocess-engineering/chapter-17/fig-17-3.webp)
-*Abb. 17.3. Schemata von Schwingsieben*
-
-![Trommelsieb](/images/courses/bioprocess-engineering/chapter-17/fig-17-4.webp)
-*Abb. 17.4. Schema eines Trommelsiebs: A - Durchgang; B - Ueberlauf*
-
-![Vibrationssieb](/images/courses/bioprocess-engineering/chapter-17/fig-17-5.webp)
-*Abb. 17.5. Schema eines Vibrationssiebs: A - Durchgang; B - Ueberlauf*
-
-![Zylindrischer Trieur](/images/courses/bioprocess-engineering/chapter-17/fig-17-6.webp)
+![Abb. 17.6. Schema eines zylindrischen Trieurs](/images/courses/bioprocess-engineering/chapter-17/fig-17-6.webp)
 *Abb. 17.6. Schema eines zylindrischen Trieurs*
 
-![Luft-Sieb-Separator](/images/courses/bioprocess-engineering/chapter-17/fig-17-7.webp)
+### 17.3. Trennung nach Dichte und Sinkgeschwindigkeit
+
+Die Trennung nach Sinkgeschwindigkeit in Fluessigkeit oder Gas folgt den allgemeinen Gesetzen des Absetzens fester Koerper. Im Luftstrom wirken Gewichtskraft G und Widerstandskraft P auf ein Partikel. Bei G > P sinkt es, bei G < P steigt es, bei G = P schwebt es.
+
+![Abb. 17.7. Schema eines Luft-Sieb-Separators](/images/courses/bioprocess-engineering/chapter-17/fig-17-7.webp)
 *Abb. 17.7. Schema eines Luft-Sieb-Separators*
+
+Die Stroemungsgeschwindigkeit, bei der ein Partikel schwebt, wird Schwebegeschwindigkeit genannt. Dieses Prinzip wird in Luft-Sieb-Separatoren zur Entfernung leichter Verunreinigungen aus Getreide verwendet. Hydraulische Klassierung dient zur Entfernung von Steinen, Sand und anderen Beimengungen in Fluessigkeitsstroemen sowie zum Sortieren von Erbsen und Maiskoernern.
+
+### 17.4. Magnetische Separation
+
+![Abb. 17.8. Schema eines elektromagnetischen Separators](/images/courses/bioprocess-engineering/chapter-17/fig-17-8.webp)
+*Abb. 17.8. Schema eines elektromagnetischen Separators*
 
 ## Nach dem Durcharbeiten dieses Kapitels sollen Studierende
 

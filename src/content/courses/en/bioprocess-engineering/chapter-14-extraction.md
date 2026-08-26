@@ -23,79 +23,11 @@ The page follows the logic of the corresponding textbook chapter; the test items
 
 ## Lecture Notes
 
-This lecture note treats the chapter as engineering logic rather than a list of terms: from the physical meaning of the process to the parameters used to select, calculate, and check equipment in biotechnological production.
+Extraction is a mass-transfer process in which one or more components are removed from a solid or liquid material by a solvent that selectively dissolves the target substance. In biotechnology and food production it is used to obtain enzymes, plant extracts, aromatic compounds, biologically active substances and other target components.
 
-### 14.1. General information
+### 14.1. General Information
 
-**Place of the topic in the chapter.** 14.1. General information gives the language for describing the process within "Chapter 14. Extraction". The important task is not to memorize a separate definition, but to understand which quantity or phenomenon it helps to evaluate.
-
-**Engineering meaning.** In calculations, the material connects "extractant", "solid-liquid system", and "diffusion resistance": first the driving force or regime is identified, then the relation between parameters is established, and only after that the "extractor" is selected or checked. This part highlights "extractant" and its relation to "solid-liquid system", because such links become formulas, diagrams, similarity criteria, and design decisions.
-
-**Biotechnological emphasis.** For biotechnological production, gentle handling of the medium is essential: culture liquids, suspensions, fermentation media, and intermediates are often sensitive to temperature, shear, contamination, and loss of sterility.
-
-**What to watch:**
-
-- which quantities must be measured or specified before calculation;
-- how the operating regime affects the product, equipment, and energy demand;
-- where "extractor" appears in the equipment scheme and what limits it imposes.
-
-### 14.2. Extraction from a solid body
-
-**Place of the topic in the chapter.** 14.2. Extraction from a solid body gives the language for describing the process within "Chapter 14. Extraction". The important task is not to memorize a separate definition, but to understand which quantity or phenomenon it helps to evaluate.
-
-**Engineering meaning.** In calculations, the material connects "extractant", "solid-liquid system", and "diffusion resistance": first the driving force or regime is identified, then the relation between parameters is established, and only after that the "extractor" is selected or checked. This part highlights "solid-liquid system" and its relation to "diffusion resistance", because such links become formulas, diagrams, similarity criteria, and design decisions.
-
-**Biotechnological emphasis.** For biotechnological production, gentle handling of the medium is essential: culture liquids, suspensions, fermentation media, and intermediates are often sensitive to temperature, shear, contamination, and loss of sterility.
-
-**What to watch:**
-
-- which quantities must be measured or specified before calculation;
-- how the operating regime affects the product, equipment, and energy demand;
-- where "extractor" appears in the equipment scheme and what limits it imposes.
-
-### 14.2.4. Calculation of the extraction process
-
-**Place of the topic in the chapter.** 14.2.4. Calculation of the extraction process gives the language for describing the process within "Chapter 14. Extraction". The important task is not to memorize a separate definition, but to understand which quantity or phenomenon it helps to evaluate.
-
-**Engineering meaning.** In calculations, the material connects "extractant", "solid-liquid system", and "diffusion resistance": first the driving force or regime is identified, then the relation between parameters is established, and only after that the "extractor" is selected or checked. This part highlights "diffusion resistance" and its relation to "extractor", because such links become formulas, diagrams, similarity criteria, and design decisions.
-
-**Biotechnological emphasis.** For biotechnological production, gentle handling of the medium is essential: culture liquids, suspensions, fermentation media, and intermediates are often sensitive to temperature, shear, contamination, and loss of sterility.
-
-**What to watch:**
-
-- which quantities must be measured or specified before calculation;
-- how the operating regime affects the product, equipment, and energy demand;
-- where "extractor" appears in the equipment scheme and what limits it imposes.
-
-### 14.2.5. Intensification methods
-
-**Place of the topic in the chapter.** 14.2.5. Intensification methods gives the language for describing the process within "Chapter 14. Extraction". The important task is not to memorize a separate definition, but to understand which quantity or phenomenon it helps to evaluate.
-
-**Engineering meaning.** In calculations, the material connects "extractant", "solid-liquid system", and "diffusion resistance": first the driving force or regime is identified, then the relation between parameters is established, and only after that the "extractor" is selected or checked. This part highlights "extractor" and its relation to "extractant", because such links become formulas, diagrams, similarity criteria, and design decisions.
-
-**Biotechnological emphasis.** For biotechnological production, gentle handling of the medium is essential: culture liquids, suspensions, fermentation media, and intermediates are often sensitive to temperature, shear, contamination, and loss of sterility.
-
-**What to watch:**
-
-- which quantities must be measured or specified before calculation;
-- how the operating regime affects the product, equipment, and energy demand;
-- where "extractor" appears in the equipment scheme and what limits it imposes.
-
-### 14.2.7. Equipment for extraction from solids
-
-**Place of the topic in the chapter.** 14.2.7. Equipment for extraction from solids gives the language for describing the process within "Chapter 14. Extraction". The important task is not to memorize a separate definition, but to understand which quantity or phenomenon it helps to evaluate.
-
-**Engineering meaning.** In calculations, the material connects "extractant", "solid-liquid system", and "diffusion resistance": first the driving force or regime is identified, then the relation between parameters is established, and only after that the "extractor" is selected or checked. This part highlights "extractant" and its relation to "solid-liquid system", because such links become formulas, diagrams, similarity criteria, and design decisions.
-
-**Biotechnological emphasis.** For biotechnological production, gentle handling of the medium is essential: culture liquids, suspensions, fermentation media, and intermediates are often sensitive to temperature, shear, contamination, and loss of sterility.
-
-**What to watch:**
-
-- which quantities must be measured or specified before calculation;
-- how the operating regime affects the product, equipment, and energy demand;
-- where "extractor" appears in the equipment scheme and what limits it imposes.
-
-## Visual Materials
+An extractor receives the raw material and the extractant, and discharges the extract and the remaining solid phase. Depending on the initial phase, extraction is considered as a solid-liquid or liquid-liquid system. This chapter focuses mainly on solid-phase extraction, where solvent selectivity, hydromodule, phase-flow arrangement and raw-material preparation determine the result.
 
 ![Raw-material pretreatment methods before extraction](/images/courses/bioprocess-engineering/chapter-14/fig-14-1.webp)
 *Fig. 14.1. Raw-material pretreatment methods before extraction*
@@ -103,50 +35,324 @@ This lecture note treats the chapter as engineering logic rather than a list of 
 ![Classification of extractants](/images/courses/bioprocess-engineering/chapter-14/fig-14-2.webp)
 *Fig. 14.2. Classification of extractants*
 
-![Extraction curves](/images/courses/bioprocess-engineering/chapter-14/fig-14-4.webp)
-*Fig. 14.4. Extraction curves for countercurrent and cocurrent processes*
+### 14.2.1. Diffusion Resistance Inside a Particle
+
+The extraction rate is proportional to the driving force and inversely proportional to the total mass-transfer resistance. For capillary-porous materials, cell-wall disruption, comminution, heating, fermentation or other pretreatment is essential. After pretreatment, molecular diffusion through particle pores often forms the main resistance.
+
+![Mass-transfer scheme for the target component](/images/courses/bioprocess-engineering/chapter-14/fig-14-3.webp)
+*Fig. 14.3. Mass-transfer scheme for the target component*
+
+### 14.2.2. Physical Meaning of Solid-Liquid Extraction
+
+The process includes solvent penetration into pores, dissolution of the target component, internal transport to the phase boundary and mass transfer into the extractant volume. If internal diffusion is slower than external transfer, the internal diffusion coefficient and particle size limit the process; if the external stage is slower, the mass-transfer coefficient and boundary-layer thickness dominate.
+
+<div class="equation-block">
+  <span class="equation-main">q = L/G</span>
+  <span class="equation-number">(14.1)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">M = -D<sub>in</sub>Fτ(C<sub>1</sub> - C′<sub>1</sub>)/R</span>
+  <span class="equation-number">(14.2)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">M/[Fτ(C<sub>1</sub> - C′<sub>1</sub>)] = D<sub>in</sub>/R</span>
+  <span class="equation-number">(14.3)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">M/[Fτ(C′<sub>1</sub> - C<sub>2</sub>)] = D<sub>out</sub>/δ = β</span>
+  <span class="equation-number">(14.4)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">M = [R/D<sub>in</sub> + δ/D<sub>out</sub>]<sup>-1</sup>(C<sub>1</sub> - C<sub>2</sub>)Fτ</span>
+  <span class="equation-number">(14.5)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">M = [R/D<sub>in</sub> + 1/β]<sup>-1</sup>(C<sub>1</sub> - C<sub>2</sub>)Fτ</span>
+  <span class="equation-number">(14.6)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">Bi<sub>D</sub> = βR/D<sub>in</sub></span>
+  <span class="equation-number">(14.7)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">q = (C<sub>p</sub> - C<sub>k</sub>)/(C′<sub>k</sub> - C′<sub>p</sub>)</span>
+  <span class="equation-number">(14.8)</span>
+</div>
+
+![Extraction curves for counter-current and cocurrent processes](/images/courses/bioprocess-engineering/chapter-14/fig-14-4.webp)
+*Fig. 14.4. Extraction curves for counter-current and cocurrent processes*
+
+### 14.2.3. Process Features
+
+The main phase-contact schemes are counter-current, cocurrent and combined flow. Counter-current extraction provides the most complete recovery of the target component, but requires a coordinated hydromodule. More extractant increases the driving force, yet dilutes the extract and raises the cost of later concentration.
+
+<div class="equation-block">
+  <span class="equation-main">q<sub>i</sub> = (C<sub>i-1</sub> - C<sub>i</sub>)/(C′<sub>i-1</sub> - C′<sub>i</sub>)</span>
+  <span class="equation-number">(14.9)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">∂c/∂τ = D(∂<sup>2</sup>c/∂x<sup>2</sup> + ∂<sup>2</sup>c/∂y<sup>2</sup> + ∂<sup>2</sup>c/∂z<sup>2</sup>)</span>
+  <span class="equation-number">(14.10)</span>
+</div>
 
 ![Triangular diagram for a solid-liquid system](/images/courses/bioprocess-engineering/chapter-14/fig-14-5.webp)
 *Fig. 14.5. Triangular diagram for a solid-liquid system*
 
-![n-section countercurrent extraction](/images/courses/bioprocess-engineering/chapter-14/fig-14-7.webp)
-*Fig. 14.7. Scheme of n-section countercurrent extraction*
+### 14.2.4. Calculation of the Extraction Process
 
-![Graphical calculation of countercurrent extraction](/images/courses/bioprocess-engineering/chapter-14/fig-14-8.webp)
-*Fig. 14.8. Graphical calculation of multistage countercurrent extraction from solids*
+Calculation covers internal and external mass-transfer kinetics, productivity, material and heat balances, and graphical determination of theoretical stages. Engineering estimates use the Biot, Fourier, Nusselt, Prandtl and Reynolds criteria together with corresponding correlations.
 
-![Number of concentration stages](/images/courses/bioprocess-engineering/chapter-14/fig-14-9.webp)
-*Fig. 14.9. Graphical determination of the number of concentration stages during extraction*
+<div class="equation-block">
+  <span class="equation-main">q = dG/(Fdτ) = -D dc/dn</span>
+  <span class="equation-number">(14.11)</span>
+</div>
 
-![Extraction-intensification methods](/images/courses/bioprocess-engineering/chapter-14/fig-14-10.webp)
+<div class="equation-block">
+  <span class="equation-main">D = kT/(6πμr)</span>
+  <span class="equation-number">(14.12)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">M = -DFτ(C<sub>1</sub> - C′<sub>1</sub>)/R</span>
+  <span class="equation-number">(14.13)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">M = βFτ(C′<sub>1</sub> - C<sub>2</sub>)</span>
+  <span class="equation-number">(14.14)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">M = [R/D + 1/β]<sup>-1</sup>(C<sub>1</sub> - C<sub>2</sub>)Fτ</span>
+  <span class="equation-number">(14.15)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">Bi<sub>D</sub> = βR/D</span>
+  <span class="equation-number">(14.16)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">Fo<sub>D</sub> = Dτ/R<sup>2</sup></span>
+  <span class="equation-number">(14.17)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">Nu<sub>D</sub> = 0.99Pr<sub>D</sub><sup>1/3</sup>Re<sup>1/3</sup></span>
+  <span class="equation-number">(14.18)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">Nu<sub>D</sub> = 0.99Pr<sub>D</sub><sup>1/3</sup>Re<sup>1/3</sup>[1 + Re/16 + Re<sup>2</sup>ln(Re)/160]</span>
+  <span class="equation-number">(14.19)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">Nu<sub>D</sub> = Pr<sub>D</sub><sup>1/3</sup>(0.51Re<sup>0.5</sup> + 0.0224Re<sup>0.78</sup>)</span>
+  <span class="equation-number">(14.20)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">Nu<sub>D</sub> = 0.0387(Pr<sub>D</sub>Gr)<sup>1/3</sup></span>
+  <span class="equation-number">(14.21)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">Nu<sub>D</sub> = 0.38Pr<sub>D</sub><sup>0.4</sup>(Re<sup>0.2</sup> + 0.102Re<sup>0.8</sup>)</span>
+  <span class="equation-number">(14.22)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">Re = 2dw<sub>f</sub> / [3(1 - ε)ν]</span>
+  <span class="equation-number">(14.23)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">Nu<sub>D</sub> = 0.8Pr<sub>D</sub><sup>1/3</sup>Re<sup>1/2</sup></span>
+  <span class="equation-number">(14.24)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">Nu<sub>D</sub> = 4.33 · 10<sup>-3</sup>Re<sup>0.73</sup>Pr<sub>D</sub><sup>0.33</sup></span>
+  <span class="equation-number">(14.25)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">Nu<sub>D</sub> = 3.8 · 10<sup>-4</sup>Re<sup>1.38</sup>Pr<sub>D</sub><sup>0.33</sup></span>
+  <span class="equation-number">(14.26)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">Nu<sub>D</sub> = 1.41 · 10<sup>-2</sup>RePr<sub>D</sub><sup>0.5</sup></span>
+  <span class="equation-number">(14.27)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">∂c/∂τ = D(∂<sup>2</sup>c/∂x<sup>2</sup> + ∂<sup>2</sup>c/∂y<sup>2</sup> + ∂<sup>2</sup>c/∂z<sup>2</sup>) - (w<sub>x</sub>∂c/∂x + w<sub>y</sub>∂c/∂y + w<sub>z</sub>∂c/∂z)</span>
+  <span class="equation-number">(14.28)</span>
+</div>
+
+### 14.2.4.1. Productivity and Material Balance
+
+Extractor productivity is related to useful volume, solid-phase loading, process time and the number of apparatuses in a battery. Material balances account for raw-material and extractant flows, target-component concentrations in the solid and liquid phases, swelling of the raw material and solvent retained in the solid.
+
+<div class="equation-block">
+  <span class="equation-main">G = V<sub>k</sub>Bn/τ</span>
+  <span class="equation-number">(14.29)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">L = L<sub>1</sub> + L<sub>2</sub></span>
+  <span class="equation-number">(14.30)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">L<sub>2</sub>dy = Ldx</span>
+  <span class="equation-number">(14.31)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">L<sub>2</sub>(y<sub>p</sub> - y<sub>k</sub>) = L(x<sub>k</sub> - x<sub>p</sub>)</span>
+  <span class="equation-number">(14.32)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">L<sub>2</sub>(y<sub>p</sub> - y) = L(x<sub>k</sub> - x)</span>
+  <span class="equation-number">(14.33)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">G<sub>p</sub> + W<sub>p</sub> = W<sub>k</sub> + G<sub>k</sub></span>
+  <span class="equation-number">(14.34)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">G<sub>p</sub>x<sub>p</sub> + W<sub>p</sub>y<sub>p</sub> = W<sub>k</sub>y<sub>k</sub> + G<sub>k</sub>x<sub>k</sub></span>
+  <span class="equation-number">(14.35)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">G<sub>p</sub>C<sub>G,p</sub>t<sub>G,p</sub> + W<sub>p</sub>C<sub>W,p</sub>t<sub>W,p</sub> + Q<sub>add</sub> = G<sub>k</sub>C<sub>G,k</sub>t<sub>G,k</sub> + W<sub>k</sub>C<sub>W,k</sub>t<sub>W,k</sub> + Q<sub>loss</sub></span>
+  <span class="equation-number">(14.36)</span>
+</div>
+
+### 14.2.4.2. Graphical Determination of Stages
+
+For solid-liquid systems, triangular diagrams and operating lines are used. The lever rule determines mixture compositions and amounts, while stepping between the operating and equilibrium lines gives the required number of theoretical stages or apparatuses in a battery.
+
+<div class="equation-block">
+  <span class="equation-main">G<sub>M</sub> · MS = G<sub>N</sub> · SN</span>
+  <span class="equation-number">(14.37)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">G<sub>F</sub> + S<sub>0</sub> = G<sub>R</sub> + S<sub>E</sub></span>
+  <span class="equation-number">(14.38)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">G<sub>F</sub>x<sub>F</sub> + S<sub>0</sub>y<sub>0</sub> = G<sub>R</sub>x<sub>R</sub> + S<sub>E</sub>y<sub>E</sub></span>
+  <span class="equation-number">(14.39)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">G<sub>F</sub> - S<sub>E</sub> = G<sub>i</sub> - S<sub>i+1</sub></span>
+  <span class="equation-number">(14.40)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">G<sub>F</sub>x<sub>F</sub> - S<sub>E</sub>y<sub>E</sub> = G<sub>i</sub>x<sub>i</sub> - S<sub>i+1</sub>y<sub>i+1</sub></span>
+  <span class="equation-number">(14.41)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">P = G<sub>F</sub> - S<sub>E</sub> = G<sub>1</sub> - S<sub>2</sub> = G<sub>R</sub> - S<sub>0</sub></span>
+  <span class="equation-number">(14.42)</span>
+</div>
+
+<div class="equation-block">
+  <span class="equation-main">Px<sub>P</sub> = G<sub>F</sub>x<sub>F</sub> - S<sub>E</sub>y<sub>E</sub> = G<sub>1</sub>x<sub>1</sub> - S<sub>2</sub>y<sub>2</sub> = ... = G<sub>R</sub>x<sub>R</sub> - S<sub>0</sub>y<sub>0</sub></span>
+  <span class="equation-number">(14.43)</span>
+</div>
+
+![Determining the composition and amount of formed mixtures](/images/courses/bioprocess-engineering/chapter-14/fig-14-6.webp)
+*Fig. 14.6. Determining the composition and amount of formed mixtures*
+
+![Scheme of n-section counter-current extraction](/images/courses/bioprocess-engineering/chapter-14/fig-14-7.webp)
+*Fig. 14.7. Scheme of n-section counter-current extraction*
+
+![Graphical calculation of multistage counter-current extraction from solids](/images/courses/bioprocess-engineering/chapter-14/fig-14-8.webp)
+*Fig. 14.8. Graphical calculation of multistage counter-current extraction from solids*
+
+![Graphical determination of concentration stages](/images/courses/bioprocess-engineering/chapter-14/fig-14-9.webp)
+*Fig. 14.9. Graphical determination of concentration stages*
+
+### 14.2.5. Intensification Methods
+
+Intensification aims to increase target-component yield, shorten process duration, and reduce energy demand and equipment metal consumption. It uses rational phase-flow organization, comminution, temperature increase, vibration, pulsation, ultrasound, electric and electromagnetic fields, and discrete-pulse energy input.
+
+![Classification of extraction-process intensification methods](/images/courses/bioprocess-engineering/chapter-14/fig-14-10.webp)
 *Fig. 14.10. Classification of extraction-process intensification methods*
 
+![General classification of equipment for extraction from solids](/images/courses/bioprocess-engineering/chapter-14/fig-14-11.webp)
+*Fig. 14.11. General classification of equipment for extraction from solids*
+
+![Classification of extraction equipment by operating mode](/images/courses/bioprocess-engineering/chapter-14/fig-14-12.webp)
+*Fig. 14.12. Classification of extraction equipment by operating mode*
+
+### 14.2.7. Equipment for Extraction from Solids
+
+Extractors are classified by operating mode, phase-contact method, solid-phase transport and energy input. Batch equipment includes steeping, circulation, stirred, combined and cavitation designs. Continuous units may be column, screw, inclined, rotary or vibration extractors.
+
 ![Batch extractor schemes](/images/courses/bioprocess-engineering/chapter-14/fig-14-13.webp)
-*Fig. 14.13. Extractor schemes with a fixed bed, agitator and circulation loop*
+*Fig. 14.13. Batch extractor schemes*
 
 ![Extractor with upward extractant flow](/images/courses/bioprocess-engineering/chapter-14/fig-14-14.webp)
-*Fig. 14.14. Scheme of an extractor with upward extractant flow*
+*Fig. 14.14. Extractor with upward extractant flow*
+
+![Extractor with downward extractant flow](/images/courses/bioprocess-engineering/chapter-14/fig-14-15.webp)
+*Fig. 14.15. Extractor with downward extractant flow*
 
 ![Combined batch extractor](/images/courses/bioprocess-engineering/chapter-14/fig-14-16.webp)
 *Fig. 14.16. Combined batch extractor*
 
-![Extractor with cavitation effect](/images/courses/bioprocess-engineering/chapter-14/fig-14-17.webp)
-*Fig. 14.17. Extractor with cavitation effect*
+![Extractor with a cavitation effect](/images/courses/bioprocess-engineering/chapter-14/fig-14-17.webp)
+*Fig. 14.17. Extractor with a cavitation effect*
 
-![Vibroextractor with mesh container](/images/courses/bioprocess-engineering/chapter-14/fig-14-18.webp)
-*Fig. 14.18. Principal scheme of a vibroextractor with a mesh container*
+![Vibroextractor with a mesh container](/images/courses/bioprocess-engineering/chapter-14/fig-14-18.webp)
+*Fig. 14.18. Vibroextractor with a mesh container*
 
 ![Rotary diffusion unit](/images/courses/bioprocess-engineering/chapter-14/fig-14-19.webp)
-*Fig. 14.19. Scheme of a rotary diffusion unit*
+*Fig. 14.19. Rotary diffusion unit*
+
+![Horizontal screw extractor scheme](/images/courses/bioprocess-engineering/chapter-14/fig-14-20.webp)
+*Fig. 14.20. Horizontal screw extractor scheme*
 
 ![Horizontal screw extractor](/images/courses/bioprocess-engineering/chapter-14/fig-14-21.webp)
 *Fig. 14.21. Horizontal screw extractor*
 
-![Inclined extractor](/images/courses/bioprocess-engineering/chapter-14/fig-14-23.webp)
-*Fig. 14.23. Scheme of an inclined extractor*
+![Spring-blade horizontal extractor](/images/courses/bioprocess-engineering/chapter-14/fig-14-22.webp)
+*Fig. 14.22. Spring-blade horizontal extractor*
 
-![Vibroextractor](/images/courses/bioprocess-engineering/chapter-14/fig-14-25.webp)
-*Fig. 14.25. Principal scheme of a vibroextractor*
+![Inclined extractor](/images/courses/bioprocess-engineering/chapter-14/fig-14-23.webp)
+*Fig. 14.23. Inclined extractor*
+
+![ND-1000 double-column extractor](/images/courses/bioprocess-engineering/chapter-14/fig-14-24.webp)
+*Fig. 14.24. ND-1000 double-column extractor*
+
+![Vibroextractor principle scheme](/images/courses/bioprocess-engineering/chapter-14/fig-14-25.webp)
+*Fig. 14.25. Vibroextractor principle scheme*
+
+![Vibrotransport tray](/images/courses/bioprocess-engineering/chapter-14/fig-14-26.webp)
+*Fig. 14.26. Vibrotransport tray*
 
 ![Vibration extractor](/images/courses/bioprocess-engineering/chapter-14/fig-14-27.webp)
 *Fig. 14.27. Vibration extractor*
