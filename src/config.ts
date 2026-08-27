@@ -1,7 +1,7 @@
 export const siteConfig = {
   // Основна інформація
-  version: "1.1.3",
-  releaseDate: "2026-08-26",
+  version: "1.1.4",
+  releaseDate: "2026-08-27",
   platform: "Astro 6.4",
   email: "feedback@foodprocessportal.com",
   name: "FoodProcessPortal",
