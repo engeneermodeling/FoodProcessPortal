@@ -33,12 +33,13 @@ const trackOrder: TopicTrackSlug[] = [
 const trackStatus: Record<TopicTrackSlug, TopicTrackStatus> = {
   "food-tech": "active",
   "food-engineering": "planned",
-  chemical: "planned",
+  chemical: "active",
   biotech: "active",
 };
 
 const trackHref: Partial<Record<TopicTrackSlug, string>> = {
   "food-tech": "/topics#topics-list",
+  chemical: "/courses/chemical-process-engineering",
   biotech: "/courses/bioprocess-engineering",
 };
 
@@ -50,7 +51,7 @@ const sourceNotes: Record<Locale, Record<TopicTrackSlug, string>> = {
     "food-engineering":
       "Для цього треку варто взяти розрахунковий підручник і посилити задачами.",
     chemical:
-      "Потрібна окрема добірка прикладів для хімічних виробництв і апаратурних схем.",
+      "Пілотний розділ створено на базі конспекту лекцій і віртуального підручника, з рисунками, відео та тестами.",
     biotech:
       "Курс створено на базі підручника Зав'ялова, з тестами, рисунками та багатомовними версіями.",
   },
@@ -59,7 +60,7 @@ const sourceNotes: Record<Locale, Record<TopicTrackSlug, string>> = {
     "food-engineering":
       "This track should be based on the calculation-heavy textbook and stronger problem sets.",
     chemical:
-      "Requires a separate set of examples for chemical production and equipment schemes.",
+      "The pilot chapter is based on the lecture notes and virtual textbook, with figures, video, and tests.",
     biotech:
       "The course is built from Zavialov's textbook, with tests, figures, and multilingual versions.",
   },
@@ -69,7 +70,7 @@ const sourceNotes: Record<Locale, Record<TopicTrackSlug, string>> = {
     "food-engineering":
       "Dieser Track sollte auf dem rechenorientierten Lehrbuch und erweiterten Aufgaben aufbauen.",
     chemical:
-      "Benötigt eigene Beispiele für chemische Produktion und Apparateschemata.",
+      "Das Pilotkapitel basiert auf Vorlesungsnotizen und virtuellem Lehrbuch, mit Abbildungen, Video und Tests.",
     biotech:
       "Der Kurs basiert auf dem Lehrbuch von Sawjalow, mit Tests, Abbildungen und mehrsprachigen Versionen.",
   },
@@ -78,7 +79,7 @@ const sourceNotes: Record<Locale, Record<TopicTrackSlug, string>> = {
     "food-engineering":
       "Для этого трека стоит взять расчётный учебник и усилить задачи.",
     chemical:
-      "Нужна отдельная подборка примеров для химических производств и аппаратурных схем.",
+      "Пилотный раздел создан на основе конспекта лекций и виртуального учебника, с рисунками, видео и тестами.",
     biotech:
       "Курс создан на базе учебника Завьялова, с тестами, рисунками и многоязычными версиями.",
   },
@@ -107,8 +108,8 @@ const trackText: Record<Locale, Record<TopicTrackSlug, LocalizedTrackText>> = {
       title: "Процеси і апарати хімічних виробництв",
       description:
         "Та сама процесна база, але з акцентом на хімічні технології, реакційні системи та промислові апарати.",
-      badge: "Планується",
-      action: "Сформувати структуру",
+      badge: "Відкрито",
+      action: "Переглянути курс",
     },
     biotech: {
       shortTitle: "Біотехнологічні виробництва",
@@ -141,8 +142,8 @@ const trackText: Record<Locale, Record<TopicTrackSlug, LocalizedTrackText>> = {
       title: "Processes and Apparatus of Chemical Production",
       description:
         "The same process foundation with emphasis on chemical technology, reaction systems, and industrial equipment.",
-      badge: "Planned",
-      action: "Shape structure",
+      badge: "Open",
+      action: "View course",
     },
     biotech: {
       shortTitle: "Biotechnology production",
@@ -176,8 +177,8 @@ const trackText: Record<Locale, Record<TopicTrackSlug, LocalizedTrackText>> = {
       title: "Prozesse und Apparate der chemischen Produktion",
       description:
         "Dieselbe Prozessbasis mit Schwerpunkt auf chemischer Technologie, Reaktionssystemen und Industrieapparaten.",
-      badge: "Geplant",
-      action: "Struktur formen",
+      badge: "Offen",
+      action: "Kurs ansehen",
     },
     biotech: {
       shortTitle: "Biotechnologische Produktion",
@@ -210,8 +211,8 @@ const trackText: Record<Locale, Record<TopicTrackSlug, LocalizedTrackText>> = {
       title: "Процессы и аппараты химических производств",
       description:
         "Та же процессная база с акцентом на химические технологии, реакционные системы и промышленные аппараты.",
-      badge: "Планируется",
-      action: "Сформировать структуру",
+      badge: "Открыто",
+      action: "Смотреть курс",
     },
     biotech: {
       shortTitle: "Биотехнологические производства",

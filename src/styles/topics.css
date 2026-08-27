@@ -34,12 +34,14 @@
 
 .track-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(245px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 245px), 1fr));
   gap: 1rem;
+  min-width: 0;
 }
 
 .track-card {
   display: flex;
+  min-width: 0;
   min-height: 280px;
   flex-direction: column;
   gap: 0.8rem;
@@ -77,6 +79,7 @@
 }
 
 .track-short-title {
+  min-width: 0;
   color: var(--accent-blue);
   font-size: 0.82rem;
   font-weight: 800;
@@ -101,6 +104,7 @@
   color: var(--text-primary);
   font-size: 1.08rem;
   line-height: 1.35;
+  overflow-wrap: anywhere;
 }
 
 .track-card p {
@@ -108,6 +112,7 @@
   color: var(--text-secondary);
   font-size: 0.92rem;
   line-height: 1.6;
+  overflow-wrap: anywhere;
 }
 
 .track-note {
@@ -661,6 +666,19 @@
 /* ===== MOBILE RESPONSIVE ===== */
 
 @media (max-width: 768px) {
+  .track-section {
+    margin: 1.5rem 0 2rem;
+  }
+
+  .track-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .track-card {
+    min-height: 0;
+    padding: 1rem;
+  }
+
   .overall-progress-panel {
     grid-template-columns: 1fr;
   }
@@ -744,6 +762,15 @@
 }
 
 @media (max-width: 480px) {
+  .track-card-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .track-badge {
+    align-self: flex-start;
+  }
+
   .topic-card {
     padding: 1rem;
   }
