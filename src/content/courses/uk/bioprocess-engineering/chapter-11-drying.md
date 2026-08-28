@@ -7,11 +7,11 @@ description: "Вологе повітря, І-х діаграма, статик�
 updated: "2026-08-23"
 ---
 
-## Джерело і межі розділу
+## Фокус розділу
 
-Основа матеріалу: підручник «Інжиніринг біопроцесів. Модуль 1. Процеси та апарати біотехнологічних виробництв» за редакцією В.Л. Зав’ялова, НУХТ, 2024.
+У цьому розділі послідовно розглянуто ключові поняття, рівняння та апаратурні рішення за темою.
 
-## Структура матеріалу за підручником
+## Структура матеріалу розділу
 
 - 11.1. Загальні відомості
 - 11.2. Фізичні властивості вологого повітря
@@ -21,9 +21,9 @@ updated: "2026-08-23"
 - 11.6. Кінетика сушіння
 - 11.7. Конструкції сушарок
 
-## Матеріал підручника
+## Матеріал розділу
 
-Матеріал зібрано у чисту лекційну структуру з формулами, рисунками та підписами з розділу 11 підручника.
+Матеріал зібрано у чисту лекційну структуру з формулами, рисунками та підписами з розділу 11 розділу.
 
 ### 11.1. Загальні відомості
 
@@ -386,7 +386,7 @@ I-x діаграма поєднує ентальпію, вологовміст, 
 </fieldset>
 
 <fieldset class="course-test-item" data-course-test-item>
-<legend>2. Який підрозділ безпосередньо входить до структури розділу за підручником?</legend>
+<legend>2. Який підрозділ безпосередньо входить до структури розділу?</legend>
 <div class="course-test-options" data-course-test-options>
 <label class="course-test-option">
   <input type="radio" name="course-test-11-1" value="0" data-correct="1" />
@@ -494,7 +494,7 @@ I-x діаграма поєднує ентальпію, вологовміст, 
 </fieldset>
 
 <fieldset class="course-test-item" data-course-test-item>
-<legend>6. З якої теми починається розділ за структурою підручника?</legend>
+<legend>6. З якої теми починається розділ за структурою розділу?</legend>
 <div class="course-test-options" data-course-test-options>
 <label class="course-test-option">
   <input type="radio" name="course-test-11-5" value="0" data-correct="1" />
@@ -521,7 +521,7 @@ I-x діаграма поєднує ентальпію, вологовміст, 
 </fieldset>
 
 <fieldset class="course-test-item" data-course-test-item>
-<legend>7. Який підрозділ безпосередньо входить до структури розділу за підручником?</legend>
+<legend>7. Який підрозділ безпосередньо входить до структури розділу?</legend>
 <div class="course-test-options" data-course-test-options>
 <label class="course-test-option">
   <input type="radio" name="course-test-11-6" value="0" data-correct="0" />
@@ -548,7 +548,7 @@ I-x діаграма поєднує ентальпію, вологовміст, 
 </fieldset>
 
 <fieldset class="course-test-item" data-course-test-item>
-<legend>8. Яка тема завершує структуру розділу за підручником?</legend>
+<legend>8. Яка тема завершує структуру розділу розділу?</legend>
 <div class="course-test-options" data-course-test-options>
 <label class="course-test-option">
   <input type="radio" name="course-test-11-7" value="0" data-correct="0" />

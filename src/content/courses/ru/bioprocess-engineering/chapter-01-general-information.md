@@ -7,11 +7,11 @@ description: "Основные законы технологических пр�
 updated: "2026-08-23"
 ---
 
-## Источник и границы раздела
+## Фокус раздела
 
-Основа материала: учебник «Инжиниринг биопроцессов. Модуль 1. Процессы и аппараты биотехнологических производств» под редакцией В.Л. Завьялова, НУХТ, 2024.
+В этом разделе последовательно рассмотрены основные понятия, уравнения и аппаратурные решения по теме.
 
-## Структура материала по учебнику
+## Структура материала раздела
 
 - 1.1. Основные законы технологических процессов
 - 1.2. Метод подобия и его роль в изучении процессов и аппаратов биотехнологических производств
@@ -20,7 +20,7 @@ updated: "2026-08-23"
 
 ## Конспект лекции
 
-Это вычитанная лекционная версия страниц 21-43 учебника. Текст, формулы, таблица и рисунки вынесены в отдельные редактируемые блоки, поэтому материал можно читать как лекцию и дальше переводить без сканов страниц.
+Это вычитанная лекционная версия страниц 21-43 раздела. Текст, формулы, таблица и рисунки вынесены в отдельные редактируемые блоки, поэтому материал можно читать как лекцию и дальше переводить без сканов страниц.
 
 ### Часть 1. Общие процессы
 
@@ -432,7 +432,7 @@ updated: "2026-08-23"
   <span class="equation-number">(1.40)</span>
 </div>
 
-### Вопросы и задания для самопроверки по учебнику
+### Вопросы и задания для самопроверки раздела
 
 1. Сформулируйте законы сохранения массы и энергии.
 2. Объясните законы переноса.
@@ -496,7 +496,7 @@ updated: "2026-08-23"
 </fieldset>
 
 <fieldset class="course-test-item" data-course-test-item>
-<legend>2. Какой подраздел непосредственно входит в структуру раздела по учебнику?</legend>
+<legend>2. Какой подраздел непосредственно входит в структуру раздела раздела?</legend>
 <div class="course-test-options" data-course-test-options>
 <label class="course-test-option">
   <input type="radio" name="course-test-1-1" value="0" data-correct="0" />
@@ -604,7 +604,7 @@ updated: "2026-08-23"
 </fieldset>
 
 <fieldset class="course-test-item" data-course-test-item>
-<legend>6. С какой темы начинается раздел в структуре учебника?</legend>
+<legend>6. С какой темы начинается раздел в структуре раздела?</legend>
 <div class="course-test-options" data-course-test-options>
 <label class="course-test-option">
   <input type="radio" name="course-test-1-5" value="0" data-correct="0" />
@@ -631,7 +631,7 @@ updated: "2026-08-23"
 </fieldset>
 
 <fieldset class="course-test-item" data-course-test-item>
-<legend>7. Какой подраздел непосредственно входит в структуру раздела по учебнику?</legend>
+<legend>7. Какой подраздел непосредственно входит в структуру раздела раздела?</legend>
 <div class="course-test-options" data-course-test-options>
 <label class="course-test-option">
   <input type="radio" name="course-test-1-6" value="0" data-correct="0" />
@@ -658,7 +658,7 @@ updated: "2026-08-23"
 </fieldset>
 
 <fieldset class="course-test-item" data-course-test-item>
-<legend>8. Какая тема завершает структуру раздела по учебнику?</legend>
+<legend>8. Какая тема завершает структуру раздела раздела?</legend>
 <div class="course-test-options" data-course-test-options>
 <label class="course-test-option">
   <input type="radio" name="course-test-1-7" value="0" data-correct="1" />

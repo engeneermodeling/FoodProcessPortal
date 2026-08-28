@@ -7,11 +7,11 @@ description: "Molekulare und konvektive Diffusion, Stoffuebertragung, Theorien d
 updated: "2026-08-23"
 ---
 
-## Quelle und Umfang
+## Kapitelüberblick
 
-Materialgrundlage: das Lehrbuch "Bioverfahrenstechnik. Modul 1. Prozesse und Apparate biotechnologischer Produktionen", herausgegeben von V.L. Zavialov, NUFT, 2024.
+Dieses Kapitel stellt die zentralen Begriffe, Gleichungen und Apparatebeispiele zum Thema vor.
 
-## Struktur nach dem Lehrbuch
+## Struktur des Kapitels
 
 - 10.1. Allgemeines
 - 10.2. Molekulare Diffusion
@@ -22,7 +22,7 @@ Materialgrundlage: das Lehrbuch "Bioverfahrenstechnik. Modul 1. Prozesse und App
 
 ## Vorlesungsskript
 
-Diese Vorlesung folgt Kapitel 10 des Lehrbuchs von Zavialov: zuerst werden Stoffuebergangsprozesse eingefuehrt, danach molekulare und konvektive Diffusion, Stoffuebergangskoeffizienten, Stoffuebertragung, Aehnlichkeitskriterien und Thermodiffusion.
+Dieses Kapitel ist als zusammenhängende Vorlesung mit Formeln, Abbildungen und Beispielen aufgebaut.
 
 ### 10.1. Allgemeines
 
@@ -338,7 +338,7 @@ Thermodiffusion entsteht, wenn neben dem Konzentrationsgradienten auch Temperatu
 </fieldset>
 
 <fieldset class="course-test-item" data-course-test-item>
-<legend>2. Welcher Unterabschnitt gehoert direkt zur Lehrbuchstruktur dieses Kapitels?</legend>
+<legend>2. Welcher Unterabschnitt gehoert direkt zur Kapitelstruktur dieses Kapitels?</legend>
 <div class="course-test-options" data-course-test-options>
 <label class="course-test-option">
   <input type="radio" name="course-test-10-1" value="0" data-correct="0" />
@@ -446,7 +446,7 @@ Thermodiffusion entsteht, wenn neben dem Konzentrationsgradienten auch Temperatu
 </fieldset>
 
 <fieldset class="course-test-item" data-course-test-item>
-<legend>6. Mit welchem Thema beginnt das Kapitel in der Lehrbuchstruktur?</legend>
+<legend>6. Mit welchem Thema beginnt das Kapitel in der Kapitelstruktur?</legend>
 <div class="course-test-options" data-course-test-options>
 <label class="course-test-option">
   <input type="radio" name="course-test-10-5" value="0" data-correct="0" />
@@ -473,7 +473,7 @@ Thermodiffusion entsteht, wenn neben dem Konzentrationsgradienten auch Temperatu
 </fieldset>
 
 <fieldset class="course-test-item" data-course-test-item>
-<legend>7. Welcher Unterabschnitt gehoert direkt zur Lehrbuchstruktur dieses Kapitels?</legend>
+<legend>7. Welcher Unterabschnitt gehoert direkt zur Kapitelstruktur dieses Kapitels?</legend>
 <div class="course-test-options" data-course-test-options>
 <label class="course-test-option">
   <input type="radio" name="course-test-10-6" value="0" data-correct="1" />

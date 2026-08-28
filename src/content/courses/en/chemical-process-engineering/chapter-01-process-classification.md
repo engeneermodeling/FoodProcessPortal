@@ -7,9 +7,9 @@ description: "Main types of chemical engineering processes, kinetic relations, a
 updated: "2026-08-27"
 ---
 
-## Sources and Scope
+## Chapter Focus
 
-This pilot lecture follows the structure of the lecture notes "Course of Lectures_1" for processes and equipment of chemical production. Equipment examples and media are selected from the `MAHP_BOOK` virtual textbook. Visible course materials use neutral figures and English or Ukrainian media only; GOST, OST, RD, and SNiP documents are not used as normative references.
+This chapter presents the key concepts, equations, and equipment examples for the topic.
 
 ## Why Classification Comes First
 
@@ -79,7 +79,7 @@ The engineer first asks what is being transferred, what driving force acts, what
 
 The course does not use GOST, OST, RD, or SNiP as normative references. The preferred framework is Ukrainian technical regulation and current international or European sources: Ukrainian pressure-equipment regulation, Pressure Equipment Directive 2014/68/EU, EN 13445, ASME BPVC, and relevant ISO/EN/API documents.
 
-## Video from the Virtual Textbook
+## Video from the Virtual course
 
 <video controls preload="metadata" style="width: 100%; max-width: 760px; border-radius: 8px; border: 1px solid var(--border-color); background: #000;">
   <source src="/videos/courses/chemical-process-engineering/chapter-01/plate-heat-exchanger.mp4" type="video/mp4" />

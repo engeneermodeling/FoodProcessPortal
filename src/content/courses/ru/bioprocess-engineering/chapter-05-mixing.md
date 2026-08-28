@@ -7,11 +7,11 @@ description: "Перемешивание в жидкой среде, расхо�
 updated: "2026-08-23"
 ---
 
-## Источник и границы раздела
+## Фокус раздела
 
-Основа материала: учебник «Инжиниринг биопроцессов. Модуль 1. Процессы и аппараты биотехнологических производств» под редакцией В.Л. Завьялова, НУХТ, 2024.
+В этом разделе последовательно рассмотрены основные понятия, уравнения и аппаратурные решения по теме.
 
-## Структура материала по учебнику
+## Структура материала раздела
 
 - 5.1. Общие сведения
 - 5.2. Перемешивание в жидкой среде
@@ -219,7 +219,7 @@ updated: "2026-08-23"
 </fieldset>
 
 <fieldset class="course-test-item" data-course-test-item>
-<legend>2. Какой подраздел непосредственно входит в структуру раздела по учебнику?</legend>
+<legend>2. Какой подраздел непосредственно входит в структуру раздела раздела?</legend>
 <div class="course-test-options" data-course-test-options>
 <label class="course-test-option">
   <input type="radio" name="course-test-5-1" value="0" data-correct="0" />
@@ -327,7 +327,7 @@ updated: "2026-08-23"
 </fieldset>
 
 <fieldset class="course-test-item" data-course-test-item>
-<legend>6. С какой темы начинается раздел в структуре учебника?</legend>
+<legend>6. С какой темы начинается раздел в структуре раздела?</legend>
 <div class="course-test-options" data-course-test-options>
 <label class="course-test-option">
   <input type="radio" name="course-test-5-5" value="0" data-correct="0" />
@@ -354,7 +354,7 @@ updated: "2026-08-23"
 </fieldset>
 
 <fieldset class="course-test-item" data-course-test-item>
-<legend>7. Какой подраздел непосредственно входит в структуру раздела по учебнику?</legend>
+<legend>7. Какой подраздел непосредственно входит в структуру раздела раздела?</legend>
 <div class="course-test-options" data-course-test-options>
 <label class="course-test-option">
   <input type="radio" name="course-test-5-6" value="0" data-correct="0" />
@@ -381,7 +381,7 @@ updated: "2026-08-23"
 </fieldset>
 
 <fieldset class="course-test-item" data-course-test-item>
-<legend>8. Какая тема завершает структуру раздела по учебнику?</legend>
+<legend>8. Какая тема завершает структуру раздела раздела?</legend>
 <div class="course-test-options" data-course-test-options>
 <label class="course-test-option">
   <input type="radio" name="course-test-5-7" value="0" data-correct="1" />

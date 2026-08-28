@@ -7,9 +7,9 @@ description: "Hauptgruppen chemischer Prozesse, kinetische Beziehungen und Beisp
 updated: "2026-08-27"
 ---
 
-## Quellen und Umfang
+## Kapitelüberblick
 
-Diese Pilotvorlesung folgt der Struktur der Vorlesungsnotizen "Course of Lectures_1" zu Prozessen und Apparaten der chemischen Produktion. Apparatebeispiele und Medien stammen aus dem virtuellen Lehrbuch `MAHP_BOOK`. Sichtbare Kursmaterialien verwenden neutrale Abbildungen sowie ukrainische oder englische Medien; GOST, OST, RD und SNiP werden nicht als normative Grundlage verwendet.
+Diese Vorlesung stellt die zentralen Begriffe, Gleichungen und Apparatebeispiele zum Thema vor.
 
 ## Warum die Klassifikation am Anfang steht
 
@@ -71,7 +71,7 @@ Zuerst wird bestimmt, was uebertragen wird, welche treibende Kraft wirkt, welche
 
 GOST, OST, RD und SNiP werden in diesem Kurs nicht als normative Grundlage verwendet. Bevorzugt werden ukrainische technische Vorschriften und aktuelle internationale oder europaeische Dokumente: ukrainische Vorschriften fuer Druckgeraete, Pressure Equipment Directive 2014/68/EU, EN 13445, ASME BPVC sowie relevante ISO/EN/API Dokumente.
 
-## Video aus dem virtuellen Lehrbuch
+## Video aus dem virtuellen Kurs
 
 <video controls preload="metadata" style="width: 100%; max-width: 760px; border-radius: 8px; border: 1px solid var(--border-color); background: #000;">
   <source src="/videos/courses/chemical-process-engineering/chapter-01/plate-heat-exchanger.mp4" type="video/mp4" />

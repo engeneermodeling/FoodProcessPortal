@@ -49,39 +49,39 @@ const sourceNotes: Record<Locale, Record<TopicTrackSlug, string>> = {
   uk: {
     "food-tech": "Поточний курс порталу, вже наповнений лекціями та темами.",
     "food-engineering":
-      "Для цього треку варто взяти розрахунковий підручник і посилити задачами.",
+      "Трек готується: більше розрахунків, конструкцій і прикладних задач.",
     chemical:
-      "Пілотний розділ створено на базі конспекту лекцій і віртуального підручника, з рисунками, відео та тестами.",
+      "Пілотний розділ уже відкритий: класифікація процесів, апаратурні приклади, рисунки, відео та тест.",
     biotech:
-      "Курс створено на базі підручника Зав'ялова, з тестами, рисунками та багатомовними версіями.",
+      "Курс уже відкритий: процеси, апарати, рисунки, формули, тести та багатомовні версії.",
   },
   en: {
     "food-tech": "The current portal course with existing topics and lectures.",
     "food-engineering":
-      "This track should be based on the calculation-heavy textbook and stronger problem sets.",
+      "This track is in preparation, with more calculations, designs, and applied problems.",
     chemical:
-      "The pilot chapter is based on the lecture notes and virtual textbook, with figures, video, and tests.",
+      "The pilot chapter is open: process classification, equipment examples, figures, video, and a test.",
     biotech:
-      "The course is built from Zavialov's textbook, with tests, figures, and multilingual versions.",
+      "The course is open, with processes, equipment, figures, formulas, tests, and multilingual versions.",
   },
   de: {
     "food-tech":
       "Der aktuelle Portalkurs mit vorhandenen Themen und Vorlesungen.",
     "food-engineering":
-      "Dieser Track sollte auf dem rechenorientierten Lehrbuch und erweiterten Aufgaben aufbauen.",
+      "Dieser Track wird vorbereitet: mehr Berechnungen, Konstruktionen und angewandte Aufgaben.",
     chemical:
-      "Das Pilotkapitel basiert auf Vorlesungsnotizen und virtuellem Lehrbuch, mit Abbildungen, Video und Tests.",
+      "Das Pilotkapitel ist geöffnet: Prozessklassifikation, Apparatebeispiele, Abbildungen, Video und Test.",
     biotech:
-      "Der Kurs basiert auf dem Lehrbuch von Sawjalow, mit Tests, Abbildungen und mehrsprachigen Versionen.",
+      "Der Kurs ist geöffnet: Prozesse, Apparate, Abbildungen, Formeln, Tests und mehrsprachige Versionen.",
   },
   ru: {
     "food-tech": "Текущий курс портала с уже подготовленными темами и лекциями.",
     "food-engineering":
-      "Для этого трека стоит взять расчётный учебник и усилить задачи.",
+      "Трек готовится: больше расчётов, конструкций и прикладных задач.",
     chemical:
-      "Пилотный раздел создан на основе конспекта лекций и виртуального учебника, с рисунками, видео и тестами.",
+      "Пилотный раздел открыт: классификация процессов, аппаратурные примеры, рисунки, видео и тест.",
     biotech:
-      "Курс создан на базе учебника Завьялова, с тестами, рисунками и многоязычными версиями.",
+      "Курс открыт: процессы, аппараты, рисунки, формулы, тесты и многоязычные версии.",
   },
 };
 

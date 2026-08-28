@@ -7,11 +7,11 @@ description: "Фізичні основи, кінетика, зародкоут�
 updated: "2026-08-23"
 ---
 
-## Джерело і межі розділу
+## Фокус розділу
 
-Основа матеріалу: підручник «Інжиніринг біопроцесів. Модуль 1. Процеси та апарати біотехнологічних виробництв» за редакцією В.Л. Зав’ялова, НУХТ, 2024.
+У цьому розділі послідовно розглянуто ключові поняття, рівняння та апаратурні рішення за темою.
 
-## Структура матеріалу за підручником
+## Структура матеріалу розділу
 
 - 15.1. Загальні відомості
 - 15.2. Фізичні основи кристалізації із розчинів
@@ -22,7 +22,7 @@ updated: "2026-08-23"
 - 15.11. Апарати для кристалізації
 - 15.12. Основні принципи розрахунку
 
-## Матеріал підручника
+## Матеріал розділу
 
 Кристалізація - масообмінний процес утворення твердої фази у вигляді кристалів із розчинів, розплавів, газів або пари. У харчових і біотехнологічних виробництвах вона використовується для одержання та очищення цукрози, глюкози, лактози, фруктози, лимонної кислоти, солей та інших кристалічних продуктів.
 
@@ -327,7 +327,7 @@ updated: "2026-08-23"
 </fieldset>
 
 <fieldset class="course-test-item" data-course-test-item>
-<legend>2. Який підрозділ безпосередньо входить до структури розділу за підручником?</legend>
+<legend>2. Який підрозділ безпосередньо входить до структури розділу?</legend>
 <div class="course-test-options" data-course-test-options>
 <label class="course-test-option">
   <input type="radio" name="course-test-15-1" value="0" data-correct="1" />
@@ -435,7 +435,7 @@ updated: "2026-08-23"
 </fieldset>
 
 <fieldset class="course-test-item" data-course-test-item>
-<legend>6. З якої теми починається розділ за структурою підручника?</legend>
+<legend>6. З якої теми починається розділ за структурою розділу?</legend>
 <div class="course-test-options" data-course-test-options>
 <label class="course-test-option">
   <input type="radio" name="course-test-15-5" value="0" data-correct="1" />
@@ -462,7 +462,7 @@ updated: "2026-08-23"
 </fieldset>
 
 <fieldset class="course-test-item" data-course-test-item>
-<legend>7. Який підрозділ безпосередньо входить до структури розділу за підручником?</legend>
+<legend>7. Який підрозділ безпосередньо входить до структури розділу?</legend>
 <div class="course-test-options" data-course-test-options>
 <label class="course-test-option">
   <input type="radio" name="course-test-15-6" value="0" data-correct="0" />
@@ -489,7 +489,7 @@ updated: "2026-08-23"
 </fieldset>
 
 <fieldset class="course-test-item" data-course-test-item>
-<legend>8. Яка тема завершує структуру розділу за підручником?</legend>
+<legend>8. Яка тема завершує структуру розділу розділу?</legend>
 <div class="course-test-options" data-course-test-options>
 <label class="course-test-option">
   <input type="radio" name="course-test-15-7" value="0" data-correct="0" />

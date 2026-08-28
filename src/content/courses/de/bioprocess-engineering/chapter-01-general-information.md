@@ -7,11 +7,11 @@ description: "Grundgesetze technologischer Prozesse, Aehnlichkeitsmethode und ph
 updated: "2026-08-23"
 ---
 
-## Quelle und Umfang
+## Kapitelüberblick
 
-Materialgrundlage: das Lehrbuch "Bioverfahrenstechnik. Modul 1. Prozesse und Apparate biotechnologischer Produktionen", herausgegeben von V.L. Zavialov, NUFT, 2024.
+Dieses Kapitel stellt die zentralen Begriffe, Gleichungen und Apparatebeispiele zum Thema vor.
 
-## Struktur nach dem Lehrbuch
+## Struktur des Kapitels
 
 - 1.1. Grundgesetze technologischer Prozesse
 - 1.2. Aehnlichkeitsmethode und ihre Rolle beim Studium von Prozessen und Apparaten biotechnologischer Produktionen
@@ -20,7 +20,7 @@ Materialgrundlage: das Lehrbuch "Bioverfahrenstechnik. Modul 1. Prozesse und App
 
 ## Vorlesungsskript
 
-Dies ist eine redigierte Vorlesungsfassung der Lehrbuchseiten 21-43. Text, Gleichungen, Tabelle und Abbildungen sind als bearbeitbare Blöcke getrennt, damit das Kapitel nicht als Seitenscan, sondern als mehrsprachiges Lernmaterial funktioniert.
+Dies ist eine redigierte Vorlesungsfassung der Kursseiten 21-43. Text, Gleichungen, Tabelle und Abbildungen sind als bearbeitbare Blöcke getrennt, damit das Kapitel nicht als Seitenscan, sondern als mehrsprachiges Lernmaterial funktioniert.
 
 ### Teil 1. Allgemeine Prozesse
 
@@ -423,7 +423,7 @@ Die physikalisch-chemische Siedepunktserhöhung wird berechnet als:
 </fieldset>
 
 <fieldset class="course-test-item" data-course-test-item>
-<legend>2. Welcher Unterabschnitt gehoert direkt zur Lehrbuchstruktur dieses Kapitels?</legend>
+<legend>2. Welcher Unterabschnitt gehoert direkt zur Kapitelstruktur dieses Kapitels?</legend>
 <div class="course-test-options" data-course-test-options>
 <label class="course-test-option">
   <input type="radio" name="course-test-1-1" value="0" data-correct="0" />
@@ -531,7 +531,7 @@ Die physikalisch-chemische Siedepunktserhöhung wird berechnet als:
 </fieldset>
 
 <fieldset class="course-test-item" data-course-test-item>
-<legend>6. Mit welchem Thema beginnt das Kapitel in der Lehrbuchstruktur?</legend>
+<legend>6. Mit welchem Thema beginnt das Kapitel in der Kapitelstruktur?</legend>
 <div class="course-test-options" data-course-test-options>
 <label class="course-test-option">
   <input type="radio" name="course-test-1-5" value="0" data-correct="0" />
@@ -558,7 +558,7 @@ Die physikalisch-chemische Siedepunktserhöhung wird berechnet als:
 </fieldset>
 
 <fieldset class="course-test-item" data-course-test-item>
-<legend>7. Welcher Unterabschnitt gehoert direkt zur Lehrbuchstruktur dieses Kapitels?</legend>
+<legend>7. Welcher Unterabschnitt gehoert direkt zur Kapitelstruktur dieses Kapitels?</legend>
 <div class="course-test-options" data-course-test-options>
 <label class="course-test-option">
   <input type="radio" name="course-test-1-6" value="0" data-correct="0" />

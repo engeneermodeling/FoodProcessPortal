@@ -7,11 +7,11 @@ description: "Absorption, adsorption and designs of corresponding equipment."
 updated: "2026-08-23"
 ---
 
-## Source and Scope
+## Chapter Focus
 
-Material basis: the textbook "Bioprocess Engineering. Module 1. Processes and Equipment of Biotechnological Production", edited by V.L. Zavialov, NUFT, 2024.
+This chapter presents the key concepts, equations, and equipment examples for the topic.
 
-## Textbook-Based Structure
+## course-Based Structure
 
 - 13.1. Absorption
 - 13.1.1. Absorber designs
@@ -234,7 +234,7 @@ Adsorbers may be batch or continuous, with fixed, moving or fluidized beds. Sele
 </fieldset>
 
 <fieldset class="course-test-item" data-course-test-item>
-<legend>2. Which subsection directly belongs to the textbook structure of this chapter?</legend>
+<legend>2. Which subsection directly belongs to the course structure of this chapter?</legend>
 <div class="course-test-options" data-course-test-options>
 <label class="course-test-option">
   <input type="radio" name="course-test-13-1" value="0" data-correct="0" />
@@ -342,7 +342,7 @@ Adsorbers may be batch or continuous, with fixed, moving or fluidized beds. Sele
 </fieldset>
 
 <fieldset class="course-test-item" data-course-test-item>
-<legend>6. Which topic opens the chapter in the textbook structure?</legend>
+<legend>6. Which topic opens the chapter in the chapter structure?</legend>
 <div class="course-test-options" data-course-test-options>
 <label class="course-test-option">
   <input type="radio" name="course-test-13-5" value="0" data-correct="0" />
@@ -369,7 +369,7 @@ Adsorbers may be batch or continuous, with fixed, moving or fluidized beds. Sele
 </fieldset>
 
 <fieldset class="course-test-item" data-course-test-item>
-<legend>7. Which subsection directly belongs to the textbook structure of this chapter?</legend>
+<legend>7. Which subsection directly belongs to the course structure of this chapter?</legend>
 <div class="course-test-options" data-course-test-options>
 <label class="course-test-option">
   <input type="radio" name="course-test-13-6" value="0" data-correct="0" />
@@ -396,7 +396,7 @@ Adsorbers may be batch or continuous, with fixed, moving or fluidized beds. Sele
 </fieldset>
 
 <fieldset class="course-test-item" data-course-test-item>
-<legend>8. Which topic closes the chapter in the textbook structure?</legend>
+<legend>8. Which topic closes the chapter in the chapter structure?</legend>
 <div class="course-test-options" data-course-test-options>
 <label class="course-test-option">
   <input type="radio" name="course-test-13-7" value="0" data-correct="1" />

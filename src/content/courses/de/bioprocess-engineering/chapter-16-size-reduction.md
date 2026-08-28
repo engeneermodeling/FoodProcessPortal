@@ -7,11 +7,11 @@ description: "Zerkleinerungsverfahren, Energieaufwand, Klassifikation und Aufbau
 updated: "2026-08-23"
 ---
 
-## Quelle und Umfang
+## Kapitelüberblick
 
-Materialgrundlage: das Lehrbuch "Bioverfahrenstechnik. Modul 1. Prozesse und Apparate biotechnologischer Produktionen", herausgegeben von V.L. Zavialov, NUFT, 2024.
+Dieses Kapitel stellt die zentralen Begriffe, Gleichungen und Apparatebeispiele zum Thema vor.
 
-## Struktur nach dem Lehrbuch
+## Struktur des Kapitels
 
 - 16.1. Allgemeines
 - 16.2. Zerkleinerungsverfahren
@@ -197,7 +197,7 @@ Trommelmuehlen werden zur Feinmahlung eingesetzt: Mahlkoerper fallen oder rollen
 </fieldset>
 
 <fieldset class="course-test-item" data-course-test-item>
-<legend>2. Welcher Unterabschnitt gehoert direkt zur Lehrbuchstruktur dieses Kapitels?</legend>
+<legend>2. Welcher Unterabschnitt gehoert direkt zur Kapitelstruktur dieses Kapitels?</legend>
 <div class="course-test-options" data-course-test-options>
 <label class="course-test-option">
   <input type="radio" name="course-test-16-1" value="0" data-correct="0" />
@@ -305,7 +305,7 @@ Trommelmuehlen werden zur Feinmahlung eingesetzt: Mahlkoerper fallen oder rollen
 </fieldset>
 
 <fieldset class="course-test-item" data-course-test-item>
-<legend>6. Mit welchem Thema beginnt das Kapitel in der Lehrbuchstruktur?</legend>
+<legend>6. Mit welchem Thema beginnt das Kapitel in der Kapitelstruktur?</legend>
 <div class="course-test-options" data-course-test-options>
 <label class="course-test-option">
   <input type="radio" name="course-test-16-5" value="0" data-correct="0" />
@@ -332,7 +332,7 @@ Trommelmuehlen werden zur Feinmahlung eingesetzt: Mahlkoerper fallen oder rollen
 </fieldset>
 
 <fieldset class="course-test-item" data-course-test-item>
-<legend>7. Welcher Unterabschnitt gehoert direkt zur Lehrbuchstruktur dieses Kapitels?</legend>
+<legend>7. Welcher Unterabschnitt gehoert direkt zur Kapitelstruktur dieses Kapitels?</legend>
 <div class="course-test-options" data-course-test-options>
 <label class="course-test-option">
   <input type="radio" name="course-test-16-6" value="0" data-correct="0" />

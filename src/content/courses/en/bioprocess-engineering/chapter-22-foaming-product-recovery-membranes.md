@@ -7,11 +7,11 @@ description: "Foaming of culture liquids, antifoaming, concentration and recover
 updated: "2026-08-23"
 ---
 
-## Source and Scope
+## Chapter Focus
 
-Material basis: the textbook "Bioprocess Engineering. Module 1. Processes and Equipment of Biotechnological Production", edited by V.L. Zavialov, NUFT, 2024.
+This chapter presents the key concepts, equations, and equipment examples for the topic.
 
-## Textbook-Based Structure
+## course-Based Structure
 
 - 22.1. Methods for studying foaming capacity of culture liquids
 - 22.2. Antifoaming methods
@@ -262,7 +262,7 @@ This lecture note treats the chapter as engineering logic rather than a list of 
 </fieldset>
 
 <fieldset class="course-test-item" data-course-test-item>
-<legend>2. Which subsection directly belongs to the textbook structure of this chapter?</legend>
+<legend>2. Which subsection directly belongs to the course structure of this chapter?</legend>
 <div class="course-test-options" data-course-test-options>
 <label class="course-test-option">
   <input type="radio" name="course-test-22-1" value="0" data-correct="0" />
@@ -370,7 +370,7 @@ This lecture note treats the chapter as engineering logic rather than a list of 
 </fieldset>
 
 <fieldset class="course-test-item" data-course-test-item>
-<legend>6. Which topic opens the chapter in the textbook structure?</legend>
+<legend>6. Which topic opens the chapter in the chapter structure?</legend>
 <div class="course-test-options" data-course-test-options>
 <label class="course-test-option">
   <input type="radio" name="course-test-22-5" value="0" data-correct="0" />
@@ -397,7 +397,7 @@ This lecture note treats the chapter as engineering logic rather than a list of 
 </fieldset>
 
 <fieldset class="course-test-item" data-course-test-item>
-<legend>7. Which subsection directly belongs to the textbook structure of this chapter?</legend>
+<legend>7. Which subsection directly belongs to the course structure of this chapter?</legend>
 <div class="course-test-options" data-course-test-options>
 <label class="course-test-option">
   <input type="radio" name="course-test-22-6" value="0" data-correct="1" />
@@ -424,7 +424,7 @@ This lecture note treats the chapter as engineering logic rather than a list of 
 </fieldset>
 
 <fieldset class="course-test-item" data-course-test-item>
-<legend>8. Which topic closes the chapter in the textbook structure?</legend>
+<legend>8. Which topic closes the chapter in the chapter structure?</legend>
 <div class="course-test-options" data-course-test-options>
 <label class="course-test-option">
   <input type="radio" name="course-test-22-7" value="0" data-correct="0" />

@@ -7,11 +7,11 @@ description: "Класифікація неоднорідних систем, о
 updated: "2026-08-23"
 ---
 
-## Джерело і межі розділу
+## Фокус розділу
 
-Основа матеріалу: підручник «Інжиніринг біопроцесів. Модуль 1. Процеси та апарати біотехнологічних виробництв» за редакцією В.Л. Зав’ялова, НУХТ, 2024.
+У цьому розділі послідовно розглянуто ключові поняття, рівняння та апаратурні рішення за темою.
 
-## Структура матеріалу за підручником
+## Структура матеріалу розділу
 
 - 3.1. Класифікація і характеристика неоднорідних систем
 - 3.2. Методи розділення неоднорідних систем
@@ -19,7 +19,7 @@ updated: "2026-08-23"
 - 3.4. Фільтрування
 - 3.5. Відцентрові методи розділення неоднорідних систем
 
-## Матеріал підручника
+## Матеріал розділу
 
 ### 3.1. Класифікація і характеристика неоднорідних систем
 
@@ -465,7 +465,7 @@ updated: "2026-08-23"
 </fieldset>
 
 <fieldset class="course-test-item" data-course-test-item>
-<legend>2. Який підрозділ безпосередньо входить до структури розділу за підручником?</legend>
+<legend>2. Який підрозділ безпосередньо входить до структури розділу?</legend>
 <div class="course-test-options" data-course-test-options>
 <label class="course-test-option">
   <input type="radio" name="course-test-3-1" value="0" data-correct="1" />
@@ -573,7 +573,7 @@ updated: "2026-08-23"
 </fieldset>
 
 <fieldset class="course-test-item" data-course-test-item>
-<legend>6. З якої теми починається розділ за структурою підручника?</legend>
+<legend>6. З якої теми починається розділ за структурою розділу?</legend>
 <div class="course-test-options" data-course-test-options>
 <label class="course-test-option">
   <input type="radio" name="course-test-3-5" value="0" data-correct="1" />
@@ -600,7 +600,7 @@ updated: "2026-08-23"
 </fieldset>
 
 <fieldset class="course-test-item" data-course-test-item>
-<legend>7. Який підрозділ безпосередньо входить до структури розділу за підручником?</legend>
+<legend>7. Який підрозділ безпосередньо входить до структури розділу?</legend>
 <div class="course-test-options" data-course-test-options>
 <label class="course-test-option">
   <input type="radio" name="course-test-3-6" value="0" data-correct="0" />
@@ -627,7 +627,7 @@ updated: "2026-08-23"
 </fieldset>
 
 <fieldset class="course-test-item" data-course-test-item>
-<legend>8. Яка тема завершує структуру розділу за підручником?</legend>
+<legend>8. Яка тема завершує структуру розділу розділу?</legend>
 <div class="course-test-options" data-course-test-options>
 <label class="course-test-option">
   <input type="radio" name="course-test-3-7" value="0" data-correct="0" />

@@ -7,11 +7,11 @@ description: "Umkehrosmose, Nano-, Ultra- und Mikrofiltration, Diafiltration und
 updated: "2026-08-23"
 ---
 
-## Quelle und Umfang
+## Kapitelüberblick
 
-Materialgrundlage: das Lehrbuch "Bioverfahrenstechnik. Modul 1. Prozesse und Apparate biotechnologischer Produktionen", herausgegeben von V.L. Zavialov, NUFT, 2024.
+Dieses Kapitel stellt die zentralen Begriffe, Gleichungen und Apparatebeispiele zum Thema vor.
 
-## Struktur nach dem Lehrbuch
+## Struktur des Kapitels
 
 - 4.1. Allgemeine Grundlagen
 - 4.2. Theoretische Grundlagen druckgetriebener Membranprozesse
@@ -155,7 +155,7 @@ Kontinuierliche Schemata nutzen eine oder mehrere Stufen mit Zirkulationskreisen
 </fieldset>
 
 <fieldset class="course-test-item" data-course-test-item>
-<legend>2. Welcher Unterabschnitt gehoert direkt zur Lehrbuchstruktur dieses Kapitels?</legend>
+<legend>2. Welcher Unterabschnitt gehoert direkt zur Kapitelstruktur dieses Kapitels?</legend>
 <div class="course-test-options" data-course-test-options>
 <label class="course-test-option">
   <input type="radio" name="course-test-4-1" value="0" data-correct="0" />
@@ -263,7 +263,7 @@ Kontinuierliche Schemata nutzen eine oder mehrere Stufen mit Zirkulationskreisen
 </fieldset>
 
 <fieldset class="course-test-item" data-course-test-item>
-<legend>6. Mit welchem Thema beginnt das Kapitel in der Lehrbuchstruktur?</legend>
+<legend>6. Mit welchem Thema beginnt das Kapitel in der Kapitelstruktur?</legend>
 <div class="course-test-options" data-course-test-options>
 <label class="course-test-option">
   <input type="radio" name="course-test-4-5" value="0" data-correct="0" />
@@ -290,7 +290,7 @@ Kontinuierliche Schemata nutzen eine oder mehrere Stufen mit Zirkulationskreisen
 </fieldset>
 
 <fieldset class="course-test-item" data-course-test-item>
-<legend>7. Welcher Unterabschnitt gehoert direkt zur Lehrbuchstruktur dieses Kapitels?</legend>
+<legend>7. Welcher Unterabschnitt gehoert direkt zur Kapitelstruktur dieses Kapitels?</legend>
 <div class="course-test-options" data-course-test-options>
 <label class="course-test-option">
   <input type="radio" name="course-test-4-6" value="0" data-correct="0" />

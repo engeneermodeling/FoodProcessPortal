@@ -7,11 +7,11 @@ description: "Basic laws of technological processes, similarity method and physi
 updated: "2026-08-23"
 ---
 
-## Source and Scope
+## Chapter Focus
 
-Material basis: the textbook "Bioprocess Engineering. Module 1. Processes and Equipment of Biotechnological Production", edited by V.L. Zavialov, NUFT, 2024.
+This chapter presents the key concepts, equations, and equipment examples for the topic.
 
-## Textbook-Based Structure
+## course-Based Structure
 
 - 1.1. Basic laws of technological processes
 - 1.2. Similarity method and its role in studying processes and equipment of biotechnological production
@@ -20,7 +20,7 @@ Material basis: the textbook "Bioprocess Engineering. Module 1. Processes and Eq
 
 ## Lecture Notes
 
-This is a polished lecture version of textbook pages 21-43. The text, equations, table and figures are separated into editable blocks so the chapter can be read as a lecture and translated further without using page scans.
+This is a polished lecture version of course pages 21-43. The text, equations, table and figures are separated into editable blocks so the chapter can be read as a lecture and translated further without using page scans.
 
 ### Part 1. General Processes
 
@@ -432,7 +432,7 @@ Physicochemical boiling-point elevation is the increase in boiling temperature o
   <span class="equation-number">(1.40)</span>
 </div>
 
-### Textbook Self-Check Questions
+### course Self-Check Questions
 
 1. State the laws of conservation of mass and energy.
 2. Explain the transfer laws.
@@ -496,7 +496,7 @@ Physicochemical boiling-point elevation is the increase in boiling temperature o
 </fieldset>
 
 <fieldset class="course-test-item" data-course-test-item>
-<legend>2. Which subsection directly belongs to the textbook structure of this chapter?</legend>
+<legend>2. Which subsection directly belongs to the course structure of this chapter?</legend>
 <div class="course-test-options" data-course-test-options>
 <label class="course-test-option">
   <input type="radio" name="course-test-1-1" value="0" data-correct="0" />
@@ -604,7 +604,7 @@ Physicochemical boiling-point elevation is the increase in boiling temperature o
 </fieldset>
 
 <fieldset class="course-test-item" data-course-test-item>
-<legend>6. Which topic opens the chapter in the textbook structure?</legend>
+<legend>6. Which topic opens the chapter in the chapter structure?</legend>
 <div class="course-test-options" data-course-test-options>
 <label class="course-test-option">
   <input type="radio" name="course-test-1-5" value="0" data-correct="0" />
@@ -631,7 +631,7 @@ Physicochemical boiling-point elevation is the increase in boiling temperature o
 </fieldset>
 
 <fieldset class="course-test-item" data-course-test-item>
-<legend>7. Which subsection directly belongs to the textbook structure of this chapter?</legend>
+<legend>7. Which subsection directly belongs to the course structure of this chapter?</legend>
 <div class="course-test-options" data-course-test-options>
 <label class="course-test-option">
   <input type="radio" name="course-test-1-6" value="0" data-correct="0" />
@@ -658,7 +658,7 @@ Physicochemical boiling-point elevation is the increase in boiling temperature o
 </fieldset>
 
 <fieldset class="course-test-item" data-course-test-item>
-<legend>8. Which topic closes the chapter in the textbook structure?</legend>
+<legend>8. Which topic closes the chapter in the chapter structure?</legend>
 <div class="course-test-options" data-course-test-options>
 <label class="course-test-option">
   <input type="radio" name="course-test-1-7" value="0" data-correct="1" />

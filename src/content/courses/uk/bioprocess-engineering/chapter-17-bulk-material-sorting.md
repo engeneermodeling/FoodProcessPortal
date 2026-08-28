@@ -7,17 +7,17 @@ description: "Просіювання, розподіл за густиною і 
 updated: "2026-08-23"
 ---
 
-## Джерело і межі розділу
+## Фокус розділу
 
-Основа матеріалу: підручник «Інжиніринг біопроцесів. Модуль 1. Процеси та апарати біотехнологічних виробництв» за редакцією В.Л. Зав’ялова, НУХТ, 2024.
+У цьому розділі послідовно розглянуто ключові поняття, рівняння та апаратурні рішення за темою.
 
-## Структура матеріалу за підручником
+## Структура матеріалу розділу
 
 - 17.1. Просіювання
 - 17.3. Розподіл за густиною і швидкістю осідання частинок
 - 17.4. Магнітне сепарування
 
-## Матеріал підручника
+## Матеріал розділу
 
 ### Розділ 17. Сортування сипких матеріалів
 
@@ -140,7 +140,7 @@ updated: "2026-08-23"
 </fieldset>
 
 <fieldset class="course-test-item" data-course-test-item>
-<legend>2. Який підрозділ безпосередньо входить до структури розділу за підручником?</legend>
+<legend>2. Який підрозділ безпосередньо входить до структури розділу?</legend>
 <div class="course-test-options" data-course-test-options>
 <label class="course-test-option">
   <input type="radio" name="course-test-17-1" value="0" data-correct="0" />
@@ -248,7 +248,7 @@ updated: "2026-08-23"
 </fieldset>
 
 <fieldset class="course-test-item" data-course-test-item>
-<legend>6. З якої теми починається розділ за структурою підручника?</legend>
+<legend>6. З якої теми починається розділ за структурою розділу?</legend>
 <div class="course-test-options" data-course-test-options>
 <label class="course-test-option">
   <input type="radio" name="course-test-17-5" value="0" data-correct="0" />
@@ -275,7 +275,7 @@ updated: "2026-08-23"
 </fieldset>
 
 <fieldset class="course-test-item" data-course-test-item>
-<legend>7. Який підрозділ безпосередньо входить до структури розділу за підручником?</legend>
+<legend>7. Який підрозділ безпосередньо входить до структури розділу?</legend>
 <div class="course-test-options" data-course-test-options>
 <label class="course-test-option">
   <input type="radio" name="course-test-17-6" value="0" data-correct="0" />
@@ -302,7 +302,7 @@ updated: "2026-08-23"
 </fieldset>
 
 <fieldset class="course-test-item" data-course-test-item>
-<legend>8. Яка тема завершує структуру розділу за підручником?</legend>
+<legend>8. Яка тема завершує структуру розділу розділу?</legend>
 <div class="course-test-options" data-course-test-options>
 <label class="course-test-option">
   <input type="radio" name="course-test-17-7" value="0" data-correct="1" />
