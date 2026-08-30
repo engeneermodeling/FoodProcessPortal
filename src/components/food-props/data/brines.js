@@ -1,4 +1,6 @@
 /** Food group: Розсоли охолоджувальні */
+import { bilinearEquation, linearCompositionEquation } from "./approximationNotes.js";
+
 export const brines = {
   id: "brines",
   icon: "🧊",
@@ -18,6 +20,7 @@ export const brines = {
       },
       type: "vs_both",
       source: "Чубик і Маслов, 1970, Табл. 245",
+      equations: [bilinearEquation],
       cols: ["NaCl, %", "15°C", "0°C", "−5°C", "−10°C", "−15°C"],
       digits: [0, 0, 0, 0, 0, 0],
       data: [
@@ -40,6 +43,7 @@ export const brines = {
       },
       type: "vs_both",
       source: "Чубик і Маслов, 1970, Табл. 246",
+      equations: [bilinearEquation],
       cols: ["CaCl₂, %", "15°C", "0°C", "−10°C", "−20°C", "−30°C"],
       digits: [0, 0, 0, 0, 0, 0],
       data: [
@@ -62,6 +66,7 @@ export const brines = {
       },
       type: "vs_both",
       source: "Чубик і Маслов, 1970, Табл. 248",
+      equations: [bilinearEquation],
       cols: ["NaCl, %", "0°C", "−5°C", "−10°C"],
       digits: [1, 3, 3, 3],
       data: [
@@ -87,6 +92,7 @@ export const brines = {
       },
       type: "static",
       source: "Чубик і Маслов, 1970, Табл. 250",
+      equations: [linearCompositionEquation],
       cols: ["NaCl, %", "cₚ, Дж/(кг·К)", "NaCl, %", "cₚ, Дж/(кг·К)", "NaCl, %", "cₚ, Дж/(кг·К)"],
       digits: [1, 0, 1, 0, 1, 0],
       data: [

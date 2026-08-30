@@ -3,6 +3,8 @@ dist/
 # generated types
 .astro/
 .codex/
+.codex-tools/
+.codex_djvulibre_setup.exe
 .codex_tmp/
 tmp/
 

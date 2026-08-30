@@ -1,4 +1,6 @@
 /** Food group: Молоко і молочні продукти */
+import { linearTempEquation, logTempEquation } from "./approximationNotes.js";
+
 export const milk = {
   id: "milk",
   icon: "🥛",
@@ -23,6 +25,7 @@ export const milk = {
         en: "Fat ~3.5%",
         de: "Fettgehalt ~3,5%",
       },
+      equations: [linearTempEquation, logTempEquation],
       cols: ["T, °C", "ρ, кг/м³", "λ, Вт/(м·К)", "cₚ, Дж/(кг·К)", "μ, мПа·с", "Pr"],
       digits: [0, 1, 3, 0, 2, 1],
       data: [

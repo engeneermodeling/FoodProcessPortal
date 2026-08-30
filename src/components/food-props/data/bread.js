@@ -1,4 +1,6 @@
 /** Food group: Хліб, тісто, крохмаль, патока */
+import { linearCompositionEquation, linearTempEquation } from "./approximationNotes.js";
+
 export const bread = {
   id: "bread",
   icon: "🍞",
@@ -44,6 +46,21 @@ export const bread = {
         en: "Formulas: λ = 1.163(0.098+0.0004t) W/(m·K); c = 4186.8(0.39+0.0024t) J/(kg·K)",
         de: "Formeln: λ = 1,163(0,098+0,0004t) W/(m·K); c = 4186,8(0,39+0,0024t) J/(kg·K)",
       },
+      equations: [
+        {
+          label: { uk: "Теплопровідність борошна", en: "Flour thermal conductivity", de: "Wärmeleitfähigkeit von Mehl" },
+          formula: "λ=1,163(0,098+0,0004t)",
+          description: { uk: "t підставляйте в °C; результат λ у Вт/(м·К).", en: "Use t in °C; λ is returned in W/(m·K).", de: "t in °C einsetzen; λ ergibt sich in W/(m·K)." },
+          range: "−5–35°C",
+        },
+        {
+          label: { uk: "Теплоємність борошна", en: "Flour heat capacity", de: "Wärmekapazität von Mehl" },
+          formula: "cₚ=4186,8(0,39+0,0024t)",
+          description: { uk: "t підставляйте в °C; результат cₚ у Дж/(кг·К).", en: "Use t in °C; cₚ is returned in J/(kg·K).", de: "t in °C einsetzen; cₚ ergibt sich in J/(kg·K)." },
+          range: "−5–35°C",
+        },
+        linearTempEquation,
+      ],
       cols: ["T, °C", "ρ, кг/м³", "λ, Вт/(м·К)", "cₚ, Дж/(кг·К)", "a×10³, м²/год"],
       digits: [0, 0, 3, 0, 4],
       data: [
@@ -62,6 +79,7 @@ export const bread = {
       },
       type: "static",
       source: "Чубик і Маслов, 1970, Табл. 30",
+      equations: [linearCompositionEquation],
       cols: ["Вологість, %", "cₚ, Дж/(кг·К)", "Вологість, %", "cₚ, Дж/(кг·К)"],
       digits: [1, 0, 1, 0],
       data: [
@@ -103,6 +121,27 @@ export const bread = {
         en: "Formulas (15–75°C): ρ=(1445−0.555t) kg/m³; λ=1.163(0.31+0.0001t) W/(m·K); c=4186.8(0.61−0.0005t) J/(kg·K)",
         de: "Formeln: ρ=(1445−0,555t) kg/m³",
       },
+      equations: [
+        {
+          label: { uk: "Густина патоки", en: "Molasses density", de: "Melassedichte" },
+          formula: "ρ=1445-0,555t",
+          description: { uk: "t у °C; ρ у кг/м³.", en: "t in °C; ρ in kg/m³.", de: "t in °C; ρ in kg/m³." },
+          range: "15–75°C",
+        },
+        {
+          label: { uk: "Теплопровідність патоки", en: "Molasses thermal conductivity", de: "Wärmeleitfähigkeit von Melasse" },
+          formula: "λ=1,163(0,31+0,0001t)",
+          description: { uk: "t у °C; λ у Вт/(м·К).", en: "t in °C; λ in W/(m·K).", de: "t in °C; λ in W/(m·K)." },
+          range: "15–75°C",
+        },
+        {
+          label: { uk: "Теплоємність патоки", en: "Molasses heat capacity", de: "Wärmekapazität von Melasse" },
+          formula: "cₚ=4186,8(0,61-0,0005t)",
+          description: { uk: "t у °C; cₚ у Дж/(кг·К).", en: "t in °C; cₚ in J/(kg·K).", de: "t in °C; cₚ in J/(kg·K)." },
+          range: "15–75°C",
+        },
+        linearTempEquation,
+      ],
       cols: ["T, °C", "ρ, кг/м³", "λ, Вт/(м·К)", "cₚ, Дж/(кг·К)", "a×10⁸, м²/с"],
       digits: [0, 0, 3, 0, 0],
       data: [
@@ -127,6 +166,121 @@ export const bread = {
         [80, 38, 22.5, 1.5, 0.4, 0.12],
         [81, 39, 37.6, 1.75, 0.5, null],
         [82, 43, 152.6, 5.7, 1, 0.2],
+      ],
+    },
+    {
+      id: "biscuit_semifinished_props",
+      name: {
+        uk: "Бісквітні напівфабрикати — теплофізичні властивості",
+        en: "Sponge-cake semifinished products — thermophysical properties",
+        de: "Biskuit-Halbfabrikate — thermophysikalische Eigenschaften",
+      },
+      type: "static",
+      source: "Гінзбург, Громов, Красовська, 1980, Табл. II-271",
+      note: {
+        uk: "Виготовлено з тіста W=36%, ρ=480 кг/м³; cv — об'ємна теплоємність.",
+        en: "Made from dough W=36%, ρ=480 kg/m³; cv is volumetric heat capacity.",
+        de: "Aus Teig W=36%, ρ=480 kg/m³; cv ist volumetrische Wärmekapazität.",
+      },
+      equations: [linearTempEquation],
+      cols: ["Зразок", "T, K", "cv, кДж/(м³·К)", "λ, Вт/(м·К)", "a×10⁸, м²/с"],
+      digits: [null, 0, 0, 3, 1],
+      data: [
+        ["Верхня скоринка", 293, 1500, 0.063, 4.2],
+        ["Верхня скоринка", 313, 1400, 0.063, 4.5],
+        ["Верхня скоринка", 333, 1400, 0.063, 4.5],
+        ["Верхня скоринка", 353, 1600, 0.063, 3.9],
+        ["Нижня скоринка", 293, 1600, 0.100, 6.2],
+        ["Нижня скоринка", 313, 1500, 0.110, 7.3],
+        ["Нижня скоринка", 333, 1500, 0.120, 8.0],
+        ["Нижня скоринка", 353, 1700, 0.130, 7.6],
+        ["М'якуш", 293, 1700, 0.200, 11.8],
+        ["М'якуш", 313, 1100, 0.160, 14.5],
+        ["М'якуш", 333, 700, 0.130, 14.0],
+        ["М'якуш", 353, 800, 0.110, 10.0],
+      ],
+    },
+    {
+      id: "puff_pastry_lambda",
+      name: {
+        uk: "Прісне листкове тісто — теплопровідність",
+        en: "Unleavened puff pastry — thermal conductivity",
+        de: "Ungesäuerter Blätterteig — Wärmeleitfähigkeit",
+      },
+      type: "static",
+      source: "Гінзбург, Громов, Красовська, 1980, Табл. II-272",
+      equations: [linearCompositionEquation],
+      cols: ["W, %", "λ традиц., Вт/(м·К)", "λ комбін., Вт/(м·К)", "λ СВЧ-нагрів, Вт/(м·К)"],
+      digits: [1, 3, 3, 3],
+      data: [
+        [10.0, 0.093, 0.103, 0.097],
+        [14.4, 0.277, 0.210, 0.123],
+        [17.1, 0.320, 0.313, 0.165],
+        [19.2, 0.388, 0.315, 0.338],
+        [19.3, 0.390, 0.315, 0.339],
+      ],
+    },
+    {
+      id: "macaroni_dough_formulas",
+      name: {
+        uk: "Макаронне тісто — розрахункові формули",
+        en: "Macaroni dough — calculation formulas",
+        de: "Nudelteig — Berechnungsformeln",
+      },
+      type: "static",
+      source: "Гінзбург, Громов, Красовська, 1980, формули II-226–II-230, Табл. II-275",
+      note: {
+        uk: "T у формулах — K; W — вологість, %. Для λ та a: λ=λ₀+B·W, a×10⁸=a₀+B₁·W.",
+        en: "T in formulas is K; W is moisture, %. For λ and a: λ=λ0+B·W, a×10⁸=a0+B1·W.",
+        de: "T in den Formeln ist K; W ist Feuchte, %. Für λ und a: λ=λ0+B·W, a×10⁸=a0+B1·W.",
+      },
+      equations: [
+        {
+          label: { uk: "Теплоємність при 293 K", en: "Heat capacity at 293 K", de: "Wärmekapazität bei 293 K" },
+          formula: "cₚ=1650+15,49W",
+          description: { uk: "W — вологість, %; cₚ у Дж/(кг·К).", en: "W is moisture, %; cₚ in J/(kg·K).", de: "W ist Feuchte, %; cₚ in J/(kg·K)." },
+          range: "W=24,8–43,2%; T=293 K",
+        },
+        {
+          label: { uk: "Теплоємність з урахуванням T", en: "Heat capacity with T", de: "Wärmekapazität mit T" },
+          formula: "cₚ=-559,5+15,49W+7,54T",
+          description: { uk: "W — вологість, %; T у K; cₚ у Дж/(кг·К).", en: "W is moisture, %; T in K; cₚ in J/(kg·K).", de: "W ist Feuchte, %; T in K; cₚ in J/(kg·K)." },
+          range: "W=24,8–43,2%; T=293–353 K",
+        },
+        {
+          label: { uk: "λ та a за вологістю", en: "λ and a by moisture", de: "λ und a nach Feuchte" },
+          formula: "λ=λ₀+B·W; a×10⁸=a₀+B₁·W",
+          description: { uk: "λ₀, B, a₀, B₁ беріть із відповідного рядка таблиці.", en: "Take λ0, B, a0, B1 from the corresponding table row.", de: "λ0, B, a0, B1 aus der passenden Tabellenzeile entnehmen." },
+          range: "W=29–44%",
+        },
+      ],
+      cols: ["Матеріал / стан", "Діапазон", "cₚ, Дж/(кг·К)", "λ₀", "B", "a₀", "B₁"],
+      digits: [null, null, null, 3, 3, 1, 3],
+      data: [
+        ["Сухі речовини макаронного тіста", "довідково", "1650–1660", null, null, null, null],
+        ["Макаронне тісто", "T=293 K; W=24,8–43,2%", "c=1650+15,49W", null, null, null, null],
+        ["Макаронне тісто", "T=293–353 K; W=24,8–43,2%", "c=-559,5+15,49W+7,54T", null, null, null, null],
+        ["Нативне тісто", "T=303 K; W=29–44%", null, 0.190, 0.005, 10.0, 0.050],
+        ["Нативне тісто", "T=313 K; W=29–44%", null, 0.210, 0.005, 10.3, 0.050],
+        ["Нативне тісто", "T=323 K; W=29–44%", null, 0.240, 0.005, 10.8, 0.050],
+        ["Гігротермооброблене парою", "T=303 K; p=0,2 МПа; 410 K; 2 хв", null, 0.240, 0.004, 11.1, 0.033],
+        ["Гігротермооброблене парою", "T=313 K; p=0,2 МПа; 410 K; 2 хв", null, 0.270, 0.004, 11.2, 0.033],
+        ["Гігротермооброблене парою", "T=323 K; p=0,2 МПа; 410 K; 2 хв", null, 0.290, 0.004, 11.5, 0.033],
+      ],
+    },
+    {
+      id: "boiled_macaroni_props",
+      name: {
+        uk: "Варені макарони — теплофізичні властивості",
+        en: "Boiled macaroni — thermophysical properties",
+        de: "Gekochte Teigwaren — thermophysikalische Eigenschaften",
+      },
+      type: "static",
+      source: "Гінзбург, Громов, Красовська, 1980, стор. 208",
+      cols: ["Матеріал", "ρ, кг/м³", "cₚ, Дж/(кг·К)", "λ, Вт/(м·К)", "a×10⁸, м²/с"],
+      digits: [null, 0, 0, 3, 1],
+      data: [
+        ["Варені макарони", 750, 3900, 0.355, 12.3],
       ],
     },
   ],

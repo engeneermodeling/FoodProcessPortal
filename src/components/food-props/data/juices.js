@@ -1,4 +1,6 @@
 /** Food group: Соки та томатопродукти */
+import { bilinearEquation, linearCompositionEquation } from "./approximationNotes.js";
+
 export const juices = {
   id: "juices",
   icon: "🍊",
@@ -46,6 +48,7 @@ export const juices = {
       source: "НУХТ 2012, Табл. 9.5",
       rowLabel: "T, °C",
       colLabel: "Вміст СР, %",
+      equations: [bilinearEquation],
       cols: ["T, °C", "4,3%", "8,1%", "12,4%", "16,1%", "20,2%", "25,2%", "30,0%"],
       digits: [0, 0, 0, 0, 0, 0, 0, 0],
       data: [
@@ -67,6 +70,7 @@ export const juices = {
       },
       type: "vs_both",
       source: "НУХТ 2012, Табл. 9.6",
+      equations: [bilinearEquation],
       cols: ["T, °C", "4,6%", "6,4%", "10,8%", "11,2%", "13,5%", "14,0%", "17,6%", "25,0%"],
       digits: [0, 3, 3, 3, 3, 3, 3, 2, 2],
       data: [
@@ -87,6 +91,7 @@ export const juices = {
       },
       type: "vs_both",
       source: "НУХТ 2012, Табл. 9.8",
+      equations: [bilinearEquation],
       cols: ["T, °C", "15% СР", "20% СР", "30% СР", "40% СР", "50% СР", "60% СР", "70% СР"],
       digits: [0, 0, 0, 0, 0, 0, 0, 0],
       data: [
@@ -114,6 +119,7 @@ export const juices = {
         en: "λ×10² values, W/(m·K); rows — dry matter %, columns — T°C",
         de: "λ×10² Werte, W/(m·K); Zeilen — TS%, Spalten — T°C",
       },
+      equations: [bilinearEquation],
       cols: ["СР, %", "25°C", "35°C", "45°C", "55°C", "65°C", "75°C"],
       digits: [0, 1, 1, 1, 1, 1, 1],
       data: [
@@ -141,6 +147,7 @@ export const juices = {
       },
       type: "static",
       source: "НУХТ 2012, Табл. 9.7",
+      equations: [linearCompositionEquation],
       cols: ["СР, %", "ρ, кг/м³", "СР, %", "ρ, кг/м³", "СР, %", "ρ, кг/м³"],
       digits: [1, 0, 1, 0, 1, 0],
       data: [
@@ -162,6 +169,7 @@ export const juices = {
       },
       type: "vs_both",
       source: "НУХТ 2012, Табл. 9.9",
+      equations: [bilinearEquation],
       cols: ["T, °C", "20% СР", "30% СР", "40% СР", "50% СР"],
       digits: [0, 3, 3, 3, 3],
       data: [
@@ -182,6 +190,7 @@ export const juices = {
       },
       type: "vs_both",
       source: "НУХТ 2012, Табл. 9.10",
+      equations: [bilinearEquation],
       cols: ["T, °C", "58% СР", "50% СР", "40% СР", "30% СР", "20% СР", "15% СР"],
       digits: [0, 0, 0, 0, 0, 0, 0],
       data: [

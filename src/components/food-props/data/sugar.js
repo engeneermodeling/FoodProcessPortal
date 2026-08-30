@@ -1,4 +1,6 @@
 /** Food group: Цукор і цукрові розчини */
+import { bilinearEquation, linearCompositionEquation, linearTempEquation, logTempEquation } from "./approximationNotes.js";
+
 export const sugar = {
   id: "sugar",
   icon: "🍬",
@@ -18,6 +20,7 @@ export const sugar = {
       },
       type: "vs_temp",
       source: "НУХТ 2012, Табл. 4.1",
+      equations: [linearTempEquation, logTempEquation],
       cols: ["T, °C", "ρ, кг/м³", "λ, Вт/(м·К)", "cₚ, Дж/(кг·К)", "μ, мПа·с", "Pr"],
       digits: [0, 0, 4, 1, 4, 2],
       data: [
@@ -40,6 +43,7 @@ export const sugar = {
       },
       type: "vs_temp",
       source: "НУХТ 2012, Табл. 4.1",
+      equations: [linearTempEquation, logTempEquation],
       cols: ["T, °C", "ρ, кг/м³", "λ, Вт/(м·К)", "cₚ, Дж/(кг·К)", "μ, мПа·с", "Pr"],
       digits: [0, 0, 4, 0, 4, 2],
       data: [
@@ -67,6 +71,7 @@ export const sugar = {
         en: "Concentration 1% to 70%",
         de: "Konzentration 1% bis 70%",
       },
+      equations: [linearCompositionEquation],
       cols: ["Концентрація, %", "ρ, кг/м³", "Концентрація, %", "ρ, кг/м³", "Концентрація, %", "ρ, кг/м³"],
       digits: [0, 0, 0, 0, 0, 0],
       data: [
@@ -85,6 +90,7 @@ sugar.products.push(
     name: { uk: "В'язкість розчинів сахарози vs T і конц., мПа·с", en: "Sucrose viscosity vs T and conc., mPa·s", de: "Saccharose Viskosität vs T und Konz., mPa·s" },
     type: "vs_both",
     source: "Чубик і Маслов, 1970, Табл. 10",
+    equations: [bilinearEquation, logTempEquation],
     cols: ["Сахароза, %", "20°C", "30°C", "40°C", "50°C", "60°C", "70°C", "80°C"],
     digits: [0, 1, 1, 1, 1, 1, 1, 1],
     data: [
@@ -105,6 +111,7 @@ sugar.products.push(
     name: { uk: "Поверхневий натяг розчинів сахарози при 20°C", en: "Surface tension of sucrose solutions at 20°C", de: "Oberflächenspannung Saccharoselösungen bei 20°C" },
     type: "static",
     source: "Чубик і Маслов, 1970, Табл. 13",
+    equations: [linearCompositionEquation],
     cols: ["Сахароза, %", "σ, мН/м", "Сахароза, %", "σ, мН/м"],
     digits: [1, 2, 1, 2],
     data: [
@@ -120,6 +127,7 @@ sugar.products.push(
     name: { uk: "Розчини сахарози при кипінні — Tкип, λ, μ", en: "Sucrose at boiling — Tbp, λ, μ", de: "Saccharose beim Kochen — Tkp, λ, μ" },
     type: "static",
     source: "Чубик і Маслов, 1970, Табл. 6, 12",
+    equations: [linearCompositionEquation],
     cols: ["Сахароза, %", "Tкип, °C", "Депресія, °C", "λ, Вт/(м·К)", "μ×10³, Па·с"],
     digits: [0, 1, 1, 3, 1],
     data: [

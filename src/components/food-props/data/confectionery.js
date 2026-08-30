@@ -1,4 +1,6 @@
 /** Food group: Кондитерські продукти */
+import { bilinearEquation, linearTempEquation, logTempEquation } from "./approximationNotes.js";
+
 export const confectionery = {
   id: "confectionery",
   icon: "🍫",
@@ -18,6 +20,7 @@ export const confectionery = {
       },
       type: "vs_temp",
       source: "НУХТ 2012, Табл. 3.6",
+      equations: [linearTempEquation],
       cols: ["T, °C", "ρ, кг/м³", "cₚ, Дж/(кг·К)", "λ, Вт/(м·К)", "a×10⁸, м²/с"],
       digits: [0, 0, 0, 2, 1],
       data: [
@@ -61,6 +64,7 @@ export const confectionery = {
         en: "T — temperature °C, a — thermal diffusivity ×10⁸ m²/s",
         de: "T — Temperatur °C, a — Temperaturleitfähigkeit ×10⁸ m²/s",
       },
+      equations: [linearTempEquation],
       cols: ["Виріб", "T, °C", "ρ, кг/м³", "cₚ, Дж/(кг·К)", "λ, Вт/(м·К)", "a×10⁸, м²/с"],
       digits: [null, 0, 0, 1, 3, 4],
       data: [
@@ -92,6 +96,7 @@ export const confectionery = {
       },
       type: "static",
       source: "НУХТ 2012, Табл. 3.5",
+      equations: [linearTempEquation],
       cols: ["Вид маси", "T, °C", "ρ, кг/м³", "cₚ, Дж/(кг·К)", "λ, Вт/(м·К)", "a×10⁸, м²/с"],
       digits: [null, 0, 0, 1, 3, 2],
       data: [
@@ -141,6 +146,7 @@ confectionery.products.push(
     name: { uk: "В'язкість тертих горіхових мас vs T, Па·с", en: "Nut paste viscosity vs T, Pa·s", de: "Nusspaste Viskosität vs T, Pa·s" },
     type: "static",
     source: "Чубик і Маслов, 1970, Табл. 51",
+    equations: [logTempEquation],
     cols: ["Горіх", "35°C", "40°C", "45°C", "50°C", "60°C"],
     digits: [null, 1, 1, 1, 1, 1],
     data: [
@@ -170,6 +176,7 @@ confectionery.products.push(
     name: { uk: "В'язкість помадного сиропу vs T і патока, Па·с", en: "Fondant syrup viscosity vs T, Pa·s", de: "Fondantsirup Viskosität vs T, Pa·s" },
     type: "static",
     source: "Чубик і Маслов, 1970, Табл. 57",
+    equations: [bilinearEquation, logTempEquation],
     cols: ["T, °C", "Патока 5%, W=12,3%", "Патока 5%, W=14,5%", "Патока 25%, W=12,7%", "Патока 25%, W=14,0%"],
     digits: [0, 0, 0, 0, 0],
     data: [
@@ -183,6 +190,7 @@ confectionery.products.push(
     name: { uk: "В'язкість розчинів інвертного цукру, Па·с", en: "Invert sugar solution viscosity, Pa·s", de: "Invertzucker-Viskosität, Pa·s" },
     type: "static",
     source: "Чубик і Маслов, 1970, Табл. 54",
+    equations: [logTempEquation],
     cols: ["СР, %", "T, °C", "μ, Па·с"],
     digits: [2, 1, 3],
     data: [

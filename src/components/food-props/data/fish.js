@@ -1,4 +1,6 @@
 /** Food group: Риба і рибні продукти */
+import { linearTempEquation } from "./approximationNotes.js";
+
 export const fish = {
   id: "fish",
   icon: "🐟",
@@ -40,6 +42,7 @@ export const fish = {
         en: "At negative temperatures — frozen fish",
         de: "Bei negativen Temperaturen — gefrorener Fisch",
       },
+      equations: [linearTempEquation],
       cols: ["T, °C", "λ, Вт/(м·К)", "T, °C", "λ, Вт/(м·К)"],
       digits: [1, 3, 1, 3],
       data: [
@@ -82,6 +85,15 @@ export const fish = {
         en: "h — enthalpy kJ/kg (ref. −40°C); cp — J/(kg·K)",
         de: "h — Enthalpie kJ/kg (Ref. −40°C); cp — J/(kg·K)",
       },
+      equations: [
+        linearTempEquation,
+        {
+          label: { uk: "Середня теплоємність з ентальпії", en: "Mean heat capacity from enthalpy", de: "Mittlere Wärmekapazität aus Enthalpie" },
+          formula: "cₚ,сер=(h2-h1)·1000/(T2-T1)",
+          description: { uk: "Використовуйте сусідні точки h(T); h у кДж/кг, T у °C, cₚ у Дж/(кг·К).", en: "Use neighboring h(T) points; h in kJ/kg, T in °C, cₚ in J/(kg·K).", de: "Benachbarte h(T)-Punkte verwenden; h in kJ/kg, T in °C, cₚ in J/(kg·K)." },
+          range: "−40–20°C",
+        },
+      ],
       cols: ["T, °C", "h пікша, кДж/кг", "cₚ пікша, Дж/(кг·К)", "h тріска, кДж/кг", "cₚ тріска, Дж/(кг·К)"],
       digits: [0, 1, 0, 1, 0],
       data: [

@@ -208,6 +208,57 @@
   background: color-mix(in srgb, var(--fp-blue) 6%, transparent);
 }
 
+/* ── Рівняння ── */
+.fp-equations {
+  display: grid;
+  gap: 0.65rem;
+  padding: 0.9rem 1.25rem;
+  border-top: 1px solid var(--fp-border);
+  background: color-mix(in srgb, var(--fp-green) 5%, transparent);
+}
+
+.fp-equations-title {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--fp-green);
+}
+
+.fp-equation {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.fp-equation-head,
+.fp-equation-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.8rem;
+  font-size: 0.75rem;
+  color: var(--fp-text-3);
+}
+
+.fp-equation-head span:first-child {
+  color: var(--fp-text-2);
+  font-weight: 700;
+}
+
+.fp-equation code {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  padding: 0.5rem 0.65rem;
+  border: 1px solid color-mix(in srgb, var(--fp-green) 28%, var(--fp-border));
+  border-radius: 6px;
+  background: color-mix(in srgb, var(--fp-bg) 72%, transparent);
+  color: var(--fp-text-1);
+  font-family: var(--ff-mono);
+  font-size: 0.8rem;
+  line-height: 1.45;
+  white-space: nowrap;
+}
+
 /* ── Джерело ── */
 .fp-source {
   padding: 0.6rem 1.25rem;

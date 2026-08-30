@@ -1,4 +1,6 @@
 /** Food group: Борошно і зернові */
+import { linearCompositionEquation, linearTempEquation } from "./approximationNotes.js";
+
 export const flour = {
   id: "flour",
   icon: "🌾",
@@ -51,6 +53,7 @@ flour.products.push(
     name: { uk: "В'язкість крохмального молока vs T і густина", en: "Starch milk viscosity vs T and density", de: "Stärkemilch Viskosität vs T" },
     type: "static",
     source: "Чубик і Маслов, 1970, Табл. 36–37",
+    equations: [linearTempEquation, linearCompositionEquation],
     cols: ["Крохмаль", "Густина, °Бр", "T, °C", "μ×10², Па·с"],
     digits: [null, 1, 0, 4],
     data: [
@@ -73,6 +76,45 @@ flour.products.push(
       ["Арахіс",  915.4, 914.6],
       ["Мигдаль", 916.5, 916.2],
       ["Кеш'ю",   917.2, 912.7],
+    ],
+  },
+  {
+    id: "grain_bulk_layer_props",
+    name: {
+      uk: "Зерно — насипна маса і формули для нерухомого шару",
+      en: "Grain — bulk density and fixed-bed formulas",
+      de: "Getreide — Schüttdichte und Festbettformeln",
+    },
+    type: "static",
+    source: "Чубик і Маслов, 1970, Табл. 28; формули стор. 23",
+    note: {
+      uk: "Формули наведено для вологості на суху масу Wc: пшениця 10–25%, кукурудза 10–30%.",
+      en: "Formulas use moisture on dry basis Wc: wheat 10–25%, corn 10–30%.",
+      de: "Die Formeln verwenden Feuchte auf Trockenbasis Wc: Weizen 10–25%, Mais 10–30%.",
+    },
+    equations: [
+      {
+        label: { uk: "Пшениця, нерухомий шар", en: "Wheat, fixed bed", de: "Weizen, Festbett" },
+        formula: "λ=1,163(0,06+0,002Wc); cₚ=4186,8(0,25+0,01Wc); a×10⁴=2,5+0,05Wc",
+        description: { uk: "Wc — вологість на суху масу, %; λ у Вт/(м·К), cₚ у Дж/(кг·К), a у м²/год.", en: "Wc is moisture on dry basis, %; λ in W/(m·K), cₚ in J/(kg·K), a in m²/h.", de: "Wc ist Feuchte auf Trockenbasis, %; λ in W/(m·K), cₚ in J/(kg·K), a in m²/h." },
+        range: "Wc=10–25%",
+      },
+      {
+        label: { uk: "Кукурудза, нерухомий шар", en: "Corn, fixed bed", de: "Mais, Festbett" },
+        formula: "λ=1,163(0,32+0,0053Wc); cₚ=4186,8(0,23+0,01Wc); a×10³=1,44-0,014Wc",
+        description: { uk: "Wc — вологість на суху масу, %; λ у Вт/(м·К), cₚ у Дж/(кг·К), a у м²/год.", en: "Wc is moisture on dry basis, %; λ in W/(m·K), cₚ in J/(kg·K), a in m²/h.", de: "Wc ist Feuchte auf Trockenbasis, %; λ in W/(m·K), cₚ in J/(kg·K), a in m²/h." },
+        range: "Wc=10–30%",
+      },
+    ],
+    cols: ["Культура", "Насипна маса, кг/м³"],
+    digits: [null, 0],
+    data: [
+      ["Кукурудза", 700],
+      ["Овес", 500],
+      ["Просо", 700],
+      ["Пшениця", 760],
+      ["Жито", 720],
+      ["Ячмінь", 650],
     ],
   }
 );

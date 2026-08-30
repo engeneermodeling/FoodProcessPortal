@@ -1,4 +1,6 @@
 /** Food group: Какао-масло і начинки */
+import { linearTempEquation, logTempEquation } from "./approximationNotes.js";
+
 export const cocoa_fillings = {
   id: "cocoa_fillings",
   icon: "🍯",
@@ -23,6 +25,7 @@ export const cocoa_fillings = {
         en: "Melting point 31–34°C, solidification 23–28°C",
         de: "Schmelzpunkt 31–34°C, Erstarrung 23–28°C",
       },
+      equations: [linearTempEquation],
       cols: ["T, °C", "ρ, кг/м³", "λ, Вт/(м·К)", "cₚ, Дж/(кг·К)", "a×10⁸, м²/с"],
       digits: [0, 0, 3, 0, 1],
       data: [
@@ -41,6 +44,7 @@ export const cocoa_fillings = {
       },
       type: "static",
       source: "Чубик і Маслов, 1970, Табл. 70",
+      equations: [logTempEquation],
       cols: ["T, °C", "μ, мПа·с", "T, °C", "μ, мПа·с", "T, °C", "μ, мПа·с"],
       digits: [0, 1, 0, 1, 0, 1],
       data: [
@@ -76,6 +80,7 @@ export const cocoa_fillings = {
       },
       type: "static",
       source: "Чубик і Маслов, 1970, Табл. 68",
+      equations: [logTempEquation],
       cols: ["Начинка", "T, °C", "μ, мПа·с"],
       digits: [null, 0, 0],
       data: [

@@ -1,5 +1,6 @@
 // Лід, сніг та інші речовини харчової промисловості
 // Джерело: Чубик і Маслов, 1970, Табл. 255–261
+import { linearCompositionEquation, linearTempEquation, logTempEquation } from "./approximationNotes.js";
 
 export const other = {
   id: "other",
@@ -25,6 +26,7 @@ export const other = {
         en: "Snow at 0°C; a — thermal diffusivity ×10⁵ m²/h",
         de: "Schnee bei 0°C; a — Temperaturleitfähigkeit ×10⁵ m²/h",
       },
+      equations: [linearTempEquation, linearCompositionEquation],
       cols: ["Матеріал", "T, °C", "ρ, кг/м³", "λ, Вт/(м·К)", "cₚ, Дж/(кг·К)", "a×10⁵, м²/год"],
       digits: [null, 0, 0, 3, 0, 3],
       data: [
@@ -57,6 +59,7 @@ export const other = {
         en: "At room temperature (~20°C)",
         de: "Bei Raumtemperatur (~20°C)",
       },
+      equations: [linearCompositionEquation],
       cols: ["Вміст кислоти, г/л", "ρ, кг/м³", "Вміст кислоти, г/л", "ρ, кг/м³"],
       digits: [3, 1, 3, 1],
       data: [
@@ -123,6 +126,7 @@ export const other = {
         en: "Pure glycerin (≥99%). Tfr = 18°C, Tbp = 290°C",
         de: "Reines Glycerin (≥99%). TGefr = 18°C, TKp = 290°C",
       },
+      equations: [linearTempEquation, logTempEquation],
       cols: ["T, °C", "ρ, кг/м³", "cₚ, Дж/(кг·К)", "λ, Вт/(м·К)", "μ, мПа·с"],
       digits: [0, 0, 0, 3, 0],
       data: [
@@ -151,6 +155,7 @@ export const other = {
         en: "Table vinegar: 6–9%; Acetic essence: 70–80%",
         de: "Speiseessig: 6–9%; Essigesenz: 70–80%",
       },
+      equations: [linearCompositionEquation],
       cols: ["Концентрація, %", "ρ, кг/м³", "Концентрація, %", "ρ, кг/м³"],
       digits: [0, 0, 0, 0],
       data: [
@@ -185,6 +190,81 @@ export const other = {
         ["Аскорбінова (C₆H₈O₆)", 176.1, 192, "розкл.", 1650, 33],
         ["Бензойна (C₇H₆O₂)",  122.1, 122, 249,  1266, 0.34],
         ["Сорбінова (C₆H₈O₂)",  112.1, 134, 228,  1204, 0.16],
+      ],
+    },
+    {
+      id: "tartaric_acid_cp",
+      name: {
+        uk: "Винна кислота — теплоємність",
+        en: "Tartaric acid — heat capacity",
+        de: "Weinsäure — Wärmekapazität",
+      },
+      type: "static",
+      source: "Гінзбург, Громов, Красовська, 1980, формули II-361, II-365; Табл. II-323",
+      note: {
+        uk: "T у формулах — K. У табл. II-323 останній друкований ряд має повтор концентрації 40 г/100 мл; перенесено як у джерелі.",
+        en: "T in formulas is K. In Table II-323 the last printed row repeats 40 g/100 ml; copied as printed.",
+        de: "T in den Formeln ist K. In Tabelle II-323 wiederholt die letzte Druckzeile 40 g/100 ml; wie gedruckt übernommen.",
+      },
+      equations: [
+        {
+          label: { uk: "Кристалічна винна кислота", en: "Crystalline tartaric acid", de: "Kristalline Weinsäure" },
+          formula: "cₚ=2487-12,14T+0,028T²",
+          description: { uk: "T у K; cₚ у Дж/(кг·К).", en: "T in K; cₚ in J/(kg·K).", de: "T in K; cₚ in J/(kg·K)." },
+          range: "223–348 K",
+        },
+        {
+          label: { uk: "Сухий порошок", en: "Dry powder", de: "Trockenes Pulver" },
+          formula: "cₚ=1280/(1-0,00008(T-273)²)",
+          description: { uk: "T у K; формула застосовується поблизу 273 K.", en: "T in K; the formula is used near 273 K.", de: "T in K; die Formel gilt nahe 273 K." },
+          range: "поблизу 273 K",
+        },
+        {
+          label: { uk: "Розчини", en: "Solutions", de: "Lösungen" },
+          formula: "cₚ=A+B·T",
+          description: { uk: "A і B беріть із рядка таблиці для потрібної концентрації; T у K.", en: "Take A and B from the row for the required concentration; T in K.", de: "A und B aus der Zeile der gewünschten Konzentration entnehmen; T in K." },
+          range: "293–348 K",
+        },
+      ],
+      cols: ["Стан / концентрація", "Діапазон T, K", "cₚ, Дж/(кг·К)"],
+      digits: [null, null, null],
+      data: [
+        ["Кристал винної кислоти", "223–348", "c=2487-12,14T+0,028T²"],
+        ["Сухий порошок", "поблизу 273 K", "c=1280/(1-0,00008(T-273)²)"],
+        ["Розчин 5 г/100 мл", "293–348", "c=3313+1,96T"],
+        ["Розчин 10 г/100 мл", "293–348", "c=3198+2,09T"],
+        ["Розчин 20 г/100 мл", "293–348", "c=2905+2,40T"],
+        ["Розчин 30 г/100 мл", "293–348", "c=2722+2,45T"],
+        ["Розчин 40 г/100 мл", "293–348", "c=2572+2,45T"],
+        ["Розчин 40 г/100 мл (як надруковано)", "293–348", "c=2540+2,04T"],
+      ],
+    },
+    {
+      id: "tartaric_acid_powder_lambda",
+      name: {
+        uk: "Винна кислота, порошок — теплопровідність",
+        en: "Tartaric acid powder — thermal conductivity",
+        de: "Weinsäurepulver — Wärmeleitfähigkeit",
+      },
+      type: "static",
+      source: "Гінзбург, Громов, Красовська, 1980, формула II-366",
+      note: {
+        uk: "Формула для T=333 K; 0<W<7,0%; 0,48<εc<0,63. W — вологість, εc — скважистість шару.",
+        en: "Formula for T=333 K; 0<W<7.0%; 0.48<εc<0.63. W is moisture, εc is bed voidage.",
+        de: "Formel für T=333 K; 0<W<7,0%; 0,48<εc<0,63. W ist Feuchte, εc ist Schichtporosität.",
+      },
+      equations: [
+        {
+          label: { uk: "Теплопровідність порошку", en: "Powder thermal conductivity", de: "Wärmeleitfähigkeit des Pulvers" },
+          formula: "λ=-2,1+8,9εc-8,8εc²+W(157-564εc+512εc²)-W²(2149-7666εc+6944εc²)",
+          description: { uk: "W — вологість, %; εc — скважистість шару; λ у Вт/(м·К).", en: "W is moisture, %; εc is bed voidage; λ in W/(m·K).", de: "W ist Feuchte, %; εc ist Schichtporosität; λ in W/(m·K)." },
+          range: "T=333 K; 0<W<7,0%; 0,48<εc<0,63",
+        },
+      ],
+      cols: ["Матеріал", "λ, Вт/(м·К)"],
+      digits: [null, null],
+      data: [
+        ["Порошок винної кислоти", "λ=-2,1+8,9εc-8,8εc²+W(157-564εc+512εc²)-W²(2149-7666εc+6944εc²)"],
       ],
     },
   ],

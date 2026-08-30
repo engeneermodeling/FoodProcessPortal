@@ -1,4 +1,6 @@
 /** Food group: Морозиво */
+import { linearTempEquation } from "./approximationNotes.js";
+
 export const icecream = {
   id: "icecream",
   icon: "🍦",
@@ -23,6 +25,14 @@ export const icecream = {
         en: "Mix density kg/m³ / overrun %",
         de: "Mischungsdichte kg/m³ / Aufschlag %",
       },
+      equations: [
+        {
+          label: { uk: "Густина морозива за збитістю", en: "Ice cream density by overrun", de: "Speiseeisdichte nach Aufschlag" },
+          formula: "ρ=ρсуміші·100/(100+φ)",
+          description: { uk: "φ — збитість, %. Для проміжної ρсуміші спочатку інтерполюйте її між рядками.", en: "φ is overrun, %. For an intermediate mix density, interpolate it between rows first.", de: "φ ist Aufschlag, %. Für eine Zwischen-Mischungsdichte zuerst zwischen den Zeilen interpolieren." },
+          range: "φ=0–110%",
+        },
+      ],
       cols: ["ρ суміші, кг/м³", "0%", "50%", "60%", "70%", "80%", "90%", "100%", "110%"],
       digits: [0, 0, 0, 0, 0, 0, 0, 0, 0],
       data: [
@@ -64,6 +74,7 @@ export const icecream = {
       },
       type: "static",
       source: "Чубик і Маслов, 1970, Табл. 217",
+      equations: [linearTempEquation],
       cols: ["Вид морозива", "W, %", "T = −10°C, Вт/(м·К)", "T = −20°C, Вт/(м·К)", "T = −30°C, Вт/(м·К)"],
       digits: [null, 1, 3, 3, 3],
       data: [

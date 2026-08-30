@@ -1,4 +1,6 @@
 /** Food group: Рослинні олії (детально) */
+import { linearTempEquation, logTempEquation } from "./approximationNotes.js";
+
 export const veg_oils_full = {
   id: "veg_oils_full",
   icon: "🫗",
@@ -18,6 +20,7 @@ export const veg_oils_full = {
       },
       type: "vs_both",
       source: "Чубик і Маслов, 1970, Табл. 19",
+      equations: [linearTempEquation],
       cols: ["Олія", "−20°C", "−10°C", "0°C", "10°C", "20°C", "40°C", "60°C", "80°C", "100°C", "120°C"],
       digits: [null, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
       data: [
@@ -42,6 +45,7 @@ export const veg_oils_full = {
       },
       type: "vs_both",
       source: "Чубик і Маслов, 1970, Табл. 20",
+      equations: [linearTempEquation],
       cols: ["Олія", "−20°C", "0°C", "20°C", "50°C", "80°C", "120°C"],
       digits: [null, 3, 3, 3, 3, 3, 3],
       data: [
@@ -64,6 +68,7 @@ export const veg_oils_full = {
       },
       type: "vs_both",
       source: "Чубик і Маслов, 1970, Табл. 23",
+      equations: [linearTempEquation],
       cols: ["Олія", "−10°C", "0°C", "20°C", "50°C", "80°C", "120°C"],
       digits: [null, 0, 0, 0, 0, 0, 0],
       data: [
@@ -87,6 +92,7 @@ export const veg_oils_full = {
       },
       type: "vs_both",
       source: "Чубик і Маслов, 1970, Табл. 26",
+      equations: [logTempEquation],
       cols: ["Олія", "20°C", "40°C", "60°C", "80°C", "100°C", "150°C"],
       digits: [null, 1, 1, 1, 1, 1, 1],
       data: [

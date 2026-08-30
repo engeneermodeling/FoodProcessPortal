@@ -1,4 +1,6 @@
 /** Food group: Жири, олії та масло */
+import { linearTempEquation } from "./approximationNotes.js";
+
 export const fats = {
   id: "fats",
   icon: "🫙",
@@ -18,6 +20,7 @@ export const fats = {
       },
       type: "vs_temp",
       source: "НУХТ 2012, Табл. 6.1",
+      equations: [linearTempEquation],
       cols: ["T, °C", "ρ, кг/м³", "cₚ, Дж/(кг·К)", "λ, Вт/(м·К)", "a×10⁸, м²/с"],
       digits: [0, 0, 0, 3, 2],
       data: [
@@ -35,6 +38,7 @@ export const fats = {
       },
       type: "static",
       source: "НУХТ 2012, Табл. 6.2",
+      equations: [linearTempEquation],
       cols: ["T, °C", "ρ, кг/м³", "cₚ, Дж/(кг·К)", "λ, Вт/(м·К)", "a×10⁸, м²/с"],
       digits: [0, 1, 0, 3, 2],
       data: [
@@ -52,6 +56,7 @@ export const fats = {
       },
       type: "static",
       source: "НУХТ 2012, Табл. 6.3",
+      equations: [linearTempEquation],
       cols: ["Тип емульсії", "T, °C", "ρ, кг/м³", "cₚ, Дж/(кг·К)", "λ, Вт/(м·К)", "a×10⁸, м²/с"],
       digits: [null, 0, 0, 0, 3, 1],
       data: [
@@ -61,6 +66,38 @@ export const fats = {
         ["Безмолочна", 50, 914, 1842, 0.174, 10.3],
         ["Вершкова", 40, 928, 1633, 0.209, 13.5],
         ["Вершкова", 50, 920, 1633, 0.209, 13.6],
+      ],
+    },
+    {
+      id: "hydrogenated_fat_props",
+      name: {
+        uk: "Гідрожир — теплофізичні характеристики",
+        en: "Hydrogenated fat — thermophysical properties",
+        de: "Hydriertes Fett — thermophysikalische Eigenschaften",
+      },
+      type: "static",
+      source: "Чубик і Маслов, 1970, Табл. 22",
+      equations: [
+        {
+          label: { uk: "Теплопровідність гідрожиру", en: "Hydrogenated fat thermal conductivity", de: "Wärmeleitfähigkeit von hydriertem Fett" },
+          formula: "λ=1,163(0,155+0,0004(t-20))",
+          description: { uk: "t у °C; λ у Вт/(м·К).", en: "t in °C; λ in W/(m·K).", de: "t in °C; λ in W/(m·K)." },
+          range: "−5–35°C",
+        },
+        {
+          label: { uk: "Температуропровідність гідрожиру", en: "Hydrogenated fat thermal diffusivity", de: "Temperaturleitfähigkeit von hydriertem Fett" },
+          formula: "a×10⁸=2,7778(2,2+0,015(t-20))",
+          description: { uk: "t у °C; результат відповідає колонці a×10⁸, м²/с.", en: "t in °C; the result corresponds to the a×10⁸, m²/s column.", de: "t in °C; das Ergebnis entspricht der Spalte a×10⁸, m²/s." },
+          range: "−5–35°C",
+        },
+        linearTempEquation,
+      ],
+      cols: ["T, °C", "ρ, кг/м³", "λ, Вт/(м·К)", "cₚ, Дж/(кг·К)", "a×10⁸, м²/с"],
+      digits: [0, 0, 3, 0, 2],
+      data: [
+        [-5, null, 0.174, 2973, 6.11],
+        [15, 942, 0.177, 3069, 6.17],
+        [35, 908, 0.181, 3324, 6.28],
       ],
     },
     {

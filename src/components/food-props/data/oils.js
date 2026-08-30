@@ -1,4 +1,6 @@
 /** Food group: Рослинні олії */
+import { linearTempEquation, logTempEquation } from "./approximationNotes.js";
+
 export const oils = {
   id: "oils",
   icon: "🫒",
@@ -18,6 +20,7 @@ export const oils = {
       },
       type: "vs_temp",
       source: "НУХТ 2012, Табл. 6.3; Engineering ToolBox",
+      equations: [linearTempEquation, logTempEquation],
       cols: ["T, °C", "ρ, кг/м³", "cₚ, Дж/(кг·К)", "λ, Вт/(м·К)", "μ, мПа·с", "Pr"],
       digits: [0, 0, 0, 3, 1, 0],
       data: [
@@ -56,6 +59,73 @@ export const oils = {
         ["Кукурудзяна", 919, 1930, 0.165, 55, 643],
         ["Пальмова (40°C)", 893, 1990, 0.163, 15, 183],
         ["Кокосова (40°C)", 912, 2030, 0.168, 10, 121],
+      ],
+    },
+    {
+      id: "essential_oils_props",
+      name: {
+        uk: "Ефірні олії — густина, теплоємність і в'язкість",
+        en: "Essential oils — density, heat capacity, and viscosity",
+        de: "Ätherische Öle — Dichte, Wärmekapazität und Viskosität",
+      },
+      type: "static",
+      source: "Чубик і Маслов, 1970, Табл. 18, 21, 24",
+      note: {
+        uk: "ρ наведено при 15°C, cₚ і μ — при 20°C. Діапазони ρ перенесено як надруковано.",
+        en: "ρ is at 15°C; cₚ and μ are at 20°C. Density ranges are copied as printed.",
+        de: "ρ gilt bei 15°C; cₚ und μ bei 20°C. Dichtebereiche wie gedruckt übernommen.",
+      },
+      cols: ["Олія", "ρ, кг/м³", "cₚ, Дж/(кг·К)", "μ, Па·с"],
+      digits: [null, null, 0, 5],
+      data: [
+        ["Анісова", null, 1846, null],
+        ["Апельсинова (солодкі апельсини)", "848–851", null, null],
+        ["Апельсинова (гіркі апельсини)", "852–857", null, null],
+        ["Геранієва", null, 2110, 0.00757],
+        ["Коріандрова", null, 2315, 0.00440],
+        ["Лимонна", "850–870", null, null],
+        ["М'ятна", null, 2080, 0.00770],
+      ],
+    },
+    {
+      id: "nut_cocoa_oils_viscosity",
+      name: {
+        uk: "Олії та кондитерський жир — в'язкість vs T",
+        en: "Oils and confectionery fat — viscosity vs T",
+        de: "Öle und Konditoreifett — Viskosität vs T",
+      },
+      type: "static",
+      source: "Чубик і Маслов, 1970, Табл. 25",
+      equations: [logTempEquation],
+      cols: ["Продукт", "μ(30°C), Па·с", "μ(35°C), Па·с", "μ(40°C), Па·с", "μ(50°C), Па·с"],
+      digits: [null, 4, 4, 4, 4],
+      data: [
+        ["Арахісова олія", 0.0526, 0.0431, 0.0356, 0.0252],
+        ["Олія кеш'ю", 0.0501, 0.0409, 0.0336, 0.0239],
+        ["Масло какао", null, 0.0502, 0.0409, 0.0283],
+        ["Мигдальна олія", 0.0478, 0.0386, 0.0325, 0.0232],
+        ["Кондитерський жир", null, 0.0604, 0.0466, 0.0315],
+      ],
+    },
+    {
+      id: "vegetable_oils_solidification",
+      name: {
+        uk: "Рослинні олії — температура застигання",
+        en: "Vegetable oils — solidification temperature",
+        de: "Pflanzenöle — Erstarrungstemperatur",
+      },
+      type: "static",
+      source: "Чубик і Маслов, 1970, Табл. 27",
+      cols: ["Олія", "Tзаст, °C"],
+      digits: [null, null],
+      data: [
+        ["Арахісова", "-3"],
+        ["Волоського горіха", "-14…-28"],
+        ["Кунжутна", "-5"],
+        ["Лісових горіхів і фундука", "-17…-20"],
+        ["Мигдальна", "-18…-20"],
+        ["Соняшникова", "-16…-18,5"],
+        ["Соєва", "-18"],
       ],
     },
   ],

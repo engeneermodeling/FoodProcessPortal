@@ -1,4 +1,6 @@
 /** Food group: Пиво і спиртові розчини */
+import { bilinearEquation, linearCompositionEquation, linearTempEquation, logTempEquation } from "./approximationNotes.js";
+
 export const brewery = {
   id: "brewery",
   icon: "🍺",
@@ -18,6 +20,7 @@ export const brewery = {
       },
       type: "static",
       source: "НУХТ 2012, Табл. 5.1",
+      equations: [linearTempEquation, logTempEquation],
       cols: ["Продукт", "T, °C", "ρ, кг/м³", "λ, Вт/(м·К)", "cₚ, Дж/(кг·К)", "μ, мПа·с"],
       digits: [null, 1, 1, 2, 0, 2],
       data: [
@@ -40,6 +43,7 @@ export const brewery = {
       },
       type: "vs_both",
       source: "НУХТ 2012, Табл. 5.4",
+      equations: [bilinearEquation],
       cols: ["Спирт, %", "0°C", "20°C", "30°C", "40°C", "50°C", "60°C", "70°C", "80°C"],
       digits: [0, 2, 2, 2, 2, 2, 2, 2, 2],
       data: [
@@ -65,6 +69,7 @@ export const brewery = {
       },
       type: "vs_both",
       source: "НУХТ 2012, Табл. 5.6",
+      equations: [bilinearEquation],
       cols: ["Спирт, %", "0°C", "10°C", "20°C", "30°C", "40°C", "50°C", "60°C", "70°C", "80°C"],
       digits: [0, 1, 1, 1, 1, 1, 1, 1, 1, 1],
       data: [
@@ -96,6 +101,7 @@ export const brewery = {
         en: "Vol% → mass% → ρ, g/ml",
         de: "Vol% → Gew% → ρ, g/ml",
       },
+      equations: [linearCompositionEquation],
       cols: ["Об. %", "Мас. %", "ρ, г/мл", "Об. %", "Мас. %", "ρ, г/мл", "Об. %", "Мас. %", "ρ, г/мл"],
       digits: [0, 2, 5, 0, 2, 5, 0, 2, 5],
       data: [
@@ -117,6 +123,7 @@ export const brewery = {
       },
       type: "vs_both",
       source: "НУХТ 2012, Табл. 5.3",
+      equations: [bilinearEquation],
       cols: ["Спирт, %", "0°C", "10°C", "20°C", "30°C", "40°C", "50°C", "60°C", "70°C", "80°C"],
       digits: [0, 3, 3, 3, 3, 3, 3, 3, 3, 3],
       data: [

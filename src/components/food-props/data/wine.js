@@ -1,4 +1,6 @@
 /** Food group: Вино і виноматеріали */
+import { linearTempEquation, logTempEquation } from "./approximationNotes.js";
+
 export const wine = {
   id: "wine",
   icon: "🍷",
@@ -41,6 +43,7 @@ export const wine = {
       },
       type: "static",
       source: "Чубик і Маслов, 1970, Табл. 111",
+      equations: [linearTempEquation, logTempEquation],
       cols: ["T, °C", "Солодке, мПа·с", "Напівсухе, мПа·с"],
       digits: [1, 2, 2],
       data: [

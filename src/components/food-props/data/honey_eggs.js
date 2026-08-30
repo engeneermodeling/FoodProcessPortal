@@ -1,4 +1,6 @@
 /** Food group: Мед, яйця, желатин, какао-боби */
+import { bilinearEquation, linearTempEquation, logTempEquation } from "./approximationNotes.js";
+
 export const honey_eggs = {
   id: "honey_eggs",
   icon: "🍯",
@@ -23,6 +25,27 @@ export const honey_eggs = {
         en: "Formulas (5–35°C): ρ=1442−0.4t kg/m³; λ=1.163(0.29+0.00075t) W/(m·K); c=4186.8(0.54+0.0035t) J/(kg·K)",
         de: "Formeln: ρ=1442−0,4t kg/m³",
       },
+      equations: [
+        {
+          label: { uk: "Густина меду", en: "Honey density", de: "Honigdichte" },
+          formula: "ρ=1442-0,4t",
+          description: { uk: "t у °C; ρ у кг/м³.", en: "t in °C; ρ in kg/m³.", de: "t in °C; ρ in kg/m³." },
+          range: "5–35°C",
+        },
+        {
+          label: { uk: "Теплопровідність меду", en: "Honey thermal conductivity", de: "Wärmeleitfähigkeit von Honig" },
+          formula: "λ=1,163(0,29+0,00075t)",
+          description: { uk: "t у °C; λ у Вт/(м·К).", en: "t in °C; λ in W/(m·K).", de: "t in °C; λ in W/(m·K)." },
+          range: "5–35°C",
+        },
+        {
+          label: { uk: "Теплоємність меду", en: "Honey heat capacity", de: "Wärmekapazität von Honig" },
+          formula: "cₚ=4186,8(0,54+0,0035t)",
+          description: { uk: "t у °C; cₚ у Дж/(кг·К).", en: "t in °C; cₚ in J/(kg·K).", de: "t in °C; cₚ in J/(kg·K)." },
+          range: "5–35°C",
+        },
+        linearTempEquation,
+      ],
       cols: ["T, °C", "ρ, кг/м³", "λ, Вт/(м·К)", "cₚ, Дж/(кг·К)", "a×10⁸, м²/с"],
       digits: [0, 0, 3, 0, 0],
       data: [
@@ -41,6 +64,7 @@ export const honey_eggs = {
       },
       type: "static",
       source: "Чубик і Маслов, 1970, Табл. 48",
+      equations: [bilinearEquation, logTempEquation],
       cols: ["W, %", "μ(10°C), Па·с", "μ(20°C), Па·с", "μ(30°C), Па·с", "μ(40°C), Па·с", "μ(60°C), Па·с", "μ(80°C), Па·с"],
       digits: [0, 1, 1, 2, 2, 2, 2],
       data: [
@@ -81,6 +105,7 @@ export const honey_eggs = {
       },
       type: "vs_temp",
       source: "Чубик і Маслов, 1970, Табл. 47",
+      equations: [linearTempEquation],
       cols: ["T, °C", "ρ, кг/м³", "λ, Вт/(м·К)", "cₚ, Дж/(кг·К)", "a×10⁸, м²/с"],
       digits: [0, 0, 3, 0, 0],
       data: [
