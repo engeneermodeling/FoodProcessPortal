@@ -90,8 +90,11 @@ export const fish = {
         {
           label: { uk: "Середня теплоємність з ентальпії", en: "Mean heat capacity from enthalpy", de: "Mittlere Wärmekapazität aus Enthalpie" },
           formula: "cₚ,сер=(h2-h1)·1000/(T2-T1)",
-          description: { uk: "Використовуйте сусідні точки h(T); h у кДж/кг, T у °C, cₚ у Дж/(кг·К).", en: "Use neighboring h(T) points; h in kJ/kg, T in °C, cₚ in J/(kg·K).", de: "Benachbarte h(T)-Punkte verwenden; h in kJ/kg, T in °C, cₚ in J/(kg·K)." },
+          katex: "c_{p,сер}=\\frac{(h_2-h_1)\\,1000}{T_2-T_1}",
+          description: { uk: "Візьміть дві сусідні точки ентальпії h(T). Множник 1000 переводить кДж/кг у Дж/кг.", en: "Use two neighboring enthalpy points h(T). The factor 1000 converts kJ/kg to J/kg.", de: "Zwei benachbarte Enthalpiepunkte h(T) verwenden. Faktor 1000 wandelt kJ/kg in J/kg um." },
+          units: { uk: "h — кДж/кг; T — °C; cₚ,сер — Дж/(кг·К)", en: "h in kJ/kg; T in °C; mean cp in J/(kg·K)", de: "h in kJ/kg; T in °C; mittleres cp in J/(kg·K)" },
           range: "−40–20°C",
+          error: { uk: "орієнтовно 2–5%; зростає на інтервалах з фазовим переходом", en: "about 2-5%; increases across phase-change intervals", de: "etwa 2-5%; steigt über Phasenwechselintervalle" },
         },
       ],
       cols: ["T, °C", "h пікша, кДж/кг", "cₚ пікша, Дж/(кг·К)", "h тріска, кДж/кг", "cₚ тріска, Дж/(кг·К)"],

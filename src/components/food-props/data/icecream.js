@@ -29,8 +29,11 @@ export const icecream = {
         {
           label: { uk: "Густина морозива за збитістю", en: "Ice cream density by overrun", de: "Speiseeisdichte nach Aufschlag" },
           formula: "ρ=ρсуміші·100/(100+φ)",
-          description: { uk: "φ — збитість, %. Для проміжної ρсуміші спочатку інтерполюйте її між рядками.", en: "φ is overrun, %. For an intermediate mix density, interpolate it between rows first.", de: "φ ist Aufschlag, %. Für eine Zwischen-Mischungsdichte zuerst zwischen den Zeilen interpolieren." },
+          katex: "\\rho=\\rho_{суміші}\\,\\frac{100}{100+\\varphi}",
+          description: { uk: "Підставте густину суміші та збитість φ. Якщо густина суміші між рядками, спочатку інтерполюйте ρсуміші.", en: "Substitute mix density and overrun phi. If mix density is between rows, interpolate it first.", de: "Mischungsdichte und Aufschlag phi einsetzen. Bei Zwischenwerten der Mischungsdichte zuerst interpolieren." },
+          units: { uk: "ρсуміші і ρ — кг/м³; φ — %", en: "mix density and rho in kg/m³; phi in %", de: "Mischungsdichte und rho in kg/m³; phi in %" },
           range: "φ=0–110%",
+          error: { uk: "розрахункова похибка мала; практично 1–3% через вимірювання збитості та густини суміші", en: "calculation error is small; practically 1-3% from overrun and mix-density measurements", de: "Rechenfehler klein; praktisch 1-3% durch Messung von Aufschlag und Mischungsdichte" },
         },
       ],
       cols: ["ρ суміші, кг/м³", "0%", "50%", "60%", "70%", "80%", "90%", "100%", "110%"],

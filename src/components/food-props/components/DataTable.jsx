@@ -1,4 +1,25 @@
 import { fmt } from "../utils/fmt.js";
+import katex from "katex";
+import "katex/dist/katex.min.css";
+
+function localized(value, locale) {
+  return value?.[locale] || value?.uk || value;
+}
+
+function renderKatex(math) {
+  if (!math) return null;
+
+  try {
+    return katex.renderToString(math, {
+      displayMode: true,
+      throwOnError: false,
+      strict: "ignore",
+      output: "html",
+    });
+  } catch {
+    return null;
+  }
+}
 
 export default function DataTable({ product, locale }) {
   if (!product) return null;
@@ -10,6 +31,8 @@ export default function DataTable({ product, locale }) {
     title: locale === "en" ? "Equations" : locale === "de" ? "Gleichungen" : "Рівняння",
     range: locale === "en" ? "Range" : locale === "de" ? "Bereich" : "Діапазон",
     fit: locale === "en" ? "Fit" : locale === "de" ? "Anpassung" : "Апроксимація",
+    units: locale === "en" ? "Units" : locale === "de" ? "Einheiten" : "Одиниці",
+    error: locale === "en" ? "Mean error" : locale === "de" ? "Mittlerer Fehler" : "Середня похибка",
   };
 
   return (
@@ -46,21 +69,33 @@ export default function DataTable({ product, locale }) {
         <div className="fp-equations">
           <div className="fp-equations-title">{ui.title}</div>
           {equations.map((eq, i) => {
-            const description = eq.description?.[locale] || eq.description?.uk;
-            const variables = eq.variables?.[locale] || eq.variables?.uk;
-            const range = eq.range?.[locale] || eq.range?.uk || eq.range;
+            const description = localized(eq.description, locale);
+            const variables = localized(eq.variables, locale);
+            const range = localized(eq.range, locale);
+            const units = localized(eq.units, locale);
+            const error = localized(eq.error, locale);
+            const katexMarkup = renderKatex(eq.katex);
 
             return (
               <div className="fp-equation" key={i}>
                 <div className="fp-equation-head">
-                  <span>{eq.label?.[locale] || eq.label?.uk || eq.label}</span>
+                  <span>{localized(eq.label, locale)}</span>
                   {range && <span>{ui.range}: {range}</span>}
                 </div>
-                <code>{eq.formula}</code>
-                {(description || variables || eq.r2) && (
+                {katexMarkup ? (
+                  <div
+                    className="fp-equation-formula"
+                    dangerouslySetInnerHTML={{ __html: katexMarkup }}
+                  />
+                ) : (
+                  <code>{eq.formula}</code>
+                )}
+                {(description || variables || units || error || eq.r2) && (
                   <div className="fp-equation-meta">
                     {description && <span>{description}</span>}
                     {variables && <span>{variables}</span>}
+                    {units && <span>{ui.units}: {units}</span>}
+                    {error && <span>{ui.error}: {error}</span>}
                     {eq.r2 && <span>{ui.fit}: R²={fmt(eq.r2, 4)}</span>}
                   </div>
                 )}

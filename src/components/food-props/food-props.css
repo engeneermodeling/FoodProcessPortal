@@ -259,6 +259,25 @@
   white-space: nowrap;
 }
 
+.fp-equation-formula {
+  width: 100%;
+  overflow-x: auto;
+  padding: 0.55rem 0.7rem;
+  border: 1px solid color-mix(in srgb, var(--fp-green) 28%, var(--fp-border));
+  border-radius: 6px;
+  background: color-mix(in srgb, var(--fp-bg) 72%, transparent);
+}
+
+.fp-equation-formula .katex-display {
+  margin: 0;
+  text-align: left;
+}
+
+.fp-equation-formula .katex {
+  color: var(--fp-text-1);
+  font-size: 0.98rem;
+}
+
 /* ── Джерело ── */
 .fp-source {
   padding: 0.6rem 1.25rem;
