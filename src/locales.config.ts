@@ -1,22 +1,10 @@
-/**
- * ╔══════════════════════════════════════════════════════════════╗
- * ║           КЕРУВАННЯ МОВАМИ FOODPROCESSPORTAL                ║
- * ╠══════════════════════════════════════════════════════════════╣
- * ║  Щоб вимкнути мову — закоментуй або видали рядок зі списку  ║
- * ║  Щоб увімкнути — розкоментуй або додай рядок назад          ║
- * ╚══════════════════════════════════════════════════════════════╝
- */
+/** Мови порталу: налаштування в language-settings.json, команди — scripts/manage-languages.mjs. */
+import languageSettings from "./language-settings.json";
+import { getEnabledLocales, SUPPORTED_LOCALES } from "./utils/language-settings.mjs";
 
-export const ENABLED_LOCALES = [
-  "uk",   // 🇺🇦 Українська     — основна мова
-  "en",   // 🇬🇧 English         — англійська
-  "ru",   // 🇷🇺 Русский
-  "de",   // 🇩🇪 Deutsch         — німецька
-] as const;
-
-// ─── Не чіпати нижче ──────────────────────────────────────────
-export type Locale = (typeof ENABLED_LOCALES)[number];
+export type Locale = (typeof SUPPORTED_LOCALES)[number];
 export const DEFAULT_LOCALE = "uk" as const;
+export const ENABLED_LOCALES = getEnabledLocales(languageSettings);
 
 // Назви мов для відображення у перемикачі
 export const LOCALE_NAMES: Record<string, { name: string; flag: string; native: string; code: string ; path: string}> = {

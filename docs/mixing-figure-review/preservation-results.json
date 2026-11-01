@@ -1,0 +1,15 @@
+{
+  "slideCount": 43,
+  "allSlideTextsUnchanged": true,
+  "protectedFilesUnchanged": {
+    "public\\presentations\\mixing\\videos.json": true,
+    "public\\presentations\\mixing\\lecture-notes.json": true,
+    "public\\docs\\mixing\\open-lecture-43-slides.docx": true,
+    "src\\pages\\[locale]\\topics\\[topic]\\index.astro": true,
+    "public\\videos\\lectures\\mixing\\magnetic-stirrer-msh-300i.mp4": true,
+    "public\\videos\\lectures\\mixing\\sugar-syrup-mixing.mp4": true,
+    "public\\videos\\lectures\\mixing\\stirred-vessel-baffles.mp4": true,
+    "public\\videos\\lectures\\mixing\\rotor-stator-mixing-demo.mp4": true,
+    "public\\videos\\lectures\\mixing\\charlie-chocolate-factory-excerpt.mp4": true
+  }
+}

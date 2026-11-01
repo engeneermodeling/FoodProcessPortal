@@ -48,6 +48,7 @@ export function getStaticPaths() {
     const parts = path.split("/");
     const lecturesIdx = parts.indexOf("lectures");
     const locale = parts[lecturesIdx + 1];
+    if (!ENABLED_LOCALES.includes(locale as typeof ENABLED_LOCALES[number])) continue;
     const topic = parts[lecturesIdx + 2];
     const slug = parts.pop()?.replace(".md", "") || "";
 

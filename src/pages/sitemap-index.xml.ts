@@ -40,6 +40,9 @@ export const GET: APIRoute = () => {
   const now = new Date().toISOString().split('T')[0];
 
   addUrl(urls, '/', now, '1.0');
+  // Відкрита лекція з перемішування та її самостійний HTML програвач.
+  addUrl(urls, '/uk/topics/mixing/open-lecture', now, '0.8');
+  addUrl(urls, '/presentations/mixing', now, '0.6');
 
   // Головні сторінки
   ENABLED_LOCALES.forEach((locale) => {

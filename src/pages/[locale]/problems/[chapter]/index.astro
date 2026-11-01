@@ -45,6 +45,7 @@ export function getStaticPaths() {
     const parts = path.split("/");
     const idx = parts.indexOf("problems");
     const locale = parts[idx + 1];
+    if (!ENABLED_LOCALES.includes(locale as typeof ENABLED_LOCALES[number])) continue;
     const slug = parts.pop()?.replace(".md", "") || "";
 
     paths.push({

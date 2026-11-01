@@ -124,7 +124,7 @@ const lectureProgressTitle =
     <ThemeToggle slot="theme-toggle" />
   </Header>
 
-  <main class="main-content">
+  <main class:list={["main-content", { "mixing-topic-page": locale === "uk" && topic === "mixing" }]}>
     <div class="container">
       <article class="topic-article">
         <a href={"/" + locale + "/topics"} class="back-link">{backWord}</a>
@@ -138,6 +138,18 @@ const lectureProgressTitle =
             )}
           </div>
         </div>
+
+        {locale === "uk" && topic === "mixing" && (
+          <section class="mixing-lecture-card" aria-labelledby="mixing-open-lecture-title">
+            <p class="mixing-lecture-meta">Відкрита лекція · 43 слайди · 80 хвилин</p>
+            <h2 id="mixing-open-lecture-title">Перемішування в харчових технологіях</h2>
+            <p>Інженерні схеми, фотографії обладнання, відеодемонстрації та доповідь до всіх слайдів.</p>
+            <div class="mixing-lecture-actions">
+              <a class="mixing-lecture-primary" href="/presentations/mixing/index.html">Відкрити презентацію</a>
+              <a href="/docs/mixing/open-lecture-43-slides.docx" download>Доповідь DOCX</a>
+            </div>
+          </section>
+        )}
 
         <TopicLearningChecklist
           topic={topic}
@@ -274,6 +286,20 @@ const lectureProgressTitle =
 <style>
   @import "../../../../styles/topic.css";
 
+  .mixing-topic-page > .container {
+    box-sizing: border-box;
+    width: calc(100% - 48px);
+    max-width: 1120px;
+    margin-inline: auto;
+    padding-inline: 0;
+  }
+  .mixing-topic-page .topic-article { max-width: none; }
+  .mixing-topic-page .topic-header > div { min-width: 0; }
+  .mixing-topic-page .topic-article :global(p) { max-width: 76ch; }
+  @media (max-width: 640px) {
+    .mixing-topic-page > .container { width: calc(100% - 32px); }
+  }
+
   .topic-header {
     display: flex;
     align-items: flex-start;
@@ -284,6 +310,33 @@ const lectureProgressTitle =
   }
   .topic-icon-large { font-size: 3rem; line-height: 1; flex-shrink: 0; }
   .topic-desc { color: var(--text-secondary); font-size: 1.1rem; margin: 0.5rem 0 0; }
+  .mixing-lecture-card {
+    margin: 0 0 2rem;
+    padding: 1.5rem;
+    border: 1px solid var(--border-color);
+    border-left: 4px solid var(--accent-blue);
+    border-radius: 0.75rem;
+    background: var(--bg-secondary);
+  }
+  .mixing-lecture-card h2 { margin: 0.5rem 0; color: var(--text-primary); font-size: 1.4rem; }
+  .mixing-lecture-card p { color: var(--text-secondary); line-height: 1.6; }
+  .mixing-lecture-meta { margin: 0; font-size: 0.9rem; font-weight: 600; }
+  .mixing-lecture-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.25rem; }
+  .mixing-lecture-actions a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: 0.65rem 1rem;
+    border: 1px solid var(--accent-blue);
+    border-radius: 0.5rem;
+    color: var(--accent-blue);
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .mixing-lecture-actions .mixing-lecture-primary { background: var(--accent-blue); color: #fff; }
+  .mixing-lecture-actions a:hover { text-decoration: underline; }
+  .mixing-lecture-actions a:focus-visible { outline: 3px solid var(--accent-green); outline-offset: 3px; }
   .lectures-section { margin-top: 2rem; }
   .lectures-heading {
     font-size: 1.4rem; font-weight: 700; color: var(--text-primary);

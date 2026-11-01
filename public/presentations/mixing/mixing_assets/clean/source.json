@@ -1,0 +1,198 @@
+{
+  "source": "Перемішування_без фону.pptx",
+  "sha256": "21e89b556784c9802db820a4bf7dc4aff75f6bb315ef29444f10eb811e19268d",
+  "figures": [
+    {
+      "file": "pptx-04.png",
+      "pptxSlide": 4,
+      "htmlSlide": 9,
+      "size": [
+        1618,
+        1802
+      ],
+      "method": "Lossless extraction of the native embedded DIB bitmap",
+      "crop": [
+        4,
+        24,
+        1590,
+        1794
+      ]
+    },
+    {
+      "file": "pptx-09.png",
+      "pptxSlide": 9,
+      "htmlSlide": 27,
+      "size": [
+        1592,
+        1423
+      ],
+      "method": "Lossless extraction of the native embedded DIB bitmap",
+      "crop": [
+        17,
+        8,
+        1577,
+        1399
+      ]
+    },
+    {
+      "file": "pptx-05.png",
+      "pptxSlide": 5,
+      "htmlSlide": 11,
+      "size": [
+        2373,
+        2085
+      ],
+      "method": "PowerPoint 3200 x 2400 export, cropped to drawings and original captions",
+      "crop": [
+        428,
+        123,
+        2769,
+        2176
+      ]
+    },
+    {
+      "file": "pptx-06.png",
+      "pptxSlide": 6,
+      "htmlSlide": 13,
+      "size": [
+        3117,
+        2182
+      ],
+      "method": "PowerPoint 3200 x 2400 export, cropped to drawings and original captions",
+      "crop": [
+        110,
+        219,
+        3195,
+        2369
+      ]
+    },
+    {
+      "file": "pptx-07.png",
+      "pptxSlide": 7,
+      "htmlSlide": 20,
+      "size": [
+        3094,
+        2225
+      ],
+      "method": "PowerPoint 3200 x 2400 export, cropped to drawings and original captions",
+      "crop": [
+        46,
+        196,
+        3108,
+        2389
+      ]
+    },
+    {
+      "file": "pptx-08.png",
+      "pptxSlide": 8,
+      "htmlSlide": 23,
+      "size": [
+        2985,
+        2326
+      ],
+      "method": "PowerPoint 3200 x 2400 export, cropped to drawings and original captions",
+      "crop": [
+        74,
+        48,
+        3027,
+        2342
+      ]
+    },
+    {
+      "file": "pptx-10.png",
+      "pptxSlide": 10,
+      "htmlSlide": 29,
+      "size": [
+        1740,
+        2235
+      ],
+      "method": "PowerPoint 3200 x 2400 export, cropped to drawings and original captions",
+      "crop": [
+        673,
+        75,
+        2381,
+        2278
+      ]
+    },
+    {
+      "file": "pptx-11.png",
+      "pptxSlide": 11,
+      "htmlSlide": 35,
+      "size": [
+        2684,
+        1895
+      ],
+      "method": "PowerPoint 3200 x 2400 export, cropped to drawings and original captions",
+      "crop": [
+        274,
+        10,
+        2926,
+        1873
+      ]
+    },
+    {
+      "file": "pptx-12.png",
+      "pptxSlide": 12,
+      "htmlSlide": 35,
+      "size": [
+        2733,
+        1781
+      ],
+      "method": "PowerPoint 3200 x 2400 export, cropped to drawings and original captions",
+      "crop": [
+        307,
+        96,
+        3008,
+        1845
+      ]
+    },
+    {
+      "file": "pptx-13.png",
+      "pptxSlide": 13,
+      "htmlSlide": 35,
+      "size": [
+        3016,
+        1932
+      ],
+      "method": "PowerPoint 3200 x 2400 export, cropped to drawings and original captions",
+      "crop": [
+        95,
+        194,
+        3079,
+        2094
+      ]
+    },
+    {
+      "file": "pptx-14.png",
+      "pptxSlide": 14,
+      "htmlSlide": 35,
+      "size": [
+        2358,
+        2042
+      ],
+      "method": "PowerPoint 3200 x 2400 export, cropped to drawings and original captions",
+      "crop": [
+        378,
+        4,
+        2704,
+        2014
+      ]
+    },
+    {
+      "file": "pptx-17.png",
+      "pptxSlide": 17,
+      "htmlSlide": 40,
+      "size": [
+        3065,
+        2095
+      ],
+      "method": "Native 3072 x 2111 source image, lossless PNG encoding",
+      "crop": [
+        23,
+        1,
+        3056,
+        2064
+      ]
+    }
+  ]
+}

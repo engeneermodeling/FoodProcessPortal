@@ -1,0 +1,75 @@
+[
+  {
+    "slide": 4,
+    "title": "Магнітна мішалка MSH 300i",
+    "start": 55,
+    "end": 85,
+    "duration": 256.20898,
+    "caption": "Лабораторна магнітна мішалка: обертання перемішувального стрижня та контроль температури.",
+    "src": "/videos/lectures/mixing/magnetic-stirrer-msh-300i.mp4",
+    "poster": "/images/lectures/mixing/video-posters/magnetic-stirrer.jpg",
+    "sourceFile": "Магнітна мішалка з терморегуляцією MSH 300i.mp4"
+  },
+  {
+    "slide": 5,
+    "title": "Перемішування цукрового сиропу",
+    "start": 0,
+    "end": null,
+    "duration": 13.815873,
+    "caption": "Цукровий сироп: видимі вал і лопатевий робочий орган у резервуарі.",
+    "src": "/videos/lectures/mixing/sugar-syrup-mixing.mp4",
+    "poster": "/images/lectures/mixing/video-posters/sugar-syrup.jpg",
+    "sourceFile": "Сах сироп.mp4"
+  },
+  {
+    "slide": 7,
+    "title": "Рух рідини в перемішуваному апараті",
+    "start": 0,
+    "end": 30,
+    "duration": 49.017324,
+    "caption": "Рух рідини й внутрішні елементи апарата. За відео не визначають кількісну ефективність перемішування.",
+    "src": "/videos/lectures/mixing/stirred-vessel-baffles.mp4",
+    "poster": "/images/lectures/mixing/video-posters/stirred-vessel.jpg",
+    "sourceFile": "ГУРТ.mp4"
+  },
+  {
+    "slide": 15,
+    "title": "Стрічковий змішувач",
+    "src": null,
+    "suggestedFile": "/videos/lectures/mixing/slide-15.mp4"
+  },
+  {
+    "slide": 18,
+    "title": "Спіральний тістоміс",
+    "src": null,
+    "suggestedFile": "/videos/lectures/mixing/slide-18.mp4"
+  },
+  {
+    "slide": 22,
+    "title": "Роторно-статорне перемішування",
+    "start": 135,
+    "end": 170,
+    "duration": 230.64381,
+    "caption": "Роторно-статорний вузол: принцип роботи та приклади змішування.",
+    "src": "/videos/lectures/mixing/rotor-stator-mixing-demo.mp4",
+    "poster": "/images/lectures/mixing/video-posters/rotor-stator.jpg",
+    "sourceFile": "Video Project 9 (1).mp4"
+  },
+  {
+    "slide": 25,
+    "title": "Емульгування",
+    "src": null,
+    "suggestedFile": "/videos/lectures/mixing/slide-25.mp4"
+  },
+  {
+    "slide": 32,
+    "title": "Чарлі і шоколадна фабрика",
+    "start": 0,
+    "end": null,
+    "duration": 25.75093,
+    "caption": "Фрагмент художнього фільму «Чарлі і шоколадна фабрика». Ілюстрація до обговорення руху шоколадної маси, а не технічна демонстрація коншування.",
+    "src": "/videos/lectures/mixing/charlie-chocolate-factory-excerpt.mp4",
+    "poster": "/images/lectures/mixing/video-posters/chocolate-film.jpg",
+    "sourceFile": "до презентації 1.mp4"
+  }
+]
