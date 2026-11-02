@@ -7,8 +7,8 @@ const html=readFileSync(resolve(base,'index.html'),'utf8');
 const notes=JSON.parse(readFileSync(resolve(base,'lecture-notes.json'),'utf8'));
 const videos=JSON.parse(readFileSync(resolve(base,'videos.json'),'utf8'));
 const ids=[...html.matchAll(/<article\b[^>]*\bid="s(\d+)"/g)].map(match=>Number(match[1]));
-assert.deepEqual(ids,Array.from({length:43},(_,i)=>i+1),'Slide sequence');
-assert.equal(notes.length,43,'Notes for every slide');
+assert.deepEqual(ids,Array.from({length:45},(_,i)=>i+1),'Slide sequence');
+assert.equal(notes.length,45,'Notes for every slide');
 let clock=0;
 notes.forEach((note,i)=>{
   assert.equal(note.slide,i+1);assert.equal(note.start,clock);
@@ -35,11 +35,11 @@ for(const video of videos){
 }
 assert.ok(videos.find(video=>video.slide===32).src.includes('charlie-chocolate-factory'));
 assert.ok(!/<iframe\b|youtube-nocookie/.test(html),'Videos are inline, without online embeds');
-assert.ok(existsSync(resolve('public/docs/mixing/open-lecture-43-slides.docx')));
+assert.ok(existsSync(resolve('public/docs/mixing/open-lecture-45-slides.docx')));
 const density=1150,frequency=3,diameter=.4,viscosity=.015,powerNumber=5;
 assert.equal(Math.round(density*frequency*diameter**2/viscosity),36800);
 assert.ok(Math.abs(powerNumber*density*frequency**3*diameter**5-1589.76)<1e-8);
 const samples=[9.8,10.1,10,10.2,9.9],mean=samples.reduce((a,b)=>a+b)/samples.length;
 const cv=Math.sqrt(samples.reduce((sum,x)=>sum+(x-mean)**2,0)/(samples.length-1))/mean*100;
 assert.ok(Math.abs(cv-1.58113883)<1e-7);
-console.log('Mixing presentation check passed: 43 slides, 80 minutes, 5 supplied videos, 8 video slots, numerical examples.');
+console.log('Mixing presentation check passed: 45 slides, 80 minutes, 5 supplied videos, 8 video slots, numerical examples.');

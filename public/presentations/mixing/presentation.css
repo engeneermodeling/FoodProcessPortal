@@ -170,3 +170,27 @@ body{background:var(--bg-primary);color:var(--text-primary)}
   .paired-media{grid-template-columns:1fr;gap:20px}
   .paired-media>.photo{width:min(100%,calc(min(50dvh,500px) * var(--photo-ratio,1)))}
 }
+
+/* Similarity theory and a worked dimensional derivation. */
+.similarity-layout,.dimensional-layout{display:grid;grid-template-columns:1fr 1fr;gap:26px;flex:1 0 auto;align-items:center;min-width:0}
+.similarity-principles p{font-size:17px;line-height:1.4;margin:0 0 13px}
+.similarity-principles b{display:block;color:var(--lecture-accent);font-size:19px;margin-bottom:3px}
+.similarity-principles small,.dimensional-input small{display:block;font-size:13px;line-height:1.4;color:var(--text-secondary)}
+.similarity-groups{display:grid;gap:10px}
+.similarity-groups>div{padding:12px 16px;border-left:4px solid var(--lecture-accent);background:var(--bg-primary);border-radius:6px}
+.similarity-groups b{display:block;font-size:24px;line-height:1.4;font-weight:650}
+.similarity-groups span{font-size:15px;color:var(--text-secondary)}
+.similarity-groups>p{font-size:16px;line-height:1.45;margin:4px 0}
+.similarity-source{margin-top:9px;color:var(--text-secondary);font-size:12px;line-height:1.4}
+.similarity-source a{color:var(--lecture-accent)}
+.dimensional-layout{align-items:start;gap:24px}
+.dimensional-layout h2{font-size:18px;line-height:1.3;margin:0 0 10px;color:var(--lecture-accent)}
+.dimensional-layout p{font-size:16px;line-height:1.4;margin:8px 0}
+.dimensional-layout .dimension-formula{font-size:24px;font-weight:600;margin:8px 0 12px}
+.dimension-list{display:grid;grid-template-columns:1fr 1fr;gap:8px 16px;font-size:18px;padding:12px 0}
+.dimension-balance{display:flex;flex-wrap:wrap;gap:8px 16px;font-size:17px}
+.pi-results{display:grid;gap:8px;padding:12px 16px;background:var(--bg-primary);border-left:4px solid var(--lecture-accent);border-radius:6px;font-size:19px;line-height:1.4}
+.criteria-result{display:grid;gap:6px;margin-top:12px;padding:12px 16px;border:1px solid var(--border-color);border-radius:6px;background:var(--bg-primary)}
+.criteria-result b{font-size:24px;color:var(--lecture-accent);line-height:1.3}.criteria-result span{font-size:15px;line-height:1.4}
+@media screen and (max-width:900px){.similarity-layout,.dimensional-layout{grid-template-columns:1fr;gap:20px}.dimension-balance{display:grid;gap:6px}.similarity-groups b{font-size:22px}.criteria-result b{font-size:22px}}
+@media print{.similarity-layout,.dimensional-layout{grid-template-columns:1fr 1fr}.similarity-principles p,.dimensional-layout p{font-size:13px}.similarity-groups b,.pi-results,.criteria-result b{font-size:19px}}
