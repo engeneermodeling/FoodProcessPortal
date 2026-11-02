@@ -1,4 +1,5 @@
 import { localizeVideoControls } from './video-controls-uk.js';
+import { initializeSlideViewport } from './slide-viewport.js';
 
 const slides = [...document.querySelectorAll('article.slide')];
 const app = document.querySelector('.app');
@@ -110,6 +111,19 @@ window.addEventListener('beforeprint',()=>slides.forEach(s=>s.hidden=false));
 window.addEventListener('afterprint',()=>show(index));
 const videoSettings = new WeakMap();
 const timestamp = seconds => `${Math.floor(seconds / 60).toString().padStart(2,'0')}:${Math.floor(seconds % 60).toString().padStart(2,'0')}`;
+// Present the original illustration and its local demonstration together.
+function pairVideoWithIllustration(slot) {
+  if (slot.parentElement.classList.contains('paired-media')) return;
+  const illustration = slot.parentElement;
+  const content = illustration.parentElement;
+  if (!illustration.matches('.photo,.visual-card') || !content.matches('.content')) return;
+  const pair = document.createElement('div');
+  pair.className = 'paired-media';
+  content.classList.add('media-comparison');
+  illustration.replaceWith(pair);
+  illustration.classList.add('paired-illustration');
+  pair.append(illustration, slot);
+}
 function attachVideo(slot, src, settings = {}) {
   const video = slot.querySelector('video');
   video.pause();
@@ -119,8 +133,11 @@ function attachVideo(slot, src, settings = {}) {
   if(settings.poster)video.poster=settings.poster;
   if(settings.title)video.setAttribute('aria-label',settings.title);
   video.preload='metadata';video.src = src; video.hidden = false;
+  slot.querySelector('.video-details summary').textContent = 'Додатково';
   slot.querySelector('.photo-toggle').hidden = false;
   slot.querySelector('.photo-toggle').textContent=slot.dataset.fallbackLabel||'Показати фото';
+  pairVideoWithIllustration(slot);
+  if (slot.parentElement.classList.contains('paired-media')) slot.querySelector('.photo-toggle').hidden = true;
   const clipToggle=slot.querySelector('.clip-toggle');
   if(clipToggle){clipToggle.hidden=!(start>0||end);clipToggle.textContent='Повне відео';}
   slot.querySelector('.media-status').textContent = end ? `Фрагмент для лекції ${timestamp(start)}–${timestamp(end)}. Запуск — кнопкою відтворення.` : 'Відео готове. Запуск — кнопкою відтворення.';
@@ -128,6 +145,24 @@ function attachVideo(slot, src, settings = {}) {
 document.querySelectorAll('[data-video-slot]').forEach(slot => {
   const video = slot.querySelector('video');
   localizeVideoControls(slot);
+  const details = document.createElement('details');
+  details.className = 'video-details';
+  details.innerHTML = '<summary title="Локальний відеофайл, опис і режими відтворення">Додати відео</summary><div class="video-details-content"></div>';
+  for (const element of [...slot.children]) {
+    if (element.matches('.video-caption,.choose-video,.media-status,.photo-toggle,.clip-toggle')) details.lastElementChild.append(element);
+  }
+  slot.append(details);
+  video.addEventListener('lecture-seek', event => {
+    const settings = videoSettings.get(video);
+    const time = event.detail?.time;
+    if (!settings || settings.full || !Number.isFinite(time)) return;
+    if (time < settings.start || (settings.end && time >= settings.end)) {
+      settings.full = true;
+      const toggle = slot.querySelector('.clip-toggle');
+      if (toggle) toggle.textContent = 'Фрагмент для лекції';
+      slot.querySelector('.media-status').textContent = 'Повне відео: довільне перемотування.';
+    }
+  });
   slot.querySelector('.choose-video-button').addEventListener('click', () => slot.querySelector('input[type=file]').click());
   slot.querySelector('input[type=file]').addEventListener('change', event => {
     const file = event.target.files?.[0];
@@ -163,7 +198,7 @@ document.querySelectorAll('[data-video-slot]').forEach(slot => {
     event.target.textContent=settings.full?'Фрагмент для лекції':'Повне відео';
     slot.querySelector('.media-status').textContent=settings.full?'Повне відео. Запуск — кнопкою відтворення.':`Фрагмент для лекції ${timestamp(settings.start)}–${timestamp(settings.end||video.duration)}.`;
   });
-  video.addEventListener('error',()=>slot.querySelector('.media-status').textContent='Не вдалося відтворити файл. Виберіть MP4 з кодеком H.264 або WebM.');
+  video.addEventListener('error',()=>{slot.querySelector('.media-status').textContent='Не вдалося відтворити файл. Виберіть MP4 з кодеком H.264 або WebM.';details.open=true;});
 });
 Promise.all([
   fetch('lecture-notes.json').then(r=>{if(!r.ok)throw Error(r.status);return r.json();}).then(data=>{notes=data;updateNotes();}),
@@ -184,6 +219,7 @@ try {
   }
 } catch { /* Standalone presentation may have a different origin. */ }
 show(initial);
+initializeSlideViewport(app, slides);
 
 // Source drawings open in a viewport-sized, keyboard-accessible dialog.
 const figureDialog = document.createElement('dialog');
@@ -207,11 +243,17 @@ figureDialog.addEventListener('click', event => {
 });
 figureDialog.addEventListener('close', () => { document.body.style.overflow = ''; });
 
-document.querySelectorAll('.source-graphic,.engineering-flow').forEach(container => {
+document.querySelectorAll('.source-graphic,.engineering-flow,.photo').forEach(container => {
   const image=container.querySelector('img');if(!image)return;
   let title = image.alt;
   const button=document.createElement('button');button.type='button';button.className='enlarge-figure';button.textContent='Збільшити рисунок';
-  container.after(button);
+  if (container.matches('.photo')) {
+    const updateRatio = () => { if (image.naturalHeight) container.style.setProperty('--photo-ratio', String(image.naturalWidth / image.naturalHeight)); };
+    image.addEventListener('load', updateRatio);updateRatio();
+    button.classList.add('enlarge-photo');button.textContent='⤢';
+    button.title='Збільшити фотографію';button.setAttribute('aria-label', 'Збільшити фотографію');
+    container.append(button);
+  } else container.after(button);
   if (container.dataset.figureGallery) {
     const figures = JSON.parse(container.dataset.figureGallery);
     const chooser = document.createElement('div');

@@ -66,3 +66,107 @@ body{background:var(--bg-primary);color:var(--text-primary)}
 @media(max-width:900px){.viewer{width:100%;margin:0;border-radius:0;min-height:0}.slide{min-height:calc(100dvh - 190px);padding:24px 22px 54px}.content,.source-layout{grid-template-columns:1fr;min-height:0;gap:20px}.content.textonly{grid-template-columns:1fr}.copy{gap:12px}.point,.source-point{font-size:18px}.slide h1{font-size:30px}.section{font-size:11px}.kicker{font-size:17px}.photo{min-height:250px;max-height:none}.photo img{max-height:390px}.source-graphic{min-height:240px;max-height:none}.source-credit{font-size:12px}.takeaway{font-size:16px}.flow-content .copy{grid-template-columns:1fr}.controls{padding:12px}.tool-buttons{gap:7px}.controls button{font-size:14px}.tablegrid{grid-template-columns:1fr}.mast .note{display:none}.source-point{padding-left:10px}.flow-label{font-size:17px}.cell{font-size:17px;padding:16px}.source-full{min-height:380px}.bulk-layout,.malt-layout,.calc-layout,.quality-layout{display:flex!important;flex-direction:column!important}.source-full .source-graphic{min-height:360px}.engineering-flow{overflow:auto}.engineering-flow img{min-width:760px;max-height:none}.diagram.engineering-flow{justify-content:flex-start}.flow-icon{width:80px;height:80px}.visual-card{padding:16px}.viz-pair{gap:10px}.viz-pair>div{padding:10px}.source-graphic svg{width:100%;height:auto}}
 @media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 @media print{.controls,.mast,.progress,.thumbs,.speaker-panel,.inline-media{display:none!important}.viewer{margin:0;width:100%;min-height:0}.slide{display:flex!important;position:relative;break-after:page;min-height:0;height:190mm;padding:12mm 15mm 15mm;background:white;color:#15283a;overflow:hidden}.slide h1{font-size:28px}.point,.source-point{font-size:16px}.photo{min-height:0;max-height:115mm}.photo img{max-height:95mm}.source-graphic{min-height:0;max-height:115mm}.source-graphic img{max-height:110mm}.content,.source-layout{grid-template-columns:1fr 1fr;min-height:0}.flow-content{grid-template-columns:1fr}.source-credit{font-size:10px}.takeaway{font-size:14px}.folio{bottom:5mm}.engineering-flow img{min-width:0;max-height:100mm}.source-full{min-height:0}.source-full .source-graphic{min-height:0}@page{size:A4 landscape;margin:0}}
+
+/* A stable viewport keeps slide navigation visible instead of moving with content. */
+@media screen {
+  html,body{height:100%;overflow:hidden}
+  .app,.app:fullscreen{height:100dvh;min-height:0;overflow:hidden}
+  .app>.mast,.app>.controls,.app>.progress{flex-shrink:0}
+  .app>.viewer,.app:fullscreen>.viewer{flex:1 1 0;width:min(96%,1440px);min-height:0;max-height:none;margin:12px auto;aspect-ratio:auto}
+  .embed-mode .app>.viewer{width:100%;margin:0}
+  .app .slide,.app:fullscreen .slide{position:absolute;inset:0;width:100%;height:100%;min-height:0;padding:20px 36px 16px;overflow:auto;overscroll-behavior:contain;scrollbar-gutter:stable}
+  .slide>.section{margin-bottom:8px}
+  .slide>h1{font-size:clamp(27px,2.7vw,42px);margin-bottom:8px}
+  .slide>.kicker{margin-bottom:14px}
+  .slide>.content,.slide>.source-layout{flex:1 0 auto;min-height:0;gap:24px}
+  .slide .photo{min-height:0;max-height:none}
+  .slide .photo>img{height:260px;min-height:0;max-height:min(36dvh,360px)}
+  .slide .inline-media:not(:fullscreen) video{height:min(30dvh,300px);min-height:0;object-fit:contain}
+  .slide .source-graphic{flex:0 0 auto;height:clamp(180px,33dvh,360px);min-height:0;max-height:none}
+  .slide .source-graphic img{height:100%;max-height:100%;width:100%;object-fit:contain}
+  .slide .engineering-flow{min-height:0}
+  .slide .engineering-flow img{max-height:330px}
+  .slide>.takeaway{flex-shrink:0;margin:14px 0 0;padding:10px 0;font-size:16px}
+  .slide>.folio{position:static;align-self:flex-end;flex-shrink:0;margin-top:4px;font-size:12px}
+  .app>.controls{padding:9px 2vw;gap:8px}
+  .controls button{min-height:40px;padding:9px 12px}
+  .app>.progress{height:5px}
+}
+@media screen and (min-width:901px){
+  .viewport-managed .slide,.viewport-managed:fullscreen .slide{inset:auto;top:0;left:0;width:var(--slide-canvas-width,100%);height:auto;min-height:var(--slide-canvas-height,100%);overflow:visible;scrollbar-gutter:auto;transform:scale(var(--slide-scale,1));transform-origin:top left}
+}
+@media screen and (max-width:900px){
+  .app>.viewer,.app:fullscreen>.viewer{width:100%;margin:0;border-radius:0}
+  .app .slide,.app:fullscreen .slide{padding:20px 20px 16px}
+  .slide>.content,.slide>.source-layout{flex:1 0 auto;gap:16px}
+  .slide .source-graphic{height:clamp(220px,38dvh,360px)}
+  .slide .engineering-flow img{min-width:0;width:100%;max-height:none}
+  .controls .nav-buttons,.controls .tool-buttons{gap:6px}
+}
+@media screen and (max-height:500px){
+  .mast{padding:6px 16px;min-height:40px}.mast .note{display:none}
+  .app>.controls{padding:6px 12px}.controls button{min-height:36px;padding:7px 10px}
+}
+@media screen and (min-width:901px){
+  .slide .malt-svg{flex:0 0 auto;height:min(38dvh,340px);max-height:none}
+}
+@media screen and (min-width:901px){
+  .slide .visual-card:has(>.inline-media){padding:12px}
+  .slide .inline-media:not(:fullscreen){padding:8px}
+  .slide .inline-media:not(:fullscreen) video{height:min(26dvh,260px)}
+
+}
+
+/* Let the illustration, rather than an empty card, define its frame. */
+.visually-hidden{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;border:0}
+.uk-video-controls{display:flex;flex-direction:column;gap:6px;padding:8px 0}
+.uk-video-controls .video-position{display:block;width:100%;flex-basis:auto;min-height:24px}
+.uk-video-controls .video-position input{display:block;min-height:24px;cursor:pointer}
+.video-transport{display:flex;align-items:center;gap:6px;flex-wrap:wrap;width:100%}
+.uk-video-controls .video-transport button{flex:0 0 auto;min-height:36px;padding:6px 9px;font-size:13px}
+.uk-video-controls .video-transport [data-video-control=play]{min-width:36px}
+.video-transport .video-time{margin-right:auto;font-size:12px;white-space:nowrap}
+.video-speed select{min-height:36px;padding:5px;border:1px solid #94a3b8;border-radius:6px;background:#fff;color:#15334b;font:13px Arial}
+.video-details{font-size:12px;color:#466176;margin-top:2px}
+.video-details summary{width:fit-content;cursor:pointer;padding:7px 0;min-height:30px}
+.video-details-content{padding:8px 0 0;border-top:1px solid #cbd9df;line-height:1.4}
+.inline-media:fullscreen video{max-height:none;height:0;flex:1;object-fit:contain}
+@media screen {
+  .slide .photo{margin:0;align-self:center;justify-self:center;width:min(100%,calc(min(45dvh,500px) * var(--photo-ratio,1)));max-width:100%;height:auto;min-height:0;max-height:none;overflow:hidden;flex:none;align-items:center;box-shadow:none;background:transparent;border:0;border-radius:6px}
+  .slide .photo>img{display:block;flex:none;width:100%;height:auto;min-height:0;max-width:100%;max-height:none;background:transparent;object-fit:contain}
+  .slide .photo .photocap{flex:none;width:100%;min-width:0;padding:8px 0 0;gap:10px;align-items:flex-start;background:transparent;color:var(--text-secondary);font-size:12px;line-height:1.4}
+  .slide .photo .photocap a{flex-shrink:0;color:var(--lecture-accent)}
+  .slide .photo:has(video:not([hidden])){width:100%;align-items:stretch}
+  .slide .source-layout{grid-template-columns:.75fr 1.25fr}
+  .slide .source-graphic{display:flex;align-items:center;justify-content:center;padding:0;background:transparent;border:0;border-radius:0;height:clamp(240px,43dvh,480px);min-height:0}
+  .slide .source-graphic img{width:auto;max-width:100%;height:100%;max-height:100%;object-fit:contain}
+  .slide .source-full .source-graphic{height:min(53dvh,580px)}
+  .photo .enlarge-photo{position:absolute;top:8px;right:8px;margin:0;min-width:36px;min-height:36px;padding:3px 8px;font-size:23px;line-height:1;background:#fffffff0;border:1px solid #94a3b8;cursor:pointer}
+  .photo:has(video:not([hidden])) .enlarge-photo{display:none}
+}
+@media screen and (max-width:900px){
+  .slide .source-layout{grid-template-columns:1fr}
+  .slide .photo{width:min(100%,calc(min(54dvh,560px) * var(--photo-ratio,1)))}
+  .slide .photo .photocap{font-size:12px}
+  .uk-video-controls .video-transport button,.video-speed select{min-height:40px}
+}
+@media print{.enlarge-photo,.video-details{display:none!important}}
+
+/* Compare the illustration and the demonstration without switching between them. */
+@media screen {
+  .slide>.content.media-comparison{grid-template-columns:1fr;gap:16px}
+  .media-comparison>.copy{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));align-content:start;gap:8px 24px}
+  .media-comparison>.copy .point{font-size:18px;line-height:1.4}
+  .paired-media{display:grid;grid-template-columns:1fr 1.25fr;gap:24px;align-items:center;min-width:0}
+  .paired-media>.inline-media{min-width:0;border:1px solid #d3e4e9;border-radius:8px;padding:10px 12px}
+  .paired-media>.photo{width:min(100%,calc(min(34dvh,360px) * var(--photo-ratio,1)))}
+  .paired-media>.visual-card{width:100%;min-width:0;padding:16px}
+  .paired-media>.visual-card .viz-pair{gap:12px}
+  .paired-media>.visual-card .viz-pair>div{padding:12px}
+  .paired-media>.inline-media:not(:fullscreen) video{height:min(29dvh,300px)}
+}
+@media screen and (max-width:900px){
+  .media-comparison>.copy{grid-template-columns:1fr;gap:12px}
+  .paired-media{grid-template-columns:1fr;gap:20px}
+  .paired-media>.photo{width:min(100%,calc(min(50dvh,500px) * var(--photo-ratio,1)))}
+}

@@ -1,0 +1,82 @@
+[
+  {
+    "file": "s17-photo.webp",
+    "size": [
+      750,
+      750
+    ],
+    "crop": [
+      206,
+      73,
+      557,
+      721
+    ],
+    "removed": 0.596,
+    "sourceSha256": "ced0e9c10d626248237a0cb9db089e4004a34cc4042c3417adafb5f4ab5e7b2e",
+    "output": "s17-photo.png"
+  },
+  {
+    "file": "s21-photo.webp",
+    "size": [
+      1920,
+      1080
+    ],
+    "crop": [
+      245,
+      211,
+      1718,
+      893
+    ],
+    "removed": 0.516,
+    "sourceSha256": "d85743417ea0cf0999eecdf4abe17a5deb614e267b39aa51470062be3927b7be",
+    "output": "s21-photo.png"
+  },
+  {
+    "file": "s22-photo.webp",
+    "size": [
+      600,
+      600
+    ],
+    "crop": [
+      6,
+      100,
+      586,
+      516
+    ],
+    "removed": 0.33,
+    "sourceSha256": "c44fd42259c5ab71e6b9b66dba6023039b77f043f567d5f12c2d5420877c24f2",
+    "output": "s22-photo.png"
+  },
+  {
+    "file": "s26-photo.webp",
+    "size": [
+      730,
+      730
+    ],
+    "crop": [
+      64,
+      26,
+      674,
+      720
+    ],
+    "removed": 0.206,
+    "sourceSha256": "65535fdde0b58497174e01aecef3c1e37392ce86a06e7c5243efaaa22a71ff16",
+    "output": "s26-photo.png"
+  },
+  {
+    "file": "s31-photo.webp",
+    "size": [
+      1000,
+      823
+    ],
+    "crop": [
+      22,
+      111,
+      787,
+      776
+    ],
+    "removed": 0.382,
+    "sourceSha256": "2877f0c37ef7f3f54a81abf6b85aa3e9b2af7a15e12b63775e9811f13cfa71ff",
+    "output": "s31-photo.png"
+  }
+]

@@ -1,0 +1,14 @@
+{
+  "photo2": {
+    "photoHeight": 418.375,
+    "imageHeight": 359.984375,
+    "captionHeight": 58.390625
+  },
+  "seekAndResume": true,
+  "lectureExcerptPreserved": true,
+  "localFilePickerPreserved": true,
+  "errors": [],
+  "speed2x": true,
+  "seekButtons": true,
+  "photoFullscreen": true
+}
